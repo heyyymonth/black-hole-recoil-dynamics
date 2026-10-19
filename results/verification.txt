@@ -1,4 +1,4 @@
 ...........................                                              [100%]
-27 passed in 0.69s
+27 passed in 0.65s
 Verified 146 result rows and all recorded source/output hashes.
-Verified paper input/output hashes for BHRD-TN-001 v0.1.0.
+Verified manuscript v0.1.1: hashes, 4 US Letter pages, 9 embedded vector fonts, and no raster figures/equations.

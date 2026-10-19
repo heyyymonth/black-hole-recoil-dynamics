@@ -1,31 +1,53 @@
 {
-  "paper": "BHRD-TN-001",
-  "version": "0.1.0",
-  "pages": 6,
+  "paper": "central-residence",
+  "version": "0.1.1",
+  "pages": 4,
+  "format": "REVTeX 4.2 APS/PRD reprint; US Letter; two columns; txfonts",
+  "engine": "Tectonic 0.16.9",
+  "source_date_epoch": "1792281600",
+  "revtex_log": "Document Class: revtex4-2 2022/06/05 4.2f (https://journals.aps.org/revtex/ for",
   "versions": {
-    "reportlab": "5.0.1",
     "matplotlib": "3.7.1",
-    "pillow": "13.0.0",
+    "numpy": "1.24.2",
+    "scipy": "1.10.1",
     "pypdf": "6.21.1"
   },
+  "checks": {
+    "undefined_references": 0,
+    "overfull_boxes": 0,
+    "bibliography_entry_warnings": 0,
+    "allowed_bst_diagnostics": [
+      "Warning--jnrlst (dependency: not reversed) set 1"
+    ]
+  },
   "input_sha256": {
-    "paper/manuscript.md": "e286a6f7100f515a352e6ae129dd5f24bbe52d5cde720ca67ebc9003ae228df6",
-    "paper/build.py": "2ea587873b337c06fa7d40ed48c3ced4b8835e1d1b3e19f57bf8b1707c4741e0",
-    "paper/verify.py": "84d680a70c6164d03f8ddd93f37f48d8eed83abe06fc7a6fc1bddbe8cc7755bd",
-    "paper/requirements.txt": "36fe4d4fe0591cdef30d7ee497198521d3931ca8611e889feeaee1d5382bfa16",
-    "requirements-lock.txt": "90001901b188e80285e2679b5c36dca46073ae9fd5c758526c103a6fa83e5201",
-    "CITATION.cff": "657bb90c9d68b150fc5d87ed7bc34951ecd7c1c03895471bb8bad362a4f51ca4",
+    "CITATION.cff": "87de87800db68b633e03228c7b94201a6ffd48e15be162fe58b136ce32ef9b66",
     "LICENSE": "b81b853d7805f138ad9958a4ad41890e918f9b4b9b556bfa8fbc350174d0a473",
-    "results/run_all.json": "797c35172d53601925314b0b581062d1eff0f7b04511c216b5c6559f2f1696b0",
+    "experiments/config.json": "ea53fe596df49d5463e15467983d0e4af423304a835d8302175058d4c8a6870b",
+    "paper/SOURCE_README.txt": "b090f003fc9e29f29030df7d0297d2fae036d54df10f95152f88356b7952c4d5",
+    "paper/build.py": "87068a23285ab528d732bd094e9bb35d2e99bd76aa2e1cfb440d2634184fc004",
+    "paper/figures/core-residence.pdf": "8994add76d6f0ed81df710a306f2f18e792ac8928021d11b4534d47370b8f64d",
+    "paper/figures/exposure-comparison.pdf": "27ac463f8a2157781a2c89b8b406ea21f687f4fe2e84a1745563784607e4e601",
+    "paper/figures/return-time.pdf": "d04ab1213f7e7b9b3e9dbdceab2769808d47476b78d50ff580e98bf4a42c4f04",
+    "paper/figures.py": "50d26889cb7fe3ec168f14314702f0ac843a51570f46b1a22081123748f4b53e",
+    "paper/manuscript.tex": "1162e0c1cf4e122e0f77a3aee13072d4297790161472bbf6979fa960d1d63adc",
+    "paper/references.bib": "a07fdae0690c67f59dd0e8003da06b4e204b9aa994a25f2fb85c937d7a40fc1f",
+    "paper/requirements.txt": "3feec1a2e97360338b6d572368436244052b81da52f32b8d9bb91e4fce8677f6",
+    "paper/tables/exposure.tex": "c5cc308ac48b81a51fb99b96f8650c4ccd9561eb8a56fccacc03dfcd09a9f158",
+    "paper/tables/return.tex": "cbb2a74d5af0bb808d5494fbbb9f94b3f062eacd667e38d0c6cb55e880d23371",
+    "paper/toolchain.json": "23e2e59b0c21ba0e38f176c4fd55f68baa6b18e90ce274f683c19251da7a7794",
+    "paper/verify.py": "dcf49fb3997af8c2284ff8bf7c232989a03bf8af01d187657c0cc365fe902514",
+    "requirements-lock.txt": "90001901b188e80285e2679b5c36dca46073ae9fd5c758526c103a6fa83e5201",
     "results/e001/return_times.csv": "e3572e92276f362ce1159a9b35797157a968f880e46d6b5d866cc55deb3d2ebb",
     "results/e002/cycles.csv": "af8deb266ac2119a15c99d27ec277ac7b2e37e4879088bc5093f172c08235d04",
     "results/e002/fixed_horizons.csv": "71f76d00a934861449973ce8906b56249308bf3ccee16a908d067cde71004308",
     "results/e002/relative_horizons.csv": "e15508c783d482c7b30554d7fb9d20c57a97810f3bd8c6c3b7c990e26a2fd679",
-    "results/e001/return_time.png": "59a008f44afe89dd8f6eeaec877298c37d190280f908a814f38d8e17c5f0dd58",
-    "results/e002/core_residence.png": "0b8e546016e96f5331f9ffd9e31ebfa17944845ce004635770e931b08e918130",
-    "results/e002/exposure_comparison.png": "de834568e657730910ad2f6d490af3f30773a6bea40f2f4e1a80877cfd02c076"
+    "results/run_all.json": "8aa8f6d16c7621529cbbe26199ff5f7e570d6c4d000f6c6fee24fa724e75d11a",
+    "src/recoil_dynamics/__init__.py": "b9fb812188df15e292ae9d1f19147b7f50d7f1f6693fa78ccaa5085529e2ddf7",
+    "src/recoil_dynamics/plummer.py": "1a94d5680654d6f79bdc90b25513332f46ee8e3645f569fbaf331e0d25bfd22c"
   },
   "output_sha256": {
-    "output/pdf/central-residence.pdf": "5df9ccaacc9d33d42c2727d595755443ad3cb32f9aa900e1deff1c68e0546dcc"
+    "output/pdf/central-residence.pdf": "e54fb8c497ba60eeda56a2aed3a007f426b8788453d7ce805b603b93fba7a31b",
+    "output/pdf/manuscript-source.zip": "78abf627438950a3b816117e9e29b48fa355a26abd14c425acdca521db7db2b2"
   }
 }

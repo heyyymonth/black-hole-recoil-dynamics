@@ -1,18 +1,18 @@
 {
   "researcher": "Venkata Hemanth Athota",
   "research_identity": "Black-hole Recoil Dynamics",
-  "run_utc": "2026-10-19T02:02:13.202816+00:00",
+  "run_utc": "2026-10-19T02:18:30.579344+00:00",
   "python": "3.11.1",
   "versions": {
     "numpy": "1.24.2",
     "scipy": "1.10.1",
     "matplotlib": "3.7.1"
   },
-  "source_revision": "a5f273205a7beae1b54c3cfb8b8a7691fcc6ac19",
+  "source_revision": "5601277390c2b43bcb79abbf21011481edfbc400",
   "source_sha256": {
     "experiments/config.json": "ea53fe596df49d5463e15467983d0e4af423304a835d8302175058d4c8a6870b",
     "experiments/run.py": "32166d9ed9c7ef37630c38d4948171e4e7ba4244b94df051ff3369aa66aac79c",
-    "pyproject.toml": "cf050d9b04b0bd556739a6e2d8e829aadadd86e4a7575e21cdbf6856580301c2",
+    "pyproject.toml": "9f05c363e03950260f74ec78a683a627303fcaf24a61792cd072757d994125a9",
     "requirements.txt": "fadf444abe37375678f3070583db30c26f96005d3cffab861307e8b19b609c17",
     "requirements-lock.txt": "90001901b188e80285e2679b5c36dca46073ae9fd5c758526c103a6fa83e5201",
     "src/recoil_dynamics/__init__.py": "b9fb812188df15e292ae9d1f19147b7f50d7f1f6693fa78ccaa5085529e2ddf7",
