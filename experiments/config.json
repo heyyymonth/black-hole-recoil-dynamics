@@ -1,0 +1,22 @@
+{
+  "model": "static isolated Plummer potential, central radial kick, test particle",
+  "units": "length b; time sqrt(b^3/(G M)); kick eta=v_kick/v_escape(0)",
+  "epsabs": 1e-11,
+  "epsrel": 1e-11,
+  "e001": {
+    "eta_table": [0.1, 0.3, 0.5, 0.7, 0.8, 0.9, 0.95, 0.99, 0.999],
+    "eta_plot_max": 0.9999,
+    "plot_points": 180
+  },
+  "e002": {
+    "eta": [0.0, 0.05, 0.1, 0.3, 0.5, 0.7, 0.8, 0.9, 0.95, 0.99, 0.999],
+    "core_radii_over_b": [0.1, 0.3, 1.0],
+    "fixed_horizons_over_tdyn": [1.0, 3.0, 10.0, 30.0, 100.0, 300.0, 1000.0],
+    "relative_horizons_over_period": [0.1, 0.5, 1.0, 2.0, 10.0],
+    "plot_eta": [0.3, 0.8, 0.99],
+    "plot_horizon_max_periods": 10.0,
+    "plot_points": 180,
+    "density_weight": "(1+x^2)^(-5/2); geometric proxy, not an encounter rate",
+    "comparators": ["assumed central: I=H", "first return then permanently central: I=max(H-P,0)"]
+  }
+}

@@ -1,0 +1,5 @@
+# Tested reference environment: Python 3.11.
+numpy==1.24.2
+scipy==1.10.1
+matplotlib==3.7.1
+pytest==9.0.3

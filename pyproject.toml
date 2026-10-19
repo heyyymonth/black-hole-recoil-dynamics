@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "black-hole-recoil-dynamics"
+version = "0.1.0"
+description = "Controlled experiments on recoil orbits, central residence and density exposure"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Hemanth AV"}]
+dependencies = ["numpy==1.24.2", "scipy==1.10.1", "matplotlib==3.7.1"]
+
+[project.optional-dependencies]
+test = ["pytest==9.0.3"]
+
+[project.urls]
+Repository = "https://github.com/heyyymonth/black-hole-recoil-dynamics"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
