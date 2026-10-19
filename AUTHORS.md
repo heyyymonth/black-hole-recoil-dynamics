@@ -1,9 +1,15 @@
-# Research attribution
+# Author and contact
 
-**Hemanth AV**
+**Venkata Hemanth Athota**<br/>
+Independent researcher
 
-Hemanth AV Research
-
+Contact: [bharadwaj.hemanth.002@gmail.com](mailto:bharadwaj.hemanth.002@gmail.com)<br/>
 GitHub: [heyyymonth](https://github.com/heyyymonth)
 
-This is a personal research collection. Original numerical results are accompanied by their generating configuration, source revision, validation checks and references. Prior scientific work is credited in the experiment records and bibliography.
+Black-hole Recoil Dynamics is an independent physics research project. The project
+name describes this research collection and does not imply a university affiliation
+or a separately incorporated institution.
+
+The technical note and citation metadata use the author's full name. The README
+uses the contributor credit “Contributed by Hemanth.” Prior scientific work is
+credited in the experiment records and references.

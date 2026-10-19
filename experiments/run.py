@@ -138,7 +138,7 @@ def main():
     inputs=[ROOT/'experiments/config.json',ROOT/'experiments/run.py',ROOT/'pyproject.toml',ROOT/'requirements.txt',ROOT/'requirements-lock.txt']
     inputs+=sorted((ROOT/'src').rglob('*.py'))
     git=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,text=True,capture_output=True)
-    manifest={'researcher':'Hemanth AV','research_identity':'Hemanth AV Research',
+    manifest={'researcher':'Venkata Hemanth Athota','research_identity':'Black-hole Recoil Dynamics',
               'run_utc':datetime.now(timezone.utc).isoformat(),'python':platform.python_version(),
               'versions':{x:importlib.metadata.version(x) for x in ['numpy','scipy','matplotlib']},
               'source_revision':git.stdout.strip() if git.returncode==0 else None,

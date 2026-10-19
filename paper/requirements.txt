@@ -1,0 +1,4 @@
+# Install after the numerical requirements-lock.txt.
+reportlab==5.0.1
+charset-normalizer==3.5.2
+pypdf==6.21.1

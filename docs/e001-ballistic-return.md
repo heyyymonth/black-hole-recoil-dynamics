@@ -1,6 +1,6 @@
 # E001: first central return after a recoil kick
 
-**Researcher:** Hemanth AV
+**Researcher:** Venkata Hemanth Athota
 
 **Model:** central radial kick in a static, isolated Plummer potential
 

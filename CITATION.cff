@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Please cite this version when using the software, numerical results, or accompanying technical note."
+type: software
+title: "Black-hole recoil dynamics: central residence and density exposure in a Plummer potential"
+authors:
+  - family-names: Athota
+    given-names: Venkata Hemanth
+version: 0.1.0
+date-released: 2026-10-18
+license: MIT
+repository-code: "https://github.com/heyyymonth/black-hole-recoil-dynamics"
+url: "https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.0"
+abstract: >-
+  Reproducible collisionless benchmarks for centrally kicked test particles in a
+  static, isolated Plummer potential. Includes first central-return times,
+  finite-window central residence, density exposure, independent numerical
+  checks, and a technical note. No observational data or merger probabilities
+  are inferred.
+keywords:
+  - black-hole recoil
+  - stellar dynamics
+  - Plummer potential
+  - reproducible research

@@ -1,10 +1,10 @@
 # Problem: retention and access to a dense environment
 
-**Researcher: Hemanth AV**
+**Researcher: Venkata Hemanth Athota**
 
 A black-hole merger remnant can be gravitationally bound to its host while spending much of its orbit outside the dense central region. A further merger requires additional dynamics, including interactions with available companions. The present experiments isolate the orbital part of that problem.
 
-The question is whether a binary retention label or a first central-return time adequately represents central residence over a finite observation window. Both descriptors discard the path between the kick and later encounters. We measure that lost information directly in a collisionless benchmark.
+The question is whether a retention flag or a prescription that treats first return as permanent central residence preserves orbital exposure over a finite window. We quantify the errors of those prescriptions in a collisionless benchmark. Within this fixed one-parameter model, an exact return time together with the governing equations can instead identify the orbit; we do not claim an information-theoretic degeneracy.
 
 ## Model
 

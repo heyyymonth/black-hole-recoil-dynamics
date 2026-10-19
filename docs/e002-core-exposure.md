@@ -1,6 +1,6 @@
 # E002: finite-window central residence and density exposure
 
-**Researcher:** Hemanth AV
+**Researcher:** Venkata Hemanth Athota
 
 **Model:** the same collisionless Plummer orbits as E001
 
@@ -76,7 +76,7 @@ The tests check these limits, orbit energy, accumulated exposure from an indepen
 
 ## Interpretation
 
-Retention and first-return time do not determine finite-window central residence in this model. The first-return comparison is not uniformly conservative: it can miss early exposure and exaggerate late exposure.
+A retention flag or a rule that treats first return as permanent central residence does not preserve finite-window exposure. An exact return time together with this fixed one-parameter orbital model can recover the orbit; the approximation test does not establish non-identifiability. The first-return comparison is not uniformly conservative: it can miss early exposure and exaggerate late exposure.
 
 Density exposure alone is not an encounter rate. The calculation contains neither a companion distribution distinct from the host density nor a velocity-dependent cross section, binary fraction, formation process, friction or tidal boundary. It therefore does not estimate a merger probability or directly test a published frictional-return prescription.
 
