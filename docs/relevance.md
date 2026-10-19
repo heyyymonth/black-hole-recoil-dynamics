@@ -1,6 +1,6 @@
 # Scientific relevance review
 
-Reviewed before the initial repository publication, 18 October 2026.
+Initial baseline review: 18 October 2026. E003 relevance and protocol review: 19 October 2026, before E003 execution.
 
 ## E001: relevant as a numerical benchmark
 
@@ -19,3 +19,13 @@ The comparison must preserve both possible directions of error. Waiting until th
 [Torniamenti et al. (2024)](https://arxiv.org/abs/2401.14837v2) already includes host evolution and uncertain pairing in hierarchical-merger predictions. A static-potential benchmark does not establish its applicability to those evolving systems.
 
 This focused check supports publication of the experiments as reproducible benchmarks. It does not establish publication-level novelty or an observational discriminator.
+
+## E003: relevant as a test of the density-to-encounter approximation
+
+The [pre-execution protocol](e003-protocol.md) fixes an explicit target population, close-passage definition, common time window, and 10% approximation screen. These are the missing ingredients needed to test whether the E002 density proxy represents passage opportunities. The [result](e003-encounter-accessibility.md) identifies a velocity-dependent discrepancy and its geometric/focusing contributions. This is a meaningful physical extension, whereas a denser deterministic kick grid would only refine the same earlier calculation.
+
+The apocenter admission criterion is motivated by Islam's stated choice of five half-mass radii. It admits E003's eta=0.9 orbit but excludes E002's eta=0.99 near-escape example. This does not invalidate the isolated-orbit benchmark; it limits its environmental interpretation. E003 retains an untruncated equilibrium Plummer bath and does not implement a self-consistent tidal boundary.
+
+The rate ingredients are standard. [Leigh et al.](https://arxiv.org/abs/1711.10494) already studies encounters and binary hardening, and [the galpy distribution reference](https://docs.galpy.org/en/v1.12.0/reference/dfplummer.html) supplies the exact Plummer distribution used for the analytical velocity calculation. We have checked relevance and correctness of this limited extension, not established a novel assembly model.
+
+The completed screen rejects the density proxy for two selected larger kicks. Absolute passage counts remain tiny for the imposed bath. Neither the discrepancy nor passing numerical checks establishes an observable merger-rate effect. Physical calibration of the bath and trajectories, and conditional encounter outcomes, remain outside this experiment.

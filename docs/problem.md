@@ -4,7 +4,7 @@
 
 A black-hole merger remnant can be gravitationally bound to its host while spending much of its orbit outside the dense central region. A further merger requires additional dynamics, including interactions with available companions. The present experiments isolate the orbital part of that problem.
 
-The question is whether a retention flag or a prescription that treats first return as permanent central residence preserves orbital exposure over a finite window. We quantify the errors of those prescriptions in a collisionless benchmark. Within this fixed one-parameter model, an exact return time together with the governing equations can instead identify the orbit; we do not claim an information-theoretic degeneracy.
+E001/E002 ask whether a retention flag or a prescription that treats first return as permanent central residence preserves orbital exposure over a finite window. We quantify the errors of those prescriptions in a collisionless benchmark. Within this fixed one-parameter model, an exact return time together with the governing equations can instead identify the orbit; we do not claim an information-theoretic degeneracy. E003 then tests whether density exposure accurately approximates a specified close-passage count once relative velocities enter the calculation.
 
 ## Model
 
@@ -40,4 +40,10 @@ $C/H$ is a residence fraction. $I/H$ is the mean normalized Plummer density samp
 
 For a stationary object both comparisons reduce to $H$. The second prescription is an explicitly constructed simplification, not the return-time prescription from a published friction model.
 
-The experiments omit friction, scattering, binary formation, tidal removal, and host evolution. Their results determine the behavior of these comparisons in this specified model only.
+## E003: connection to potential companions
+
+The [close-passage experiment](e003-encounter-accessibility.md) supplies a tracer-binary density, an isotropic Plummer velocity distribution, and a two-body focusing cross section. It compares density exposure with the integrated passage rate, using the same physical window and a stationary control. Its declared outer-radius screen selects test orbits without truncating the host.
+
+The larger physical sequence remains merger, recoil, host motion, companion acquisition, binary evolution, and another merger. E001/E002 validate the host-motion calculation. E003 tests an encounter-opportunity ingredient; it finds that density alone overestimates normalized passage counts in two of its three nonzero-kick cases. Neither a close passage nor its expected count determines companion acquisition or a second merger.
+
+All experiments omit friction, scattering that changes the orbit, binary formation, tidal evolution, and host evolution. Their results apply to their declared fixed models. E003 adds a conditional rate calculation, not self-consistent encounter dynamics or observed-event inference.

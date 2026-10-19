@@ -8,26 +8,29 @@ Independent physics research · Stellar dynamics and gravitational-wave source e
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-0.1.1-14677d.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
-[Research paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [Cite this work](CITATION.cff) · [Release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
+[E001/E002 paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E003 research record](docs/e003-encounter-accessibility.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
 ## Research question
 
-How accurately do simplified retention and return prescriptions represent a recoiling remnant's exposure to the dense center of a stellar cluster?
+How does a retained black-hole remnant's motion affect its access to potential companions, and how accurately does density exposure represent that access?
 
-The experiments follow a test particle kicked radially from the center of a static, isolated Plummer potential. They measure first central return, finite-time residence inside declared spheres, and density integrated along the orbit. This isolates the orbital part of the black-hole assembly problem.
+The experiments follow a test particle kicked radially from the center of a fixed Plummer potential. E001/E002 measure return, residence, and density exposure. E003 adds an explicit tracer-binary population and velocity-dependent close-passage cross section. This tests the connection between orbital motion and encounter opportunity, an ingredient in the larger black-hole assembly problem.
 
-## Published experiments
+## Experiments
 
 | Experiment | Calculation | Research record |
 |---|---|---|
 | E001 | First central return as a function of kick speed | [Method and results](docs/e001-ballistic-return.md) · [Table](results/e001/return_times.csv) |
 | E002 | Central residence and density exposure over finite windows | [Method and results](docs/e002-core-exposure.md) · [Tables](results/e002/) |
+| E003 | Density proxy versus velocity-weighted close passages over a common time window | [Protocol](docs/e003-protocol.md) · [Method and results](docs/e003-encounter-accessibility.md) · [Table](results/e003/encounters.csv) |
 
-At 99% of the central escape speed, the bound orbit samples a mean density of **0.130%** of the central value and spends **0.193%** of its radial period inside one Plummer scale radius. A prescription that makes the object permanently central after its first return misses early exposure and eventually overestimates later exposure.
+In E003, density exposure overestimates normalized close-passage opportunities by **4.4%, 53.1%, and 98.6%** at kick fractions 0.3, 0.8, and 0.9. Two cases fail the predeclared 10% approximation screen. Gravitational focusing dominates this specified configuration; faster relative motion reduces its contribution. Absolute expected passage counts are tiny: 1.61e-6 for the stationary control and 4.71e-8 for the 0.9 kick during the common 0.149 Myr window.
 
-![Density exposure compared with simplified prescriptions](results/e002/exposure_comparison.png)
+![Density proxy compared with velocity-weighted close passages](results/e003/proxy_comparison.png)
 
-These are controlled numerical benchmarks. The model omits dynamical friction, encounters, tidal boundaries, and host evolution. It does not infer encounter rates, merger probabilities, or constraints from observed gravitational-wave events. The [manuscript](output/pdf/central-residence.pdf) records the derivation, results, independent checks, and limitations; it is not peer reviewed.
+These are controlled numerical benchmarks. E003 calculates an expected close-passage count in an imposed bath along an unperturbed orbit; it does not simulate encounter outcomes or infer mergers. All three experiments omit dynamical friction and host evolution. E003 screens remnant apocenters against a declared outer radius without truncating the host. The former E002 near-escape example remains an isolated-model limit and does not pass that screen. No observed gravitational-wave data are used.
+
+The [unreviewed manuscript](output/pdf/central-residence.pdf) and v0.1.1 release cover E001/E002. E003 is documented separately on `main`; it has not been added to that paper or release.
 
 [Physical assumptions](docs/problem.md) · [Scientific relevance](docs/relevance.md) · [References](docs/references.md)
 
@@ -41,24 +44,32 @@ source .venv/bin/activate
 python -m pip install -r requirements-lock.txt
 python -m pytest -q
 python experiments/verify_results.py
+python experiments/verify_e003.py
 ```
 
-The tests compare the production quadrature with independently integrated trajectories, conservation laws, analytic limits, and convergence checks. The verifier separately reproduces **146 recorded table rows** and checks source/output hashes.
+The **62 tests** compare production calculations with independent trajectories, numerical velocity integrals, conservation laws, analytical limits, and scaling checks. The verifiers separately reproduce **146 baseline rows and 4 E003 rows**, and check recorded source/output hashes. These rows are model calculations, not independent astronomical observations.
 
-To regenerate every table and figure:
+To regenerate E001/E002 tables and figures:
 
 ```sh
 python experiments/run.py
 python experiments/verify_results.py
 ```
 
-The runner replaces the corresponding generated outputs. No network access is needed after dependency installation. [Configuration](experiments/config.json) fixes the grids and tolerances; the [run manifest](results/run_all.json) records source revision, file hashes, and numerical-library versions. [Paper build instructions](paper/README.md) cover the separate PDF dependencies and source.
+For E003, commit its source inputs, then run:
+
+```sh
+python experiments/run_e003.py
+python experiments/verify_e003.py
+```
+
+Each runner replaces its corresponding outputs. No network access is needed after dependency installation. The [baseline configuration](experiments/config.json) and [E003 configuration](experiments/e003.json) fix inputs; [baseline](results/run_all.json) and [E003](results/run_e003.json) manifests record source revisions, hashes, and library versions. [Paper build instructions](paper/README.md) cover the separate PDF dependencies and source.
 
 ## Repository structure
 
 | Path | Purpose |
 |---|---|
-| `src/recoil_dynamics/` | Reusable dimensionless orbital calculations |
+| `src/recoil_dynamics/` | Reusable orbit, velocity-moment, and close-passage calculations |
 | `experiments/` | Configuration, execution, result verification, and record template |
 | `tests/` | Independent numerical and analytical validation |
 | `results/` | Generated tables, figures, provenance, and verification record |
@@ -73,6 +84,8 @@ The runner replaces the corresponding generated outputs. No network access is ne
 Athota, Venkata Hemanth (2026). *Black-hole recoil dynamics: central residence and density exposure in a Plummer potential*. Version 0.1.1. [Versioned research release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1).
 
 Use [CITATION.cff](CITATION.cff), [BibTeX](CITATION.bib), or GitHub's **Cite this repository** control. Cite the version used for the calculation. This release has no DOI; the versioned release identifies the research snapshot.
+
+Those citation files describe the E001/E002 v0.1.1 baseline. For E003, cite an immutable repository commit containing its research record and results, identified in the file history; the [E003 manifest](results/run_e003.json) also identifies the exact generating source commit. Do not attribute E003 results to v0.1.1.
 
 Original code, technical documentation, and generated research artifacts are provided under the [MIT license](LICENSE). Preserve its copyright and permission notice when reusing substantial portions. Academic citation is requested separately from the license conditions. Referenced publications and dependencies retain their own rights and licenses.
 

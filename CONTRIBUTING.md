@@ -7,13 +7,15 @@ Contributions use the repository's MIT license.
 
 ## Add an experiment
 
-1. Assign the next unused identifier after E001 and E002. Start its record from
+1. Assign the next unused identifier after E001, E002, and E003. Start its record from
    [the experiment template](experiments/templates/record.md). State the question,
    model, units, applicable regime, and relevant primary literature before interpreting results.
 2. Place reusable dynamics in `src/recoil_dynamics/`. Keep experiment orchestration
    under `experiments/`, with numerical inputs in a versioned JSON configuration.
    The current runner explicitly supports E001 and E002; a new experiment must be
    registered in its argument choices and dispatch, or supplied with its own runner.
+   E003 uses `experiments/e003.json`, `run_e003.py`, and `verify_e003.py` separately
+   to preserve the published E001/E002 inputs and outputs.
 3. Add independent validation appropriate to the physics: an analytic limit,
    conservation law, alternative formulation, or convergence study. Recomputing a
    saved table with the same method is a reproducibility check, not independent validation.
@@ -31,12 +33,14 @@ Contributions use the repository's MIT license.
 ```sh
 python -m pytest -q
 python experiments/verify_results.py
+python experiments/verify_e003.py
 ```
 
 For a change to a hashed simulation input, first commit the completed source changes,
 then run `python experiments/run.py`, rerun both checks, and commit the generated
 results. This makes the manifest point to the generating source commit. Never edit
-recorded hashes or numerical results by hand to make verification pass.
+recorded hashes or numerical results by hand to make verification pass. For E003,
+use its separate runner and verifier; its runner rejects uncommitted source inputs.
 
 Inspect regenerated figures and compare numerical changes with their physical cause.
 If the technical note changes, rebuild its PDF using [the paper instructions](paper/README.md).
