@@ -1,0 +1,31 @@
+{
+  "paper": "BHRD-TN-001",
+  "version": "0.1.0",
+  "pages": 6,
+  "versions": {
+    "reportlab": "5.0.1",
+    "matplotlib": "3.7.1",
+    "pillow": "13.0.0",
+    "pypdf": "6.21.1"
+  },
+  "input_sha256": {
+    "paper/manuscript.md": "e286a6f7100f515a352e6ae129dd5f24bbe52d5cde720ca67ebc9003ae228df6",
+    "paper/build.py": "2ea587873b337c06fa7d40ed48c3ced4b8835e1d1b3e19f57bf8b1707c4741e0",
+    "paper/verify.py": "84d680a70c6164d03f8ddd93f37f48d8eed83abe06fc7a6fc1bddbe8cc7755bd",
+    "paper/requirements.txt": "36fe4d4fe0591cdef30d7ee497198521d3931ca8611e889feeaee1d5382bfa16",
+    "requirements-lock.txt": "90001901b188e80285e2679b5c36dca46073ae9fd5c758526c103a6fa83e5201",
+    "CITATION.cff": "657bb90c9d68b150fc5d87ed7bc34951ecd7c1c03895471bb8bad362a4f51ca4",
+    "LICENSE": "b81b853d7805f138ad9958a4ad41890e918f9b4b9b556bfa8fbc350174d0a473",
+    "results/run_all.json": "797c35172d53601925314b0b581062d1eff0f7b04511c216b5c6559f2f1696b0",
+    "results/e001/return_times.csv": "e3572e92276f362ce1159a9b35797157a968f880e46d6b5d866cc55deb3d2ebb",
+    "results/e002/cycles.csv": "af8deb266ac2119a15c99d27ec277ac7b2e37e4879088bc5093f172c08235d04",
+    "results/e002/fixed_horizons.csv": "71f76d00a934861449973ce8906b56249308bf3ccee16a908d067cde71004308",
+    "results/e002/relative_horizons.csv": "e15508c783d482c7b30554d7fb9d20c57a97810f3bd8c6c3b7c990e26a2fd679",
+    "results/e001/return_time.png": "59a008f44afe89dd8f6eeaec877298c37d190280f908a814f38d8e17c5f0dd58",
+    "results/e002/core_residence.png": "0b8e546016e96f5331f9ffd9e31ebfa17944845ce004635770e931b08e918130",
+    "results/e002/exposure_comparison.png": "de834568e657730910ad2f6d490af3f30773a6bea40f2f4e1a80877cfd02c076"
+  },
+  "output_sha256": {
+    "output/pdf/central-residence.pdf": "5df9ccaacc9d33d42c2727d595755443ad3cb32f9aa900e1deff1c68e0546dcc"
+  }
+}

@@ -1,3 +1,4 @@
 ...........................                                              [100%]
-27 passed in 0.72s
+27 passed in 0.69s
 Verified 146 result rows and all recorded source/output hashes.
+Verified paper input/output hashes for BHRD-TN-001 v0.1.0.
