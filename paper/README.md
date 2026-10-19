@@ -34,8 +34,9 @@ three vector figures, compiles the article and BibTeX references, and writes:
 The build pins Tectonic 0.16.9 and the SHA-256 of the official REVTeX 4.2f
 distribution in `toolchain.json`. It stages that class and bibliography style in
 ignored `tmp/latex/source/`; the repository does not relabel those external
-packages as MIT. Initial compilation downloads the pinned REVTeX archive and any
-missing standard TeX dependencies. Subsequent builds can use the populated caches.
+packages as MIT. The builder first reuses the pinned REVTeX archive included in the committed
+source ZIP, verifying its checksum. If that ZIP is absent, it downloads the
+distribution. Tectonic downloads any missing standard TeX dependencies. Subsequent builds can use the populated caches.
 `curl` is required for the initial REVTeX download.
 
 The build rejects unresolved citations/references, missing glyphs, overfull boxes,

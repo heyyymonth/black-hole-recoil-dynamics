@@ -60,8 +60,14 @@ env = os.environ.copy()
 env['SOURCE_DATE_EPOCH'] = str(int(datetime(2026, 10, 18, tzinfo=timezone.utc).timestamp()))
 revtex_archive = ROOT / 'tmp/revtex-4.2f.zip'
 if not revtex_archive.exists():
-    subprocess.run(['curl', '--fail', '--silent', '--show-error', '--location',
-                    TOOLCHAIN['revtex_archive_url'], '--output', str(revtex_archive)], check=True)
+    source_archive = OUT / 'manuscript-source.zip'
+    if source_archive.exists():
+        with zipfile.ZipFile(source_archive) as bundle:
+            revtex_archive.write_bytes(bundle.read('vendor/revtex-4.2f.zip'))
+    else:
+        subprocess.run(['curl', '--fail', '--silent', '--show-error', '--location',
+                        '--connect-timeout', '15', '--max-time', '120', '--retry', '2',
+                        TOOLCHAIN['revtex_archive_url'], '--output', str(revtex_archive)], check=True)
 if hashlib.sha256(revtex_archive.read_bytes()).hexdigest() != TOOLCHAIN['revtex_archive_sha256']:
     raise SystemExit('REVTeX dependency checksum mismatch; do not use an unverified replacement.')
 with zipfile.ZipFile(revtex_archive) as distribution:
