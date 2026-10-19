@@ -19,11 +19,19 @@ Define a close passage as a two-body monopole pericenter at or inside 1 AU of a 
 
 For local relative speed w, the cross section is
 
-\[\Sigma(w)=\pi R^2[1+2G(m_{\rm rem}+m_{\rm bin})/(R w^2)].\]
+
+$$
+\Sigma(w)=\pi R^2[1+2G(m_{\rm rem}+m_{\rm bin})/(R w^2)].
+$$
+
 
 Compute the optical depth along the prescribed orbit,
 
-\[\tau(T)=\int_0^T n_{\rm bin}[r(t)]\langle\Sigma(w)w\rangle\,dt.\]
+
+$$
+\tau(T)=\int_0^T n_{\rm bin}[r(t)]\langle\Sigma(w)w\rangle\,dt.
+$$
+
 
 This is the kinetic-theory expected passage count in a fixed dilute bath along an unperturbed path. We do not convert it into a merger probability or assume the orbit remains unchanged after an actual encounter. Retain small absolute counts honestly; do not tune the tracer abundance to produce events.
 
