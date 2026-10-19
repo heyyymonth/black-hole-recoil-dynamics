@@ -157,4 +157,4 @@ python experiments/run_e003.py
 python experiments/verify_e003.py
 ```
 
-The runner refuses uncommitted source inputs, records their generating commit, and regenerates only E003. It performs no stochastic sampling. Reproduction requires no network access after dependency installation. E003 is a separately documented addition on `main`; the v0.1.1 PDF and citation metadata describe E001/E002. Cite an immutable repository commit containing these results when using E003, rather than attributing them to v0.1.1.
+The runner refuses uncommitted source inputs, records their generating commit, and regenerates only E003. It performs no stochastic sampling. Reproduction requires no network access after dependency installation. E003 is a separately documented addition on `main`; the v0.1.1 PDF and citation metadata describe E001/E002. The [E003 BibTeX citation](../results/e003/CITATION.bib) identifies [results snapshot 7944b82](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/7944b82b3c99e070b7c312011020e4ee53b4255d), which contains the complete record and outputs. This is a commit-based citation, not a DOI or a journal publication.

@@ -85,7 +85,7 @@ Athota, Venkata Hemanth (2026). *Black-hole recoil dynamics: central residence a
 
 Use [CITATION.cff](CITATION.cff), [BibTeX](CITATION.bib), or GitHub's **Cite this repository** control. Cite the version used for the calculation. This release has no DOI; the versioned release identifies the research snapshot.
 
-Those citation files describe the E001/E002 v0.1.1 baseline. For E003, cite an immutable repository commit containing its research record and results, identified in the file history; the [E003 manifest](results/run_e003.json) also identifies the exact generating source commit. Do not attribute E003 results to v0.1.1.
+Those citation files describe the E001/E002 v0.1.1 baseline. For E003, use its [BibTeX citation](results/e003/CITATION.bib), which identifies [results snapshot 7944b82](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/7944b82b3c99e070b7c312011020e4ee53b4255d). The [E003 manifest](results/run_e003.json) also identifies the generating source commit. This commit-based citation has no DOI; E003 is not part of v0.1.1.
 
 Original code, technical documentation, and generated research artifacts are provided under the [MIT license](LICENSE). Preserve its copyright and permission notice when reusing substantial portions. Academic citation is requested separately from the license conditions. Referenced publications and dependencies retain their own rights and licenses.
 
