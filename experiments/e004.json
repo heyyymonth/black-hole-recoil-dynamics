@@ -1,0 +1,26 @@
+{
+  "experiment": "e004",
+  "model": "one evolved CMC snapshot: target-population audit and frozen spherical-potential comparison",
+  "source_repository": "NicholasRui/cmctoolkit",
+  "source_revision": "a4876e7706f7b23a14c63a5be7df63a07f2dccd9",
+  "model_name": "N8-RV1-RG8-Z0.1",
+  "files": {
+    "snapshot": {
+      "path": "N8-RV1-RG8-Z0.1/initial.snap0382.dat.gz",
+      "sha256": "38fda7f06f7bdcd77b81d06da9927cd13ef457d993011939460a893810f217d6"
+    },
+    "units": {
+      "path": "N8-RV1-RG8-Z0.1/initial.conv.sh",
+      "sha256": "5744b5c5a91270cd006e7927d584fac77f84cc42753dbb198b793350e7bafa82"
+    }
+  },
+  "cache_directory": "tmp/cmc",
+  "kick_fractions_of_matched_plummer_escape": [0.3, 0.8, 0.9],
+  "shell_resolutions": [256, 512, 1024, 2048],
+  "return_time_relative_error_screen": 0.1,
+  "shell_convergence_relative_tolerance": 0.01,
+  "minimum_bbh_count_for_distribution_calibration": 30,
+  "G_pc_kms2_per_msun": 0.00430091,
+  "pc_in_km": 30856775814913.67,
+  "seconds_per_myr": 31557600000000.0
+}
