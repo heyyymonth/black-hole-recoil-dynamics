@@ -60,8 +60,11 @@ def save_plot(rows, config, path):
     positions = np.arange(len(errors))
     axes[1].bar(positions, errors, .55, color='#be6d22', edgecolor='#70441b', linewidth=.7)
     for pos, error in zip(positions, errors):
-        axes[1].annotate(f'{error:+.1%}', (pos, error), xytext=(0, 5 if error >= 0 else -12),
-                         textcoords='offset points', ha='center', fontsize=9)
+        small = abs(error) < config['proxy_relative_error_tolerance']
+        axes[1].annotate(f'{error:+.1%}', (pos+.28 if small else pos, error),
+                         xytext=(5, 0) if small else (0, 5 if error >= 0 else -12),
+                         textcoords='offset points', ha='left' if small else 'center',
+                         va='center' if small else 'baseline', fontsize=9)
     tolerance = config['proxy_relative_error_tolerance']
     axes[1].axhline(0, color='#444444', lw=.7)
     axes[1].axhline(tolerance, color='#444444', ls='--', lw=.9, label='10% screening tolerance')
