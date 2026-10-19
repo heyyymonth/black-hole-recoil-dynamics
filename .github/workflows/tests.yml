@@ -24,5 +24,15 @@ jobs:
         run: python experiments/verify_results.py
       - name: Verify published paper provenance
         run: python paper/verify.py
-      - name: Rebuild technical note
+      - name: Install pinned Tectonic
+        shell: bash
+        run: |
+          curl --fail --silent --show-error --location 'https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.16.9/tectonic-0.16.9-x86_64-unknown-linux-gnu.tar.gz' --output "$RUNNER_TEMP/tectonic.tar.gz"
+          echo "f3c825128095dc3399ea11c08c18035b33050a216930c295c79e8eb11bd21de4  $RUNNER_TEMP/tectonic.tar.gz" | sha256sum --check
+          mkdir -p "$RUNNER_TEMP/tectonic-bin"
+          tar -xzf "$RUNNER_TEMP/tectonic.tar.gz" -C "$RUNNER_TEMP/tectonic-bin" tectonic
+          echo "$RUNNER_TEMP/tectonic-bin" >> "$GITHUB_PATH"
+      - name: Rebuild REVTeX manuscript
         run: python paper/build.py
+      - name: Verify rebuilt manuscript
+        run: python paper/verify.py

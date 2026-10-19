@@ -6,9 +6,9 @@ Independent physics research · Stellar dynamics and gravitational-wave source e
 
 [![Numerical verification](https://github.com/heyyymonth/black-hole-recoil-dynamics/actions/workflows/tests.yml/badge.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-0.1.0-14677d.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.0)
+[![Version](https://img.shields.io/badge/Version-0.1.1-14677d.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
-[Research paper](output/pdf/central-residence.pdf) · [Paper source](paper/manuscript.md) · [Cite this work](CITATION.cff) · [Release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.0)
+[Research paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [Cite this work](CITATION.cff) · [Release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
 ## Research question
 
@@ -27,7 +27,7 @@ At 99% of the central escape speed, the bound orbit samples a mean density of **
 
 ![Density exposure compared with simplified prescriptions](results/e002/exposure_comparison.png)
 
-These are controlled numerical benchmarks. The model omits dynamical friction, encounters, tidal boundaries, and host evolution. It does not infer encounter rates, merger probabilities, or constraints from observed gravitational-wave events. The [technical note](output/pdf/central-residence.pdf) records the derivation, results, independent checks, and limitations; it is not peer reviewed.
+These are controlled numerical benchmarks. The model omits dynamical friction, encounters, tidal boundaries, and host evolution. It does not infer encounter rates, merger probabilities, or constraints from observed gravitational-wave events. The [manuscript](output/pdf/central-residence.pdf) records the derivation, results, independent checks, and limitations; it is not peer reviewed.
 
 [Physical assumptions](docs/problem.md) · [Scientific relevance](docs/relevance.md) · [References](docs/references.md)
 
@@ -63,14 +63,14 @@ The runner replaces the corresponding generated outputs. No network access is ne
 | `tests/` | Independent numerical and analytical validation |
 | `results/` | Generated tables, figures, provenance, and verification record |
 | `docs/` | Physical problem, experiment records, and literature context |
-| `paper/` | Editable technical note and PDF build script |
+| `paper/` | LaTeX manuscript, BibTeX, vector figures, and build script |
 | `output/pdf/` | Published paper and build manifest |
 
 [Contribution guidance](CONTRIBUTING.md) describes how to add a separately identified experiment with its own assumptions, configuration, validation, and results.
 
 ## Citation and reuse
 
-Athota, Venkata Hemanth (2026). *Black-hole recoil dynamics: central residence and density exposure in a Plummer potential*. Version 0.1.0. [Versioned research release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.0).
+Athota, Venkata Hemanth (2026). *Black-hole recoil dynamics: central residence and density exposure in a Plummer potential*. Version 0.1.1. [Versioned research release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1).
 
 Use [CITATION.cff](CITATION.cff), [BibTeX](CITATION.bib), or GitHub's **Cite this repository** control. Cite the version used for the calculation. This release has no DOI; the versioned release identifies the research snapshot.
 

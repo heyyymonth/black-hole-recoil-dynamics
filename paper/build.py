@@ -1,179 +1,137 @@
-"""Render the repository's limited Markdown manuscript to a deterministic PDF."""
+"""Build the REVTeX manuscript, portable LaTeX archive, and provenance manifest."""
+from datetime import datetime, timezone
 from pathlib import Path
-from io import BytesIO
+import csv
 import hashlib
 import importlib.metadata
 import json
+import os
 import re
-from xml.sax.saxutils import escape
+import shutil
+import subprocess
+import sys
+import zipfile
 
-import matplotlib
-matplotlib.use('Agg')
-from matplotlib.mathtext import math_to_image
-from matplotlib.font_manager import FontProperties
-from PIL import Image as PILImage
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import ParagraphStyle
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.pdfgen import canvas
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak, Table, TableStyle
 from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
+PAPER = ROOT / 'paper'
 OUT = ROOT / 'output/pdf'
-TMP = ROOT / 'tmp/pdfs/math'
-OUT.mkdir(parents=True, exist_ok=True)
-TMP.mkdir(parents=True, exist_ok=True)
-WIDTH = A4[0] - 108
-FONTDIR = Path(matplotlib.get_data_path()) / 'fonts/ttf'
-for name, file in [('Body', 'DejaVuSerif.ttf'), ('Body-Bold', 'DejaVuSerif-Bold.ttf'),
-                   ('Body-Italic', 'DejaVuSerif-Italic.ttf'), ('Body-BoldItalic', 'DejaVuSerif-BoldItalic.ttf'),
-                   ('Heading', 'DejaVuSans.ttf'), ('Heading-Bold', 'DejaVuSans-Bold.ttf')]:
-    pdfmetrics.registerFont(TTFont(name, str(FONTDIR / file)))
-pdfmetrics.registerFontFamily('Body', normal='Body', bold='Body-Bold', italic='Body-Italic', boldItalic='Body-BoldItalic')
-pdfmetrics.registerFontFamily('Heading', normal='Heading', bold='Heading-Bold')
-styles = {
-    'body': ParagraphStyle('body', fontName='Body', fontSize=9.5, leading=14, spaceAfter=8),
-    'title': ParagraphStyle('title', fontName='Heading-Bold', fontSize=21, leading=27, spaceAfter=16),
-    'h2': ParagraphStyle('h2', fontName='Heading-Bold', fontSize=13, leading=18, spaceBefore=8, spaceAfter=10, keepWithNext=True),
-    'h3': ParagraphStyle('h3', fontName='Heading-Bold', fontSize=10.5, leading=15, spaceBefore=7, spaceAfter=6, keepWithNext=True),
-    'caption': ParagraphStyle('caption', fontName='Body', fontSize=8, leading=11, spaceAfter=11),
-    'cell': ParagraphStyle('cell', fontName='Body', fontSize=7.6, leading=11),
-    'headcell': ParagraphStyle('headcell', fontName='Heading-Bold', fontSize=7.5, leading=10, textColor=colors.white),
-}
-matplotlib.rcParams.update({'mathtext.fontset': 'dejavuserif', 'font.family': 'DejaVu Serif'})
+TMP = ROOT / 'tmp/latex'
+STAGE = TMP / 'source'
+TOOLCHAIN = json.loads((PAPER / 'toolchain.json').read_text())
+VERSION = '0.1.1'
+for directory in (OUT, TMP, STAGE, PAPER / 'tables'):
+    directory.mkdir(parents=True, exist_ok=True)
 
 
-def equation(tex, size=10):
-    key = hashlib.sha256(f'{size}:{tex}'.encode()).hexdigest()
-    path = TMP / f'{key}.png'
-    # Always render with current pinned libraries, rather than trust an old cache.
-    buf = BytesIO()
-    math_to_image('$'+tex+'$', buf, prop=FontProperties(size=size), dpi=220, format='png', color='#172b3a')
-    path.write_bytes(buf.getvalue())
-    with PILImage.open(path) as im:
-        width, height = (v * 72 / 220 for v in im.size)
-    return path, width, height
+def rows(relative):
+    with (ROOT / relative).open() as stream:
+        return list(csv.DictReader(stream))
 
 
-def inline(text):
-    pattern = r'(\$[^$]+\$|\[[^\]]+\]\([^)]+\)|`[^`]+`|\*\*.+?\*\*|\*[^*]+\*)'
-    parts = re.split(pattern, text)
-    result = []
-    for item in parts:
-        if item.startswith('$') and item.endswith('$'):
-            path, width, height = equation(item[1:-1], 9.5)
-            result.append(f'<img src="{path}" width="{width:.3f}" height="{height:.3f}" valign="-3"/>')
-        elif item.startswith('[') and '](' in item:
-            label, url = re.match(r'\[([^\]]+)\]\(([^)]+)\)', item).groups()
-            result.append(f'<link href="{escape(url)}" color="#14677d">{escape(label)}</link>')
-        elif item.startswith('**'):
-            result.append('<b>'+escape(item[2:-2])+'</b>')
-        elif item.startswith('*'):
-            result.append('<i>'+escape(item[1:-1])+'</i>')
-        elif item.startswith('`'):
-            result.append('<font name="Heading" size="8.5">'+escape(item[1:-1])+'</font>')
-        else:
-            result.append(escape(item))
-    return ''.join(result)
+def write_table(name, header, values):
+    content = ['% Generated from committed CSV results by paper/build.py.',
+               r'\begin{ruledtabular}', r'\begin{tabular}{'+'r'*len(header)+'}',
+               ' & '.join(header)+r' \\', r'\hline']
+    content.extend(' & '.join(row)+r' \\' for row in values)
+    content += [r'\end{tabular}', r'\end{ruledtabular}']
+    (PAPER / 'tables' / name).write_text('\n'.join(content)+'\n')
 
 
-def page(canvas, doc):
-    canvas.saveState()
-    canvas.setStrokeColor(colors.HexColor('#14677d'))
-    canvas.setLineWidth(.7)
-    canvas.line(54, A4[1]-39, A4[0]-54, A4[1]-39)
-    canvas.setFont('Heading', 7)
-    canvas.setFillColor(colors.HexColor('#465765'))
-    canvas.drawString(54, A4[1]-29, 'BLACK-HOLE RECOIL DYNAMICS')
-    canvas.drawRightString(A4[0]-54, A4[1]-29, 'BHRD-TN-001  /  v0.1.0')
-    canvas.drawString(54, 30, 'Athota  |  Independent research  |  MIT license')
-    canvas.drawRightString(A4[0]-54, 30, str(doc.page))
-    canvas.restoreState()
-
-
-lines = (ROOT / 'paper/manuscript.md').read_text().splitlines()
-story = []
-i = 0
-while i < len(lines):
-    line = lines[i].strip()
-    if not line:
-        i += 1
-        continue
-    if line == '<!-- pagebreak -->':
-        story.append(PageBreak())
-    elif line.startswith('### '):
-        story.append(Paragraph(inline(line[4:]), styles['h3']))
-    elif line.startswith('## '):
-        story.append(Paragraph(inline(line[3:]), styles['h2']))
-    elif line.startswith('# '):
-        story.append(Paragraph(inline(line[2:]), styles['title']))
-    elif line.startswith('$$') and line.endswith('$$'):
-        path, width, height = equation(line[2:-2], 11)
-        scale = min(1, WIDTH / width)
-        story += [Spacer(1, 3), Image(str(path), width*scale, height*scale), Spacer(1, 12)]
-    elif line.startswith('!['):
-        match = re.match(r'!\[([^\]]*)\]\(([^)]+)\)', line)
-        path = (ROOT / 'paper' / match.group(2)).resolve()
-        with PILImage.open(path) as im:
-            ratio = im.height / im.width
-        story += [Spacer(1, 4), Image(str(path), WIDTH, WIDTH*ratio), Spacer(1, 7)]
-    elif line.startswith('|'):
-        rows = []
-        while i < len(lines) and lines[i].strip().startswith('|'):
-            cells = [s.strip() for s in lines[i].strip().strip('|').split('|')]
-            if not all(re.fullmatch(r':?-+:?', c) for c in cells):
-                style = styles['headcell'] if not rows else styles['cell']
-                rows.append([Paragraph(inline(c), style) for c in cells])
-            i += 1
-        table = Table(rows, colWidths=[WIDTH/len(rows[0])]*len(rows[0]), repeatRows=1, hAlign='LEFT')
-        table.setStyle(TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#14677d')),
-            ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.HexColor('#f0f5f7'), colors.white]),
-            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
-            ('LEFTPADDING', (0, 0), (-1, -1), 7), ('RIGHTPADDING', (0, 0), (-1, -1), 7),
-            ('TOPPADDING', (0, 0), (-1, -1), 7), ('BOTTOMPADDING', (0, 0), (-1, -1), 7),
-        ]))
-        story += [table, Spacer(1, 11)]
-        continue
-    else:
-        paragraph = [lines[i]]
-        while i+1 < len(lines) and lines[i+1].strip():
-            if lines[i+1].startswith(('#', '$$', '|', '![', '<!--')):
-                break
-            i += 1
-            paragraph.append(lines[i])
-        text = '\n'.join(paragraph)
-        text = text.replace('  \n', '<br/>').replace('\n', ' ')
-        markup = inline(text).replace('&lt;br/&gt;', '<br/>')
-        style = styles['caption'] if line.startswith('*Figure ') else styles['body']
-        story.append(Paragraph(markup, style))
-    i += 1
-
+return_rows = [row for row in rows('results/e001/return_times.csv')
+               if float(row['eta']) in [.5, .8, .9, .95, .99, .999]]
+write_table('return.tex', [r'$\eta$', r'$x_a$', r'$P$'],
+            [[f"{float(row['eta']):g}", f"{float(row['apocenter_over_b']):.6f}",
+              f"{float(row['first_return_over_tdyn']):.6f}"] for row in return_rows])
+cycle_rows = [row for row in rows('results/e002/cycles.csv') if float(row['eta']) in [.3, .8, .99]]
+write_table('exposure.tex', [r'$\eta$', r'$I(P)$', r'$I(P)/P$', r'$C(P,1)/P$'],
+            [[f"{float(row['eta']):g}", f"{float(row['cycle_density_exposure']):.6f}",
+              f"{float(row['cycle_mean_density']):.6g}", f"{float(row['core_fraction_c_1']):.6g}"]
+             for row in cycle_rows])
+subprocess.run([sys.executable, str(PAPER / 'figures.py')], cwd=ROOT, check=True)
+engine = shutil.which('tectonic')
+if not engine:
+    raise SystemExit('Install Tectonic 0.16.9, then rerun. See paper/README.md.')
+engine_version = subprocess.check_output([engine, '--version'], text=True).strip()
+if engine_version != 'Tectonic 0.16.9':
+    raise SystemExit(f'Expected Tectonic 0.16.9; found {engine_version}.')
+env = os.environ.copy()
+env['SOURCE_DATE_EPOCH'] = str(int(datetime(2026, 10, 18, tzinfo=timezone.utc).timestamp()))
+revtex_archive = ROOT / 'tmp/revtex-4.2f.zip'
+if not revtex_archive.exists():
+    subprocess.run(['curl', '--fail', '--silent', '--show-error', '--location',
+                    TOOLCHAIN['revtex_archive_url'], '--output', str(revtex_archive)], check=True)
+if hashlib.sha256(revtex_archive.read_bytes()).hexdigest() != TOOLCHAIN['revtex_archive_sha256']:
+    raise SystemExit('REVTeX dependency checksum mismatch; do not use an unverified replacement.')
+with zipfile.ZipFile(revtex_archive) as distribution:
+    for item in distribution.infolist():
+        if item.filename.startswith(('tex/latex/revtex/', 'bibtex/bst/revtex/')) and not item.is_dir():
+            (STAGE / Path(item.filename).name).write_bytes(distribution.read(item))
+for name in ['manuscript.tex', 'references.bib']:
+    shutil.copyfile(PAPER / name, STAGE / name)
+for folder in ['figures', 'tables']:
+    shutil.copytree(PAPER / folder, STAGE / folder, dirs_exist_ok=True)
+command = [engine, '--untrusted', '--keep-logs', '--keep-intermediates',
+           '--outdir', str(TMP), 'manuscript.tex']
+completed = subprocess.run(command, cwd=STAGE, env=env, text=True, capture_output=True)
+(TMP / 'build-console.txt').write_text(completed.stdout+completed.stderr)
+if completed.returncode:
+    raise SystemExit(completed.stdout+completed.stderr)
+log = (TMP / 'manuscript.log').read_text(errors='replace')
+blg = (TMP / 'manuscript.blg').read_text(errors='replace')
+for problem in [r'Overfull \\[hv]box', r'Citation .+ undefined', r'Reference .+ undefined',
+                r'There were undefined', r'Missing character:', r'! LaTeX Error']:
+    if re.search(problem, log):
+        raise SystemExit(f'LaTeX validation failed: {problem}. Inspect tmp/latex/manuscript.log.')
+style_diagnostics = ['Warning--jnrlst (dependency: not reversed) set 1']
+entry_warnings = [line for line in blg.splitlines() if line.startswith('Warning--') and line not in style_diagnostics]
+if entry_warnings or "I couldn't open" in blg:
+    raise SystemExit('BibTeX warnings found; inspect tmp/latex/manuscript.blg.')
 pdf = OUT / 'central-residence.pdf'
-doc = SimpleDocTemplate(str(pdf), pagesize=A4, rightMargin=54, leftMargin=54,
-                        topMargin=53, bottomMargin=49,
-                        title='Central residence and density exposure of recoiling remnants in a Plummer potential',
-                        author='Venkata Hemanth Athota', subject='Technical note BHRD-TN-001; version 0.1.0')
-def invariant_canvas(*args, **kwargs):
-    kwargs['invariant'] = 1
-    return canvas.Canvas(*args, **kwargs)
-doc.build(story, onFirstPage=page, onLaterPages=page, canvasmaker=invariant_canvas)
+shutil.copyfile(TMP / 'manuscript.pdf', pdf)
 reader = PdfReader(pdf)
-text = '\n'.join(p.extract_text() for p in reader.pages)
-assert 'Venkata Hemanth Athota' in text
-assert 'bharadwaj.hemanth.002@gmail.com' in text
-assert len(reader.pages) == 6, f'Unexpected pagination: {len(reader.pages)}'
-inputs = [ROOT / name for name in ['paper/manuscript.md', 'paper/build.py', 'paper/verify.py', 'paper/requirements.txt',
-           'requirements-lock.txt', 'CITATION.cff', 'LICENSE', 'results/run_all.json']]
+text = '\n'.join(page.extract_text() for page in reader.pages)
+for required in ['Venkata Hemanth Athota', 'bharadwaj.hemanth.002@gmail.com', 'Islam']:
+    if re.sub(r'\s+', '', required) not in re.sub(r'\s+', '', text):
+        raise AssertionError(f'Missing manuscript text: {required}')
+for page in reader.pages:
+    assert abs(float(page.mediabox.width)-612) < .1
+    assert abs(float(page.mediabox.height)-792) < .1
+for forbidden in ['BHRD-TN-001', 'Not peer reviewed', 'Published as a conference paper', 'DRAFT']:
+    assert forbidden not in text, f'Unexpected publication label: {forbidden}'
+
+archive = OUT / 'manuscript-source.zip'
+source_files = [PAPER / 'manuscript.tex', PAPER / 'references.bib', PAPER / 'SOURCE_README.txt']
+source_files += sorted((PAPER / 'figures').glob('*.pdf'))
+source_files += sorted((PAPER / 'tables').glob('*.tex'))
+with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_DEFLATED) as bundle:
+    def add(name, content):
+        info = zipfile.ZipInfo(name, date_time=(2026, 10, 18, 0, 0, 0))
+        info.compress_type = zipfile.ZIP_DEFLATED
+        info.external_attr = 0o100644 << 16
+        bundle.writestr(info, content)
+    for path in source_files:
+        add(path.relative_to(PAPER).as_posix(), path.read_bytes())
+    add('manuscript.bbl', (TMP / 'manuscript.bbl').read_bytes())
+    add('LICENSE', (ROOT / 'LICENSE').read_bytes())
+    add('vendor/revtex-4.2f.zip', revtex_archive.read_bytes())
+
+inputs = [ROOT / name for name in ['paper/build.py', 'paper/verify.py', 'paper/figures.py',
+          'paper/requirements.txt', 'paper/toolchain.json', 'requirements-lock.txt', 'CITATION.cff', 'LICENSE',
+          'experiments/config.json', 'results/run_all.json']]
+inputs += source_files
 inputs += sorted((ROOT / 'results').glob('e*/*.csv'))
-inputs += sorted((ROOT / 'results').glob('e*/*.png'))
+inputs += sorted((ROOT / 'src').rglob('*.py'))
 sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
-manifest = {'paper': 'BHRD-TN-001', 'version': '0.1.0', 'pages': len(reader.pages),
-            'versions': {name: importlib.metadata.version(name) for name in ['reportlab', 'matplotlib', 'pillow', 'pypdf']},
-            'input_sha256': {str(p.relative_to(ROOT)): sha(p) for p in inputs},
-            'output_sha256': {str(pdf.relative_to(ROOT)): sha(pdf)}}
+manifest = {'paper': 'central-residence', 'version': VERSION, 'pages': len(reader.pages),
+            'format': 'REVTeX 4.2 APS/PRD reprint; US Letter; two columns; txfonts',
+            'engine': engine_version, 'source_date_epoch': env['SOURCE_DATE_EPOCH'],
+            'revtex_log': next(line.strip() for line in log.splitlines() if line.startswith('Document Class: revtex')),
+            'versions': {name: importlib.metadata.version(name) for name in ['matplotlib', 'numpy', 'scipy', 'pypdf']},
+            'checks': {'undefined_references': 0, 'overfull_boxes': 0, 'bibliography_entry_warnings': 0,
+                       'allowed_bst_diagnostics': [line for line in style_diagnostics if line in blg]},
+            'input_sha256': {str(p.relative_to(ROOT)): sha(p) for p in sorted(set(inputs))},
+            'output_sha256': {str(p.relative_to(ROOT)): sha(p) for p in [pdf, archive]}}
 (OUT / 'build.json').write_text(json.dumps(manifest, indent=2)+'\n')
-print(f'Built {pdf.relative_to(ROOT)} ({len(reader.pages)} pages); author and contact checked.')
+print(f'Built {len(reader.pages)}-page REVTeX manuscript and portable LaTeX source archive.')

@@ -5,11 +5,11 @@ title: "Black-hole recoil dynamics: central residence and density exposure in a 
 authors:
   - family-names: Athota
     given-names: Venkata Hemanth
-version: 0.1.0
+version: 0.1.1
 date-released: 2026-10-18
 license: MIT
 repository-code: "https://github.com/heyyymonth/black-hole-recoil-dynamics"
-url: "https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.0"
+url: "https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1"
 abstract: >-
   Reproducible collisionless benchmarks for centrally kicked test particles in a
   static, isolated Plummer potential. Includes first central-return times,
