@@ -1,0 +1,183 @@
+{
+  "researcher": "Hemanth AV",
+  "research_identity": "Hemanth AV Research",
+  "run_utc": "2026-10-19T01:48:04.440544+00:00",
+  "python": "3.11.1",
+  "versions": {
+    "numpy": "1.24.2",
+    "scipy": "1.10.1",
+    "matplotlib": "3.7.1"
+  },
+  "source_revision": "fdaba2c879e963688fce2755c97ea0ee19c039be",
+  "source_sha256": {
+    "experiments/config.json": "ea53fe596df49d5463e15467983d0e4af423304a835d8302175058d4c8a6870b",
+    "experiments/run.py": "c59f4015dc28faf914b8d01e33dbf23fc1bd6f8ad3bcc146d2be3535b2d07527",
+    "pyproject.toml": "902d7cb2d61e11bc4fca0375495ac20b98a20b2fb1a284547555da2fc8ac4e2b",
+    "requirements.txt": "fadf444abe37375678f3070583db30c26f96005d3cffab861307e8b19b609c17",
+    "requirements-lock.txt": "90001901b188e80285e2679b5c36dca46073ae9fd5c758526c103a6fa83e5201",
+    "src/recoil_dynamics/__init__.py": "b9fb812188df15e292ae9d1f19147b7f50d7f1f6693fa78ccaa5085529e2ddf7",
+    "src/recoil_dynamics/plummer.py": "1a94d5680654d6f79bdc90b25513332f46ee8e3645f569fbaf331e0d25bfd22c"
+  },
+  "output_sha256": {
+    "results/e001/return_time.png": "59a008f44afe89dd8f6eeaec877298c37d190280f908a814f38d8e17c5f0dd58",
+    "results/e001/return_time.svg": "b5a1aacbb66fe176959307262eb0d1c14bd6d54288219a8f26a1a9fecc7fc340",
+    "results/e001/return_times.csv": "e3572e92276f362ce1159a9b35797157a968f880e46d6b5d866cc55deb3d2ebb",
+    "results/e002/core_residence.png": "0b8e546016e96f5331f9ffd9e31ebfa17944845ce004635770e931b08e918130",
+    "results/e002/core_residence.svg": "bd5f8073101cecd33c35ea07ce18cfbbee40b59d41aa8c166ebf7462b71c3d95",
+    "results/e002/cycles.csv": "af8deb266ac2119a15c99d27ec277ac7b2e37e4879088bc5093f172c08235d04",
+    "results/e002/exposure_comparison.png": "de834568e657730910ad2f6d490af3f30773a6bea40f2f4e1a80877cfd02c076",
+    "results/e002/exposure_comparison.svg": "2bae7beedc176eb6eef1716e3f945439afc01b5094234f0af2152bb9fbd9ffa9",
+    "results/e002/fixed_horizons.csv": "71f76d00a934861449973ce8906b56249308bf3ccee16a908d067cde71004308",
+    "results/e002/relative_horizons.csv": "e15508c783d482c7b30554d7fb9d20c57a97810f3bd8c6c3b7c990e26a2fd679"
+  },
+  "experiments_run": [
+    "e001",
+    "e002"
+  ],
+  "summaries": {
+    "e001": [
+      {
+        "eta": 0.1,
+        "apocenter_over_b": 0.14249228262288774,
+        "first_return_over_tdyn": 3.1773638907530346
+      },
+      {
+        "eta": 0.3,
+        "apocenter_over_b": 0.45561346025555777,
+        "first_return_over_tdyn": 3.497933032316754
+      },
+      {
+        "eta": 0.5,
+        "apocenter_over_b": 0.8819171036881969,
+        "first_return_over_tdyn": 4.395561240629295
+      },
+      {
+        "eta": 0.7,
+        "apocenter_over_b": 1.6866164723943442,
+        "first_return_over_tdyn": 7.138836131532288
+      },
+      {
+        "eta": 0.8,
+        "apocenter_over_b": 2.591534175486801,
+        "first_return_over_tdyn": 11.371438675557773
+      },
+      {
+        "eta": 0.9,
+        "apocenter_over_b": 5.167284685880077,
+        "first_return_over_tdyn": 27.972769470760266
+      },
+      {
+        "eta": 0.95,
+        "apocenter_over_b": 10.207543845009798,
+        "first_return_over_tdyn": 74.15666805475563
+      },
+      {
+        "eta": 0.99,
+        "apocenter_over_b": 50.24130529613699,
+        "first_return_over_tdyn": 792.5517443904946
+      },
+      {
+        "eta": 0.999,
+        "apocenter_over_b": 500.2491255615396,
+        "first_return_over_tdyn": 24856.344701338334
+      }
+    ],
+    "e002": {
+      "cycles": [
+        {
+          "eta": 0.05,
+          "period_over_tdyn": 3.1504549206506756,
+          "cycle_density_exposure": 3.130810678574568,
+          "cycle_mean_density": 0.9937646331812771,
+          "core_fraction_c_0.1": 1.0,
+          "core_fraction_c_0.3": 1.0,
+          "core_fraction_c_1": 1.0
+        },
+        {
+          "eta": 0.1,
+          "period_over_tdyn": 3.1773638907530346,
+          "cycle_density_exposure": 3.0986713873478213,
+          "cycle_mean_density": 0.975233399097211,
+          "core_fraction_c_0.1": 0.49403463311639534,
+          "core_fraction_c_0.3": 1.0,
+          "core_fraction_c_1": 1.0
+        },
+        {
+          "eta": 0.3,
+          "period_over_tdyn": 3.497933032316754,
+          "cycle_density_exposure": 2.774829771788824,
+          "cycle_mean_density": 0.7932769856234201,
+          "core_fraction_c_0.1": 0.13604076906200518,
+          "core_fraction_c_0.3": 0.4465029631058677,
+          "core_fraction_c_1": 1.0
+        },
+        {
+          "eta": 0.5,
+          "period_over_tdyn": 4.395561240629295,
+          "cycle_density_exposure": 2.226445322942055,
+          "cycle_mean_density": 0.5065212838721145,
+          "core_fraction_c_0.1": 0.06456281331759486,
+          "core_fraction_c_0.3": 0.19908686743930495,
+          "core_fraction_c_1": 1.0
+        },
+        {
+          "eta": 0.7,
+          "period_over_tdyn": 7.138836131532288,
+          "cycle_density_exposure": 1.6271142239320848,
+          "cycle_mean_density": 0.22792429941697503,
+          "core_fraction_c_0.1": 0.028348336887678512,
+          "core_fraction_c_0.3": 0.08620174503941883,
+          "core_fraction_c_1": 0.33393487115571585
+        },
+        {
+          "eta": 0.8,
+          "period_over_tdyn": 11.371438675557773,
+          "cycle_density_exposure": 1.3692281197488025,
+          "cycle_mean_density": 0.12040940102784677,
+          "core_fraction_c_0.1": 0.015565897421265873,
+          "core_fraction_c_0.3": 0.04717894382173537,
+          "core_fraction_c_1": 0.1744646487574529
+        },
+        {
+          "eta": 0.9,
+          "period_over_tdyn": 27.972769470760266,
+          "cycle_density_exposure": 1.1644290649735356,
+          "cycle_mean_density": 0.04162723559391232,
+          "core_fraction_c_0.1": 0.005623190958346136,
+          "core_fraction_c_0.3": 0.017005973017444755,
+          "core_fraction_c_1": 0.061236506424008845
+        },
+        {
+          "eta": 0.95,
+          "period_over_tdyn": 74.15666805475563,
+          "cycle_density_exposure": 1.0839881626821455,
+          "cycle_mean_density": 0.014617541363667429,
+          "core_fraction_c_0.1": 0.002009283459599333,
+          "core_fraction_c_0.3": 0.006071475696017567,
+          "core_fraction_c_1": 0.021658206432564837
+        },
+        {
+          "eta": 0.99,
+          "period_over_tdyn": 792.5517443904946,
+          "cycle_density_exposure": 1.0292150860400677,
+          "cycle_mean_density": 0.0012986093252896403,
+          "core_fraction_c_0.1": 0.0001803933279333788,
+          "core_fraction_c_0.3": 0.000544779835593074,
+          "core_fraction_c_1": 0.0019311974416296957
+        },
+        {
+          "eta": 0.999,
+          "period_over_tdyn": 24856.344701338334,
+          "cycle_density_exposure": 1.0178936818600868,
+          "cycle_mean_density": 4.095106074889928e-05,
+          "core_fraction_c_0.1": 5.699987746431236e-06,
+          "core_fraction_c_0.3": 1.7211626109605244e-05,
+          "core_fraction_c_1": 6.0935447883255466e-05
+        }
+      ],
+      "fixed_rows": 77,
+      "relative_rows": 50
+    }
+  },
+  "interpretation": "Controlled collisionless orbital benchmarks; no observed-data inference or merger probabilities."
+}
