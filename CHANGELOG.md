@@ -1,6 +1,6 @@
 # Release record
 
-## 0.1.1 - 2026-10-18
+## 0.1.1 - 2026-10-19
 
 - Replace the custom report layout with a two-column REVTeX 4.2f physics manuscript.
 - Add native numbered equations, BibTeX references, serif typography, and vector figures.
