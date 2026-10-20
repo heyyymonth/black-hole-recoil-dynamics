@@ -26,3 +26,9 @@ Compress the radial mass profile into 256, 512, 1024, and 2048 bins of approxima
 ## Interpretation and stop rule
 
 Complete the stated comparisons and report support, discrepancy, or insufficient information for each assumption separately. Do not call a frozen-potential comparison a validation of friction. The next experiment must address a diagnosed missing ingredient, with its required data and independent comparison specified. A denser kick grid is not a substitute for that ingredient.
+
+## Validation addition, 20 October 2026
+
+After the initial calculation, add the authors' separately tabulated `PARAM0382.txt` at the same pinned revision as an input-accounting cross-check. Compare age, total mass, black-hole mass, system and object counts, binary count, black-hole count, and binary-black-hole count. This checks interpretation of the same simulation state, not another independent cluster. No sample selection, physical comparison, or decision threshold changes. The original protocol is preserved in commit `50cf824`.
+
+Also compare the finest compressed potential directly with the uncompressed spherical-shell potential at the same three kicks. Record signed relative errors using the full-shell results as denominators and the same 1% numerical screen. Agreement between adjacent resolutions alone need not bound compression error. This additional reference calculation tests numerical compression, not the frozen-potential approximation to live dynamics.

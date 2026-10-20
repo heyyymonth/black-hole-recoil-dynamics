@@ -103,8 +103,44 @@ def load_snapshot(snapshot_path, conversion_path):
                            raw[:, 9], raw[:, 10], raw[:, 11])
 
 
+def check_upstream_summary(snapshot, path):
+    """Cross-check parsing against the authors' separately tabulated summary.
+
+    This checks the same simulation state, not independent astrophysical data.
+    Rounded binary COM masses require a small relative mass tolerance.
+    """
+    s = snapshot
+    single_bh = ~s.binary & (s.kind == 14)
+    component0_bh = s.binary & (s.kind0 == 14)
+    component1_bh = s.binary & (s.kind1 == 14)
+    actual = {
+        'Mtot': s.total_mass,
+        'Mbh': float(s.mass[single_bh].sum()+s.m0[component0_bh].sum()
+                     +s.m1[component1_bh].sum()),
+        'age': s.age_gyr,
+        'Nsys': len(s.mass),
+        'Nobj': len(s.mass)+int(s.binary.sum()),
+        'Nbin': int(s.binary.sum()),
+        'N_14': int(single_bh.sum()+component0_bh.sum()+component1_bh.sum()),
+        'Nbin_14_14': int((component0_bh & component1_bh).sum()),
+    }
+    text = Path(path).read_text()
+    checks = []
+    for key, value in actual.items():
+        matches = re.findall(r'^'+key+r'\s+([^\s]+)\s*$', text, re.MULTILINE)
+        if len(matches) != 1:
+            raise ValueError(f'Missing or ambiguous upstream summary: {key}')
+        reference = float(matches[0])
+        rtol = 0 if key.startswith('N') else (1e-7 if key.startswith('M') else 1e-12)
+        if not math.isfinite(reference) or not math.isclose(value, reference, rel_tol=rtol, abs_tol=0):
+            raise ValueError(f'Upstream summary mismatch: {key}: {value} vs {reference}')
+        checks.append({'quantity': key, 'derived': value, 'reference': reference,
+                       'relative_tolerance': rtol, 'passed': True})
+    return checks
+
+
 def cdf_distance(values, reference_cdf):
-    """Descriptive maximum ECDF distance, not an independent-sample p value."""
+    """ECDF distance from a continuous reference, not a significance test."""
     values = np.sort(np.asarray(values))
     if len(values) == 0:
         return None
@@ -112,6 +148,21 @@ def cdf_distance(values, reference_cdf):
     n = len(values)
     return float(max(np.max(np.arange(1, n+1)/n-reference),
                      np.max(reference-np.arange(n)/n)))
+
+
+def empirical_mass_cdf_distance(values, reference_radii, reference_masses):
+    """Exact descriptive distance between two step CDFs, including tied jumps."""
+    values = np.sort(np.asarray(values))
+    if len(values) == 0:
+        return None
+    order = np.argsort(reference_radii)
+    radii = np.asarray(reference_radii)[order]
+    mass = np.asarray(reference_masses)[order]
+    cumulative = np.r_[0., np.cumsum(mass)/mass.sum()]
+    jumps = np.union1d(values, radii)
+    target = np.searchsorted(values, jumps, side='right')/len(values)
+    reference = cumulative[np.searchsorted(radii, jumps, side='right')]
+    return float(np.max(np.abs(target-reference)))
 
 
 def compress_shells(radius, mass, count):
@@ -138,13 +189,6 @@ def population_audit(snapshot, gravitational_constant):
     rh = snapshot.half_mass_radius
     b = rh*math.sqrt(2**(2/3)-1)
     velocity = math.sqrt(gravitational_constant*mass/b)
-    order = np.argsort(snapshot.radius)
-    radii = snapshot.radius[order]
-    cumulative = np.r_[0., np.cumsum(snapshot.mass[order])/mass]
-
-    def host_cdf(r):
-        return cumulative[np.searchsorted(radii, r, side='right')]
-
     def plummer_cdf(r):
         x = r/b
         return x**3/(1+x*x)**1.5
@@ -164,7 +208,8 @@ def population_audit(snapshot, gravitational_constant):
                'median_system_mass_msun': float(np.median(m)) if count else None,
                'minimum_system_mass_msun': float(np.min(m)) if count else None,
                'maximum_system_mass_msun': float(np.max(m)) if count else None,
-               'radial_cdf_distance_from_host_mass': cdf_distance(r, host_cdf),
+               'radial_cdf_distance_from_host_mass': empirical_mass_cdf_distance(
+                   r, snapshot.radius, snapshot.mass),
                'radial_cdf_distance_from_plummer': cdf_distance(r, plummer_cdf),
                'speed_fraction_cdf_distance_from_plummer': cdf_distance(y, speed_cdf),
                'mean_squared_speed_fraction': float(np.mean(y*y)) if count else None,

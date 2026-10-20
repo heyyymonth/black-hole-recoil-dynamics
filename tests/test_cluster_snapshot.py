@@ -5,7 +5,8 @@ import numpy as np
 import pytest
 
 from recoil_dynamics.cluster_snapshot import (
-    load_snapshot, read_conversion, compress_shells, cdf_distance)
+    load_snapshot, read_conversion, compress_shells, cdf_distance, check_upstream_summary,
+    empirical_mass_cdf_distance)
 
 
 def make_fixture(tmp_path):
@@ -57,6 +58,34 @@ def test_binary_mass_accounting_rejects_inconsistent_input(tmp_path):
         load_snapshot(snap, units)
 
 
+@pytest.mark.parametrize('corruption', [None, 'count', 'mass', 'age', 'missing', 'duplicate', 'nonfinite'])
+def test_upstream_accounting_check(tmp_path, corruption):
+    snap, units = make_fixture(tmp_path)
+    reference = tmp_path/'PARAM.txt'
+    text = 'Mtot 47\nMbh 45\nage 2\nNsys 4\nNobj 6\nNbin 2\nN_14 4\nNbin_14_14 1\n'
+    if corruption == 'count':
+        text = text.replace('N_14 4', 'N_14 3')
+    elif corruption == 'mass':
+        text = text.replace('Mtot 47', 'Mtot 4700')
+    elif corruption == 'age':
+        text = text.replace('age 2', 'age 2000')
+    elif corruption == 'missing':
+        text = text.replace('Nbin_14_14 1\n', '')
+    elif corruption == 'duplicate':
+        text += 'Nsys 4\n'
+    elif corruption == 'nonfinite':
+        text = text.replace('Mbh 45', 'Mbh nan')
+    reference.write_text(text)
+    snapshot = load_snapshot(snap, units)
+    if corruption is None:
+        checks = check_upstream_summary(snapshot, reference)
+        assert len(checks) == 8
+        assert all(check['passed'] for check in checks)
+    else:
+        with pytest.raises(ValueError):
+            check_upstream_summary(snapshot, reference)
+
+
 def test_conversion_parser_rejects_duplicates_and_executable_values(tmp_path):
     _, units = make_fixture(tmp_path)
     units.write_text(units.read_text()+'nbtimeunitcgs=2e12\n')
@@ -82,6 +111,14 @@ def test_cdf_distance_and_empty_sample():
     assert cdf_distance([.25, .75], lambda x: x) == .25
     assert cdf_distance([], lambda x: x) is None
     assert cdf_distance([.5, .5], lambda x: x) == .5
+
+
+def test_discrete_cdf_distances_include_simultaneous_jumps():
+    assert empirical_mass_cdf_distance([1, 2], [1, 2], [1, 1]) == 0
+    assert empirical_mass_cdf_distance([1, 2], [1, 2], [9, 1]) == pytest.approx(.4)
+    assert empirical_mass_cdf_distance([1, 1, 3], [1, 2, 3], [2, 1, 1]) == pytest.approx(1/6)
+    assert empirical_mass_cdf_distance([3], [1, 2], [1, 1]) == 1
+    assert empirical_mass_cdf_distance([], [1, 2], [1, 1]) is None
 
 
 @pytest.mark.parametrize('r,m,n', [([], [], 2), ([0], [1], 2),

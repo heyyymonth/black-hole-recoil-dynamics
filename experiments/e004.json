@@ -12,6 +12,10 @@
     "units": {
       "path": "N8-RV1-RG8-Z0.1/initial.conv.sh",
       "sha256": "5744b5c5a91270cd006e7927d584fac77f84cc42753dbb198b793350e7bafa82"
+    },
+    "reference": {
+      "path": "CMC/N8-RV1-RG8-Z0.1/PARAM0382.txt",
+      "sha256": "a6eaa2d82cd429cba3a7db5eb8409ebc354dfe4d90f110df80c3fdca08d8a053"
     }
   },
   "cache_directory": "tmp/cmc",

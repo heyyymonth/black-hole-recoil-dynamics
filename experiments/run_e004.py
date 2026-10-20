@@ -17,7 +17,8 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from fetch_e004 import fetch
-from recoil_dynamics.cluster_snapshot import load_snapshot, population_audit, compress_shells
+from recoil_dynamics.cluster_snapshot import (
+    load_snapshot, population_audit, compress_shells, check_upstream_summary)
 from recoil_dynamics.snapshot_potential import ShellPotential
 from recoil_dynamics.plummer import PlummerOrbit
 
@@ -36,6 +37,7 @@ def sha(path):
 def calculate(config):
     paths = fetch(config)
     snapshot = load_snapshot(paths['snapshot'], paths['units'])
+    upstream_checks = check_upstream_summary(snapshot, paths['reference'])
     scales, population = population_audit(snapshot, config['G_pc_kms2_per_msun'])
     b, mass = scales['matched_plummer_scale_pc'], scales['total_mass_msun']
     time = b*config['pc_in_km']/scales['velocity_unit_kms']/config['seconds_per_myr']
@@ -74,6 +76,24 @@ def calculate(config):
                         for value in errors.values())
         convergence.append({'eta_plummer': fine['eta_plummer'], **errors, 'converged': converged})
 
+    # Adjacent compression levels need not bound error. Compare the final
+    # approximation directly with every system shell in this same snapshot.
+    full_potential = ShellPotential(snapshot.radius/b, snapshot.mass/mass)
+    full_checks = []
+    for fine in finest:
+        kick = math.sqrt(2)*fine['eta_plummer']
+        full_radius = full_potential.apocenter(kick)*b
+        full_return = full_potential.first_return(kick)*time
+        radius_error = fine['snapshot_apocenter_pc']/full_radius-1
+        return_error = fine['snapshot_return_myr']/full_return-1
+        full_checks.append({
+            'eta_plummer': fine['eta_plummer'],
+            'uncompressed_apocenter_pc': full_radius,
+            'uncompressed_return_myr': full_return,
+            'compressed_apocenter_relative_error': radius_error,
+            'compressed_return_relative_error': return_error,
+            'passed': max(abs(radius_error), abs(return_error)) <= config['shell_convergence_relative_tolerance']})
+
     # A figure grid describes the snapshot, not additional observations.
     x = np.geomspace(.001, 20, 160)  # radius / snapshot half-mass radius
     order = np.argsort(snapshot.radius)
@@ -90,13 +110,16 @@ def calculate(config):
                  'plummer_potential_over_GM_b': -1/math.sqrt(1+yy*yy)}
                 for xx, yy, cc, bb in zip(x, y, host_cdf, bb_cdf)]
     bbh = next(row for row in population if row['population'] == 'binary_black_holes')
-    summary = {'scales': scales, 'binary_black_hole_count': bbh['count'],
+    summary = {'scales': scales, 'upstream_summary_checks': upstream_checks,
+               'binary_black_hole_count': bbh['count'],
                'minimum_bbh_count_for_distribution_calibration': config['minimum_bbh_count_for_distribution_calibration'],
                'companion_distribution_calibrated': False,
                'sample_count_screen_passed': bbh['count'] >= config['minimum_bbh_count_for_distribution_calibration'],
                'live_recoil_trajectories_validated': False,
                'snapshot_central_escape_kms': potential.escape_speed*scales['velocity_unit_kms'],
                'shell_convergence': convergence,
+               'uncompressed_shell_count': len(full_potential.radii),
+               'full_shell_reference': full_checks,
                'return_time_screen': config['return_time_relative_error_screen'],
                'kicks_exceeding_return_time_screen': [r['eta_plummer'] for r in finest
                    if r['plummer_return_relative_error'] is not None and
