@@ -2,7 +2,7 @@
 
 **Central residence and density exposure of recoiling remnants in a Plummer potential**
 
-Venkata Hemanth Athota · Independent researcher · Version 0.1.1
+Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.1.1+abstract.1
 
 [Paper PDF](../output/pdf/central-residence.pdf) · [LaTeX source](manuscript.tex) · [Portable source archive](../output/pdf/manuscript-source.zip) · [Formatting conventions](FORMAT.md)
 
@@ -10,6 +10,12 @@ The manuscript records E001 and E002. The two-column physics layout follows the
 REVTeX family used by the recoil-paper reference. It contains no watermark,
 publication banner, or acceptance claim. Review status is recorded here, outside
 the paper: this is an unreviewed manuscript and has not been submitted to a venue.
+
+The current working revision removes the nonessential numerical example from
+the abstract and emphasizes the question, method, and supported qualitative
+conclusion. Numerical results remain in the body and tables. The archived v0.1.1
+release is unchanged; E003/E004 are separately documented experiments and are
+not claimed as content of this baseline manuscript.
 
 ## Reference build
 

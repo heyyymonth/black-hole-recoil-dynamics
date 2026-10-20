@@ -20,7 +20,7 @@ OUT = ROOT / 'output/pdf'
 TMP = ROOT / 'tmp/latex'
 STAGE = TMP / 'source'
 TOOLCHAIN = json.loads((PAPER / 'toolchain.json').read_text())
-VERSION = '0.1.1'
+VERSION = '0.1.1+abstract.1'
 for directory in (OUT, TMP, STAGE, PAPER / 'tables'):
     directory.mkdir(parents=True, exist_ok=True)
 
@@ -127,8 +127,10 @@ inputs = [ROOT / name for name in ['paper/build.py', 'paper/verify.py', 'paper/f
           'paper/requirements.txt', 'paper/toolchain.json', 'requirements-lock.txt', 'CITATION.cff', 'LICENSE',
           'experiments/config.json', 'results/run_all.json']]
 inputs += source_files
-inputs += sorted((ROOT / 'results').glob('e*/*.csv'))
-inputs += sorted((ROOT / 'src').rglob('*.py'))
+# This manuscript covers the E001/E002 baseline, not later snapshot studies.
+inputs += sorted((ROOT / 'results/e001').glob('*.csv'))
+inputs += sorted((ROOT / 'results/e002').glob('*.csv'))
+inputs += [ROOT/'src/recoil_dynamics/plummer.py', ROOT/'src/recoil_dynamics/__init__.py']
 sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
 manifest = {'paper': 'central-residence', 'version': VERSION, 'pages': len(reader.pages),
             'format': 'REVTeX 4.2 APS/PRD reprint; US Letter; two columns; txfonts',

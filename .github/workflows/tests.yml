@@ -24,6 +24,10 @@ jobs:
         run: python experiments/verify_results.py
       - name: Verify recorded close-passage experiment
         run: python experiments/verify_e003.py
+      - name: Fetch and verify pinned external cluster snapshot
+        run: python experiments/fetch_e004.py
+      - name: Verify recorded cluster-snapshot comparison
+        run: python experiments/verify_e004.py
       - name: Verify published paper provenance
         run: python paper/verify.py
       - name: Install pinned Tectonic
