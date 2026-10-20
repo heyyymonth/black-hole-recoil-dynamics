@@ -1,0 +1,129 @@
+{
+  "scales": {
+    "age_gyr": 12.732264843402,
+    "total_mass_msun": 224633.02548063503,
+    "half_mass_radius_pc": 4.7977087,
+    "matched_plummer_scale_pc": 3.677064395104327,
+    "velocity_unit_kms": 16.20937847532657,
+    "matched_plummer_escape_kms": 22.923522877445357,
+    "dynamical_time_myr": 0.22181016808418685
+  },
+  "upstream_summary_checks": [
+    {
+      "quantity": "Mtot",
+      "derived": 224633.02548063503,
+      "reference": 224633.02548259645,
+      "relative_tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "quantity": "Mbh",
+      "derived": 315.31767379999997,
+      "reference": 315.31767379999997,
+      "relative_tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "quantity": "age",
+      "derived": 12.732264843402,
+      "reference": 12.732264843402001,
+      "relative_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "quantity": "Nsys",
+      "derived": 682583,
+      "reference": 682583.0,
+      "relative_tolerance": 0,
+      "passed": true
+    },
+    {
+      "quantity": "Nobj",
+      "derived": 713705,
+      "reference": 713705.0,
+      "relative_tolerance": 0,
+      "passed": true
+    },
+    {
+      "quantity": "Nbin",
+      "derived": 31122,
+      "reference": 31122.0,
+      "relative_tolerance": 0,
+      "passed": true
+    },
+    {
+      "quantity": "N_14",
+      "derived": 29,
+      "reference": 29.0,
+      "relative_tolerance": 0,
+      "passed": true
+    },
+    {
+      "quantity": "Nbin_14_14",
+      "derived": 2,
+      "reference": 2.0,
+      "relative_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "binary_black_hole_count": 2,
+  "minimum_bbh_count_for_distribution_calibration": 30,
+  "companion_distribution_calibrated": false,
+  "sample_count_screen_passed": false,
+  "live_recoil_trajectories_validated": false,
+  "snapshot_central_escape_kms": 26.546924305522374,
+  "shell_convergence": [
+    {
+      "eta_plummer": 0.3,
+      "snapshot_apocenter_pc_relative_change": 0.0002256517694361193,
+      "snapshot_return_myr_relative_change": 2.4953026500851294e-05,
+      "converged": true
+    },
+    {
+      "eta_plummer": 0.8,
+      "snapshot_apocenter_pc_relative_change": 4.440892098500626e-16,
+      "snapshot_return_myr_relative_change": 4.9421524486170654e-05,
+      "converged": true
+    },
+    {
+      "eta_plummer": 0.9,
+      "snapshot_apocenter_pc_relative_change": 2.3584918840136027e-07,
+      "snapshot_return_myr_relative_change": 2.231035519206781e-05,
+      "converged": true
+    }
+  ],
+  "uncompressed_shell_count": 680110,
+  "full_shell_reference": [
+    {
+      "eta_plummer": 0.3,
+      "uncompressed_apocenter_pc": 0.48985317756736657,
+      "uncompressed_return_myr": 0.26290641613747867,
+      "compressed_apocenter_relative_error": 4.895683252792438e-06,
+      "compressed_return_relative_error": -0.0015547546092584685,
+      "passed": true
+    },
+    {
+      "eta_plummer": 0.8,
+      "uncompressed_apocenter_pc": 3.606139502712725,
+      "uncompressed_return_myr": 0.8963741379264891,
+      "compressed_apocenter_relative_error": 1.8630170162126092e-07,
+      "compressed_return_relative_error": -1.3115989927703353e-05,
+      "passed": true
+    },
+    {
+      "eta_plummer": 0.9,
+      "uncompressed_apocenter_pc": 5.605528040494343,
+      "uncompressed_return_myr": 1.3933370805100562,
+      "compressed_apocenter_relative_error": 3.566015882583429e-08,
+      "compressed_return_relative_error": -5.684233730263166e-06,
+      "passed": true
+    }
+  ],
+  "return_time_screen": 0.1,
+  "kicks_exceeding_return_time_screen": [
+    0.3,
+    0.8,
+    0.9
+  ],
+  "interpretation": "One simulation snapshot. Population audit and frozen ballistic-potential comparison; no live kick or friction calibration."
+}

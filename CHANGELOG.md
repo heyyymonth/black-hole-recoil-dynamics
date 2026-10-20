@@ -1,5 +1,15 @@
 # Release record
 
+## Unreleased - E004 and working abstract revision, 2026-10-20
+
+- Audit a pinned evolved CMC snapshot, preserving the distinction between all binaries and two actual BH–BH targets.
+- Verify eight derived quantities against the authors' separate summary; decline continuous companion calibration for the sparse sample.
+- Compare identical kicks in matched Plummer and frozen snapshot potentials; all three fail the 10% return-time screen.
+- Verify compressed results against the full spherical-shell potential and extend the suite to 108 tests.
+- Document existing cluster-dynamics research and two specific missing empirical/live-dynamics comparisons.
+- Remove the numerical example from the E001/E002 abstract and rebuild its four-page working manuscript; retain the archived v0.1.1 release.
+- Keep external simulation files in verified local cache, outside the repository and its MIT grant.
+
 ## Unreleased - E003, 2026-10-19
 
 - Record a fixed question, four controls/cases, and a 10% proxy-error screen before execution.

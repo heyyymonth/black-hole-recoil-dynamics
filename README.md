@@ -8,13 +8,13 @@ Independent physics research · Stellar dynamics and gravitational-wave source e
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-0.1.1-14677d.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
-[E001/E002 paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E003 research record](docs/e003-encounter-accessibility.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
+[E001/E002 paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E004 cluster comparison](docs/e004-cluster-validation.md) · [Research context](docs/cluster-dynamics-context.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
 ## Research question
 
 How does a retained black-hole remnant's motion affect its access to potential companions, and how accurately does density exposure represent that access?
 
-The experiments follow a test particle kicked radially from the center of a fixed Plummer potential. E001/E002 measure return, residence, and density exposure. E003 adds an explicit tracer-binary population and velocity-dependent close-passage cross section. This tests the connection between orbital motion and encounter opportunity, an ingredient in the larger black-hole assembly problem.
+E001/E002 follow a test particle in a fixed Plummer potential and measure return, residence, and density exposure. E003 adds a prescribed tracer-binary population and velocity-dependent close-passage cross section. E004 compares those population and potential assumptions with an externally evolved CMC cluster snapshot. Together these test ingredients connecting recoil motion to companion access; they do not yet predict repeated-merger rates.
 
 ## Experiments
 
@@ -23,14 +23,19 @@ The experiments follow a test particle kicked radially from the center of a fixe
 | E001 | First central return as a function of kick speed | [Method and results](docs/e001-ballistic-return.md) · [Table](results/e001/return_times.csv) |
 | E002 | Central residence and density exposure over finite windows | [Method and results](docs/e002-core-exposure.md) · [Tables](results/e002/) |
 | E003 | Density proxy versus velocity-weighted close passages over a common time window | [Protocol](docs/e003-protocol.md) · [Method and results](docs/e003-encounter-accessibility.md) · [Table](results/e003/encounters.csv) |
+| E004 | Companion inventory and ballistic returns in an evolved cluster snapshot | [Protocol](docs/e004-protocol.md) · [Method and results](docs/e004-cluster-validation.md) · [Tables](results/e004/) |
+
+**Latest result:** E004 finds only **two BH–BH binaries** among 682,583 systems in one evolved cluster snapshot: insufficient to calibrate a continuous companion distribution. At identical physical kicks, a Plummer model matched to current host mass and half-mass radius predicts returns **2.96, 2.81, and 4.45 times as long** as the frozen snapshot potential. Direct full-shell checks place compression errors below 0.16%. These results diagnose assumptions; **live recoil trajectories remain unvalidated**. [Results and limitations](docs/e004-cluster-validation.md) · [Specific next experiments and existing research](docs/cluster-dynamics-context.md).
+
+![External cluster comparison](results/e004/snapshot_comparison.png)
 
 In E003, density exposure overestimates normalized close-passage opportunities by **4.4%, 53.1%, and 98.6%** at kick fractions 0.3, 0.8, and 0.9. Two cases fail the predeclared 10% approximation screen. Gravitational focusing dominates this specified configuration; faster relative motion reduces its contribution. Absolute expected passage counts are tiny: 1.61e-6 for the stationary control and 4.71e-8 for the 0.9 kick during the common 0.149 Myr window.
 
 ![Density proxy compared with velocity-weighted close passages](results/e003/proxy_comparison.png)
 
-These are controlled numerical benchmarks. E003 calculates an expected close-passage count in an imposed bath along an unperturbed orbit; it does not simulate encounter outcomes or infer mergers. All three experiments omit dynamical friction and host evolution. E003 screens remnant apocenters against a declared outer radius without truncating the host. The former E002 near-escape example remains an isolated-model limit and does not pass that screen. No observed gravitational-wave data are used.
+These are controlled numerical benchmarks. E003 calculates an expected close-passage count in an imposed bath along an unperturbed orbit; it does not simulate encounter outcomes or infer mergers. All four experiments omit dynamical friction and host evolution. E003 screens remnant apocenters against a declared outer radius without truncating the host. The former E002 near-escape example remains an isolated-model limit and does not pass that screen. No observed gravitational-wave data are used.
 
-The [unreviewed manuscript](output/pdf/central-residence.pdf) and v0.1.1 release cover E001/E002. E003 is documented separately on `main`; it has not been added to that paper or release.
+The [unreviewed manuscript](output/pdf/central-residence.pdf) covers E001/E002. Its working revision removes the nonessential numerical example from the abstract while preserving the body results. The archived v0.1.1 release remains unchanged. E003/E004 are separately documented on `main`; they are not content of that baseline paper or release.
 
 [Physical assumptions](docs/problem.md) · [Scientific relevance](docs/relevance.md) · [References](docs/references.md)
 
@@ -45,9 +50,10 @@ python -m pip install -r requirements-lock.txt
 python -m pytest -q
 python experiments/verify_results.py
 python experiments/verify_e003.py
+python experiments/verify_e004.py
 ```
 
-The **62 tests** compare production calculations with independent trajectories, numerical velocity integrals, conservation laws, analytical limits, and scaling checks. The verifiers separately reproduce **146 baseline rows and 4 E003 rows**, and check recorded source/output hashes. These rows are model calculations, not independent astronomical observations.
+The **108 tests** compare production calculations with independent trajectories, numerical velocity integrals, conservation laws, analytical limits, and scaling checks. The verifiers separately reproduce **146 baseline rows, 4 E003 rows, and E004's 5 population rows, 12 trajectory cases, and 160 profile points**, and check recorded source/output hashes. These rows are model calculations, not independent astronomical observations.
 
 To regenerate E001/E002 tables and figures:
 
@@ -63,19 +69,21 @@ python experiments/run_e003.py
 python experiments/verify_e003.py
 ```
 
-Each runner replaces its corresponding outputs. No network access is needed after dependency installation. The [baseline configuration](experiments/config.json) and [E003 configuration](experiments/e003.json) fix inputs; [baseline](results/run_all.json) and [E003](results/run_e003.json) manifests record source revisions, hashes, and library versions. [Paper build instructions](paper/README.md) cover the separate PDF dependencies and source.
+For E004, `python experiments/fetch_e004.py` downloads approximately 46 MB of pinned external inputs to ignored local cache; the verifier also fetches missing inputs. After committing source changes, use `python experiments/run_e004.py` to regenerate. The [E004 manifest](results/run_e004.json) records external and local input hashes. Subsequent checks work offline with the populated cache.
+
+Each runner replaces its corresponding outputs. E001–E003 need no network after dependency installation. The [baseline configuration](experiments/config.json) and [E003 configuration](experiments/e003.json) fix inputs; [baseline](results/run_all.json) and [E003](results/run_e003.json) manifests record source revisions, hashes, and library versions. [Paper build instructions](paper/README.md) cover the separate PDF dependencies and source.
 
 ## Repository structure
 
 | Path | Purpose |
 |---|---|
-| `src/recoil_dynamics/` | Reusable orbit, velocity-moment, and close-passage calculations |
+| `src/recoil_dynamics/` | Reusable orbit, close-passage, snapshot-parsing, and shell-potential calculations |
 | `experiments/` | Configuration, execution, result verification, and record template |
 | `tests/` | Independent numerical and analytical validation |
 | `results/` | Generated tables, figures, provenance, and verification record |
 | `docs/` | Physical problem, experiment records, and literature context |
 | `paper/` | LaTeX manuscript, BibTeX, vector figures, and build script |
-| `output/pdf/` | Published paper and build manifest |
+| `output/pdf/` | Working paper, source archive, and build manifest |
 
 [Contribution guidance](CONTRIBUTING.md) describes how to add a separately identified experiment with its own assumptions, configuration, validation, and results.
 
@@ -87,6 +95,6 @@ Use [CITATION.cff](CITATION.cff), [BibTeX](CITATION.bib), or GitHub's **Cite thi
 
 Those citation files describe the E001/E002 v0.1.1 baseline. For E003, use its [BibTeX citation](results/e003/CITATION.bib), which identifies [results snapshot 7944b82](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/7944b82b3c99e070b7c312011020e4ee53b4255d). The [E003 manifest](results/run_e003.json) also identifies the generating source commit. This commit-based citation has no DOI; E003 is not part of v0.1.1.
 
-Original code, technical documentation, and generated research artifacts are provided under the [MIT license](LICENSE). Preserve its copyright and permission notice when reusing substantial portions. Academic citation is requested separately from the license conditions. Referenced publications and dependencies retain their own rights and licenses.
+Original code, technical documentation, and generated research artifacts are provided under the [MIT license](LICENSE). Preserve its copyright and permission notice when reusing substantial portions. Academic citation is requested separately from the license conditions. Referenced publications, dependencies, and external simulation files retain their own rights and licenses. The fetched CMC snapshot and upstream summaries are not redistributed or relicensed by this repository.
 
 [Author and contact](AUTHORS.md) · [Release record](CHANGELOG.md)

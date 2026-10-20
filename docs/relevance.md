@@ -29,3 +29,7 @@ The apocenter admission criterion is motivated by Islam's stated choice of five 
 The rate ingredients are standard. [Leigh et al.](https://arxiv.org/abs/1711.10494) already studies encounters and binary hardening, and [the galpy distribution reference](https://docs.galpy.org/en/v1.12.0/reference/dfplummer.html) supplies the exact Plummer distribution used for the analytical velocity calculation. We have checked relevance and correctness of this limited extension, not established a novel assembly model.
 
 The completed screen rejects the density proxy for two selected larger kicks. Absolute passage counts remain tiny for the imposed bath. Neither the discrepancy nor passing numerical checks establishes an observable merger-rate effect. Physical calibration of the bath and trajectories, and conditional encounter outcomes, remain outside this experiment.
+
+## E004: relevant as an external assumption check
+
+Reviewed 20 October 2026. The [executed comparison](e004-cluster-validation.md) tests the assumed target population and host potential using a separately evolved cluster model. It identifies sparse BH–BH targets and a return-time discrepancy much larger than shell-compression error. The external simulation adds physical context, but a single frozen snapshot cannot validate dissipative motion or infer a merger rate. The [literature review](cluster-dynamics-context.md) distinguishes established mass segregation and encounter frameworks from two unexecuted experiments needed to calibrate this model.

@@ -1,6 +1,6 @@
 {
   "paper": "central-residence",
-  "version": "0.1.1",
+  "version": "0.1.1+abstract.1",
   "pages": 4,
   "format": "REVTeX 4.2 APS/PRD reprint; US Letter; two columns; txfonts",
   "engine": "Tectonic 0.16.9",
@@ -25,12 +25,12 @@
     "LICENSE": "b81b853d7805f138ad9958a4ad41890e918f9b4b9b556bfa8fbc350174d0a473",
     "experiments/config.json": "ea53fe596df49d5463e15467983d0e4af423304a835d8302175058d4c8a6870b",
     "paper/SOURCE_README.txt": "b090f003fc9e29f29030df7d0297d2fae036d54df10f95152f88356b7952c4d5",
-    "paper/build.py": "0a8172a49843d89117e59cc8ed81d8dac3782ec95d295c69c44d5aeafc7cf345",
+    "paper/build.py": "fbef79b94203fd3ced0905adc23652eec2a5ab1494bfc261a17c2f607c7f8e2f",
     "paper/figures/core-residence.pdf": "8994add76d6f0ed81df710a306f2f18e792ac8928021d11b4534d47370b8f64d",
     "paper/figures/exposure-comparison.pdf": "27ac463f8a2157781a2c89b8b406ea21f687f4fe2e84a1745563784607e4e601",
     "paper/figures/return-time.pdf": "d04ab1213f7e7b9b3e9dbdceab2769808d47476b78d50ff580e98bf4a42c4f04",
     "paper/figures.py": "50d26889cb7fe3ec168f14314702f0ac843a51570f46b1a22081123748f4b53e",
-    "paper/manuscript.tex": "1162e0c1cf4e122e0f77a3aee13072d4297790161472bbf6979fa960d1d63adc",
+    "paper/manuscript.tex": "c94abc07a0d11f355a0012a0ba5f37ed022ab0700856187d6cb09454591c240a",
     "paper/references.bib": "a07fdae0690c67f59dd0e8003da06b4e204b9aa994a25f2fb85c937d7a40fc1f",
     "paper/requirements.txt": "3feec1a2e97360338b6d572368436244052b81da52f32b8d9bb91e4fce8677f6",
     "paper/tables/exposure.tex": "c5cc308ac48b81a51fb99b96f8650c4ccd9561eb8a56fccacc03dfcd09a9f158",
@@ -47,7 +47,7 @@
     "src/recoil_dynamics/plummer.py": "1a94d5680654d6f79bdc90b25513332f46ee8e3645f569fbaf331e0d25bfd22c"
   },
   "output_sha256": {
-    "output/pdf/central-residence.pdf": "e54fb8c497ba60eeda56a2aed3a007f426b8788453d7ce805b603b93fba7a31b",
-    "output/pdf/manuscript-source.zip": "78abf627438950a3b816117e9e29b48fa355a26abd14c425acdca521db7db2b2"
+    "output/pdf/central-residence.pdf": "21c11b376b63e40868018750781562264ee122694ce21eda02f1bcc5ecb70345",
+    "output/pdf/manuscript-source.zip": "e8f4b97e5e79808dc9a352e0c221ca95a90b27c387c687d9c85dcd50e6c3f0f6"
   }
 }

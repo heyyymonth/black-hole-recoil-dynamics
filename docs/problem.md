@@ -47,3 +47,7 @@ The [close-passage experiment](e003-encounter-accessibility.md) supplies a trace
 The larger physical sequence remains merger, recoil, host motion, companion acquisition, binary evolution, and another merger. E001/E002 validate the host-motion calculation. E003 tests an encounter-opportunity ingredient; it finds that density alone overestimates normalized passage counts in two of its three nonzero-kick cases. Neither a close passage nor its expected count determines companion acquisition or a second merger.
 
 All experiments omit friction, scattering that changes the orbit, binary formation, tidal evolution, and host evolution. Their results apply to their declared fixed models. E003 adds a conditional rate calculation, not self-consistent encounter dynamics or observed-event inference.
+
+## E004: external cluster comparison
+
+The [snapshot comparison](e004-cluster-validation.md) audits actual BH–BH targets and replaces the analytical host with a frozen spherical mass profile from an evolved CMC model. Matching mass and half-mass radius is insufficient to match ballistic return here. The two available targets cannot calibrate a continuous bath. This strengthens the need for the [specific population and live-motion comparisons](cluster-dynamics-context.md); it does not validate collisional trajectories.
