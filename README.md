@@ -95,6 +95,8 @@ Use [CITATION.cff](CITATION.cff), [BibTeX](CITATION.bib), or GitHub's **Cite thi
 
 Those citation files describe the E001/E002 v0.1.1 baseline. For E003, use its [BibTeX citation](results/e003/CITATION.bib), which identifies [results snapshot 7944b82](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/7944b82b3c99e070b7c312011020e4ee53b4255d). The [E003 manifest](results/run_e003.json) also identifies the generating source commit. This commit-based citation has no DOI; E003 is not part of v0.1.1.
 
+For E004, use its [BibTeX citation](results/e004/CITATION.bib), identifying [results snapshot 14d9f49](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/14d9f493e6eeae25e51a244dfb60789753992db6). Its [manifest](results/run_e004.json) distinguishes generating code from external simulation provenance. Cite the upstream CMC/cmctoolkit sources as appropriate when using those data. This snapshot also contains the working abstract revision; it has no DOI and does not replace v0.1.1.
+
 Original code, technical documentation, and generated research artifacts are provided under the [MIT license](LICENSE). Preserve its copyright and permission notice when reusing substantial portions. Academic citation is requested separately from the license conditions. Referenced publications, dependencies, and external simulation files retain their own rights and licenses. The fetched CMC snapshot and upstream summaries are not redistributed or relicensed by this repository.
 
 [Author and contact](AUTHORS.md) · [Release record](CHANGELOG.md)
