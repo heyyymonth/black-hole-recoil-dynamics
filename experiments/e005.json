@@ -1,0 +1,15 @@
+{
+  "experiment": "e005",
+  "model": "late-time CMC summary audit; no joint companion calibration or live trajectories",
+  "source_repository": "NicholasRui/cmctoolkit",
+  "source_revision": "a4876e7706f7b23a14c63a5be7df63a07f2dccd9",
+  "input_lock": "experiments/e005-inputs.json",
+  "cache_directory": "tmp/e005",
+  "comparison_age_gyr": 12.0,
+  "age_tolerance_gyr": 0.25,
+  "minimum_bbh_count_screen": 30,
+  "expected_model_count": 126,
+  "expected_snapshot_count": 7537,
+  "e004_reference_path": "CMC/N8-RV1-RG8-Z0.1/PARAM0382.txt",
+  "maximum_archive_bytes": 250000000
+}
