@@ -8,13 +8,13 @@ Independent physics research · Stellar dynamics and gravitational-wave source e
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-0.1.1-14677d.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
-[E001–E004 paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E004 cluster comparison](docs/e004-cluster-validation.md) · [Research context](docs/cluster-dynamics-context.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
+[E001–E004 paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E005 target inventory](docs/e005-target-availability.md) · [Research context](docs/cluster-dynamics-context.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
 ## Research question
 
 How does a retained black-hole remnant's motion affect its access to potential companions, and how accurately does density exposure represent that access?
 
-E001/E002 follow a test particle in a fixed Plummer potential and measure return, residence, and density exposure. E003 adds a prescribed tracer-binary population and velocity-dependent close-passage cross section. E004 compares those population and potential assumptions with an externally evolved CMC cluster snapshot. Together these test ingredients connecting recoil motion to companion access; they do not yet predict repeated-merger rates.
+E001/E002 follow a test particle in a fixed Plummer potential and measure return, residence, and density exposure. E003 adds a prescribed tracer-binary population and velocity-dependent close-passage cross section. E004 compares those population and potential assumptions with an externally evolved CMC cluster snapshot. E005 checks target abundance across the available late-time cluster summaries. Together these test ingredients connecting recoil motion to companion access; they do not yet predict repeated-merger rates.
 
 ## Experiments
 
@@ -24,8 +24,13 @@ E001/E002 follow a test particle in a fixed Plummer potential and measure return
 | E002 | Central residence and density exposure over finite windows | [Method and results](docs/e002-core-exposure.md) · [Tables](results/e002/) |
 | E003 | Density proxy versus velocity-weighted close passages over a common time window | [Protocol](docs/e003-protocol.md) · [Method and results](docs/e003-encounter-accessibility.md) · [Table](results/e003/encounters.csv) |
 | E004 | Companion inventory and ballistic returns in an evolved cluster snapshot | [Protocol](docs/e004-protocol.md) · [Method and results](docs/e004-cluster-validation.md) · [Tables](results/e004/) |
+| E005 | BH–BH target abundance across available late-time CMC model histories | [Protocol](docs/e005-protocol.md) · [Method and results](docs/e005-target-availability.md) · [Tables](results/e005/) |
 
-**Latest result:** E004 finds only **two BH–BH binaries** among 682,583 systems in one evolved cluster snapshot: insufficient to calibrate a continuous companion distribution. At identical physical kicks, a Plummer model matched to current host mass and half-mass radius predicts returns **2.96, 2.81, and 4.45 times as long** as the frozen snapshot potential. Direct full-shell checks place compression errors below 0.16%. These results diagnose assumptions; **live recoil trajectories remain unvalidated**. [Results and limitations](docs/e004-cluster-validation.md) · [Specific next experiments and existing research](docs/cluster-dynamics-context.md).
+**Latest result:** E005 audits **7,537 saved states across 126 available model histories**. Of 119 histories with a state near 12 Gyr, the median is **two BH–BH binaries**, 38 contain none, and the maximum is nine. The maximum across all inspected states is 15. Small instantaneous target counts therefore extend beyond E004's selected snapshot. This does not calibrate a companion distribution: summaries lack joint phase space, and these equal-weight old-cluster states are not conditioned on merger events. [Findings, validation and the resulting next question](docs/e005-target-availability.md).
+
+![Late-time BH–BH target inventory](results/e005/target_counts.png)
+
+E004 finds only **two BH–BH binaries** among 682,583 systems in one evolved cluster snapshot. At identical physical kicks, a Plummer model matched to current host mass and half-mass radius predicts returns **2.96, 2.81, and 4.45 times as long** as the frozen snapshot potential. Direct full-shell checks place compression errors below 0.16%. **Live recoil trajectories remain unvalidated**. [Results and limitations](docs/e004-cluster-validation.md) · [Specific next experiments and existing research](docs/cluster-dynamics-context.md).
 
 ![External cluster comparison](results/e004/snapshot_comparison.png)
 
@@ -33,9 +38,9 @@ In E003, density exposure overestimates normalized close-passage opportunities b
 
 ![Density proxy compared with velocity-weighted close passages](results/e003/proxy_comparison.png)
 
-These are controlled numerical benchmarks. E003 calculates an expected close-passage count in an imposed bath along an unperturbed orbit; it does not simulate encounter outcomes or infer mergers. All four experiments omit dynamical friction and host evolution. E003 screens remnant apocenters against a declared outer radius without truncating the host. The former E002 near-escape example remains an isolated-model limit and does not pass that screen. No observed gravitational-wave data are used.
+E001–E003 are controlled numerical benchmarks. E003 calculates an expected close-passage count in an imposed bath along an unperturbed orbit; it does not simulate encounter outcomes or infer mergers. Their trajectories and E004's frozen-potential comparisons omit dynamical friction and host evolution during the recoil interval. E004/E005 use outputs of separately evolved clusters; E005 calculates no trajectories. E003 screens remnant apocenters against a declared outer radius without truncating the host. The former E002 near-escape example remains an isolated-model limit and does not pass that screen. No observed gravitational-wave data are used.
 
-The [unreviewed manuscript](output/pdf/central-residence.pdf), **From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison**, now integrates **E001–E004**. It develops the connection from orbital exposure to velocity-weighted passages and then assesses transfer of the assumed population and potential to an external cluster. The [claim-to-evidence record](paper/CLAIMS.md) explains the resulting scope. It makes no calibrated merger-rate or live-trajectory claim. The archived v0.1.1 release remains the earlier E001/E002 paper.
+The [unreviewed manuscript](output/pdf/central-residence.pdf), **From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison**, integrates **E001–E004**. It develops the connection from orbital exposure to velocity-weighted passages and then assesses transfer of the assumed population and potential to an external cluster. The [claim-to-evidence record](paper/CLAIMS.md) explains the resulting scope. E005 is a subsequent [separate experiment record](docs/e005-target-availability.md), not yet part of that PDF. Neither artifact makes a calibrated merger-rate or live-trajectory claim. The archived v0.1.1 release remains the earlier E001/E002 paper.
 
 [Physical assumptions](docs/problem.md) · [Scientific relevance](docs/relevance.md) · [References](docs/references.md)
 
@@ -51,9 +56,10 @@ python -m pytest -q
 python experiments/verify_results.py
 python experiments/verify_e003.py
 python experiments/verify_e004.py
+python experiments/verify_e005.py
 ```
 
-The **108 tests** compare production calculations with independent trajectories, numerical velocity integrals, conservation laws, analytical limits, and scaling checks. The verifiers separately reproduce **146 baseline rows, 4 E003 rows, and E004's 5 population rows, 12 trajectory cases, and 160 profile points**, and check recorded source/output hashes. These rows are model calculations, not independent astronomical observations.
+The **180 tests** cover independent trajectories, numerical velocity integrals, conservation laws, analytical limits, scaling, catalog accounting, age selection and archive integrity. The verifiers reproduce **146 baseline rows, 4 E003 rows, E004's 5 population rows, 12 trajectory cases and 160 profile points**, and E005's **7,537 state rows, 126 history summaries and 119 age-selected states**. E005 also includes an independent scalar census. Source/input/output hashes are checked. Saved states are not independent astronomical observations.
 
 To regenerate E001/E002 tables and figures:
 
@@ -70,6 +76,8 @@ python experiments/verify_e003.py
 ```
 
 For E004, `python experiments/fetch_e004.py` downloads approximately 46 MB of pinned external inputs to ignored local cache; the verifier also fetches missing inputs. After committing source changes, use `python experiments/run_e004.py` to regenerate. The [E004 manifest](results/run_e004.json) records external and local input hashes. Subsequent checks work offline with the populated cache.
+
+For E005, `python experiments/fetch_e005.py` downloads approximately 79 MiB of pinned archive data and verifies the 7,537 locked summary files; subsequent checks use the local cache. After committing source inputs, `python experiments/run_e005.py` regenerates its tables and figure. Its [manifest](results/run_e005.json) records each input's SHA-256 and the generating revision. Raw external files are not redistributed.
 
 Each runner replaces its corresponding outputs. E001–E003 need no network after dependency installation. The [baseline configuration](experiments/config.json) and [E003 configuration](experiments/e003.json) fix inputs; [baseline](results/run_all.json) and [E003](results/run_e003.json) manifests record source revisions, hashes, and library versions. [Paper build instructions](paper/README.md) cover the separate PDF dependencies and source.
 

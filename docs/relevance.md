@@ -33,3 +33,9 @@ The completed screen rejects the density proxy for two selected larger kicks. Ab
 ## E004: relevant as an external assumption check
 
 Reviewed 20 October 2026. The [executed comparison](e004-cluster-validation.md) tests the assumed target population and host potential using a separately evolved cluster model. It identifies sparse BH–BH targets and a return-time discrepancy much larger than shell-compression error. The external simulation adds physical context, but a single frozen snapshot cannot validate dissipative motion or infer a merger rate. The [literature review](cluster-dynamics-context.md) distinguishes established mass segregation and encounter frameworks from two unexecuted experiments needed to calibrate this model.
+
+## E005: relevant as a target-availability and data-sufficiency audit
+
+Reviewed before execution on 21 October 2026 in [the protocol](e005-protocol.md). E004's two-target state motivates checking the scope of that finding before fitting a continuous companion model. The [executed audit](e005-target-availability.md) extends the comparison to the available late-time summary release, with one age-selected state per model and explicit missing coverage. It finds small instantaneous BH–BH populations throughout the inspected saved states, but does not invalidate a continuous ensemble description or identify distinct binaries across time.
+
+The next physical comparison must measure changing target availability and joint properties conditional on merger events. Equal-weight old-cluster states are not that population. This is a relevant empirical constraint on our modeling choices; it is not evidence of a novel formation channel, a calibrated encounter rate, or validated live recoil motion.

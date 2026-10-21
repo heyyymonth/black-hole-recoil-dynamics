@@ -7,7 +7,7 @@ Contributions use the repository's MIT license.
 
 ## Add an experiment
 
-1. Assign the next unused identifier after E001–E004. Start its record from
+1. Assign the next unused identifier after E001–E005. Start its record from
    [the experiment template](experiments/templates/record.md). State the question,
    model, units, applicable regime, and relevant primary literature before interpreting results.
 2. Place reusable dynamics in `src/recoil_dynamics/`. Keep experiment orchestration
@@ -35,12 +35,13 @@ python -m pytest -q
 python experiments/verify_results.py
 python experiments/verify_e003.py
 python experiments/verify_e004.py
+python experiments/verify_e005.py
 ```
 
 For a change to a hashed simulation input, first commit the completed source changes,
 then run `python experiments/run.py`, rerun the applicable checks, and commit the generated
 results. This makes the manifest point to the generating source commit. Never edit
-recorded hashes or numerical results by hand to make verification pass. For E003 and E004, use their separate runners and verifiers; both reject uncommitted source inputs. E004 fetches pinned, checksum-verified public inputs into ignored local cache. Record external revision, provenance, units, and reuse terms for any new dataset; do not commit raw third-party files without established redistribution rights.
+recorded hashes or numerical results by hand to make verification pass. For E003–E005, use their separate runners and verifiers; they reject uncommitted source inputs. E004/E005 fetch pinned, checksum-verified public inputs into ignored local cache. Record external revision, provenance, units, and reuse terms for any new dataset; do not commit raw third-party files without established redistribution rights.
 
 Inspect regenerated figures and compare numerical changes with their physical cause.
 If the technical note changes, rebuild its PDF using [the paper instructions](paper/README.md).

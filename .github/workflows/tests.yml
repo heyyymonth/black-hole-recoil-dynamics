@@ -28,6 +28,13 @@ jobs:
         run: python experiments/fetch_e004.py
       - name: Verify recorded cluster-snapshot comparison
         run: python experiments/verify_e004.py
+      - name: Cache pinned late-time catalog summaries
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: tmp/e005
+          key: e005-${{ hashFiles('experiments/e005-inputs.json') }}
+      - name: Verify recorded late-time target-count audit
+        run: python experiments/verify_e005.py
       - name: Verify published paper provenance
         run: python paper/verify.py
       - name: Install pinned Tectonic

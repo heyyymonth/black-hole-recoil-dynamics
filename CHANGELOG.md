@@ -1,5 +1,14 @@
 # Release record
 
+## Unreleased - E005 target-availability audit, 2026-10-21
+
+- Declare catalog selection and an age-matched comparison before reading new target-count outcomes.
+- Audit 7,537 pinned CMC summary files across 126 available standard histories; retain seven missing age selections explicitly.
+- Find a median of two BH–BH binaries among 119 states near 12 Gyr, 38 measured zero states, and no saved state meeting the operational count-30 screen.
+- Verify every input, cross-check E004, and reproduce the primary census with an independent implementation; extend the suite to 180 tests.
+- Connect the result to E001–E004 and specify the remaining merger-conditioned companion and live-motion comparisons.
+- Publish E005 as a separate reproducible experiment record; preserve the E001–E004 manuscript and previous releases.
+
 ## Expanded working manuscript - 2026-10-20
 
 - Integrate E001–E004 under the question of how recoil motion connects to companion access.

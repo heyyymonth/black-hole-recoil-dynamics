@@ -1,6 +1,6 @@
-# Cluster dynamics: the question after E004
+# Cluster dynamics: from E004 to the E005 findings
 
-**Researcher:** Venkata Hemanth Athota. Literature checked 20 October 2026. The two experiments below are proposed, not executed.
+**Researcher:** Venkata Hemanth Athota. Updated 21 October 2026. E005's target-count audit is executed; joint companion calibration and live-recoil comparisons remain unexecuted.
 
 The immediate question is: **How accurately can a reduced model predict a retained remnant's access to actual binary-black-hole targets while its orbit evolves after recoil?** This isolates one step toward repeated mergers. A close passage still requires an exchange or capture, subsequent binary evolution, and eventual merger before it contributes to hierarchical growth.
 
@@ -22,9 +22,15 @@ For identical physical kicks, matching total mass and half-mass radius does not 
 
 ## Next experiment: calibrate the actual target population
 
-Obtain versioned snapshots and object histories across declared cluster models and ages. Measure the joint distribution of binary centers' radius, radial and tangential velocity, component masses, semimajor axis, and eccentricity, retaining the binary count. Keep single black holes and other binaries separate. Preserve snapshot time weights and object identities; repeated appearances of one binary are not independent systems.
+The prerequisite [E005 audit](e005-target-availability.md) now tests whether E004's target scarcity is confined to its one snapshot. It inspects 7,537 published summaries across 126 available standard model histories. Among 119 histories with a state near 12 Gyr, the median is two BH–BH binaries, 38 states have none, and the maximum is nine. No inspected saved state reaches the count-30 screen; the overall maximum is 15. Seven histories without an age-matched state remain missing, not zero. A separate scalar census and the E004 full-snapshot cross-check reproduce the result.
 
-Compare the unsegregated baseline with a parsimonious mass-segregated model. Hold out entire cluster histories, rather than randomly splitting rows. Require adequate distinct systems and held-out predictive stability before fitting continuous distributions; passing E004's count screen alone is insufficient. Test predicted passage integrals as well as radial profiles, because correlations with speed and separation determine accessibility. Record failed predictions and sparse regimes. This tests the bath, not recoil friction.
+This supports treating target availability explicitly, but it does not invalidate a continuous ensemble description. PARAM files have no joint positions, velocities, internal binary orbits or object identities. Equal-weight old-cluster states also differ from the environments sampled by actual remnant-producing mergers. A census mean must not replace E003's 100 prescribed targets as though this calibrated the bath.
+
+The sharper next question is: **conditional on a merger that leaves a retained remnant, does following the changing number and properties of available BH–BH targets improve predicted companion access during displacement?** E003 establishes the need for velocity weighting; E004 identifies population and potential mismatches; E005 establishes the breadth of small target counts in this late-time release. These are complementary tests, not factors that can be multiplied into a corrected merger rate.
+
+Obtain versioned snapshots and object histories across declared cluster models and ages, anchored to merger events and including younger epochs where required. Measure the joint distribution of binary centers' radius, radial and tangential velocity, component masses, semimajor axis, and eccentricity, retaining the binary count, formation and destruction. Keep single black holes and other binaries separate. Preserve snapshot time weights and object identities; repeated appearances of one binary are not independent systems. Target-count evolution and merger conditioning cannot be reconstructed from the current aggregate summaries.
+
+Compare the unsegregated stationary baseline with a parsimonious model that accounts for segregation and changing target availability. First supply identical independently determined remnant paths to both, isolating the population approximation. Hold out entire cluster histories, rather than randomly splitting rows. Require adequate distinct systems and held-out predictive stability before fitting continuous distributions; passing E004's count screen alone is insufficient. Sparse states may still support an ensemble model, but not a fitted single-state distribution from two objects. Test predicted passage integrals as well as radial profiles, because correlations with speed and separation determine accessibility. Record failed predictions and sparse regimes. This tests the bath, not recoil friction.
 
 ## Next experiment: test live recoil motion and accessibility
 
@@ -32,4 +38,4 @@ Use a validated collisional integrator with resolved close encounters. Pair kick
 
 Compare live paths with frozen-potential and central-reset prescriptions using first-return distributions, core residence, cumulative predicted passages, and recorded encounter counts. Distinguish escape from finite-window non-return. Check integration accuracy and encounter regularization; any particle-number scaling must preserve or account for relaxation times. Retain the operational 10% proxy screen alongside ensemble uncertainty, without calling it an observational requirement.
 
-These tests require additional simulation data and live runs. They target missing physics identified by E004; more permutations of the original static calculation cannot supply it. Novelty and gravitational-wave population implications remain unestablished.
+The population calibration and live-motion tests still require additional data and integrations. E005 has completed the available-summary audit, with [protocol, results and validation](e005-target-availability.md). The broader catalog's full-data portal was not retrievable with verified HTTPS during this check; the pinned summary archive was. More permutations of the original static calculation cannot supply the missing phase space or trajectories. Novelty and gravitational-wave population implications remain unestablished.

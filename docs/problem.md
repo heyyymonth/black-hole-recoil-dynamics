@@ -51,3 +51,7 @@ All experiments omit friction, scattering that changes the orbit, binary formati
 ## E004: external cluster comparison
 
 The [snapshot comparison](e004-cluster-validation.md) audits actual BH–BH targets and replaces the analytical host with a frozen spherical mass profile from an evolved CMC model. Matching mass and half-mass radius is insufficient to match ballistic return here. The two available targets cannot calibrate a continuous bath. This strengthens the need for the [specific population and live-motion comparisons](cluster-dynamics-context.md); it does not validate collisional trajectories.
+
+## E005: breadth of the target-availability constraint
+
+The [late-time summary audit](e005-target-availability.md) finds small instantaneous BH–BH populations across the inspected release, extending the count evidence beyond E004. Its aggregate counts cannot supply joint companion phase space. The next precise question is whether following changing target numbers and properties, conditional on remnant-producing mergers, improves companion-access predictions during displacement. Counts, population weighting and live motion must be validated separately before inferring a repeated-merger rate.
