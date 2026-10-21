@@ -4,7 +4,7 @@
 
 Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.2.0-manuscript.1
 
-[Paper PDF](../output/pdf/central-residence.pdf) · [LaTeX source](manuscript.tex) · [Portable source archive](../output/pdf/manuscript-source.zip) · [Formatting conventions](FORMAT.md)
+[Paper PDF](../output/pdf/central-residence.pdf) · [Cite this manuscript](CITATION.bib) · [LaTeX source](manuscript.tex) · [Portable source archive](../output/pdf/manuscript-source.zip) · [Formatting conventions](FORMAT.md)
 
 The manuscript integrates E001–E004. The two-column physics layout follows the
 REVTeX family used by the recoil-paper reference. It contains no watermark,

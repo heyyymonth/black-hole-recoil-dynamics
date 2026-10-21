@@ -89,6 +89,8 @@ Each runner replaces its corresponding outputs. E001–E003 need no network afte
 
 ## Citation and reuse
 
+For the current **E001–E004 manuscript**, use the [paper-specific BibTeX citation](paper/CITATION.bib), identifying [immutable manuscript snapshot 0b2767e](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/0b2767ebe455eb891bffddb03a7e65cc442539a7). Revision `0.2.0-manuscript.1` includes the expanded eight-page paper and supporting source; it is an unreviewed manuscript with no DOI. The root citation files below continue to identify the earlier baseline software release.
+
 Athota, Venkata Hemanth (2026). *Black-hole recoil dynamics: central residence and density exposure in a Plummer potential*. Version 0.1.1. [Versioned research release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1).
 
 Use [CITATION.cff](CITATION.cff), [BibTeX](CITATION.bib), or GitHub's **Cite this repository** control. Cite the version used for the calculation. This release has no DOI; the versioned release identifies the research snapshot.
