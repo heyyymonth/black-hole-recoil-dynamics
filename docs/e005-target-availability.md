@@ -12,6 +12,8 @@ This broadens E004's target-count evidence within the available late-time model 
 
 [Pre-execution protocol](e005-protocol.md) · [Configuration](../experiments/e005.json) · [Summary](../results/e005/summary.json) · [All states](../results/e005/snapshots.csv) · [Per-history summaries](../results/e005/models.csv) · [Age-selected states](../results/e005/selected.csv) · [Provenance](../results/run_e005.json)
 
+[Cite E005](../results/e005/CITATION.bib) using [immutable results snapshot 80d82f8](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/80d82f85d1c84fa7ef42fc40f71a1cbc5439c172). This experiment record is separate from the current E001–E004 paper and has no DOI. Cite the original simulation and toolkit research when reusing their data.
+
 ## Why this is the next experiment
 
 | Earlier result | Question it leaves | E005's contribution |
