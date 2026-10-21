@@ -114,6 +114,116 @@ def exposure_comparison(config):
     save(fig, "exposure-comparison.pdf")
 
 
+def encounter_proxy():
+    """Present E003's committed outputs; do not rerun its rate calculation."""
+    rows = np.genfromtxt(ROOT / "results/e003/encounters.csv", delimiter=",",
+                         names=True)
+    summary = json.loads((ROOT / "results/e003/summary.json").read_text())
+    positions = np.arange(len(rows))
+    labels = [f"{eta:g}" for eta in rows["eta"]]
+    labels[0] = "0\n(control)"
+    fig, axes = plt.subplots(1, 2, figsize=(7, 3.15))
+    fig.subplots_adjust(left=.095, right=.985, bottom=.22, top=.84,
+                        wspace=.31)
+    left, right = axes
+    left.plot(positions - .065, rows["density_ratio"], "o", color="black",
+              ms=5, label=r"Density proxy $D=I(H)/H$")
+    left.plot(positions + .065, rows["encounter_ratio"], "s", color="0.35",
+              markerfacecolor="white", ms=5,
+              label=r"Passage count $Q=\tau(\eta,H)/\tau(0,H)$")
+    left.set(yscale="log", ylim=(.02, 2.5),
+             ylabel="Ratio to stationary control")
+    left.set_yticks([.03, .1, .3, 1], ["0.03", "0.1", "0.3", "1"])
+    left.legend(loc="upper right", fontsize=8.5, frameon=False,
+                handlelength=1, handletextpad=.5)
+
+    errors = 100 * rows["proxy_relative_error"]
+    right.bar(positions, errors, width=.52, facecolor="0.82",
+              edgecolor="black", linewidth=.8)
+    tolerance = 100 * summary["proxy_relative_error_tolerance"]
+    right.axhline(tolerance, color="0.3", ls="--", linewidth=1,
+                  label=f"Declared {tolerance:g}% screen")
+    for x, error in zip(positions, errors):
+        right.text(x, error + 2.5, f"{error:.1f}%", ha="center", va="bottom",
+                   fontsize=9)
+    right.set(ylabel=r"Density-proxy error (%)",
+              ylim=(-2, 119), yticks=[0, 25, 50, 75, 100])
+    right.legend(loc="upper left", fontsize=8.5, frameon=False)
+    for ax, panel in zip(axes, "ab"):
+        ax.set_xticks(positions, labels)
+        ax.set(xlabel=r"Kick ratio $\eta$", xlim=(-.48, 3.48))
+        ax.text(.02, 1.055, f"({panel})", transform=ax.transAxes,
+                 ha="left", va="bottom")
+    fig.text(.52, .985, r"Common window $T=10\,t_{\rm d}$; imposed Plummer tracers",
+             ha="center", va="top", fontsize=10)
+    save(fig, "encounter-proxy.pdf")
+
+
+def snapshot_comparison():
+    """Present the saved E004 population, potential, and ballistic results."""
+    profiles = np.genfromtxt(ROOT / "results/e004/profiles.csv", delimiter=",",
+                             names=True)
+    trajectories = np.genfromtxt(ROOT / "results/e004/trajectories.csv",
+                                 delimiter=",", names=True)
+    summary = json.loads((ROOT / "results/e004/summary.json").read_text())
+    finest = trajectories[trajectories["shell_count"] ==
+                          trajectories["shell_count"].max()]
+    radius = profiles["radius_over_rh"]
+    fig, axes = plt.subplots(1, 3, figsize=(7, 3.15))
+    fig.subplots_adjust(left=.067, right=.99, bottom=.23, top=.85,
+                        wspace=.47)
+    a, b, c = axes
+    a.plot(radius, profiles["host_mass_cdf"], color="black",
+            label="Host mass")
+    a.plot(radius, profiles["plummer_mass_cdf"], color="0.4", ls="--",
+            label="Matched Plummer")
+    # This is the discrete CDF sampled on the committed plotting grid. A
+    # step preserves the small-sample structure; no continuous fit is made.
+    a.step(radius, profiles["bbh_number_cdf"], where="post", color="0.3",
+            ls=":", linewidth=1.7,
+            label=rf"BH--BH number ($N={summary['binary_black_hole_count']}$)")
+    a.set(xscale="log", xlim=(radius[0], radius[-1]), ylim=(-.025, 1.045),
+           xlabel=r"Radius $r/r_{\rm h}$", ylabel="Cumulative fraction")
+    a.legend(loc="lower right", fontsize=8, frameon=True,
+              facecolor="white", edgecolor="none", framealpha=1,
+              handlelength=1.6, handletextpad=.4, borderaxespad=.2)
+
+    b.plot(radius, profiles["snapshot_potential_over_GM_b"], color="black",
+            label="Frozen snapshot")
+    b.plot(radius, profiles["plummer_potential_over_GM_b"], color="0.4",
+            ls="--", label="Matched Plummer")
+    b.set(xscale="log", xlim=(radius[0], radius[-1]), ylim=(-1.43, .015),
+           xlabel=r"Radius $r/r_{\rm h}$", ylabel=r"Potential $\Phi/(GM/b)$")
+    b.legend(loc="upper left", fontsize=8, frameon=False,
+              handlelength=1.6, handletextpad=.4, borderaxespad=.2)
+
+    kicks = finest["kick_kms"]
+    # Discrete points at the same physical kicks, not separately normalized
+    # escape fractions. No line interpolation or error bars are implied.
+    c.plot(kicks, finest["snapshot_return_myr"], "o", color="black", ms=4.5,
+            label="Frozen snapshot")
+    c.plot(kicks, finest["plummer_return_myr"], "s", color="0.4", ms=4.5,
+            markerfacecolor="white", label="Matched Plummer")
+    c.set(xlabel=r"Same physical kick $v_k$ (km s$^{-1}$)",
+           ylabel="First return (Myr)", ylim=(0, 7.1),
+           xlim=(kicks.min()-1.6, kicks.max()+1.6))
+    c.set_xticks(kicks, [f"{v:.2f}" for v in kicks], rotation=45, ha="right")
+    c.legend(loc="upper left", fontsize=8, frameon=False,
+              handlelength=1, handletextpad=.4, borderaxespad=.2)
+    for ax, panel in zip(axes, "abc"):
+        ax.tick_params(axis="both", labelsize=8.5)
+        ax.xaxis.label.set_size(9)
+        ax.yaxis.label.set_size(9)
+        ax.text(.02, 1.045, f"({panel})", transform=ax.transAxes,
+                 ha="left", va="bottom")
+    for ax in (a, b):
+        ax.set_xticks([.001, .01, .1, 1, 10])
+        ax.tick_params(axis="x", which="minor", bottom=False)
+    fig.text(.52, .985, "One evolved CMC snapshot: population and frozen potential",
+             ha="center", va="top", fontsize=10)
+    save(fig, "snapshot-comparison.pdf")
+
+
 def main():
     config = json.loads((ROOT / "experiments" / "config.json").read_text())
     OUTPUT.mkdir(parents=True, exist_ok=True)
@@ -138,7 +248,9 @@ def main():
     return_time(config)
     core_residence(config)
     exposure_comparison(config)
-    print("Rendered three vector manuscript figures in paper/figures/.")
+    encounter_proxy()
+    snapshot_comparison()
+    print("Rendered five vector manuscript figures in paper/figures/.")
 
 
 if __name__ == "__main__":

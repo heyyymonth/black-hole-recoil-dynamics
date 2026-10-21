@@ -8,7 +8,7 @@ Independent physics research · Stellar dynamics and gravitational-wave source e
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-0.1.1-14677d.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
-[E001/E002 paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E004 cluster comparison](docs/e004-cluster-validation.md) · [Research context](docs/cluster-dynamics-context.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
+[E001–E004 paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E004 cluster comparison](docs/e004-cluster-validation.md) · [Research context](docs/cluster-dynamics-context.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
 ## Research question
 
@@ -35,7 +35,7 @@ In E003, density exposure overestimates normalized close-passage opportunities b
 
 These are controlled numerical benchmarks. E003 calculates an expected close-passage count in an imposed bath along an unperturbed orbit; it does not simulate encounter outcomes or infer mergers. All four experiments omit dynamical friction and host evolution. E003 screens remnant apocenters against a declared outer radius without truncating the host. The former E002 near-escape example remains an isolated-model limit and does not pass that screen. No observed gravitational-wave data are used.
 
-The [unreviewed manuscript](output/pdf/central-residence.pdf) covers E001/E002. Its working revision removes the nonessential numerical example from the abstract while preserving the body results. The archived v0.1.1 release remains unchanged. E003/E004 are separately documented on `main`; they are not content of that baseline paper or release.
+The [unreviewed manuscript](output/pdf/central-residence.pdf), **From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison**, now integrates **E001–E004**. It develops the connection from orbital exposure to velocity-weighted passages and then assesses transfer of the assumed population and potential to an external cluster. The [claim-to-evidence record](paper/CLAIMS.md) explains the resulting scope. It makes no calibrated merger-rate or live-trajectory claim. The archived v0.1.1 release remains the earlier E001/E002 paper.
 
 [Physical assumptions](docs/problem.md) · [Scientific relevance](docs/relevance.md) · [References](docs/references.md)
 

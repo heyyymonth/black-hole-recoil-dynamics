@@ -1,5 +1,13 @@
 # Release record
 
+## Expanded working manuscript - 2026-10-20
+
+- Integrate E001–E004 under the question of how recoil motion connects to companion access.
+- Add the encounter-kernel derivation, conditional E003 passage results, E004 population and potential comparisons, three tables, and two vector figures.
+- Reframe abstract, introduction, discussion, and conclusions around supported approximation tests and explicit calibration gaps.
+- Bind the paper build to all four experiments and retain their numerical results unchanged.
+- Add primary cluster-dynamics references and a claim-to-evidence record; manuscript revision 0.2.0-manuscript.1 is separate from the baseline software release.
+
 ## Unreleased - E004 and working abstract revision, 2026-10-20
 
 - Audit a pinned evolved CMC snapshot, preserving the distinction between all binaries and two actual BH–BH targets.

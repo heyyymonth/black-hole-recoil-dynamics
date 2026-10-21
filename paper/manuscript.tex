@@ -8,22 +8,24 @@
 \graphicspath{{figures/}}
 
 \begin{document}
-\title{Central residence and density exposure of recoiling remnants in a Plummer potential}
+\title{From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison}
 \author{Venkata Hemanth Athota}
 \email{bharadwaj.hemanth.002@gmail.com}
 \affiliation{Independent researcher}
 
 \begin{abstract}
-We examine how accurately simplified central-residence prescriptions represent the density sampled by a recoiling remnant on an undamped orbit. For a test particle launched radially from the center of a static, isolated Plummer potential, we compute the first central-return time, finite-window central residence, and normalized density exposure using endpoint-regularized energy quadrature. Direct orbit integration and analytical limits provide independent checks. We compare continuous orbital exposure with uninterrupted central residence and with a prescription that suppresses exposure until first return, then assumes permanent central residence. The latter underestimates early exposure and eventually overestimates it because the undamped orbit repeatedly leaves the center. Near escape, the return time diverges while exposure per bound excursion approaches a finite limit. These results provide a reproducible collisionless benchmark for the stated prescriptions. They do not model frictional recentering or infer encounter rates, repeated-merger probabilities, or constraints from gravitational-wave observations.
+We examine the approximations connecting a retained black-hole remnant's motion to its access to potential companions. A sequence of controlled experiments separates ballistic return, density exposure, velocity-weighted close passages, and the transfer of assumed host and target distributions to an evolved cluster snapshot. In a static Plummer potential, a first-return-then-central prescription misses early exposure and eventually overestimates it, while exposure per bound excursion remains finite as the return time diverges near escape. For a specified dilute binary population, density exposure overestimates normalized passage counts in the selected higher-kick, focusing-dominated cases; the discrepancy follows from the relative-velocity dependence of the encounter kernel. An external cluster snapshot contains too few binary black holes to calibrate a continuous companion distribution, and matching its total mass and half-mass radius with a Plummer model does not reproduce its frozen-potential return times. Independent numerical formulations, analytical limits, and full-shell comparisons verify the stated calculations. Together, these results identify distinct approximation errors and calibration gaps. They support conditional benchmarks for companion accessibility, without establishing live recoil trajectories, companion-acquisition probabilities, repeated-merger rates, or observational formation-channel constraints.
 \end{abstract}
 \maketitle
 
 \section{Introduction}\label{sec:introduction}
-A retained merger remnant need not remain in the dense part of its host. Published work already studies recoil displacement and frictional recentering~\cite{Islam2026}, while hierarchical-merger calculations include host evolution and uncertain companion pairing~\cite{Torniamenti2024}. We isolate a narrower calculation: how accurately do assumed central residence and a first-return-then-central prescription reproduce the density sampled by an undamped orbit?
+A retained merger remnant need not remain in the dense part of its host. Another merger requires more than retention: the remnant must reach suitable companions, acquire or enter a binary, and undergo subsequent evolution. Published work already treats recoil displacement and frictional recentering~\cite{Islam2026}, host evolution and pairing~\cite{Torniamenti2024}, and successive mergers with explicit few-body encounters~\cite{Atallah2023}. Black-hole concentration through mass segregation is also established~\cite{Breen2013}. The question here is narrower: which approximations preserve the information needed to estimate access to a specified target population?
 
-The experiment does not test the frictional-return model of Ref.~\cite{Islam2026}. Its first ballistic center crossing is distinct from dissipative recentering. Nor does it establish that an exact return time lacks orbital information: in this fixed one-parameter family, the return time and governing equations can identify the orbit. The subject is the error made by two explicitly defined approximations.
+We examine successive links in that calculation. E001 establishes the ballistic return of a centrally kicked test particle in the standard Plummer potential~\cite{Plummer1911}. E002 compares continuous density exposure with two central-residence prescriptions. E003 supplies an explicit tracer-binary population and cross section, testing whether normalized density exposure represents normalized close-passage counts. E004 separately audits the target population and host potential of one evolved Cluster Monte Carlo (CMC) snapshot~\cite{Rodriguez2022,RuiSnapshot}. The experiment identifiers connect the manuscript to independently versioned configurations and result records.
 
-We use the standard Plummer potential~\cite{Plummer1911} as a smooth benchmark. The gravitational-wave connection is the post-recoil motion of a possible black-hole merger remnant; gravitational radiation, binary formation, and merger dynamics are not simulated here.
+These steps do not constitute a calibrated end-to-end merger model. E003 is conditional on an imposed bath; E004 does not calculate passage counts in the CMC population or evolve a kicked remnant in a live cluster. Its host and physical kicks differ from E003's. We therefore neither combine their errors into a merger-rate correction nor interpret the snapshot as astrophysical validation of E003.
+
+Our ballistic center crossing is distinct from frictional recentering, so the calculations do not reproduce or falsify the return prescription of Ref.~\cite{Islam2026}. Within the fixed one-parameter Plummer family, an exact return time and the governing equations can identify the orbit; the error lies in replacing that orbit by an assumed residence history. The gravitational-wave connection is to the environment of a possible merger remnant. No observed signals, radiation waveforms, or merger outcomes are analyzed.
 
 \section{Model and numerical method}\label{sec:model}
 With host mass $M$, scale radius $b$, and gravitational constant $G$, define
@@ -117,6 +119,126 @@ For $c=1$, the threshold is 0.541196. Equality touches the sphere boundary insta
 \caption{Residence fraction per radial period for three operational sphere radii. Each curve equals unity below the threshold in Eq.~\eqref{eq:threshold} and decreases as bound kicks approach escape. The radii are model definitions, not measured cluster core radii.}\label{fig:residence}
 \end{figure}
 
+\section{From density exposure to close passages: E003}\label{sec:encounters}
+\subsection{Specified population and comparison}
+We set $M=10^6\,M_\odot$, $b=1\,\mathrm{pc}$, and remnant mass $m_{\mathrm r}=60\,M_\odot$. An imposed population of $N_{\mathrm b}=100$ tracer binary black holes has total mass $m_{\mathrm b}=60\,M_\odot$ per binary and semimajor axis $a=0.1\,\mathrm{AU}$. Its mass is $0.6\%$ of the fixed host mass. The unsegregated target number density is
+\begin{equation}
+n_{\mathrm b}(r)=n_0\widetilde\rho(x),\qquad
+n_0=\frac{3N_{\mathrm b}}{4\pi b^3},\quad
+\widetilde\rho(x)=(1+x^2)^{-5/2}.\label{eq:target-density}
+\end{equation}
+The target center-of-mass velocities follow the isotropic equilibrium Plummer distribution, not a measured black-hole subsystem.
+
+All four cases, $\eta=0,0.3,0.8,0.9$, share $H=10$, corresponding to $T=Ht_d=0.149096\,\mathrm{Myr}$. They are admitted only if their apocenters lie within five Plummer half-mass radii, $6.52383b$. This operational screen is motivated by Ref.~\cite{Islam2026}; it does not truncate the potential or target distribution. The E002 $\eta=0.99$ example fails that screen and remains an isolated-model limit. A common elapsed time is essential: the higher-kick cases have not completed one return by $H=10$, whereas the $\eta=0.3$ case has completed about 2.86 radial periods.
+
+A close passage is defined by two-body monopole pericenter $R=1\,\mathrm{AU}$ from the target binary center of mass. This is ten binary semimajor axes, a boundary around the binary's neighborhood rather than a cross section for exchange. For relative speed $w$ before mutual focusing,
+\begin{equation}
+\Sigma(w)=\pi R^2\left[1+\frac{2G(m_{\mathrm r}+m_{\mathrm b})}{Rw^2}\right].\label{eq:cross-section}
+\end{equation}
+The local two-body approximation neglects host tides during the approach and internal binary multipoles. It does not determine the outcome after entry.
+
+\subsection{Velocity weighting and the density approximation}
+Let $u$ be target speed and $v$ remnant speed in the host frame. At fixed radius, $y=u/v_{\mathrm{esc}}(r)$ has density
+\begin{equation}
+p(y)=\frac{512}{7\pi}y^2(1-y^2)^{7/2},\qquad 0\leq y\leq1.\label{eq:speed-density}
+\end{equation}
+This follows from the isotropic Plummer distribution $f(E)\propto(-E)^{7/2}$~\cite{GalpyPlummer}. Isotropic angular averaging gives
+\begin{align}
+\langle w\rangle_\Omega&=\max(v,u)+\frac{\min(v,u)^2}{3\max(v,u)},\notag\\
+\langle w^{-1}\rangle_\Omega&=\frac{1}{\max(v,u)}.\label{eq:angle-moments}
+\end{align}
+The velocity-integrated zero-speed limit is finite. We evaluate the remaining speed moments with incomplete beta functions and check them by direct numerical angle and speed integration.
+
+Define the local encounter kernel and passage rate by
+\begin{align}
+K(r,v)&=\pi R^2\left[\langle w\rangle+
+\frac{2G(m_{\mathrm r}+m_{\mathrm b})}{R}\langle w^{-1}\rangle\right],\notag\\
+\Gamma(r,v)&=n_{\mathrm b}(r)K(r,v),\notag\\
+\tau(T)&=\int_0^T\Gamma[r(t_{\mathrm{phys}}),v(t_{\mathrm{phys}})]\,dt_{\mathrm{phys}}.\label{eq:rate}
+\end{align}
+Here $K$ has dimensions of volume per time, $\Gamma$ inverse time, and $\tau$ is a dimensionless expected passage count along the unperturbed orbit. We do not turn $\tau$ into a merger probability or assume that the orbit remains unchanged after an actual encounter.
+
+For implementation, use $V=\sqrt{GM/b}$ and dimensionless $t=t_{\mathrm{phys}}/t_d$. The geometric and focusing integrals are
+\begin{align}
+J_g&=\int_0^H\widetilde\rho\langle w/V\rangle\,dt,\qquad
+J_f=\int_0^H\widetilde\rho\langle V/w\rangle\,dt,\notag\\
+\tau&=n_0\pi R^2b\left(J_g+\lambda J_f\right),\qquad
+\lambda=\frac{2(m_{\mathrm r}+m_{\mathrm b})b}{MR}.\label{eq:dimensionless-rate}
+\end{align}
+The length factor $b=Vt_d$ applies the time conversion once. In this configuration $\lambda=49.5036$.
+
+The stationary central control defines $Q=\tau(\eta,H)/\tau(0,H)$. The density proxy is $D=I(H)/H$. Their relationship is exact for the specified bath:
+\begin{equation}
+\frac{Q}{D}=\frac{\int_0^H\widetilde\rho[x(t)]K[r(t),v(t)]\,dt}
+{K(0,0)\int_0^H\widetilde\rho[x(t)]\,dt}.\label{eq:kernel-ratio}
+\end{equation}
+Thus the density approximation discards variation in the encounter kernel. It is accurate when the density-weighted mean of $K$ is close to its stationary central value; residence alone does not enforce that condition.
+
+\subsection{Results and physical interpretation}
+The signed proxy error is $\delta=D/Q-1$. Before execution, we declared $|\delta|>0.10$ a failure of this benchmark's approximation screen. This is an operational tolerance, not a significance level or a requirement from gravitational-wave inference.
+
+\begin{table}[t]
+\caption{E003 at the common horizon $H=10$. $D$ and $Q$ are normalized to the stationary control; $\delta=D/Q-1$ is reported in percent. $\tau$ is an expected passage count, not an observed count or merger probability.}\label{tab:encounters}
+\input{tables/encounters.tex}
+\end{table}
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{encounter-proxy.pdf}
+\caption{E003: (a) normalized density exposure $D$ and velocity-weighted passage count $Q$ over the same elapsed time; (b) signed density-proxy error and the predeclared 10\% screen. The central stationary case is the normalization control. Values are deterministic calculations, without sampling error bars.}\label{fig:encounters}
+\end{figure*}
+
+Table~\ref{tab:encounters} and Fig.~\ref{fig:encounters} show errors of $+4.41\%$, $+53.06\%$, and $+98.55\%$ at the three nonzero kicks. The two larger kicks fail the screen. At $\eta=0.9$, density exposure is $5.81\%$ of the control but passage count is $2.93\%$. The density-only approximation is nearly twice the conditional velocity-weighted count. The ordering across kicks does not reverse.
+
+The geometric and focusing terms respond differently to motion. At $\eta=0.9$, their separately normalized contributions are 0.1110 and 0.02867, respectively, compared with $D=0.05811$. Higher relative speed increases geometric flux but reduces the inverse-speed contribution of focusing. Focusing supplies $97.23$--$99.19\%$ of the nonzero-kick counts and controls the total discrepancy. Slow motion near apocenter does not compensate for the low tracer density there.
+
+Absolute counts remain small: the stationary control has $\tau=1.6080\times10^{-6}$ and the $\eta=0.9$ case has $\tau=4.7064\times10^{-8}$. These are conditional outputs for the imposed population and window, not an encounter-rate prediction for a calibrated cluster. A large fractional proxy error here does not establish a large merger-rate effect. The short window also does not prove that friction, diffusion, or host evolution would be negligible in a real system.
+
+\section{External population and potential audit: E004}\label{sec:snapshot}
+\subsection{Reference state and comparison design}
+We use the full evolved example distributed with \texttt{cmctoolkit}~\cite{Rui2021}: model \texttt{N8-RV1-RG8-Z0.1}, snapshot \texttt{initial.snap0382.dat.gz}, at the pinned source revision identified in Ref.~\cite{RuiSnapshot}. It was selected as an available evolved example before examining discrepancies. It is one simulated state, not an observational dataset or the full CMC catalog~\cite{Kremer2020}.
+
+The age is $12.7323\,\mathrm{Gyr}$, total system mass $M=224633\,M_\odot$, and three-dimensional half-mass radius $r_h=4.79771\,\mathrm{pc}$. Matching these last two quantities gives Plummer scale $b=r_h\sqrt{2^{2/3}-1}=3.67706\,\mathrm{pc}$. E004 uses these current properties, not initial conditions or E003's host parameters. The numerical kick fractions recur across experiments, but their physical speeds are not the same across hosts.
+
+We separately count all systems, all binaries, single black holes, binaries containing at least one black hole, and binaries containing two black holes (BBHs). Stellar-type code 14 identifies black holes in this input convention. The declared minimum count of 30 screens whether continuous BBH-distribution calibration is supported; it is not a statistical sufficiency theorem. Descriptive radial and speed CDF distances carry no independent-sample significance interpretation.
+
+\subsection{What the companion sample supports}
+\begin{table}[t]
+\caption{E004 inventory. Radius is the number-median system radius divided by the host's mass-weighted half-mass radius. Categories overlap: BBHs are a subset of BH-bearing binaries.}\label{tab:population}
+\input{tables/population.tex}
+\end{table}
+
+There are 682583 systems, 31122 binaries, and 29 black-hole objects. Only two systems are BBHs (Table~\ref{tab:population}). Their total masses are $26.672$ and $29.821\,M_\odot$, and their semimajor axes span $0.23958$--$12.40947\,\mathrm{AU}$. Their median radius is $0.04864\,\mathrm{pc}$, or $0.01014r_h$. All binaries and all black holes would be inappropriate replacements for this specific target population.
+
+These two centrally concentrated binaries do not calibrate E003's fixed-mass, fixed-separation, unsegregated bath. No continuous distribution is fitted. This snapshot also cannot reject such parameters for every cluster or age, or establish a universal BBH distribution. Concentration is consistent with established mass-segregation physics~\cite{Breen2013}, not a newly identified mechanism. Speed fractions in the recorded audit use the matched Plummer escape speed; their discrepancy mixes host-potential and population assumptions and cannot alone diagnose velocity anisotropy or equipartition.
+
+\subsection{Frozen spherical potential and identical kicks}
+Each system is spread over a spherical shell at its snapshot radius. With zero potential at infinity,
+\begin{equation}
+\Phi_{\mathrm{sh}}(r)=-G\left[\frac{M(<r)}{r}+
+\sum_{r_i\geq r}\frac{m_i}{r_i}\right].\label{eq:shell-potential}
+\end{equation}
+The central value uses the finite limiting shell sum. Exterior mass contributes to potential energy even where its force vanishes. For central launch speed $v_k$, the energy is $\mathcal E=v_k^2/2+\Phi_{\mathrm{sh}}(0)$; the apocenter solves $\Phi_{\mathrm{sh}}(r_a)=\mathcal E$, and
+\begin{equation}
+P_{\mathrm{sh}}=2\int_0^{r_a}\frac{dr}{\sqrt{2[\mathcal E-\Phi_{\mathrm{sh}}(r)]}}.\label{eq:shell-return}
+\end{equation}
+We split the integral at shell boundaries and regularize the turning point. This is a frozen monopole calculation with no drag or encounters.
+
+The snapshot and matched Plummer central escape speeds are $26.547$ and $22.924\,\mathrm{km\,s^{-1}}$. We apply identical physical kicks, chosen as $0.3$, $0.8$, and $0.9$ times the latter speed. Renormalizing by each model's own escape speed would change the physical experiment. All three kicks are bound in both isolated potentials. This binding classification is distinct from tidal removal in CMC~\cite{Rodriguez2022}.
+
+\begin{table}[t]
+\caption{E004 first ballistic returns at identical physical kicks within each model pair. $P_{\mathrm{sh}}$ uses 2048 compressed shells; $P_{\mathrm{Pl}}$ is the matched Plummer value. Times are Myr and speeds are km\,s$^{-1}$.}\label{tab:snapshot-return}
+\input{tables/snapshot-return.tex}
+\end{table}
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{snapshot-comparison.pdf}
+\caption{E004: (a) host mass fractions and the number fraction of the two BBHs; (b) frozen snapshot and matched Plummer potentials; (c) first returns at identical physical kicks. The BBH curve describes two systems, not a fitted companion distribution. Potentials and returns use the 2048-shell representation.}\label{fig:snapshot}
+\end{figure*}
+
+Matching $M$ and $r_h$ does not preserve the central depth or return times (Table~\ref{tab:snapshot-return}, Fig.~\ref{fig:snapshot}). Plummer return times are 2.9557, 2.8139, and 4.4531 times the shell values. All exceed the predeclared 10\% return-time screen, measured relative to the shell result. This tests transfer of a potential-shape approximation to one state; it does not measure the error of a live-cluster trajectory model.
+
+CMC models relaxation and strong encounters but samples new orbital phases during its Monte Carlo evolution~\cite{Rodriguez2022}. Connecting snapshot radii is therefore not a continuous physical recoil trajectory. E004 neither follows a displaced remnant nor evaluates its encounters with the measured targets. Those two missing calculations prevent an astrophysical calibration of E003's passage counts.
+
 \section{Analytical and numerical verification}\label{sec:validation}
 For a stationary object, $I(H)=C(H,c)=H$. For nonzero bound kicks, both exposure and occupancy repeat every $P$, hence $I(nP)=nI(P)$. In the small-kick limit, $I(P)\to\pi$ and $I(P)/P\to1$.
 
@@ -133,17 +255,39 @@ Combining this with Eq.~\eqref{eq:period-limit} gives
 \end{equation}
 This is a limit from bound orbits. An exactly marginally bound particle does not return in finite time.
 
-The recorded verification contains 27 passing tests. Independent checks integrate the signed equations of motion using DOP853~\cite{SciPySolveIVP}, compare central crossings, monitor energy, and integrate accumulated density as an additional state variable. Core residence is checked with event-segmented trajectories. Other tests cover stationary behavior, sphere thresholds, period accumulation, crossing continuity, density as the derivative of exposure, invalid inputs, and convergence near escape. The strongest near-escape numerical cases reach $\eta=0.9999$; no claim is made of uniform numerical accuracy arbitrarily close to escape.
+The complete verification suite contains 108 passing tests. The original 27 establish the E001/E002 orbital benchmarks. Independent checks integrate the signed equations of motion using DOP853~\cite{SciPySolveIVP}, compare central crossings, monitor energy, and integrate accumulated density as an additional state variable. Core residence is checked with event-segmented trajectories. Other tests cover stationary behavior, sphere thresholds, period accumulation, crossing continuity, density as the derivative of exposure, invalid inputs, and convergence near escape. The strongest near-escape numerical cases reach $\eta=0.9999$; no claim is made of uniform numerical accuracy arbitrarily close to escape.
 
-Separately, the result verifier reproduces 146 recorded rows: nine return-time rows, ten cycle rows, 77 fixed-window rows, and 50 period-scaled rows. It also checks the recorded input and output hashes. This second step verifies stored results against their implementation; it is not an additional independent physics calculation. Numerical tolerances are solver controls, not error bars on the physical model.
+For E003, 35 additional checks include independent numerical velocity integrals, analytical stationary and fast-motion limits, and separately integrated DOP853 trajectories with numerical velocity moments. Agreement at $10^{-8}$ relative tolerance satisfies the predeclared $10^{-6}$ requirement. Other checks cover units, population/radius/mass scaling, period accounting, and the apocenter screen. Production orbit integrals use absolute and relative tolerances of $10^{-10}$.
+
+The remaining 46 tests check snapshot interpretation and shell calculations against direct potential sums, force derivatives, analytical one-shell returns, independent adaptive quadrature, smooth-Plummer recovery, scaling, and tied empirical-CDF jumps. Eight derived snapshot quantities agree with the authors' separately tabulated summary: age, total mass, black-hole mass, system count, object count, binary count, black-hole count, and BBH count. Counts match exactly; relative tolerances are $10^{-7}$ for masses and $10^{-12}$ for age. This validates interpretation against another processing of the same state, not an independent astrophysical dataset. Mass columns are already physical; velocities use the N-body time conversion and ages the distinct relaxation-time conversion. External conversion files are parsed without execution.
+
+For E004, approximately equal-mass shell bins use mass-weighted harmonic radii, preserving total mass and central potential. We compare 256, 512, 1024, and 2048 shells. The final two resolutions differ by less than $0.005\%$ in return time and $0.023\%$ in apocenter. Adjacent-resolution differences need not bound error. A direct comparison with all 680110 unique shell radii gives return-time errors of $0.1555\%$, $0.00131\%$, and $0.000568\%$, respectively, below the 1\% numerical screen and far below the potential-shape discrepancies. The finite-shell innermost cavity is force-free; its arbitrarily small-kick limit is not the smooth-core harmonic limit.
+
+Stored-result verification separately reproduces 146 E001/E002 rows, four E003 cases, and E004's five cohort summaries, twelve compressed-shell cases, and 160 plotting points, as well as full-shell and accounting checks. It verifies recorded input and output hashes. Reproduction with the same implementation is distinct from the independent checks above. Grid points and resolution levels are not independent astrophysical observations; solver tolerances are not physical-model uncertainties.
 
 \section{Discussion and conclusions}\label{sec:conclusions}
-The two tested prescriptions fail to preserve continuous exposure for distinct reasons: one assumes uninterrupted central residence, and the other removes the initial outbound passage before imposing permanent central residence. The first-return-then-central prescription misses early exposure and eventually overestimates late exposure. Exposure per bound excursion remains finite as the return time diverges toward escape.
+\subsection{Claims supported by the combined evidence}
+The experiments identify distinct approximation errors at successive stages. E001/E002 show how an undamped orbit samples its host: assuming permanent central residence either immediately or after first return does not preserve its exposure history. The wait prescription misses early exposure and eventually overestimates late exposure. The near-escape return time diverges while exposure per bound excursion remains finite. These are properties of the stated collisionless benchmark, not frictional return estimates.
 
-Density exposure does not supply a companion distribution, relative-velocity distribution, encounter cross section, binary fraction, or companion-acquisition mechanism. The potential is static and isolated, and the test particle does not experience friction, scattering, or tidal removal. Consequently, these results do not estimate a repeated-merger probability, distinguish astrophysical formation channels, or replace evolving cluster calculations~\cite{Torniamenti2024}. The results quantify the two prescriptions within a controlled orbital benchmark.
+E003 adds the missing velocity kernel. Equation~\eqref{eq:kernel-ratio} identifies exactly what the density approximation omits, and the selected focusing-dominated cases quantify its effect. The density proxy fails the 10\% screen at the two higher kicks while preserving their ordering. Thus density exposure can organize a controlled comparison yet be quantitatively inadequate for passage counts in the same model. The finding is conditional on the given target population, passage radius, masses, and time window; it establishes neither a universal bias nor a calibrated rate.
+
+E004 then tests physical inputs that numerical verification alone cannot justify. The sparse BBH sample does not support a continuous target distribution, and the matched Plummer host fails the return-time screen for this snapshot. The sign of that return discrepancy does not determine the sign of a passage-count correction: concentration, velocities, binary properties, and evolving remnant motion all enter. In particular, it would be unjustified to multiply E003's proxy errors by E004's return ratios. The two comparisons use different hosts and do not supply the joint dynamical calculation needed for that operation.
+
+The combined contribution is consequently an explicit assessment of the approximations between recoil motion and companion accessibility, with reproducible error measurements and identified calibration gaps. It is not evidence that retained remnants reacquire companions at a measured rate. Close passage, exchange or capture, binary hardening, and another merger remain separate physical steps. No formation-channel fraction, observed-event interpretation, or new population discriminator follows from these calculations.
+
+\subsection{Which comparisons would extend the conclusion}
+Existing collisional cluster models and hierarchical-growth frameworks already contain substantially more physics~\cite{Rodriguez2022,Kremer2020,Atallah2023,Torniamenti2024}. The present results motivate a targeted comparison with those methods, not their replacement or a claim that mass segregation and gravitational focusing are new ingredients.
+
+First, companion calibration requires the joint distribution of BBH center-of-mass position and velocity, component masses, semimajor axis, and eccentricity across declared cluster histories. Time weights and object identities must be retained, with whole histories held out for prediction. Repeated snapshots of the same binary are not independent companions, and fitting a radial profile alone does not validate an encounter integral. Sparse regimes should remain explicit rather than being filled by repeated draws from the two available systems.
+
+Second, live recoil tests require resolved collisional motion. Paired kicked and un-kicked runs from the same initial microstate can compare frozen-potential and central-residence approximations against first inward core crossing after exit, finite-window core residence, and cumulative passage counts. Independent microstates and kick directions determine ensemble variation; escape must be distinguished from finite-window non-return. Integration, encounter regularization, and any relaxation-time changes under particle-number scaling require separate checks. These are specified missing comparisons, not executed results of this paper.
+
+Even after these tests, converting access into repeated mergers requires encounter outcomes and binary evolution. We therefore retain a restricted conclusion: ballistic exposure, velocity-weighted passages in an imposed bath, and external potential/population checks can be verified separately, but none substitutes for calibration of their coupled dynamics.
 
 \section*{Data and code availability}
-The implementation, configurations, generated tables, verification code, figures, and manuscript source are available in the version 0.1.1 research release~\cite{AthotaSoftware}. Python 3.11 is the numerical reference environment; dependencies are pinned. The experiment manifest records the generating source commit, source and output hashes, and runtime versions. The paper manifest separately records its build inputs and outputs. Project-authored code and documentation are distributed under the MIT license. No observational data are used.
+The E001/E002 baseline is archived in the version 0.1.1 release~\cite{AthotaSoftware}; E003 and E004 have immutable result snapshots~\cite{AthotaE003,AthotaE004}. The expanded manuscript and portable LaTeX source are maintained in the same public repository. Its paper-specific citation identifies the manuscript revision separately from the baseline software release. The revision expands the synthesis and presentation without changing the recorded experiment outputs.
+
+Python 3.11 is the numerical reference environment, with pinned dependencies. Each experiment manifest records source revisions, source/output hashes, and runtime versions; E004 also pins the external simulation revision and file checksums. The paper manifest binds inputs from all four experiments to the generated tables, vector figures, PDF, and source archive. Project-authored code and documentation use the MIT license. Upstream CMC data and dependencies retain their own rights; raw external files are fetched into verified local cache rather than redistributed. No observational data are used.
 
 \bibliography{references}
 \end{document}

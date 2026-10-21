@@ -20,7 +20,7 @@ OUT = ROOT / 'output/pdf'
 TMP = ROOT / 'tmp/latex'
 STAGE = TMP / 'source'
 TOOLCHAIN = json.loads((PAPER / 'toolchain.json').read_text())
-VERSION = '0.1.1+abstract.1'
+VERSION = '0.2.0-manuscript.1'
 for directory in (OUT, TMP, STAGE, PAPER / 'tables'):
     directory.mkdir(parents=True, exist_ok=True)
 
@@ -30,9 +30,9 @@ def rows(relative):
         return list(csv.DictReader(stream))
 
 
-def write_table(name, header, values):
+def write_table(name, header, values, alignment=None):
     content = ['% Generated from committed CSV results by paper/build.py.',
-               r'\begin{ruledtabular}', r'\begin{tabular}{'+'r'*len(header)+'}',
+               r'\begin{ruledtabular}', r'\begin{tabular}{'+(alignment or 'r'*len(header))+'}',
                ' & '.join(header)+r' \\', r'\hline']
     content.extend(' & '.join(row)+r' \\' for row in values)
     content += [r'\end{tabular}', r'\end{ruledtabular}']
@@ -49,6 +49,29 @@ write_table('exposure.tex', [r'$\eta$', r'$I(P)$', r'$I(P)/P$', r'$C(P,1)/P$'],
             [[f"{float(row['eta']):g}", f"{float(row['cycle_density_exposure']):.6f}",
               f"{float(row['cycle_mean_density']):.6g}", f"{float(row['core_fraction_c_1']):.6g}"]
              for row in cycle_rows])
+encounter_rows = rows('results/e003/encounters.csv')
+def scientific(value):
+    mantissa, exponent = f'{float(value):.3e}'.split('e')
+    return f'${mantissa}\\times10^{{{int(exponent)}}}$'
+write_table('encounters.tex', [r'$\eta$', '$D$', '$Q$', r'$\delta$ (\%)', r'$\tau$'],
+            [[f"{float(r['eta']):g}", f"{float(r['density_ratio']):.5f}",
+              f"{float(r['encounter_ratio']):.5f}", f"{100*float(r['proxy_relative_error']):.2f}",
+              scientific(r['tau_total'])] for r in encounter_rows])
+population_names = {'all_systems': 'All systems', 'all_binaries': 'All binaries',
+                    'single_black_holes': 'Single BHs', 'bh_bearing_binaries': 'BH-bearing binaries',
+                    'binary_black_holes': 'BBHs'}
+write_table('population.tex', ['Population', '$N$', r'$\mathrm{median}(r)/r_h$'],
+            [[population_names[r['population']], f"{int(r['count']):,}",
+              f"{float(r['median_radius_over_host_rh']):.5f}"]
+             for r in rows('results/e004/population.csv')], alignment='lrr')
+snapshot_rows = rows('results/e004/trajectories.csv')
+finest = max(int(r['shell_count']) for r in snapshot_rows)
+write_table('snapshot-return.tex', [r'$\eta_{\mathrm{Pl}}$', '$v_k$',
+            r'$P_{\mathrm{sh}}$', r'$P_{\mathrm{Pl}}$', r'$P_{\mathrm{Pl}}/P_{\mathrm{sh}}$'],
+            [[f"{float(r['eta_plummer']):g}", f"{float(r['kick_kms']):.4f}",
+              f"{float(r['snapshot_return_myr']):.5f}", f"{float(r['plummer_return_myr']):.5f}",
+              f"{1+float(r['plummer_return_relative_error']):.4f}"]
+             for r in snapshot_rows if int(r['shell_count']) == finest])
 subprocess.run([sys.executable, str(PAPER / 'figures.py')], cwd=ROOT, check=True)
 engine = shutil.which('tectonic')
 if not engine:
@@ -98,7 +121,8 @@ pdf = OUT / 'central-residence.pdf'
 shutil.copyfile(TMP / 'manuscript.pdf', pdf)
 reader = PdfReader(pdf)
 text = '\n'.join(page.extract_text() for page in reader.pages)
-for required in ['Venkata Hemanth Athota', 'bharadwaj.hemanth.002@gmail.com', 'Islam']:
+for required in ['Venkata Hemanth Athota', 'bharadwaj.hemanth.002@gmail.com', 'Islam',
+                 'E001', 'E002', 'E003', 'E004', 'From recoil motion to companion access']:
     if re.sub(r'\s+', '', required) not in re.sub(r'\s+', '', text):
         raise AssertionError(f'Missing manuscript text: {required}')
 for page in reader.pages:
@@ -127,12 +151,23 @@ inputs = [ROOT / name for name in ['paper/build.py', 'paper/verify.py', 'paper/f
           'paper/requirements.txt', 'paper/toolchain.json', 'requirements-lock.txt', 'CITATION.cff', 'LICENSE',
           'experiments/config.json', 'results/run_all.json']]
 inputs += source_files
-# This manuscript covers the E001/E002 baseline, not later snapshot studies.
-inputs += sorted((ROOT / 'results/e001').glob('*.csv'))
-inputs += sorted((ROOT / 'results/e002').glob('*.csv'))
+# Bind all reported experiments to their configurations, numerical source,
+# tables and summaries. External data stay pinned in the E004 manifest.
+for name in ['run_all', 'run_e003', 'run_e004']:
+    path = ROOT/'results'/f'{name}.json'
+    inputs.append(path)
+    record = json.loads(path.read_text())
+    for group in ['source_sha256', 'output_sha256']:
+        for relative in record.get(group, {}):
+            if group == 'source_sha256' or Path(relative).suffix in ['.csv', '.json']:
+                inputs.append(ROOT/relative)
+for experiment in ['e001', 'e002', 'e003', 'e004']:
+    inputs += sorted((ROOT/'results'/experiment).glob('*.csv'))
 inputs += [ROOT/'src/recoil_dynamics/plummer.py', ROOT/'src/recoil_dynamics/__init__.py']
 sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
 manifest = {'paper': 'central-residence', 'version': VERSION, 'pages': len(reader.pages),
+            'title': 'From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison',
+            'experiments': ['E001', 'E002', 'E003', 'E004'],
             'format': 'REVTeX 4.2 APS/PRD reprint; US Letter; two columns; txfonts',
             'engine': engine_version, 'source_date_epoch': env['SOURCE_DATE_EPOCH'],
             'revtex_log': next(line.strip() for line in log.splitlines() if line.startswith('Document Class: revtex')),

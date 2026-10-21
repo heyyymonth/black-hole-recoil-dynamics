@@ -1,21 +1,19 @@
 # Research manuscript
 
-**Central residence and density exposure of recoiling remnants in a Plummer potential**
+**From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison**
 
-Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.1.1+abstract.1
+Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.2.0-manuscript.1
 
 [Paper PDF](../output/pdf/central-residence.pdf) · [LaTeX source](manuscript.tex) · [Portable source archive](../output/pdf/manuscript-source.zip) · [Formatting conventions](FORMAT.md)
 
-The manuscript records E001 and E002. The two-column physics layout follows the
+The manuscript integrates E001–E004. The two-column physics layout follows the
 REVTeX family used by the recoil-paper reference. It contains no watermark,
 publication banner, or acceptance claim. Review status is recorded here, outside
 the paper: this is an unreviewed manuscript and has not been submitted to a venue.
 
-The current working revision removes the nonessential numerical example from
-the abstract and emphasizes the question, method, and supported qualitative
-conclusion. Numerical results remain in the body and tables. The archived v0.1.1
-release is unchanged; E003/E004 are separately documented experiments and are
-not claimed as content of this baseline manuscript.
+The scope is an assessment of the approximations between recoil motion and companion access. E001/E002 establish ballistic return and exposure, E003 tests density weighting against conditional passage counts, and E004 audits population and potential assumptions against one external cluster snapshot. The abstract reports qualitative findings; numerical results appear in the methods, tables, and figures.
+
+The [claim-to-evidence record](CLAIMS.md) distinguishes supported conclusions from uncalibrated live dynamics and merger outcomes. The archive v0.1.1 remains the E001/E002 baseline; this manuscript revision includes the subsequent experiments without changing their stored results. Its revision identifier is separate from the baseline software package version. Use the paper-specific citation alongside the relevant experiment snapshots.
 
 ## Reference build
 
@@ -26,12 +24,14 @@ for your platform, then run from the repository root:
 ```sh
 python -m pip install -r paper/requirements.txt
 python experiments/verify_results.py
+python experiments/verify_e003.py
+python experiments/verify_e004.py
 python paper/build.py
 python paper/verify.py
 ```
 
 The builder reads the committed CSV results into native LaTeX tables, regenerates
-three vector figures, compiles the article and BibTeX references, and writes:
+five vector figures, compiles the article and BibTeX references, and writes:
 
 - `output/pdf/central-residence.pdf`
 - `output/pdf/manuscript-source.zip`
