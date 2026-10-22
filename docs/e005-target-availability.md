@@ -65,15 +65,15 @@ The next question becomes:
 
 > **Conditional on a merger that leaves a retained remnant, does a model that follows the number and properties of available BH–BH targets predict companion access better than a smooth, stationary bath over the remnant's displacement interval?**
 
-For example, let \(\mathcal M\) denote that preceding merger, its host state, and remnant properties; let \(N_{\rm BBH}(t)\) be the number of available BH–BH targets. The law of total expectation separates two quantities that must be measured:
+For example, let $`\mathcal M`$ denote that preceding merger, its host state, and remnant properties; let $`N_{\rm BBH}(t)`$ be the number of available BH–BH targets. The law of total expectation separates two quantities that must be measured:
 
-\[
+```math
 \mathbb E[\Gamma(t)\mid\mathcal M]
 =\sum_n P[N_{\rm BBH}(t)=n\mid\mathcal M]\,
 \mathbb E[\Gamma(t)\mid N_{\rm BBH}(t)=n,\mathcal M].
-\]
+```
 
-Here \(\Gamma\) is a close-passage rate under a declared encounter definition, not a merger rate. The first factor describes target availability; the second needs phase space, binary properties and remnant motion. This identity states the measurement problem; E005 estimates neither factor for actual merger remnants. A state with no targets has no immediate passages to that target class, but later binary formation can change that. A mean passage count alone does not determine the probability of one or more encounters without a justified counting model.
+Here $`\Gamma`$ is a close-passage rate under a declared encounter definition, not a merger rate. The first factor describes target availability; the second needs phase space, binary properties and remnant motion. This identity states the measurement problem; E005 estimates neither factor for actual merger remnants. A state with no targets has no immediate passages to that target class, but later binary formation can change that. A mean passage count alone does not determine the probability of one or more encounters without a justified counting model.
 
 Existing research already supplies relevant physical mechanisms. [Breen & Heggie](https://arxiv.org/abs/1304.3401) couples the segregated BH subsystem to the host's energy balance. [CMC methods](https://arxiv.org/abs/2106.02643) include binary formation and strong interactions. [Atallah et al.](https://arxiv.org/html/2211.09670v4) combines encounters and recentering in a fixed nuclear-cluster framework. Our present contribution is a reproducible audit of assumptions for a reduced accessibility model, not discovery of BH segregation or a new hierarchical-merger mechanism. Nuclear-cluster results cannot automatically be transferred to this old-globular-cluster sample.
 

@@ -14,7 +14,9 @@ Does replacing continuous orbital motion with either permanent central residence
 
 For horizon $H$, we measure the time $C(H,c)$ inside a sphere of radius $cb$, and the normalized density integral
 
-$$I(H)=\int_0^H w[x(t)]\,dt,\qquad w(x)=(1+x^2)^{-5/2}.$$
+```math
+I(H)=\int_0^H w[x(t)]\,dt,\qquad w(x)=(1+x^2)^{-5/2}.
+```
 
 We compare $I(H)$ with $H$ (assumed always central) and $\max(H-P,0)$ (first return followed by permanent central residence). The latter deliberately suppresses all exposure before $P$ and assumes unit density afterward. It is not a model of frictional settling.
 
@@ -52,7 +54,9 @@ At $H=P$, the wait prescription assigns zero exposure while the trajectory gives
 
 Central residence also depends on the chosen radius. An orbit remains entirely inside a sphere if
 
-$$\eta\le\sqrt{1-\frac{1}{\sqrt{1+c^2}}}.$$
+```math
+\eta\le\sqrt{1-\frac{1}{\sqrt{1+c^2}}}.
+```
 
 For $c=1$, this threshold is approximately 0.541196. Residence inside a sphere and density-weighted exposure are distinct quantities: density varies even along an orbit that never leaves the sphere.
 
@@ -62,15 +66,21 @@ For a stationary object, $I(H)=C(H,c)=H$. For nonzero bound kicks, exposure and 
 
 As the kick tends to escape, the period diverges but the exposure per excursion stays finite. For the marginally bound outgoing orbit,
 
-$$\dot{x}=\sqrt{2}(1+x^2)^{-1/4},$$
+```math
+\dot{x}=\sqrt{2}(1+x^2)^{-1/4},
+```
 
 which gives the bound full-excursion limit
 
-$$\lim_{\eta\to1^-}I(P)=\sqrt{\frac{\pi}{2}}\frac{\Gamma(7/4)}{\Gamma(9/4)}=1.0166557018.$$
+```math
+\lim_{\eta\to1^-}I(P)=\sqrt{\frac{\pi}{2}}\frac{\Gamma(7/4)}{\Gamma(9/4)}=1.0166557018.
+```
 
 Together with E001's period asymptote, this yields
 
-$$\frac{I(P)}P\sim\frac{\Gamma(7/4)}{\sqrt{\pi}\Gamma(9/4)}(1-\eta^2)^{3/2}.$$
+```math
+\frac{I(P)}P\sim\frac{\Gamma(7/4)}{\sqrt{\pi}\Gamma(9/4)}(1-\eta^2)^{3/2}.
+```
 
 The tests check these limits, orbit energy, accumulated exposure from an independent ODE integration, event-based core residence, repeated periods, crossing continuity, and numerical convergence. Exactly stationary cases are handled separately from the small-amplitude return-time limit.
 

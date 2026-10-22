@@ -38,46 +38,46 @@ All comparisons use the same physical time. At H=10, eta=0.3 has completed appro
 
 Use velocity unit V = sqrt(GM/b), time unit td = b/V, x = r/b, and dimensionless time t. Let s = sqrt(1+x^2), so the local escape speed in these units is sqrt(2/s). The target number density is
 
-$$
+```math
 n_{\rm bin}(r)=n_0s^{-5},\qquad n_0=3N_{\rm bin}/(4\pi b^3).
-$$
+```
 
 The isotropic Plummer distribution has f(E) proportional to (-E)^(7/2), as documented in the [versioned galpy reference](https://docs.galpy.org/en/v1.12.0/reference/dfplummer.html). At fixed radius, its normalized target-speed distribution is
 
-$$
+```math
 p(y)=\frac{512}{7\pi}y^2(1-y^2)^{7/2},\quad y=u/v_{\rm esc}(r),\quad 0\le y\le1.
-$$
+```
 
 For remnant speed v and target speed u, the isotropic angular averages are
 
-$$
+```math
 \langle w\rangle_\Omega=\max(v,u)+\frac{\min(v,u)^2}{3\max(v,u)},\qquad
 \langle w^{-1}\rangle_\Omega=\frac{1}{\max(v,u)}.
-$$
+```
 
 The zero-speed limit is integrated explicitly. The single point v=u=0 does not cause a divergent velocity-integrated rate. Remaining speed integrals are evaluated using incomplete beta functions, with independent numerical speed and angle integration as a check.
 
 Conservation of energy and angular momentum for an isolated two-body approach gives impact parameter squared R^2 + 2G(m_rem+m_bin)R/w^2. Thus
 
-$$
+```math
 \Gamma(r,v)=n_{\rm bin}(r)\pi R^2\left[\langle w\rangle+
 \frac{2G(m_{\rm rem}+m_{\rm bin})}{R}\langle w^{-1}\rangle\right].
-$$
+```
 
 This local kinetic-theory rate neglects host tides during the passage and the binary's internal multipoles. Its integral is the expected passage count along the **unperturbed** trajectory in the specified dilute bath. We call it optical depth tau, without interpreting it as a merger probability.
 
 The two dimensionless orbit integrals are
 
-$$
+```math
 J_g=\int_0^H s^{-5}\langle w/V\rangle\,dt,\qquad
 J_f=\int_0^H s^{-5}\langle V/w\rangle\,dt.
-$$
+```
 
 With lambda = 2(m_rem+m_bin)b/(MR),
 
-$$
+```math
 \tau=n_0\pi R^2b\,[J_g+\lambda J_f].
-$$
+```
 
 The factor b follows from V td = b; time conversion is applied once. Here lambda = 49.5035535. The orbital integration uses a turning-point-regularized energy quadrature and exact cycle accounting, with absolute and relative tolerances 1e-10.
 

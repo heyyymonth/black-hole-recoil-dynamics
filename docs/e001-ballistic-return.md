@@ -14,15 +14,21 @@ How does the time to the first central return change as a bound kick approaches 
 
 With $\eta=v_k/v_{\rm esc}(0)$ and $0<\eta<1$, energy conservation gives the apocenter
 
-$$x_a=\frac{\eta\sqrt{2-\eta^2}}{1-\eta^2}.$$
+```math
+x_a=\frac{\eta\sqrt{2-\eta^2}}{1-\eta^2}.
+```
 
 The first central-return time, in units $t_d=\sqrt{b^3/(GM)}$, is
 
-$$P=2\int_0^{x_a}\frac{dx}{\sqrt{2[(1+x^2)^{-1/2}-(1-\eta^2)]}}.$$
+```math
+P=2\int_0^{x_a}\frac{dx}{\sqrt{2[(1+x^2)^{-1/2}-(1-\eta^2)]}}.
+```
 
 The substitution $x=x_a\sin\theta$ removes the endpoint singularity. Writing $s=\sqrt{1+x_a^2\sin^2\theta}$ and $s_a=1/(1-\eta^2)$ gives
 
-$$\frac{dt}{d\theta}=\sqrt{\frac{s s_a(s+s_a)}{2}},\qquad P=2\int_0^{\pi/2}\frac{dt}{d\theta}\,d\theta.$$
+```math
+\frac{dt}{d\theta}=\sqrt{\frac{s s_a(s+s_a)}{2}},\qquad P=2\int_0^{\pi/2}\frac{dt}{d\theta}\,d\theta.
+```
 
 The tabulated kicks are specified in `experiments/config.json`. The plotted curve extends to $\eta=0.9999$. Both absolute and relative quadrature tolerances are $10^{-11}$.
 
@@ -41,7 +47,9 @@ The tabulated kicks are specified in `experiments/config.json`. The plotted curv
 
 The small-kick limit is $P\to\pi$. The near-escape limit is
 
-$$P\sim\frac{\pi}{\sqrt{2}}(1-\eta^2)^{-3/2}.$$
+```math
+P\sim\frac{\pi}{\sqrt{2}}(1-\eta^2)^{-3/2}.
+```
 
 The numerical curve approaches both limits. At $\eta=0.99$, the remnant is bound but its excursion extends to about $50b$ and lasts about $793t_d$.
 

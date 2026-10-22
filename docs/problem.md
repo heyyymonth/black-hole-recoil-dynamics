@@ -10,11 +10,15 @@ E001/E002 ask whether a retention flag or a prescription that treats first retur
 
 The host potential is
 
-$$\Phi(r)=-\frac{GM}{\sqrt{r^2+b^2}}.$$
+```math
+\Phi(r)=-\frac{GM}{\sqrt{r^2+b^2}}.
+```
 
 Use length unit $b$, time unit $t_d=\sqrt{b^3/(GM)}$, and kick fraction $\eta=v_k/\sqrt{2GM/b}$. The signed radial coordinate satisfies
 
-$$\ddot{x}=-\frac{x}{(1+x^2)^{3/2}},\quad x(0)=0,\quad\dot{x}(0)=\sqrt{2}\eta.$$
+```math
+\ddot{x}=-\frac{x}{(1+x^2)^{3/2}},\quad x(0)=0,\quad\dot{x}(0)=\sqrt{2}\eta.
+```
 
 Dots denote derivatives with respect to dimensionless time. We restrict the experiment to bound or stationary cases, $0\le\eta<1$. The specific dimensionless energy is $E=\eta^2-1$.
 
@@ -26,9 +30,13 @@ We define an operational central sphere by $|x|<c$, with declared $c=r_c/b$. The
 
 For a dimensionless window $H$,
 
-$$C(H,c)=\int_0^H\mathbf{1}_{|x(t)|<c}\,dt,$$
+```math
+C(H,c)=\int_0^H\mathbf{1}_{|x(t)|<c}\,dt,
+```
 
-$$I(H)=\int_0^H(1+x(t)^2)^{-5/2}\,dt.$$
+```math
+I(H)=\int_0^H(1+x(t)^2)^{-5/2}\,dt.
+```
 
 $C/H$ is a residence fraction. $I/H$ is the mean normalized Plummer density sampled along the orbit. The latter is a geometric exposure measure. Turning it into an encounter rate would additionally require the relevant species density, velocity distribution, cross section, and binary properties. It is not a merger probability.
 

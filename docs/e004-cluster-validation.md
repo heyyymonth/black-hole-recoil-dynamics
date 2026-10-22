@@ -32,7 +32,9 @@ The [population table](../results/e004/population.csv) also reports descriptive 
 
 For spherical shells, with potential zero at infinity,
 
-$$\Phi(r)=-G\left[\frac{M(<r)}{r}+\sum_{r_i\geq r}\frac{m_i}{r_i}\right].$$
+```math
+\Phi(r)=-G\left[\frac{M(<r)}{r}+\sum_{r_i\geq r}\frac{m_i}{r_i}\right].
+```
 
 Exterior shells contribute to binding energy even though they exert no interior force. The snapshot central escape speed is 26.547 km/s, compared with 22.924 km/s for the matched Plummer model. The latter matches total mass and half-mass radius but is shallower centrally.
 
