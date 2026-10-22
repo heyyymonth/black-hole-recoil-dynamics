@@ -31,7 +31,7 @@ We define an operational central sphere by $|x|<c$, with declared $c=r_c/b$. The
 For a dimensionless window $H$,
 
 ```math
-C(H,c)=\int_0^H\mathbf{1}_{|x(t)|<c}\,dt,
+C(H,c)=\int_0^H\mathbf{1}_{|x(t)|\lt c}\,dt,
 ```
 
 ```math
