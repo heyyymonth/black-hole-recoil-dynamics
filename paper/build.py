@@ -20,7 +20,11 @@ OUT = ROOT / 'output/pdf'
 TMP = ROOT / 'tmp/latex'
 STAGE = TMP / 'source'
 TOOLCHAIN = json.loads((PAPER / 'toolchain.json').read_text())
-VERSION = '0.2.0-manuscript.1'
+VERSION = '0.3.0-manuscript.1'
+title_match = re.search(r'\\title\{([^{}]+)\}', (PAPER/'manuscript.tex').read_text())
+if title_match is None:
+    raise SystemExit('Expected one plain-text manuscript title for provenance.')
+TITLE = re.sub(r'\s+', ' ', title_match.group(1)).strip()
 for directory in (OUT, TMP, STAGE, PAPER / 'tables'):
     directory.mkdir(parents=True, exist_ok=True)
 
@@ -31,7 +35,7 @@ def rows(relative):
 
 
 def write_table(name, header, values, alignment=None):
-    content = ['% Generated from committed CSV results by paper/build.py.',
+    content = ['% Generated from committed results by paper/build.py.',
                r'\begin{ruledtabular}', r'\begin{tabular}{'+(alignment or 'r'*len(header))+'}',
                ' & '.join(header)+r' \\', r'\hline']
     content.extend(' & '.join(row)+r' \\' for row in values)
@@ -72,6 +76,21 @@ write_table('snapshot-return.tex', [r'$\eta_{\mathrm{Pl}}$', '$v_k$',
               f"{float(r['snapshot_return_myr']):.5f}", f"{float(r['plummer_return_myr']):.5f}",
               f"{1+float(r['plummer_return_relative_error']):.4f}"]
              for r in snapshot_rows if int(r['shell_count']) == finest])
+catalog = json.loads((ROOT/'results/e005/summary.json').read_text())
+catalog_counts = catalog['selected_bbh_counts']
+write_table('catalog-counts.tex', ['Quantity', 'Count'], [
+    ['Available model histories', f"{catalog['model_histories']:,}"],
+    ['Validated saved states', f"{catalog['snapshot_records']:,}"],
+    ['Selected near 12 Gyr', f"{catalog['selected_models']:,}"],
+    ['Histories without age coverage', f"{len(catalog['models_without_age_coverage']):,}"],
+    [r'Selected $N_{\rm BBH}$: min/median/max',
+     '/'.join(f"{catalog_counts[key]:g}" for key in ['minimum', 'median', 'maximum'])],
+    [r'Selected states with $N_{\rm BBH}=0$', f"{catalog['selected_zero_bbh_models']:,}"],
+    [r'Selected states with $N_{\rm BBH}\leq2$', f"{catalog['selected_at_most_two_bbh_models']:,}"],
+    [rf"Selected states with $N_{{\rm BBH}}\geq{catalog['minimum_bbh_count_screen']}$",
+     f"{catalog['selected_meeting_count_screen_models']:,}"],
+    [r'Maximum $N_{\rm BBH}$ over saved states', f"{catalog['saved_state_bbh_count_range'][1]:,}"],
+], alignment='lr')
 subprocess.run([sys.executable, str(PAPER / 'figures.py')], cwd=ROOT, check=True)
 engine = shutil.which('tectonic')
 if not engine:
@@ -118,18 +137,20 @@ entry_warnings = [line for line in blg.splitlines() if line.startswith('Warning-
 if entry_warnings or "I couldn't open" in blg:
     raise SystemExit('BibTeX warnings found; inspect tmp/latex/manuscript.blg.')
 pdf = OUT / 'central-residence.pdf'
-shutil.copyfile(TMP / 'manuscript.pdf', pdf)
-reader = PdfReader(pdf)
+reader = PdfReader(TMP / 'manuscript.pdf')
 text = '\n'.join(page.extract_text() for page in reader.pages)
 for required in ['Venkata Hemanth Athota', 'bharadwaj.hemanth.002@gmail.com', 'Islam',
-                 'E001', 'E002', 'E003', 'E004', 'From recoil motion to companion access']:
+                 'Companion access after black-hole recoil']:
     if re.sub(r'\s+', '', required) not in re.sub(r'\s+', '', text):
         raise AssertionError(f'Missing manuscript text: {required}')
+if re.search(r'E00[1-5]', re.sub(r'\s+', '', text), flags=re.IGNORECASE):
+    raise AssertionError('An internal experiment identifier is visible in the manuscript PDF')
 for page in reader.pages:
     assert abs(float(page.mediabox.width)-612) < .1
     assert abs(float(page.mediabox.height)-792) < .1
 for forbidden in ['BHRD-TN-001', 'Not peer reviewed', 'Published as a conference paper', 'DRAFT']:
     assert forbidden not in text, f'Unexpected publication label: {forbidden}'
+shutil.copyfile(TMP / 'manuscript.pdf', pdf)
 
 archive = OUT / 'manuscript-source.zip'
 source_files = [PAPER / 'manuscript.tex', PAPER / 'references.bib', PAPER / 'SOURCE_README.txt']
@@ -152,27 +173,28 @@ inputs = [ROOT / name for name in ['paper/build.py', 'paper/verify.py', 'paper/f
           'experiments/config.json', 'results/run_all.json']]
 inputs += source_files
 # Bind all reported experiments to their configurations, numerical source,
-# tables and summaries. External data stay pinned in the E004 manifest.
-for name in ['run_all', 'run_e003', 'run_e004']:
+# tables and summaries. External file identities stay pinned in the snapshot
+# and catalog manifests; the catalog input inventory is also directly bound.
+for name in ['run_all', 'run_e003', 'run_e004', 'run_e005']:
     path = ROOT/'results'/f'{name}.json'
     inputs.append(path)
     record = json.loads(path.read_text())
     for group in ['source_sha256', 'output_sha256']:
         for relative in record.get(group, {}):
-            if group == 'source_sha256' or Path(relative).suffix in ['.csv', '.json']:
-                inputs.append(ROOT/relative)
-for experiment in ['e001', 'e002', 'e003', 'e004']:
+            inputs.append(ROOT/relative)
+for experiment in ['e001', 'e002', 'e003', 'e004', 'e005']:
     inputs += sorted((ROOT/'results'/experiment).glob('*.csv'))
 inputs += [ROOT/'src/recoil_dynamics/plummer.py', ROOT/'src/recoil_dynamics/__init__.py']
 sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
 manifest = {'paper': 'central-residence', 'version': VERSION, 'pages': len(reader.pages),
-            'title': 'From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison',
-            'experiments': ['E001', 'E002', 'E003', 'E004'],
+            'title': TITLE,
+            'experiments': ['E001', 'E002', 'E003', 'E004', 'E005'],
             'format': 'REVTeX 4.2 APS/PRD reprint; US Letter; two columns; txfonts',
             'engine': engine_version, 'source_date_epoch': env['SOURCE_DATE_EPOCH'],
             'revtex_log': next(line.strip() for line in log.splitlines() if line.startswith('Document Class: revtex')),
             'versions': {name: importlib.metadata.version(name) for name in ['matplotlib', 'numpy', 'scipy', 'pypdf']},
             'checks': {'undefined_references': 0, 'overfull_boxes': 0, 'bibliography_entry_warnings': 0,
+                       'visible_experiment_identifiers': 0,
                        'allowed_bst_diagnostics': [line for line in style_diagnostics if line in blg]},
             'input_sha256': {str(p.relative_to(ROOT)): sha(p) for p in sorted(set(inputs))},
             'output_sha256': {str(p.relative_to(ROOT)): sha(p) for p in [pdf, archive]}}

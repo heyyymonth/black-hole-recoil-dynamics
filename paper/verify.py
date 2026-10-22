@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import re
 from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,9 +35,14 @@ def verify_resources(resources):
 
 reader = PdfReader(ROOT / 'output/pdf/central-residence.pdf')
 assert len(reader.pages) == meta['pages']
+text = '\n'.join(page.extract_text() for page in reader.pages)
+assert not re.search(r'E00[1-5]', re.sub(r'\s+', '', text), re.IGNORECASE), 'Visible experiment identifier'
+assert 'Companion access after black-hole recoil' in text.replace('\n', ' '), 'Incorrect paper title'
+for required in ['Late-time availability', 'merger-conditioned accessibility', '7537', '180']:
+    assert required.lower().replace(' ', '') in re.sub(r'\s+', '', text).lower(), required
 for page in reader.pages:
     assert abs(float(page.mediabox.width)-612) < .1
     assert abs(float(page.mediabox.height)-792) < .1
     verify_resources(page['/Resources'])
 print(f'Verified manuscript v{meta["version"]}: hashes, {len(reader.pages)} US Letter pages, '
-      f'{len(fonts)} embedded vector fonts, and no raster figures/equations.')
+      f'{len(fonts)} embedded vector fonts, no raster figures/equations, and no visible experiment identifiers.')

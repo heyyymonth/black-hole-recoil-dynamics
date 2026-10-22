@@ -8,7 +8,7 @@ Independent physics research · Stellar dynamics and gravitational-wave source e
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-0.1.1-14677d.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
-[E001–E004 paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E005 target inventory](docs/e005-target-availability.md) · [Research context](docs/cluster-dynamics-context.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
+[Research paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E005 target inventory](docs/e005-target-availability.md) · [Research context](docs/cluster-dynamics-context.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
 ## Research question
 
@@ -40,7 +40,7 @@ In E003, density exposure overestimates normalized close-passage opportunities b
 
 E001–E003 are controlled numerical benchmarks. E003 calculates an expected close-passage count in an imposed bath along an unperturbed orbit; it does not simulate encounter outcomes or infer mergers. Their trajectories and E004's frozen-potential comparisons omit dynamical friction and host evolution during the recoil interval. E004/E005 use outputs of separately evolved clusters; E005 calculates no trajectories. E003 screens remnant apocenters against a declared outer radius without truncating the host. The former E002 near-escape example remains an isolated-model limit and does not pass that screen. No observed gravitational-wave data are used.
 
-The [unreviewed manuscript](output/pdf/central-residence.pdf), **From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison**, integrates **E001–E004**. It develops the connection from orbital exposure to velocity-weighted passages and then assesses transfer of the assumed population and potential to an external cluster. The [claim-to-evidence record](paper/CLAIMS.md) explains the resulting scope. E005 is a subsequent [separate experiment record](docs/e005-target-availability.md), not yet part of that PDF. Neither artifact makes a calibrated merger-rate or live-trajectory claim. The archived v0.1.1 release remains the earlier E001/E002 paper.
+The [unreviewed manuscript](output/pdf/central-residence.pdf), **Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations**, integrates **all five completed studies**. Its sections use descriptive physical objectives rather than experiment IDs. The catalog census now supports the paper's synthesis and its explicitly untested hypothesis: changing target availability during displacement may add predictive information beyond a stationary population and first-return time. The [claim-to-evidence record](paper/CLAIMS.md) maps results to repository records and separates evidence from the proposed test. No calibrated merger-rate or live-trajectory claim is made. The archived v0.1.1 release remains the earlier orbital-benchmark paper.
 
 [Physical assumptions](docs/problem.md) · [Scientific relevance](docs/relevance.md) · [References](docs/references.md)
 
@@ -97,7 +97,7 @@ Each runner replaces its corresponding outputs. E001–E003 need no network afte
 
 ## Citation and reuse
 
-For the current **E001–E004 manuscript**, use the [paper-specific BibTeX citation](paper/CITATION.bib), identifying [immutable manuscript snapshot 0b2767e](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/0b2767ebe455eb891bffddb03a7e65cc442539a7). Revision `0.2.0-manuscript.1` includes the expanded eight-page paper and supporting source; it is an unreviewed manuscript with no DOI. The root citation files below continue to identify the earlier baseline software release.
+The current integrated manuscript is revision **0.3.0-manuscript.1**, with eleven pages, six tables and six vector figures. Its [paper-specific BibTeX citation](paper/CITATION.bib) identifies the manuscript separately from the software. It remains unreviewed and has no DOI. The previous eight-page revision is preserved at [snapshot 0b2767e](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/0b2767ebe455eb891bffddb03a7e65cc442539a7). Root citation files below continue to identify the earlier baseline software release.
 
 Athota, Venkata Hemanth (2026). *Black-hole recoil dynamics: central residence and density exposure in a Plummer potential*. Version 0.1.1. [Versioned research release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1).
 
@@ -107,7 +107,7 @@ Those citation files describe the E001/E002 v0.1.1 baseline. For E003, use its [
 
 For E004, use its [BibTeX citation](results/e004/CITATION.bib), identifying [results snapshot 14d9f49](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/14d9f493e6eeae25e51a244dfb60789753992db6). Its [manifest](results/run_e004.json) distinguishes generating code from external simulation provenance. Cite the upstream CMC/cmctoolkit sources as appropriate when using those data. This snapshot also contains the working abstract revision; it has no DOI and does not replace v0.1.1.
 
-For E005, use its [BibTeX citation](results/e005/CITATION.bib), identifying [results snapshot 80d82f8](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/80d82f85d1c84fa7ef42fc40f71a1cbc5439c172). Its [manifest](results/run_e005.json) records the generating source and all consumed external input hashes. Cite the upstream CMC/cmctoolkit research when reusing those data. E005 is a simulation-summary audit, separate from the E001–E004 manuscript and the v0.1.1 baseline release; no DOI is assigned.
+For E005, use its [BibTeX citation](results/e005/CITATION.bib), identifying [results snapshot 80d82f8](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/80d82f85d1c84fa7ef42fc40f71a1cbc5439c172). Its [manifest](results/run_e005.json) records the generating source and all consumed external input hashes. Cite the upstream CMC/cmctoolkit research when reusing those data. This audit is now incorporated into the current manuscript while retaining its own immutable experiment citation; it is not part of the v0.1.1 baseline release and has no DOI.
 
 Original code, technical documentation, and generated research artifacts are provided under the [MIT license](LICENSE). Preserve its copyright and permission notice when reusing substantial portions. Academic citation is requested separately from the license conditions. Referenced publications, dependencies, and external simulation files retain their own rights and licenses. The fetched CMC snapshot and upstream summaries are not redistributed or relicensed by this repository.
 

@@ -1,5 +1,14 @@
 # Release record
 
+## Integrated research manuscript - 2026-10-21
+
+- Incorporate the late-time target census into the paper, with a generated table and sixth vector figure.
+- Replace internal experiment IDs throughout visible article text, captions and references with descriptive physical study names.
+- Reframe title, abstract, introduction and conclusions around companion access after recoil and a falsifiable hypothesis about changing target availability.
+- Cite direct precedents for sparse BBH populations and binary formation during recentering; distinguish measured results from the untested coupled model.
+- Extend manuscript provenance to all five study records and check that rendered text contains no internal experiment identifiers.
+- Publish manuscript revision 0.3.0-manuscript.1, preserving all numerical experiment results and previous immutable snapshots.
+
 ## Unreleased - E005 target-availability audit, 2026-10-21
 
 - Declare catalog selection and an age-matched comparison before reading new target-count outcomes.

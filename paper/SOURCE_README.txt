@@ -1,9 +1,10 @@
-From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison
+Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations
 Venkata Hemanth Athota
 
 This archive contains the standalone LaTeX manuscript, bibliography, compiled
-bibliography, five vector figures, and generated table fragments for manuscript
-revision 0.2.0-manuscript.1, covering experiments E001 through E004.
+bibliography, six vector figures, and generated table fragments for manuscript
+revision 0.3.0-manuscript.1, covering orbital exposure, velocity-weighted passages,
+a cluster-snapshot comparison, and the late-time binary-target census.
 This manuscript revision is separate from the baseline software release 0.1.1.
 No journal publication or acceptance is claimed by the document class.
 

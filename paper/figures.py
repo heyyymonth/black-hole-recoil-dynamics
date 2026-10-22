@@ -9,6 +9,7 @@ parameter grids, and comparator definitions are taken from the experiment
 configuration. The original result tables and figures are left untouched.
 """
 from pathlib import Path
+import csv
 import json
 import math
 import sys
@@ -224,6 +225,49 @@ def snapshot_comparison():
     save(fig, "snapshot-comparison.pdf")
 
 
+def catalog_counts():
+    """Display the committed common-age census without smoothing or fits."""
+    with (ROOT / 'results/e005/selected.csv').open() as stream:
+        rows = list(csv.DictReader(stream))
+    summary = json.loads((ROOT / 'results/e005/summary.json').read_text())
+    bbh = np.array([int(row['bbh_count']) for row in rows])
+    bh = np.array([int(row['bh_count']) for row in rows])
+    if len(rows) != summary['selected_models']:
+        raise ValueError('Selected catalog rows disagree with the saved census')
+    if len({row['model'] for row in rows}) != len(rows):
+        raise ValueError('The common-age comparison must contain one state per model')
+    bins = np.arange(bbh.max() + 1)
+    frequency = np.bincount(bbh, minlength=len(bins))
+    fig, axes = plt.subplots(1, 2, figsize=(7, 3.0))
+    fig.subplots_adjust(left=.075, right=.97, bottom=.20, top=.84, wspace=.29)
+    left, right = axes
+    left.bar(bins, frequency, width=.78, facecolor='0.82', edgecolor='black',
+             linewidth=.8)
+    for count, number in zip(bins, frequency):
+        if number:
+            left.text(count, number + .7, str(number), ha='center', va='bottom',
+                      fontsize=8.5)
+    left.set(xlabel=r'Instantaneous BBH count $N_{\rm BBH}$',
+             ylabel='Number of selected models', xlim=(-.6, bins[-1]+.6),
+             ylim=(0, frequency.max()*1.16), xticks=bins)
+    # Exact integer coordinates are retained. Coincident states overlap; the
+    # left panel accounts for every selected state without arbitrary jitter.
+    right.scatter(bh, bbh, s=18, facecolor='none', edgecolor='black',
+                  linewidth=.7, alpha=.65)
+    right.set(xlabel=r'Total BH-object count $N_{\rm BH}$',
+              ylabel=r'Instantaneous BBH count $N_{\rm BBH}$',
+              xlim=(-50, 2050), ylim=(-.45, bbh.max()+.65),
+              xticks=[0, 500, 1000, 1500, 2000], yticks=np.arange(0, bbh.max()+1, 2))
+    for ax, panel in zip(axes, 'ab'):
+        ax.tick_params(axis='both', labelsize=9)
+        ax.text(.02, 1.045, f'({panel})', transform=ax.transAxes,
+                ha='left', va='bottom')
+    fig.text(.52, .985,
+             f"One state per available model near 12 Gyr ($N={len(rows)}$)",
+             ha='center', va='top', fontsize=10)
+    save(fig, 'catalog-counts.pdf')
+
+
 def main():
     config = json.loads((ROOT / "experiments" / "config.json").read_text())
     OUTPUT.mkdir(parents=True, exist_ok=True)
@@ -250,7 +294,8 @@ def main():
     exposure_comparison(config)
     encounter_proxy()
     snapshot_comparison()
-    print("Rendered five vector manuscript figures in paper/figures/.")
+    catalog_counts()
+    print("Rendered six vector manuscript figures in paper/figures/.")
 
 
 if __name__ == "__main__":

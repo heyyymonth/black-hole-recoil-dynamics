@@ -1,9 +1,12 @@
-Expanded manuscript verification, 20 October 2026.
-Existing E001-E004 numerical inputs and outputs are unchanged.
+Integrated manuscript verification, 21 October 2026.
+
+Existing numerical study inputs and results are unchanged.
+
 $ .venv/bin/python -m pytest -q
-........................................................................ [ 66%]
+........................................................................ [ 40%]
+........................................................................ [ 80%]
 ....................................                                     [100%]
-108 passed in 1.94s
+180 passed in 2.70s
 
 $ .venv/bin/python experiments/verify_results.py
 Verified 146 result rows and all recorded source/output hashes.
@@ -14,6 +17,12 @@ Verified 4 E003 rows, physical scales, decision summary, and all recorded hashes
 $ .venv/bin/python experiments/verify_e004.py
 Verified E004: external input hashes, 5 population rows, 12 trajectory rows, 160 profile points, summary and source/output hashes.
 
-$ .venv/bin/python paper/verify.py
-Verified manuscript v0.2.0-manuscript.1: hashes, 8 US Letter pages, 10 embedded vector fonts, and no raster figures/equations.
+$ .venv/bin/python experiments/verify_e005.py
+Verified E005: 7537 exact external inputs, 126 histories, 119 selected states; all tables, source/output hashes, E004 cross-checks and independent scalar census.
 
+$ .venv/bin/python paper/verify.py
+Verified manuscript v0.3.0-manuscript.1: hashes, 11 US Letter pages, 11 embedded vector fonts, no raster figures/equations, and no visible experiment identifiers.
+
+Visual review: all eleven rendered pages inspected at 150 dpi. Six vector figures and six native tables are legible; no clipping, visible internal experiment identifiers, or publication watermark. Final page is a short bibliography continuation.
+
+Scientific review: conditional-expectation identity, empirical claims, direct literature precedents and proposed falsification comparison checked; no required corrections remaining.

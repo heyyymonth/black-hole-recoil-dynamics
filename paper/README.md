@@ -1,19 +1,20 @@
 # Research manuscript
 
-**From recoil motion to companion access: controlled benchmarks and a cluster-snapshot comparison**
+**Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations**
 
-Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.2.0-manuscript.1
+Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.3.0-manuscript.1
 
 [Paper PDF](../output/pdf/central-residence.pdf) · [Cite this manuscript](CITATION.bib) · [LaTeX source](manuscript.tex) · [Portable source archive](../output/pdf/manuscript-source.zip) · [Formatting conventions](FORMAT.md)
 
-The manuscript integrates E001–E004. The two-column physics layout follows the
+The manuscript integrates the orbital benchmarks, velocity-weighted passage calculation,
+cluster-snapshot comparison, and late-time target census. The two-column physics layout follows the
 REVTeX family used by the recoil-paper reference. It contains no watermark,
 publication banner, or acceptance claim. Review status is recorded here, outside
 the paper: this is an unreviewed manuscript and has not been submitted to a venue.
 
-The scope is an assessment of the approximations between recoil motion and companion access. E001/E002 establish ballistic return and exposure, E003 tests density weighting against conditional passage counts, and E004 audits population and potential assumptions against one external cluster snapshot. The abstract reports qualitative findings; numerical results appear in the methods, tables, and figures.
+The paper names studies by their physical objectives, with no internal experiment IDs in its prose, captions, figures or references. It develops a connected hypothesis: changing target availability during a retained remnant's displacement may contain predictive information beyond a stationary population and first-return time. Completed findings motivate that hypothesis; the coupled, merger-conditioned comparison remains unexecuted. The abstract reports qualitative findings; numerical results appear in the methods, tables and figures.
 
-The [claim-to-evidence record](CLAIMS.md) distinguishes supported conclusions from uncalibrated live dynamics and merger outcomes. The archive v0.1.1 remains the E001/E002 baseline; this manuscript revision includes the subsequent experiments without changing their stored results. Its revision identifier is separate from the baseline software package version. Use the paper-specific citation alongside the relevant experiment snapshots.
+The [claim-to-evidence record](CLAIMS.md) maps descriptive study names back to repository records E001–E005 and distinguishes measured results from the proposed hypothesis. Direct precedents for small BBH populations and binary formation during remnant recentering are cited, so the paper does not claim discovery of those mechanisms. The archived v0.1.1 release remains the orbital baseline; this revision incorporates all completed studies without changing their stored results. Its revision identifier is separate from the software version.
 
 ## Reference build
 
@@ -26,12 +27,13 @@ python -m pip install -r paper/requirements.txt
 python experiments/verify_results.py
 python experiments/verify_e003.py
 python experiments/verify_e004.py
+python experiments/verify_e005.py
 python paper/build.py
 python paper/verify.py
 ```
 
-The builder reads the committed CSV results into native LaTeX tables, regenerates
-five vector figures, compiles the article and BibTeX references, and writes:
+The builder reads committed CSV/JSON results into six native LaTeX tables, regenerates
+six vector figures, compiles the article and BibTeX references, and writes:
 
 - `output/pdf/central-residence.pdf`
 - `output/pdf/manuscript-source.zip`
@@ -46,7 +48,7 @@ distribution. Tectonic downloads any missing standard TeX dependencies. Subseque
 `curl` is required for the initial REVTeX download.
 
 The build rejects unresolved citations/references, missing glyphs, overfull boxes,
-and bibliography-entry warnings. The known APS bibliography-style
+bibliography-entry warnings, and visible internal experiment IDs. The known APS bibliography-style
 control diagnostic is recorded separately in the manifest. It verifies US Letter page size, author/contact text,
 and the absence of publication labels. Hashes bind the source, table inputs,
 vector figures, PDF, and source archive. A fixed build epoch is recorded; exact
