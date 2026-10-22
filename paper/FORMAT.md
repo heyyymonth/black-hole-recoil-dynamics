@@ -1,14 +1,13 @@
 # Manuscript formatting conventions
 
-The selected target is an **authored, two-column physics manuscript**. The
-reference [recoil paper](https://arxiv.org/pdf/2604.04546v2) uses REVTeX 4.1 with
-APS/PRD options and `txfonts`; its [TeX source](https://arxiv.org/src/2604.04546v2)
-was inspected. This repository uses the current REVTeX 4.2f release with the
-same style family. Formatting sources were checked on 18 October 2026.
+The selected target is an **authored, two-column physics manuscript**, using
+REVTeX 4.2f with APS/PRD options and `txfonts`. The class supplies the page,
+column, heading, equation, and reference conventions. Formatting sources were
+checked on 18 October 2026.
 
 | Element | Implementation |
 |---|---|
-| Page and columns | REVTeX APS/PRD `reprint` defaults, US Letter, two columns; no custom geometry or compressed spacing |
+| Page and columns | REVTeX APS/PRD `reprint` defaults, US Letter, two columns; `\raggedbottom` preserves natural paragraph spacing; no custom geometry or compressed spacing |
 | Body and mathematics | 10-point class typography with Times-like `txfonts`; native vector mathematical notation |
 | Title and authors | Centered title; Venkata Hemanth Athota; genuine independent-research affiliation; email footnote |
 | Abstract | One self-contained paragraph, no numbered citations or displayed equations |

@@ -1,7 +1,7 @@
 {
   "paper": "central-residence",
-  "version": "0.3.0-manuscript.1",
-  "pages": 11,
+  "version": "0.3.0-manuscript.2",
+  "pages": 10,
   "title": "Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations",
   "experiments": [
     "E001",
@@ -49,8 +49,8 @@
     "experiments/verify_e003.py": "69522c00153891649853c4c3cdc03fc03053b245df583f4a1237aa9d28fd8295",
     "experiments/verify_e004.py": "b3f7ce973075563ff8ee8e9332c88fed5595fd6b4c07b093da5d4b0da696e81c",
     "experiments/verify_e005.py": "9afd53035b286cc6147dcfeb86438550b4e02479e4dba930a63678989cd523f4",
-    "paper/SOURCE_README.txt": "53f45c7cfc70d0762c55cd2ace34eb89c8aa2c6a90fdadd41df1a1736056b9fc",
-    "paper/build.py": "fe9230c669efa04b602355ce27aca81bae2388a17793b1ea234e4225d354248c",
+    "paper/SOURCE_README.txt": "84c04d288ddcfb7fef746fc7524efbf0a49a344b77a967ed6c938e9c0a0f7ad2",
+    "paper/build.py": "888f6f0f825f2de016f81b43988030bdab36833a4f8e81d93291700a40e44895",
     "paper/figures/catalog-counts.pdf": "23a5b8ff7da867b398f313ef64ce21755bf8f21d7373548f0e1a453b9799e472",
     "paper/figures/core-residence.pdf": "8994add76d6f0ed81df710a306f2f18e792ac8928021d11b4534d47370b8f64d",
     "paper/figures/encounter-proxy.pdf": "5ac1f912c46557ff6f7cccfa00801b42e4017962c61d803bd89ae71e57694b89",
@@ -58,8 +58,8 @@
     "paper/figures/return-time.pdf": "d04ab1213f7e7b9b3e9dbdceab2769808d47476b78d50ff580e98bf4a42c4f04",
     "paper/figures/snapshot-comparison.pdf": "7fac0e99e48dc1933780d2f0d38bafcd72cf01a2dd20edee17a807e5cae82895",
     "paper/figures.py": "580c4e55e4af5b0ab524458724845e281029adccac7d8bba5bc3434919af8bbb",
-    "paper/manuscript.tex": "e2495c943668f7b8647c84f33a6ff810cff97d0f3556d52da16752a270676b9b",
-    "paper/references.bib": "df8fdace674ff7f03c9a5002c3f25335b10029f88dc0d90351c9e482c5004663",
+    "paper/manuscript.tex": "130e30af3a3c6f0dcd8108b5af117b824f12bb20ee8cf6f8ccd2b33ae6e9f9f7",
+    "paper/references.bib": "ea846d7e15d1d2586939d3cf8344b411acf5dd421ddc1c5747ae5ca8c4f11acb",
     "paper/requirements.txt": "3feec1a2e97360338b6d572368436244052b81da52f32b8d9bb91e4fce8677f6",
     "paper/tables/catalog-counts.tex": "548c1b0edce25a44041e87c3c8ca2577452dbcf2c6285fe762df18046fc8322f",
     "paper/tables/encounters.tex": "d9054d3cc144f5e0c522b00754f3f223b75d88c3b6eb5355482b01144ee9f33a",
@@ -116,7 +116,7 @@
     "tests/test_snapshot_potential.py": "a8e13542328be90cc0b307dc274767d4c0de9ecb52c9dd4cc5bcf064af7c2017"
   },
   "output_sha256": {
-    "output/pdf/central-residence.pdf": "c8b3d268366ef04e711a4690c9e63b8b6d14098c48b06098d0d810899c6ea539",
-    "output/pdf/manuscript-source.zip": "15b0909a6ad6f4ee2b0c447b1fcc4fb08cf6a3f4e345746bca15811f8078e953"
+    "output/pdf/central-residence.pdf": "d141faf521c7e006d7a52a470eaba134c7cef53d40c9b41f0b62f9d5cf87c5b9",
+    "output/pdf/manuscript-source.zip": "26d11f2d470be6808300bda8a19133534c58e706d3762200bcf1d30f727a6839"
   }
 }

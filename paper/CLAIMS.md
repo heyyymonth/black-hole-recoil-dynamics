@@ -1,6 +1,6 @@
 # Claim-to-evidence record for the expanded manuscript
 
-Revision: 0.3.0-manuscript.1, 21 October 2026. Author: Venkata Hemanth Athota.
+Revision: 0.3.0-manuscript.2, 21 October 2026. Author: Venkata Hemanth Athota.
 
 The paper asks how accurately simplified recoil-motion and environmental assumptions represent access to specified companion targets. It integrates completed experiments and formulates an explicitly untested hypothesis; it adds no new physical simulation or observational inference. Internal identifiers appear only in repository provenance and this mapping, not in the rendered article.
 

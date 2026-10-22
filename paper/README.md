@@ -2,17 +2,17 @@
 
 **Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations**
 
-Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.3.0-manuscript.1
+Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.3.0-manuscript.2
 
 [Paper PDF](../output/pdf/central-residence.pdf) · [Cite this manuscript](CITATION.bib) · [LaTeX source](manuscript.tex) · [Portable source archive](../output/pdf/manuscript-source.zip) · [Formatting conventions](FORMAT.md)
 
 The manuscript integrates the orbital benchmarks, velocity-weighted passage calculation,
-cluster-snapshot comparison, and late-time target census. The two-column physics layout follows the
-REVTeX family used by the recoil-paper reference. It contains no watermark,
+cluster-snapshot comparison, and late-time target census. The two-column physics layout uses
+the standard APS/PRD REVTeX class. It contains no watermark,
 publication banner, or acceptance claim. Review status is recorded here, outside
 the paper: this is an unreviewed manuscript and has not been submitted to a venue.
 
-The paper names studies by their physical objectives, with no internal experiment IDs in its prose, captions, figures or references. It develops a connected hypothesis: changing target availability during a retained remnant's displacement may contain predictive information beyond a stationary population and first-return time. Completed findings motivate that hypothesis; the coupled, merger-conditioned comparison remains unexecuted. The abstract reports qualitative findings; numerical results appear in the methods, tables and figures.
+The paper names studies by their physical objectives, with no internal experiment IDs in its prose, captions, figures or references. It develops a connected hypothesis: changing target availability during a retained remnant's displacement may contain predictive information beyond a stationary population and first-return time. Completed findings motivate that hypothesis; the coupled, merger-conditioned comparison remains unexecuted. The abstract introduces repeated black-hole mergers and recoil before describing the research question, methods, qualitative findings, and remaining calibration problem. Numerical results appear in the methods, tables and figures.
 
 The [claim-to-evidence record](CLAIMS.md) maps descriptive study names back to repository records E001–E005 and distinguishes measured results from the proposed hypothesis. Direct precedents for small BBH populations and binary formation during remnant recentering are cited, so the paper does not claim discovery of those mechanisms. The archived v0.1.1 release remains the orbital baseline; this revision incorporates all completed studies without changing their stored results. Its revision identifier is separate from the software version.
 

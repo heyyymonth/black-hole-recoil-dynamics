@@ -20,7 +20,7 @@ OUT = ROOT / 'output/pdf'
 TMP = ROOT / 'tmp/latex'
 STAGE = TMP / 'source'
 TOOLCHAIN = json.loads((PAPER / 'toolchain.json').read_text())
-VERSION = '0.3.0-manuscript.1'
+VERSION = '0.3.0-manuscript.2'
 title_match = re.search(r'\\title\{([^{}]+)\}', (PAPER/'manuscript.tex').read_text())
 if title_match is None:
     raise SystemExit('Expected one plain-text manuscript title for provenance.')
@@ -139,7 +139,7 @@ if entry_warnings or "I couldn't open" in blg:
 pdf = OUT / 'central-residence.pdf'
 reader = PdfReader(TMP / 'manuscript.pdf')
 text = '\n'.join(page.extract_text() for page in reader.pages)
-for required in ['Venkata Hemanth Athota', 'bharadwaj.hemanth.002@gmail.com', 'Islam',
+for required in ['Venkata Hemanth Athota', 'bharadwaj.hemanth.002@gmail.com',
                  'Companion access after black-hole recoil']:
     if re.sub(r'\s+', '', required) not in re.sub(r'\s+', '', text):
         raise AssertionError(f'Missing manuscript text: {required}')

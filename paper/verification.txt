@@ -6,7 +6,7 @@ $ .venv/bin/python -m pytest -q
 ........................................................................ [ 40%]
 ........................................................................ [ 80%]
 ....................................                                     [100%]
-180 passed in 2.70s
+180 passed in 2.26s
 
 $ .venv/bin/python experiments/verify_results.py
 Verified 146 result rows and all recorded source/output hashes.
@@ -21,8 +21,8 @@ $ .venv/bin/python experiments/verify_e005.py
 Verified E005: 7537 exact external inputs, 126 histories, 119 selected states; all tables, source/output hashes, E004 cross-checks and independent scalar census.
 
 $ .venv/bin/python paper/verify.py
-Verified manuscript v0.3.0-manuscript.1: hashes, 11 US Letter pages, 11 embedded vector fonts, no raster figures/equations, and no visible experiment identifiers.
+Verified manuscript v0.3.0-manuscript.2: hashes, 10 US Letter pages, 11 embedded vector fonts, no raster figures/equations, and no visible experiment identifiers.
 
-Visual review: all eleven rendered pages inspected at 150 dpi. Six vector figures and six native tables are legible; no clipping, visible internal experiment identifiers, or publication watermark. Final page is a short bibliography continuation.
+Visual review: all ten rendered pages inspected at 150 dpi. Six vector figures and six native tables are legible; no clipping, visible internal experiment identifiers, or publication watermark. Natural paragraph spacing is preserved, and the full bibliography fits on page ten.
 
-Scientific review: conditional-expectation identity, empirical claims, direct literature precedents and proposed falsification comparison checked; no required corrections remaining.
+Editorial verification: the 210-word abstract introduces the physical context, question, methods, qualitative findings and calibration limits. All 12 external citations resolve to 12 bibliography entries. Author and contact appear correctly; the repository availability link is active. The PDF and portable source agree with the manuscript and bibliography. Scientific statements distinguish completed findings from the proposed conditional accessibility hypothesis. All numerical study inputs and results match the preceding revision.
