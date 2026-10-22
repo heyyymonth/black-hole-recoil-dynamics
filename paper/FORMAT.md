@@ -15,7 +15,7 @@ checked on 18 October 2026.
 | Equations | Native numbered `equation` and `align`, with automatic cross-references |
 | Citations | Numeric bracketed citations in order of first occurrence; BibTeX and `apsrev4-2` |
 | Figures | Vector PDF, approximately 3.4-inch single-column or 7-inch full-width; 8–10-point figure text at final size, line widths at least 0.5 pt, panel labels and grayscale-distinguishable line styles |
-| Tables | Native LaTeX, generated from CSV, captions defining units; no colored fills or vertical rules |
+| Tables | Native LaTeX, generated from CSV and JSON, captions defining units; no colored fills or vertical rules |
 | Links and markings | Black unobtrusive links; no decorative header, watermark, arXiv stamp, invented DOI, or acceptance notice |
 
 The `reprint` option names the compact layout. It does not assert that the work

@@ -1,5 +1,25 @@
 # Release record
 
+## Manuscript 0.3.0-manuscript.4 and documentation - 2026-10-22
+
+- Include the paper-specific citation in the portable source archive and identify the package with a separate manuscript version tag.
+- Clarify the distinction between baseline software and the integrated manuscript in citation guidance and version labels.
+- Use GitHub-compatible math blocks and protected inline notation; provide a formatted reading copy of the recorded close-passage protocol.
+- Qualify historical validation counts and clarify that all three nonzero-kick density proxies overestimate passage counts, with two exceeding the declared screen.
+- Preserve the article's scientific content, numerical results, and recorded protocols.
+
+## Manuscript 0.3.0-manuscript.3 - 2026-10-22
+
+- Focus the article's closing sections on the scientific discussion and nine research-paper references.
+- Retain the simulation identity and numerical-method definitions in the methods.
+- Verify the ten-page PDF and portable source against all five experiment records.
+
+## Manuscript 0.3.0-manuscript.2 - 2026-10-21
+
+- Introduce the physical context and companion-access question before the methods and findings in the abstract.
+- Present the experiments as the article's original work, with a separate citation record for future readers.
+- Refine paragraph spacing and bibliography layout into ten pages while preserving all numerical outcomes.
+
 ## Integrated research manuscript - 2026-10-21
 
 - Incorporate the late-time target census into the paper, with a generated table and sixth vector figure.

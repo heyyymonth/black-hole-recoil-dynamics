@@ -6,7 +6,7 @@ Independent physics research · Stellar dynamics and gravitational-wave source e
 
 [![Numerical verification](https://github.com/heyyymonth/black-hole-recoil-dynamics/actions/workflows/tests.yml/badge.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-0.1.1-14677d.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
+[![Baseline software: 0.1.1](https://img.shields.io/badge/Baseline_software-0.1.1-14677d.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
 [Research paper](output/pdf/central-residence.pdf) · [LaTeX source](paper/manuscript.tex) · [Source archive](output/pdf/manuscript-source.zip) · [E005 target inventory](docs/e005-target-availability.md) · [Research context](docs/cluster-dynamics-context.md) · [Baseline release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1)
 
@@ -22,7 +22,7 @@ E001/E002 follow a test particle in a fixed Plummer potential and measure return
 |---|---|---|
 | E001 | First central return as a function of kick speed | [Method and results](docs/e001-ballistic-return.md) · [Table](results/e001/return_times.csv) |
 | E002 | Central residence and density exposure over finite windows | [Method and results](docs/e002-core-exposure.md) · [Tables](results/e002/) |
-| E003 | Density proxy versus velocity-weighted close passages over a common time window | [Protocol](docs/e003-protocol.md) · [Method and results](docs/e003-encounter-accessibility.md) · [Table](results/e003/encounters.csv) |
+| E003 | Density proxy versus velocity-weighted close passages over a common time window | [Protocol](docs/e003-protocol-readable.md) · [Method and results](docs/e003-encounter-accessibility.md) · [Table](results/e003/encounters.csv) |
 | E004 | Companion inventory and ballistic returns in an evolved cluster snapshot | [Protocol](docs/e004-protocol.md) · [Method and results](docs/e004-cluster-validation.md) · [Tables](results/e004/) |
 | E005 | BH–BH target abundance across available late-time CMC model histories | [Protocol](docs/e005-protocol.md) · [Method and results](docs/e005-target-availability.md) · [Tables](results/e005/) |
 
@@ -97,7 +97,7 @@ Each runner replaces its corresponding outputs. E001–E003 need no network afte
 
 ## Citation and reuse
 
-The current integrated manuscript is revision **0.3.0-manuscript.3**, with ten pages, six tables and six vector figures. Use its [paper-specific BibTeX citation](paper/CITATION.bib) when referencing the paper; it identifies [immutable manuscript snapshot 92e7653](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/92e76530a6921a3edd8179bbd486fd9651c36900), separately from the software. It remains unreviewed and has no DOI. The previous eight-page revision is preserved at [snapshot 0b2767e](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/0b2767ebe455eb891bffddb03a7e65cc442539a7). Root citation files below continue to identify the earlier baseline software release.
+The current integrated manuscript is revision **0.3.0-manuscript.4**, with ten pages, six tables and six vector figures. Use its [paper-specific BibTeX citation](paper/CITATION.bib) when referencing the paper; it identifies the [versioned manuscript snapshot](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.3.0.4), separately from the software. The portable source archive includes this citation. It remains unreviewed and has no DOI. The previous eight-page revision is preserved at [snapshot 0b2767e](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/0b2767ebe455eb891bffddb03a7e65cc442539a7). Root citation files below continue to identify the earlier baseline software release.
 
 Athota, Venkata Hemanth (2026). *Black-hole recoil dynamics: central residence and density exposure in a Plummer potential*. Version 0.1.1. [Versioned research release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1).
 

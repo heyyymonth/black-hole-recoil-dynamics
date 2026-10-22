@@ -2,7 +2,7 @@
 
 **Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations**
 
-Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.3.0-manuscript.3
+Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.3.0-manuscript.4
 
 [Paper PDF](../output/pdf/central-residence.pdf) · [Cite this manuscript](CITATION.bib) · [LaTeX source](manuscript.tex) · [Portable source archive](../output/pdf/manuscript-source.zip) · [Formatting conventions](FORMAT.md)
 
@@ -15,6 +15,10 @@ the paper: this is an unreviewed manuscript and has not been submitted to a venu
 The paper names studies by their physical objectives, with no internal experiment IDs in its prose, captions, figures or references. It develops a connected hypothesis: changing target availability during a retained remnant's displacement may contain predictive information beyond a stationary population and first-return time. Completed findings motivate that hypothesis; the coupled, merger-conditioned comparison remains unexecuted. The abstract introduces repeated black-hole mergers and recoil before describing the research question, methods, qualitative findings, and remaining calibration problem. Numerical results appear in the methods, tables and figures.
 
 The [claim-to-evidence record](CLAIMS.md) maps descriptive study names back to repository records E001–E005 and distinguishes measured results from the proposed hypothesis. Direct precedents for small BBH populations and binary formation during remnant recentering are cited, so the paper does not claim discovery of those mechanisms. The archived v0.1.1 release remains the orbital baseline; this revision incorporates all completed studies without changing their stored results. Its revision identifier is separate from the software version.
+
+This packaging revision includes the paper-specific `CITATION.bib` in the portable
+source archive. It identifies the [versioned source tag manuscript-v0.3.0.4](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.3.0.4).
+The article, scientific figures, tables, and numerical results are unchanged.
 
 ## Reference build
 
@@ -54,7 +58,9 @@ and the absence of publication labels. Hashes bind the source, table inputs,
 vector figures, PDF, and source archive. A fixed build epoch is recorded; exact
 PDF bytes can still depend on the platform and external TeX dependency versions.
 The source archive compiles without Python using its included tables, figures,
-and unmodified REVTeX dependency archive.
+and unmodified REVTeX dependency archive. Verification also requires the archived
+citation and source README to match the repository files byte-for-byte, and their
+revision and source tag to agree with the build manifest.
 See [SOURCE_README.txt](SOURCE_README.txt).
 
 ## Edit and inspect

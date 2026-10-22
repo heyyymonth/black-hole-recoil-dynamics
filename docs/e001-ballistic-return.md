@@ -12,7 +12,7 @@ How does the time to the first central return change as a bound kick approaches 
 
 ## Method
 
-With $\eta=v_k/v_{\rm esc}(0)$ and $0<\eta<1$, energy conservation gives the apocenter
+With $\eta=v_k/v_{\rm esc}(0)$ and $`0\lt\eta\lt1`$, energy conservation gives the apocenter
 
 ```math
 x_a=\frac{\eta\sqrt{2-\eta^2}}{1-\eta^2}.

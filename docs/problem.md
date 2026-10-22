@@ -20,11 +20,11 @@ Use length unit $b$, time unit $t_d=\sqrt{b^3/(GM)}$, and kick fraction $\eta=v_
 \ddot{x}=-\frac{x}{(1+x^2)^{3/2}},\quad x(0)=0,\quad\dot{x}(0)=\sqrt{2}\eta.
 ```
 
-Dots denote derivatives with respect to dimensionless time. We restrict the experiment to bound or stationary cases, $0\le\eta<1$. The specific dimensionless energy is $E=\eta^2-1$.
+Dots denote derivatives with respect to dimensionless time. We restrict the experiment to bound or stationary cases, $`0\le\eta\lt1`$. The specific dimensionless energy is $E=\eta^2-1$.
 
 For a nonzero kick, $P$ denotes the interval from the initial central passage to the next central passage. Signed position has period $2P$; radius, density and core occupancy have period $P$. At exactly zero kick the object remains at the center, and no return event occurs.
 
-We define an operational central sphere by $|x|<c$, with declared $c=r_c/b$. The Plummer scale $b$ and these operational radii are not claimed to be measured cluster core radii.
+We define an operational central sphere by $`|x|\lt c`$, with declared $c=r_c/b$. The Plummer scale $b$ and these operational radii are not claimed to be measured cluster core radii.
 
 ## Quantities measured
 
@@ -52,9 +52,9 @@ For a stationary object both comparisons reduce to $H$. The second prescription 
 
 The [close-passage experiment](e003-encounter-accessibility.md) supplies a tracer-binary density, an isotropic Plummer velocity distribution, and a two-body focusing cross section. It compares density exposure with the integrated passage rate, using the same physical window and a stationary control. Its declared outer-radius screen selects test orbits without truncating the host.
 
-The larger physical sequence remains merger, recoil, host motion, companion acquisition, binary evolution, and another merger. E001/E002 validate the host-motion calculation. E003 tests an encounter-opportunity ingredient; it finds that density alone overestimates normalized passage counts in two of its three nonzero-kick cases. Neither a close passage nor its expected count determines companion acquisition or a second merger.
+The larger physical sequence remains merger, recoil, host motion, companion acquisition, binary evolution, and another merger. E001/E002 validate the host-motion calculation. E003 tests an encounter-opportunity ingredient; density alone overestimates normalized passage counts in all three nonzero-kick cases, and the discrepancy exceeds the declared 10% screen in two. Neither a close passage nor its expected count determines companion acquisition or a second merger.
 
-All experiments omit friction, scattering that changes the orbit, binary formation, tidal evolution, and host evolution. Their results apply to their declared fixed models. E003 adds a conditional rate calculation, not self-consistent encounter dynamics or observed-event inference.
+The benchmark recoil paths omit friction, scattering that changes the orbit, binary formation, tidal evolution, and host evolution. E003 adds a conditional rate calculation along those unperturbed paths. E004/E005 analyze outputs from evolved cluster simulations, but do not follow live recoil paths or determine encounter outcomes. Each result is conditional on its declared model or released simulation sample; no observed-event inference is made.
 
 ## E004: external cluster comparison
 

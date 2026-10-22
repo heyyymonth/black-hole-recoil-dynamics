@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite this version when using the software, numerical results, or accompanying technical note."
+message: "This citation identifies the E001/E002 baseline software and results. For the integrated manuscript use paper/CITATION.bib; for later experiments use their result-specific citation files."
 type: software
 title: "Black-hole recoil dynamics: central residence and density exposure in a Plummer potential"
 authors:

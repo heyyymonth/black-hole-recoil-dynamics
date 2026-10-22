@@ -20,7 +20,7 @@ OUT = ROOT / 'output/pdf'
 TMP = ROOT / 'tmp/latex'
 STAGE = TMP / 'source'
 TOOLCHAIN = json.loads((PAPER / 'toolchain.json').read_text())
-VERSION = '0.3.0-manuscript.3'
+VERSION = '0.3.0-manuscript.4'
 title_match = re.search(r'\\title\{([^{}]+)\}', (PAPER/'manuscript.tex').read_text())
 if title_match is None:
     raise SystemExit('Expected one plain-text manuscript title for provenance.')
@@ -153,7 +153,8 @@ for forbidden in ['BHRD-TN-001', 'Not peer reviewed', 'Published as a conference
 shutil.copyfile(TMP / 'manuscript.pdf', pdf)
 
 archive = OUT / 'manuscript-source.zip'
-source_files = [PAPER / 'manuscript.tex', PAPER / 'references.bib', PAPER / 'SOURCE_README.txt']
+source_files = [PAPER / 'manuscript.tex', PAPER / 'references.bib',
+                PAPER / 'SOURCE_README.txt', PAPER / 'CITATION.bib']
 source_files += sorted((PAPER / 'figures').glob('*.pdf'))
 source_files += sorted((PAPER / 'tables').glob('*.tex'))
 with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_DEFLATED) as bundle:

@@ -44,8 +44,21 @@ results. This makes the manifest point to the generating source commit. Never ed
 recorded hashes or numerical results by hand to make verification pass. For E003–E005, use their separate runners and verifiers; they reject uncommitted source inputs. E004/E005 fetch pinned, checksum-verified public inputs into ignored local cache. Record external revision, provenance, units, and reuse terms for any new dataset; do not commit raw third-party files without established redistribution rights.
 
 Inspect regenerated figures and compare numerical changes with their physical cause.
-If the technical note changes, rebuild its PDF using [the paper instructions](paper/README.md).
+If the manuscript changes, rebuild its PDF using [the paper instructions](paper/README.md).
 Do not upload raw credentials, private datasets, or third-party articles.
+
+## Documentation rendering
+
+Use fenced `math` blocks for displayed equations and protected inline math syntax
+where Markdown punctuation occurs, following [GitHub's math formatting guidance](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions).
+Use `\lt` for less-than signs in equations, including table cells. Check the
+published page for math errors and unintended punctuation; valid LaTeX alone
+does not establish that Markdown preserved it.
+
+Check relative links, images, historical test counts, and manuscript-version
+references when editing documentation. Preserve recorded, checksum-bound
+protocol files. If their presentation needs correction, provide a clearly
+labeled reading copy linked to the original; preserve its scientific wording.
 
 ## Preserve a citable result
 
@@ -54,3 +67,8 @@ metadata together, record the change in `CHANGELOG.md`, and tag the verified com
 Keep old release tags unchanged. A release identifies a specific snapshot; cite that
 version rather than the moving `main` branch. A GitHub release is not a DOI archive.
 Any future archival DOI must be added only after it has actually been issued.
+
+Manuscript revisions use separate `manuscript-v...` tags. The paper-specific
+citation is included in the portable source archive, so its versioned tag must
+identify the commit containing the verified manuscript and archive. Publish
+the tag with that commit and never move an existing published tag.

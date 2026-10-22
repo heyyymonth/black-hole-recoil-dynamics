@@ -2,8 +2,8 @@ Companion access after black-hole recoil: dynamical benchmarks and sparse binary
 Venkata Hemanth Athota
 
 This archive contains the standalone LaTeX manuscript, bibliography, compiled
-bibliography, six vector figures, and generated table fragments for manuscript
-revision 0.3.0-manuscript.3, covering orbital exposure, velocity-weighted passages,
+bibliography, six vector figures, generated table fragments, and CITATION.bib for manuscript
+revision 0.3.0-manuscript.4, covering orbital exposure, velocity-weighted passages,
 a cluster-snapshot comparison, and the late-time binary-target census.
 This manuscript revision is separate from the baseline software release 0.1.1.
 No journal publication or acceptance is claimed by the document class.
@@ -28,9 +28,11 @@ dependencies.
 Initial Tectonic compilation may download these packages; a populated cache can
 be used offline. Different TeX distributions can produce pagination differences.
 
-To regenerate the scientific figures and tables, use the full research repository:
-https://github.com/heyyymonth/black-hole-recoil-dynamics
-Use the paper-specific citation to retrieve the matching immutable revision.
+The included CITATION.bib identifies this manuscript revision and its versioned
+source tag, manuscript-v0.3.0.4. To regenerate the scientific figures and tables,
+retrieve the matching full research repository at:
+https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.3.0.4
+No DOI has been assigned.
 
 Project-authored source and generated artifacts are covered by the accompanying
 MIT license. The included REVTeX distribution and external fonts retain their own licenses;

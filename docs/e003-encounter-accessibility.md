@@ -2,7 +2,7 @@
 
 **Researcher:** Venkata Hemanth Athota  
 **Data:** four deterministic model calculations; no observational data.  
-**Protocol:** [question, controls, and decision rule](e003-protocol.md), committed as [4a729da](https://github.com/heyyymonth/black-hole-recoil-dynamics/commit/4a729daf9c392c0d7cec8b825b69db70d153af16) before execution.  
+**Protocol:** [question, controls, and decision rule](e003-protocol.md), committed as [4a729da](https://github.com/heyyymonth/black-hole-recoil-dynamics/commit/4a729daf9c392c0d7cec8b825b69db70d153af16) before execution. [Readable math view](e003-protocol-readable.md).<br>
 **Generating source:** [4161b85](https://github.com/heyyymonth/black-hole-recoil-dynamics/commit/4161b85d006bd2b5de76f4ee598393d34940eb02). The [manifest](../results/run_e003.json) records exact source and output hashes.
 
 ## Physical question
@@ -112,9 +112,9 @@ The ordering of the three nonzero kicks is unchanged. E003 rejects quantitative 
 
 ## Validation and stopping decision
 
-The complete suite passes **62 tests**, including 35 added for E003. The new checks include direct numerical angle and speed integrals; analytical stationary and fast-motion limits; independent DOP853 trajectories with separately integrated numerical velocity moments for all four cases at H=10; period accounting; tighter tolerances; physical units; count, radius, and mass scaling; and rejection of the eta=0.99 case by the admission screen.
+At E003 completion, the complete suite passed **62 tests**, including 35 added for E003. Those checks include direct numerical angle and speed integrals; analytical stationary and fast-motion limits; independent DOP853 trajectories with separately integrated numerical velocity moments for all four cases at H=10; period accounting; tighter tolerances; physical units; count, radius, and mass scaling; and rejection of the eta=0.99 case by the admission screen.
 
-Independent trajectory comparisons pass at 1e-8 relative tolerance, below the predeclared 1e-6 validation requirement. These are acceptance tolerances, not an estimate of astrophysical model uncertainty. The result verifier recomputes all 19 fields in each of four rows, physical scales, and the decision summary, and checks every recorded hash. The existing 146 baseline rows and four-page E001/E002 paper still pass their provenance checks.
+Independent trajectory comparisons pass at 1e-8 relative tolerance, below the predeclared 1e-6 validation requirement. These are acceptance tolerances, not an estimate of astrophysical model uncertainty. The result verifier recomputes all 19 fields in each of four rows, physical scales, and the decision summary, and checks every recorded hash. At E003 completion, the 146 baseline rows and the then-current four-page E001/E002 paper also passed their provenance checks.
 
 The declared experiment is complete: velocity weighting is necessary for quantitative passage counts in the two higher-kick examples. Repeating identical runs or increasing kick-grid density would not test friction, mass segregation, encounter outcomes, or evolving targets. Before using this ingredient to infer repeated mergers, the bath and trajectories require physical calibration and the passage-to-binary-outcome step remains to be supplied.
 
@@ -157,4 +157,4 @@ python experiments/run_e003.py
 python experiments/verify_e003.py
 ```
 
-The runner refuses uncommitted source inputs, records their generating commit, and regenerates only E003. It performs no stochastic sampling. Reproduction requires no network access after dependency installation. E003 is a separately documented addition on `main`; the v0.1.1 PDF and citation metadata describe E001/E002. The [E003 BibTeX citation](../results/e003/CITATION.bib) identifies [results snapshot 7944b82](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/7944b82b3c99e070b7c312011020e4ee53b4255d), which contains the complete record and outputs. This is a commit-based citation, not a DOI or a journal publication.
+The runner refuses uncommitted source inputs, records their generating commit, and regenerates only E003. It performs no stochastic sampling. Reproduction requires no network access after dependency installation. E003 retains its separate experiment record and is incorporated into the [current integrated manuscript](../output/pdf/central-residence.pdf). The archived v0.1.1 PDF and root citation files describe the earlier E001/E002 baseline. The [E003 BibTeX citation](../results/e003/CITATION.bib) identifies [results snapshot 7944b82](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/7944b82b3c99e070b7c312011020e4ee53b4255d), which contains the complete record and outputs. This is a commit-based citation, not a DOI or a journal publication.

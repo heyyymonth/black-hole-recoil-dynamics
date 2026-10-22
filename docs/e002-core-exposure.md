@@ -33,14 +33,14 @@ At $\eta=0.99$, one full radial period gives:
 | Period $P$ | 792.551744 dynamical times |
 | Density exposure $I(P)$ | 1.029215 dynamical times |
 | Mean normalized density $I(P)/P$ | 0.001298609 |
-| Time inside $r<b$ | 1.530574 dynamical times |
-| Fraction inside $r<b$ | 0.001931197 |
+| Time inside $`r\lt b`$ | 1.530574 dynamical times |
+| Fraction inside $`r\lt b`$ | 0.001931197 |
 
-Although the orbit is bound, the mean sampled density is about **0.130%** of the central value, and only **0.193%** of the period is spent inside the declared sphere $r<b$. This describes the ideal orbit, not a population of observed remnants.
+Although the orbit is bound, the mean sampled density is about **0.130%** of the central value, and only **0.193%** of the period is spent inside the declared sphere $`r\lt b`$. This describes the ideal orbit, not a population of observed remnants.
 
 The same measures vary substantially across the tested kicks:
 
-| Kick / escape | Mean normalized density | Fraction of period inside $r<b$ |
+| Kick / escape | Mean normalized density | Fraction of period inside $`r\lt b`$ |
 |---:|---:|---:|
 | 0.30 | 0.793277 | 1.000000 |
 | 0.80 | 0.120409 | 0.174465 |

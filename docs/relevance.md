@@ -22,7 +22,7 @@ This focused check supports publication of the experiments as reproducible bench
 
 ## E003: relevant as a test of the density-to-encounter approximation
 
-The [pre-execution protocol](e003-protocol.md) fixes an explicit target population, close-passage definition, common time window, and 10% approximation screen. These are the missing ingredients needed to test whether the E002 density proxy represents passage opportunities. The [result](e003-encounter-accessibility.md) identifies a velocity-dependent discrepancy and its geometric/focusing contributions. This is a meaningful physical extension, whereas a denser deterministic kick grid would only refine the same earlier calculation.
+The [pre-execution protocol, readable view](e003-protocol-readable.md) fixes an explicit target population, close-passage definition, common time window, and 10% approximation screen. These are the missing ingredients needed to test whether the E002 density proxy represents passage opportunities. The [result](e003-encounter-accessibility.md) identifies a velocity-dependent discrepancy and its geometric/focusing contributions. This is a meaningful physical extension, whereas a denser deterministic kick grid would only refine the same earlier calculation.
 
 The apocenter admission criterion is motivated by Islam's stated choice of five half-mass radii. It admits E003's eta=0.9 orbit but excludes E002's eta=0.99 near-escape example. This does not invalidate the isolated-orbit benchmark; it limits its environmental interpretation. E003 retains an untruncated equilibrium Plummer bath and does not implement a self-consistent tidal boundary.
 

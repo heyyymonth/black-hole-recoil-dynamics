@@ -1,6 +1,6 @@
 {
   "paper": "central-residence",
-  "version": "0.3.0-manuscript.3",
+  "version": "0.3.0-manuscript.4",
   "pages": 10,
   "title": "Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations",
   "experiments": [
@@ -30,7 +30,7 @@
     ]
   },
   "input_sha256": {
-    "CITATION.cff": "534021aa1c9efe457f99769015862aa2433575b79e6ac1cd209f3f9059fe3ff7",
+    "CITATION.cff": "5863ebea2a6d242a332060909da1ad61cafd98019eab48b6b078ee4e7584dcb0",
     "LICENSE": "b81b853d7805f138ad9958a4ad41890e918f9b4b9b556bfa8fbc350174d0a473",
     "docs/e003-protocol.md": "dcde1cb1051173ac148a000585ab671ddc85b741698dfb06e9c0dee570bb0d5c",
     "docs/e004-protocol.md": "bf8e0065264954eec266daa4c82a25b3b4c30bb3bb250ef7bed9181c2cf85911",
@@ -49,8 +49,9 @@
     "experiments/verify_e003.py": "69522c00153891649853c4c3cdc03fc03053b245df583f4a1237aa9d28fd8295",
     "experiments/verify_e004.py": "b3f7ce973075563ff8ee8e9332c88fed5595fd6b4c07b093da5d4b0da696e81c",
     "experiments/verify_e005.py": "9afd53035b286cc6147dcfeb86438550b4e02479e4dba930a63678989cd523f4",
-    "paper/SOURCE_README.txt": "5510021aab57d9683680a68b050eecbc77732ea0db1da087f7f8dc64f3c68a9f",
-    "paper/build.py": "fdb93b6ad478d1b95c3ff7e5fcbf3583acb4731169cbfe5a35134779c994a339",
+    "paper/CITATION.bib": "2c895ce4eb0b2569f26a4cee8d7c05e7795258b2ad8449b87d7b5b81d780b0c6",
+    "paper/SOURCE_README.txt": "632ddb5f621ddd3a63a5dbc01d4c1d42b69e5b4fe08ff03933ad51b45012494b",
+    "paper/build.py": "9473c005a0c86c2322e1e650043e569db2bfe4a9e5e5a00260200ac9010958c2",
     "paper/figures/catalog-counts.pdf": "23a5b8ff7da867b398f313ef64ce21755bf8f21d7373548f0e1a453b9799e472",
     "paper/figures/core-residence.pdf": "8994add76d6f0ed81df710a306f2f18e792ac8928021d11b4534d47370b8f64d",
     "paper/figures/encounter-proxy.pdf": "5ac1f912c46557ff6f7cccfa00801b42e4017962c61d803bd89ae71e57694b89",
@@ -68,7 +69,7 @@
     "paper/tables/return.tex": "9ddd27f8a8f4ab5796b320db5f55c685ae88ca12b550a66e3ad0986e8b572144",
     "paper/tables/snapshot-return.tex": "fdf2f9109dd6dc96d0263f6594160106353fa0628d7fccaabb3f41af30bd02da",
     "paper/toolchain.json": "23e2e59b0c21ba0e38f176c4fd55f68baa6b18e90ce274f683c19251da7a7794",
-    "paper/verify.py": "ddebd98714709547766444adc31c13eacc7d7836d8f969836cf1668413439f7e",
+    "paper/verify.py": "e3bedecc8fc87c236d8c52c4c877509371da434672d5f97a43152533cf950866",
     "pyproject.toml": "9f05c363e03950260f74ec78a683a627303fcaf24a61792cd072757d994125a9",
     "requirements-lock.txt": "90001901b188e80285e2679b5c36dca46073ae9fd5c758526c103a6fa83e5201",
     "requirements.txt": "fadf444abe37375678f3070583db30c26f96005d3cffab861307e8b19b609c17",
@@ -117,6 +118,6 @@
   },
   "output_sha256": {
     "output/pdf/central-residence.pdf": "6993e9c649149f4c920f82ae5a5594aaa11a4626cd13202e854f4499098ad8be",
-    "output/pdf/manuscript-source.zip": "ea162cd4ee97bad758a30b9901e3e25a7ba46dfb923fbef22a9a07ba13cd2c51"
+    "output/pdf/manuscript-source.zip": "ee941e900338f23b5068d28957a3f7eb341f6c0a4f804fad87f76edbe5dca61e"
   }
 }
