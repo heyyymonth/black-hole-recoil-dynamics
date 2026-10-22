@@ -20,7 +20,7 @@ OUT = ROOT / 'output/pdf'
 TMP = ROOT / 'tmp/latex'
 STAGE = TMP / 'source'
 TOOLCHAIN = json.loads((PAPER / 'toolchain.json').read_text())
-VERSION = '0.3.0-manuscript.2'
+VERSION = '0.3.0-manuscript.3'
 title_match = re.search(r'\\title\{([^{}]+)\}', (PAPER/'manuscript.tex').read_text())
 if title_match is None:
     raise SystemExit('Expected one plain-text manuscript title for provenance.')

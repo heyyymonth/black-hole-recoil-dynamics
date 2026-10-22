@@ -3,7 +3,7 @@ Venkata Hemanth Athota
 
 This archive contains the standalone LaTeX manuscript, bibliography, compiled
 bibliography, six vector figures, and generated table fragments for manuscript
-revision 0.3.0-manuscript.2, covering orbital exposure, velocity-weighted passages,
+revision 0.3.0-manuscript.3, covering orbital exposure, velocity-weighted passages,
 a cluster-snapshot comparison, and the late-time binary-target census.
 This manuscript revision is separate from the baseline software release 0.1.1.
 No journal publication or acceptance is claimed by the document class.

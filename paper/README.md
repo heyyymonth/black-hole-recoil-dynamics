@@ -2,7 +2,7 @@
 
 **Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations**
 
-Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.3.0-manuscript.2
+Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.3.0-manuscript.3
 
 [Paper PDF](../output/pdf/central-residence.pdf) · [Cite this manuscript](CITATION.bib) · [LaTeX source](manuscript.tex) · [Portable source archive](../output/pdf/manuscript-source.zip) · [Formatting conventions](FORMAT.md)
 
