@@ -97,7 +97,7 @@ Each runner replaces its corresponding outputs. E001–E003 need no network afte
 
 ## Citation and reuse
 
-The current integrated manuscript is revision **0.3.0-manuscript.1**, with eleven pages, six tables and six vector figures. Its [paper-specific BibTeX citation](paper/CITATION.bib) identifies [immutable manuscript snapshot ed9f420](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/ed9f420266023a661efb70b31f018a20e28b55fe), separately from the software. It remains unreviewed and has no DOI. The previous eight-page revision is preserved at [snapshot 0b2767e](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/0b2767ebe455eb891bffddb03a7e65cc442539a7). Root citation files below continue to identify the earlier baseline software release.
+The current integrated manuscript is revision **0.3.0-manuscript.2**, with ten pages, six tables and six vector figures. Use its [paper-specific BibTeX citation](paper/CITATION.bib) when referencing the paper; it identifies [immutable manuscript snapshot 7d125e1](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/7d125e118239b1acdf47d12b9fa8c8c18bca28e9), separately from the software. It remains unreviewed and has no DOI. The previous eight-page revision is preserved at [snapshot 0b2767e](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/0b2767ebe455eb891bffddb03a7e65cc442539a7). Root citation files below continue to identify the earlier baseline software release.
 
 Athota, Venkata Hemanth (2026). *Black-hole recoil dynamics: central residence and density exposure in a Plummer potential*. Version 0.1.1. [Versioned research release](https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1).
 
