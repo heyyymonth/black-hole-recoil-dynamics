@@ -2,11 +2,17 @@
 
 **Researcher: Venkata Hemanth Athota**
 
-A black-hole merger remnant can be gravitationally bound to its host while spending much of its orbit outside the dense central region. A further merger requires additional dynamics, including interactions with available companions. The present experiments isolate the orbital part of that problem.
+A black-hole merger remnant can be gravitationally bound to its host while spending much of its orbit outside the dense central region. A further merger requires additional dynamics, including interactions with available companions. The completed studies test orbital exposure, velocity-weighted passages, host-potential shape, and target availability. The proposed extension now defines how these ingredients would be coupled.
 
 E001/E002 ask whether a retention flag or a prescription that treats first return as permanent central residence preserves orbital exposure over a finite window. We quantify the errors of those prescriptions in a collisionless benchmark. Within this fixed one-parameter model, an exact return time together with the governing equations can instead identify the orbit; we do not claim an information-theoretic degeneracy. E003 then tests whether density exposure accurately approximates a specified close-passage count once relative velocities enter the calculation.
 
-## Model
+## Proposed extension of step 1
+
+The [recoil-transport formulation](recoil-transport-theory.md) defines the next theoretical step without executing it. It replaces the central radial launch by a joint merger-conditioned position and velocity, uses species distributions consistent with host gravity, and introduces mean scattering and random velocity diffusion. A return is entry into a finite region, followed by continued motion. Time-resolved position and velocity feed a conditional passage integral for available binary targets.
+
+The formulation leaves cluster choice, fitted distributions, encounter cutoffs, initial-condition laws, and numerical parameters unassigned. The equations below remain the **executed collisionless benchmark**, recovered as a limiting case of the extension.
+
+## Completed benchmark model
 
 The host potential is
 

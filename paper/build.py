@@ -1,6 +1,7 @@
 """Build the REVTeX manuscript, portable LaTeX archive, and provenance manifest."""
 from datetime import datetime, timezone
 from pathlib import Path
+import argparse
 import csv
 import hashlib
 import importlib.metadata
@@ -20,7 +21,74 @@ OUT = ROOT / 'output/pdf'
 TMP = ROOT / 'tmp/latex'
 STAGE = TMP / 'source'
 TOOLCHAIN = json.loads((PAPER / 'toolchain.json').read_text())
-VERSION = '0.3.0-manuscript.4'
+VERSION = '0.3.0-manuscript.5'
+FIGURE_NAMES = ('return-time.pdf', 'core-residence.pdf', 'exposure-comparison.pdf',
+                'encounter-proxy.pdf', 'snapshot-comparison.pdf', 'catalog-counts.pdf')
+
+
+def validate_reused_figures(root):
+    """Check saved figures and their declared scientific inputs without imports
+    of the dynamics or figure renderer, numerical integration, or output writes.
+
+    The previous build manifest is the reference. Manuscript text, citations,
+    and build machinery may change; scientific code, recorded results,
+    configurations, protocols, numerical dependencies, and plot code may not.
+    """
+    previous_bytes = (root / 'output/pdf/build.json').read_bytes()
+    previous = json.loads(previous_bytes)
+    bound = previous['input_sha256']
+    scientific = {
+        name: digest for name, digest in bound.items()
+        if name.startswith(('src/', 'tests/', 'experiments/', 'results/'))
+        or (name.startswith('docs/') and name.endswith('-protocol.md'))
+        or name in ('requirements-lock.txt', 'requirements.txt', 'pyproject.toml',
+                    'paper/figures.py')
+    }
+    required = {'requirements-lock.txt', 'paper/figures.py',
+                'experiments/config.json', 'src/recoil_dynamics/plummer.py',
+                'src/recoil_dynamics/__init__.py', 'results/run_all.json',
+                'results/run_e003.json', 'results/run_e004.json',
+                'results/run_e005.json'}
+    if missing := required - scientific.keys():
+        raise SystemExit(f'Reuse reference is missing scientific bindings: {sorted(missing)}')
+    figures = {f'paper/figures/{name}': bound.get(f'paper/figures/{name}')
+               for name in FIGURE_NAMES}
+    actual_names = {path.name for path in (root / 'paper/figures').glob('*.pdf')}
+    if actual_names != set(FIGURE_NAMES):
+        raise SystemExit('Figure reuse requires exactly the six declared manuscript PDFs')
+    for name, expected in {**scientific, **figures}.items():
+        path = root / name
+        if not expected or not path.is_file():
+            raise SystemExit(f'Missing figure-reuse input or binding: {name}')
+        if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+            raise SystemExit(f'Figure reuse rejected: changed input {name}; regenerate figures explicitly')
+    for name in figures:
+        figure = PdfReader(root / name, strict=True)
+        if len(figure.pages) != 1:
+            raise SystemExit(f'Expected one-page vector figure: {name}')
+        page = figure.pages[0]
+        if float(page.mediabox.width) <= 0 or float(page.mediabox.height) <= 0:
+            raise SystemExit(f'Invalid figure dimensions: {name}')
+    return {'mode': 'reuse-verified', 'physical_calculations_performed': False,
+            'reference_manifest_sha256': hashlib.sha256(previous_bytes).hexdigest(),
+            'reference_manuscript_version': previous['version'],
+            'figure_sha256': figures, 'scientific_input_sha256': scientific}
+
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--reuse-figures', action='store_true',
+                    help='Verify and reuse existing figures; do not run the numerical figure renderer')
+parser.add_argument('--check-reuse-figures', action='store_true',
+                    help='Only validate the figure-reuse guard; write no files and perform no build')
+args = parser.parse_args()
+figure_generation = {'mode': 'regenerated', 'physical_calculations_performed': True}
+if args.reuse_figures or args.check_reuse_figures:
+    figure_generation = validate_reused_figures(ROOT)
+    print(f'Validated six saved figures and {len(figure_generation["scientific_input_sha256"])} '
+          'scientific input hashes; no physical calculations performed.')
+if args.check_reuse_figures:
+    raise SystemExit(0)
+
 title_match = re.search(r'\\title\{([^{}]+)\}', (PAPER/'manuscript.tex').read_text())
 if title_match is None:
     raise SystemExit('Expected one plain-text manuscript title for provenance.')
@@ -91,7 +159,8 @@ write_table('catalog-counts.tex', ['Quantity', 'Count'], [
      f"{catalog['selected_meeting_count_screen_models']:,}"],
     [r'Maximum $N_{\rm BBH}$ over saved states', f"{catalog['saved_state_bbh_count_range'][1]:,}"],
 ], alignment='lr')
-subprocess.run([sys.executable, str(PAPER / 'figures.py')], cwd=ROOT, check=True)
+if not args.reuse_figures:
+    subprocess.run([sys.executable, str(PAPER / 'figures.py')], cwd=ROOT, check=True)
 engine = shutil.which('tectonic')
 if not engine:
     raise SystemExit('Install Tectonic 0.16.9, then rerun. See paper/README.md.')
@@ -192,6 +261,7 @@ manifest = {'paper': 'central-residence', 'version': VERSION, 'pages': len(reade
             'experiments': ['E001', 'E002', 'E003', 'E004', 'E005'],
             'format': 'REVTeX 4.2 APS/PRD reprint; US Letter; two columns; txfonts',
             'engine': engine_version, 'source_date_epoch': env['SOURCE_DATE_EPOCH'],
+            'figure_generation': figure_generation,
             'revtex_log': next(line.strip() for line in log.splitlines() if line.startswith('Document Class: revtex')),
             'versions': {name: importlib.metadata.version(name) for name in ['matplotlib', 'numpy', 'scipy', 'pypdf']},
             'checks': {'undefined_references': 0, 'overfull_boxes': 0, 'bibliography_entry_warnings': 0,

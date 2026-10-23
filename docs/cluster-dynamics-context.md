@@ -1,8 +1,14 @@
 # Cluster dynamics: from E004 to the E005 findings
 
-**Researcher:** Venkata Hemanth Athota. Updated 21 October 2026. E005's target-count audit is executed; joint companion calibration and live-recoil comparisons remain unexecuted.
+**Researcher:** Venkata Hemanth Athota. Updated 23 October 2026. E005's target-count audit is executed; joint companion calibration and live-recoil comparisons remain unexecuted.
 
 The immediate question is: **How accurately can a reduced model predict a retained remnant's access to actual binary-black-hole targets while its orbit evolves after recoil?** This isolates one step toward repeated mergers. A close passage still requires an exchange or capture, subsequent binary evolution, and eventual merger before it contributes to hierarchical growth.
+
+## Theory before further calculations
+
+The [proposed recoil-transport formulation](recoil-transport-theory.md) now specifies the missing inputs: consistent mass and velocity distributions, merger position and progenitor motion, recoil direction, drift and diffusion, external acceleration, and finite-region entry and residence. It defines the conditional target kernel that connects those paths to the existing availability hypothesis. No host family, cluster, parameter values, or new numerical experiment is adopted by that formulation.
+
+The background scatterers that drive friction are distinct from the BBH systems counted as potential companions. Observational host constraints and merger-linked target histories address different parts of the problem. They must describe compatible environments and times before they can be combined. The experiment descriptions below remain proposed validation requirements, not instructions to execute calculations in this revision.
 
 ## What existing research already supplies
 

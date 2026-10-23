@@ -2,13 +2,68 @@ name: Numerical verification
 
 on:
   push:
+    branches: ['**']
   pull_request:
 
 permissions:
   contents: read
 
 jobs:
-  verify:
+  changes:
+    runs-on: ubuntu-24.04
+    outputs:
+      scientific: ${{ steps.classify.outputs.scientific }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Classify scientific versus manuscript-only changes
+        id: classify
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import PurePosixPath
+
+          with open(os.environ['GITHUB_EVENT_PATH']) as stream:
+              event = json.load(stream)
+          if os.environ['EVENT_NAME'] == 'pull_request':
+              base = event['pull_request']['base']['sha']
+              head = event['pull_request']['head']['sha']
+              revision_args = [f'{base}...{head}']
+          else:
+              base, head = event.get('before'), event.get('after')
+              revision_args = [base, head] if base and set(base) != {'0'} else None
+          if revision_args is None:
+              command = ['git', 'ls-files', '-z']
+          else:
+              command = ['git', 'diff', '--name-only', '-z', *revision_args]
+          paths = subprocess.check_output(command).decode().rstrip('\0').split('\0')
+
+          def scientific(path):
+              if path.startswith(('src/', 'tests/', 'experiments/')):
+                  return True
+              if path.startswith('results/'):
+                  # Citation and verification narratives do not change data.
+                  return PurePosixPath(path).suffix not in ('.bib', '.md', '.txt')
+              if path.startswith('docs/') and path.endswith('-protocol.md'):
+                  return True
+              return path in {'requirements.txt', 'requirements-lock.txt',
+                              'pyproject.toml', 'paper/figures.py'}
+
+          scientific_paths = [path for path in paths if scientific(path)]
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
+              stream.write(f'scientific={str(bool(scientific_paths)).lower()}\n')
+          print('Scientific changes:', json.dumps(scientific_paths))
+          print('Documentation-only runs verify saved artifacts and reuse figures; no experiment calculations.')
+          PY
+
+  numerical:
+    needs: changes
+    if: needs.changes.outputs.scientific == 'true'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -35,6 +90,17 @@ jobs:
           key: e005-${{ hashFiles('experiments/e005-inputs.json') }}
       - name: Verify recorded late-time target-count audit
         run: python experiments/verify_e005.py
+  paper:
+    needs: changes
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install paper dependencies
+        run: python -m pip install -r requirements-lock.txt -r paper/requirements.txt
       - name: Verify published paper provenance
         run: python paper/verify.py
       - name: Install pinned Tectonic
@@ -45,7 +111,11 @@ jobs:
           mkdir -p "$RUNNER_TEMP/tectonic-bin"
           tar -xzf "$RUNNER_TEMP/tectonic.tar.gz" -C "$RUNNER_TEMP/tectonic-bin" tectonic
           echo "$RUNNER_TEMP/tectonic-bin" >> "$GITHUB_PATH"
-      - name: Rebuild REVTeX manuscript
+      - name: Rebuild manuscript using verified existing figures
+        if: needs.changes.outputs.scientific == 'false'
+        run: python paper/build.py --reuse-figures
+      - name: Regenerate manuscript figures after scientific changes
+        if: needs.changes.outputs.scientific == 'true'
         run: python paper/build.py
       - name: Verify rebuilt manuscript
         run: python paper/verify.py

@@ -15,7 +15,7 @@
 \affiliation{Independent researcher}
 
 \begin{abstract}
-The origin and growth of merging black holes are central questions in gravitational-wave astronomy. Dense star clusters can support repeated mergers, but gravitational-wave recoil can displace a remnant from regions where encounters occur without ejecting it. Continued growth therefore depends on companion access as well as retention. We examine how accurately simplified descriptions preserve that access using orbital benchmarks, velocity-dependent passage calculations, and audits of released cluster simulations. In a static Plummer potential, replacing recoil motion by a delay followed by permanent central residence misses early density exposure and overestimates it at late times. In an imposed binary population, density exposure alone also overestimates normalized passage counts for the selected larger kicks because it omits relative-velocity weighting. A frozen cluster snapshot shows that matching total mass and half-mass radius does not preserve ballistic return times. A wider census finds small simultaneous binary-black-hole populations throughout the inspected late-time states, while the available summaries lack the joint properties needed for encounter calibration. Together, these results identify limitations of reduced access prescriptions and motivate a testable hypothesis: temporal overlap between remnant motion and evolving target availability improves passage predictions over stationary population descriptions conditional on remnant-producing mergers. Establishing that improvement requires merger-linked histories and resolved trajectories; companion acquisition and repeated-merger rates remain uncalibrated.
+The origin and growth of merging black holes are central questions in gravitational-wave astronomy. Dense star clusters can support repeated mergers, but gravitational-wave recoil can displace a remnant from regions where encounters occur without ejecting it. Continued growth therefore depends on companion access as well as retention. We examine how accurately simplified descriptions preserve that access using orbital benchmarks, velocity-dependent passage calculations, and audits of released cluster simulations. In a static Plummer potential, replacing recoil motion by a delay followed by permanent central residence misses early density exposure and overestimates it at late times. In an imposed binary population, density exposure alone also overestimates normalized passage counts for the selected larger kicks because it omits relative-velocity weighting. A frozen cluster snapshot shows that matching total mass and half-mass radius does not preserve ballistic return times. A wider census finds small simultaneous binary-black-hole populations throughout the inspected late-time states, while the available summaries lack the joint properties needed for encounter calibration. These findings motivate an untested hypothesis: temporal overlap between remnant motion and evolving target availability improves passage predictions over stationary descriptions conditional on remnant-producing mergers. We formulate the transport and conditional-passage quantities needed to test it, allowing off-center launches, stellar scattering, and evolving environments. This extension selects no host or numerical parameters and supplies no new trajectories; companion acquisition and repeated-merger rates remain uncalibrated.
 \end{abstract}
 \maketitle
 
@@ -28,9 +28,9 @@ We organize the investigation by the assumption being tested. A ballistic-return
 
 The results motivate the hypothesis that temporal overlap between remnant motion and changing target availability adds predictive information beyond a return time and stationary target description. Section~\ref{sec:hypothesis} defines the corresponding conditional quantity and a comparison that could reject the hypothesis. The present work supplies its motivation and approximation tests; it does not measure that overlap in live clusters. In particular, the passage calculation uses an imposed bath, the frozen-potential comparison uses a different host and physical kicks, and the population census is not conditioned on mergers. Their discrepancies cannot be combined into a calibrated rate correction.
 
-Ballistic center crossing is an orbital event; frictional recentering requires dissipative evolution omitted here. Within the fixed one-parameter Plummer family, an exact return time and the governing equations can identify the orbit; the error lies in replacing it by an assumed residence history. No observed gravitational-wave signals, radiation waveforms, or merger outcomes are analyzed. The long-term physical objective is to establish which assembly-history information an accessibility model can carry into predictions of repeated mergers; this paper tests the inputs needed for that step.
+Ballistic center crossing is an orbital event; frictional recentering requires collisional evolution omitted from the executed calculations. Section~\ref{sec:transport} formulates a proposed extension without evaluating it. Within the fixed one-parameter Plummer family, an exact return time and the governing equations can identify the orbit; the error lies in replacing it by an assumed residence history. No observed gravitational-wave signals, radiation waveforms, or merger outcomes are analyzed. The long-term physical objective is to establish which assembly-history information an accessibility model can carry into predictions of repeated mergers; this paper tests the inputs needed for that step.
 
-\section{Model and numerical method}\label{sec:model}
+\section{Ballistic benchmark model and numerical method}\label{sec:model}
 With host mass $M$, scale radius $b$, and gravitational constant $G$, define
 \begin{align}
 \Phi(r)&=-\frac{GM}{\sqrt{r^2+b^2}},\label{eq:potential}\\
@@ -283,7 +283,7 @@ Combining this with Eq.~\eqref{eq:period-limit} gives
 \end{equation}
 This is a limit from bound orbits. An exactly marginally bound particle does not return in finite time.
 
-The complete verification suite contains 180 passing tests. Twenty-seven establish the orbital benchmarks. Independent checks integrate the signed equations of motion using the DOP853 Runge--Kutta method, compare central crossings, monitor energy, and integrate accumulated density as an additional state variable. Core residence is checked with event-segmented trajectories. Other tests cover stationary behavior, sphere thresholds, period accumulation, crossing continuity, density as the derivative of exposure, invalid inputs, and convergence near escape. The strongest near-escape numerical cases reach $\eta=0.9999$; no claim is made of uniform numerical accuracy arbitrarily close to escape.
+The completed numerical studies were verified with 180 passing tests. These checks apply to the executed benchmarks and audits, not to the proposed transport formulation below. Twenty-seven establish the orbital benchmarks. Independent checks integrate the signed equations of motion using the DOP853 Runge--Kutta method, compare central crossings, monitor energy, and integrate accumulated density as an additional state variable. Core residence is checked with event-segmented trajectories. Other tests cover stationary behavior, sphere thresholds, period accumulation, crossing continuity, density as the derivative of exposure, invalid inputs, and convergence near escape. The strongest near-escape numerical cases reach $\eta=0.9999$; no claim is made of uniform numerical accuracy arbitrarily close to escape.
 
 Thirty-five checks of the passage calculation include independent numerical velocity integrals, analytical stationary and fast-motion limits, and separately integrated DOP853 trajectories with numerical velocity moments. Agreement at $10^{-8}$ relative tolerance satisfies the predeclared $10^{-6}$ requirement. Other checks cover units, population/radius/mass scaling, period accounting, and the apocenter screen. Production orbit integrals use absolute and relative tolerances of $10^{-10}$.
 
@@ -294,6 +294,144 @@ Approximately equal-mass shell bins use mass-weighted harmonic radii, preserving
 The catalog audit adds 67 synthetic accounting and selection tests and five archive-integrity tests. Every consumed file matches its locked Git object and recorded SHA-256 checksum. All 7537 states pass count accounting. A separately implemented scalar extraction and age-selection calculation reproduces the primary census. Seven quantities also agree with the independently parsed full snapshot: age, host mass, system count, all binaries, single BHs, BH-bearing binaries, and BBHs. That comparison reuses the same physical state and is not an additional cluster sample.
 
 Stored-result verification reproduces 146 orbital/exposure rows, four passage cases, five snapshot cohort summaries, twelve compressed-shell cases, 160 profile points, and the full-shell checks. It also reproduces all catalog rows, 126 history summaries, and 119 selected states. Reproduction with the same implementation is distinct from the independent checks above. Grid points, resolution levels, and repeated snapshots are not independent astrophysical observations; solver tolerances are not physical-model uncertainties.
+
+\section{Proposed transport formulation}\label{sec:transport}
+The completed calculations identify missing inputs; they do not validate a collisional recoil model. We now specify a proposed extension that makes those inputs and their connection to companion access explicit. All quantities in this section use physical units. No host family, parameter values, fitted distributions, or new trajectories are supplied. Local diffusion is a candidate approximation whose domain of validity must be tested, rather than a replacement for resolved cluster dynamics.
+
+\subsection{Host distributions and merger-conditioned launch}
+Let $\mathbf r$ and $\mathbf v$ denote remnant position and velocity in translating, nonrotating cluster axes. For species $j$ of individual mass $m_j$, define a number phase-space density $F_j(\mathbf r,\mathbf u,t\mid\Theta)$, with host variables $\Theta$. Then
+\begin{align}
+n_j&=\int F_j\,d^3u,\qquad \rho_j=m_j n_j,\notag\\
+\nabla^2\Phi_{\rm c}&=4\pi G\sum_j\rho_j.\label{eq:host-df}
+\end{align}
+Boundary conditions and the tracked remnant's excluded self-field complete the potential definition. Density, streaming, and the velocity-dispersion tensor follow from the same distributions. Species can have different concentrations, anisotropy, and rotation; density and one dispersion alone do not generally fix $F_j$. Multimass lowered-isothermal families offer one possible host description~\cite{Gieles2015}, without selecting that family here. Poisson's equation supplies no temporal evolution: a frozen host needs a validity interval, while an evolving host needs a consistent distribution history. Backreaction on the host is not solved by a test-remnant equation.
+
+For a reference position $\mathbf R(t)$ in an inertial external potential $\Phi_{\rm ext}$, the relative external acceleration is
+\begin{equation}
+\mathbf a_{\rm ext,rel}
+=-\nabla\Phi_{\rm ext}(\mathbf R+\mathbf r,t)-\ddot{\mathbf R}.
+\label{eq:external-acceleration}
+\end{equation}
+If $\ddot{\mathbf R}=-\nabla\Phi_{\rm ext}(\mathbf R,t)$, this is the difference between the external acceleration at the remnant and the cluster reference. No Coriolis term is present in these nonrotating axes. Internal rotation remains possible through $F_j$.
+
+At elapsed time zero, set
+\begin{align}
+\mathbf r(0)&=\mathbf r_{\rm m},\notag\\
+\mathbf v(0)&=\mathbf v_{\rm COM}+\mathbf v_{\rm k},\qquad
+m_{\rm r}(0)=m_{\rm rem}.\label{eq:general-launch}
+\end{align}
+The progenitor center-of-mass velocity and recoil vector must share a basis; the addition assumes nonrelativistic cluster motion. The relativistic merger supplies the mass and kick, not the subsequent Newtonian transport equation. A joint launch law
+\begin{equation}
+\pi_0(\mathbf r_{\rm m},\mathbf v_{\rm COM},\mathbf v_{\rm k},
+m_{\rm rem}\mid\mathcal M,\Theta)
+\label{eq:launch-law}
+\end{equation}
+conditions on the merger selection $\mathcal M$ and host. It need not factorize. An off-center launch generally carries nonzero angular momentum and need not cross the exact center. If retention is imposed, its escape criterion and horizon must be specified; negative instantaneous cluster-relative energy does not establish permanent retention in a time-dependent tidal field.
+
+\subsection{Drift, diffusion, and their closure}
+Define $\mathbf a_g=-\nabla\Phi_{\rm c}+\mathbf a_{\rm ext,rel}$. The proposed It\^o system is
+\begin{align}
+d\mathbf r&=\mathbf v\,dt,\notag\\
+d\mathbf v&=(\mathbf a_g+\mathbf A)\,dt+\mathbf B\,d\mathbf W,
+\qquad \mathbf D=\mathbf B\mathbf B^{\mathsf T},
+\label{eq:transport}
+\end{align}
+where $\mathbf W$ has three independent standard Wiener components. After separating smooth gravity, $\mathbf A$ and $\mathbf D$ are the first and second collisional velocity increments per unit time in a coarse-grained diffusion limit. Thus $D_{ik}$ has units of velocity squared per time. For phase-space probability density $p$, repeated Cartesian indices give
+\begin{align}
+\partial_t p={}&-\partial_{r_i}(v_i p)
+-\partial_{v_i}[(a_{g,i}+A_i)p]\notag\\
+&+\tfrac12\partial_{v_i}\partial_{v_k}(D_{ik}p).
+\label{eq:transport-fp}
+\end{align}
+The factor of one half fixes the diffusion convention. $\mathbf A$ is the complete It\^o first-moment drift; no additional noise-induced drift is to be appended.
+
+An explicit candidate closure follows the local, weak-deflection Rosenbluth construction~\cite{Rosenbluth1957,Tep2022}. At fixed position and time, define
+\begin{align}
+h_j(\mathbf v)&=\int\frac{F_j(\mathbf r,\mathbf u,t)}
+{|\mathbf v-\mathbf u|}\,d^3u,\notag\\
+g_j(\mathbf v)&=\int F_j(\mathbf r,\mathbf u,t)
+|\mathbf v-\mathbf u|\,d^3u.
+\label{eq:rosenbluth-potentials}
+\end{align}
+Using the number normalization in Eq.~\eqref{eq:host-df},
+\begin{align}
+A_i&=4\pi G^2\sum_j m_j(m_{\rm r}+m_j)\ln\Lambda_j\,
+\partial_{v_i}h_j,\notag\\
+D_{ik}&=4\pi G^2\sum_j m_j^2\ln\Lambda_j\,
+\partial_{v_i}\partial_{v_k}g_j .
+\label{eq:collision-coefficients}
+\end{align}
+The same $F_j$ supplies gravity and scattering. $\ln\Lambda_j=\ln(b_{\max,j}/b_{\min,j})$ encodes a declared encounter-scale range and is held fixed during the velocity integrals and derivatives. Arbitrary velocity-dependent cutoffs require a consistent rederivation. These coefficients retain streaming and anisotropy without assuming a Maxwellian distribution; $\mathbf D$ is positive semidefinite for nonnegative $F_j$ and positive Coulomb logarithms.
+
+The closure assumes local, uncorrelated weak deflections and omits collective correlations and strong encounters. Direct kicked-black-hole calculations show limitations of simplified friction prescriptions and individual energy gains from encounters~\cite{Webb2018}. They motivate testing both drift and diffusion, but do not validate Eq.~\eqref{eq:collision-coefficients} for the present application. Remnant mass is constant between discrete interactions. Neither Coulomb cutoffs nor the background distribution have been calibrated here.
+
+For $\epsilon=v^2/2+\Phi_{\rm c}$, It\^o's rule gives
+\begin{align}
+d\epsilon={}&\left[\partial_t\Phi_{\rm c}
++\mathbf v\cdot\mathbf a_{\rm ext,rel}
++\mathbf v\cdot\mathbf A
++\tfrac12\operatorname{tr}\mathbf D\right]dt\notag\\
+&+\mathbf v^{\mathsf T}\mathbf B\,d\mathbf W.
+\label{eq:stochastic-energy}
+\end{align}
+The diffusion contribution cannot be omitted. Individual paths need not lose energy monotonically; this energy is not a general conserved escape criterion. Core entry triggers no reset to rest.
+
+\subsection{Finite-region return and exposure}
+Specify a physical region $\mathcal C(t)$, for example a sphere with declared radius $r_c(t)$, distinct from a projected observational core-radius convention. For an interior launch, define
+\begin{align}
+t_{\rm out}&=\inf\{t>0:\mathbf r(t)\notin\mathcal C(t)\},\notag\\
+t_{\rm re}&=\inf\{t>t_{\rm out}:\mathbf r(t)\in\mathcal C(t)\}.
+\label{eq:region-return}
+\end{align}
+Inward and outward crossing rules must account for boundary motion; tangential touches do not count as exits. A launch outside has a first-entry event; a path that never exits has no re-entry event. Failure to return within the observation window is censored, while declared escape is a competing physical outcome.
+
+Let $T_*$ be the earliest of a common physical horizon $T$, escape, an unresolved strong encounter, or loss of the transport approximation's validity. Record the stopping cause. Accumulated residence and normalized species exposure are
+\begin{align}
+C_T&=\int_0^{T_*}\mathbf1_{\{\mathbf r(t)\in\mathcal C(t)\}}\,dt,\notag\\
+I_{j,T}&=\int_0^{T_*}
+\frac{\rho_j[\mathbf r(t),t]}{\rho_{{\rm ref},j}(t)}\,dt,
+\label{eq:general-exposure}
+\end{align}
+for a declared positive reference density. Dividing $C_T$ by $T$ measures accumulated modeled residence over the full horizon; it does not assign zero physical residence after an unresolved interaction or validity cutoff. Neither exposure determines an encounter count. Step 1 must retain the joint position--velocity path, its time labels, and event status. A time-integrated occupation measure alone loses the ordering needed for changing target populations.
+
+Host uncertainty and merger selection enter through $p(\Theta\mid\mathcal D,\mathcal M)$, with constraints $\mathcal D$; launch uncertainty enters through a joint conditional law for the initial state $z_0$. For any observable $O$,
+\begin{align}
+\mathbb E[O\mid\mathcal D,\mathcal M]
+={}&\int d\Theta\,p(\Theta\mid\mathcal D,\mathcal M)
+\int dz_0\,\pi_0(z_0\mid\Theta,\mathcal D,\mathcal M)
+\notag\\[-2pt]
+&\hspace{6mm}\times
+\mathbb E_{\mathbf W}[O\mid\Theta,z_0,\mathcal M].
+\label{eq:uncertainty}
+\end{align}
+This conditional factorization distinguishes physical scattering from uncertain inputs, without imposing independence or estimating a posterior.
+
+\subsection{Conditional targets and downstream access}
+Let $Z_t=(\mathbf r_t,\mathbf v_t,m_{\rm r})$ and let $\mathcal H_t$ retain the relevant assembly and encounter history. Define a conditional target number intensity $\mathcal F_B(\mathbf y,\mathbf u,\zeta,t\mid Z_t,\mathcal H_t)$, where $\zeta$ describes the binary's component masses and internal orbit. Its full phase-space integral is the conditional expected available BBH count. It excludes the consumed parent and any system containing the tagged remnant. It is distinct from the field populations supplying friction. A local kinetic passage model is
+\begin{align}
+\Gamma_B(t\mid\mathcal H_t)={}&
+\int d^3u\,d\zeta\,
+\mathcal F_B(\mathbf r_t,\mathbf u,\zeta,t\mid Z_t,\mathcal H_t)
+\notag\\
+&\hspace{4mm}\times\Sigma_B(w,\zeta;Z_t)\,w,\qquad
+w=|\mathbf v_t-\mathbf u|.
+\label{eq:conditional-target-kernel}
+\end{align}
+The cross section specifies a passage, not an acquisition or merger outcome. If this is a valid conditional counting intensity, its integral satisfies
+\begin{equation}
+\mathbb E[N_{\rm pass}(T_*)\mid\mathcal M]
+=\mathbb E\!\left[\left.\int_0^{T_*}\Gamma_B(t\mid\mathcal H_t)\,dt
+\right|\mathcal M\right].
+\label{eq:stopped-access}
+\end{equation}
+This introduces no unconditional Poisson law. Depletion, formation, destruction, and correlations between motion and targets must remain in the history. Sparse realizations require object-resolved encounters or a justified ensemble intensity; a few recorded positions do not calibrate a smooth local target distribution. Luminous-star kinematics constrain the host but do not determine its hidden BBH inventory.
+
+Weak scattering and explicitly resolved encounters must partition deflections consistently. An encounter already represented by $\mathbf A,\mathbf D$ must not be applied again as a discrete kick. A strong event can change the trajectory, binary membership, or mass and requires a separate transition model. Until that model is supplied, transport stops at the first unresolved event. Equation~\eqref{eq:stopped-access} consequently does not predict the next merger.
+
+\subsection{Recovery of the completed benchmark}
+Set $\mathbf A=\mathbf D=\mathbf a_{\rm ext,rel}=0$, take the static potential in Eq.~\eqref{eq:potential}, and set $\mathbf r_{\rm m}=\mathbf v_{\rm COM}=0$. The central launch is radial and Eq.~\eqref{eq:transport} reduces to Eq.~\eqref{eq:motion} after scaling by $b$ and $t_d$. With $\mathcal C=\{r<cb\}$, the central Plummer reference density, and $T=Ht_d$ without early termination, $C_T=t_d C(H,c)$ and $I_{\rho,T}=t_d I(H)$. The exact-center return of the radial benchmark remains distinct from finite-region re-entry. Restoring the imposed stationary target bath recovers Eq.~\eqref{eq:rate}.
+
+This limiting correspondence preserves the interpretation of the executed results. The extension organizes established kinetic ingredients around their missing inputs; it does not supply a new force law, a validated cluster trajectory, or an empirical demonstration of the accessibility hypothesis.
 
 \section{Discussion and conclusions}\label{sec:conclusions}
 \subsection{Claims supported by the combined evidence}
@@ -306,7 +444,7 @@ The cluster comparisons constrain inputs that numerical accuracy alone cannot ju
 Together, the results identify three distinct requirements for a reduced accessibility model: adequate remnant motion, velocity-dependent passage weighting, and a target population appropriate to the remnant's environment and epoch. This is the supported synthesis. It does not establish a measured reacquisition rate, an observational formation-channel discriminator, or a new mechanism for hierarchical mergers.
 
 \subsection{A hypothesis for merger-conditioned accessibility}\label{sec:hypothesis}
-The next theoretical question is whether those ingredients can be reduced independently. Let $\mathcal M$ specify a preceding merger, its host state and remnant properties, conditional on retention. Let $N_{\mathrm b}(t)$ be the number of available BBH targets at elapsed time $t$, excluding the consumed progenitor binary and any system containing the tagged remnant. For a specified local passage model, define
+The next theoretical question is whether those ingredients can be reduced independently. Let $\mathcal M$ specify a preceding merger, its host state and remnant properties, with any retention selection declared as in Sec.~\ref{sec:transport}. Let $N_{\mathrm b}(t)$ be the number of available BBH targets at elapsed time $t$, excluding the consumed progenitor binary and any system containing the tagged remnant. For a specified local passage model, define
 \begin{align}
 p_n(t\mid\mathcal M)&=\Pr[N_{\mathrm b}(t)=n\mid\mathcal M],\notag\\
 g_n(t\mid\mathcal M)&=\mathbb E[\Gamma(t)\mid N_{\mathrm b}(t)=n,\mathcal M].\label{eq:conditional-rate}
@@ -316,7 +454,7 @@ The ensemble mean predicted passage count over a common physical window $T$ is t
 \overline\tau(T\mid\mathcal M)=\int_0^T\sum_{n=0}^{\infty}
 p_n(t\mid\mathcal M)g_n(t\mid\mathcal M)\,dt.\label{eq:conditional-access}
 \end{equation}
-The rate $g_n$ incorporates target phase space and binary properties together with the remnant path. Equation~\eqref{eq:conditional-access} is a conditional-expectation identity, not an additional simulation result or an assumption of Poisson encounters. Zero targets imply zero instantaneous passage rate for this channel, but subsequent formation can change the population. A mean count alone does not determine the probability of at least one encounter.
+The rate $g_n$ incorporates target phase space and binary properties together with the remnant path. Section~\ref{sec:transport} specifies those inputs and their conditional passage kernel. Equation~\eqref{eq:conditional-access} presumes a model valid throughout $T$; an earlier stopping event requires the stopped quantity in Eq.~\eqref{eq:stopped-access}, without silently extending an unresolved path. Equation~\eqref{eq:conditional-access} is a conditional-expectation identity, not an additional simulation result or an assumption of Poisson encounters. Zero targets imply zero instantaneous passage rate for this channel, but subsequent formation can change the population. A mean count alone does not determine the probability of at least one encounter.
 
 Our working hypothesis is that, at fixed host and remnant properties, the temporal overlap of remnant motion with changing target availability provides predictive information about finite-window passage counts beyond a stationary target description and first-return time. The physical motivation is that a returning remnant samples companions present along its path during the relevant interval; an age-averaged population need not preserve that overlap. The present calculations establish neither its sign nor its size. In particular, the census measures equal-weight late-time states, not $p_n(t\mid\mathcal M)$, and no live trajectory is supplied for $g_n$.
 

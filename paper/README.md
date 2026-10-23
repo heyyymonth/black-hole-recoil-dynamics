@@ -2,7 +2,7 @@
 
 **Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations**
 
-Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.3.0-manuscript.4
+Venkata Hemanth Athota · Independent researcher · Working manuscript revision 0.3.0-manuscript.5
 
 [Paper PDF](../output/pdf/central-residence.pdf) · [Cite this manuscript](CITATION.bib) · [LaTeX source](manuscript.tex) · [Portable source archive](../output/pdf/manuscript-source.zip) · [Formatting conventions](FORMAT.md)
 
@@ -16,11 +16,22 @@ The paper names studies by their physical objectives, with no internal experimen
 
 The [claim-to-evidence record](CLAIMS.md) maps descriptive study names back to repository records E001–E005 and distinguishes measured results from the proposed hypothesis. Direct precedents for small BBH populations and binary formation during remnant recentering are cited, so the paper does not claim discovery of those mechanisms. The archived v0.1.1 release remains the orbital baseline; this revision incorporates all completed studies without changing their stored results. Its revision identifier is separate from the software version.
 
-This packaging revision includes the paper-specific `CITATION.bib` in the portable
-source archive. It identifies the [versioned source tag manuscript-v0.3.0.4](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.3.0.4).
-The article, scientific figures, tables, and numerical results are unchanged.
+This theory revision adds a proposed transport formulation: joint merger-conditioned launches, species-consistent gravity and velocity distributions, mean scattering and diffusion, finite-region re-entry, and a conditional target kernel. It recovers the executed Plummer equations as a limit. No host, numerical parameters, or new trajectories are supplied. See the [expanded formulation](../docs/recoil-transport-theory.md).
 
-## Reference build
+The paper-specific `CITATION.bib` is included in the portable source archive and identifies [manuscript-v0.3.0.5](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.3.0.5). The six scientific figures, six result tables, and numerical experiment outputs remain unchanged.
+
+## Theory-only build
+
+To compile text and equation changes without rerunning physics:
+
+```sh
+python paper/build.py --reuse-figures
+python paper/verify.py
+```
+
+This mode checks the six saved figure PDFs and their bound scientific inputs against the previous build manifest, then reuses them. Changed scientific inputs cause rejection rather than silent reuse. `--check-reuse-figures` checks this prerequisite without building or writing files. Tables are formatted from committed results; no dynamics are integrated. Documentation-only CI uses this mode and skips the numerical experiment job.
+
+## Full reference build
 
 Use Python 3.11 and the numerical dependencies from the root README. Install
 [Tectonic 0.16.9](https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.16.9)

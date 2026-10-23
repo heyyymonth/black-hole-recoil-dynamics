@@ -3,8 +3,10 @@ Venkata Hemanth Athota
 
 This archive contains the standalone LaTeX manuscript, bibliography, compiled
 bibliography, six vector figures, generated table fragments, and CITATION.bib for manuscript
-revision 0.3.0-manuscript.4, covering orbital exposure, velocity-weighted passages,
-a cluster-snapshot comparison, and the late-time binary-target census.
+revision 0.3.0-manuscript.5, covering orbital exposure, velocity-weighted passages,
+a cluster-snapshot comparison, the late-time binary-target census, and an
+unevaluated transport formulation with drift, diffusion, and conditional targets.
+The theoretical extension supplies no new trajectories or calibrated parameters.
 This manuscript revision is separate from the baseline software release 0.1.1.
 No journal publication or acceptance is claimed by the document class.
 
@@ -29,9 +31,9 @@ Initial Tectonic compilation may download these packages; a populated cache can
 be used offline. Different TeX distributions can produce pagination differences.
 
 The included CITATION.bib identifies this manuscript revision and its versioned
-source tag, manuscript-v0.3.0.4. To regenerate the scientific figures and tables,
+source tag, manuscript-v0.3.0.5. To regenerate the scientific figures and tables,
 retrieve the matching full research repository at:
-https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.3.0.4
+https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.3.0.5
 No DOI has been assigned.
 
 Project-authored source and generated artifacts are covered by the accompanying

@@ -1,5 +1,14 @@
 # Release record
 
+## Manuscript 0.3.0-manuscript.5 and proposed transport theory - 2026-10-23
+
+- Define merger-conditioned off-center launches, host species distributions, external acceleration, and local Ito drift and diffusion.
+- State the weak-scattering closure, energy balance, finite-region re-entry, residence, uncertainty propagation, and conditional companion-passage kernel.
+- Connect the new formulation to the completed findings and recover the collisionless Plummer equations as its limiting case.
+- Add research-paper references for distribution-function families, scattering theory, and kicked-black-hole dynamics.
+- Reuse the six existing scientific figures with hash-checked inputs; keep experiment results, configurations, protocols, and numerical source unchanged.
+- Scope documentation-only CI to artifact verification and a figure-reuse manuscript build. No new physical calculations or cluster fits belong to this revision.
+
 ## Manuscript 0.3.0-manuscript.4 and documentation - 2026-10-22
 
 - Include the paper-specific citation in the portable source archive and identify the package with a separate manuscript version tag.

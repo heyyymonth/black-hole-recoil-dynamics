@@ -1,8 +1,8 @@
 # Claim-to-evidence record for the expanded manuscript
 
-Revision: 0.3.0-manuscript.4, 22 October 2026. Author: Venkata Hemanth Athota.
+Revision: 0.3.0-manuscript.5, 23 October 2026. Author: Venkata Hemanth Athota.
 
-The paper asks how accurately simplified recoil-motion and environmental assumptions represent access to specified companion targets. It integrates completed experiments and formulates an explicitly untested hypothesis; it adds no new physical simulation or observational inference. Internal identifiers appear only in repository provenance and this mapping, not in the rendered article.
+The paper asks how accurately simplified recoil-motion and environmental assumptions represent access to specified companion targets. It integrates completed experiments, an explicitly untested hypothesis, and proposed transport equations; it adds no new physical simulation or observational inference. Internal identifiers appear only in repository provenance and this mapping, not in the rendered article.
 
 | Manuscript claim | Evidence | Applicable scope and boundary |
 |---|---|---|
@@ -13,6 +13,7 @@ The paper asks how accurately simplified recoil-motion and environmental assumpt
 | Small instantaneous BBH populations extend beyond the original snapshot within the inspected release. | E005: 7,537 saved states / 126 histories; 119 age-selected states have median two BBHs, 38 measured zeros and maximum nine; maximum 15 across all inspected states. | Incomplete late-time release, seven missing age selections, equal model weights. Not all catalog models, not a merger-conditioned or cosmic population. Sparse BBHs were already established in prior literature. |
 | Aggregate counts cannot calibrate joint companion phase space. | E005 input schema and exact count accounting; no binary positions, velocities, masses, internal orbits or IDs in those summaries. | The count-30 screen is operational. Failure does not invalidate smooth ensemble descriptions or prove absent future companions. |
 | Temporal overlap between remnant motion and changing target availability may add predictive information. | Hypothesis motivated by the distinct omissions exposed by E001–E005; conditional-expectation identity in the discussion. | **Proposed, not measured.** Requires post-merger target inventories and held-out cluster histories. No sign or size of a live-dynamics effect is established. |
+| A transport framework can retain off-center launches, consistent host distributions, collisional drift and diffusion, and conditional targets. | Established local diffusion theory, an explicit Ito convention, energy accounting, and analytical recovery of the collisionless Plummer equations. See [formulation](../docs/recoil-transport-theory.md). | **Proposed and unevaluated.** No cluster fit, host selection, parameter estimates, live trajectories, or calibrated scattering coefficients. The local weak-scattering closure excludes unresolved strong events and host backreaction. |
 
 The relationship Q/D equals the density-weighted mean encounter kernel divided by its stationary central value follows algebraically from E003's existing definitions. The conditional rate decomposition in the discussion follows from total expectation. Both are explanatory identities, not additional datasets or calibrated closures.
 
@@ -23,3 +24,5 @@ The proposed hypothesis is tested by comparing population prescriptions on the s
 Downing et al. (2010) already reports small coexisting BBH populations and turnover. Antonini et al. (2019) already allows new binaries while a retained remnant recenters. The paper cites these direct precedents and frames the intended advance as a quantitatively validated reduced description, not a new growth mechanism or a proven novel effect.
 
 Numerical data remain in the body and tables; the abstract gives the question, method, qualitative findings and hypothesis status. Six tables and six vector figures are generated from committed experiment outputs. The paper manifest includes inputs and outputs for all five repository records, while the article uses descriptive physical study names.
+
+This revision reuses the six previously generated figures after checking their hashes and scientific inputs. Tables are formatted from unchanged committed results. PDF compilation and provenance checks do not rerun the experiment suite; the numerical verification reported in the article belongs to the completed studies. The new equations require their own future validation before numerical or empirical claims can be made.
