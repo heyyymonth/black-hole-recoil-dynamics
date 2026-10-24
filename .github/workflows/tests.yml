@@ -1,4 +1,4 @@
-name: Numerical verification
+name: Research verification
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-      - name: Classify scientific versus manuscript-only changes
+      - name: Classify reference calculation changes
         id: classify
         env:
           EVENT_NAME: ${{ github.event_name }}
@@ -58,7 +58,7 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
               stream.write(f'scientific={str(bool(scientific_paths)).lower()}\n')
           print('Scientific changes:', json.dumps(scientific_paths))
-          print('Documentation-only runs verify saved artifacts and reuse figures; no experiment calculations.')
+          print('Documentation-only runs verify the foundation and compile the theoretical paper; no physical calculations.')
           PY
 
   numerical:
@@ -90,19 +90,24 @@ jobs:
           key: e005-${{ hashFiles('experiments/e005-inputs.json') }}
       - name: Verify recorded late-time target-count audit
         run: python experiments/verify_e005.py
-  paper:
+  artifacts:
     needs: changes
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.11'
           cache: pip
+          cache-dependency-path: paper/requirements.txt
       - name: Install paper dependencies
-        run: python -m pip install -r requirements-lock.txt -r paper/requirements.txt
-      - name: Verify published paper provenance
+        run: python -m pip install -r paper/requirements.txt
+      - name: Verify current manuscript provenance
         run: python paper/verify.py
+      - name: Verify mathematical foundation and manuscript metadata
+        run: python scripts/verify_foundation.py
       - name: Install pinned Tectonic
         shell: bash
         run: |
@@ -111,11 +116,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/tectonic-bin"
           tar -xzf "$RUNNER_TEMP/tectonic.tar.gz" -C "$RUNNER_TEMP/tectonic-bin" tectonic
           echo "$RUNNER_TEMP/tectonic-bin" >> "$GITHUB_PATH"
-      - name: Rebuild manuscript using verified existing figures
-        if: needs.changes.outputs.scientific == 'false'
-        run: python paper/build.py --reuse-figures
-      - name: Regenerate manuscript figures after scientific changes
-        if: needs.changes.outputs.scientific == 'true'
+      - name: Compile theoretical manuscript without physical calculations
         run: python paper/build.py
       - name: Verify rebuilt manuscript
         run: python paper/verify.py

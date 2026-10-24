@@ -1,28 +1,20 @@
-# Claim-to-evidence record for the expanded manuscript
+# Claim-to-evidence record
 
-Revision: 0.3.0-manuscript.5, 23 October 2026. Author: Venkata Hemanth Athota.
+Manuscript revision 0.4.0-manuscript.1. Author: Venkata Hemanth Athota.
 
-The paper asks how accurately simplified recoil-motion and environmental assumptions represent access to specified companion targets. It integrates completed experiments, an explicitly untested hypothesis, and proposed transport equations; it adds no new physical simulation or observational inference. Internal identifiers appear only in repository provenance and this mapping, not in the rendered article.
+The paper defines a two-step transport and exposure problem. It reports no numerically evaluated host, trajectory ensemble, fitted population, or calibrated prediction.
 
-| Manuscript claim | Evidence | Applicable scope and boundary |
+| Statement | Basis | Boundary |
 |---|---|---|
-| Central-residence prescriptions do not preserve the continuous exposure history. | E001/E002 orbit quadrature, independent trajectories, finite-window comparisons, analytical limits. | Static isolated Plummer potential, radial central launches. A ballistic crossing is not frictional settling. |
-| Density weighting can misestimate passage counts even when the orbit is computed correctly. | E003 errors of +4.41%, +53.06%, +98.55%; independent velocity and trajectory integrals. The kernel identity explains the omitted weighting. | One specified unsegregated bath, passage radius, mass configuration and common window. Two cases fail the operational 10% screen; no ordering reversal or universal bias is established. |
-| The chosen external state cannot calibrate a continuous BBH target distribution. | E004 inventory: two actual BBHs, distinct from all binaries or all black holes; author-summary accounting checks. | One evolved simulation snapshot. Concentration is consistent with established physics; no population fraction or general distribution is inferred. |
-| Matching total mass and half-mass radius does not preserve this snapshot's ballistic returns. | E004 return ratios 2.9557, 2.8139, 4.4531 at identical physical kicks within each pair; full-shell comparison errors below 0.16%. | Frozen spherical potentials. This is not a measured error in live collisional return times. |
-| Small instantaneous BBH populations extend beyond the original snapshot within the inspected release. | E005: 7,537 saved states / 126 histories; 119 age-selected states have median two BBHs, 38 measured zeros and maximum nine; maximum 15 across all inspected states. | Incomplete late-time release, seven missing age selections, equal model weights. Not all catalog models, not a merger-conditioned or cosmic population. Sparse BBHs were already established in prior literature. |
-| Aggregate counts cannot calibrate joint companion phase space. | E005 input schema and exact count accounting; no binary positions, velocities, masses, internal orbits or IDs in those summaries. | The count-30 screen is operational. Failure does not invalidate smooth ensemble descriptions or prove absent future companions. |
-| Temporal overlap between remnant motion and changing target availability may add predictive information. | Hypothesis motivated by the distinct omissions exposed by E001–E005; conditional-expectation identity in the discussion. | **Proposed, not measured.** Requires post-merger target inventories and held-out cluster histories. No sign or size of a live-dynamics effect is established. |
-| A transport framework can retain off-center launches, consistent host distributions, collisional drift and diffusion, and conditional targets. | Established local diffusion theory, an explicit Ito convention, energy accounting, and analytical recovery of the collisionless Plummer equations. See [formulation](../docs/recoil-transport-theory.md). | **Proposed and unevaluated.** No cluster fit, host selection, parameter estimates, live trajectories, or calibrated scattering coefficients. The local weak-scattering closure excludes unresolved strong events and host backreaction. |
+| Gravity and local scattering require a consistent mass-resolved host. | Species-number distribution definitions, mass moments, and Poisson's equation. | A potential and one velocity dispersion do not generally specify all collision coefficients. |
+| Position, progenitor motion, recoil, and remnant mass belong in a joint launch law. | Initial-state kinematics and conditional probability. | No launch distribution or selection weights are inferred. |
+| Drift and velocity diffusion have a declared Ito convention. | Standard kinetic theory and number-normalized Rosenbluth closure. | Local weak scattering requires calibration; strong encounters and host backreaction are unresolved. |
+| The energy balance includes a diffusion contribution. | Ito's rule applied to specific kinetic plus host-potential energy. | It is not a conserved tidal escape criterion or a calibrated damping law. |
+| Entry, re-entry, residence, and density exposure are distinct. | Operational region, stopping-time, and path-functional definitions. | Their distributions have not been evaluated. |
+| Time-augmented occupation retains timing and velocity information. | A measure on time and phase space. | It is not a companion population or interaction law. |
+| Ensemble exposure retains survival probability. | Conditional probability and interchange of nonnegative integrals. | Renormalizing survivors changes the quantity; unresolved continuation cannot be inferred. |
+| The formulation supplies a calculation handoff. | Input register and acceptance requirements. | Solvers, thresholds, datasets, parameter values, and pass outcomes remain unassigned. |
 
-The relationship Q/D equals the density-weighted mean encounter kernel divided by its stationary central value follows algebraically from E003's existing definitions. The conditional rate decomposition in the discussion follows from total expectation. Both are explanatory identities, not additional datasets or calibrated closures.
+Analytical consistency differs from numerical verification and physical validation. Build and documentation checks assess source integrity and presentation only. Publication-level novelty, observational constraints, companion-acquisition rates, and merger probabilities are not claimed.
 
-E003 and E004 use different hosts and physical kick speeds. Their discrepancies cannot be multiplied into a correction factor. E004 calculates no encounter integral for its measured population, and phase-resampled CMC snapshots are not remnant trajectories. The paper therefore does not infer acquisition, exchange, hardening, merger probability, or formation-channel fractions.
-
-The proposed hypothesis is tested by comparing population prescriptions on the same independently resolved remnant paths, before testing motion prescriptions with the population treatment fixed. Selection, effect size, predictive metrics and precision must be declared before future runs. Adequately precise failure to improve on held-out histories would disfavor the hypothesis in that domain; a few zero-encounter paths would not.
-
-Downing et al. (2010) already reports small coexisting BBH populations and turnover. Antonini et al. (2019) already allows new binaries while a retained remnant recenters. The paper cites these direct precedents and frames the intended advance as a quantitatively validated reduced description, not a new growth mechanism or a proven novel effect.
-
-Numerical data remain in the body and tables; the abstract gives the question, method, qualitative findings and hypothesis status. Six tables and six vector figures are generated from committed experiment outputs. The paper manifest includes inputs and outputs for all five repository records, while the article uses descriptive physical study names.
-
-This revision reuses the six previously generated figures after checking their hashes and scientific inputs. Tables are formatted from unchanged committed results. PDF compilation and provenance checks do not rerun the experiment suite; the numerical verification reported in the article belongs to the completed studies. The new equations require their own future validation before numerical or empirical claims can be made.
+[Problem statement](../docs/problem.md) · [Calculation handoff](../docs/calculation-handoff.md)

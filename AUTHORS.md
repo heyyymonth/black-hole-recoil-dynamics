@@ -6,7 +6,7 @@ Independent researcher
 Contact: [bharadwaj.hemanth.002@gmail.com](mailto:bharadwaj.hemanth.002@gmail.com)<br/>
 GitHub: [heyyymonth](https://github.com/heyyymonth)
 
-Black-hole Recoil Dynamics is an independent physics research project. The project
+Recoil transport and environmental exposure is an independent physics research project. The project
 name describes this research collection and does not imply a university affiliation
 or a separately incorporated institution.
 

@@ -1,0 +1,15 @@
+{
+  "status": "theory-draft",
+  "compile_enabled": true,
+  "title": "Recoil transport and environmental exposure of black-hole merger remnants",
+  "abstract": "Anisotropic gravitational-wave emission can impart a recoil velocity to the black hole formed by a merger. In a stellar cluster, the resulting motion depends on the merger location, the progenitor's center-of-mass velocity, the cluster's mass and velocity distributions, and gravitational scattering. Remaining bound does not determine when a remnant enters a dense region or how long it occupies that region. We formulate a two-stage description of this problem. A merger-conditioned phase-space transport model combines smooth gravity, external differential acceleration, mean collisional drift, and stochastic velocity diffusion. Finite-region entry, residence, and species-resolved environmental exposure are then defined on the resulting trajectories, with explicit treatment of termination, censoring, and host uncertainty. The formulation specifies the physical inputs and trajectory information needed for subsequent numerical investigation without selecting a cluster model or claiming calibrated transport predictions. Its immediate objective is to determine how recoil and the stellar environment jointly control the remnant's time-dependent occupation of dense cluster regions.",
+  "manuscript_version": "0.4.0-manuscript.1",
+  "manuscript_tag": "manuscript-v0.4.0.1",
+  "formulation_version": "formulation-1",
+  "formulation_tag": "formulation-v1",
+  "active_steps": [
+    "transport",
+    "exposure"
+  ],
+  "physical_calculations_performed": false
+}

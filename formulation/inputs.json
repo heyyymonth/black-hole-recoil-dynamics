@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "formulation_version": "formulation-1",
+  "status": "specification-only",
+  "execution_enabled": false,
+  "active_steps": [
+    "transport",
+    "exposure"
+  ],
+  "equation_units": "physical; concrete unit system unassigned",
+  "coordinate_frame": "translating nonrotating cluster axes",
+  "stochastic_convention": "Ito; D = B B^T; Fokker-Planck diffusion prefactor 1/2",
+  "host": {
+    "model_family": null,
+    "species_masses_and_number_distribution_functions": null,
+    "potential_boundary_conditions": null,
+    "time_evolution_and_validity_interval": null,
+    "external_potential": null,
+    "reference_orbit": null,
+    "source_provenance": null
+  },
+  "launch": {
+    "joint_merger_conditioned_distribution": null,
+    "merger_selection_and_host_weights": null,
+    "position_and_progenitor_com_velocity": null,
+    "recoil_vector_and_basis_transform": null,
+    "remnant_mass_law": null
+  },
+  "collisions": {
+    "selected_closure": null,
+    "coulomb_cutoff_prescription": null,
+    "weak_strong_partition": null,
+    "strong_event_detector_or_hazard": null,
+    "calibration_reference": null
+  },
+  "termination": {
+    "physical_horizon": null,
+    "escape_rule": null,
+    "approximation_validity_rule": null
+  },
+  "exposure": {
+    "region_level_set_g": null,
+    "boundary_launch_rule": null,
+    "moving_boundary_convention": null,
+    "species_reference_densities": null,
+    "requested_observables_and_comparisons": null
+  },
+  "numerics": {
+    "solver_and_error_control": null,
+    "ensemble_design_and_precision": null,
+    "random_seed_policy": null,
+    "independent_validation_cases": null
+  },
+  "result_status": "No trajectories, fitted hosts, numerical parameter assignments, or exposure results for this formulation.",
+  "handoff": "docs/calculation-handoff.md"
+}

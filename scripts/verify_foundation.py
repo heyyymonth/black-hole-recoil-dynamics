@@ -1,0 +1,87 @@
+"""Validate the two-step specification without evaluating a physical model."""
+from pathlib import Path
+import json
+import re
+
+ROOT = Path(__file__).resolve().parents[1]
+ACTIVE_DOCS = [
+    "README.md", "CONTRIBUTING.md", "docs/problem.md",
+    "docs/e001-ballistic-return.md", "docs/e002-core-exposure.md",
+    "docs/recoil-transport-theory.md", "docs/calculation-handoff.md",
+    "docs/cluster-dynamics-context.md", "docs/relevance.md",
+    "docs/references.md", "docs/computational-records.md",
+    "paper/README.md", "paper/CLAIMS.md",
+]
+INPUT_GROUPS = ("host", "launch", "collisions", "termination", "exposure", "numerics")
+
+
+def require(condition, message):
+    if not condition:
+        raise AssertionError(message)
+
+
+def verify():
+    working = json.loads((ROOT / "paper/working.json").read_text())
+    require(working["status"] == "theory-draft", "Unexpected manuscript scope")
+    require(working["compile_enabled"] is True, "Theory typesetting must be enabled")
+    require(working["physical_calculations_performed"] is False, "No evaluated model is supplied")
+    require(working["active_steps"] == ["transport", "exposure"], "Unexpected paper scope")
+    source = (ROOT / "paper/manuscript.tex").read_text()
+    title = re.search(r"\\title\{([^{}]*)\}", source).group(1)
+    abstract = re.search(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", source, re.S).group(1).strip()
+    require(title == working["title"], "Working title and LaTeX differ")
+    normalize = lambda s: re.sub(r"\s+", " ", s).strip()
+    require(normalize(abstract) == normalize(working["abstract"]), "Working abstract and LaTeX differ")
+    readme = (ROOT / "README.md").read_text()
+    require(readme.startswith("# " + title + "\n"), "Repository title differs")
+    require(working["abstract"] in readme, "Working abstract missing from README")
+    for name in ("docs/problem.md", "CITATION.cff", "CITATION.bib", "paper/CITATION.bib"):
+        require(title in (ROOT / name).read_text(), f"Title mismatch: {name}")
+    require(working["manuscript_version"] in (ROOT / "paper/CITATION.bib").read_text(),
+            "Manuscript citation revision differs")
+    require(working["manuscript_tag"] in (ROOT / "paper/CITATION.bib").read_text(),
+            "Manuscript citation tag differs")
+    for name in ("CITATION.cff", "CITATION.bib"):
+        require(working["formulation_tag"] in (ROOT / name).read_text(), "Formulation citation lacks tag")
+
+    inputs = json.loads((ROOT / "formulation/inputs.json").read_text())
+    require(inputs["status"] == "specification-only", "Unexpected calculation status")
+    require(inputs["execution_enabled"] is False, "Physics execution remains disabled")
+    require(inputs["active_steps"] == ["transport", "exposure"], "Scope must remain two steps")
+    for group in INPUT_GROUPS:
+        require(inputs[group] and all(value is None for value in inputs[group].values()),
+                f"Input assigned without a calculation specification: {group}")
+    require((ROOT / inputs["handoff"]).is_file(), "Missing calculation handoff")
+
+    links = 0
+    displays = 0
+    for name in ACTIVE_DOCS:
+        path = ROOT / name
+        text = path.read_text()
+        require(len(re.findall(r"^\x60\x60\x60", text, re.M)) % 2 == 0,
+                f"Unclosed fence: {name}")
+        for expression in re.findall(r"\x60\x60\x60math\n(.*?)\n\x60\x60\x60", text, re.S):
+            level = 0
+            for brace in re.findall(r"(?<!\\)[{}]", expression):
+                level += 1 if brace == "{" else -1
+                require(level >= 0, f"Unbalanced display equation: {name}")
+            require(level == 0, f"Unbalanced display equation: {name}")
+            displays += 1
+        for target in re.findall(r"\]\(([^)\s]+)\)", text):
+            if "://" in target or target.startswith(("#", "mailto:")):
+                continue
+            require((path.parent / target.split("#", 1)[0]).exists(),
+                    f"Broken link in {name}: {target}")
+            links += 1
+    require("Step 1:" in (ROOT / "docs/e001-ballistic-return.md").read_text(), "Missing Step 1")
+    require("Step 2:" in (ROOT / "docs/e002-core-exposure.md").read_text(), "Missing Step 2")
+    require(not re.search(r"E00[1-5]", source), "Internal experiment identifier in article")
+    require(not re.search(r"\\input\{tables/|\\includegraphics", source),
+            "Theory manuscript must not include numerical result tables or figures")
+    print(f"Verified two-step foundation: {len(ACTIVE_DOCS)} documents, {links} local links, "
+          f"{displays} display equations; inputs unassigned and title/abstract/citations consistent. "
+          "No physical calculations performed.")
+
+
+if __name__ == "__main__":
+    verify()

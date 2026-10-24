@@ -1,93 +1,170 @@
-"""Verify committed manuscript provenance, page dimensions, and vector fonts."""
-from pathlib import Path
+"""Verify the current theoretical manuscript and its portable source archive."""
+from pathlib import Path, PurePosixPath
 import hashlib
 import json
 import re
-import zipfile
 import unicodedata
+import zipfile
+
 from pypdf import PdfReader
 
+
 ROOT = Path(__file__).resolve().parents[1]
-meta = json.loads((ROOT / 'output/pdf/build.json').read_text())
-for group in ['input_sha256', 'output_sha256']:
-    for relative, expected in meta[group].items():
-        actual = hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
-        if actual != expected:
-            raise AssertionError(f'{group} mismatch: {relative}; rebuild the paper')
+VERSION = "0.4.0-manuscript.1"
+TAG = "manuscript-v0.4.0.1"
+CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
+ARCHIVE_SOURCE_FILES = {
+    "manuscript.tex": "paper/manuscript.tex",
+    "references.bib": "paper/references.bib",
+    "CITATION.bib": "paper/CITATION.bib",
+    "SOURCE_README.txt": "paper/SOURCE_README.txt",
+    "LICENSE": "LICENSE",
+}
+INPUT_FILES = tuple(sorted({
+    *ARCHIVE_SOURCE_FILES.values(),
+    "paper/build.py", "paper/verify.py", "paper/requirements.txt",
+    "paper/toolchain.json", "paper/working.json", "paper/CLAIMS.md",
+    "docs/problem.md", "docs/e001-ballistic-return.md", "docs/e002-core-exposure.md",
+    "docs/recoil-transport-theory.md", "docs/calculation-handoff.md",
+    "formulation/inputs.json",
+}))
+OUTPUT_FILES = {"output/pdf/central-residence.pdf", "output/pdf/manuscript-source.zip"}
 
-version = re.fullmatch(r'(\d+\.\d+\.\d+)-manuscript\.(\d+)', meta['version'])
-assert version is not None, 'Unsupported manuscript revision format'
-tag = f'manuscript-v{version.group(1)}.{version.group(2)}'
-citation_url = f'https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{tag}'
-generation = meta.get('figure_generation')
-if generation is not None:
-    assert generation['mode'] in ('regenerated', 'reuse-verified'), 'Unknown figure-generation mode'
-    if generation['mode'] == 'reuse-verified':
-        assert generation['physical_calculations_performed'] is False, 'Reuse cannot claim new calculations'
-        expected_figures = {f'paper/figures/{name}.pdf' for name in
-                            ['return-time', 'core-residence', 'exposure-comparison',
-                             'encounter-proxy', 'snapshot-comparison', 'catalog-counts']}
-        assert set(generation['figure_sha256']) == expected_figures, 'Incomplete reused figure set'
-        assert generation['scientific_input_sha256'], 'Missing scientific-input reuse evidence'
-        assert re.fullmatch(r'[0-9a-f]{64}', generation['reference_manifest_sha256']), 'Invalid reference hash'
-        assert re.fullmatch(r'\d+\.\d+\.\d+-manuscript\.\d+',
-                            generation['reference_manuscript_version']), 'Invalid reference revision'
-        for group in ['figure_sha256', 'scientific_input_sha256']:
-            for relative, expected in generation[group].items():
-                assert meta['input_sha256'].get(relative) == expected, f'Reuse binding mismatch: {relative}'
-    else:
-        assert generation['physical_calculations_performed'] is True, 'Missing regeneration declaration'
-else:
-    assert (tuple(map(int, version.group(1).split('.'))), int(version.group(2))) < ((0, 3, 0), 5), \
-        'Missing figure-generation provenance for this manuscript revision'
-with zipfile.ZipFile(ROOT / 'output/pdf/manuscript-source.zip') as archive:
-    for name in ['CITATION.bib', 'SOURCE_README.txt']:
-        relative = f'paper/{name}'
-        assert relative in meta['input_sha256'], f'Unbound archive input: {relative}'
-        assert archive.namelist().count(name) == 1, f'Missing or duplicate archive member: {name}'
-        assert archive.read(name) == (ROOT / relative).read_bytes(), f'Archive content mismatch: {name}'
-    citation = archive.read('CITATION.bib').decode()
-    source_readme = archive.read('SOURCE_README.txt').decode()
-    assert re.findall(r'revision\s+([^},\s]+)', citation) == [meta['version']], 'Citation revision mismatch'
-    assert re.findall(r'\burl\s*=\s*\{([^{}]+)\}', citation) == [citation_url], 'Citation source tag mismatch'
-    assert f'revision {meta["version"]}' in source_readme, 'Archive README revision mismatch'
-    assert citation_url in source_readme, 'Archive README source tag mismatch'
 
-fonts = set()
-def verify_resources(resources):
-    resources = resources.get_object()
-    for ref in resources.get('/Font', {}).get_object().values() if '/Font' in resources else []:
-        font = ref.get_object()
-        assert font.get('/Subtype') != '/Type3', 'Bitmap/Type3 font found'
-        for face in font.get('/DescendantFonts', [font]):
-            face = face.get_object()
-            descriptor = face.get('/FontDescriptor')
-            assert descriptor, f'Missing font descriptor: {face.get("/BaseFont")}'
-            descriptor = descriptor.get_object()
-            assert any(key in descriptor for key in ['/FontFile', '/FontFile2', '/FontFile3']), 'Font is not embedded'
-            fonts.add(str(face.get('/BaseFont')))
-    if '/XObject' in resources:
-        for ref in resources['/XObject'].get_object().values():
-            obj = ref.get_object()
-            assert obj.get('/Subtype') != '/Image', 'Raster figure or equation found'
-            if '/Resources' in obj:
-                verify_resources(obj['/Resources'])
+def require(condition, message):
+    if not condition:
+        raise AssertionError(message)
 
-reader = PdfReader(ROOT / 'output/pdf/central-residence.pdf')
-assert len(reader.pages) == meta['pages']
-text = unicodedata.normalize('NFKC', '\n'.join(page.extract_text() for page in reader.pages))
-assert not re.search(r'E00[1-5]', re.sub(r'\s+', '', text), re.IGNORECASE), 'Visible experiment identifier'
-assert 'Companion access after black-hole recoil' in text.replace('\n', ' '), 'Incorrect paper title'
-required_text = ['Late-time availability', 'merger-conditioned accessibility', '7537', '180']
-if (tuple(map(int, version.group(1).split('.'))), int(version.group(2))) >= ((0, 3, 0), 5):
-    required_text += ['Proposed transport formulation', 'Drift, diffusion, and their closure',
-                      'Core entry triggers no reset to rest', 'No host family']
-for required in required_text:
-    assert required.lower().replace(' ', '') in re.sub(r'\s+', '', text).lower(), required
-for page in reader.pages:
-    assert abs(float(page.mediabox.width)-612) < .1
-    assert abs(float(page.mediabox.height)-792) < .1
-    verify_resources(page['/Resources'])
-print(f'Verified manuscript v{meta["version"]}: hashes, {len(reader.pages)} US Letter pages, '
-      f'{len(fonts)} embedded vector fonts, no raster figures/equations, no visible experiment identifiers, '
-      'and matching archive citation/README revisions and source tag.')
+
+def compact(text):
+    return re.sub(r"\s+", "", unicodedata.normalize("NFKC", text)).lower()
+
+
+def check_citation(citation, readme):
+    require(re.findall(r"revision\s+([^},\s]+)", citation) == [VERSION],
+            "Citation revision mismatch")
+    require(re.findall(r"\burl\s*=\s*\{([^{}]+)\}", citation) == [CITATION_URL],
+            "Citation source tag mismatch")
+    require(f"revision {VERSION}" in readme and CITATION_URL in readme,
+            "Source README revision or source tag mismatch")
+
+
+def source_metadata(root):
+    paper = root / "paper"
+    state = json.loads((paper / "working.json").read_text())
+    require(state.get("compile_enabled") is True,
+            "Working manuscript source is not ready for compilation (paper/working.json)")
+    require(state.get("status") == "theory-draft", "Expected a complete theoretical draft")
+    manuscript = (paper / "manuscript.tex").read_text()
+    title_match = re.search(r"\\title\{([^{}]+)\}", manuscript)
+    require(title_match is not None, "Expected a plain-text manuscript title")
+    title = re.sub(r"\s+", " ", title_match.group(1)).strip()
+    require(title == state["title"], "Working metadata and LaTeX titles differ")
+    document_class = re.search(r"\\documentclass\[([^]]+)\]\{revtex4-2\}", manuscript)
+    require(document_class is not None and "reprint" in document_class.group(1).split(","),
+            "Use the two-column REVTeX reprint format")
+    require(re.search(r"\\usepackage(?:\[[^]]*\])?\{txfonts\}", manuscript),
+            "Expected the declared vector font package")
+    require(not re.search(r"\\(?:input|include|includegraphics)\b", manuscript),
+            "The theory manuscript must be self-contained and use no external result assets")
+    require(not re.search(r"E00\d+", manuscript, flags=re.IGNORECASE),
+            "Internal experiment identifiers do not belong in the article")
+    check_citation((paper / "CITATION.bib").read_text(), (paper / "SOURCE_README.txt").read_text())
+    return {"title": title, "manuscript": manuscript}
+
+
+def inspect_pdf(path, title):
+    reader = PdfReader(path, strict=True)
+    require(len(reader.pages) > 0, "Empty manuscript PDF")
+    text = unicodedata.normalize("NFKC", "\n".join(page.extract_text() for page in reader.pages))
+    normalized = compact(text)
+    for required in (title, "Venkata Hemanth Athota", "bharadwaj.hemanth.002@gmail.com", "Step 1", "Step 2"):
+        require(compact(required) in normalized, f"Missing manuscript text: {required}")
+    require(not re.search(r"E00\d+", re.sub(r"\s+", "", text), flags=re.IGNORECASE),
+            "Visible internal experiment identifier")
+    for forbidden in ("BHRD-TN-001", "Not peer reviewed", "Published as a conference paper", "DRAFT"):
+        require(forbidden not in text, f"Unexpected publication label: {forbidden}")
+
+    fonts = set()
+    visited = set()
+
+    def inspect_resources(reference):
+        resources = reference.get_object()
+        marker = id(resources)
+        if marker in visited:
+            return
+        visited.add(marker)
+        font_dictionary = resources.get("/Font")
+        if font_dictionary is not None:
+            for reference in font_dictionary.get_object().values():
+                font = reference.get_object()
+                require(font.get("/Subtype") != "/Type3", "Bitmap/Type3 font found")
+                for face in font.get("/DescendantFonts", [font]):
+                    face = face.get_object()
+                    descriptor = face.get("/FontDescriptor")
+                    require(descriptor is not None, f"Missing font descriptor: {face.get('/BaseFont')}")
+                    descriptor = descriptor.get_object()
+                    require(any(name in descriptor for name in ("/FontFile", "/FontFile2", "/FontFile3")),
+                            "Font is not embedded")
+                    fonts.add(str(face.get("/BaseFont")))
+        objects = resources.get("/XObject")
+        if objects is not None:
+            for reference in objects.get_object().values():
+                obj = reference.get_object()
+                require(obj.get("/Subtype") != "/Image", "Raster figure or equation found")
+                if "/Resources" in obj:
+                    inspect_resources(obj["/Resources"])
+
+    for page in reader.pages:
+        require(abs(float(page.mediabox.width) - 612) < 0.1
+                and abs(float(page.mediabox.height) - 792) < 0.1, "Expected US Letter pages")
+        inspect_resources(page["/Resources"])
+    require(fonts, "No embedded fonts found")
+    return {"pages": len(reader.pages), "embedded_vector_fonts": len(fonts)}
+
+
+def verify(root=ROOT):
+    meta = json.loads((root / "output/pdf/build.json").read_text())
+    require(meta["version"] == VERSION, "Unexpected manuscript version")
+    require(set(meta["input_sha256"]) == set(INPUT_FILES), "Unexpected theory input inventory")
+    require(set(meta["output_sha256"]) == OUTPUT_FILES, "Unexpected manuscript output inventory")
+    require(meta.get("physical_calculations_performed") is False, "Theory compilation cannot claim physical calculations")
+    require(meta.get("executed_experiments") == [], "This manuscript reports no executed experiments")
+    require(meta.get("figure_generation") == {"mode": "none", "physical_calculations_performed": False},
+            "Theory compilation must not generate scientific figures")
+    for group in ("input_sha256", "output_sha256"):
+        for relative, expected in meta[group].items():
+            path = PurePosixPath(relative)
+            require(not path.is_absolute() and ".." not in path.parts, f"Unsafe manifest path: {relative}")
+            require(re.fullmatch(r"[0-9a-f]{64}", expected), f"Invalid checksum: {relative}")
+            actual = hashlib.sha256((root / relative).read_bytes()).hexdigest()
+            require(actual == expected, f"{group} mismatch: {relative}; rebuild the paper")
+
+    source = source_metadata(root)
+    require(meta["title"] == source["title"], "Build metadata and source titles differ")
+    toolchain = json.loads((root / "paper/toolchain.json").read_text())
+    require(meta["engine"] == f"Tectonic {toolchain['tectonic_version']}", "Incorrect build engine")
+    expected_members = set(ARCHIVE_SOURCE_FILES) | {"manuscript.bbl", "vendor/revtex-4.2f.zip"}
+    with zipfile.ZipFile(root / "output/pdf/manuscript-source.zip") as archive:
+        names = archive.namelist()
+        require(len(names) == len(set(names)) and set(names) == expected_members,
+                "Unexpected or duplicate portable source archive member")
+        require(archive.testzip() is None, "Source archive integrity failure")
+        for member, relative in ARCHIVE_SOURCE_FILES.items():
+            require(archive.read(member) == (root / relative).read_bytes(), f"Archive mismatch: {member}")
+        require(archive.read("manuscript.bbl").strip(), "Empty compiled bibliography")
+        require(hashlib.sha256(archive.read("vendor/revtex-4.2f.zip")).hexdigest()
+                == toolchain["revtex_archive_sha256"], "Bundled REVTeX checksum mismatch")
+        check_citation(archive.read("CITATION.bib").decode(), archive.read("SOURCE_README.txt").decode())
+
+    pdf_info = inspect_pdf(root / "output/pdf/central-residence.pdf", source["title"])
+    require(pdf_info["pages"] == meta["pages"], "Recorded PDF page count mismatch")
+    require(pdf_info["embedded_vector_fonts"] == meta["checks"]["embedded_vector_fonts"],
+            "Recorded embedded font count mismatch")
+    print(f"Verified theory manuscript {VERSION}: {pdf_info['pages']} US Letter pages, "
+          f"{pdf_info['embedded_vector_fonts']} embedded vector fonts, current source and archive hashes, "
+          "and matching citation metadata. No physical calculations performed.")
+
+
+if __name__ == "__main__":
+    verify()

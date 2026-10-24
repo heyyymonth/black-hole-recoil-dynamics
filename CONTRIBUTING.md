@@ -1,74 +1,32 @@
-# Extending the research
+# Contributing to the research formulation
 
-Each experiment should answer one physical question with declared assumptions,
-reproducible inputs, numerical verification, and a short record of actual results.
-The project is maintained by Venkata Hemanth Athota as independent physics research.
-Contributions use the repository's MIT license.
+The active scope is [Step 1: recoil transport](docs/e001-ballistic-return.md) and [Step 2: residence and environmental exposure](docs/e002-core-exposure.md). Contributions should clarify, implement, or validate these quantities with explicit physical assumptions.
 
-## Add an experiment
+## Equations and models
 
-1. Assign the next unused identifier after E001–E005. Start its record from
-   [the experiment template](experiments/templates/record.md). State the question,
-   model, units, applicable regime, and relevant primary literature before interpreting results.
-2. Place reusable dynamics in `src/recoil_dynamics/`. Keep experiment orchestration
-   under `experiments/`, with numerical inputs in a versioned JSON configuration.
-   The current runner explicitly supports E001 and E002; a new experiment must be
-   registered in its argument choices and dispatch, or supplied with its own runner.
-   E003 uses `experiments/e003.json`, `run_e003.py`, and `verify_e003.py` separately
-   to preserve the published E001/E002 inputs and outputs.
-3. Add independent validation appropriate to the physics: an analytic limit,
-   conservation law, alternative formulation, or convergence study. Recomputing a
-   saved table with the same method is a reproducibility check, not independent validation.
-4. Save results under `results/eNNN/`. Document every column's units and conventions.
-   Record configuration and source hashes, dependency versions, the generating
-   source commit, and output hashes. Include stochastic seeds when applicable.
-5. Extend the result verifier and workflow to cover the new outputs. Keep published
-   baseline configurations intact; use a separate configuration for a changed experiment.
-6. Report measured results and limitations in `docs/eNNN-<topic>.md`, and add the
-   record to the README. Distinguish an approximation test from an observational
-   constraint or a claim of novel physics.
+State the question, mathematical convention, normalization, units, and validity domain. Distinguish definitions, analytical consequences, closures, numerical results, and empirical calibration. Preserve joint host/merger/launch conditioning.
 
-## Verify a contribution
+Gravity and scattering must describe consistent populations. Drag, diffusion, cutoffs, boundaries, and stopping hazards require justification. Missing inputs are not zero-valued defaults.
+
+## Preparing calculations
+
+Use the [handoff](docs/calculation-handoff.md) and [input register](formulation/inputs.json). Inputs are unassigned and execution disabled. Before adding a runner, supply versioned host and launch specifications, units, closure, validity criteria, event rules, error controls, and independent validation requirements.
+
+Plan source, configuration, seed, dependency, and output provenance before execution. Report outcomes only after appropriate checks. Numerical convergence is not physical calibration; correlated paths are not independent observations.
+
+Retained numerical modules have their own scopes and immutable citations in [computational reference records](docs/computational-records.md). Their existence does not implement or validate the active diffusion model. Do not modify recorded hashes or result tables to make a new calculation appear reproduced.
+
+## Documentation checks
 
 ```sh
-python -m pytest -q
-python experiments/verify_results.py
-python experiments/verify_e003.py
-python experiments/verify_e004.py
-python experiments/verify_e005.py
+python scripts/verify_foundation.py
+python paper/verify.py
 ```
 
-For a change to a hashed simulation input, first commit the completed source changes,
-then run `python experiments/run.py`, rerun the applicable checks, and commit the generated
-results. This makes the manifest point to the generating source commit. Never edit
-recorded hashes or numerical results by hand to make verification pass. For E003–E005, use their separate runners and verifiers; they reject uncommitted source inputs. E004/E005 fetch pinned, checksum-verified public inputs into ignored local cache. Record external revision, provenance, units, and reuse terms for any new dataset; do not commit raw third-party files without established redistribution rights.
+These checks perform no integrations, experiments, or paper compilation. Use fenced `math` display blocks and protected inline notation where needed. Check that GitHub preserves expressions, and keep links and symbols consistent across both steps.
 
-Inspect regenerated figures and compare numerical changes with their physical cause.
-If the manuscript changes, rebuild its PDF using [the paper instructions](paper/README.md).
-Do not upload raw credentials, private datasets, or third-party articles.
+## Manuscript and citation
 
-## Documentation rendering
+Title, abstract, scope, and compilation status are defined in paper/working.json; keep them consistent with the manuscript and README. Follow [paper instructions](paper/README.md). The paper builder compiles only LaTeX and does not execute a physical model. Cite the PDF revision actually used.
 
-Use fenced `math` blocks for displayed equations and protected inline math syntax
-where Markdown punctuation occurs, following [GitHub's math formatting guidance](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions).
-Use `\lt` for less-than signs in equations, including table cells. Check the
-published page for math errors and unintended punctuation; valid LaTeX alone
-does not establish that Markdown preserved it.
-
-Check relative links, images, historical test counts, and manuscript-version
-references when editing documentation. Preserve recorded, checksum-bound
-protocol files. If their presentation needs correction, provide a clearly
-labeled reading copy linked to the original; preserve its scientific wording.
-
-## Preserve a citable result
-
-Use a new version for a changed published result. Update package and citation
-metadata together, record the change in `CHANGELOG.md`, and tag the verified commit.
-Keep old release tags unchanged. A release identifies a specific snapshot; cite that
-version rather than the moving `main` branch. A GitHub release is not a DOI archive.
-Any future archival DOI must be added only after it has actually been issued.
-
-Manuscript revisions use separate `manuscript-v...` tags. The paper-specific
-citation is included in the portable source archive, so its versioned tag must
-identify the commit containing the verified manuscript and archive. Publish
-the tag with that commit and never move an existing published tag.
+Cite the precise formulation or calculated record. Keep tags immutable. A GitHub tag is not a DOI or evidence of peer review. Preserve author credit and the MIT license; external sources and datasets retain their rights.

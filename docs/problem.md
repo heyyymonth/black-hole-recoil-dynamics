@@ -1,71 +1,47 @@
-# Problem: retention and access to a dense environment
+# Recoil transport and environmental exposure of black-hole merger remnants
 
 **Researcher: Venkata Hemanth Athota**
 
-A black-hole merger remnant can be gravitationally bound to its host while spending much of its orbit outside the dense central region. A further merger requires additional dynamics, including interactions with available companions. The completed studies test orbital exposure, velocity-weighted passages, host-potential shape, and target availability. The proposed extension now defines how these ingredients would be coupled.
+## Problem statement
 
-E001/E002 ask whether a retention flag or a prescription that treats first return as permanent central residence preserves orbital exposure over a finite window. We quantify the errors of those prescriptions in a collisionless benchmark. Within this fixed one-parameter model, an exact return time together with the governing equations can instead identify the orbit; we do not claim an information-theoretic degeneracy. E003 then tests whether density exposure accurately approximates a specified close-passage count once relative velocities enter the calculation.
+A black-hole merger can leave a remnant moving through a stellar cluster under the combined effects of its recoil, the progenitor's existing motion, the host gravitational field, and gravitational encounters. Binding to the host does not by itself specify the remnant's location, speed, return to a dense region, or residence within that region.
 
-## Proposed extension of step 1
+The physical question is:
 
-The [recoil-transport formulation](recoil-transport-theory.md) defines the next theoretical step without executing it. It replaces the central radial launch by a joint merger-conditioned position and velocity, uses species distributions consistent with host gravity, and introduces mean scattering and random velocity diffusion. A return is entry into a finite region, followed by continued motion. Time-resolved position and velocity feed a conditional passage integral for available binary targets.
+> How do merger-conditioned initial states and a consistent stellar environment determine the probability distribution of recoil trajectories and the environmental exposure accumulated over a finite physical interval?
 
-The formulation leaves cluster choice, fitted distributions, encounter cutoffs, initial-condition laws, and numerical parameters unassigned. The equations below remain the **executed collisionless benchmark**, recovered as a limiting case of the extension.
+The study has two components. [Step 1](e001-ballistic-return.md) defines the phase-space evolution. [Step 2](e002-core-exposure.md) defines the functionals of that evolution that measure entry, residence, and species-resolved exposure. The formulation and its required inputs are the present deliverable; no numerical outcome is asserted.
 
-## Completed benchmark model
+## Quantities to determine
 
-The host potential is
+- The joint distribution of position and velocity, conditional on remnant mass, host, and merger selection.
+- Survival within a declared modeling domain and the probabilities of distinct stopping causes.
+- Entry or re-entry into a finite region, with explicit treatment of launches outside or on its boundary.
+- Residence and density exposure over a common time interval, including incomplete trajectories.
+- The time-resolved occupation measure needed to evaluate environmental kernels without discarding velocity or temporal ordering.
 
-```math
-\Phi(r)=-\frac{GM}{\sqrt{r^2+b^2}}.
-```
+A scalar return time or a surviving-sample average cannot stand in for all of these quantities.
 
-Use length unit $b$, time unit $t_d=\sqrt{b^3/(GM)}$, and kick fraction $\eta=v_k/\sqrt{2GM/b}$. The signed radial coordinate satisfies
+## Mathematical formulation
 
-```math
-\ddot{x}=-\frac{x}{(1+x^2)^{3/2}},\quad x(0)=0,\quad\dot{x}(0)=\sqrt{2}\eta.
-```
+Let the state be position, velocity, and a fixed remnant-mass label between discrete transitions. The host supplies species number distributions, a compatible potential and external reference orbit, and an explicit scattering closure. The initial state follows a joint merger-conditioned law. No factorization among launch variables, host properties, and merger selection is assumed.
 
-Dots denote derivatives with respect to dimensionless time. We restrict the experiment to bound or stationary cases, $`0\le\eta\lt1`$. The specific dimensionless energy is $E=\eta^2-1$.
+The transport problem requires an initial distribution, differential operator, spatial/velocity domain, boundary conditions, stopping rules, and validity interval. The exposure problem requires a physical time horizon, an operational region, species weight functions, and an accounting convention for stopped paths. These constitute a fully specified calculation only when the [input register](../formulation/inputs.json) is populated and its physical consistency justified.
 
-For a nonzero kick, $P$ denotes the interval from the initial central passage to the next central passage. Signed position has period $2P$; radius, density and core occupancy have period $P$. At exactly zero kick the object remains at the center, and no return event occurs.
+## Scope of the physical assumptions
 
-We define an operational central sphere by $`|x|\lt c`$, with declared $c=r_c/b$. The Plummer scale $b$ and these operational radii are not claimed to be measured cluster core radii.
+The equations use nonrelativistic cluster motion in translating, nonrotating coordinates. A relativistic merger model supplies the recoil and remnant mass. The remnant is a test object in a supplied background until a declared transition or validity cutoff. A local diffusion closure assumes weak, uncorrelated encounters on appropriate scales. The host's evolution and its backreaction are not solved implicitly by Poisson's equation.
 
-## Quantities measured
+The host need not be spherical or isotropic. Its time dependence, rotation, anisotropy, mass spectrum, and species concentration must be represented consistently where retained. Leaving a dependence symbolic does not establish observational support or numerical accuracy.
 
-For a dimensionless window $H$,
+## Research objective and evidence standard
 
-```math
-C(H,c)=\int_0^H\mathbf{1}_{|x(t)|\lt c}\,dt,
-```
+The objective is to determine which launch and environmental information must be retained to predict finite-time residence and exposure at a declared accuracy. Useful future comparisons would hold the host, launch ensemble, time horizon, and observable definitions fixed while testing a specified simplification. The comparison, accuracy requirement, and uncertainty treatment must be declared before interpreting its outcomes.
 
-```math
-I(H)=\int_0^H(1+x(t)^2)^{-5/2}\,dt.
-```
+A justified conclusion could identify a regime where a reduction preserves the observables, or a reproducible discrepancy showing why additional information is required. Neither outcome is assumed. Analytical identities establish internal consistency; numerical convergence establishes implementation accuracy; comparison with independently resolved dynamics is needed for physical calibration.
 
-$C/H$ is a residence fraction. $I/H$ is the mean normalized Plummer density sampled along the orbit. The latter is a geometric exposure measure. Turning it into an encounter rate would additionally require the relevant species density, velocity distribution, cross section, and binary properties. It is not a merger probability.
+## Connection to subsequent physics
 
-## Comparisons
+The trajectory record retains times and velocities because a future companion-access model would need to match the remnant's motion to an independently justified target population. Density exposure alone is not an encounter count. Companion acquisition, binary evolution, merger probabilities, and inference from gravitational-wave observations require further models and are outside steps 1 and 2.
 
-- **Assumed central:** $I_{\rm central}(H)=H$.
-- **First return, then central:** $I_{\rm wait}(H)=\max(H-P,0)$ for a nonzero kick.
-- **Continuous trajectory:** $I(H)$ from the actual collisionless orbit.
-
-For a stationary object both comparisons reduce to $H$. The second prescription is an explicitly constructed simplification, not the return-time prescription from a published friction model.
-
-## E003: connection to potential companions
-
-The [close-passage experiment](e003-encounter-accessibility.md) supplies a tracer-binary density, an isotropic Plummer velocity distribution, and a two-body focusing cross section. It compares density exposure with the integrated passage rate, using the same physical window and a stationary control. Its declared outer-radius screen selects test orbits without truncating the host.
-
-The larger physical sequence remains merger, recoil, host motion, companion acquisition, binary evolution, and another merger. E001/E002 validate the host-motion calculation. E003 tests an encounter-opportunity ingredient; density alone overestimates normalized passage counts in all three nonzero-kick cases, and the discrepancy exceeds the declared 10% screen in two. Neither a close passage nor its expected count determines companion acquisition or a second merger.
-
-The benchmark recoil paths omit friction, scattering that changes the orbit, binary formation, tidal evolution, and host evolution. E003 adds a conditional rate calculation along those unperturbed paths. E004/E005 analyze outputs from evolved cluster simulations, but do not follow live recoil paths or determine encounter outcomes. Each result is conditional on its declared model or released simulation sample; no observed-event inference is made.
-
-## E004: external cluster comparison
-
-The [snapshot comparison](e004-cluster-validation.md) audits actual BH–BH targets and replaces the analytical host with a frozen spherical mass profile from an evolved CMC model. Matching mass and half-mass radius is insufficient to match ballistic return here. The two available targets cannot calibrate a continuous bath. This strengthens the need for the [specific population and live-motion comparisons](cluster-dynamics-context.md); it does not validate collisional trajectories.
-
-## E005: breadth of the target-availability constraint
-
-The [late-time summary audit](e005-target-availability.md) finds small instantaneous BH–BH populations across the inspected release, extending the count evidence beyond E004. Its aggregate counts cannot supply joint companion phase space. The next precise question is whether following changing target numbers and properties, conditional on remnant-producing mergers, improves companion-access predictions during displacement. Counts, population weighting and live motion must be validated separately before inferring a repeated-merger rate.
+[Step 1](e001-ballistic-return.md) · [Step 2](e002-core-exposure.md) · [Calculation handoff](calculation-handoff.md) · [Scientific relevance](relevance.md)

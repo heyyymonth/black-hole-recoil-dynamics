@@ -1,23 +1,24 @@
 cff-version: 1.2.0
-message: "This citation identifies the E001/E002 baseline software and results. For the integrated manuscript use paper/CITATION.bib; for later experiments use their result-specific citation files."
+message: "This citation identifies the two-step research formulation and repository. For the manuscript use paper/CITATION.bib. No numerical transport study is claimed."
 type: software
-title: "Black-hole recoil dynamics: central residence and density exposure in a Plummer potential"
+title: "Recoil transport and environmental exposure of black-hole merger remnants"
 authors:
   - family-names: Athota
     given-names: Venkata Hemanth
-version: 0.1.1
-date-released: 2026-10-19
+version: formulation-1
+date-released: 2026-10-23
 license: MIT
 repository-code: "https://github.com/heyyymonth/black-hole-recoil-dynamics"
-url: "https://github.com/heyyymonth/black-hole-recoil-dynamics/releases/tag/v0.1.1"
+url: "https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/formulation-v1"
 abstract: >-
-  Reproducible collisionless benchmarks for centrally kicked test particles in a
-  static, isolated Plummer potential. Includes first central-return times,
-  finite-window central residence, density exposure, independent numerical
-  checks, and a technical note. No observational data or merger probabilities
-  are inferred.
+  A mathematical specification for merger-conditioned black-hole recoil transport
+  and finite-time residence and environmental exposure in stellar clusters.
+  Defines consistent host inputs, collisional drift and diffusion, stopping
+  conventions, and a calculation handoff. No host selection, calibrated
+  trajectories, or numerical outcomes are asserted for this formulation.
 keywords:
   - black-hole recoil
   - stellar dynamics
-  - Plummer potential
+  - stochastic transport
+  - environmental exposure
   - reproducible research

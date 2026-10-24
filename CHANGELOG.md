@@ -1,5 +1,13 @@
 # Release record
 
+## Research formulation 1 and manuscript 0.4.0-manuscript.1 - 2026-10-23
+
+- Define the two-step scope: merger-conditioned recoil transport and finite-time residence and environmental exposure.
+- Specify host phase space, gravity, Ito drift and diffusion, joint launches, stopping rules, and survival-weighted observables.
+- Provide an unassigned input register and calculation handoff with explicit acceptance requirements.
+- Present the formulation in a complete two-column theory manuscript and portable source archive.
+- Verify documentation and manuscript integrity; compilation evaluates no physical model.
+
 ## Manuscript 0.3.0-manuscript.5 and proposed transport theory - 2026-10-23
 
 - Define merger-conditioned off-center launches, host species distributions, external acceleration, and local Ito drift and diffusion.

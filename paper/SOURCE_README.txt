@@ -1,41 +1,35 @@
-Companion access after black-hole recoil: dynamical benchmarks and sparse binary populations
+Recoil transport and environmental exposure of black-hole merger remnants
 Venkata Hemanth Athota
+bharadwaj.hemanth.002@gmail.com
 
-This archive contains the standalone LaTeX manuscript, bibliography, compiled
-bibliography, six vector figures, generated table fragments, and CITATION.bib for manuscript
-revision 0.3.0-manuscript.5, covering orbital exposure, velocity-weighted passages,
-a cluster-snapshot comparison, the late-time binary-target census, and an
-unevaluated transport formulation with drift, diffusion, and conditional targets.
-The theoretical extension supplies no new trajectories or calibrated parameters.
-This manuscript revision is separate from the baseline software release 0.1.1.
-No journal publication or acceptance is claimed by the document class.
+Manuscript revision 0.4.0-manuscript.1.
+This archive contains a two-column theoretical manuscript, bibliography,
+compiled bibliography, citation, license, and the unmodified REVTeX dependency.
+It contains no calculated trajectories, model fits, or numerical result figures.
 
-Reference build: Tectonic 0.16.9 and REVTeX 4.2f
-First unpack the unmodified official REVTeX dependency into the working directory:
+Reference build: Tectonic 0.16.9 and REVTeX 4.2f.
+Unpack the dependency:
   unzip -jo vendor/revtex-4.2f.zip 'tex/latex/revtex/*' 'bibtex/bst/revtex/*'
-Then compile:
+Compile:
   tectonic --untrusted manuscript.tex
 
-Alternative: a current TeX Live or MiKTeX with REVTeX 4.2 and txfonts
+Alternatively, use a TeX installation with REVTeX 4.2 and txfonts:
   pdflatex manuscript.tex
   bibtex manuscript
   pdflatex manuscript.tex
   pdflatex manuscript.tex
 
-REVTeX controls the two-column page dimensions and typography. Do not change
-margins, line spacing, or font sizes to meet a page limit. All files needed for
-article content are included. The official REVTeX distribution is included unmodified with its own sources,
-documentation and license notices. Other standard TeX packages remain external
-dependencies.
-Initial Tectonic compilation may download these packages; a populated cache can
-be used offline. Different TeX distributions can produce pagination differences.
+Compilation typesets equations; it does not execute a physical calculation.
+Standard TeX packages and fonts remain external dependencies. Tectonic can
+download missing packages; a populated cache supports offline builds.
+REVTeX controls typography, spacing, and margins. Different TeX distributions
+can produce pagination differences.
 
-The included CITATION.bib identifies this manuscript revision and its versioned
-source tag, manuscript-v0.3.0.5. To regenerate the scientific figures and tables,
-retrieve the matching full research repository at:
-https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.3.0.5
+The manuscript is an unreviewed formulation. No submission, acceptance,
+selected cluster, or calibrated transport prediction is claimed.
+CITATION.bib identifies the versioned source:
+https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.4.0.1
 No DOI has been assigned.
 
-Project-authored source and generated artifacts are covered by the accompanying
-MIT license. The included REVTeX distribution and external fonts retain their own licenses;
-the project MIT license does not relicense them.
+Project-authored source is MIT-licensed. The included REVTeX distribution and
+external dependencies retain their own licenses.
