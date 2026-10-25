@@ -44,6 +44,8 @@ jobs:
           paths = subprocess.check_output(command).decode().rstrip('\0').split('\0')
 
           def scientific(path):
+              if path.startswith(('results/host-reconstruction/', 'results/local-transport-kernels/')) or path in {'results/calculations.json', 'docs/host-reconstruction-protocol.md'}:
+                  return False  # Verified by the dedicated active-calculation job.
               if path.startswith(('src/', 'tests/', 'experiments/')):
                   return True
               if path.startswith('results/'):
@@ -90,6 +92,19 @@ jobs:
           key: e005-${{ hashFiles('experiments/e005-inputs.json') }}
       - name: Verify recorded late-time target-count audit
         run: python experiments/verify_e005.py
+  local-calculations:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.11'
+      - name: Install independent numerical-check dependencies
+        run: python -m pip install numpy==1.26.4 scipy==1.12.0 pytest==8.2.2
+      - name: Check reconstructed host and independent collision limits
+        run: python -m pytest -q analysis/host_reconstruction/test_host.py analysis/transport/test_coefficients.py
+      - name: Verify recorded host and local coefficients
+        run: python analysis/host_reconstruction/verify.py
   artifacts:
     needs: changes
     runs-on: ubuntu-24.04

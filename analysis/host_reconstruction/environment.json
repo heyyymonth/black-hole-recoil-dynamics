@@ -1,0 +1,17 @@
+{
+  "python": "3.11.1",
+  "platform": "Darwin",
+  "machine": "arm64",
+  "module_sha256": {
+    "gcfit.core.data": "def57f152fc3bba34c78f48203a6dbb6cd364f2a4c79e18a6cd9a44e6d6c93af",
+    "limepy.limepy": "1802ff8116f5f1026c16cf908a51329334cd67836a6f953a0515752d81a67aa6",
+    "ssptools.evolve_mf": "8ae92971aefb8ffb34acc47d4480792607fe064d2dda821319e31b32e01bbf0e"
+  },
+  "dependency_lock_sha256": "cc5d619c82f6c83e24621724eff4a916ff0bfee5bd72795c8f20d135f18a51fc",
+  "dependency_source_commits": {
+    "GCfit": "e4154e8e3e2505d2c49248a71c1eebcea5844442",
+    "limepy": "a474dede47126db49626738cafdaeb7be0846abf",
+    "ssptools": "d5b7aa74ff8471691aa6288d27b0fc0f7cba7cac"
+  },
+  "source_pin_interpretation": "exact reconstruction pins; original fit run pins not known"
+}

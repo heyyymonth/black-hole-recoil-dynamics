@@ -51,6 +51,17 @@
     "random_seed_policy": null,
     "independent_validation_cases": null
   },
-  "result_status": "No trajectories, fitted hosts, numerical parameter assignments, or exposure results for this formulation.",
-  "handoff": "docs/calculation-handoff.md"
+  "result_status": "One reconstructed joint host and local collision kernels evaluated. No new fit, remnant trajectories or residence outcomes.",
+  "handoff": "docs/calculation-handoff.md",
+  "execution_scope": "general remnant trajectory ensemble; stage-specific host and coefficient calculations are defined separately",
+  "completed_calculations": [
+    {
+      "protocol": "analysis/host_reconstruction/protocol.json",
+      "result": "results/host-reconstruction/summary.json"
+    },
+    {
+      "protocol": "analysis/transport/protocol.json",
+      "result": "results/local-transport-kernels/summary.json"
+    }
+  ]
 }

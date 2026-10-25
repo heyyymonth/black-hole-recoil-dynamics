@@ -12,17 +12,17 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.5.0-manuscript.1"
-TAG = "manuscript-v0.5.0.1"
+VERSION = "0.6.0-manuscript.1"
+TAG = "manuscript-v0.6.0.1"
 DATA_REVISION = "cluster-data-v0.1.0"
 CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
 TABLE_ASSETS = (
     "tables/cluster-coverage.tex", "tables/cluster-scales.tex",
-    "tables/cluster-posterior.tex",
+    "tables/cluster-posterior.tex", "tables/host-validation.tex", "tables/local-kernels.tex",
 )
 FIGURE_ASSETS = (
     "figures/cluster-hst.pdf", "figures/cluster-host-comparison.pdf",
-    "figures/cluster-coverage.pdf",
+    "figures/cluster-coverage.pdf", "figures/host-projections.pdf", "figures/scattering-composition.pdf",
 )
 DATA_EVIDENCE = (
     "README.md", "sources.json", "audit.json", "candidate-hosts.json",
@@ -34,6 +34,8 @@ DATA_EVIDENCE = (
     "derived/quality.json", "derived/model_product_inventory.json",
     "derived/observation_bundle_inventory.json",
 )
+CALCULATION_RECORD = json.loads((ROOT / "results/calculations.json").read_text())
+CALCULATION_FILES = tuple(sorted({"results/calculations.json", *CALCULATION_RECORD["input_sha256"], *CALCULATION_RECORD["output_sha256"]}))
 ARCHIVE_SOURCE_FILES = {
     "manuscript.tex": "paper/manuscript.tex",
     "references.bib": "paper/references.bib",
@@ -42,6 +44,8 @@ ARCHIVE_SOURCE_FILES = {
     "LICENSE": "LICENSE",
     **{name: f"paper/{name}" for name in (*TABLE_ASSETS, *FIGURE_ASSETS)},
     "evidence/paper-data-assets.json": "paper/data-assets.json",
+    "evidence/paper-calculation-assets.json": "paper/calculation-assets.json",
+    **{f"evidence/calculations/{name}": name for name in CALCULATION_FILES},
     **{f"evidence/observed-clusters/{name}": f"data/observed-clusters/{name}"
        for name in DATA_EVIDENCE},
 }
@@ -50,7 +54,7 @@ DATA_AUDIT_FILES = tuple(item["path"] for item in json.loads(
 INPUT_FILES = tuple(sorted({
     *ARCHIVE_SOURCE_FILES.values(),
     *DATA_AUDIT_FILES,
-    "paper/data_assets.py", "paper/data_figures.py",
+    "paper/data_assets.py", "paper/data_figures.py", "paper/calculation_assets.py", "paper/calculation_figures.py", "docs/local-transport-calculations.md", "docs/host-reconstruction-protocol.md",
     "paper/build.py", "paper/verify.py", "paper/requirements.txt",
     "paper/toolchain.json", "paper/working.json", "paper/CLAIMS.md",
     "docs/problem.md", "docs/e001-ballistic-return.md", "docs/e002-core-exposure.md",
@@ -83,9 +87,11 @@ def source_metadata(root):
     state = json.loads((paper / "working.json").read_text())
     require(state.get("compile_enabled") is True,
             "Working manuscript source is not ready for compilation (paper/working.json)")
-    require(state.get("status") == "theory-and-data-draft", "Expected a formulation and data-analysis draft")
+    require(state.get("status") == "theory-data-and-local-calculations-draft", "Expected a formulation and data-analysis draft")
     require(state.get("data_analysis_performed") is True, "Completed data analysis must be recorded")
     require(state.get("transport_simulations_performed") is False, "No transport simulation is reported")
+    require(state.get("host_reconstruction_performed") is True, "Missing reconstructed-host status")
+    require(state.get("local_collision_coefficients_evaluated") is True, "Missing collision-evaluation status")
     manuscript = (paper / "manuscript.tex").read_text()
     title_match = re.search(r"\\title\{([^{}]+)\}", manuscript)
     require(title_match is not None, "Expected a plain-text manuscript title")
@@ -168,7 +174,9 @@ def inspect_pdf(path, title):
 def verify_evidence(root=ROOT):
     """Read-only checks; neither verifier downloads data or evaluates a host."""
     for command in ([sys.executable, str(root / "analysis/cluster_data/verify.py")],
-                    [sys.executable, str(root / "paper/data_assets.py"), "--verify"]):
+                    [sys.executable, str(root / "paper/data_assets.py"), "--verify"],
+                    [sys.executable, str(root / "analysis/host_reconstruction/verify.py")],
+                    [sys.executable, str(root / "paper/calculation_assets.py"), "--verify"]):
         subprocess.run(command, cwd=root, check=True)
 
 
@@ -179,6 +187,7 @@ def verify(root=ROOT):
     require(set(meta["input_sha256"]) == set(INPUT_FILES), "Unexpected manuscript input inventory")
     require(set(meta["output_sha256"]) == OUTPUT_FILES, "Unexpected manuscript output inventory")
     require(meta.get("transport_simulations_performed") is False, "No transport simulation is reported")
+    require(meta.get("local_calculations") == {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "recomputed_during_build": False}, "Incorrect calculation provenance")
     require(meta.get("executed_during_build") == [], "Compilation must not execute research calculations")
     require(meta.get("data_analysis") == {
         "revision": DATA_REVISION, "mode": "reuse-verified-recorded-analysis",

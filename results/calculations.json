@@ -1,0 +1,34 @@
+{
+  "host": "host-reconstruction-1",
+  "coefficients": "local-transport-kernels-1",
+  "scope": "one joint posterior host and local weak-scattering kernels; no remnant trajectories",
+  "source_files": {
+    "data/observed-clusters/raw/gcfit_NGC3201_sampler.hdf": "22b887d1f1049cf75b201928fab3e0a58b2e3d1804005f8858a1973be6412377",
+    "data/observed-clusters/raw/gcfit_NGC3201_observations.hdf": "4a883f75732164640f78a52c19c728b5ea22f92a989d6de6d64e9fbd7599de8d"
+  },
+  "input_sha256": {
+    "analysis/host_reconstruction/run.py": "831419e0aa58d5e155e7f8c465b9f60b7d8684beeb611a4be520fbedf0cce487",
+    "analysis/host_reconstruction/host.py": "d2df8898cf5d917953b144a1df7a3c8a11e8231e03f5ff9db63b811465c5d1ce",
+    "analysis/host_reconstruction/verify.py": "498ab6a3cfe60b1be73a69b1acab71b1d0d72e13cfbebbf79cacd15dc441bad8",
+    "analysis/host_reconstruction/test_host.py": "24af35fe91e344eab7f73ece38f3834e23317499c1d1a2b98e5fa932c680c508",
+    "analysis/host_reconstruction/protocol.json": "4815e7bb8a5dd516b030af9ea54167d89cdfb752121c07fd6e88a726f7c61115",
+    "analysis/host_reconstruction/requirements-lock.txt": "cc5d619c82f6c83e24621724eff4a916ff0bfee5bd72795c8f20d135f18a51fc",
+    "analysis/host_reconstruction/environment.json": "6025b042d7f2aabec946fb0b2837213faeb77429baee487f08f8d0ecc01b552f",
+    "analysis/transport/coefficients.py": "ac4d78c6c2e589d1492d0ccd2ae8ad2ef6bffa3ff28fab95cec9edf8ac879992",
+    "analysis/transport/run.py": "bd82ab00908967c145f98b79d8193a77e1010747fdbbc65eddbe6b3cd88fef96",
+    "analysis/transport/test_coefficients.py": "5a2213e43175c1bc367a813524068a7e237bc68f54cd1da5e751012f62f25507",
+    "analysis/transport/protocol.json": "439cc47f6afc423cc3204d20948be83652a87927fb06159e55d51648197c8e94"
+  },
+  "output_sha256": {
+    "results/host-reconstruction/summary.json": "da353dba49eea612997b400c5c92ca280d86a3ee1721016da929a43d19984df9",
+    "results/host-reconstruction/host.npz": "9c8779b3f011b91b67ecc6fff6ecfefc79b3f8ec7ff038619d0da7e2c48f1403",
+    "results/host-reconstruction/species.csv": "9dc9cf9e02db179cb8bca186ea463bcbc1c8aa02ed0f9f0f97675aabd5720311",
+    "results/host-reconstruction/df-checks.csv": "18ae4ff33639abbc9d2f9f4b065650dad0acc39cd7bfbdf639907e83ec556566",
+    "results/host-reconstruction/projection-checks.csv": "7486c72b2f9011b660e081f5d969b23dfd3bab52f6508bb9a7dadc51c61fcebd",
+    "results/host-reconstruction/published-profile-comparison.csv": "8db8c70de0b9ee98a909b7a342c5a8c1105e7a47e7f48a4c578dd9250af7173a",
+    "results/local-transport-kernels/summary.json": "0f8642a006056ccee0e75672fd2b0c767933129f53fade6fd40b2f9a0d2954a5",
+    "results/local-transport-kernels/states.csv": "0a8b159ad8a790fdafba644e9629a6b816f121b11cc1fba48281cb2b1060a19b",
+    "results/local-transport-kernels/species.csv": "f0586504ea35705e1d85ba142c547d3aa5a27944f03ba76fc100cd5913538972",
+    "results/local-transport-kernels/tensors.json": "986d71e74df7f7344dfb97ea5cff2c95ef3b6f4bc565426736d00e76e19d2c17"
+  }
+}

@@ -14,7 +14,7 @@
 \affiliation{Independent researcher}
 
 \begin{abstract}
-Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We develop a merger-conditioned transport formulation and define finite-region residence and species-resolved environmental exposure on its trajectories. We then examine its observational inputs using public astrometric and structural products and published multimass-model posteriors for six Galactic clusters. Native measurements are compared in common physical and dimensionless units while preserving tracer selection and joint parameter dependence and recording shared distance uncertainty. The analysis identifies restricted common radial sampling, strong mass--radius correlations in several host posteriors, and differences between published structural estimates that cannot be interpreted as cluster evolution. These findings establish a source-aware basis for constructing candidate environments and identify the local stellar distributions still needed to evaluate transport. The reported numerical results concern observations and existing host inferences; remnant trajectories, friction coefficients, and residence distributions remain to be calculated.
+Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We develop a merger-conditioned transport formulation and define finite-region residence and species-resolved environmental exposure on its trajectories. Public observations and published multimass-model posteriors for six Galactic clusters establish the available constraints and their shared uncertainties. We reconstruct one joint posterior realization for NGC 3201 and check its mass distribution, potential, velocity moments, and projected tracer profiles. We then evaluate local anisotropic drift and diffusion from the same stellar distributions, retaining separate contributions from each mass species. The calculation identifies a regime in which a sparse black-hole component dominates formal central diffusion despite supplying a minority of the local mass density. This result makes the treatment of discrete remnants a necessary validation question before the coefficients can be used to predict trajectories. The reported findings establish consistent host and collision calculations under explicit assumptions; calibrated remnant motion and residence distributions remain to be determined.
 
 \end{abstract}
 \maketitle
@@ -29,7 +29,7 @@ The necessary kinetic ingredients are established. Rosenbluth collision integral
 
 We formulate two linked problems. Step~1 defines merger-conditioned transport in position and velocity, with an explicit matter inventory, reference frame, collision closure, and termination rule. Step~2 defines finite-region entry, residence, and species-resolved environmental exposure on the resulting histories. Their common output is a timed description of the remnant's occupation of its environment. The immediate question is which launch and host information must be retained to predict these observables at a declared accuracy.
 
-We connect this formulation to an analysis of six observed Galactic clusters. Proper-motion profiles, structural estimates, and published multimass-model posteriors permit concrete comparisons of host scales and parameter dependence. Distribution-function families can supply candidate consistent hosts~\cite{Gieles2015}, but measured projected kinematics are not themselves local phase-space distributions. Our numerical findings concern this observational connection: which quantities can be compared, which dependencies must be preserved, and which inputs remain unestablished. We do not refit the clusters or infer recoil, friction, or residence outcomes from these comparisons.
+We connect this formulation to an analysis of six observed Galactic clusters. Proper-motion profiles, structural estimates, and published multimass-model posteriors permit concrete comparisons of host scales and parameter dependence. Distribution-function families can supply candidate consistent hosts~\cite{Gieles2015}, but measured projected kinematics are not themselves local phase-space distributions. We use this observational connection to reconstruct one published joint realization for NGC 3201, verify its internal consistency, and evaluate local drift and diffusion from its mass-resolved distributions. This calculation supplies a controlled test of the host-to-collision connection, rather than a new fit or a trajectory prediction. Its species decomposition identifies where the smooth weak-scattering approximation needs particular scrutiny.
 
 \section{Observational inputs and comparison method}\label{sec:data-method}
 
@@ -164,7 +164,7 @@ Figure~\ref{fig:cluster-host-comparison} compares the published multimass margin
 
 The analysis supports a common field and unit convention with a distinct joint host distribution for each cluster. It does not establish six interchangeable scattering backgrounds. NGC 3201 and 47 Tuc provide initial candidates for reproducing a published host and checking its projected observables, with rotation explicitly assessed for 47 Tuc. NGC 1851 and M4 extend the structural comparison. NGC 6397 tests sensitivity in a core-collapsed system, while $\omega$ Centauri requires particular attention to rotation, flattening, and mass-dependent tracer selection~\cite{Haberle2025,Dickson2024}.
 
-Published density and cumulative-mass bands do not by themselves provide mutually consistent local host realizations. Independently assembling median profiles could violate the consistency between mass density, gravity, and velocity structure. These observational findings therefore constrain how the following transport problem should be supplied with inputs; they do not evaluate its drift, diffusion, or trajectory observables.
+Published density and cumulative-mass bands do not by themselves provide mutually consistent local host realizations. Independently assembling median profiles could violate the consistency between mass density, gravity, and velocity structure. These observational findings constrain how the following transport problem should be supplied with inputs. Section~\ref{sec:local-calculation} evaluates a specific reconstructed realization, while preserving the distinction between numerical consistency and physical calibration.
 
 \section{Step 1: recoil transport}\label{sec:transport}
 
@@ -366,6 +366,92 @@ p_{\rm alive}(\mathbf r,\mathbf v,t
 where $\mathcal Q_m=(m,\Theta,\mathcal D,\mathcal M)$.
 Integrating a fixed-mass conditional density over mass without this weight would not represent the launch ensemble.
 
+\section{Reconstructed environment and local scattering}\label{sec:local-calculation}
+
+\subsection{A fixed joint host realization}
+
+The first calculation asks whether a published joint host realization can consistently supply the gravitational field and the distributions entering Eqs.~\eqref{eq:rosenbluth-drift} and \eqref{eq:rosenbluth-diffusion}. We select the NGC 3201 row with the largest normalized posterior quadrature weight in Eq.~\eqref{eq:posterior-weights}, retaining all thirteen coordinates. This deterministic selection has weight $0.001764$; it is neither a maximum-likelihood estimate nor a posterior mode. A single selected row does not represent the full host posterior or establish a typical cluster environment.
+
+We reconstruct the spherical, nonrotating, multimass lowered-isothermal model associated with the published fit~\cite{Gieles2015,Dickson2023,Dickson2024}. The observation bundle supplies age $11.5\,\mathrm{Gyr}$ and metallicity $[\mathrm{Fe/H}]=-1.59$. Historical stellar-evolution and distribution-function implementations are pinned with their mass-bin and retention conventions. Their exact identity with the original fitting run cannot be established from the released metadata. This is a reproducible compatible reconstruction, not an exact rerun of the original likelihood analysis.
+
+Writing $f_j=m_jF_j$ for a mass-normalized distribution, the reconstructed family has the form
+\begin{equation}
+f_j(r,\mathbf u)=\mathcal A_j
+\exp\!\left[-\frac{L^2}{2r_{a,j}^2s_j^2}\right]
+e^{\mathcal E_j}P(g_{\rm t},\mathcal E_j),
+\qquad \mathcal E_j>0,
+\label{eq:lowered-df}
+\end{equation}
+and is zero otherwise. Here $L=|\mathbf r\times\mathbf u|$,
+$\mathcal E_j=[\Psi(r)-u^2/2]/s_j^2$, and $P$ is the regularized lower incomplete gamma function. The normalizations $\mathcal A_j$, velocity scales $s_j$, and species masses come from the same self-consistent solution. The local number distribution used in the collision integrals is explicitly $F_j=f_j/m_j$. The tangential second moment in the numerical host is the sum of two components, so
+$\beta_j=1-\langle u_t^2\rangle_j/(2\langle u_r^2\rangle_j)$.
+
+The relative potential is referenced to the distribution's truncation radius $r_t$. For the isolated spherical continuation with physical potential zero at infinity,
+\begin{align}
+\Psi(r)&=\Phi_{\rm c}(r_t)-\Phi_{\rm c}(r),\\
+\Phi_{\rm c}(r)&=-\Psi(r)-\frac{GM}{r_t},\qquad r\leq r_t,\\
+u_{\rm cut}(r)&=\sqrt{2\Psi(r)},\qquad
+v_{\rm esc,\infty}(r)=\sqrt{2\Psi(r)+2GM/r_t}.
+\label{eq:cutoff-escape}
+\end{align}
+Thus the field-star velocity cutoff is distinct from isolated escape to infinity, and neither is automatically a tidal escape criterion. We preserve the source model's $G=0.004302\,\mathrm{pc}\,(\mathrm{km\,s^{-1}})^2M_\odot^{-1}$ throughout its gravity and collision calculation. Its small difference from the catalog-display constant does not enter as an inconsistent force normalization.
+
+The selected realization has $M=1.7806\times10^5\,M_\odot$, $r_h=10.325\,\mathrm{pc}$, and $r_t=981.0\,\mathrm{pc}$. Its central density is $2.146\times10^3\,M_\odot\,\mathrm{pc}^{-3}$, with $u_{\rm cut}(0)=17.410\,\mathrm{km\,s^{-1}}$ and $v_{\rm esc,\infty}(0)=17.455\,\mathrm{km\,s^{-1}}$. The extended formal truncation radius is not adopted as an empirical boundary for NGC 3201. A Galactic tidal model and a validity domain remain necessary for transport in its outer parts. The separate $34.807\,\mathrm{km\,s^{-1}}$ parameter in the source stellar-evolution prescription is not the present reconstructed escape speed.
+
+\subsection{Independent numerical and projected checks}
+
+The reconstruction contains sixteen physical mass bins: nine main-sequence bins, five white-dwarf bins, one neutron-star bin, and one black-hole bin. No artificial tracer mass is appended for this observation bundle. We independently integrate density to recover mass and half-mass radius, compare the potential gradient with enclosed mass, and integrate the force to recover the relative potential. The virial check compares $2K+W$ with $W$, using density-weighted radial and both tangential velocity moments. Positive densities and pressures are interpolated in logarithms to resolve the steep tails of segregated species.
+
+Independent velocity quadrature recovers the density and raw second moments of every species at $r/r_h=0,0.1,1,3$. Projected luminous-tracer moments are calculated by line-of-sight integration, with the correct radial and tangential projection factors. Table~\ref{tab:host-validation} reports the numerical errors. The adopted host checks require relative errors below $10^{-3}$, or $2\times10^{-3}$ for projected luminous-tracer quantities. These tolerances test implementation accuracy; they are not observational uncertainty intervals.
+
+\input{tables/host-validation.tex}
+
+Figure~\ref{fig:host-projections} compares the reconstruction with the released projected posterior envelopes over $0.01\leq R/r_h\leq3$. At the 32 retained source radii, line-of-sight and radial proper-motion dispersions fall within the published central $95.45\%$ envelopes. Tangential proper motion lies inside at 27 radii, and the analogous total-density comparison lies inside at 25. A joint posterior draw need not lie within every pointwise interval; these counts are descriptive, not a goodness-of-fit probability. The comparison neither proves exact historical input compatibility nor replaces an observational refit.
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{figures/host-projections.pdf}
+\caption{Projected kinematics of the fixed NGC 3201 reconstruction, compared with published posterior medians and central $95.45\%$ model envelopes. These bands summarize correlated model realizations and are not independent measurements. The selected reconstruction retains one complete posterior row; it does not propagate the host posterior.}
+\label{fig:host-projections}
+\end{figure*}
+
+\subsection{Anisotropic coefficient evaluation}
+
+We evaluate the weak-scattering kernels without imposing a Maxwellian or a scalar velocity dispersion. To remove the integrable singularity from numerical quadrature, set $\mathbf v-\mathbf u=s\mathbf n$, with $s\geq0$ and $|\mathbf n|=1$. Equations~\eqref{eq:h-kernel} and \eqref{eq:g-kernel} become
+\begin{align}
+\partial_i h_j&=-\int d\Omega\int ds\,
+F_j(\mathbf v-s\mathbf n)n_i,\\
+\partial_i\partial_k g_j&=\int d\Omega\int ds\,
+sF_j(\mathbf v-s\mathbf n)(\delta_{ik}-n_in_k).
+\label{eq:ray-quadrature}
+\end{align}
+The radial interval is the intersection of the ray with the field-star velocity ball $|\mathbf u|<u_{\rm cut}$. Positive quadrature weights preserve the positive-semidefinite diffusion tensor. An independent identity is
+\begin{equation}
+\operatorname{tr}\mathsf D=
+8\pi G^2\sum_jm_j^2\ln\Lambda_j h_j.
+\label{eq:diffusion-trace-check}
+\end{equation}
+Uniform-ball analytic limits, rotations of an anisotropic distribution, this trace identity, and quadrature refinement test the implementation.
+
+The diagnostic remnant mass is $60\,M_\odot$, a controlled probe rather than an inferred merger remnant. We evaluate twenty local states: four radii $r/r_h=0,0.1,1,3$, zero speed, and radial or tangential velocities at $0.25$ and $0.75$ of the local stellar cutoff. Results are reported per unit common constant $\ln\Lambda$; no impact-parameter prescription is selected. With distance in pc and speed in $\mathrm{km\,s^{-1}}$, both raw drift and diffusion require division by $0.97779222$ to express their time denominators in Myr. A noise amplitude would instead be obtained by factoring the converted diffusion tensor.
+
+Increasing the angular and ray quadrature orders from 40 to 64 changes drift by at most $5.50\times10^{-9}$ in vector relative norm and diffusion by $1.31\times10^{-7}$ in matrix relative norm on this grid. At zero speed, symmetry requires zero drift and its absolute numerical residual is used. All diffusion tensors are positive semidefinite, and the trace identity holds to $9.0\times10^{-15}$ relative accuracy. This grid validates local evaluation at the tested states, not interpolation along arbitrary recoil trajectories.
+
+\input{tables/local-kernels.tex}
+
+\subsection{Species contributions and the limit of smooth diffusion}
+
+The selected host contains an expected $4.28$ black holes, with total mass $61.2\,M_\odot$ in a bin of individual mass $14.31\,M_\odot$. These are model expectations, not observed object counts. At the center this species supplies approximately $27.7\%$ of mass density but $95.8\%$ of the formal diffusion trace at zero test velocity. At $0.1r_h$, its diffusion fraction has fallen to $8.46\times10^{-4}$. At nonzero radial speed the decomposition remains strongly position dependent (Table~\ref{tab:local-kernels}). Figure~\ref{fig:scattering-composition} compares density and diffusion contributions within this same host; it is not a counterfactual fit obtained by removing black holes.
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{figures/scattering-composition.pdf}
+\caption{Mass-density fractions in the reconstructed host (left) and species contributions to the formal diffusion trace at zero test velocity (right). The radial density curves describe the continuous model; the diffusion bars are four evaluated states. The black-hole component has an expected total count of only $4.28$, so its dominant central diffusion contribution identifies a continuum-validity question rather than a measured relaxation rate.}
+\label{fig:scattering-composition}
+\end{figure*}
+
+The enhancement follows from the mass weighting and velocity dependence of Eq.~\eqref{eq:rosenbluth-diffusion}, not merely the total density. It also exposes a physical limitation: numerical convergence of a smooth collision integral does not establish that a few heavy objects act as numerous independent weak scatterers. Resolved encounters or an independently calibrated discrete-transition description must test that contribution before it is represented as Gaussian noise. The large outer truncation radius creates a separate boundary-validity question. We therefore report local coefficients conditional on this realization and closure, without interpreting them as calibrated damping times, remnant paths, or residence outcomes.
+
+The reconstruction does supply the same species densities required for Step~2. It makes the next physical question specific: whether a justified treatment of sparse remnant encounters changes the occupation of dense regions relative to the smooth approximation, with host, launch, cutoff and boundary choices held fixed. Testing that question requires trajectories and their stopping records; the coefficient decomposition alone does not answer it.
+
 \section{Step 2: residence and environmental exposure}\label{sec:exposure}
 
 \subsection{Finite-region entry and re-entry}
@@ -498,7 +584,7 @@ For a fixed observed cluster $c$, a compatible reconstructed host law $\Pi_c(d\T
 \end{equation}
 Here $A$ is a measurable set of observable values, not the drift vector $\mathbf A$, and $\lambda$ retains the declared launch, recoil, collision, boundary, and horizon choices. The integrand includes the launch and path averaging in Eq.~\eqref{eq:uncertainty}. This expression is a conditional modeling prescription, not an evaluated prediction. A merger-selected population additionally needs the host reweighting in Eq.~\eqref{eq:uncertainty}; the six clusters are not assigned universal population weights.
 
-Each host realization must supply the same $F_j$ to Eqs.~\eqref{eq:number-density}--\eqref{eq:dispersion} and \eqref{eq:rosenbluth-h}--\eqref{eq:rosenbluth-diffusion}. The density used for exposure must come from that realization as well. At present, the projected data and candidate posterior records do not establish those local functions. Reproducing a source fit and its projected observables precedes any test of its suitability for drift and diffusion. Present-day observations also do not identify the stellar environment at a historical merger epoch.
+Each host realization must supply the same $F_j$ to Eqs.~\eqref{eq:number-density}--\eqref{eq:dispersion} and \eqref{eq:rosenbluth-h}--\eqref{eq:rosenbluth-diffusion}. The density used for exposure must come from that realization as well. Section~\ref{sec:local-calculation} constructs those local functions for one fixed realization and checks its projected predictions. Extension to the joint posterior and competing host prescriptions remains necessary, and compatibility with projected kinematics does not validate a collisional closure. Present-day observations also do not identify the stellar environment at a historical merger epoch.
 
 \subsection{Information passed between the two steps}
 
@@ -510,13 +596,13 @@ Step~2 attaches crossing events, residence, species exposures, and a time-augmen
 
 \subsection{Acceptance criteria before physical interpretation}
 
-The following requirements specify validation to be performed; they are not reported as executed checks. Dimensional consistency, force--potential agreement, number-to-mass normalization, and positive-semidefinite diffusion must first be established. The implementation must preserve the It\^o convention and account for probability lost at each boundary or stop. Appropriate conservative and analytically justified stochastic limits provide independent checks, including the energy identity in Eq.~\eqref{eq:energy-balance}.
+The host and local-coefficient checks in Sec.~\ref{sec:local-calculation} establish dimensional consistency, force--potential agreement, number-to-mass normalization, and positive-semidefinite diffusion for the stated realization and evaluation grid. The following trajectory requirements remain unexecuted. The implementation must preserve the It\^o convention and account for probability lost at each boundary or stop. Appropriate conservative and analytically justified stochastic limits provide independent checks, including the energy identity in Eq.~\eqref{eq:energy-balance}.
 
 Entry and residence calculations must distinguish tangencies from crossings, handle interior, exterior, and boundary launches, and account for moving regions. Brief passages must remain resolved under a declared refinement procedure. Convergence is needed for the relevant distributions and accumulated observables, not solely for a few representative trajectories. Numerical and sampling errors must be separated from uncertainty in physical inputs.
 
 Where both representations exist, path averages and the survival-weighted identities in Eqs.~\eqref{eq:mean-residence} and \eqref{eq:mean-exposure} should agree within declared numerical accuracy. Comparisons testing a physical simplification must hold the conditional population, horizon, region, and remaining inputs fixed. A useful result could identify a regime in which a reduction preserves the observables, or a discrepancy establishing which additional information is required.
 
-Internal agreement does not calibrate the collision model. Comparison with independently resolved dynamics appropriate to the host and encounter regime is needed before interpreting predictions as quantitatively reliable. No solver, numerical tolerance, ensemble size, or passing threshold is assigned by the present formulation.
+Internal agreement does not calibrate the collision model. Comparison with independently resolved dynamics appropriate to the host and encounter regime is needed before interpreting predictions as quantitatively reliable. Host and coefficient quadrature controls are specified for the completed calculation. A trajectory solver, ensemble precision, physical encounter-scale partition and calibration test have not yet been supplied.
 
 \section{Discussion}\label{sec:discussion}
 
@@ -524,7 +610,7 @@ The central object of the formulation is a merger-conditioned, time-resolved dis
 
 The description permits off-center launches, inherited progenitor motion, anisotropic and streaming stellar populations, time-dependent gravity, and stochastic velocity changes. These dependences are available in the equations; they are not all measured or independently adjustable parameters. A physical realization must justify how they are constrained together and where the adopted closure applies.
 
-The observational analysis makes several requirements concrete. Common units allow direct display comparisons, but source overlap and differing stellar selections prevent automatic construction of a shared likelihood. Strong mass--radius dependence in some published posteriors requires complete host realizations rather than independent marginal draws. Differences between structural estimates make the host prescription itself an uncertainty to examine. None of these findings alone supplies a local scattering distribution.
+The observational analysis makes several requirements concrete. Common units allow direct display comparisons, but source overlap and differing stellar selections prevent automatic construction of a shared likelihood. Strong mass--radius dependence in some published posteriors requires complete host realizations rather than independent marginal draws. Differences between structural estimates make the host prescription itself an uncertainty to examine. The subsequent reconstruction supplies one candidate local scattering distribution, while its sparse heavy-remnant component illustrates why a consistent distribution still requires a physical validity test.
 
 For a controlled comparison, define
 \begin{equation}
@@ -532,9 +618,9 @@ For a controlled comparison, define
 \widetilde J_j=\frac{J_{j,T}r_h^3}{M t_0}.
 \label{eq:dimensionless-observables}
 \end{equation}
-A testable next hypothesis is that host structure and stellar-mass composition leave differences in these dimensionless observables after fixing the dimensionless launch law, remnant-to-host mass ratio, $T/t_0$, region scaled by $r_h$, external-field treatment, collision prescription and termination conventions. The current analysis motivates this hypothesis by identifying structural variation and correlated host uncertainty; it does not test the transport consequence. A controlled comparison must first reproduce compatible host models, then compare the same dimensionless launch and event definitions while propagating each host's joint uncertainty. The gravitational scales alone cannot decide whether the resulting trajectory observables coincide.
+A testable next hypothesis is that host structure and stellar-mass composition leave differences in these dimensionless observables after fixing the dimensionless launch law, remnant-to-host mass ratio, $T/t_0$, region scaled by $r_h$, external-field treatment, collision prescription and termination conventions. The current analysis motivates this hypothesis by identifying structural variation and correlated host uncertainty; it does not test the transport consequence. A controlled comparison must extend the fixed-host reconstruction to compatible joint realizations, justify the treatment of sparse encounters, and compare the same dimensionless launch and event definitions while propagating host uncertainty. The gravitational scales alone cannot decide whether the resulting trajectory observables coincide.
 
-The formulation supplies the conditional evolution and accumulation problem needed for that comparison. Continued motion after entry, survival weighting, and termination status remain explicit. Its connection to observed clusters is now supported by measured coverage and published host distributions, while calibrated friction, return, and residence predictions remain open calculations.
+The formulation supplies the conditional evolution and accumulation problem needed for that comparison. Continued motion after entry, survival weighting, and termination status remain explicit. Its connection to observed clusters is supported by measured coverage, published host distributions, a numerically checked reconstruction and local anisotropic collision kernels. The dominant central contribution of a few modeled black holes identifies the encounter regime that must be resolved before calibrated return and residence predictions follow.
 
 Timed position--velocity histories can eventually be combined with a separately justified companion population and interaction law. Residence and density exposure alone do not supply either ingredient. Companion acquisition, binary evolution, subsequent mergers, and inference from observed gravitational-wave sources therefore require additional physical descriptions beyond the two steps defined here.
 

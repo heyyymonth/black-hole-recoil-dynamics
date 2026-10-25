@@ -1,6 +1,6 @@
 # Step 1: merger-conditioned recoil transport
 
-**Researcher: Venkata Hemanth Athota. Status: mathematical formulation; numerical implementation and calibration pending.**
+**Researcher: Venkata Hemanth Athota. Status: host and local coefficient calculations completed for one NGC 3201 realization; trajectory implementation and physical calibration pending.**
 
 ## Physical question
 
@@ -10,7 +10,7 @@ The output is a time-resolved stochastic trajectory ensemble, or an equivalent p
 
 ## Host and coordinate conventions
 
-Use physical units and translating, nonrotating cluster axes. Let the cluster reference position in an inertial frame be $\mathbf R(t)$ and the remnant state relative to it be $(\mathbf r,\mathbf v)$. Symbols describe inputs; no host family, numerical values, or fitted functions are selected.
+Use physical units and translating, nonrotating cluster axes. Let the cluster reference position in an inertial frame be $\mathbf R(t)$ and the remnant state relative to it be $(\mathbf r,\mathbf v)$. The general equations describe conditional inputs. The [defined calculation](local-transport-calculations.md) supplies one frozen anisotropic multimass host and evaluates local coefficients, with remaining trajectory choices explicitly unassigned.
 
 For species $j$ of individual mass $m_j$, define a **number** phase-space distribution $F_j(\mathbf r,\mathbf u,t\mid\Theta)$. Its integral over position and velocity is the expected species count. Host variables $\Theta$ include the mass components, distribution functions, boundary conditions, and any supplied evolution:
 

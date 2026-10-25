@@ -2,7 +2,7 @@
 
 **Researcher:** Venkata Hemanth Athota
 
-**Status:** mathematical formulation and calculation specification. No cluster family, numerical parameter values, or results are assigned to this formulation. The acceptance checks below are specified and unexecuted.
+**Status:** mathematical formulation and calculation specification. The [host calculation](local-transport-calculations.md) supplies consistent species densities for one realization. Path accumulation, crossings and residence distributions remain unexecuted, as do the trajectory acceptance checks below.
 
 ## Physical question
 

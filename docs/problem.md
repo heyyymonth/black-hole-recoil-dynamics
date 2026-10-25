@@ -10,7 +10,7 @@ The physical question is:
 
 > How do merger-conditioned initial states and a consistent stellar environment determine the probability distribution of recoil trajectories and the environmental exposure accumulated over a finite physical interval?
 
-The study has two components. [Step 1](e001-ballistic-return.md) defines the phase-space evolution. [Step 2](e002-core-exposure.md) defines the functionals of that evolution that measure entry, residence, and species-resolved exposure. An [observational analysis of six clusters](cluster-data-assessment.md) supplies numerical comparisons of candidate host inputs, while remnant trajectories and residence outcomes remain uncalculated.
+The study has two components. [Step 1](e001-ballistic-return.md) defines the phase-space evolution. [Step 2](e002-core-exposure.md) defines the functionals of that evolution that measure entry, residence, and species-resolved exposure. An [observational analysis of six clusters](cluster-data-assessment.md) supplies numerical comparisons of candidate host inputs, and a [fixed-host reconstruction with local collision calculations](local-transport-calculations.md) supplies the first numerical connection between those inputs and the transport operator. Remnant trajectories and residence outcomes remain uncalculated.
 
 ## Observational findings and their role
 

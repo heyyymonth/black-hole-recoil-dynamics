@@ -16,3 +16,5 @@ tmp/
 
 # Original third-party data cached by the observed-cluster audit.
 data/observed-clusters/raw/
+
+.venv-host/

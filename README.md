@@ -11,7 +11,7 @@ Independent physics research · Stellar dynamics and gravitational-wave source e
 
 ## Abstract
 
-Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We develop a merger-conditioned transport formulation and define finite-region residence and species-resolved environmental exposure on its trajectories. We then examine its observational inputs using public astrometric and structural products and published multimass-model posteriors for six Galactic clusters. Native measurements are compared in common physical and dimensionless units while preserving tracer selection and joint parameter dependence and recording shared distance uncertainty. The analysis identifies restricted common radial sampling, strong mass--radius correlations in several host posteriors, and differences between published structural estimates that cannot be interpreted as cluster evolution. These findings establish a source-aware basis for constructing candidate environments and identify the local stellar distributions still needed to evaluate transport. The reported numerical results concern observations and existing host inferences; remnant trajectories, friction coefficients, and residence distributions remain to be calculated.
+Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We develop a merger-conditioned transport formulation and define finite-region residence and species-resolved environmental exposure on its trajectories. Public observations and published multimass-model posteriors for six Galactic clusters establish the available constraints and their shared uncertainties. We reconstruct one joint posterior realization for NGC 3201 and check its mass distribution, potential, velocity moments, and projected tracer profiles. We then evaluate local anisotropic drift and diffusion from the same stellar distributions, retaining separate contributions from each mass species. The calculation identifies a regime in which a sparse black-hole component dominates formal central diffusion despite supplying a minority of the local mass density. This result makes the treatment of discrete remnants a necessary validation question before the coefficients can be used to predict trajectories. The reported findings establish consistent host and collision calculations under explicit assumptions; calibrated remnant motion and residence distributions remain to be determined.
 
 ## Research question
 
@@ -24,7 +24,7 @@ The active scope consists of two linked steps:
 | [1. Recoil transport](docs/e001-ballistic-return.md) | Evolve a joint merger-conditioned launch under consistent host gravity, external acceleration, collisional drift, and velocity diffusion. | Timed position–velocity histories or a transport density, with mass labels, uncertainty, survival probability, and stopping causes. |
 | [2. Residence and exposure](docs/e002-core-exposure.md) | Define finite-region entry and re-entry, residence, and species-resolved density exposure on those histories. | Event distributions, accumulated exposure, and a time-resolved occupation measure with explicit censoring. |
 
-The transport and exposure equations remain mathematical specifications. The completed observational analysis constrains candidate host inputs; adoption of a reconstructed host, a transport solver, and calibrated trajectory results remain pending. No central launch, radial orbit, permanent rest after return, or universal cluster profile is imposed.
+The observational analysis constrains candidate hosts. A completed NGC 3201 reconstruction now supplies consistent species distributions, and twenty evaluated local states test its anisotropic drift and diffusion. Trajectory evolution and residence distributions remain unevaluated; the sparse black-hole component and external boundary require physical validation. No central launch, radial orbit, permanent rest after return, or universal cluster profile is imposed.
 
 ## Physical foundation
 
@@ -38,11 +38,11 @@ Timed position and velocity records can support later companion-access calculati
 
 The [six-cluster assessment](docs/cluster-data-assessment.md) examines original public observations and published candidate host posteriors for 47 Tuc, NGC 1851, NGC 3201, Omega Centauri, M4 and NGC 6397. The [data package](data/observed-clusters/README.md) includes source hashes, common-unit tables, quality flags, three comparison figures and an [executed notebook](analysis/cluster_data/cluster_data_audit.ipynb).
 
-A [common host interface](docs/cluster-host-schema.md) preserves a separate weighted joint parameter distribution for each cluster. Unit harmonization does not establish a shared stellar population, a calibrated potential or a local scattering background. Exact source-fit reproduction and reconstruction of mass-resolved local phase space remain necessary before transport. The manuscript presents these data findings in three tables and three vector figures and connects them to the transport and exposure equations. It records 107 original HST radial bins, 621,878 Gaia field-catalog rows, 20 flagged compilation rows and strong mass–radius dependence in several published host posteriors. Field-catalog rows include nonmembers, and the display uncertainties condition on catalog point scales.
+A [common host interface](docs/cluster-host-schema.md) preserves a separate weighted joint parameter distribution for each cluster. Unit harmonization does not establish a shared stellar population, a calibrated potential or a local scattering background. The [fixed-host calculation](docs/local-transport-calculations.md) reconstructs one NGC 3201 joint realization; exact historical fit reproduction and physical calibration are not claimed. The manuscript presents the data findings and the completed host and collision calculations in five tables and five vector figures. It records 107 original HST radial bins, 621,878 Gaia field-catalog rows, 20 flagged compilation rows and strong mass–radius dependence in several published host posteriors. Field-catalog rows include nonmembers, and the display uncertainties condition on catalog point scales.
 
 ## Calculation handoff
 
-The [input register](formulation/inputs.json) leaves host functions, launch distributions, collision cutoffs, stopping rules, and numerical controls unassigned. Missing inputs are not zero-valued defaults. The [handoff specification](docs/calculation-handoff.md) defines their units, dependencies, required output fields, and acceptance checks before a calculation can be interpreted.
+The general [trajectory input register](formulation/inputs.json) leaves the launch law, physical collision cutoffs, stopping rules and trajectory controls unassigned. The completed host and local-coefficient calculations have separate versioned protocols, linked from that register. Missing inputs are not zero-valued defaults. The [handoff specification](docs/calculation-handoff.md) defines their units, dependencies, required output fields, and acceptance checks before a calculation can be interpreted.
 
 Documentation checks perform no physical calculations:
 
@@ -50,9 +50,10 @@ Documentation checks perform no physical calculations:
 python scripts/verify_foundation.py
 python paper/verify.py
 python analysis/cluster_data/verify.py
+python analysis/host_reconstruction/verify.py
 ```
 
-The [research paper](output/pdf/central-residence.pdf), [LaTeX source](paper/manuscript.tex), and [portable source archive](output/pdf/manuscript-source.zip) combine the two-step formulation with the observed-cluster findings. It is an unreviewed manuscript reporting data analysis and published-host diagnostics, with no numerical transport results. [Paper status and build instructions](paper/README.md).
+The [research paper](output/pdf/central-residence.pdf), [LaTeX source](paper/manuscript.tex), and [portable source archive](output/pdf/manuscript-source.zip) combine the two-step formulation with the observed-cluster findings. It is an unreviewed manuscript reporting data analysis, a reconstructed host, and local collision kernels. It does not report remnant trajectories or calibrated residence predictions. [Paper status and build instructions](paper/README.md).
 
 ## Repository contents
 
@@ -62,12 +63,14 @@ The [research paper](output/pdf/central-residence.pdf), [LaTeX source](paper/man
 | `docs/e001-ballistic-return.md` | Step 1: recoil transport |
 | `docs/e002-core-exposure.md` | Step 2: residence and environmental exposure |
 | `docs/calculation-handoff.md` | Required inputs, outputs, and validation conditions |
-| `formulation/` | Explicitly unassigned calculation inputs |
+| `formulation/` | General trajectory inputs and links to defined calculation stages |
 | `data/observed-clusters/` | Public-source manifest, candidate host records and audited comparison products |
 | `analysis/cluster_data/` | Source retrieval, reproducible data audit, figures and executed notebook |
+| `analysis/host_reconstruction/`, `analysis/transport/` | Reproducible host and local collision calculations with independent checks |
+| `results/host-reconstruction/`, `results/local-transport-kernels/` | Completed calculation records and shared provenance manifest |
 | `scripts/` | Structural documentation and manuscript integrity checks |
 | `paper/` | Formulation and observational findings, evidence-bound tables and figures, bibliography, and typesetting build |
-| `src/`, `experiments/`, `tests/`, `results/` | [Computational reference records](docs/computational-records.md); these do not implement or validate the active transport formulation |
+| `src/`, `experiments/`, `tests/`, other `results/` records | [Computational reference records](docs/computational-records.md); these do not implement or validate the active transport formulation |
 
 ## Citation and reuse
 

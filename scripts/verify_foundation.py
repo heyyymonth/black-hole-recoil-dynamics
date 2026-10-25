@@ -10,7 +10,7 @@ ACTIVE_DOCS = [
     "docs/recoil-transport-theory.md", "docs/calculation-handoff.md",
     "docs/cluster-dynamics-context.md", "docs/relevance.md",
     "docs/references.md", "docs/computational-records.md",
-    "paper/README.md", "paper/CLAIMS.md",
+    "paper/README.md", "paper/CLAIMS.md", "docs/local-transport-calculations.md", "docs/host-reconstruction-protocol.md",
 ]
 INPUT_GROUPS = ("host", "launch", "collisions", "termination", "exposure", "numerics")
 
@@ -22,7 +22,7 @@ def require(condition, message):
 
 def verify():
     working = json.loads((ROOT / "paper/working.json").read_text())
-    require(working["status"] == "theory-and-data-draft", "Unexpected manuscript scope")
+    require(working["status"] == "theory-data-and-local-calculations-draft", "Unexpected manuscript scope")
     require(working["compile_enabled"] is True, "Theory typesetting must be enabled")
     require(working["transport_simulations_performed"] is False, "No transport simulation is supplied")
     require(working["data_analysis_performed"] is True, "Completed cluster-data analysis is included")
@@ -52,6 +52,9 @@ def verify():
     for group in INPUT_GROUPS:
         require(inputs[group] and all(value is None for value in inputs[group].values()),
                 f"Input assigned without a calculation specification: {group}")
+    for stage in inputs["completed_calculations"]:
+        require((ROOT / stage["protocol"]).is_file() and (ROOT / stage["result"]).is_file(), "Missing defined stage")
+    require(working.get("host_reconstruction_performed") is True and working.get("local_collision_coefficients_evaluated") is True, "Completed calculation status missing")
     require((ROOT / inputs["handoff"]).is_file(), "Missing calculation handoff")
 
     links = 0
@@ -78,14 +81,14 @@ def verify():
     require("Step 2:" in (ROOT / "docs/e002-core-exposure.md").read_text(), "Missing Step 2")
     require(not re.search(r"E00[1-5]", source), "Internal experiment identifier in article")
     expected_tables = {"tables/cluster-coverage.tex", "tables/cluster-scales.tex",
-                       "tables/cluster-posterior.tex"}
+                       "tables/cluster-posterior.tex", "tables/host-validation.tex", "tables/local-kernels.tex"}
     require(set(re.findall(r"\\input\{([^}]+)\}", source)) == expected_tables,
-            "Expected the three cluster-data evidence tables")
+            "Expected the five data and calculation evidence tables")
     require(not any(key in source for key in ("tables/return.tex", "figures/return-time.pdf")),
             "Historical reference dynamics do not validate the active transport problem")
     print(f"Verified two-step foundation: {len(ACTIVE_DOCS)} documents, {links} local links, "
           f"{displays} display equations; inputs unassigned and title/abstract/citations consistent. "
-          "Recorded data findings included; no transport calculations performed.")
+          "Recorded data, host and coefficient findings included; no trajectories performed.")
 
 
 if __name__ == "__main__":

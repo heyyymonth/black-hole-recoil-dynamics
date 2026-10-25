@@ -10,7 +10,7 @@ Gravity and scattering must describe consistent populations. Drag, diffusion, cu
 
 ## Preparing calculations
 
-Use the [handoff](docs/calculation-handoff.md) and [input register](formulation/inputs.json). Inputs are unassigned and execution disabled. Before adding a runner, supply versioned host and launch specifications, units, closure, validity criteria, event rules, error controls, and independent validation requirements.
+Use the [handoff](docs/calculation-handoff.md) and [input register](formulation/inputs.json). The general trajectory inputs remain unassigned and trajectory execution disabled. Defined host and local-coefficient stages have separate versioned protocols linked from the register. Before adding a runner, supply versioned host and launch specifications, units, closure, validity criteria, event rules, error controls, and independent validation requirements.
 
 Plan source, configuration, seed, dependency, and output provenance before execution. Report outcomes only after appropriate checks. Numerical convergence is not physical calibration; correlated paths are not independent observations.
 

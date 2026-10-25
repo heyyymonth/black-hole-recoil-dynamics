@@ -1,6 +1,6 @@
 # Calculation handoff: recoil transport and environmental exposure
 
-**Scope:** Step 1 supplies remnant motion; Step 2 measures residence and environmental exposure. This is a specification for future calculations. It contains no assigned cluster, numeric configuration, generated trajectory, or measured result.
+**Scope:** Step 1 supplies remnant motion; Step 2 measures residence and environmental exposure. This is the general trajectory specification. The [host and local-coefficient calculation](local-transport-calculations.md) has separate explicit configurations and numerical checks. It supplies neither a merger-conditioned launch law nor a calibrated path or residence distribution.
 
 ## Scientific contract
 
@@ -64,7 +64,7 @@ These decisions belong in a versioned calculation specification. The present reg
 - Establish convergence of the relevant distributions, crossings, residence, and exposure under a declared refinement procedure.
 - Compare with independently resolved dynamics appropriate to the physical regime before claiming calibrated predictions.
 
-No thresholds, sample counts, solver, or pass outcomes are assigned. Internal numerical agreement alone does not establish physical adequacy.
+This general trajectory specification assigns no trajectory solver, sample count or pass outcome. The separate host and coefficient protocols assign their own numerical checks and tolerances. Internal numerical agreement alone does not establish physical adequacy.
 
 ## Interface beyond the present scope
 

@@ -1,45 +1,52 @@
-Formulation and observed-cluster manuscript verification
-Revision 0.5.0-manuscript.1; 24 October 2026
+Formulation, observations, host and local-collision manuscript verification
+Revision 0.6.0-manuscript.1; 25 October 2026
 
-Scope
-The article combines the two-step theoretical formulation with the completed
-six-cluster data analysis. Typesetting reuses verified tables and vector
-figures. No host fit, friction calculation, remnant orbit or residence
-experiment is executed by the build or its verification.
+Completed calculations
+One actual NGC 3201 joint posterior sample is reconstructed with pinned,
+historically compatible model implementations. Sixteen mass species supply
+one consistent potential, density and local distribution-function family.
+Twenty local states evaluate anisotropic drift and diffusion per unit constant
+Coulomb logarithm. The 60-solar-mass remnant is a diagnostic probe.
+Original fit-run software hashes are unknown; exact historical fit reproduction
+and new observational fitting are not claimed.
 
-Required integrity checks
-- analysis/cluster_data/verify.py validates the captured data revision,
-  source-record and derived-table consistency, candidate host records,
-  completed notebook outputs and audited file hashes.
-- paper/data_assets.py --verify validates the source-bound table and figure
-  assets without regenerating them.
-- scripts/verify_foundation.py checks the current formulation and metadata.
-- paper/build.py verifies the evidence, typesets the declared source assets,
-  checks LaTeX/BibTeX diagnostics, and creates the portable source archive.
-- paper/verify.py checks source/output hashes, exact archive contents,
-  citations, two-column source format, US Letter pages, embedded vector
-  fonts, and absence of raster figures or internal experiment identifiers.
+Numerical checks
+- Mass, half-mass radius, force, integrated potential and virial balance pass
+  the stated numerical tolerances.
+- Independent velocity quadrature recovers all-species density and raw moments.
+- Independent projection checks the luminous tracer, with the original
+  projected posterior envelopes retained as descriptive comparisons.
+- Analytic uniform-ball kernels, mass/time factors, anisotropic rotational
+  covariance, tensor trace identity, PSD and quadrature refinement pass.
+- A separate one-dimensional central integral verifies the host's diffusion
+  trace. Exterior test velocities are explicitly outside the current API's
+  validated domain, rather than silently accepted by insufficient quadrature.
+- Eight independent numerical tests pass in the recorded host environment.
+
+Integrity checks
+The immutable six-cluster data audit remains unchanged. Its 33 artifacts,
+51 captured source records and executed notebook outputs verify successfully.
+results/calculations.json binds scientific code, protocols, environment and
+calculated arrays/tables. Paper asset manifests bind five evidence tables
+and five vector figures. The build verifies these records and typesets them;
+it does not run a physical model or regenerate scientific figures.
 
 Presentation review
-The final repository PDF has 10 US Letter pages and 22 embedded vector fonts.
-All ten pages were rendered and visually inspected: title/author/abstract,
-three evidence tables, three figures, equations, captions and references are
-legible, with no clipping, overlap or missing glyphs observed. LaTeX reports
-zero overfull boxes or unresolved references; BibTeX reports zero entry
-warnings. The allowed REVTeX style diagnostic is unchanged.
-The saved manuscript also compiles successfully with the desktop editor's
-built-in compiler. The existing source editor was kept open.
+The final PDF has 13 US Letter pages and 24 embedded vector fonts. All pages
+were rendered and inspected. The final legend adjustment changes page 10
+only; that page was inspected again. No clipping, overlapping text, missing
+glyphs, overfull boxes, unresolved citations or BibTeX entry warnings were
+found. The saved source also compiles successfully with the desktop editor's
+built-in compiler. The existing editor remains open.
+The portable archive matches the article, figures, tables and supporting
+calculation records; source/output hashes and citation metadata verify.
 
-Independent numerical review
-Original Gaia catalog and HST profile counts were independently recomputed,
-along with weighted mass-radius correlations and effective sample sizes from
-the original published chains. The common median-radius-span intersection
-was recomputed from original HST radii and the declared catalog scales. These
-checks support the recorded data results, not physical transport validity.
-
-Scientific boundary
-Counts, unit conversions and published posterior summaries are completed
-data-analysis findings. Their implications for source compatibility and
-parameter dependence do not establish calibrated transport coefficients or
-predict remnant residence. Historical numerical reference experiments are
-not evidence for the active formulation and are not rerun for this revision.
+Scientific limits
+Numerical convergence does not validate smooth diffusion from a few heavy
+objects. The expected black-hole count, density and scattering fractions are
+conditional model quantities, not observed counts or measured relaxation.
+The formal outer truncation radius is not an adopted tidal escape boundary.
+No physical impact-parameter range, calibrated discrete-encounter partition,
+merger-conditioned launch law, trajectory ensemble or residence distribution
+has been evaluated. The recorded local coefficients identify the physical
+questions to resolve before that evolution can be interpreted.
