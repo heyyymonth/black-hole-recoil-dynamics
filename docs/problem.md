@@ -10,7 +10,15 @@ The physical question is:
 
 > How do merger-conditioned initial states and a consistent stellar environment determine the probability distribution of recoil trajectories and the environmental exposure accumulated over a finite physical interval?
 
-The study has two components. [Step 1](e001-ballistic-return.md) defines the phase-space evolution. [Step 2](e002-core-exposure.md) defines the functionals of that evolution that measure entry, residence, and species-resolved exposure. The formulation and its required inputs are the present deliverable; no numerical outcome is asserted.
+The study has two components. [Step 1](e001-ballistic-return.md) defines the phase-space evolution. [Step 2](e002-core-exposure.md) defines the functionals of that evolution that measure entry, residence, and species-resolved exposure. An [observational analysis of six clusters](cluster-data-assessment.md) supplies numerical comparisons of candidate host inputs, while remnant trajectories and residence outcomes remain uncalculated.
+
+## Observational findings and their role
+
+The completed analysis compares original projected kinematic profiles and published host posteriors using common variables and units. It retains source selection, shared distance uncertainty, radial coverage and joint parameter dependence. Its findings support one host interface with a distinct conditional distribution for each cluster; they do not establish a universal density profile or calibrated local scattering background.
+
+The [paper](../output/pdf/central-residence.pdf) presents the six-cluster coverage, structural scales, posterior summaries and model comparisons as findings of this study. Parameter dependence and differences between structural estimates identify assumptions that a transport calculation must preserve or test. Neither observation directly predicts how long a kicked remnant returns or resides.
+
+A testable physical hypothesis is that host structure and mass composition affect consistently normalized residence and species exposure under fixed dimensionless launch, remnant-mass, external-field, collision and event conventions. Testing it requires reconstructed, observationally checked host realizations and controlled transport calculations. The current results motivate the comparison without assuming its outcome.
 
 ## Quantities to determine
 

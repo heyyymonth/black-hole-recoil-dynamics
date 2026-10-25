@@ -22,9 +22,10 @@ def require(condition, message):
 
 def verify():
     working = json.loads((ROOT / "paper/working.json").read_text())
-    require(working["status"] == "theory-draft", "Unexpected manuscript scope")
+    require(working["status"] == "theory-and-data-draft", "Unexpected manuscript scope")
     require(working["compile_enabled"] is True, "Theory typesetting must be enabled")
-    require(working["physical_calculations_performed"] is False, "No evaluated model is supplied")
+    require(working["transport_simulations_performed"] is False, "No transport simulation is supplied")
+    require(working["data_analysis_performed"] is True, "Completed cluster-data analysis is included")
     require(working["active_steps"] == ["transport", "exposure"], "Unexpected paper scope")
     source = (ROOT / "paper/manuscript.tex").read_text()
     title = re.search(r"\\title\{([^{}]*)\}", source).group(1)
@@ -76,11 +77,15 @@ def verify():
     require("Step 1:" in (ROOT / "docs/e001-ballistic-return.md").read_text(), "Missing Step 1")
     require("Step 2:" in (ROOT / "docs/e002-core-exposure.md").read_text(), "Missing Step 2")
     require(not re.search(r"E00[1-5]", source), "Internal experiment identifier in article")
-    require(not re.search(r"\\input\{tables/|\\includegraphics", source),
-            "Theory manuscript must not include numerical result tables or figures")
+    expected_tables = {"tables/cluster-coverage.tex", "tables/cluster-scales.tex",
+                       "tables/cluster-posterior.tex"}
+    require(set(re.findall(r"\\input\{([^}]+)\}", source)) == expected_tables,
+            "Expected the three cluster-data evidence tables")
+    require(not any(key in source for key in ("tables/return.tex", "figures/return-time.pdf")),
+            "Historical reference dynamics do not validate the active transport problem")
     print(f"Verified two-step foundation: {len(ACTIVE_DOCS)} documents, {links} local links, "
           f"{displays} display equations; inputs unassigned and title/abstract/citations consistent. "
-          "No physical calculations performed.")
+          "Recorded data findings included; no transport calculations performed.")
 
 
 if __name__ == "__main__":

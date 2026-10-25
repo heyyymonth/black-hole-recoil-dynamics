@@ -1,5 +1,12 @@
 # Release record
 
+## Manuscript 0.5.0-manuscript.1 - 2026-10-24
+
+- Integrate the six-cluster observational findings with the recoil-transport and environmental-exposure formulation.
+- Present source coverage, structural scales and published joint-posterior summaries in three tables and three vector figures.
+- Define common-unit conversions, shared distance covariance and joint host-uncertainty propagation; distinguish completed data calculations from untested transport consequences.
+- Bind manuscript assets and portable source to the captured data revision, retain primary-study attribution and leave physical simulation inputs unassigned.
+
 ## Observed-cluster data 0.1.0 - 2026-10-24
 
 - Capture 51 original public products for six observed cluster candidates, with exact source hashes and source attribution.

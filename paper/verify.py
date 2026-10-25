@@ -1,8 +1,10 @@
-"""Verify the current theoretical manuscript and its portable source archive."""
+"""Verify the formulation and observed-cluster manuscript without rerunning research."""
 from pathlib import Path, PurePosixPath
 import hashlib
 import json
 import re
+import subprocess
+import sys
 import unicodedata
 import zipfile
 
@@ -10,18 +12,45 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.4.0-manuscript.1"
-TAG = "manuscript-v0.4.0.1"
+VERSION = "0.5.0-manuscript.1"
+TAG = "manuscript-v0.5.0.1"
+DATA_REVISION = "cluster-data-v0.1.0"
 CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
+TABLE_ASSETS = (
+    "tables/cluster-coverage.tex", "tables/cluster-scales.tex",
+    "tables/cluster-posterior.tex",
+)
+FIGURE_ASSETS = (
+    "figures/cluster-hst.pdf", "figures/cluster-host-comparison.pdf",
+    "figures/cluster-coverage.pdf",
+)
+DATA_EVIDENCE = (
+    "README.md", "sources.json", "audit.json", "candidate-hosts.json",
+    "derived/catalog_scalars.csv", "derived/root_catalog_comparison.csv",
+    "derived/coverage.csv", "derived/hst_native_and_common_units.csv",
+    "derived/compiled_kinematics_audit.csv", "derived/surface_profiles.csv",
+    "derived/gaia_correlated_curves.csv", "derived/gaia_star_catalog_quality.csv",
+    "derived/posterior_parameters.csv", "derived/posterior_diagnostics.json",
+    "derived/quality.json", "derived/model_product_inventory.json",
+    "derived/observation_bundle_inventory.json",
+)
 ARCHIVE_SOURCE_FILES = {
     "manuscript.tex": "paper/manuscript.tex",
     "references.bib": "paper/references.bib",
     "CITATION.bib": "paper/CITATION.bib",
     "SOURCE_README.txt": "paper/SOURCE_README.txt",
     "LICENSE": "LICENSE",
+    **{name: f"paper/{name}" for name in (*TABLE_ASSETS, *FIGURE_ASSETS)},
+    "evidence/paper-data-assets.json": "paper/data-assets.json",
+    **{f"evidence/observed-clusters/{name}": f"data/observed-clusters/{name}"
+       for name in DATA_EVIDENCE},
 }
+DATA_AUDIT_FILES = tuple(item["path"] for item in json.loads(
+    (ROOT / "data/observed-clusters/audit.json").read_text())["files"])
 INPUT_FILES = tuple(sorted({
     *ARCHIVE_SOURCE_FILES.values(),
+    *DATA_AUDIT_FILES,
+    "paper/data_assets.py", "paper/data_figures.py",
     "paper/build.py", "paper/verify.py", "paper/requirements.txt",
     "paper/toolchain.json", "paper/working.json", "paper/CLAIMS.md",
     "docs/problem.md", "docs/e001-ballistic-return.md", "docs/e002-core-exposure.md",
@@ -54,7 +83,9 @@ def source_metadata(root):
     state = json.loads((paper / "working.json").read_text())
     require(state.get("compile_enabled") is True,
             "Working manuscript source is not ready for compilation (paper/working.json)")
-    require(state.get("status") == "theory-draft", "Expected a complete theoretical draft")
+    require(state.get("status") == "theory-and-data-draft", "Expected a formulation and data-analysis draft")
+    require(state.get("data_analysis_performed") is True, "Completed data analysis must be recorded")
+    require(state.get("transport_simulations_performed") is False, "No transport simulation is reported")
     manuscript = (paper / "manuscript.tex").read_text()
     title_match = re.search(r"\\title\{([^{}]+)\}", manuscript)
     require(title_match is not None, "Expected a plain-text manuscript title")
@@ -65,10 +96,20 @@ def source_metadata(root):
             "Use the two-column REVTeX reprint format")
     require(re.search(r"\\usepackage(?:\[[^]]*\])?\{txfonts\}", manuscript),
             "Expected the declared vector font package")
-    require(not re.search(r"\\(?:input|include|includegraphics)\b", manuscript),
-            "The theory manuscript must be self-contained and use no external result assets")
+    asset_commands = re.findall(r"\\(input|include|includegraphics)\s*(?:\[[^]]*\])?\s*\{([^{}]+)\}", manuscript)
+    require(len(asset_commands) == len(re.findall(r"\\(?:input|include|includegraphics)\b", manuscript)),
+            "Unrecognized external asset command")
+    require(sorted(path for kind, path in asset_commands if kind == "input") == sorted(TABLE_ASSETS),
+            "The article must use exactly the declared cluster-data tables")
+    require(sorted(path for kind, path in asset_commands if kind == "includegraphics") == sorted(FIGURE_ASSETS),
+            "The article must use exactly the declared cluster-data figures")
+    require(not any(kind == "include" for kind, _ in asset_commands), "Undeclared section include")
     require(not re.search(r"E00\d+", manuscript, flags=re.IGNORECASE),
             "Internal experiment identifiers do not belong in the article")
+    bibliography = (paper / "references.bib").read_text()
+    require("github.com/heyyymonth" not in bibliography.lower(), "The article must not cite its own repository")
+    require(not re.search(r"\\section\*?\{[^}]*data and code availability[^}]*\}", manuscript, flags=re.I),
+            "No data and code availability section is requested")
     check_citation((paper / "CITATION.bib").read_text(), (paper / "SOURCE_README.txt").read_text())
     return {"title": title, "manuscript": manuscript}
 
@@ -78,7 +119,8 @@ def inspect_pdf(path, title):
     require(len(reader.pages) > 0, "Empty manuscript PDF")
     text = unicodedata.normalize("NFKC", "\n".join(page.extract_text() for page in reader.pages))
     normalized = compact(text)
-    for required in (title, "Venkata Hemanth Athota", "bharadwaj.hemanth.002@gmail.com", "Step 1", "Step 2"):
+    for required in (title, "Venkata Hemanth Athota", "bharadwaj.hemanth.002@gmail.com",
+                     "Step 1", "Step 2", "NGC 3201", "NGC 6397"):
         require(compact(required) in normalized, f"Missing manuscript text: {required}")
     require(not re.search(r"E00\d+", re.sub(r"\s+", "", text), flags=re.IGNORECASE),
             "Visible internal experiment identifier")
@@ -123,15 +165,27 @@ def inspect_pdf(path, title):
     return {"pages": len(reader.pages), "embedded_vector_fonts": len(fonts)}
 
 
+def verify_evidence(root=ROOT):
+    """Read-only checks; neither verifier downloads data or evaluates a host."""
+    for command in ([sys.executable, str(root / "analysis/cluster_data/verify.py")],
+                    [sys.executable, str(root / "paper/data_assets.py"), "--verify"]):
+        subprocess.run(command, cwd=root, check=True)
+
+
 def verify(root=ROOT):
+    verify_evidence(root)
     meta = json.loads((root / "output/pdf/build.json").read_text())
     require(meta["version"] == VERSION, "Unexpected manuscript version")
-    require(set(meta["input_sha256"]) == set(INPUT_FILES), "Unexpected theory input inventory")
+    require(set(meta["input_sha256"]) == set(INPUT_FILES), "Unexpected manuscript input inventory")
     require(set(meta["output_sha256"]) == OUTPUT_FILES, "Unexpected manuscript output inventory")
-    require(meta.get("physical_calculations_performed") is False, "Theory compilation cannot claim physical calculations")
-    require(meta.get("executed_experiments") == [], "This manuscript reports no executed experiments")
-    require(meta.get("figure_generation") == {"mode": "none", "physical_calculations_performed": False},
-            "Theory compilation must not generate scientific figures")
+    require(meta.get("transport_simulations_performed") is False, "No transport simulation is reported")
+    require(meta.get("executed_during_build") == [], "Compilation must not execute research calculations")
+    require(meta.get("data_analysis") == {
+        "revision": DATA_REVISION, "mode": "reuse-verified-recorded-analysis",
+        "recomputed_during_build": False}, "Incorrect data-analysis provenance")
+    require(meta.get("figure_generation") == {
+        "mode": "reuse-verified-assets", "generated_during_build": False},
+        "Compilation must reuse the verified scientific assets")
     for group in ("input_sha256", "output_sha256"):
         for relative, expected in meta[group].items():
             path = PurePosixPath(relative)
@@ -161,9 +215,9 @@ def verify(root=ROOT):
     require(pdf_info["pages"] == meta["pages"], "Recorded PDF page count mismatch")
     require(pdf_info["embedded_vector_fonts"] == meta["checks"]["embedded_vector_fonts"],
             "Recorded embedded font count mismatch")
-    print(f"Verified theory manuscript {VERSION}: {pdf_info['pages']} US Letter pages, "
+    print(f"Verified formulation and data manuscript {VERSION}: {pdf_info['pages']} US Letter pages, "
           f"{pdf_info['embedded_vector_fonts']} embedded vector fonts, current source and archive hashes, "
-          "and matching citation metadata. No physical calculations performed.")
+          "and matching citation metadata. No transport simulations performed.")
 
 
 if __name__ == "__main__":

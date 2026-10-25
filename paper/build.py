@@ -1,8 +1,9 @@
-"""Compile the two-step theoretical manuscript without physical calculations.
+"""Compile the formulation and data-analysis manuscript from verified assets.
 
-The source archive contains the article, bibliography, license, and pinned
-REVTeX distribution. No experiment runner, result reader, figure renderer,
-trajectory integrator, or numerical research module is imported or executed.
+The source archive contains the article, tables, vector figures, supporting
+data evidence, bibliography, license, and pinned REVTeX distribution. The build
+checks existing records and typesets them; it does not rerun data analysis,
+generate figures, evaluate a host, or integrate a remnant trajectory.
 """
 from datetime import datetime, timezone
 from pathlib import Path
@@ -18,15 +19,15 @@ import tempfile
 import zipfile
 
 from verify import (
-    ARCHIVE_SOURCE_FILES, INPUT_FILES, ROOT, VERSION,
-    inspect_pdf, source_metadata,
+    ARCHIVE_SOURCE_FILES, DATA_REVISION, FIGURE_ASSETS, INPUT_FILES, ROOT,
+    TABLE_ASSETS, VERSION, inspect_pdf, source_metadata, verify_evidence,
 )
 
 
 PAPER = ROOT / "paper"
 OUT = ROOT / "output/pdf"
 TMP = ROOT / "tmp/latex"
-EPOCH = datetime(2026, 10, 23, tzinfo=timezone.utc)
+EPOCH = datetime(2026, 10, 24, tzinfo=timezone.utc)
 
 
 def sha256(path):
@@ -34,11 +35,12 @@ def sha256(path):
 
 
 def build():
+    verify_evidence(ROOT)
     source = source_metadata(ROOT)
     toolchain = json.loads((PAPER / "toolchain.json").read_text())
     for relative in INPUT_FILES:
         if not (ROOT / relative).is_file():
-            raise SystemExit(f"Missing theory manuscript input: {relative}")
+            raise SystemExit(f"Missing manuscript input: {relative}")
     engine = shutil.which("tectonic")
     if not engine:
         raise SystemExit("Install Tectonic 0.16.9; see paper/README.md.")
@@ -65,13 +67,14 @@ def build():
 
     env = os.environ.copy()
     env["SOURCE_DATE_EPOCH"] = str(int(EPOCH.timestamp()))
-    with tempfile.TemporaryDirectory(prefix="theory-source-", dir=TMP) as stage_name:
+    with tempfile.TemporaryDirectory(prefix="manuscript-source-", dir=TMP) as stage_name:
         stage = Path(stage_name)
         with zipfile.ZipFile(revtex_archive) as distribution:
             for item in distribution.infolist():
                 if item.filename.startswith(("tex/latex/revtex/", "bibtex/bst/revtex/")) and not item.is_dir():
                     (stage / Path(item.filename).name).write_bytes(distribution.read(item))
-        for name in ("manuscript.tex", "references.bib"):
+        for name in ("manuscript.tex", "references.bib", *TABLE_ASSETS, *FIGURE_ASSETS):
+            (stage / name).parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(PAPER / name, stage / name)
         command = [engine, "--untrusted", "--keep-logs", "--keep-intermediates",
                    "--outdir", str(stage), "manuscript.tex"]
@@ -99,7 +102,7 @@ def build():
         archive_path = stage / "manuscript-source.zip"
         with zipfile.ZipFile(archive_path, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
             def add(name, content):
-                info = zipfile.ZipInfo(name, date_time=(2026, 10, 23, 0, 0, 0))
+                info = zipfile.ZipInfo(name, date_time=(2026, 10, 24, 0, 0, 0))
                 info.compress_type = zipfile.ZIP_DEFLATED
                 info.external_attr = 0o100644 << 16
                 bundle.writestr(info, content)
@@ -120,10 +123,12 @@ def build():
         "version": VERSION,
         "title": source["title"],
         "pages": pdf_info["pages"],
-        "scope": "Two-step theoretical formulation: transport and environmental exposure",
-        "physical_calculations_performed": False,
-        "executed_experiments": [],
-        "figure_generation": {"mode": "none", "physical_calculations_performed": False},
+        "scope": "Two-step transport formulation and six-cluster observational data analysis",
+        "transport_simulations_performed": False,
+        "executed_during_build": [],
+        "data_analysis": {"revision": DATA_REVISION, "mode": "reuse-verified-recorded-analysis",
+                          "recomputed_during_build": False},
+        "figure_generation": {"mode": "reuse-verified-assets", "generated_during_build": False},
         "format": "REVTeX 4.2 APS/PRD reprint; US Letter; two columns; txfonts",
         "engine": engine_version,
         "source_date_epoch": env["SOURCE_DATE_EPOCH"],
@@ -141,8 +146,8 @@ def build():
         "output_sha256": {str(path.relative_to(ROOT)): sha256(path) for path in (pdf, archive)},
     }
     (OUT / "build.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(f"Built {pdf_info['pages']}-page theory manuscript {VERSION} and portable source archive. "
-          "No physical calculations performed.")
+    print(f"Built {pdf_info['pages']}-page formulation and data manuscript {VERSION} "
+          "and portable source archive. Reused verified data assets; no transport simulations performed.")
 
 
 if __name__ == "__main__":

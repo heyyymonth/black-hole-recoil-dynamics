@@ -2,6 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{txfonts}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{microtype}
 \usepackage[hidelinks,pdfusetitle]{hyperref}
 
@@ -13,7 +14,7 @@
 \affiliation{Independent researcher}
 
 \begin{abstract}
-Anisotropic gravitational-wave emission can impart a recoil velocity to the black hole formed by a merger. In a stellar cluster, the resulting motion depends on the merger location, the progenitor's center-of-mass velocity, the cluster's mass and velocity distributions, and gravitational scattering. Remaining bound does not determine when a remnant enters a dense region or how long it occupies that region. We formulate a two-stage description of this problem. A merger-conditioned phase-space transport model combines smooth gravity, external differential acceleration, mean collisional drift, and stochastic velocity diffusion. Finite-region entry, residence, and species-resolved environmental exposure are then defined on the resulting trajectories, with explicit treatment of termination, censoring, and host uncertainty. The formulation specifies the physical inputs and trajectory information needed for subsequent numerical investigation without selecting a cluster model or claiming calibrated transport predictions. Its immediate objective is to determine how recoil and the stellar environment jointly control the remnant's time-dependent occupation of dense cluster regions.
+Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We develop a merger-conditioned transport formulation and define finite-region residence and species-resolved environmental exposure on its trajectories. We then examine its observational inputs using public astrometric and structural products and published multimass-model posteriors for six Galactic clusters. Native measurements are compared in common physical and dimensionless units while preserving tracer selection and joint parameter dependence and recording shared distance uncertainty. The analysis identifies restricted common radial sampling, strong mass--radius correlations in several host posteriors, and differences between published structural estimates that cannot be interpreted as cluster evolution. These findings establish a source-aware basis for constructing candidate environments and identify the local stellar distributions still needed to evaluate transport. The reported numerical results concern observations and existing host inferences; remnant trajectories, friction coefficients, and residence distributions remain to be calculated.
 
 \end{abstract}
 \maketitle
@@ -28,7 +29,142 @@ The necessary kinetic ingredients are established. Rosenbluth collision integral
 
 We formulate two linked problems. Step~1 defines merger-conditioned transport in position and velocity, with an explicit matter inventory, reference frame, collision closure, and termination rule. Step~2 defines finite-region entry, residence, and species-resolved environmental exposure on the resulting histories. Their common output is a timed description of the remnant's occupation of its environment. The immediate question is which launch and host information must be retained to predict these observables at a declared accuracy.
 
-The paper specifies a theoretical calculation rather than reporting evaluated trajectories or fits. No host family, numerical parameters, data-conditioned posterior, or accuracy threshold is selected. Distribution-function families can help supply consistent host models~\cite{Gieles2015}, but naming such a family does not determine its parameters, hidden mass components, or collision coefficients. The formulation distinguishes these physical inputs from the observables that a subsequent calculation would measure.
+We connect this formulation to an analysis of six observed Galactic clusters. Proper-motion profiles, structural estimates, and published multimass-model posteriors permit concrete comparisons of host scales and parameter dependence. Distribution-function families can supply candidate consistent hosts~\cite{Gieles2015}, but measured projected kinematics are not themselves local phase-space distributions. Our numerical findings concern this observational connection: which quantities can be compared, which dependencies must be preserved, and which inputs remain unestablished. We do not refit the clusters or infer recoil, friction, or residence outcomes from these comparisons.
+
+\section{Observational inputs and comparison method}\label{sec:data-method}
+
+\subsection{Sample and source distinctions}
+
+We examine NGC 0104 (47 Tuc), NGC 1851, NGC 3201, NGC 5139 ($\omega$ Centauri), NGC 6121 (M4), and NGC 6397. This deliberately selected sample provides varied mass and size scales and public kinematic and model products. It is not a complete cluster census or a selection-corrected population of black-hole-merger hosts.
+
+For five clusters we use the original binned Hubble Space Telescope (HST) proper-motion products of Libralato et al.~\cite{Libralato2022}. For $\omega$ Centauri we use the logarithmic radial bins released with H\"aberle et al.~\cite{Haberle2025}. The former dispersion profiles use bright subgiant and red-giant tracers, whereas the latter use the full magnitude range. Stellar mass and selection can affect dispersion in a partially relaxed system; converting the units cannot remove this distinction.
+
+We inspect the original Gaia EDR3 field catalogs and fitted radial curves of Vasiliev and Baumgardt~\cite{Vasiliev2021}, separately from compiled kinematic profiles. Membership probabilities, quality flags, measurement errors, and source identifiers describe the field catalogs. They do not make every listed star a cluster member, and raw proper-motion spread is not an intrinsic velocity dispersion. The released smooth radial curves are correlated fit products; their grid points are not independent observational bins.
+
+Structural comparison values are taken from one captured path of the Baumgardt cluster database associated with the modeling and distance studies in Refs.~\cite{Baumgardt2018,Baumgardt2021}.\footnote{The selected structural table is \href{https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/parameter.html}{the database's /newdata/ parameter table}. The root-path table is retained as a separate comparison; values from the two paths are not merged.} These values are model-derived estimates. In particular, a three-dimensional half-mass radius is distinct from a projected half-light or core radius. The compiled surface profiles mix normalized stellar counts and, for some sources, surface brightness; they are not directly a three-dimensional mass density.
+
+For a separate view of host uncertainty, we inspect the released standard-fit multimass posterior samples discussed by Dickson et al.~\cite{Dickson2023,Dickson2024}. Original observations, compilations, and these posterior products share underlying evidence. We keep the views separate rather than multiply them together as independent likelihood factors. The complete data collection comprises 51 captured files, including supporting source definitions and historical candidate observation bundles.
+
+\subsection{Native measurements, units, and shared uncertainty}
+
+For angular radius $\alpha$, distance $D$, and proper-motion dispersion $\sigma_\mu$, the small-angle conversions are
+\begin{align}
+\frac{R}{\mathrm{pc}}&=
+\frac{1000}{206264.806}
+\frac{D}{\mathrm{kpc}}\frac{\alpha}{\mathrm{arcsec}},
+\label{eq:angular-conversion}\\
+\frac{\sigma_\perp}{\mathrm{km\,s^{-1}}}&=
+4.74047046\,
+\frac{D}{\mathrm{kpc}}
+\frac{\sigma_\mu}{\mathrm{mas\,yr^{-1}}}.
+\label{eq:pm-conversion}
+\end{align}
+The radial and tangential proper-motion components are projected components, not radial and tangential velocities in three-dimensional space. Line-of-sight dispersions already expressed in physical velocity units require no proper-motion conversion. Native measurements and asymmetric errors are retained alongside the display conversions.
+
+For a vector of converted quantities $\mathbf y(D)$, a shared distance error contributes, to first order,
+\begin{equation}
+C^{(D)}_{ab}=
+\frac{\partial y_a}{\partial D}
+\frac{\partial y_b}{\partial D}\sigma_D^2.
+\label{eq:distance-covariance}
+\end{equation}
+This is one covariance contribution, not the complete uncertainty model. Independence of distance and the measured quantities is not guaranteed, particularly for a kinematic distance. Joint propagation must retain any cross-covariances. Our plots condition on a catalog distance and show converted measurement errors only; distance derivatives and uncertainty are recorded separately. They are not added as independent errors in each radial bin.
+
+Using total mass $M$ and three-dimensional half-mass radius $r_h$ from the same catalog view, define comparison scales
+\begin{equation}
+r_0=r_h,\qquad v_0=\sqrt{\frac{GM}{r_h}},\qquad
+t_0=\frac{r_h}{v_0}.
+\label{eq:comparison-scales}
+\end{equation}
+We use $G=4.30091727\times10^{-3}\,\mathrm{pc}\,
+(\mathrm{km\,s^{-1}})^2M_\odot^{-1}$ and convert
+$1\,\mathrm{pc}/(\mathrm{km\,s^{-1}})=0.97779222\,\mathrm{Myr}$.
+The quantities $R/r_h$ and $\sigma_\perp/v_0$ provide common comparison coordinates. This does not impose a shared density profile or make the clusters homologous. Neither $v_0$ nor $t_0$ is a measured dispersion, escape speed, or relaxation time. Uncertainty in the joint mass, radius, and distance scales is not propagated into these display plots.
+
+\subsection{Joint host parameters}
+
+The inspected posterior products share the coordinate pattern
+\begin{align}
+\boldsymbol\theta_c={}&(W_0,M,r_h,\ell_a,g_{\rm t},\delta,
+s^2,F,\nonumber\\
+&\alpha_1,\alpha_2,\alpha_3,f_{\rm ret},D)_c ,
+\label{eq:host-coordinates}
+\end{align}
+for cluster $c$. Here $\ell_a$ is the base-10 logarithm of the dimensionless anisotropy radius, $g_{\rm t}$ controls truncation, and $\delta$ governs the mass dependence of the velocity scale. These quantities belong to the specified lowered-isothermal and stellar-evolution model~\cite{Gieles2015,Dickson2023}. The mass-function slopes $\alpha_i$ and black-hole retention parameter $f_{\rm ret}$ retain that model's conventions. The stored retention parameter is a percentage, not the present-day black-hole mass fraction. The coordinates $s^2$ and $F$ are likelihood nuisance parameters rather than forces or velocity factors. The symbol $g_{\rm t}$ is separate from the geometric region function and Rosenbluth potentials below.
+
+We normalize each stored log weight $\ell_k^{\,w}$ as
+\begin{equation}
+w_k=\frac{\exp(\ell_k^{\,w}-\ell_{\max}^{\,w})}
+{\sum_l\exp(\ell_l^{\,w}-\ell_{\max}^{\,w})}.
+\label{eq:posterior-weights}
+\end{equation}
+Moments and marginal quantiles are computed directly from complete weighted rows, without resampling or evaluating a host model. For example,
+\begin{align}
+\overline{\boldsymbol\theta}&=\sum_k w_k\boldsymbol\theta_k,\\
+\mathsf C_\theta&=\sum_k w_k
+(\boldsymbol\theta_k-\overline{\boldsymbol\theta})
+(\boldsymbol\theta_k-\overline{\boldsymbol\theta})^{\mathsf T}.
+\label{eq:posterior-covariance}
+\end{align}
+This is the covariance of the weighted empirical posterior; it is not a finite-sample unbiased estimator. Marginal quantiles use interpolation in the sorted weighted cumulative distribution. Nuisance coordinates remain in the joint records, and marginal summaries do not define independent parameter draws.
+
+Exact observation-file and software-revision identifiers were not found in the inspected run metadata. Historical candidate inputs are therefore documented without claiming a reproduced fit. Current resources cannot automatically replace the inputs to an older posterior. The distinct NGC 6397 no-black-hole alternative discussed in Ref.~\cite{Dickson2024} has a released summary and figures but no corresponding chain in the inspected release.
+
+\section{Observational findings}\label{sec:findings}
+
+\subsection{Coverage and source reconciliation}
+
+Table~\ref{tab:cluster-coverage} summarizes the inspected products. The six original Gaia field catalogs contain 621,878 rows, with no repeated source identifier within a cluster. The HST products provide 107 radial bins and 321 component records. Combined, projected radial, and projected tangential dispersions in a bin share stars; the combined value is not a third independent measurement. The released Gaia curves contain 101 grid points per cluster, or 606 correlated samples in total.
+
+\input{tables/cluster-coverage.tex}
+
+The separate compilation contains 418 kinematic rows, of which 20 require reconciliation: four zero-radius entries for NGC 1851, one all-zero entry for $\omega$ Centauri, and 15 NGC 6397 entries whose dispersion equals both quoted errors. Four NGC 1851 records also share one radius, source, and component key. These observations motivate flags, not guessed corrections or a claim that every flagged value is physically impossible. The compilation is retained for comparison and is not treated as an approved likelihood input. The 422 surface-profile records likewise retain their unresolved absolute mass normalization.
+
+Figure~\ref{fig:cluster-coverage} shows the variation in radial sampling. At the catalog point scales, the intersection of the six HST median-radius spans is approximately $0.081$--$0.251$ in projected $R/r_h$. This is not exact shared annular coverage: most HST bin edges are unavailable, and a span does not establish sampling density between its endpoints. No common radial interpolation or likelihood is constructed.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figures/cluster-coverage.pdf}
+\caption{Spans of original HST median-bin radii in common comparison coordinates. Numbers at the right give radial-bin counts. Dashed lines mark the intersection of the six spans at fixed catalog scales. They do not represent bin edges or a common three-dimensional domain.}
+\label{fig:cluster-coverage}
+\end{figure}
+
+\subsection{Structural scales and projected kinematics}
+
+Table~\ref{tab:cluster-scales} reports the selected structural estimates and derived scales. Catalog mass ranges from $8.88\times10^4\,M_\odot$ for M4 to $3.32\times10^6\,M_\odot$ for $\omega$ Centauri; the listed central escape speeds range from $18.6$ to $61.9\,\mathrm{km\,s^{-1}}$. These are conditional model estimates, not a measured retention law for merger remnants. Retention would additionally depend on position, inherited progenitor motion, recoil direction, external gravity, and the criterion used to classify escape.
+
+\input{tables/cluster-scales.tex}
+
+The derived time scales span approximately $0.155$--$0.851\,\mathrm{Myr}$. They establish dimensional comparison units, not return or damping times. Radius and escape-speed errors are not supplied with these catalog entries; the quoted mass and distance errors also do not capture every model systematic. Mixing a catalog mass with a radius or distance from a different fit would create an unsupported joint parameter combination.
+
+Figure~\ref{fig:cluster-hst} compares original HST radial and tangential dispersions at the catalog scales. It displays the available projected constraints without fitting a common profile. Tracer selection, scale uncertainty, calibration, and radial sampling differ across clusters. Consequently the figure neither demonstrates universal kinematics nor statistically rejects them. HST transformations can remove sky-plane streaming signals~\cite{Libralato2022}; absence of such a signal in these dispersion products is not evidence of zero cluster rotation.
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{figures/cluster-hst.pdf}
+\caption{Original projected radial and tangential HST proper-motion dispersions in common dimensionless coordinates. Circles and squares distinguish components. Five clusters use the bright-tracer profiles of Libralato et al.~\cite{Libralato2022}; $\omega$ Centauri uses the full-magnitude-range profiles of H\"aberle et al.~\cite{Haberle2025}. Error bars retain the source measurement-error convention and condition on catalog point scales. Shared distance and joint structural uncertainty are not fully propagated. Components and bins need not be statistically independent.}
+\label{fig:cluster-hst}
+\end{figure*}
+
+\subsection{Posterior dependence and model sensitivity}
+
+Table~\ref{tab:cluster-posterior} reports selected marginal summaries of the published standard-fit samples. The effective sample sizes, calculated as $1/\sum_k w_k^2$, reproduce all six printed source values and range from approximately 5,171 to 6,889. Twelve parameter rows differ beyond three-decimal rounding in a mean or standard deviation. The original summary procedure averages statistics from resampled runs, whereas Eqs.~\eqref{eq:posterior-weights}--\eqref{eq:posterior-covariance} describe the original weighted sample. This estimator distinction permits close agreement without rounding-identical moments; it does not establish exact source-fit reproduction.
+
+\input{tables/cluster-posterior.tex}
+
+Mass and radius have weighted correlations of $0.900$ in NGC 3201 and $0.944$ in $\omega$ Centauri. Independent sampling of their marginal distributions would discard these dependencies. Because the scales in Eq.~\eqref{eq:comparison-scales} involve ratios and products of these parameters, uncertainty should be propagated from complete host realizations. This requirement also applies to quantities derived from a realization, including its potential and species distributions.
+
+Figure~\ref{fig:cluster-host-comparison} compares the published multimass marginal estimates with the structural catalog. For example, NGC 6397 has catalog $r_h=3.17\,\mathrm{pc}$, compared with a standard-fit posterior median $4.887\,\mathrm{pc}$ and marginal 16th--84th interval $[4.747,5.044]\,\mathrm{pc}$. The latter is not the unavailable alternative no-black-hole chain. This difference identifies sensitivity to model and data choices; it is neither temporal expansion measured between releases nor a statistical rejection using independent datasets.
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{figures/cluster-host-comparison.pdf}
+\caption{Structural-catalog estimates (open squares) and published standard-fit posterior marginals (circles with 16th--84th intervals). The mass axis is logarithmic. Catalog mass and distance errors are shown where provided; catalog radius errors are unavailable. Source observations overlap, and model assumptions differ. The NGC 6397 standard fit is kept distinct from its no-black-hole alternative. The comparison measures dependence on the adopted inference, not cluster evolution.}
+\label{fig:cluster-host-comparison}
+\end{figure*}
+
+\subsection{What the comparison establishes}
+
+The analysis supports a common field and unit convention with a distinct joint host distribution for each cluster. It does not establish six interchangeable scattering backgrounds. NGC 3201 and 47 Tuc provide initial candidates for reproducing a published host and checking its projected observables, with rotation explicitly assessed for 47 Tuc. NGC 1851 and M4 extend the structural comparison. NGC 6397 tests sensitivity in a core-collapsed system, while $\omega$ Centauri requires particular attention to rotation, flattening, and mass-dependent tracer selection~\cite{Haberle2025,Dickson2024}.
+
+Published density and cumulative-mass bands do not by themselves provide mutually consistent local host realizations. Independently assembling median profiles could violate the consistency between mass density, gravity, and velocity structure. These observational findings therefore constrain how the following transport problem should be supplied with inputs; they do not evaluate its drift, diffusion, or trajectory observables.
 
 \section{Step 1: recoil transport}\label{sec:transport}
 
@@ -351,7 +487,18 @@ Host uncertainty, launch uncertainty, and physical scattering are different sour
 \end{align}
 The inner expectation includes the Wiener forcing and any additional randomness in a supplied stopping-event model. This factorization preserves conditional dependence. Merger selection can change host weights as well as launch properties. Alternative host families require separate conditioning or explicit model probabilities. Region definitions, reference densities, and any selection-dependent horizon must also be specified consistently.
 
-Observed stellar kinematics constrain a host through an inference problem; they do not directly provide the entire potential, hidden remnant populations, or collision coefficients. Distribution-function models offer a possible route to consistency~\cite{Gieles2015}, but observational constraints, inferred functions, and simulation inputs must retain separate provenance. No posterior or model probabilities are evaluated here.
+Observed stellar kinematics constrain a host through an inference problem; they do not directly provide the entire potential, hidden remnant populations, or collision coefficients. The posterior summaries in Sec.~\ref{sec:findings} quantify dependence within published candidate fits. They do not determine probabilities for competing host families or their merger-conditioned weights.
+
+For a fixed observed cluster $c$, a compatible reconstructed host law $\Pi_c(d\Theta\mid\mathcal D_c)$ would enter a trajectory-observable distribution as
+\begin{equation}
+\Pr_c(O\in A\mid\mathcal D_c,\lambda)
+=\int\Pr(O\in A\mid\Theta,\lambda)\,
+\Pi_c(d\Theta\mid\mathcal D_c).
+\label{eq:observational-propagation}
+\end{equation}
+Here $A$ is a measurable set of observable values, not the drift vector $\mathbf A$, and $\lambda$ retains the declared launch, recoil, collision, boundary, and horizon choices. The integrand includes the launch and path averaging in Eq.~\eqref{eq:uncertainty}. This expression is a conditional modeling prescription, not an evaluated prediction. A merger-selected population additionally needs the host reweighting in Eq.~\eqref{eq:uncertainty}; the six clusters are not assigned universal population weights.
+
+Each host realization must supply the same $F_j$ to Eqs.~\eqref{eq:number-density}--\eqref{eq:dispersion} and \eqref{eq:rosenbluth-h}--\eqref{eq:rosenbluth-diffusion}. The density used for exposure must come from that realization as well. At present, the projected data and candidate posterior records do not establish those local functions. Reproducing a source fit and its projected observables precedes any test of its suitability for drift and diffusion. Present-day observations also do not identify the stellar environment at a historical merger epoch.
 
 \subsection{Information passed between the two steps}
 
@@ -377,7 +524,17 @@ The central object of the formulation is a merger-conditioned, time-resolved dis
 
 The description permits off-center launches, inherited progenitor motion, anisotropic and streaming stellar populations, time-dependent gravity, and stochastic velocity changes. These dependences are available in the equations; they are not all measured or independently adjustable parameters. A physical realization must justify how they are constrained together and where the adopted closure applies.
 
-The formulation itself supplies no calibrated transport prediction. Its contribution is to organize the necessary assumptions, conditioning, and observables into one consistent initial-value and accumulation problem. Continued motion after entry, survival weighting, and termination status remain part of that problem rather than being hidden in a return-time prescription.
+The observational analysis makes several requirements concrete. Common units allow direct display comparisons, but source overlap and differing stellar selections prevent automatic construction of a shared likelihood. Strong mass--radius dependence in some published posteriors requires complete host realizations rather than independent marginal draws. Differences between structural estimates make the host prescription itself an uncertainty to examine. None of these findings alone supplies a local scattering distribution.
+
+For a controlled comparison, define
+\begin{equation}
+\widetilde C=\frac{C_T}{t_0},\qquad
+\widetilde J_j=\frac{J_{j,T}r_h^3}{M t_0}.
+\label{eq:dimensionless-observables}
+\end{equation}
+A testable next hypothesis is that host structure and stellar-mass composition leave differences in these dimensionless observables after fixing the dimensionless launch law, remnant-to-host mass ratio, $T/t_0$, region scaled by $r_h$, external-field treatment, collision prescription and termination conventions. The current analysis motivates this hypothesis by identifying structural variation and correlated host uncertainty; it does not test the transport consequence. A controlled comparison must first reproduce compatible host models, then compare the same dimensionless launch and event definitions while propagating each host's joint uncertainty. The gravitational scales alone cannot decide whether the resulting trajectory observables coincide.
+
+The formulation supplies the conditional evolution and accumulation problem needed for that comparison. Continued motion after entry, survival weighting, and termination status remain explicit. Its connection to observed clusters is now supported by measured coverage and published host distributions, while calibrated friction, return, and residence predictions remain open calculations.
 
 Timed position--velocity histories can eventually be combined with a separately justified companion population and interaction law. Residence and density exposure alone do not supply either ingredient. Companion acquisition, binary evolution, subsequent mergers, and inference from observed gravitational-wave sources therefore require additional physical descriptions beyond the two steps defined here.
 

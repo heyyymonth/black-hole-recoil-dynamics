@@ -1,15 +1,17 @@
 {
-  "status": "theory-draft",
+  "status": "theory-and-data-draft",
   "compile_enabled": true,
   "title": "Recoil transport and environmental exposure of black-hole merger remnants",
-  "abstract": "Anisotropic gravitational-wave emission can impart a recoil velocity to the black hole formed by a merger. In a stellar cluster, the resulting motion depends on the merger location, the progenitor's center-of-mass velocity, the cluster's mass and velocity distributions, and gravitational scattering. Remaining bound does not determine when a remnant enters a dense region or how long it occupies that region. We formulate a two-stage description of this problem. A merger-conditioned phase-space transport model combines smooth gravity, external differential acceleration, mean collisional drift, and stochastic velocity diffusion. Finite-region entry, residence, and species-resolved environmental exposure are then defined on the resulting trajectories, with explicit treatment of termination, censoring, and host uncertainty. The formulation specifies the physical inputs and trajectory information needed for subsequent numerical investigation without selecting a cluster model or claiming calibrated transport predictions. Its immediate objective is to determine how recoil and the stellar environment jointly control the remnant's time-dependent occupation of dense cluster regions.",
-  "manuscript_version": "0.4.0-manuscript.1",
-  "manuscript_tag": "manuscript-v0.4.0.1",
+  "abstract": "Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We develop a merger-conditioned transport formulation and define finite-region residence and species-resolved environmental exposure on its trajectories. We then examine its observational inputs using public astrometric and structural products and published multimass-model posteriors for six Galactic clusters. Native measurements are compared in common physical and dimensionless units while preserving tracer selection and joint parameter dependence and recording shared distance uncertainty. The analysis identifies restricted common radial sampling, strong mass--radius correlations in several host posteriors, and differences between published structural estimates that cannot be interpreted as cluster evolution. These findings establish a source-aware basis for constructing candidate environments and identify the local stellar distributions still needed to evaluate transport. The reported numerical results concern observations and existing host inferences; remnant trajectories, friction coefficients, and residence distributions remain to be calculated.",
+  "manuscript_version": "0.5.0-manuscript.1",
+  "manuscript_tag": "manuscript-v0.5.0.1",
   "formulation_version": "formulation-1",
   "formulation_tag": "formulation-v1",
   "active_steps": [
     "transport",
     "exposure"
   ],
-  "physical_calculations_performed": false
+  "data_analysis_performed": true,
+  "transport_simulations_performed": false,
+  "data_revision": "cluster-data-v0.1.0"
 }

@@ -58,7 +58,7 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
               stream.write(f'scientific={str(bool(scientific_paths)).lower()}\n')
           print('Scientific changes:', json.dumps(scientific_paths))
-          print('Documentation-only runs verify the foundation and compile the theoretical paper; no physical calculations.')
+          print('Documentation-only runs verify the foundation and compile the formulation and data paper; no transport calculations.')
           PY
 
   numerical:
@@ -118,7 +118,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/tectonic-bin"
           tar -xzf "$RUNNER_TEMP/tectonic.tar.gz" -C "$RUNNER_TEMP/tectonic-bin" tectonic
           echo "$RUNNER_TEMP/tectonic-bin" >> "$GITHUB_PATH"
-      - name: Compile theoretical manuscript without physical calculations
+      - name: Compile formulation and data manuscript without transport calculations
         run: python paper/build.py
       - name: Verify rebuilt manuscript
         run: python paper/verify.py

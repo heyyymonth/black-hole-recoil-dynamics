@@ -1,0 +1,25 @@
+{
+  "data_revision": "cluster-data-v0.1.0",
+  "scope": "presentation of recorded observations and published posterior summaries",
+  "transport_simulations_performed": false,
+  "input_sha256": {
+    "paper/data_assets.py": "9b53dbcbeb519dfb39c9b01ad34c6c5d3625c1102b5ce14900ff92b0e2a16ae4",
+    "paper/data_figures.py": "1d7af1a34da74d2e1d36a420d174ccf4f04b559b05121bc0bfae2af3ae6adb87",
+    "analysis/cluster_data/requirements-lock.txt": "a5845ad0337a2fdd5acc372130d3074b1f507f847ca50e49c71b3d45f2ad37ea",
+    "data/observed-clusters/audit.json": "8ce668703d6e35108dc7f5bebf7f9c9a3e7472e7f2dbfe78f34223183c67f2ff",
+    "data/observed-clusters/derived/coverage.csv": "9aff6e208da59de62b45cc1b548fa6ce48b29d074d0250377101d663a7dc2a74",
+    "data/observed-clusters/derived/catalog_scalars.csv": "f0579850119b723c2a657f25123efdcae286889fd134fef3e5861aa190408df0",
+    "data/observed-clusters/derived/posterior_parameters.csv": "b83d077b1fac8a13f332dc1edb4e086575a8302ffe364cdd823d8f1a4b87150d",
+    "data/observed-clusters/derived/posterior_diagnostics.json": "90992d741966c472ac1da701f1dedbef0295da108c43646501750f8384b0ff23",
+    "data/observed-clusters/derived/hst_native_and_common_units.csv": "e906b320274611a85ad0f5fffe62ac3f92e065256515b2c335361b0bfc816466",
+    "data/observed-clusters/derived/gaia_star_catalog_quality.csv": "5562f4d953664ca131ca7fc66a76b40ad247015ac9fa221dc278ed3ea40bd34f"
+  },
+  "output_sha256": {
+    "tables/cluster-coverage.tex": "497130060c3e3b9443f8e6911122759a4f1719a48e89b71b621f76d31b2f4ba7",
+    "tables/cluster-scales.tex": "95870ab3e677609c12e396a19c07ab9f3813503e9ecef894b634defb25191b69",
+    "tables/cluster-posterior.tex": "b187c8f3f44bc24b0be3770025d2775017f810198d52c27fd42b2c40a9fcec33",
+    "figures/cluster-hst.pdf": "a6b4756f9aa25480febcbd88e2306847779ba3f24174c0134716e161365b6b60",
+    "figures/cluster-host-comparison.pdf": "ad142f28862540749850337f2c4667043f10f465d6d7be3b5946af3cf404878f",
+    "figures/cluster-coverage.pdf": "eeca008f10f9e2cdc964e80c038313586cb5823c7ddeff86c289c4d71f0eade7"
+  }
+}

@@ -1,33 +1,45 @@
-Integrated manuscript packaging verification, 22 October 2026.
+Formulation and observed-cluster manuscript verification
+Revision 0.5.0-manuscript.1; 24 October 2026
 
-Existing numerical study inputs and results are unchanged. The numerical validation below is retained from revision 0.3.0-manuscript.2 on 21 October 2026. Packaging verification was repeated for revision 0.3.0-manuscript.4. The PDF is byte-identical to revision 0.3.0-manuscript.3, so its visual review remains applicable; no redundant rendering or numerical rerun was performed.
+Scope
+The article combines the two-step theoretical formulation with the completed
+six-cluster data analysis. Typesetting reuses verified tables and vector
+figures. No host fit, friction calculation, remnant orbit or residence
+experiment is executed by the build or its verification.
 
-$ .venv/bin/python -m pytest -q
-........................................................................ [ 40%]
-........................................................................ [ 80%]
-....................................                                     [100%]
-180 passed in 2.26s
+Required integrity checks
+- analysis/cluster_data/verify.py validates the captured data revision,
+  source-record and derived-table consistency, candidate host records,
+  completed notebook outputs and audited file hashes.
+- paper/data_assets.py --verify validates the source-bound table and figure
+  assets without regenerating them.
+- scripts/verify_foundation.py checks the current formulation and metadata.
+- paper/build.py verifies the evidence, typesets the declared source assets,
+  checks LaTeX/BibTeX diagnostics, and creates the portable source archive.
+- paper/verify.py checks source/output hashes, exact archive contents,
+  citations, two-column source format, US Letter pages, embedded vector
+  fonts, and absence of raster figures or internal experiment identifiers.
 
-$ .venv/bin/python experiments/verify_results.py
-Verified 146 result rows and all recorded source/output hashes.
+Presentation review
+The final repository PDF has 10 US Letter pages and 22 embedded vector fonts.
+All ten pages were rendered and visually inspected: title/author/abstract,
+three evidence tables, three figures, equations, captions and references are
+legible, with no clipping, overlap or missing glyphs observed. LaTeX reports
+zero overfull boxes or unresolved references; BibTeX reports zero entry
+warnings. The allowed REVTeX style diagnostic is unchanged.
+The saved manuscript also compiles successfully with the desktop editor's
+built-in compiler. The existing source editor was kept open.
 
-$ .venv/bin/python experiments/verify_e003.py
-Verified 4 E003 rows, physical scales, decision summary, and all recorded hashes.
+Independent numerical review
+Original Gaia catalog and HST profile counts were independently recomputed,
+along with weighted mass-radius correlations and effective sample sizes from
+the original published chains. The common median-radius-span intersection
+was recomputed from original HST radii and the declared catalog scales. These
+checks support the recorded data results, not physical transport validity.
 
-$ .venv/bin/python experiments/verify_e004.py
-Verified E004: external input hashes, 5 population rows, 12 trajectory rows, 160 profile points, summary and source/output hashes.
-
-$ .venv/bin/python experiments/verify_e005.py
-Verified E005: 7537 exact external inputs, 126 histories, 119 selected states; all tables, source/output hashes, E004 cross-checks and independent scalar census.
-
-$ .venv/bin/python paper/verify.py
-Verified manuscript v0.3.0-manuscript.4: hashes, 10 US Letter pages, 11 embedded vector fonts, no raster figures/equations, no visible experiment identifiers, and matching archive citation/README revisions and source tag.
-
-Packaging checks: CITATION.bib and SOURCE_README.txt each occur once in the portable ZIP, match their repository files byte-for-byte, and are bound by the build manifest. Both identify revision 0.3.0-manuscript.4 and the versioned source tag manuscript-v0.3.0.4. The article bibliography contains no project self-citation.
-
-Unchanged-content check: manuscript.tex, references.bib, the PDF, all six figure PDFs, and all six table fragments match commit 4b7aeb8bee80dd8a2bc96270d8f5d88128bc1a97 byte-for-byte.
-PDF SHA-256: 6993e9c649149f4c920f82ae5a5594aaa11a4626cd13202e854f4499098ad8be
-
-Retained visual review from revision 0.3.0-manuscript.3: all ten rendered pages inspected at 150 dpi. Six vector figures and six native tables are legible; no clipping, visible internal experiment identifiers, or publication watermark. Natural paragraph spacing is preserved, and the full bibliography fits on page ten.
-
-Editorial verification: the 210-word abstract introduces the physical context, question, methods, qualitative findings and calibration limits. All nine citations resolve to nine research-paper bibliography entries. Author and contact appear correctly. The PDF and portable source agree with the manuscript and bibliography. Methods identify the simulation input, equilibrium distribution and numerical method. Scientific statements distinguish completed findings from the proposed conditional accessibility hypothesis. All numerical study inputs and results match the preceding revision.
+Scientific boundary
+Counts, unit conversions and published posterior summaries are completed
+data-analysis findings. Their implications for source compatibility and
+parameter dependence do not establish calibrated transport coefficients or
+predict remnant residence. Historical numerical reference experiments are
+not evidence for the active formulation and are not rerun for this revision.
