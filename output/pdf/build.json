@@ -91,14 +91,14 @@
     "data/observed-clusters/derived/root_catalog_comparison.csv": "c0454a414b67032d77987789c90e0af434441191303e82a105b6dbd709d88ad1",
     "data/observed-clusters/derived/surface_profiles.csv": "3814d11782db596810d64e62f2cca681846525f0071d4dcca87de9dd28fb58fd",
     "data/observed-clusters/sources.json": "55711544e43b124ec2796cdb3a1b4a472111b3e04c01534bad40a8033806e924",
-    "docs/calculation-handoff.md": "690441c9a910b714158fb719b95df387137780c939527eedc2ebae38316352f5",
+    "docs/calculation-handoff.md": "0fcb05d9f4756c1a53d96b6fea081b8eafca9be9fdcd90daed8b63ed546fc57e",
     "docs/cluster-data-assessment.md": "eb2c3a3d1480ea84ec9800f1c514ca2a0b9b1f229430650e46b764edb9666ef3",
     "docs/cluster-host-schema.md": "920a7d4159db9acf0ca166f9bc86323ddf13a05aca272d1ec1dfcd4d744095ab",
     "docs/e001-ballistic-return.md": "660f4141148f5e8e01f2c6e79769d83d1b85435254af636a49e6281471d2cbe2",
     "docs/e002-core-exposure.md": "2a01524d5691ff0ef0b980dd064e25e7e958e660acd55b3091a2ebb0ef6128e9",
     "docs/host-reconstruction-protocol.md": "b25928c717ccabf6e30e395d706ecf0de69cf98f1d18a918181087c561dbfa55",
     "docs/local-transport-calculations.md": "dd4072bf4d6509e437cc99a6b7954e73044043874313bd4e6c1f29df20b4f84c",
-    "docs/outer-boundary.md": "3fc84aa2d9f01397ad567e71977e4db94b490fc559cbe1709160ba543cacc797",
+    "docs/outer-boundary.md": "43ce743edb7fc289b5bd22e016bb300d45ba1b2d642e3b22fe73cfbdc0e4fcbe",
     "docs/problem.md": "36a5201b2389f3ae95409ca1e878f70f8f942f3a81ec8fc7d6cab33b52da1c00",
     "docs/recoil-transport-theory.md": "52e67185bca9036efa06f67cb74b3b2e857e78733d83210cdff67693cd697d0d",
     "formulation/inputs.json": "e4f6afa806339fb1132f604595ddca6829f440811efdb87c75531a6123087ef2",
@@ -120,7 +120,7 @@
     "paper/figures/host-projections.pdf": "731f1285da09b7dcb26021724761861064330b08f3fe520480c15d858ab53d98",
     "paper/figures/outer-boundary.pdf": "3bcf12f64dc78de65f9b89f06e522e9e99490f33d590db8ead6e9f7edee0f549",
     "paper/figures/scattering-composition.pdf": "c59eda89f80f0a4b1b63f7d86ca8b99391b48f133999423c4777b2604a88a89f",
-    "paper/manuscript.tex": "dd44249eaa48beaecd818d88111f221522154a3f982e41cb148e00a47e452c0c",
+    "paper/manuscript.tex": "756af17184d40a17ce23c0eb65d77ae316104a5d90c7206ca1db5d57f6184d44",
     "paper/references.bib": "0c8ffa15621e23c2f7c7da3290c28a501cb3a687b5ebae90e60a4374d1e68cfd",
     "paper/requirements.txt": "3feec1a2e97360338b6d572368436244052b81da52f32b8d9bb91e4fce8677f6",
     "paper/tables/cluster-coverage.tex": "497130060c3e3b9443f8e6911122759a4f1719a48e89b71b621f76d31b2f4ba7",
@@ -149,7 +149,7 @@
     "results/outer-boundary/summary.json": "2c8a1d23f8f84dcbee59ad134da9f63ae2c3bb69904f819b5a35b9085c3227eb"
   },
   "output_sha256": {
-    "output/pdf/central-residence.pdf": "5023dbe7255e451ea83047ab7c32333506b4ae4f439b5c1d2de35772a9a4c022",
-    "output/pdf/manuscript-source.zip": "ec07dd734fabb4f0add9f26049c64cc526165cf6473177dffe4546cfb2204e8d"
+    "output/pdf/central-residence.pdf": "8359f3b6d3926a976d0f575811ec48342a6dc6b514d98388d9c6be2d5de83068",
+    "output/pdf/manuscript-source.zip": "f478e9645692812338a5ba7f66dfb4281857faf9350b1c759691c6c44fc9c53e"
   }
 }

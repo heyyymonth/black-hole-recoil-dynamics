@@ -38,7 +38,7 @@ For this spherical Galactic field and any direction at radius 0 < r < R, the max
 r_\epsilon=\inf\{r>0:\eta(r)>\epsilon\}.
 ```
 
-We propose ε = 0.01 for an **isolated-host control calculation**, with 0.03 and 0.1 as explicit tolerance comparisons. This is a chosen local force budget, not a universal physical law or a bound on accumulated trajectory error. The resulting first outward crossing would be a validity stop, not an escape event. A calculation including the external force has a different validity domain and must not inherit this control's stop automatically.
+We propose ε = 0.01 for an **isolated-host control calculation**, with 0.03 and 0.1 as explicit tolerance comparisons. This is a chosen local force budget, not a universal physical law or a bound on accumulated trajectory error. For an interior launch, the first outward crossing would be a validity stop, not an escape event. An initial point already outside is invalid at time zero; a boundary launch needs an explicit side convention. A calculation including the external force has a different validity domain and must not inherit this control's stop automatically.
 
 ## Computed findings
 
