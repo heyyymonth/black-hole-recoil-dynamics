@@ -71,3 +71,7 @@ This general trajectory specification assigns no trajectory solver, sample count
 Timed positions and velocities can later be combined with an independently justified companion population and interaction law. Neither is supplied by the two-step outputs. This handoff contains no encounter-rate, capture, exchange, binary-evolution, or merger-probability calculation.
 
 [Problem statement](problem.md) · [Step 1](e001-ballistic-return.md) · [Step 2](e002-core-exposure.md)
+
+## Boundary diagnostic supplied to the handoff
+
+The [outer-boundary calculation](outer-boundary.md) uses the same reconstructed enclosed mass. Its baseline 84.13 pc circular opening is separate from the proposed 20.67 pc validity stop for a 1% isolated-force control. Record an isolated-control crossing as loss of validity and censor exposure at that time; do not classify it as irreversible escape. A model including the Galactic force needs its own validity conditions. The static result does not assign an eccentric reference orbit, absorbing escape surface, remnant launch or physical horizon to the general input register.

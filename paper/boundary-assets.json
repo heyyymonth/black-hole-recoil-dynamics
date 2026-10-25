@@ -1,0 +1,14 @@
+{
+  "scope": "recorded static boundary diagnostics",
+  "input_sha256": {
+    "paper/boundary_assets.py": "0f82c7dcb39391457f40ebc5087d3bdb796dc107beb2a029697ef612c0dfa714",
+    "results/outer-boundary/provenance.json": "278584bfe978a3cf903b421779b527788a136580693703e36dad105f96fd8b84",
+    "results/outer-boundary/summary.json": "2c8a1d23f8f84dcbee59ad134da9f63ae2c3bb69904f819b5a35b9085c3227eb",
+    "results/outer-boundary/scenarios.csv": "e5f819e071c19852899b89353c0c6b635dd6ccb2e99e408bb8feacb197591e96",
+    "results/outer-boundary/radial-profile.csv": "c537f88ceeafce44a95a02e340b775a51fc98902d63988c97092aeeae1482d67"
+  },
+  "output_sha256": {
+    "tables/outer-boundary.tex": "7590e9290f35fe23279879debfeb94f743b4d0e9ef0714648cf086c5ba54dd9c",
+    "figures/outer-boundary.pdf": "3bcf12f64dc78de65f9b89f06e522e9e99490f33d590db8ead6e9f7edee0f549"
+  }
+}

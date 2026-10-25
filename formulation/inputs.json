@@ -62,6 +62,11 @@
     {
       "protocol": "analysis/transport/protocol.json",
       "result": "results/local-transport-kernels/summary.json"
+    },
+    {
+      "revision": "outer-boundary-1",
+      "protocol": "analysis/boundary/protocol.json",
+      "result": "results/outer-boundary/summary.json"
     }
   ]
 }

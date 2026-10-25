@@ -1,0 +1,21 @@
+{
+  "catalog_snapshot": {
+    "path": "data/observed-clusters/raw/uq_parameters.html",
+    "sha256": "f956c8b784488a5d25bb8c67151fe29271bda3688260806435f680a86a60c632",
+    "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/parameter.html",
+    "cluster": "NGC3201",
+    "R_GC_kpc": 8.93,
+    "R_GC_quoted_error_kpc": 0.02,
+    "tidal_catalog_pc": 85.86,
+    "tidal_radius_definition": "Header identifies Eq. 8 of Webb et al. 2013; phase-corrected limiting-radius estimate, not an independently measured instantaneous Jacobi saddle.",
+    "uncertainty_use": "Quoted R error is recorded but not propagated; no radius uncertainty is supplied. No independence from the host fit is assumed."
+  },
+  "literature": [
+    {"key": "King1962", "url": "https://articles.adsabs.harvard.edu/pdf/1962AJ.....67..471K", "role": "Empirical limiting radius in star-cluster density profiles; distinct from a dynamical escape condition."},
+    {"key": "Fukushige2000", "doi": "10.1046/j.1365-8711.2000.03811.x", "url": "https://arxiv.org/abs/astro-ph/9910468", "role": "Above-threshold energy permits potential escapers with delayed escape; it is not an instantaneous removal rule."},
+    {"key": "Renaud2011", "doi": "10.1111/j.1365-2966.2011.19531.x", "url": "https://arxiv.org/abs/1107.5820", "role": "Tidal versus effective tensors, circular Jacobi surfaces, and limits for noncircular time-dependent tides."},
+    {"key": "Webb2013", "doi": "10.1088/0004-637X/764/2/124", "url": "https://arxiv.org/abs/1301.0626", "role": "Equation 8: r_L(F)=r_t(R_p)[1+a F exp(b e)], a=0.17, b=4.1, F=(R-R_p)/(R_a-R_p). Empirical simulation calibration; not inverted to infer a local tidal tensor."},
+    {"key": "Wan2021", "doi": "10.1093/mnras/stab306", "url": "https://arxiv.org/abs/2102.01472", "King_limiting_pc": 36.1, "cited_Jacobi_pc": 83.46, "flat_rotation_benchmark_kms": 220.0, "equivalent_circular_benchmark_kpc": 13.0, "role": "NGC 3201 observational comparison and explicit flat-rotation/circular-surrogate benchmark; values are not refitted or averaged with the selected multimass realization."}
+  ],
+  "claim_scope": "Foundational and directly relevant primary studies; no bibliometric citation ranking is asserted. No paper full text is redistributed."
+}

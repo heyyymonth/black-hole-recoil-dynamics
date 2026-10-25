@@ -28,7 +28,7 @@ The result exposes why total density is an insufficient scattering description. 
 
 ## Connection to motion and exposure
 
-The density used in Step 2 must come from this same host when its coefficients drive Step 1. Before a trajectory can be interpreted, the sparse remnant contribution needs a resolved or calibrated discrete-encounter treatment, with a consistent partition from weak scattering. The external boundary, merger-conditioned launch, physical horizon and validity stops also remain unassigned.
+The density used in Step 2 must come from this same host when its coefficients drive Step 1. Before a trajectory can be interpreted, the sparse remnant contribution needs a resolved or calibrated discrete-encounter treatment, with a consistent partition from weak scattering. The [boundary calculation](outer-boundary.md) proposes an isolated-control validity stop using an explicit Galactic-force tolerance and computes a separate circular opening scale. A physical outer host, eccentric orbit, escape rule, merger-conditioned launch and horizon still require specification. The earlier state at 3 half-mass radii lies outside the proposed 1% isolated-force domain.
 
 The next physical comparison is whether that encounter treatment changes the occupation of dense regions relative to the smooth approximation under otherwise fixed assumptions. Convergence of the local integrals does not answer this trajectory question, and the current calculation supplies no merger probability or companion-acquisition rate.
 

@@ -203,3 +203,5 @@ These outputs preserve the motion and environmental information needed to pose s
 - **Region and reference conventions:** verify that changed regions or normalizations alter the declared observable consistently, and record each convention with its result.
 
 No pass status is assigned to these checks. They make the first numerical implementation reviewable before its output is interpreted as a physical prediction.
+
+The [outer-boundary result](outer-boundary.md) supplies a concrete validity-stop example for an isolated-host control. Exposure accumulated before that stop is a stopped-path quantity. It cannot be interpreted as the remnant's complete future exposure or as evidence that it never returns.

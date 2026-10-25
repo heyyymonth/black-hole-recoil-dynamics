@@ -1,8 +1,8 @@
 # Claim-to-evidence record
 
-Manuscript revision 0.6.0-manuscript.1. Author: Venkata Hemanth Athota.
+Manuscript revision 0.7.0-manuscript.1. Author: Venkata Hemanth Athota.
 
-The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. It also reports one compatible NGC 3201 host reconstruction and twenty evaluated local collision states. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
+The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. It also reports one compatible NGC 3201 host reconstruction and twenty evaluated local collision states and four static external-field boundary scenarios. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
 
 | Statement | Basis | Boundary |
 |---|---|---|
@@ -21,12 +21,16 @@ The paper defines a two-step transport and exposure problem and reports the comp
 | Catalog and published-host summaries differ. | Three evidence tables and host-comparison figure generated from recorded values. | Overlapping observations and different assumptions prevent interpreting differences as evolution or independent model-rejection evidence. |
 | A common interface can retain distinct conditional host distributions. | Native units, tracer metadata, posterior weights, covariance and model conventions. | Standardization does not make the clusters homologous or supply missing local species phase space. |
 | Host structure and mass composition may alter normalized residence/exposure under controlled assumptions. | Proposed physical hypothesis motivated by structural differences and correlated host uncertainty. | Not tested by this data analysis; requires reconstructed host models and controlled transport calculations. |
-
 | One joint NGC 3201 row produces mutually consistent gravity and species velocity distributions. | Host protocol, original input hashes, numerical arrays and independent quadrature checks. | Compatible historical implementation; exact original fitting versions not established; not a posterior-marginalized host. |
 | Sixteen species bins reproduce mass, force, virial balance and DF moments within declared tolerances. | `results/host-reconstruction/summary.json`, density/velocity and projection checks, independent numerical tests. | Numerical consistency is not physical calibration; projection acceptance concerns the observed luminous tracer. |
 | Twenty local drift and diffusion states pass quadrature and tensor checks. | `results/local-transport-kernels/`, analytic uniform-ball limits, rotational covariance and trace identity. | Per unit constant Coulomb logarithm at tested radii/speeds; no impact-parameter prescription or trajectory interpolation validated. |
 | Expected 4.28 black holes supply 27.7% of central density but 95.8% of formal central diffusion at zero test velocity. | The same fixed host's species masses/densities and collision contributions. | Model expectations, not counted black holes or measured relaxation; sparse encounters require a physical validity test. |
 | The formal truncation radius is 981 pc. | Selected distribution-function solution. | Not an observed Galactic tidal boundary or an adopted escape rule. |
+| A circular logarithmic-field benchmark gives an extended-host saddle at 84.13 pc. | `results/outer-boundary/`, extended enclosed-mass balance and exact circular saddle checks. | Prescribed field and one host; numerical proximity to a published estimate is not independent physical validation. |
+| The proposed 1% isolated-force domain ends at 20.67 pc. | Exact maximum differential acceleration divided by the same host gravity; tolerance sensitivities. | Chosen instantaneous error budget, not a universal boundary or accumulated trajectory-error guarantee. |
+| The earlier 3rh coefficient radius has a maximum omitted Galactic force of 2.962%. | Baseline field applied to the existing local-state radius. | The integral remains defined; isolated motion there exceeds the chosen 1% force budget. |
+| The host puts 5.63% of its mass beyond its conditional saddle. | Enclosed-mass profile at the solved saddle. | Not escaped mass; no tidal re-equilibration or stripping evolution is simulated. |
+| Central circular Hill opening speed is 16.68 km/s. | Stationary conservative effective potential and cluster central potential. | Full remnant speed, not recoil alone; not conserved with noncircular tides or collisions and not an escape probability. |
 
 Analytical consistency differs from numerical verification and physical validation. Raw-file checks and independent recomputation support the stated data calculations. Build and documentation checks assess source integrity and presentation. New observational measurements, publication-level novelty, dynamical calibration, companion-acquisition rates and merger probabilities are not claimed. The manuscript cites primary source studies, not this project's experiment records or software-tool references.
 

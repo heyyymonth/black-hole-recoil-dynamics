@@ -14,7 +14,7 @@
 \affiliation{Independent researcher}
 
 \begin{abstract}
-Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We develop a merger-conditioned transport formulation and define finite-region residence and species-resolved environmental exposure on its trajectories. Public observations and published multimass-model posteriors for six Galactic clusters establish the available constraints and their shared uncertainties. We reconstruct one joint posterior realization for NGC 3201 and check its mass distribution, potential, velocity moments, and projected tracer profiles. We then evaluate local anisotropic drift and diffusion from the same stellar distributions, retaining separate contributions from each mass species. The calculation identifies a regime in which a sparse black-hole component dominates formal central diffusion despite supplying a minority of the local mass density. This result makes the treatment of discrete remnants a necessary validation question before the coefficients can be used to predict trajectories. The reported findings establish consistent host and collision calculations under explicit assumptions; calibrated remnant motion and residence distributions remain to be determined.
+Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We develop a merger-conditioned transport formulation and define finite-region residence and species-resolved environmental exposure on its trajectories. Public observations and published multimass-model posteriors for six Galactic clusters establish the available constraints and their shared uncertainties. We reconstruct one joint posterior realization for NGC 3201 and check its mass distribution, potential, velocity moments, and projected tracer profiles. We then evaluate local anisotropic drift and diffusion from the same stellar distributions, retaining separate contributions from each mass species. The calculation identifies a regime in which a sparse black-hole component dominates formal central diffusion despite supplying a minority of the local mass density. This result makes the treatment of discrete remnants a necessary validation question before the coefficients can be used to predict trajectories. A specified Galactic field then separates the accuracy domain of an isolated-host approximation from a circular tidal opening. The resulting boundary comparison limits the use of the reconstructed outer distribution and the interpretation of local scattering calculations. These findings establish conditional host, collision, and boundary diagnostics; calibrated remnant motion and residence distributions remain to be determined.
 
 \end{abstract}
 \maketitle
@@ -396,7 +396,7 @@ v_{\rm esc,\infty}(r)=\sqrt{2\Psi(r)+2GM/r_t}.
 \end{align}
 Thus the field-star velocity cutoff is distinct from isolated escape to infinity, and neither is automatically a tidal escape criterion. We preserve the source model's $G=0.004302\,\mathrm{pc}\,(\mathrm{km\,s^{-1}})^2M_\odot^{-1}$ throughout its gravity and collision calculation. Its small difference from the catalog-display constant does not enter as an inconsistent force normalization.
 
-The selected realization has $M=1.7806\times10^5\,M_\odot$, $r_h=10.325\,\mathrm{pc}$, and $r_t=981.0\,\mathrm{pc}$. Its central density is $2.146\times10^3\,M_\odot\,\mathrm{pc}^{-3}$, with $u_{\rm cut}(0)=17.410\,\mathrm{km\,s^{-1}}$ and $v_{\rm esc,\infty}(0)=17.455\,\mathrm{km\,s^{-1}}$. The extended formal truncation radius is not adopted as an empirical boundary for NGC 3201. A Galactic tidal model and a validity domain remain necessary for transport in its outer parts. The separate $34.807\,\mathrm{km\,s^{-1}}$ parameter in the source stellar-evolution prescription is not the present reconstructed escape speed.
+The selected realization has $M=1.7806\times10^5\,M_\odot$, $r_h=10.325\,\mathrm{pc}$, and $r_t=981.0\,\mathrm{pc}$. Its central density is $2.146\times10^3\,M_\odot\,\mathrm{pc}^{-3}$, with $u_{\rm cut}(0)=17.410\,\mathrm{km\,s^{-1}}$ and $v_{\rm esc,\infty}(0)=17.455\,\mathrm{km\,s^{-1}}$. The extended formal truncation radius is not adopted as an empirical boundary for NGC 3201. Section~\ref{sec:outer-boundary} tests an external-field boundary and an accuracy domain; a physically calibrated outer transport model remains necessary. The separate $34.807\,\mathrm{km\,s^{-1}}$ parameter in the source stellar-evolution prescription is not the present reconstructed escape speed.
 
 \subsection{Independent numerical and projected checks}
 
@@ -448,9 +448,100 @@ The selected host contains an expected $4.28$ black holes, with total mass $61.2
 \label{fig:scattering-composition}
 \end{figure*}
 
-The enhancement follows from the mass weighting and velocity dependence of Eq.~\eqref{eq:rosenbluth-diffusion}, not merely the total density. It also exposes a physical limitation: numerical convergence of a smooth collision integral does not establish that a few heavy objects act as numerous independent weak scatterers. Resolved encounters or an independently calibrated discrete-transition description must test that contribution before it is represented as Gaussian noise. The large outer truncation radius creates a separate boundary-validity question. We therefore report local coefficients conditional on this realization and closure, without interpreting them as calibrated damping times, remnant paths, or residence outcomes.
+The enhancement follows from the mass weighting and velocity dependence of Eq.~\eqref{eq:rosenbluth-diffusion}, not merely the total density. It also exposes a physical limitation: numerical convergence of a smooth collision integral does not establish that a few heavy objects act as numerous independent weak scatterers. Resolved encounters or an independently calibrated discrete-transition description must test that contribution before it is represented as Gaussian noise. The outer truncation is tested against an external field in Sec.~\ref{sec:outer-boundary}. We therefore report local coefficients conditional on this realization and closure, without interpreting them as calibrated damping times, remnant paths, or residence outcomes.
 
 The reconstruction does supply the same species densities required for Step~2. It makes the next physical question specific: whether a justified treatment of sparse remnant encounters changes the occupation of dense regions relative to the smooth approximation, with host, launch, cutoff and boundary choices held fixed. Testing that question requires trajectories and their stopping records; the coefficient decomposition alone does not answer it.
+
+\section{Outer validity and tidal openings}\label{sec:outer-boundary}
+
+\subsection{Boundary definitions and observational scales}
+
+The outer boundary constrains the interpretation of the same host used for local scattering. A density-profile limit, a tidal opening, and a stop imposed by an approximation are distinct. Empirical cluster profiles supply fitted limiting radii~\cite{King1962}; tidal dynamics adds a dependence on the Galactic field and the cluster orbit~\cite{Renaud2011}. Even above the critical energy of a stationary tidal problem, escape can be delayed~\cite{Fukushige2000}. A crossing cannot therefore be converted directly into a merger-retention probability.
+
+For NGC 3201, Wan et al.~\cite{Wan2021} distinguish a King limiting radius of $36.1\,\mathrm{pc}$ from a cited Jacobi estimate of $83.46\,\mathrm{pc}$. Our captured structural catalog lists $85.86\,\mathrm{pc}$, with its definition referring to Eq.~(8) of Webb et al.~\cite{Webb2013}: an eccentricity- and phase-dependent correction to a pericentric limiting scale. We do not invert that value to infer an instantaneous tidal tensor or average these radii as independent observations.
+
+\subsection{A controlled external-field calculation}
+
+We keep the reconstructed spherical mass distribution fixed and prescribe
+\begin{equation}
+\Phi_G(\mathbf R)=v_c^2\ln(|\mathbf R|/R_0),
+\label{eq:log-galaxy}
+\end{equation}
+where $R_0$ sets an irrelevant potential constant. The baseline uses the catalog Galactocentric distance $R=8.93\,\mathrm{kpc}$ and a flat-rotation benchmark $v_c=220\,\mathrm{km\,s^{-1}}$. The latter is also used in the illustrative circular comparison of Ref.~\cite{Wan2021}. This is a specified environmental test, not a fitted Milky Way potential or a reconstruction of NGC 3201's eccentric orbit. The external distance is held separately from the selected host's inferred heliocentric distance; their joint uncertainty is not propagated.
+
+In the translating nonrotating frame of Eq.~\eqref{eq:external}, the linear tidal tensor is $\mathsf T=-\nabla\nabla\Phi_G$. Let $\widehat{\mathbf R}$ be the Galactic radial direction. For Eq.~\eqref{eq:log-galaxy},
+\begin{equation}
+\mathsf T=\frac{v_c^2}{R^2}
+\left(2\widehat{\mathbf R}\widehat{\mathbf R}^{\mathsf T}-\mathsf I\right).
+\label{eq:log-tidal-tensor}
+\end{equation}
+For a circular orbit, a frame rotating at $\Omega=v_c/R$ additionally has centrifugal acceleration. In axes along the Galactic radial, orbital tangential, and orbital normal directions, its effective tensor is
+\begin{equation}
+\mathsf T_{\rm eff}=\frac{v_c^2}{R^2}\operatorname{diag}(2,0,-1).
+\label{eq:effective-tidal-tensor}
+\end{equation}
+The velocity-dependent Coriolis term still belongs to rotating-frame dynamics. It does not alter a stationary saddle, and neither it nor the centrifugal tensor is inserted into the nonrotating equation.
+
+Balancing cluster gravity with the extensive effective direction gives the circular Hill estimate for an extended spherical host,
+\begin{equation}
+\frac{G M(<r_J)}{r_J^3}=\lambda_1,
+\qquad \lambda_1=\frac{2v_c^2}{R^2}.
+\label{eq:extended-jacobi}
+\end{equation}
+The point-mass result $(GM/\lambda_1)^{1/3}$ follows when all cluster mass lies inside the saddle. Here we retain the reconstructed enclosed mass. As an independent check, the exact circular inward and outward saddle distances satisfy
+\begin{equation}
+\frac{G M(<r_\pm)}{r_\pm^3}
+=\frac{v_c^2}{R(R\pm r_\pm)}+\frac{v_c^2}{R^2},
+\label{eq:exact-log-saddles}
+\end{equation}
+with the minus sign toward the Galactic center. These conditions compare the tidal expansion with exact differential Galactic and centrifugal accelerations without integrating a trajectory.
+
+\subsection{An accuracy boundary for an isolated control}
+
+A tidal opening does not specify where neglecting the Galaxy becomes inaccurate. In the same logarithmic field, the exact maximum differential acceleration at fixed $0<r<R$ is attained toward the Galactic center:
+\begin{equation}
+\max_{|\mathbf r|=r}|\mathbf a_{\rm ext}|
+=\frac{v_c^2 r}{R(R-r)}.
+\label{eq:maximum-tidal-force}
+\end{equation}
+Dividing by the spherical cluster acceleration defines
+\begin{equation}
+\eta(r)=\frac{v_c^2 r^3}{G M(<r)R(R-r)}.
+\label{eq:tidal-force-budget}
+\end{equation}
+We propose a conditional accuracy boundary
+\begin{equation}
+r_\epsilon=\inf\{r>0:\eta(r)>\epsilon\},
+\label{eq:accuracy-boundary}
+\end{equation}
+using $\epsilon=0.01$ for an isolated-host control and comparing $0.03$ and $0.1$. The evaluated host has increasing $\eta$ throughout the relevant interval, so its limiting radius is obtained from $\eta(r_\epsilon)=\epsilon$. This tolerance is an analysis choice, not a physical law. It bounds an instantaneous omitted force under the prescribed field; it does not bound accumulated orbit error, establish a tidally consistent equilibrium, or justify the collision closure.
+
+\input{tables/outer-boundary.tex}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/outer-boundary.pdf}
+\caption{Baseline boundary diagnostics for the fixed NGC 3201 realization. Left: the maximum differential Galactic force relative to cluster gravity, with the chosen 1\% tolerance and two existing local-coefficient evaluation radii. Right: enclosed mass in the unmodified host, compared with the circular extended-host saddle and formal distribution-function truncation. Exterior mass is not classified as escaped by this calculation.}
+\label{fig:outer-boundary}
+\end{figure*}
+
+\subsection{Findings and implications for transport}
+
+The baseline gives $r_J=84.13\,\mathrm{pc}$, compared with $85.77\,\mathrm{pc}$ for the point-mass approximation. Exact circular saddles are at $84.00$ and $84.27\,\mathrm{pc}$. Agreement in scale with the published $83.46\,\mathrm{pc}$ estimate does not independently validate the host or its velocity distribution. The radius is conditional on the adopted Galactic field and one host realization.
+
+The force limits are $r_{1\%}=20.67\,\mathrm{pc}$, $r_{3\%}=31.12\,\mathrm{pc}$, and $r_{10\%}=47.94\,\mathrm{pc}$. At the existing coefficient radii $r_h$ and $3r_h$, the maximum omitted force is $0.175\%$ and $2.962\%$ of cluster gravity, respectively. Thus the outermost local kernel remains a defined integral of its specified distribution, but its use in an isolated trajectory exceeds the proposed 1\% force budget. Table~\ref{tab:outer-boundary} varies $v_c$ by $\pm10\%$ and includes a separate $13\,\mathrm{kpc}$ circular surrogate discussed in Ref.~\cite{Wan2021}. These scenarios are assumption tests, not an orbit track or confidence intervals.
+
+The unmodified host places $5.63\%$ of its mass beyond the baseline saddle, while its formal truncation is $981\,\mathrm{pc}$. This is a consistency warning about the outer distribution, not a predicted escaped fraction. Simply removing this material would not yield a self-consistent tidal distribution function. An exterior boundary requires a host appropriate to the imposed tide as well as a remnant event rule.
+
+In the conservative circular Hill problem, the critical specific energy is $E_{J,c}=\Phi_{\rm cl}(r_J)-\lambda_1r_J^2/2$. The corresponding central opening speed,
+\begin{equation}
+v_{\rm open}(0)=\sqrt{2[E_{J,c}-\Phi_{\rm cl}(0)]},
+\label{eq:opening-speed}
+\end{equation}
+is $16.68\,\mathrm{km\,s^{-1}}$. It refers to the remnant's full rotating-frame speed at the center, not its recoil alone. It is neither a measured escape speed nor a retention threshold with friction and diffusion. Noncircular tides and collisional changes remove the conservation on which this energy argument rests.
+
+Boundary roots have relative residuals below $9.5\times10^{-13}$. Independent density integration agrees with the enclosed mass at the tested boundaries to $1.2\times10^{-7}$; thinning the radial mesh changes inferred radii by less than $1.5\times10^{-7}$. Analytic point-mass and Plummer limits, the exact angular force maximum, and force--potential consistency give additional checks. These errors describe numerics, not Galactic or host uncertainty.
+
+For an isolated control, the first outward crossing of $r_{1\%}$ is proposed as $\tau_{\rm valid}$ in Eq.~\eqref{eq:stopping}; it would censor the trajectory and accumulated exposure. It would not be labeled escape or permanent loss of access to the center. A trajectory including the external force has a different validity criterion. Extending the calculation to the tidal outskirts requires a time-dependent Galactic trajectory, an appropriate outer host, and explicit records of departures and possible returns. The sparse-remnant issue identified in Sec.~\ref{sec:local-calculation} remains a separate prerequisite for physical collisional transport.
 
 \section{Step 2: residence and environmental exposure}\label{sec:exposure}
 
@@ -619,6 +710,8 @@ For a controlled comparison, define
 \label{eq:dimensionless-observables}
 \end{equation}
 A testable next hypothesis is that host structure and stellar-mass composition leave differences in these dimensionless observables after fixing the dimensionless launch law, remnant-to-host mass ratio, $T/t_0$, region scaled by $r_h$, external-field treatment, collision prescription and termination conventions. The current analysis motivates this hypothesis by identifying structural variation and correlated host uncertainty; it does not test the transport consequence. A controlled comparison must extend the fixed-host reconstruction to compatible joint realizations, justify the treatment of sparse encounters, and compare the same dimensionless launch and event definitions while propagating host uncertainty. The gravitational scales alone cannot decide whether the resulting trajectory observables coincide.
+
+The boundary calculation also shows why a single formal truncation radius is insufficient: the selected external field gives distinct approximation and tidal-opening scales, and the outer host remains to be made consistent with that field.
 
 The formulation supplies the conditional evolution and accumulation problem needed for that comparison. Continued motion after entry, survival weighting, and termination status remain explicit. Its connection to observed clusters is supported by measured coverage, published host distributions, a numerically checked reconstruction and local anisotropic collision kernels. The dominant central contribution of a few modeled black holes identifies the encounter regime that must be resolved before calibrated return and residence predictions follow.
 

@@ -1,5 +1,5 @@
-Formulation, observations, host and local-collision manuscript verification
-Revision 0.6.0-manuscript.1; 25 October 2026
+Formulation, host, scattering and outer-boundary manuscript verification
+Revision 0.7.0-manuscript.1; 25 October 2026
 
 Completed calculations
 One actual NGC 3201 joint posterior sample is reconstructed with pinned,
@@ -21,20 +21,25 @@ Numerical checks
 - A separate one-dimensional central integral verifies the host's diffusion
   trace. Exterior test velocities are explicitly outside the current API's
   validated domain, rather than silently accepted by insufficient quadrature.
-- Eight independent numerical tests pass in the recorded host environment.
+- Eleven numerical tests pass in the recorded host environment, including
+  point-mass and Plummer saddle limits, exact angular tidal-force bounds,
+  frame-tensor checks, central mass scaling and boundary consistency.
+- Four static boundary scenarios pass independent density integration and
+  radial-mesh refinement checks; no Galactic or remnant orbit is evolved.
 
 Integrity checks
 The immutable six-cluster data audit remains unchanged. Its 33 artifacts,
 51 captured source records and executed notebook outputs verify successfully.
 results/calculations.json binds scientific code, protocols, environment and
-calculated arrays/tables. Paper asset manifests bind five evidence tables
-and five vector figures. The build verifies these records and typesets them;
+calculated arrays/tables. The outer-boundary manifest independently binds its protocol, source register,
+calculation code and results. Paper asset manifests bind six evidence tables
+and six vector figures. The build verifies these records and typesets them;
 it does not run a physical model or regenerate scientific figures.
 
 Presentation review
-The final PDF has 13 US Letter pages and 24 embedded vector fonts. All pages
-were rendered and inspected. The final legend adjustment changes page 10
-only; that page was inspected again. No clipping, overlapping text, missing
+The final PDF has 15 US Letter pages and 24 embedded vector fonts. All pages
+were rendered and inspected, with the boundary results, figure and
+bibliography also inspected at full-page resolution. No clipping, overlapping text, missing
 glyphs, overfull boxes, unresolved citations or BibTeX entry warnings were
 found. The saved source also compiles successfully with the desktop editor's
 built-in compiler. The existing editor remains open.
@@ -46,6 +51,10 @@ Numerical convergence does not validate smooth diffusion from a few heavy
 objects. The expected black-hole count, density and scattering fractions are
 conditional model quantities, not observed counts or measured relaxation.
 The formal outer truncation radius is not an adopted tidal escape boundary.
+The circular logarithmic-field diagnostic and isolated-force accuracy limit
+are conditional calculations, not an observed outer edge or escape rule.
+Exterior mass is not classified as escaped; the outer host must be made
+consistent with a Galactic field before physical outer transport is inferred.
 No physical impact-parameter range, calibrated discrete-encounter partition,
 merger-conditioned launch law, trajectory ensemble or residence distribution
 has been evaluated. The recorded local coefficients identify the physical

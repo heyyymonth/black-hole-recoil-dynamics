@@ -1,0 +1,47 @@
+{
+  "revision": "outer-boundary-1",
+  "transport_simulations_performed": false,
+  "galactic_orbits_integrated": false,
+  "host_mass_msun": 178055.79305263434,
+  "host_rh_pc": 10.32486672189341,
+  "host_formal_rt_pc": 980.9967553101125,
+  "G_pc_kms2_msun": 0.004302,
+  "baseline": {
+    "scenario": "baseline",
+    "R_pc": 8930.0,
+    "vc_kms": 220.0,
+    "tidal_norm_kms2_pc2": 0.000606935365145608,
+    "effective_extensive_eigenvalue_kms2_pc2": 0.001213870730291216,
+    "rJ_point_mass_pc": 85.77314969261033,
+    "rJ_extended_pc": 84.13251619013312,
+    "rJ_over_rh": 8.14853290180821,
+    "mass_outside_rJ_fraction": 0.05629216937352499,
+    "root_relative_residual": 2.220446049250313e-16,
+    "eta_at_rh": 0.001746231598356644,
+    "eta_at_3rh": 0.02961788867374928,
+    "hill_central_opening_speed_kms": 16.68091636834608,
+    "exact_inward_saddle_pc": 83.9956205896479,
+    "exact_inward_relative_residual": 1.7863552443107295e-16,
+    "exact_outward_saddle_pc": 84.26813962272992,
+    "exact_outward_relative_residual": 5.359065732932189e-16,
+    "r_valid_0.01_pc": 20.66810073016105,
+    "valid_0.01_relative_residual": 9.43689570931383e-13,
+    "r_valid_0.03_pc": 31.11997775541352,
+    "valid_0.03_relative_residual": 2.886579864025407e-15,
+    "r_valid_0.1_pc": 47.935367500932784,
+    "valid_0.1_relative_residual": 2.220446049250313e-16
+  },
+  "checks": {
+    "max_root_relative_residual": 9.43689570931383e-13,
+    "max_density_integral_relative_error": 1.1160777524388266e-07,
+    "max_mass_interpolation_refinement_relative": 1.4498106182259107e-07
+  },
+  "all_numerical_checks_passed": true,
+  "numerical_environment": {
+    "python": "3.11.1",
+    "numpy": "1.26.4",
+    "scipy": "1.12.0"
+  },
+  "protocol_sha256": "8ee2d5dabecd782b0fb006daca8da5075b17cad21da4ca7a9b4271dc18490516",
+  "interpretation": "Validity crossing censors an isolated control; neither validity nor Jacobi-radius crossing establishes irreversible escape. No central-rest rule or absorbing escape radius is selected."
+}

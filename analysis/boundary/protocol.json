@@ -1,0 +1,23 @@
+{
+  "revision": "outer-boundary-1",
+  "scope": "Static external-force validity and circular tidal-opening diagnostics for the fixed NGC 3201 host; no remnant or Galactic orbit integration",
+  "host": "results/host-reconstruction/host.npz",
+  "catalog": "data/observed-clusters/derived/catalog_scalars.csv",
+  "sources": "analysis/boundary/sources.json",
+  "units": {"length": "pc", "velocity": "km/s", "mass": "Msun", "G": "same value as reconstructed host"},
+  "galaxy": {"family": "spherical logarithmic", "potential": "vc^2 log(|R|/R0); additive constant arbitrary", "baseline_R_pc": 8930.0, "baseline_vc_kms": 220.0, "R_status": "catalog external-environment benchmark, not jointly sampled with host distance", "vc_status": "literature benchmark, not a fitted Galactic rotation measurement"},
+  "scenarios": [
+    {"name": "baseline", "R_pc": 8930.0, "vc_kms": 220.0},
+    {"name": "vc_minus_10_percent", "R_pc": 8930.0, "vc_kms": 198.0},
+    {"name": "vc_plus_10_percent", "R_pc": 8930.0, "vc_kms": 242.0},
+    {"name": "equivalent_circular_comparison", "R_pc": 13000.0, "vc_kms": 220.0}
+  ],
+  "scenario_interpretation": "Sensitivity cases, not confidence intervals or an orbit of NGC 3201. The 13 kpc case is only the circular surrogate discussed by Wan et al.",
+  "neglected_external_force_tolerances": [0.01, 0.03, 0.1],
+  "proposed_isolated_control_tolerance": 0.01,
+  "tidal_opening": "solve G M(<rJ)/rJ^3 = 2 vc^2/R^2 for the unmodified spherical host; compare exact circular inward/outward saddles",
+  "validity_limit": "first radius where vc^2 r^3/[G M(<r) R(R-r)] exceeds epsilon; instantaneous all-direction force bound in translating nonrotating axes",
+  "interpretation": "Validity crossing censors an isolated control; neither validity nor Jacobi-radius crossing establishes irreversible escape. No central-rest rule or absorbing escape radius is selected.",
+  "acceptance": {"root_relative_residual": 1e-9, "density_integral_relative": 0.0002, "mass_interpolation_refinement_relative": 0.0002, "exact_saddle_relative_force_residual": 1e-9},
+  "deferred": ["joint host and Galactic phase-space uncertainty", "real eccentric Galactic orbit and time-dependent tides", "tidally consistent host re-equilibration", "physical collision cutoffs", "discrete sparse-remnant encounters", "remnant trajectories and residence"]
+}
