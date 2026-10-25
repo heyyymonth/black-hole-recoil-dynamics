@@ -1,0 +1,2652 @@
+[
+  {
+    "cluster": "NGC0104",
+    "groups": [
+      {
+        "path": "mass_function/Brown",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              25
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              25
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              25
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              25
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              25
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              25
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Heinke",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              35
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              35
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              35
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              35
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              35
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              35
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Monelli",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              10
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              10
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              10
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              10
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              10
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              10
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Richer",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              53
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              53
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              53
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              53
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              53
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              53
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Richer2",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              42
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              42
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              42
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              42
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              42
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              42
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/RicherIR",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              42
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              42
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              42
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              42
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              42
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              42
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/RicherIR2",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              14
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              14
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              14
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              14
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              14
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              14
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "number_density",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              150
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394\u03a3",
+            "shape": [
+              150
+            ],
+            "unit": "1/arcmin2"
+          },
+          {
+            "name": "\u03a3",
+            "shape": [
+              150
+            ],
+            "unit": "1/arcmin2"
+          }
+        ],
+        "source": "2019MNRAS.485.4906D",
+        "notes": null
+      },
+      {
+        "path": "proper_motion/GEDR3",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              11
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              11
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              11
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              11
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              11
+            ],
+            "unit": "mas / yr"
+          }
+        ],
+        "source": "Gaia EDR3",
+        "notes": "Nstars=3600Computed from Gaia EDR3 catalogue with: , includes_sys_err=FalseComputed from Gaia EDR3 catalogue with: , memberprob=0.9Computed from Gaia EDR3 catalogue with: , method=binnedComputed from Gaia EDR3 catalogue with: , sampler=nestedComputed from Gaia EDR3 catalogue with: , scaled_uncertainties=True"
+      },
+      {
+        "path": "proper_motion/libralato",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              28
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              28
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              28
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              28
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              28
+            ],
+            "unit": "mas/yr"
+          }
+        ],
+        "source": "2022ApJ...934..150L",
+        "notes": null
+      },
+      {
+        "path": "velocity_dispersion/baumgardt",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              36
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394\u03c3,down",
+            "shape": [
+              36
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u0394\u03c3,up",
+            "shape": [
+              36
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u03c3",
+            "shape": [
+              36
+            ],
+            "unit": "km/s"
+          }
+        ],
+        "source": "2017MNRAS.464.2174B;2018MNRAS.478.1520B",
+        "notes": null
+      },
+      {
+        "path": "velocity_dispersion/kamann",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              6
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394\u03c3,down",
+            "shape": [
+              6
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u0394\u03c3,up",
+            "shape": [
+              6
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u03c3",
+            "shape": [
+              6
+            ],
+            "unit": "km/s"
+          }
+        ],
+        "source": "2018MNRAS.473.5591K",
+        "notes": null
+      }
+    ],
+    "compatibility": "candidate only; private run inputs not identified"
+  },
+  {
+    "cluster": "NGC1851",
+    "groups": [
+      {
+        "path": "mass_function/Calamida",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              39
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              39
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              39
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              39
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              39
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              39
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/CalamidaIR",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              26
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              26
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              26
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              26
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              26
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              26
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Piotto2",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              24
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              24
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              24
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              24
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              24
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              24
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Sarajedini",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              46
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              46
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              46
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              46
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              46
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              46
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "number_density",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              117
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394\u03a3",
+            "shape": [
+              117
+            ],
+            "unit": "1/arcmin2"
+          },
+          {
+            "name": "\u03a3",
+            "shape": [
+              117
+            ],
+            "unit": "1/arcmin2"
+          }
+        ],
+        "source": "2019MNRAS.485.4906D",
+        "notes": null
+      },
+      {
+        "path": "proper_motion/GEDR3",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              6
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              6
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              6
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              6
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              6
+            ],
+            "unit": "mas / yr"
+          }
+        ],
+        "source": "Gaia EDR3",
+        "notes": "Nstars=395Computed from Gaia EDR3 catalogue with: , includes_sys_err=FalseComputed from Gaia EDR3 catalogue with: , memberprob=0.9Computed from Gaia EDR3 catalogue with: , method=binnedComputed from Gaia EDR3 catalogue with: , sampler=nestedComputed from Gaia EDR3 catalogue with: , scaled_uncertainties=True"
+      },
+      {
+        "path": "proper_motion/libralato",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              20
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              20
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              20
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              20
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              20
+            ],
+            "unit": "mas/yr"
+          }
+        ],
+        "source": "2022ApJ...934..150L",
+        "notes": null
+      },
+      {
+        "path": "velocity_dispersion/baumgardt",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              30
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394\u03c3,down",
+            "shape": [
+              30
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u0394\u03c3,up",
+            "shape": [
+              30
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u03c3",
+            "shape": [
+              30
+            ],
+            "unit": "km/s"
+          }
+        ],
+        "source": "2017MNRAS.464.2174B;2018MNRAS.478.1520B",
+        "notes": null
+      },
+      {
+        "path": "velocity_dispersion/kamann",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              5
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394\u03c3,down",
+            "shape": [
+              5
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u0394\u03c3,up",
+            "shape": [
+              5
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u03c3",
+            "shape": [
+              5
+            ],
+            "unit": "km/s"
+          }
+        ],
+        "source": "2018MNRAS.473.5591K",
+        "notes": null
+      }
+    ],
+    "compatibility": "candidate only; private run inputs not identified"
+  },
+  {
+    "cluster": "NGC3201",
+    "groups": [
+      {
+        "path": "mass_function/Piotto",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              30
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              30
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              30
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              30
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              30
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              30
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/allcomb",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              71
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              71
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              71
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              71
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              71
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              71
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "number_density",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              89
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394\u03a3",
+            "shape": [
+              89
+            ],
+            "unit": "1/arcmin2"
+          },
+          {
+            "name": "\u03a3",
+            "shape": [
+              89
+            ],
+            "unit": "1/arcmin2"
+          }
+        ],
+        "source": "2019MNRAS.485.4906D",
+        "notes": null
+      },
+      {
+        "path": "proper_motion/GEDR3",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              13
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              13
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              13
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              13
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              13
+            ],
+            "unit": "mas / yr"
+          }
+        ],
+        "source": "Gaia EDR3",
+        "notes": "Nstars=875Computed from Gaia EDR3 catalogue with: , includes_sys_err=FalseComputed from Gaia EDR3 catalogue with: , memberprob=0.9Computed from Gaia EDR3 catalogue with: , method=binnedComputed from Gaia EDR3 catalogue with: , sampler=nestedComputed from Gaia EDR3 catalogue with: , scaled_uncertainties=True"
+      },
+      {
+        "path": "proper_motion/libralato",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              6
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              6
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              6
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              6
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              6
+            ],
+            "unit": "mas/yr"
+          }
+        ],
+        "source": "2022ApJ...934..150L",
+        "notes": null
+      },
+      {
+        "path": "velocity_dispersion/baumgardt",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              22
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394\u03c3,down",
+            "shape": [
+              22
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u0394\u03c3,up",
+            "shape": [
+              22
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u03c3",
+            "shape": [
+              22
+            ],
+            "unit": "km/s"
+          }
+        ],
+        "source": "2017MNRAS.464.2174B;2018MNRAS.478.1520B",
+        "notes": null
+      }
+    ],
+    "compatibility": "candidate only; private run inputs not identified"
+  },
+  {
+    "cluster": "NGC5139",
+    "groups": [
+      {
+        "path": "mass_function/Anderson",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              27
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              27
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              27
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              27
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              27
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              27
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Anderson2",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              39
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              39
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              39
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              39
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              39
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              39
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Bedin",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              36
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              36
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              36
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              36
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              36
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              36
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/BedinIR",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              35
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              35
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              35
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              35
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              35
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              35
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Bellini",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              43
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              43
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              43
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              43
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              43
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              43
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Casertano",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              20
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              20
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              20
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              20
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              20
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              20
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Cool",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              37
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              37
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              37
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              37
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              37
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              37
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/King",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              24
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              24
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              24
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              24
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              24
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              24
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/KozhurinaPlatais",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              40
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              40
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              40
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              40
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              40
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              40
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Lee",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              53
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              53
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              53
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              53
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              53
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              53
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Renzini",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              36
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              36
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              36
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              36
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              36
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              36
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, 2022, in prep",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "number_density",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              96
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394\u03a3",
+            "shape": [
+              96
+            ],
+            "unit": "1/arcmin2"
+          },
+          {
+            "name": "\u03a3",
+            "shape": [
+              96
+            ],
+            "unit": "1/arcmin2"
+          }
+        ],
+        "source": "2019MNRAS.485.4906D",
+        "notes": null
+      },
+      {
+        "path": "proper_motion/GEDR3",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              13
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              13
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              13
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              13
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              13
+            ],
+            "unit": "mas / yr"
+          }
+        ],
+        "source": "Gaia EDR3",
+        "notes": "Nstars=4030Computed from Gaia EDR3 catalogue with: , includes_sys_err=FalseComputed from Gaia EDR3 catalogue with: , memberprob=0.9Computed from Gaia EDR3 catalogue with: , method=binnedComputed from Gaia EDR3 catalogue with: , sampler=nestedComputed from Gaia EDR3 catalogue with: , scaled_uncertainties=True"
+      },
+      {
+        "path": "proper_motion/watkins",
+        "datasets": [
+          {
+            "name": "PM_ratio",
+            "shape": [
+              28
+            ],
+            "unit": null
+          },
+          {
+            "name": "PM_tot",
+            "shape": [
+              28
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              28
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394PM_ratio",
+            "shape": [
+              28
+            ],
+            "unit": null
+          },
+          {
+            "name": "\u0394PM_tot",
+            "shape": [
+              28
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "\u0394r",
+            "shape": [
+              28
+            ],
+            "unit": "arcsec"
+          }
+        ],
+        "source": "2015ApJ...803...29W",
+        "notes": null
+      },
+      {
+        "path": "velocity_dispersion/baumgardt",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              23
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394\u03c3,down",
+            "shape": [
+              23
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u0394\u03c3,up",
+            "shape": [
+              23
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u03c3",
+            "shape": [
+              23
+            ],
+            "unit": "km/s"
+          }
+        ],
+        "source": "2017MNRAS.464.2174B;2018MNRAS.478.1520B",
+        "notes": null
+      },
+      {
+        "path": "velocity_dispersion/kamann",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              8
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394\u03c3,down",
+            "shape": [
+              8
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u0394\u03c3,up",
+            "shape": [
+              8
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u03c3",
+            "shape": [
+              8
+            ],
+            "unit": "km/s"
+          }
+        ],
+        "source": "2018MNRAS.473.5591K",
+        "notes": null
+      }
+    ],
+    "compatibility": "candidate only; private run inputs not identified"
+  },
+  {
+    "cluster": "NGC6121",
+    "groups": [
+      {
+        "path": "mass_function/Bedin2",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              41
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              41
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              41
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              41
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              41
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              41
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/DieballIR",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              66
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              66
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              66
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              66
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              66
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              66
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Stetson",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              21
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              21
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              21
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              21
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              21
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              21
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "number_density",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              63
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394\u03a3",
+            "shape": [
+              63
+            ],
+            "unit": "1/arcmin2"
+          },
+          {
+            "name": "\u03a3",
+            "shape": [
+              63
+            ],
+            "unit": "1/arcmin2"
+          }
+        ],
+        "source": "2019MNRAS.485.4906D",
+        "notes": null
+      },
+      {
+        "path": "proper_motion/GEDR3",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              15
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              15
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              15
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              15
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              15
+            ],
+            "unit": "mas / yr"
+          }
+        ],
+        "source": "Gaia EDR3",
+        "notes": "Nstars=345Computed from Gaia EDR3 catalogue with: , includes_sys_err=FalseComputed from Gaia EDR3 catalogue with: , memberprob=0.9Computed from Gaia EDR3 catalogue with: , method=binnedComputed from Gaia EDR3 catalogue with: , sampler=nestedComputed from Gaia EDR3 catalogue with: , scaled_uncertainties=True"
+      },
+      {
+        "path": "proper_motion/libralato",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              6
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              6
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              6
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              6
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              6
+            ],
+            "unit": "mas/yr"
+          }
+        ],
+        "source": "2022ApJ...934..150L",
+        "notes": null
+      },
+      {
+        "path": "velocity_dispersion/baumgardt",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              15
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394\u03c3,down",
+            "shape": [
+              15
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u0394\u03c3,up",
+            "shape": [
+              15
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u03c3",
+            "shape": [
+              15
+            ],
+            "unit": "km/s"
+          }
+        ],
+        "source": "2017MNRAS.464.2174B;2018MNRAS.478.1520B",
+        "notes": null
+      }
+    ],
+    "compatibility": "candidate only; private run inputs not identified"
+  },
+  {
+    "cluster": "NGC6397",
+    "groups": [
+      {
+        "path": "mass_function/Correnti",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              59
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              59
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              59
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              59
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              59
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              59
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/King",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              15
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              15
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              15
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              15
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              15
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              15
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "mass_function/Piotto",
+        "datasets": [
+          {
+            "name": "N",
+            "shape": [
+              52
+            ],
+            "unit": null
+          },
+          {
+            "name": "fields",
+            "shape": null,
+            "unit": "deg"
+          },
+          {
+            "name": "m1",
+            "shape": [
+              52
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "m2",
+            "shape": [
+              52
+            ],
+            "unit": "Msun"
+          },
+          {
+            "name": "r1",
+            "shape": [
+              52
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "r2",
+            "shape": [
+              52
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394N",
+            "shape": [
+              52
+            ],
+            "unit": null
+          }
+        ],
+        "source": "TODO baumgardt, priv. comm., idk",
+        "notes": "completeness corrected"
+      },
+      {
+        "path": "number_density",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              114
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394\u03a3",
+            "shape": [
+              114
+            ],
+            "unit": "1/arcmin2"
+          },
+          {
+            "name": "\u03a3",
+            "shape": [
+              114
+            ],
+            "unit": "1/arcmin2"
+          }
+        ],
+        "source": "2019MNRAS.485.4906D",
+        "notes": null
+      },
+      {
+        "path": "proper_motion/GEDR3",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              9
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              9
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              9
+            ],
+            "unit": "arcmin"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              9
+            ],
+            "unit": "mas / yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              9
+            ],
+            "unit": "mas / yr"
+          }
+        ],
+        "source": "Gaia EDR3",
+        "notes": "Nstars=1365Computed from Gaia EDR3 catalogue with: , includes_sys_err=FalseComputed from Gaia EDR3 catalogue with: , memberprob=0.9Computed from Gaia EDR3 catalogue with: , method=binnedComputed from Gaia EDR3 catalogue with: , sampler=nestedComputed from Gaia EDR3 catalogue with: , scaled_uncertainties=True"
+      },
+      {
+        "path": "proper_motion/libralato",
+        "datasets": [
+          {
+            "name": "PM_R",
+            "shape": [
+              7
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "PM_T",
+            "shape": [
+              7
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "r",
+            "shape": [
+              7
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394PM_R",
+            "shape": [
+              7
+            ],
+            "unit": "mas/yr"
+          },
+          {
+            "name": "\u0394PM_T",
+            "shape": [
+              7
+            ],
+            "unit": "mas/yr"
+          }
+        ],
+        "source": "2022ApJ...934..150L",
+        "notes": null
+      },
+      {
+        "path": "velocity_dispersion/baumgardt",
+        "datasets": [
+          {
+            "name": "r",
+            "shape": [
+              19
+            ],
+            "unit": "arcsec"
+          },
+          {
+            "name": "\u0394\u03c3,down",
+            "shape": [
+              19
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u0394\u03c3,up",
+            "shape": [
+              19
+            ],
+            "unit": "km/s"
+          },
+          {
+            "name": "\u03c3",
+            "shape": [
+              19
+            ],
+            "unit": "km/s"
+          }
+        ],
+        "source": "2017MNRAS.464.2174B;2018MNRAS.478.1520B",
+        "notes": null
+      }
+    ],
+    "compatibility": "candidate only; private run inputs not identified"
+  }
+]

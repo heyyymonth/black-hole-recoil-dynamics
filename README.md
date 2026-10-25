@@ -34,6 +34,12 @@ The local weak-scattering closure has explicit applicability assumptions. It doe
 
 Timed position and velocity records can support later companion-access calculations, but binary acquisition, encounter rates, and repeated-merger predictions are outside the current two-step scope.
 
+## Observed-cluster data
+
+The [six-cluster assessment](docs/cluster-data-assessment.md) examines original public observations and published candidate host posteriors for 47 Tuc, NGC 1851, NGC 3201, Omega Centauri, M4 and NGC 6397. The [data package](data/observed-clusters/README.md) includes source hashes, common-unit tables, quality flags, three comparison figures and an [executed notebook](analysis/cluster_data/cluster_data_audit.ipynb).
+
+A [common host interface](docs/cluster-host-schema.md) preserves a separate weighted joint parameter distribution for each cluster. Unit harmonization does not establish a shared stellar population, a calibrated potential or a local scattering background. Exact source-fit reproduction and reconstruction of mass-resolved local phase space remain necessary before transport. The data audit leaves the theoretical manuscript and physical experiments unchanged.
+
 ## Calculation handoff
 
 The [input register](formulation/inputs.json) leaves host functions, launch distributions, collision cutoffs, stopping rules, and numerical controls unassigned. Missing inputs are not zero-valued defaults. The [handoff specification](docs/calculation-handoff.md) defines their units, dependencies, required output fields, and acceptance checks before a calculation can be interpreted.
@@ -43,6 +49,7 @@ Documentation checks perform no physical calculations:
 ```sh
 python scripts/verify_foundation.py
 python paper/verify.py
+python analysis/cluster_data/verify.py
 ```
 
 The [research paper](output/pdf/central-residence.pdf), [LaTeX source](paper/manuscript.tex), and [portable source archive](output/pdf/manuscript-source.zip) present the same two-step formulation. It is an unreviewed theoretical manuscript, with no numerical transport results. [Paper status and build instructions](paper/README.md).
@@ -56,6 +63,8 @@ The [research paper](output/pdf/central-residence.pdf), [LaTeX source](paper/man
 | `docs/e002-core-exposure.md` | Step 2: residence and environmental exposure |
 | `docs/calculation-handoff.md` | Required inputs, outputs, and validation conditions |
 | `formulation/` | Explicitly unassigned calculation inputs |
+| `data/observed-clusters/` | Public-source manifest, candidate host records and audited comparison products |
+| `analysis/cluster_data/` | Source retrieval, reproducible data audit, figures and executed notebook |
 | `scripts/` | Structural documentation and manuscript integrity checks |
 | `paper/` | Theory manuscript, bibliography, and calculation-free build |
 | `src/`, `experiments/`, `tests/`, `results/` | [Computational reference records](docs/computational-records.md); these do not implement or validate the active transport formulation |

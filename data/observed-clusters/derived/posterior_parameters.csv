@@ -1,0 +1,79 @@
+cluster,parameter,unit,mean,standard_deviation,p16,median,p84,provenance,reported_mean,reported_standard_deviation,reported_mean_numerical_uncertainty,reported_standard_deviation_numerical_uncertainty
+NGC0104,W0,model convention,6.13376761076,0.0688548711994,6.06529976352,6.12890986212,6.20325220189,published standard-fit posterior; not an adopted host,6.134,0.069,0.001,0.01
+NGC0104,M,Msun,904494.296302,5092.07643329,899610.849769,904471.90914,909427.268824,published standard-fit posterior; not an adopted host,904000,5000,0,1000
+NGC0104,rh,pc,6.71384723853,0.0354545214519,6.6788456806,6.71374257281,6.74908550733,published standard-fit posterior; not an adopted host,6.714,0.035,0.001,0.006
+NGC0104,ra,log10 dimensionless anisotropy radius,1.71654330617,0.0440417275526,1.67702132447,1.70883046776,1.7551874028,published standard-fit posterior; not an adopted host,1.717,0.044,0.001,0.008
+NGC0104,g,model convention,1.4772731881,0.020486165977,1.45651186903,1.47727786457,1.49799594636,published standard-fit posterior; not an adopted host,1.477,0.02,0,0.003
+NGC0104,delta,model convention,0.469870196577,0.0107467508195,0.458863081924,0.470217316446,0.480617516305,published standard-fit posterior; not an adopted host,0.47,0.011,0,0.001
+NGC0104,s2,model convention,0.000748007884072,0.000472650257248,0.000394706621011,0.000624394616163,0.00109190796561,published standard-fit posterior; not an adopted host,0.001,0,0,0
+NGC0104,F,model convention,2.69949702269,0.120487651716,2.58037917431,2.69307597622,2.82121122273,published standard-fit posterior; not an adopted host,2.7,0.12,0.002,0.017
+NGC0104,a1,model convention,0.350757984888,0.0242194647447,0.326715293199,0.350722336384,0.37484797088,published standard-fit posterior; not an adopted host,0.351,0.024,0,0.004
+NGC0104,a2,model convention,1.28791120004,0.0386047472492,1.25067865351,1.28684525325,1.32534999544,published standard-fit posterior; not an adopted host,1.288,0.039,0.001,0.006
+NGC0104,a3,model convention,2.2456755418,0.0263725089231,2.22019448321,2.24475239304,2.27259524138,published standard-fit posterior; not an adopted host,2.246,0.026,0,0.004
+NGC0104,BHret,percent model retention parameter; not BH mass fraction,0.295976642603,0.10074398915,0.215013315139,0.268002002576,0.367053757158,published standard-fit posterior; not an adopted host,0.296,0.101,0.002,0.019
+NGC0104,d,kpc,4.41971348636,0.0115211811947,4.40798488973,4.42040205033,4.43141356875,published standard-fit posterior; not an adopted host,4.42,0.012,0,0.002
+NGC1851,W0,model convention,5.87659367876,0.123937463238,5.76223881843,5.85585554098,5.99123236655,published standard-fit posterior; not an adopted host,5.877,0.124,0.003,0.021
+NGC1851,M,Msun,324971.168634,3850.38647905,321092.253442,325005.157578,328773.175635,published standard-fit posterior; not an adopted host,325000,4000,0,1000
+NGC1851,rh,pc,3.7130104928,0.0439671072667,3.66978029024,3.71220431708,3.75683836154,published standard-fit posterior; not an adopted host,3.713,0.044,0.001,0.007
+NGC1851,ra,log10 dimensionless anisotropy radius,4.2420639217,1.05747707884,2.98926275378,4.28854913033,5.47228912636,published standard-fit posterior; not an adopted host,4.242,1.058,0.013,0.119
+NGC1851,g,model convention,1.81652179866,0.0254068653005,1.79077273438,1.81773961174,1.84064599911,published standard-fit posterior; not an adopted host,1.817,0.025,0.001,0.004
+NGC1851,delta,model convention,0.481766108711,0.0173257778993,0.466663597051,0.487145129391,0.49660443787,published standard-fit posterior; not an adopted host,0.482,0.017,0,0.003
+NGC1851,s2,model convention,3.35309235979e-05,2.52589640146e-05,1.24957220467e-05,2.68796087679e-05,5.34823872084e-05,published standard-fit posterior; not an adopted host,0,0,0,0
+NGC1851,F,model convention,2.36732420204,0.17051899487,2.20254787948,2.35289638675,2.53753868789,published standard-fit posterior; not an adopted host,2.368,0.171,0.003,0.026
+NGC1851,a1,model convention,0.559074191332,0.0381208680121,0.521050049413,0.560242641766,0.596164384782,published standard-fit posterior; not an adopted host,0.559,0.038,0.001,0.006
+NGC1851,a2,model convention,1.27717454363,0.0553439556478,1.22310436433,1.277367689,1.33073242126,published standard-fit posterior; not an adopted host,1.277,0.055,0.001,0.009
+NGC1851,a3,model convention,2.8533165928,0.0704133522717,2.78095675039,2.84908421069,2.92535583536,published standard-fit posterior; not an adopted host,2.853,0.07,0.002,0.011
+NGC1851,BHret,percent model retention parameter; not BH mass fraction,3.40580665988,1.03685894296,2.44971033544,3.20429259514,4.38518164555,published standard-fit posterior; not an adopted host,3.406,1.037,0.024,0.193
+NGC1851,d,kpc,12.1857893897,0.0793080719881,12.1062370293,12.1833310557,12.2676090571,published standard-fit posterior; not an adopted host,12.186,0.079,0.002,0.011
+NGC3201,W0,model convention,4.79113940183,0.172181312853,4.62005202156,4.77530978937,4.95806790126,published standard-fit posterior; not an adopted host,4.791,0.172,0.005,0.032
+NGC3201,M,Msun,175680.497353,5796.89633058,169874.775184,175654.128327,181433.882013,published standard-fit posterior; not an adopted host,176000,6000,0,1000
+NGC3201,rh,pc,9.60883349768,0.522569798803,9.07009533708,9.59771381156,10.1515877192,published standard-fit posterior; not an adopted host,9.608,0.523,0.013,0.07
+NGC3201,ra,log10 dimensionless anisotropy radius,0.963794812626,0.0716344499538,0.903231584086,0.951177472556,1.0181785217,published standard-fit posterior; not an adopted host,0.964,0.072,0.003,0.017
+NGC3201,g,model convention,1.6653476105,0.110634505146,1.55211158478,1.66676581345,1.77839262923,published standard-fit posterior; not an adopted host,1.665,0.111,0.001,0.015
+NGC3201,delta,model convention,0.456928342267,0.0254165757344,0.431654460818,0.458808860974,0.483654827174,published standard-fit posterior; not an adopted host,0.457,0.025,0,0.005
+NGC3201,s2,model convention,19.2427310843,0.592455884947,18.609727848,19.3797540345,19.8248038241,published standard-fit posterior; not an adopted host,19.243,0.592,0.009,0.083
+NGC3201,F,model convention,2.480629071,0.23440290122,2.25254135197,2.46825519658,2.7013239986,published standard-fit posterior; not an adopted host,2.481,0.235,0.007,0.045
+NGC3201,a1,model convention,0.946174689682,0.0685620224031,0.876790830992,0.948588887176,1.01441258948,published standard-fit posterior; not an adopted host,0.946,0.068,0.001,0.009
+NGC3201,a2,model convention,1.40418830205,0.1180306702,1.28225360722,1.41215544031,1.52208899695,published standard-fit posterior; not an adopted host,1.404,0.118,0.005,0.019
+NGC3201,a3,model convention,2.1530259826,0.0720059475423,2.0793965382,2.14896324378,2.22528467418,published standard-fit posterior; not an adopted host,2.153,0.072,0.001,0.012
+NGC3201,BHret,percent model retention parameter; not BH mass fraction,0.092024529672,0.106456731366,0.0183763769817,0.0546139761892,0.159180821651,published standard-fit posterior; not an adopted host,0.092,0.106,0.003,0.029
+NGC3201,d,kpc,4.63751778525,0.0345945892281,4.60253821025,4.63582717422,4.67112127338,published standard-fit posterior; not an adopted host,4.638,0.035,0.002,0.006
+NGC5139,W0,model convention,0.92696406215,0.251039375623,0.803419037762,0.83472109327,1.13094738323,published standard-fit posterior; not an adopted host,0.927,0.251,0.008,0.069
+NGC5139,M,Msun,3096980.74635,39234.3164877,3069316.62738,3082427.57904,3148904.32302,published standard-fit posterior; not an adopted host,3097000,39000,1000,9000
+NGC5139,rh,pc,9.44413308689,0.0621012763699,9.4015936625,9.41881890902,9.52943998972,published standard-fit posterior; not an adopted host,9.444,0.062,0.002,0.014
+NGC5139,ra,log10 dimensionless anisotropy radius,2.31016559458,0.98042788581,1.91016276,2.02927854455,2.2922472231,published standard-fit posterior; not an adopted host,2.311,0.982,0.029,0.301
+NGC5139,g,model convention,2.59439769331,0.0185250203424,2.58284649053,2.59987545175,2.60647992046,published standard-fit posterior; not an adopted host,2.594,0.019,0,0.005
+NGC5139,delta,model convention,0.473396773106,0.0132049175243,0.466585630748,0.476032906102,0.484074601619,published standard-fit posterior; not an adopted host,0.473,0.013,0,0.003
+NGC5139,s2,model convention,0.000316573757436,6.18790901741e-05,0.000256336493203,0.000314434689826,0.000358940340654,published standard-fit posterior; not an adopted host,0,0,0,0
+NGC5139,F,model convention,5.95296434564,0.09732039937,5.87358318472,5.94900436848,6.03282454188,published standard-fit posterior; not an adopted host,5.953,0.097,0.001,0.025
+NGC5139,a1,model convention,0.871298774701,0.0345752524897,0.855085568683,0.879887301659,0.893149575368,published standard-fit posterior; not an adopted host,0.871,0.035,0.001,0.008
+NGC5139,a2,model convention,1.24274275843,0.0399672637206,1.21261671114,1.23887333807,1.26677286807,published standard-fit posterior; not an adopted host,1.243,0.04,0.001,0.01
+NGC5139,a3,model convention,2.25666914213,0.0710918830106,2.20311586598,2.28302460773,2.30819169278,published standard-fit posterior; not an adopted host,2.257,0.071,0.002,0.016
+NGC5139,BHret,percent model retention parameter; not BH mass fraction,33.2049679053,7.42329340418,26.3328265118,35.5713068635,38.9629104843,published standard-fit posterior; not an adopted host,33.205,7.422,0.195,1.691
+NGC5139,d,kpc,5.30442182905,0.0207479595608,5.28679920667,5.29976783903,5.3266479346,published standard-fit posterior; not an adopted host,5.304,0.021,0.001,0.004
+NGC6121,W0,model convention,6.54713413579,0.343708122728,6.26121899515,6.46317035141,6.81637808672,published standard-fit posterior; not an adopted host,6.547,0.343,0.005,0.064
+NGC6121,M,Msun,91118.8944126,1735.43656694,89369.9728649,91117.6499678,92869.8641427,published standard-fit posterior; not an adopted host,91000,2000,0,0
+NGC6121,rh,pc,3.9213052223,0.0620511082684,3.85894982746,3.91995559634,3.98226561438,published standard-fit posterior; not an adopted host,3.921,0.062,0.001,0.009
+NGC6121,ra,log10 dimensionless anisotropy radius,6.41713255951,2.06984288483,4.03672062251,6.49607970137,8.77259732296,published standard-fit posterior; not an adopted host,6.425,2.07,0.026,0.24
+NGC6121,g,model convention,0.819148517908,0.0895300874342,0.7273656193,0.823903786527,0.905983170154,published standard-fit posterior; not an adopted host,0.819,0.09,0.001,0.014
+NGC6121,delta,model convention,0.451399507035,0.0369199337582,0.411856741683,0.459373693259,0.488097971942,published standard-fit posterior; not an adopted host,0.451,0.037,0.001,0.006
+NGC6121,s2,model convention,4.46356276389e-05,0.000119007137062,3.73892609719e-06,1.3626743942e-05,6.43316640117e-05,published standard-fit posterior; not an adopted host,0,0,0,0
+NGC6121,F,model convention,1.33191321074,0.0856164377249,1.24753481621,1.32682223316,1.41509857045,published standard-fit posterior; not an adopted host,1.332,0.086,0.001,0.013
+NGC6121,a1,model convention,-0.0824882894518,0.0830711383909,-0.161895777852,-0.0815755457851,-0.000982897450527,published standard-fit posterior; not an adopted host,-0.082,0.083,0.001,0.013
+NGC6121,a2,model convention,0.369061936984,0.0922288466145,0.275768314994,0.368836445052,0.459595446641,published standard-fit posterior; not an adopted host,0.369,0.092,0.001,0.014
+NGC6121,a3,model convention,2.20303355652,0.0669111578016,2.13702623131,2.20155234783,2.27018676587,published standard-fit posterior; not an adopted host,2.203,0.067,0.001,0.01
+NGC6121,BHret,percent model retention parameter; not BH mass fraction,0.385166134365,0.212306915915,0.182878671199,0.36460882533,0.567381674726,published standard-fit posterior; not an adopted host,0.385,0.212,0.003,0.039
+NGC6121,d,kpc,1.85196061958,0.0139214872319,1.83810817915,1.85184051439,1.86571227339,published standard-fit posterior; not an adopted host,1.852,0.014,0,0.002
+NGC6397,W0,model convention,7.88570276997,0.102474728875,7.78536781218,7.8857333907,7.98727925136,published standard-fit posterior; not an adopted host,7.886,0.103,0.001,0.015
+NGC6397,M,Msun,108531.794464,2483.52888203,106119.360817,108381.078118,110939.693577,published standard-fit posterior; not an adopted host,109000,2000,0,0
+NGC6397,rh,pc,4.89628585359,0.155842149781,4.74681541745,4.88656546887,5.0437429543,published standard-fit posterior; not an adopted host,4.896,0.156,0.002,0.026
+NGC6397,ra,log10 dimensionless anisotropy radius,2.7974272732,0.129929868981,2.67594015814,2.79378714295,2.9131756712,published standard-fit posterior; not an adopted host,2.797,0.13,0.002,0.027
+NGC6397,g,model convention,1.53006961453,0.0770239862153,1.45420788673,1.52582742973,1.60829059682,published standard-fit posterior; not an adopted host,1.53,0.077,0.001,0.011
+NGC6397,delta,model convention,0.497383056379,0.00242124493895,0.495351319853,0.498029250196,0.499492782443,published standard-fit posterior; not an adopted host,0.497,0.002,0,0
+NGC6397,s2,model convention,8.9030240663,0.87727335298,8.02863212841,9.108754841,9.74830043771,published standard-fit posterior; not an adopted host,8.904,0.877,0.013,0.139
+NGC6397,F,model convention,1.99228033535,0.136937403555,1.861418345,1.98100644244,2.12317110803,published standard-fit posterior; not an adopted host,1.993,0.137,0.002,0.02
+NGC6397,a1,model convention,0.609662919855,0.0421772348708,0.568446328092,0.612323486557,0.651198520997,published standard-fit posterior; not an adopted host,0.61,0.042,0.001,0.006
+NGC6397,a2,model convention,0.726692939078,0.0659725700639,0.661361027753,0.718982071518,0.791934659428,published standard-fit posterior; not an adopted host,0.727,0.066,0.001,0.009
+NGC6397,a3,model convention,2.34989625377,0.0541017963594,2.29671570649,2.35681165857,2.40193799338,published standard-fit posterior; not an adopted host,2.35,0.054,0.001,0.008
+NGC6397,BHret,percent model retention parameter; not BH mass fraction,0.112305962917,0.0195102817876,0.0929034406713,0.111277896093,0.133361866369,published standard-fit posterior; not an adopted host,0.112,0.02,0,0.003
+NGC6397,d,kpc,2.43640920235,0.0149344819832,2.42151688089,2.43593052508,2.45184186455,published standard-fit posterior; not an adopted host,2.436,0.015,0,0.002

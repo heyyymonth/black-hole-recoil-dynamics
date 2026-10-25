@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "data_revision": "cluster-data-v0.1.0",
+  "scope": "artifact integrity and consistency; no scientific reproduction",
+  "files": [
+    {
+      "path": "analysis/cluster_data/analyze.py",
+      "bytes": 22431,
+      "sha256": "728d24ff422912d3c9989199a67848724e8a425534685df2940feb4624763e9c"
+    },
+    {
+      "path": "analysis/cluster_data/cluster_data_audit.ipynb",
+      "bytes": 427252,
+      "sha256": "ed59f635de9db7a8a19f0c242bd4b5957d4ffc11716578c83211ad3ab8870f7d"
+    },
+    {
+      "path": "analysis/cluster_data/fetch.py",
+      "bytes": 6129,
+      "sha256": "9afaf14e30b2f66f39012ded20d09d74691d2805db100b3a493b0f1cab34166a"
+    },
+    {
+      "path": "analysis/cluster_data/figures.py",
+      "bytes": 5417,
+      "sha256": "940b07c9ca9d4ead36846a2f5eccc30cc13236e34bb22d4a502de6f265a9d03e"
+    },
+    {
+      "path": "analysis/cluster_data/requirements-lock.txt",
+      "bytes": 1028,
+      "sha256": "a5845ad0337a2fdd5acc372130d3074b1f507f847ca50e49c71b3d45f2ad37ea"
+    },
+    {
+      "path": "analysis/cluster_data/run_notebook.py",
+      "bytes": 1058,
+      "sha256": "df3e5bf514d39d1681b7896b07970adecbd56615d7fa760ad5a4e04d513d48a5"
+    },
+    {
+      "path": "analysis/cluster_data/verify.py",
+      "bytes": 14686,
+      "sha256": "7b27a3fd2971f454245a206c73c95d7dec6307e66eef3280ca28c929514e6a16"
+    },
+    {
+      "path": "data/observed-clusters/README.md",
+      "bytes": 10759,
+      "sha256": "b117546a6266b6de15898ee63004ef483c87b8ca2f3ea436d395631451b3d918"
+    },
+    {
+      "path": "data/observed-clusters/candidate-hosts.json",
+      "bytes": 11181,
+      "sha256": "ac95b65837dd4c275cde66969860a4676f660f370a9889d7ce0764aea1ec5234"
+    },
+    {
+      "path": "data/observed-clusters/derived/catalog_scalars.csv",
+      "bytes": 1418,
+      "sha256": "f0579850119b723c2a657f25123efdcae286889fd134fef3e5861aa190408df0"
+    },
+    {
+      "path": "data/observed-clusters/derived/compiled_kinematics_audit.csv",
+      "bytes": 49814,
+      "sha256": "090b3377f2094e7787ed5829738327c414e9099b89c9212eb1abd489adc8913e"
+    },
+    {
+      "path": "data/observed-clusters/derived/coverage.csv",
+      "bytes": 657,
+      "sha256": "9aff6e208da59de62b45cc1b548fa6ce48b29d074d0250377101d663a7dc2a74"
+    },
+    {
+      "path": "data/observed-clusters/derived/gaia_archive_members.json",
+      "bytes": 1067,
+      "sha256": "59e3a83f9d58156e8e8feb1cd5fcd131c68348bed078479d690d12877bcb217b"
+    },
+    {
+      "path": "data/observed-clusters/derived/gaia_correlated_curves.csv",
+      "bytes": 129333,
+      "sha256": "764bf793bba7344cb036867f2638b9bd13611e64e08d77ebeb766681d5da1130"
+    },
+    {
+      "path": "data/observed-clusters/derived/gaia_profile_README.txt",
+      "bytes": 1299,
+      "sha256": "350fef07af46e74c25e6afcc769b53d8d5ab1671d33b41165f7f962240492d32"
+    },
+    {
+      "path": "data/observed-clusters/derived/gaia_star_catalog_quality.csv",
+      "bytes": 1683,
+      "sha256": "5562f4d953664ca131ca7fc66a76b40ad247015ac9fa221dc278ed3ea40bd34f"
+    },
+    {
+      "path": "data/observed-clusters/derived/host_estimate_comparison.pdf",
+      "bytes": 25765,
+      "sha256": "cf97b3a6eea38685f81abafdee38c23eb73c85ec45a8ec0d961020d65cca5236"
+    },
+    {
+      "path": "data/observed-clusters/derived/host_estimate_comparison.png",
+      "bytes": 85782,
+      "sha256": "bbae55fbe6deebb0596f46eb7c5806657027ffc05f7d8285756712f88ae88912"
+    },
+    {
+      "path": "data/observed-clusters/derived/hst_common_scales.pdf",
+      "bytes": 56443,
+      "sha256": "f3e1bc843cacadb7a55b7bd9607f8ab23d2145f96fa1d04bfdddcfa2ba82142f"
+    },
+    {
+      "path": "data/observed-clusters/derived/hst_common_scales.png",
+      "bytes": 142407,
+      "sha256": "f507cea48cccdc3bbe85913ef5d90333e0b688a2ee1aa7c998662cb75213f4ac"
+    },
+    {
+      "path": "data/observed-clusters/derived/hst_native_and_common_units.csv",
+      "bytes": 142059,
+      "sha256": "e906b320274611a85ad0f5fffe62ac3f92e065256515b2c335361b0bfc816466"
+    },
+    {
+      "path": "data/observed-clusters/derived/model_product_inventory.json",
+      "bytes": 118508,
+      "sha256": "349bc05c06805787584d7fbef78542a0ba44e3cc13375e27231cb28e24e910f7"
+    },
+    {
+      "path": "data/observed-clusters/derived/observation_bundle_inventory.json",
+      "bytes": 55805,
+      "sha256": "d08700136b3ad6011e864e7df585ad0a76ac20c5825291bd4cf7c31b41ba95a4"
+    },
+    {
+      "path": "data/observed-clusters/derived/posterior_diagnostics.json",
+      "bytes": 83994,
+      "sha256": "90992d741966c472ac1da701f1dedbef0295da108c43646501750f8384b0ff23"
+    },
+    {
+      "path": "data/observed-clusters/derived/posterior_parameters.csv",
+      "bytes": 14131,
+      "sha256": "b83d077b1fac8a13f332dc1edb4e086575a8302ffe364cdd823d8f1a4b87150d"
+    },
+    {
+      "path": "data/observed-clusters/derived/quality.json",
+      "bytes": 4170,
+      "sha256": "269318c2c7e11cd03496f6184e7e8c4707545d836eb1368bfa13a4aeaac18cb5"
+    },
+    {
+      "path": "data/observed-clusters/derived/radial_sampling.pdf",
+      "bytes": 33214,
+      "sha256": "8e895f54909ed5f37d88bcce4231e76f968d6675f19df4f90bde1dcef1a960e0"
+    },
+    {
+      "path": "data/observed-clusters/derived/radial_sampling.png",
+      "bytes": 67689,
+      "sha256": "a3f2bd1c4d4ed4ad02a3919f7bb1fc0a657aabaa202c9f4d54822d2370fe95cc"
+    },
+    {
+      "path": "data/observed-clusters/derived/root_catalog_comparison.csv",
+      "bytes": 1449,
+      "sha256": "c0454a414b67032d77987789c90e0af434441191303e82a105b6dbd709d88ad1"
+    },
+    {
+      "path": "data/observed-clusters/derived/surface_profiles.csv",
+      "bytes": 60436,
+      "sha256": "3814d11782db596810d64e62f2cca681846525f0071d4dcca87de9dd28fb58fd"
+    },
+    {
+      "path": "data/observed-clusters/sources.json",
+      "bytes": 24417,
+      "sha256": "55711544e43b124ec2796cdb3a1b4a472111b3e04c01534bad40a8033806e924"
+    },
+    {
+      "path": "docs/cluster-data-assessment.md",
+      "bytes": 14299,
+      "sha256": "eb2c3a3d1480ea84ec9800f1c514ca2a0b9b1f229430650e46b764edb9666ef3"
+    },
+    {
+      "path": "docs/cluster-host-schema.md",
+      "bytes": 13553,
+      "sha256": "920a7d4159db9acf0ca166f9bc86323ddf13a05aca272d1ec1dfcd4d744095ab"
+    }
+  ]
+}

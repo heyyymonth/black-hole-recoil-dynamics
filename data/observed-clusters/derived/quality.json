@@ -1,0 +1,192 @@
+{
+  "source_files": 51,
+  "source_bytes": 269365248,
+  "clusters": 6,
+  "gaia_stars_inspected": 621878,
+  "hst_unique_bins": 107,
+  "hst_component_records": 321,
+  "compiled_kinematic_rows": 418,
+  "surface_rows": 422,
+  "gaia_curve_samples": 606,
+  "compiled_flagged_rows": 20,
+  "compiled_duplicate_candidate_rows": 4,
+  "duplicate_groups": [
+    {
+      "cluster": "NGC1851",
+      "radius_arcsec": 0.0,
+      "component": "PM_UNSPECIFIED_COMBINED",
+      "literature_tag": "VB21"
+    }
+  ],
+  "flags": [
+    {
+      "row_id": "NGC1851:3",
+      "reasons": [
+        "nonpositive_radius_needs_original_mapping",
+        "nonpositive_dispersion_or_uncertainty"
+      ]
+    },
+    {
+      "row_id": "NGC1851:4",
+      "reasons": [
+        "nonpositive_radius_needs_original_mapping"
+      ]
+    },
+    {
+      "row_id": "NGC1851:5",
+      "reasons": [
+        "nonpositive_radius_needs_original_mapping"
+      ]
+    },
+    {
+      "row_id": "NGC1851:6",
+      "reasons": [
+        "nonpositive_radius_needs_original_mapping"
+      ]
+    },
+    {
+      "row_id": "NGC5139:3",
+      "reasons": [
+        "nonpositive_radius_needs_original_mapping",
+        "nonpositive_dispersion_or_uncertainty"
+      ]
+    },
+    {
+      "row_id": "NGC6397:24",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:29",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:33",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:35",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:37",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:40",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:43",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:45",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:48",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:51",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:52",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:54",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:56",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:57",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    },
+    {
+      "row_id": "NGC6397:59",
+      "reasons": [
+        "identical_dispersion_and_errors_unreconciled"
+      ]
+    }
+  ],
+  "intersection_hst_median_radius_spans_R_over_rh": [
+    0.0810888372874447,
+    0.25126225510990996
+  ],
+  "posterior_summary_rounding_differences": {
+    "NGC0104": [],
+    "NGC1851": [
+      "ra",
+      "F"
+    ],
+    "NGC3201": [
+      "rh",
+      "F",
+      "a1"
+    ],
+    "NGC5139": [
+      "ra",
+      "BHret"
+    ],
+    "NGC6121": [
+      "W0",
+      "ra"
+    ],
+    "NGC6397": [
+      "W0",
+      "s2",
+      "F"
+    ]
+  },
+  "common_units_ready": true,
+  "common_tracer_selection_ready": false,
+  "full_local_species_distribution_ready": false,
+  "dynamics_enabled": false,
+  "checks": [
+    "source SHA256",
+    "Gaia provider MD5 during retrieval",
+    "exact source table widths",
+    "six unique canonical IDs",
+    "nonnegative HST dispersions/errors",
+    "HST component key uniqueness",
+    "native/physical unit round trips",
+    "nested sample/weight alignment",
+    "posterior normalized weights"
+  ],
+  "comparisons_performed": [
+    "all 13 means/SDs vs published summary rounding; resampled-summary estimator differs; rounding differences recorded"
+  ]
+}

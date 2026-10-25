@@ -8,6 +8,8 @@ Surface brightness, stellar counts, line-of-sight velocities, proper motions, an
 
 The scattering population can include faint stars and remnants poorly constrained by luminous tracers. Total mass alone does not determine species-resolved phase space. A present-day host fit also need not describe the environment at a historical merger.
 
+The [observed-cluster assessment](cluster-data-assessment.md) audits original public products for six candidates and identifies what can be put into common units. Its [host schema](cluster-host-schema.md) retains distinct joint parameter distributions, tracer selections and source conventions. This data comparison does not yet reconstruct the local distributions needed for drift and diffusion.
+
 ## Host representations and tradeoffs
 
 | Representation | Information available | Further requirements |

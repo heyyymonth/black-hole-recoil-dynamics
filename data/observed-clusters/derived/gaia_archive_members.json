@@ -1,0 +1,38 @@
+[
+  {
+    "cluster": "NGC0104",
+    "member": "profiles/NGC_104_47Tuc.txt",
+    "bytes": 11418,
+    "sha256": "465bee6b945b4df4cba58c03a1ecdff7348ae56c59d494b11f07522aefe278a6"
+  },
+  {
+    "cluster": "NGC1851",
+    "member": "profiles/NGC_1851.txt",
+    "bytes": 12224,
+    "sha256": "421f9794b918bbd29a70ec709bd1b69378f88ad5f431f39664b8bf223d569d57"
+  },
+  {
+    "cluster": "NGC3201",
+    "member": "profiles/NGC_3201.txt",
+    "bytes": 11575,
+    "sha256": "1664c11a86c4247b3c451ab52f9fde1ca516543ae1215c53251c4b5001b8ba17"
+  },
+  {
+    "cluster": "NGC5139",
+    "member": "profiles/NGC_5139_oCen.txt",
+    "bytes": 11025,
+    "sha256": "81099c3e28d132483af157e0247dd3dfd0ee98d4dea24978d75e2151baa2c629"
+  },
+  {
+    "cluster": "NGC6121",
+    "member": "profiles/NGC_6121_M_4.txt",
+    "bytes": 11450,
+    "sha256": "f4f7446d6fd33636a51e672d50445f698a933b818a28f507cd5edb3e136655b4"
+  },
+  {
+    "cluster": "NGC6397",
+    "member": "profiles/NGC_6397.txt",
+    "bytes": 12029,
+    "sha256": "b32c0521de3aab53212b2e5a832d10c768259b09db822d319773dccd56de04c4"
+  }
+]

@@ -1,5 +1,13 @@
 # Release record
 
+## Observed-cluster data 0.1.0 - 2026-10-24
+
+- Capture 51 original public products for six observed cluster candidates, with exact source hashes and source attribution.
+- Audit 621,878 Gaia field-catalog rows and 107 original HST radial bins; preserve tracer differences, shared uncertainty and correlated profile products.
+- Record 20 suspect compilation rows without guessed corrections; retain separate catalog versions and weighted joint posterior diagnostics.
+- Provide common-unit tables, three comparison figures, an executed notebook and candidate host records with transport inputs unassigned.
+- Leave the theoretical manuscript, PDF and physical experiments unchanged.
+
 ## Research formulation 1 and manuscript 0.4.0-manuscript.1 - 2026-10-23
 
 - Define the two-step scope: merger-conditioned recoil transport and finite-time residence and environmental exposure.

@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "data_revision": "cluster-data-v0.1.0",
+  "source_date": "2026-10-24",
+  "researcher": "Venkata Hemanth Athota",
+  "scope": "six observed present-day cluster candidates",
+  "common_units": {
+    "length": "pc",
+    "velocity": "km/s",
+    "mass": "Msun",
+    "time": "Myr",
+    "angular_radius_native": "arcsec",
+    "proper_motion_native": "mas/yr"
+  },
+  "common_model_pattern": "same declared model interface, distinct joint host posterior per cluster",
+  "scope_constraints": [
+    "No new host fit",
+    "No reconstruction of local phase space",
+    "No remnant trajectory",
+    "No independently sampled Gaussian marginals",
+    "No pooling six clusters into one stellar population"
+  ],
+  "hosts": [
+    {
+      "cluster_id": "NGC0104",
+      "aliases": [
+        "47 Tuc"
+      ],
+      "status": "candidate_data_assessed_not_transport_ready",
+      "catalog_display_scales": {
+        "distance_kpc": 4.52,
+        "distance_error_kpc": 0.03,
+        "mass_msun": 890000.0,
+        "mass_error_msun": 5000.0,
+        "half_mass_3d_pc": 6.24,
+        "scale_v_kms": 24.767561661,
+        "scale_t_myr": 0.246347361392
+      },
+      "catalog_display_scale_source": "raw/uq_parameters.html",
+      "catalog_scale_uncertainty": "mass/radius/distance joint covariance unavailable; display conversion only",
+      "candidate_joint_host_posterior": {
+        "source_file": "raw/gcfit_NGC0104_sampler.hdf",
+        "samples_dataset": "nested/samples",
+        "log_weights_dataset": "nested/logwt",
+        "parameters": [
+          "W0",
+          "M",
+          "rh",
+          "ra",
+          "g",
+          "delta",
+          "s2",
+          "F",
+          "a1",
+          "a2",
+          "a3",
+          "BHret",
+          "d"
+        ],
+        "weight_rule": "exp(logwt - max(logwt)), normalized across original rows",
+        "joint_rows": 9064,
+        "effective_sample_size": 5495.312203799172,
+        "summary_file": "derived/posterior_parameters.csv",
+        "exact_observation_and_software_pairing": "unverified",
+        "role": "published candidate model"
+      },
+      "native_hst_radial_bins": 28,
+      "mass_resolved_distribution_functions": null,
+      "consistent_potential": null,
+      "external_field_and_evolution": null,
+      "merger_launch_law": null,
+      "remnant_mass_law": null,
+      "collision_cutoffs_and_closure": null,
+      "region_and_horizon": null,
+      "execution_enabled": false
+    },
+    {
+      "cluster_id": "NGC1851",
+      "aliases": [
+        "NGC 1851"
+      ],
+      "status": "candidate_data_assessed_not_transport_ready",
+      "catalog_display_scales": {
+        "distance_kpc": 11.95,
+        "distance_error_kpc": 0.13,
+        "mass_msun": 278000.0,
+        "mass_error_msun": 4000.0,
+        "half_mass_3d_pc": 3.11,
+        "scale_v_kms": 19.6075236648,
+        "scale_t_myr": 0.155090151179
+      },
+      "catalog_display_scale_source": "raw/uq_parameters.html",
+      "catalog_scale_uncertainty": "mass/radius/distance joint covariance unavailable; display conversion only",
+      "candidate_joint_host_posterior": {
+        "source_file": "raw/gcfit_NGC1851_sampler.hdf",
+        "samples_dataset": "nested/samples",
+        "log_weights_dataset": "nested/logwt",
+        "parameters": [
+          "W0",
+          "M",
+          "rh",
+          "ra",
+          "g",
+          "delta",
+          "s2",
+          "F",
+          "a1",
+          "a2",
+          "a3",
+          "BHret",
+          "d"
+        ],
+        "weight_rule": "exp(logwt - max(logwt)), normalized across original rows",
+        "joint_rows": 11111,
+        "effective_sample_size": 5171.395490297666,
+        "summary_file": "derived/posterior_parameters.csv",
+        "exact_observation_and_software_pairing": "unverified",
+        "role": "published candidate model"
+      },
+      "native_hst_radial_bins": 20,
+      "mass_resolved_distribution_functions": null,
+      "consistent_potential": null,
+      "external_field_and_evolution": null,
+      "merger_launch_law": null,
+      "remnant_mass_law": null,
+      "collision_cutoffs_and_closure": null,
+      "region_and_horizon": null,
+      "execution_enabled": false
+    },
+    {
+      "cluster_id": "NGC3201",
+      "aliases": [
+        "NGC 3201"
+      ],
+      "status": "candidate_data_assessed_not_transport_ready",
+      "catalog_display_scales": {
+        "distance_kpc": 4.74,
+        "distance_error_kpc": 0.04,
+        "mass_msun": 180000.0,
+        "mass_error_msun": 3000.0,
+        "half_mass_3d_pc": 8.37,
+        "scale_v_kms": 9.61732002779,
+        "scale_t_myr": 0.850977285961
+      },
+      "catalog_display_scale_source": "raw/uq_parameters.html",
+      "catalog_scale_uncertainty": "mass/radius/distance joint covariance unavailable; display conversion only",
+      "candidate_joint_host_posterior": {
+        "source_file": "raw/gcfit_NGC3201_sampler.hdf",
+        "samples_dataset": "nested/samples",
+        "log_weights_dataset": "nested/logwt",
+        "parameters": [
+          "W0",
+          "M",
+          "rh",
+          "ra",
+          "g",
+          "delta",
+          "s2",
+          "F",
+          "a1",
+          "a2",
+          "a3",
+          "BHret",
+          "d"
+        ],
+        "weight_rule": "exp(logwt - max(logwt)), normalized across original rows",
+        "joint_rows": 11363,
+        "effective_sample_size": 5782.0266538763835,
+        "summary_file": "derived/posterior_parameters.csv",
+        "exact_observation_and_software_pairing": "unverified",
+        "role": "published candidate model"
+      },
+      "native_hst_radial_bins": 6,
+      "mass_resolved_distribution_functions": null,
+      "consistent_potential": null,
+      "external_field_and_evolution": null,
+      "merger_launch_law": null,
+      "remnant_mass_law": null,
+      "collision_cutoffs_and_closure": null,
+      "region_and_horizon": null,
+      "execution_enabled": false
+    },
+    {
+      "cluster_id": "NGC5139",
+      "aliases": [
+        "Omega Centauri"
+      ],
+      "status": "candidate_data_assessed_not_transport_ready",
+      "catalog_display_scales": {
+        "distance_kpc": 5.43,
+        "distance_error_kpc": 0.05,
+        "mass_msun": 3320000.0,
+        "mass_error_msun": 10000.0,
+        "half_mass_3d_pc": 9.85,
+        "scale_v_kms": 38.0742599763,
+        "scale_t_myr": 0.252959700059
+      },
+      "catalog_display_scale_source": "raw/uq_parameters.html",
+      "catalog_scale_uncertainty": "mass/radius/distance joint covariance unavailable; display conversion only",
+      "candidate_joint_host_posterior": {
+        "source_file": "raw/gcfit_NGC5139_sampler.hdf",
+        "samples_dataset": "nested/samples",
+        "log_weights_dataset": "nested/logwt",
+        "parameters": [
+          "W0",
+          "M",
+          "rh",
+          "ra",
+          "g",
+          "delta",
+          "s2",
+          "F",
+          "a1",
+          "a2",
+          "a3",
+          "BHret",
+          "d"
+        ],
+        "weight_rule": "exp(logwt - max(logwt)), normalized across original rows",
+        "joint_rows": 18621,
+        "effective_sample_size": 6888.685155465672,
+        "summary_file": "derived/posterior_parameters.csv",
+        "exact_observation_and_software_pairing": "unverified",
+        "role": "published candidate model"
+      },
+      "native_hst_radial_bins": 40,
+      "mass_resolved_distribution_functions": null,
+      "consistent_potential": null,
+      "external_field_and_evolution": null,
+      "merger_launch_law": null,
+      "remnant_mass_law": null,
+      "collision_cutoffs_and_closure": null,
+      "region_and_horizon": null,
+      "execution_enabled": false
+    },
+    {
+      "cluster_id": "NGC6121",
+      "aliases": [
+        "M4"
+      ],
+      "status": "candidate_data_assessed_not_transport_ready",
+      "catalog_display_scales": {
+        "distance_kpc": 1.85,
+        "distance_error_kpc": 0.02,
+        "mass_msun": 88800.0,
+        "mass_error_msun": 1100.0,
+        "half_mass_3d_pc": 3.81,
+        "scale_v_kms": 10.012085264,
+        "scale_t_myr": 0.372089156892
+      },
+      "catalog_display_scale_source": "raw/uq_parameters.html",
+      "catalog_scale_uncertainty": "mass/radius/distance joint covariance unavailable; display conversion only",
+      "candidate_joint_host_posterior": {
+        "source_file": "raw/gcfit_NGC6121_sampler.hdf",
+        "samples_dataset": "nested/samples",
+        "log_weights_dataset": "nested/logwt",
+        "parameters": [
+          "W0",
+          "M",
+          "rh",
+          "ra",
+          "g",
+          "delta",
+          "s2",
+          "F",
+          "a1",
+          "a2",
+          "a3",
+          "BHret",
+          "d"
+        ],
+        "weight_rule": "exp(logwt - max(logwt)), normalized across original rows",
+        "joint_rows": 11330,
+        "effective_sample_size": 5843.8415581852105,
+        "summary_file": "derived/posterior_parameters.csv",
+        "exact_observation_and_software_pairing": "unverified",
+        "role": "published candidate model"
+      },
+      "native_hst_radial_bins": 6,
+      "mass_resolved_distribution_functions": null,
+      "consistent_potential": null,
+      "external_field_and_evolution": null,
+      "merger_launch_law": null,
+      "remnant_mass_law": null,
+      "collision_cutoffs_and_closure": null,
+      "region_and_horizon": null,
+      "execution_enabled": false
+    },
+    {
+      "cluster_id": "NGC6397",
+      "aliases": [
+        "NGC 6397"
+      ],
+      "status": "candidate_data_assessed_not_transport_ready",
+      "catalog_display_scales": {
+        "distance_kpc": 2.48,
+        "distance_error_kpc": 0.02,
+        "mass_msun": 90100.0,
+        "mass_error_msun": 900.0,
+        "half_mass_3d_pc": 3.17,
+        "scale_v_kms": 11.0563889638,
+        "scale_t_myr": 0.280344817181
+      },
+      "catalog_display_scale_source": "raw/uq_parameters.html",
+      "catalog_scale_uncertainty": "mass/radius/distance joint covariance unavailable; display conversion only",
+      "candidate_joint_host_posterior": {
+        "source_file": "raw/gcfit_NGC6397_sampler.hdf",
+        "samples_dataset": "nested/samples",
+        "log_weights_dataset": "nested/logwt",
+        "parameters": [
+          "W0",
+          "M",
+          "rh",
+          "ra",
+          "g",
+          "delta",
+          "s2",
+          "F",
+          "a1",
+          "a2",
+          "a3",
+          "BHret",
+          "d"
+        ],
+        "weight_rule": "exp(logwt - max(logwt)), normalized across original rows",
+        "joint_rows": 12838,
+        "effective_sample_size": 6617.765492543086,
+        "summary_file": "derived/posterior_parameters.csv",
+        "exact_observation_and_software_pairing": "unverified",
+        "role": "standard fit only; use no-BH alternative assessment for NGC6397"
+      },
+      "native_hst_radial_bins": 7,
+      "mass_resolved_distribution_functions": null,
+      "consistent_potential": null,
+      "external_field_and_evolution": null,
+      "merger_launch_law": null,
+      "remnant_mass_law": null,
+      "collision_cutoffs_and_closure": null,
+      "region_and_horizon": null,
+      "execution_enabled": false
+    }
+  ]
+}

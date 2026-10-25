@@ -1,0 +1,477 @@
+{
+  "capture_date_local": "2026-10-24",
+  "timezone": "America/Los_Angeles",
+  "retrieved_utc": "2026-10-24T15:20:39.486508+00:00",
+  "scope": "original source retrieval and data analysis; no host fit or dynamics",
+  "clusters": [
+    "NGC0104",
+    "NGC1851",
+    "NGC3201",
+    "NGC5139",
+    "NGC6121",
+    "NGC6397"
+  ],
+  "gcfit_results_commit": "c45a03b1681570b6ee96be76f362894c6628e1f1",
+  "gcfit_observation_candidate_commit": "ca63e5b465d01bb5b006dce7d40e28d0a95643ed",
+  "files": [
+    {
+      "file": "uq_parameters.html",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/parameter.html",
+      "category": "documentation",
+      "role": "source definitions and catalog version audit",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 192031,
+      "sha256": "f956c8b784488a5d25bb8c67151fe29271bda3688260806435f680a86a60c632"
+    },
+    {
+      "file": "uq_root_parameters.html",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/parameter.html",
+      "category": "documentation",
+      "role": "source definitions and catalog version audit",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 188768,
+      "sha256": "c2e231374ba447d5153307c1018c1ea982f03706b813814a24209a32027bd225"
+    },
+    {
+      "file": "uq_profiles.html",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/velsurf.html",
+      "category": "documentation",
+      "role": "source definitions and catalog version audit",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 25459,
+      "sha256": "156d145d7d57c893eb5aa098c108f7f121ca0210c459fbd63513baada2ef72e2"
+    },
+    {
+      "file": "uq_NGC0104_kin.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc104_kin.txt",
+      "category": "compiled_profile",
+      "role": "audit only; source overlap and suspect rows retained",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 4557,
+      "sha256": "478adb5b9d66741258b00060395a55cad2d5257ddbd62a4eb110bc29db8e9d3f"
+    },
+    {
+      "file": "uq_NGC0104_sb.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc0104_sb.txt",
+      "category": "projected_surface_profile",
+      "role": "native log profile; normalization unresolved",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 2560,
+      "sha256": "87a64f90b614e7f83d57a8b5580e535514f30ab9a1837042f8e903e4ee43f0e5"
+    },
+    {
+      "file": "hacks_NGC0104.txt",
+      "url": "https://archive.stsci.edu/hlsps/hacks/velocity_dispersions/hlsp_hacks_hst_acs-wfc3_ngc0104_multi_v1.0_vdisp.txt",
+      "category": "original_hst_binned_profile",
+      "role": "native mas/yr; combined and components share stars",
+      "license": "CC BY 4.0; cite Libralato et al. 2022 and MAST HACKS",
+      "bytes": 2028,
+      "sha256": "9b46e427eb176277bca88fafd8f037db54c4bcccd0546c46f3deed43d786b60a"
+    },
+    {
+      "file": "gcfit_NGC0104_sampler.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC0104/NGC0104_sampler.hdf",
+      "category": "published_joint_posterior",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 12107104,
+      "sha256": "215ed68ca2e3ba3f82c6a33eb6b9c112e09bfe16677ca14ebf72acae30f4fff4"
+    },
+    {
+      "file": "gcfit_NGC0104_summary.txt",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC0104/summary.txt",
+      "category": "published_fit_summary",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 961,
+      "sha256": "5b5dc2bcfa6c762138afd202d08e74c27a3f7c00f9256ba0cc15a13b7defa91d"
+    },
+    {
+      "file": "gcfit_NGC0104_gaia.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/Gaia_profiles/NGC0104_profiles.hdf",
+      "category": "gcfit_gaia_reanalysis",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 9552,
+      "sha256": "9ff4b954e00082b09e5e7a0c3709f16ba0b9d7d8bb4d1ae5205ccd36fbdf6ff4"
+    },
+    {
+      "file": "gcfit_NGC0104_observations.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit/ca63e5b465d01bb5b006dce7d40e28d0a95643ed/gcfit/resources/NGC0104.hdf",
+      "category": "gcfit_observation_bundle",
+      "role": "historical v1.0 candidate pairing; not a proven chain reproduction",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 66424,
+      "sha256": "53e2f8ffc0f5cc01915401b113f28cb7c89df0f2c4973da35e32704e69ee0ef3"
+    },
+    {
+      "file": "uq_NGC1851_kin.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc1851_kin.txt",
+      "category": "compiled_profile",
+      "role": "audit only; source overlap and suspect rows retained",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 2807,
+      "sha256": "e7355a49003bb61666c28a5601aeaf304ad20d97b8d79756b9c8e9295589147a"
+    },
+    {
+      "file": "uq_NGC1851_sb.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc1851_sb.txt",
+      "category": "projected_surface_profile",
+      "role": "native log profile; normalization unresolved",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 3365,
+      "sha256": "65ab6fb1bbbb3430511deaf206b44cace051515b9e58322dcef871f813e1f44d"
+    },
+    {
+      "file": "hacks_NGC1851.txt",
+      "url": "https://archive.stsci.edu/hlsps/hacks/velocity_dispersions/hlsp_hacks_hst_acs-wfc3_ngc1851_multi_v1.0_vdisp.txt",
+      "category": "original_hst_binned_profile",
+      "role": "native mas/yr; combined and components share stars",
+      "license": "CC BY 4.0; cite Libralato et al. 2022 and MAST HACKS",
+      "bytes": 1612,
+      "sha256": "18cad6f6b96862ecd791f116dbdc10a11644b488ad83e843da626d031e316f62"
+    },
+    {
+      "file": "gcfit_NGC1851_sampler.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC1851/NGC1851_sampler.hdf",
+      "category": "published_joint_posterior",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 22920160,
+      "sha256": "0d4f1aeffcb9c74c5ed7a8cb82767065a1e3c83e5d85c0f8697ba445efcf6452"
+    },
+    {
+      "file": "gcfit_NGC1851_summary.txt",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC1851/summary.txt",
+      "category": "published_fit_summary",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 952,
+      "sha256": "25c6fa4a1ab58e8bf75836bd839bec2f669d0fd328293eb6d3c7941f25cdf8f6"
+    },
+    {
+      "file": "gcfit_NGC1851_gaia.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/Gaia_profiles/NGC1851_profiles.hdf",
+      "category": "gcfit_gaia_reanalysis",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 9552,
+      "sha256": "7fc8200150192e840ca034d0476e749ed82a1260680041995888602e5d6b2379"
+    },
+    {
+      "file": "gcfit_NGC1851_observations.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit/ca63e5b465d01bb5b006dce7d40e28d0a95643ed/gcfit/resources/NGC1851.hdf",
+      "category": "gcfit_observation_bundle",
+      "role": "historical v1.0 candidate pairing; not a proven chain reproduction",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 47360,
+      "sha256": "4d9e7fb9cbd01c6556c8e0345939976e62103214671907766fbbb41c60d14472"
+    },
+    {
+      "file": "uq_NGC3201_kin.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc3201_kin.txt",
+      "category": "compiled_profile",
+      "role": "audit only; source overlap and suspect rows retained",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 2157,
+      "sha256": "eba307d665238a23f8384d7a038d333f06bc05e755a80c181dfb1fb5910e9497"
+    },
+    {
+      "file": "uq_NGC3201_sb.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc3201_sb.txt",
+      "category": "projected_surface_profile",
+      "role": "native log profile; normalization unresolved",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 1930,
+      "sha256": "c40d590810928cf30fc0c509a37241ad5acc0a568f1b58b23e24b0676f624b6d"
+    },
+    {
+      "file": "hacks_NGC3201.txt",
+      "url": "https://archive.stsci.edu/hlsps/hacks/velocity_dispersions/hlsp_hacks_hst_acs-wfc3_ngc3201_multi_v1.0_vdisp.txt",
+      "category": "original_hst_binned_profile",
+      "role": "native mas/yr; combined and components share stars",
+      "license": "CC BY 4.0; cite Libralato et al. 2022 and MAST HACKS",
+      "bytes": 884,
+      "sha256": "6a90f1391f89f4bc8b0156bc33b04a2c4db056a45fbb9931250c2e58ed8a41a0"
+    },
+    {
+      "file": "gcfit_NGC3201_sampler.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC3201/NGC3201_sampler.hdf",
+      "category": "published_joint_posterior",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 24513032,
+      "sha256": "22b887d1f1049cf75b201928fab3e0a58b2e3d1804005f8858a1973be6412377"
+    },
+    {
+      "file": "gcfit_NGC3201_summary.txt",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC3201/summary.txt",
+      "category": "published_fit_summary",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 951,
+      "sha256": "c38c7eabbb3629dcad92217d522ad310d93015c6c10d39a257742cd155efc0c5"
+    },
+    {
+      "file": "gcfit_NGC3201_gaia.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/Gaia_profiles/NGC3201_profiles.hdf",
+      "category": "gcfit_gaia_reanalysis",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 9552,
+      "sha256": "448ba742aa436ec7828998df776e8027c6fb234a50c523bd50fb1a3cf369176a"
+    },
+    {
+      "file": "gcfit_NGC3201_observations.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit/ca63e5b465d01bb5b006dce7d40e28d0a95643ed/gcfit/resources/NGC3201.hdf",
+      "category": "gcfit_observation_bundle",
+      "role": "historical v1.0 candidate pairing; not a proven chain reproduction",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 36368,
+      "sha256": "4a883f75732164640f78a52c19c728b5ea22f92a989d6de6d64e9fbd7599de8d"
+    },
+    {
+      "file": "uq_NGC5139_kin.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc5139_kin.txt",
+      "category": "compiled_profile",
+      "role": "audit only; source overlap and suspect rows retained",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 7117,
+      "sha256": "29da1df9f98dfba12de1024f10447d09c2a6d74d0b274d6831e5820c64b041d7"
+    },
+    {
+      "file": "uq_NGC5139_sb.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc5139_sb.txt",
+      "category": "projected_surface_profile",
+      "role": "native log profile; normalization unresolved",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 3365,
+      "sha256": "3957fbbe51f8eb79ad8a4ed3db22bff282c990db1ab32b854f306afda4b1a5a2"
+    },
+    {
+      "file": "gcfit_NGC5139_sampler.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC5139/NGC5139_sampler.hdf",
+      "category": "published_joint_posterior",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 43514936,
+      "sha256": "a2ec970040eeed6d1be21b23367f627d48cc0dd62001eed4738bb3631b18921c"
+    },
+    {
+      "file": "gcfit_NGC5139_summary.txt",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC5139/summary.txt",
+      "category": "published_fit_summary",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 953,
+      "sha256": "7e28d6751c4bfbe5ebe194bcbb33899d2b025302340e1914adda129f3e447ad9"
+    },
+    {
+      "file": "gcfit_NGC5139_gaia.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/Gaia_profiles/NGC5139_profiles.hdf",
+      "category": "gcfit_gaia_reanalysis",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 9552,
+      "sha256": "2e753be88dd2daa0130606b0179ea11746ec25e649d4a584b3fc73da5c0e25c1"
+    },
+    {
+      "file": "gcfit_NGC5139_observations.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit/ca63e5b465d01bb5b006dce7d40e28d0a95643ed/gcfit/resources/NGC5139.hdf",
+      "category": "gcfit_observation_bundle",
+      "role": "historical v1.0 candidate pairing; not a proven chain reproduction",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 85344,
+      "sha256": "0954363cca896eebc6f36a43508f93b46a05889aa70f3e6ae0487106e1971f64"
+    },
+    {
+      "file": "uq_NGC6121_kin.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc6121_kin.txt",
+      "category": "compiled_profile",
+      "role": "audit only; source overlap and suspect rows retained",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 1757,
+      "sha256": "b127c207153d4fc1fbb06a131c77b4d10f0516983a7aedcbc906da72d311d5bd"
+    },
+    {
+      "file": "uq_NGC6121_sb.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc6121_sb.txt",
+      "category": "projected_surface_profile",
+      "role": "native log profile; normalization unresolved",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 1930,
+      "sha256": "db93ea860fb8d82441853d06074fc49f1825cf471eefd19a3524b7de5f4f5ee0"
+    },
+    {
+      "file": "hacks_NGC6121.txt",
+      "url": "https://archive.stsci.edu/hlsps/hacks/velocity_dispersions/hlsp_hacks_hst_acs-wfc3_ngc6121_multi_v1.0_vdisp.txt",
+      "category": "original_hst_binned_profile",
+      "role": "native mas/yr; combined and components share stars",
+      "license": "CC BY 4.0; cite Libralato et al. 2022 and MAST HACKS",
+      "bytes": 884,
+      "sha256": "ffa75d52f5f2d7fe293d743578668b92d7c90f26bca08866ebd8fab8458490db"
+    },
+    {
+      "file": "gcfit_NGC6121_sampler.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6121/NGC6121_sampler.hdf",
+      "category": "published_joint_posterior",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 22456608,
+      "sha256": "483b5752735d5c78da2d9090a37d3b52861074ca5b8e3afa8da9b32d5877bd41"
+    },
+    {
+      "file": "gcfit_NGC6121_summary.txt",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6121/summary.txt",
+      "category": "published_fit_summary",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 949,
+      "sha256": "bcdfe46fb95efeac1c23332b8cd7fa97c578465e92b8345ce00b15d8bc4bf41a"
+    },
+    {
+      "file": "gcfit_NGC6121_gaia.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/Gaia_profiles/NGC6121_profiles.hdf",
+      "category": "gcfit_gaia_reanalysis",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 9552,
+      "sha256": "978de7828247e2cf01517b50c2778f6b677cb6c6e17dcb42375509204c07e4b4"
+    },
+    {
+      "file": "gcfit_NGC6121_observations.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit/ca63e5b465d01bb5b006dce7d40e28d0a95643ed/gcfit/resources/NGC6121.hdf",
+      "category": "gcfit_observation_bundle",
+      "role": "historical v1.0 candidate pairing; not a proven chain reproduction",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 39416,
+      "sha256": "babac911f84fb8e7c382bcecce0be4194a4f37e77ea3c3311a1420807598f15e"
+    },
+    {
+      "file": "uq_NGC6397_kin.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc6397_kin.txt",
+      "category": "compiled_profile",
+      "role": "audit only; source overlap and suspect rows retained",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 3092,
+      "sha256": "547770620f180790f612dd1cfa78fedde1dd26afc098719b76a0e6ea151512f0"
+    },
+    {
+      "file": "uq_NGC6397_sb.txt",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/newdata/indivdata/ngc6397_sb.txt",
+      "category": "projected_surface_profile",
+      "role": "native log profile; normalization unresolved",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 1860,
+      "sha256": "27a55da3a0ddb5b0bb7bf892a579f9c1087e166752605ed164ae308f86a60751"
+    },
+    {
+      "file": "hacks_NGC6397.txt",
+      "url": "https://archive.stsci.edu/hlsps/hacks/velocity_dispersions/hlsp_hacks_hst_acs-wfc3_ngc6397_multi_v1.0_vdisp.txt",
+      "category": "original_hst_binned_profile",
+      "role": "native mas/yr; combined and components share stars",
+      "license": "CC BY 4.0; cite Libralato et al. 2022 and MAST HACKS",
+      "bytes": 936,
+      "sha256": "abcea78ff934ff0dc913079aa3be0c6a943bf7a25eb547322706aed8548bc8c1"
+    },
+    {
+      "file": "gcfit_NGC6397_sampler.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6397/NGC6397_sampler.hdf",
+      "category": "published_joint_posterior",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 24045752,
+      "sha256": "f46e62cc52b945a686a7377b77b5610be6b36dbd7ab7bcb54a383ad22fce6df2"
+    },
+    {
+      "file": "gcfit_NGC6397_summary.txt",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6397/summary.txt",
+      "category": "published_fit_summary",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 951,
+      "sha256": "d2d89795e5e25ffd205186fe4dd3b44a074355c5db9ffb21b2c2bceb4fce1fb2"
+    },
+    {
+      "file": "gcfit_NGC6397_gaia.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/Gaia_profiles/NGC6397_profiles.hdf",
+      "category": "gcfit_gaia_reanalysis",
+      "role": "pinned published model product; exact run/data compatibility must be audited",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 9552,
+      "sha256": "2741530bb19f83d5f4220c9a1bea30ab4ed9fd8b30374556837b26bd71b0d6d1"
+    },
+    {
+      "file": "gcfit_NGC6397_observations.hdf",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit/ca63e5b465d01bb5b006dce7d40e28d0a95643ed/gcfit/resources/NGC6397.hdf",
+      "category": "gcfit_observation_bundle",
+      "role": "historical v1.0 candidate pairing; not a proven chain reproduction",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 43128,
+      "sha256": "451f85186749c3b9672c940c8934049fcad19919eb9f8fe9a3c2493c54e53905"
+    },
+    {
+      "file": "gcfit_results_README.md",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/README.md",
+      "category": "documentation",
+      "role": "posterior release instructions",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 1996,
+      "sha256": "ee6110c39ebe4990ac0d2326a870401c6946c5bb96cc01d7ffe7518be5ec8deb"
+    },
+    {
+      "file": "gcfit_NGC6397_no_BHs_summary.txt",
+      "url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6397/no_BHs/summary.txt",
+      "category": "published_fit_summary",
+      "role": "alternative model; corresponding chain absent from inspected release",
+      "license": "Provider rights; not relicensed as MIT",
+      "bytes": 1002,
+      "sha256": "3a4bff8b99161f9ce493b7106d822c958c5d9a7b51f52a5c997f0faa38931357"
+    },
+    {
+      "file": "gaia_edr3_v2.zip",
+      "url": "https://zenodo.org/records/4891252/files/clusters.zip?download=1",
+      "category": "original_gaia_catalog",
+      "role": "full original archive, membership and correlated fitted profile curves",
+      "license": "CC BY 4.0; Vasiliev and Baumgardt 2021; DOI 10.5281/zenodo.4891252",
+      "bytes": 118940646,
+      "sha256": "9eafa2e10afc031790cfe36ed8545aa6336cc87c317fab167e9cea9dacbd0748"
+    },
+    {
+      "file": "h25_proper_motion_dispersion_log_bins.dat",
+      "url": "https://zenodo.org/records/14978551/files/proper_motion_dispersion_log_bins.dat",
+      "category": "original_hst_profile",
+      "role": "Omega Centauri original release; no pooling alternative binnings",
+      "license": "CC BY 4.0; Haberle et al. 2025; DOI 10.5281/zenodo.14978551",
+      "bytes": 7041,
+      "sha256": "fcf87c0ef8af700ecbe3d524d2dc82cc662f0580731ceabf46bb435ce64e807b"
+    },
+    {
+      "file": "h25_los_profile.dat",
+      "url": "https://zenodo.org/records/14978551/files/los_profile.dat",
+      "category": "original_h25_support",
+      "role": "Omega Centauri original release; no pooling alternative binnings",
+      "license": "CC BY 4.0; Haberle et al. 2025; DOI 10.5281/zenodo.14978551",
+      "bytes": 4237,
+      "sha256": "808afcd8d24c9f2697b3d919198744c287a3218ac77bacc1dc71feda79c3704a"
+    },
+    {
+      "file": "h25_energy_equipartition_profiles.dat",
+      "url": "https://zenodo.org/records/14978551/files/energy_equipartition_profiles.dat",
+      "category": "original_h25_support",
+      "role": "Omega Centauri original release; no pooling alternative binnings",
+      "license": "CC BY 4.0; Haberle et al. 2025; DOI 10.5281/zenodo.14978551",
+      "bytes": 21691,
+      "sha256": "79e3a0c4e6865961dd8fec2d27eb2a003673ad835789aa45a4568df620cd66cc"
+    },
+    {
+      "file": "h25_energy_equipartition_massbins.dat",
+      "url": "https://zenodo.org/records/14978551/files/energy_equipartition_massbins.dat",
+      "category": "original_h25_support",
+      "role": "Omega Centauri original release; no pooling alternative binnings",
+      "license": "CC BY 4.0; Haberle et al. 2025; DOI 10.5281/zenodo.14978551",
+      "bytes": 875,
+      "sha256": "0a1d27a637712d6cd294ce87c3985c3a036a606618543af817003609a029f6f7"
+    }
+  ]
+}

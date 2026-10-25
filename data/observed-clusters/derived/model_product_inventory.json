@@ -1,0 +1,6534 @@
+[
+  {
+    "cluster": "NGC0104",
+    "model_products": [
+      {
+        "path": "mass_func/Brown/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Brown/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Brown/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Brown/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Brown/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Brown/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Brown/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Brown/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Brown/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Brown/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Brown/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Brown/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Brown/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Brown/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Brown/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Heinke/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Heinke/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Heinke/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Heinke/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Heinke/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Heinke/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Heinke/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Heinke/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Heinke/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Monelli/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Monelli/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Monelli/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Monelli/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Monelli/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Richer/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Richer/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Richer/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Richer/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/4/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/4/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer/4/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Richer/4/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer/4/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer2/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer2/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer2/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Richer2/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer2/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer2/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer2/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer2/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Richer2/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer2/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer2/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer2/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Richer2/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Richer2/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Richer2/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/RicherIR/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/RicherIR/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/RicherIR/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/RicherIR/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/RicherIR/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/RicherIR/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR2/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/RicherIR2/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/RicherIR2/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR2/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/RicherIR2/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "metadata/mj",
+        "shape": [
+          1
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/r",
+        "shape": [
+          100
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/star_bin",
+        "shape": [],
+        "attributes": {}
+      },
+      {
+        "path": "profiles/LOS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/Sigma_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/cum_M_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/frac_M_MS",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/frac_M_rem",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/numdens",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "1 / pc2"
+        }
+      },
+      {
+        "path": "profiles/pm_R",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_T",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_ratio",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/pm_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/rho_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "quantities/BH_mass",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/BH_num",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/BH_rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/K_scale",
+        "shape": [
+          1
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/N_relax",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/f_BH",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/f_rem",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/mmean",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/r0",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/ra",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rhp",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rt",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rv",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/spitzer_chi",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/trh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "Gyr"
+        }
+      },
+      {
+        "path": "quantities/volume",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc3"
+        }
+      }
+    ]
+  },
+  {
+    "cluster": "NGC1851",
+    "model_products": [
+      {
+        "path": "mass_func/Calamida/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Calamida/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Calamida/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Calamida/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Calamida/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Calamida/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Calamida/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Calamida/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Calamida/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Calamida/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Calamida/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Calamida/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Calamida/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Calamida/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Calamida/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/CalamidaIR/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/CalamidaIR/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/CalamidaIR/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/CalamidaIR/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/CalamidaIR/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/CalamidaIR/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/CalamidaIR/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/CalamidaIR/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/CalamidaIR/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/CalamidaIR/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto2/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto2/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto2/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Piotto2/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto2/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto2/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto2/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto2/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Piotto2/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto2/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/4/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/4/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Sarajedini/4/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/4/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Sarajedini/4/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "metadata/mj",
+        "shape": [
+          1
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/r",
+        "shape": [
+          100
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/star_bin",
+        "shape": [],
+        "attributes": {}
+      },
+      {
+        "path": "profiles/LOS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/Sigma_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/cum_M_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/frac_M_MS",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/frac_M_rem",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/numdens",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "1 / pc2"
+        }
+      },
+      {
+        "path": "profiles/pm_R",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_T",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_ratio",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/pm_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/rho_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "quantities/BH_mass",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/BH_num",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/BH_rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/K_scale",
+        "shape": [
+          1
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/N_relax",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/f_BH",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/f_rem",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/mmean",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/r0",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/ra",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rhp",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rt",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rv",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/spitzer_chi",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/trh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "Gyr"
+        }
+      },
+      {
+        "path": "quantities/volume",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc3"
+        }
+      }
+    ]
+  },
+  {
+    "cluster": "NGC3201",
+    "model_products": [
+      {
+        "path": "mass_func/Piotto/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/4/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/4/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/allcomb/4/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/4/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/allcomb/4/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "metadata/mj",
+        "shape": [
+          1
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/r",
+        "shape": [
+          100
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/star_bin",
+        "shape": [],
+        "attributes": {}
+      },
+      {
+        "path": "profiles/LOS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/Sigma_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/cum_M_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/frac_M_MS",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/frac_M_rem",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/numdens",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "1 / pc2"
+        }
+      },
+      {
+        "path": "profiles/pm_R",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_T",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_ratio",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/pm_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/rho_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "quantities/BH_mass",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/BH_num",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/BH_rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/K_scale",
+        "shape": [
+          1
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/N_relax",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/f_BH",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/f_rem",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/mmean",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/r0",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/ra",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rhp",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rt",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rv",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/spitzer_chi",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/trh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "Gyr"
+        }
+      },
+      {
+        "path": "quantities/volume",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc3"
+        }
+      }
+    ]
+  },
+  {
+    "cluster": "NGC5139",
+    "model_products": [
+      {
+        "path": "mass_func/Anderson/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/4/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/4/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Anderson2/4/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/4/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Anderson2/4/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bedin/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bedin/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bedin/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/BedinIR/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/BedinIR/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/BedinIR/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/BedinIR/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/BedinIR/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/BedinIR/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/BedinIR/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/BedinIR/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/BedinIR/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/BedinIR/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/BedinIR/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/BedinIR/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/BedinIR/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/BedinIR/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/BedinIR/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/4/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/4/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bellini/4/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/4/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bellini/4/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Casertano/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Casertano/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Casertano/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Casertano/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Casertano/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Casertano/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Casertano/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Casertano/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Casertano/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Casertano/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Cool/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Cool/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Cool/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Cool/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Cool/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Cool/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Cool/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Cool/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Cool/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Cool/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Cool/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Cool/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Cool/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Cool/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Cool/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Cool/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Cool/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Cool/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Cool/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Cool/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/King/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/King/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/4/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/4/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/4/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/4/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/KozhurinaPlatais/4/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Lee/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Lee/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Lee/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Lee/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/4/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/4/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Lee/4/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Lee/4/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Lee/4/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Renzini/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Renzini/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Renzini/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Renzini/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Renzini/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Renzini/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Renzini/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Renzini/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Renzini/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Renzini/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Renzini/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Renzini/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Renzini/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Renzini/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Renzini/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "metadata/mj",
+        "shape": [
+          1
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/r",
+        "shape": [
+          100
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/star_bin",
+        "shape": [],
+        "attributes": {}
+      },
+      {
+        "path": "profiles/LOS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/Sigma_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/cum_M_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/frac_M_MS",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/frac_M_rem",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/numdens",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "1 / pc2"
+        }
+      },
+      {
+        "path": "profiles/pm_R",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_T",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_ratio",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/pm_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/rho_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "quantities/BH_mass",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/BH_num",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/BH_rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/K_scale",
+        "shape": [
+          1
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/N_relax",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/f_BH",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/f_rem",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/mmean",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/r0",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/ra",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rhp",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rt",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rv",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/spitzer_chi",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/trh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "Gyr"
+        }
+      },
+      {
+        "path": "quantities/volume",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc3"
+        }
+      }
+    ]
+  },
+  {
+    "cluster": "NGC6121",
+    "model_products": [
+      {
+        "path": "mass_func/Bedin2/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin2/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin2/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin2/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin2/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin2/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin2/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin2/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Bedin2/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Bedin2/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/4/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/4/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/DieballIR/4/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/4/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/DieballIR/4/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Stetson/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Stetson/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Stetson/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Stetson/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Stetson/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Stetson/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Stetson/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Stetson/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Stetson/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Stetson/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Stetson/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Stetson/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Stetson/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Stetson/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Stetson/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "metadata/mj",
+        "shape": [
+          1
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/r",
+        "shape": [
+          100
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/star_bin",
+        "shape": [],
+        "attributes": {}
+      },
+      {
+        "path": "profiles/LOS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/Sigma_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/cum_M_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/frac_M_MS",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/frac_M_rem",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/numdens",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "1 / pc2"
+        }
+      },
+      {
+        "path": "profiles/pm_R",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_T",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_ratio",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/pm_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/rho_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "quantities/BH_mass",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/BH_num",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/BH_rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/K_scale",
+        "shape": [
+          1
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/N_relax",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/f_BH",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/f_rem",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/mmean",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/r0",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/ra",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rhp",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rt",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rv",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/spitzer_chi",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/trh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "Gyr"
+        }
+      },
+      {
+        "path": "quantities/volume",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc3"
+        }
+      }
+    ]
+  },
+  {
+    "cluster": "NGC6397",
+    "model_products": [
+      {
+        "path": "mass_func/Correnti/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/4/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/4/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Correnti/4/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/4/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Correnti/4/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/King/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/King/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/King/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/King/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/King/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/0/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/0/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/0/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/0/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/0/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/1/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/1/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/1/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/1/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/1/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/2/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/2/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/2/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/2/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/2/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/3/colour",
+        "shape": [
+          4
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/3/dNdm",
+        "shape": [
+          5,
+          9
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "mass_func/Piotto/3/mj",
+        "shape": [
+          9
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/3/r1",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "mass_func/Piotto/3/r2",
+        "shape": [],
+        "attributes": {
+          "unit": "arcmin"
+        }
+      },
+      {
+        "path": "metadata/mj",
+        "shape": [
+          1
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/r",
+        "shape": [
+          100
+        ],
+        "attributes": {}
+      },
+      {
+        "path": "metadata/star_bin",
+        "shape": [],
+        "attributes": {}
+      },
+      {
+        "path": "profiles/LOS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/Sigma_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/Sigma_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc2"
+        }
+      },
+      {
+        "path": "profiles/cum_M_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/cum_M_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "profiles/frac_M_MS",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/frac_M_rem",
+        "shape": [
+          5,
+          1,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/numdens",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "1 / pc2"
+        }
+      },
+      {
+        "path": "profiles/pm_R",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_T",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/pm_ratio",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "profiles/pm_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "km / s"
+        }
+      },
+      {
+        "path": "profiles/rho_BH",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_MS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_NS",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_WD",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "profiles/rho_tot",
+        "shape": [
+          1,
+          5,
+          100
+        ],
+        "attributes": {
+          "unit": "solMass / pc3"
+        }
+      },
+      {
+        "path": "quantities/BH_mass",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/BH_num",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/BH_rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/K_scale",
+        "shape": [
+          1
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/N_relax",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/f_BH",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/f_rem",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "%"
+        }
+      },
+      {
+        "path": "quantities/mmean",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "solMass"
+        }
+      },
+      {
+        "path": "quantities/r0",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/ra",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rhp",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rt",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/rv",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc"
+        }
+      },
+      {
+        "path": "quantities/spitzer_chi",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": ""
+        }
+      },
+      {
+        "path": "quantities/trh",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "Gyr"
+        }
+      },
+      {
+        "path": "quantities/volume",
+        "shape": [
+          4000
+        ],
+        "attributes": {
+          "unit": "pc3"
+        }
+      }
+    ]
+  }
+]
