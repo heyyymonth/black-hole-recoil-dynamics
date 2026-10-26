@@ -49,7 +49,8 @@ def run():
     if '--reuse-solution' in sys.argv:
         arrays=dict(np.load(OUT/'host.npz',allow_pickle=False))
         previous=json.loads((OUT/'summary.json').read_text())
-        if previous['theta']!=theta:raise ValueError('Cached solution has different parameters')
+        if previous['theta']!=theta or previous['protocol_sha256']!=sha(Path(__file__).with_name('protocol.json')):
+            raise ValueError('Cached solution has different parameters or protocol')
         warning_text=previous['warnings']
         star_bin=int(np.where(arrays['types']=='MS')[0][-1])
     else:
@@ -131,5 +132,7 @@ def run():
     (OUT/'summary.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
     write_csv(OUT/'species.csv',species);write_csv(OUT/'df-checks.csv',dfrows);write_csv(OUT/'projection-checks.csv',projected);write_csv(OUT/'published-profile-comparison.csv',comparison)
     print(json.dumps(result,indent=2),flush=True)
+    if not result['all_numerical_checks_passed']:
+        raise AssertionError('Host validation failed; outputs must not be adopted')
 
 if __name__=='__main__':run()

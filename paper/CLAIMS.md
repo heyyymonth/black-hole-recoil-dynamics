@@ -1,6 +1,6 @@
 # Claim-to-evidence record
 
-Manuscript revision 0.8.0-manuscript.1. Author: Venkata Hemanth Athota.
+Manuscript revision 0.8.0-manuscript.2. Author: Venkata Hemanth Athota.
 
 The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. It also reports one compatible NGC 3201 host reconstruction and twenty evaluated local collision states and four static external-field boundary scenarios, followed by four Galactic reference orbits. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
 

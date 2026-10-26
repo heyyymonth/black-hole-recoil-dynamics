@@ -70,7 +70,7 @@ This general trajectory specification assigns no trajectory solver, sample count
 
 Timed positions and velocities can later be combined with an independently justified companion population and interaction law. Neither is supplied by the two-step outputs. This handoff contains no encounter-rate, capture, exchange, binary-evolution, or merger-probability calculation.
 
-[Problem statement](problem.md) · [Step 1](e001-ballistic-return.md) · [Step 2](e002-core-exposure.md)
+[Problem statement](problem.md) · [Step 1](step1-transport.md) · [Step 2](step2-exposure.md)
 
 ## Boundary diagnostic supplied to the handoff
 

@@ -12,8 +12,8 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.8.0-manuscript.1"
-TAG = "manuscript-v0.8.0.1"
+VERSION = "0.8.0-manuscript.2"
+TAG = "manuscript-v0.8.0.2"
 DATA_REVISION = "cluster-data-v0.1.0"
 CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
 TABLE_ASSETS = (
@@ -52,7 +52,8 @@ ARCHIVE_SOURCE_FILES = {
     "evidence/paper-boundary-assets.json": "paper/boundary-assets.json",
     "evidence/paper-orbit-assets.json": "paper/orbit-assets.json",
     **{f"evidence/orbit/{name}": name for name in ORBIT_FILES if name not in {*CALCULATION_FILES, *BOUNDARY_FILES}},
-    **{f"evidence/boundary/{name}": name for name in BOUNDARY_FILES},
+    **{f"evidence/boundary/{name}": name for name in BOUNDARY_FILES
+       if name not in {*CALCULATION_FILES, *(f"data/observed-clusters/{item}" for item in DATA_EVIDENCE)}},
     **{f"evidence/calculations/{name}": name for name in CALCULATION_FILES},
     **{f"evidence/observed-clusters/{name}": f"data/observed-clusters/{name}"
        for name in DATA_EVIDENCE},
@@ -67,7 +68,7 @@ INPUT_FILES = tuple(sorted({
     "paper/orbit_assets.py", "docs/galactic-orbit.md", "analysis/orbit/README.md", "data/orbit/README.md",
     "paper/build.py", "paper/verify.py", "paper/requirements.txt",
     "paper/toolchain.json", "paper/working.json", "paper/CLAIMS.md",
-    "docs/problem.md", "docs/e001-ballistic-return.md", "docs/e002-core-exposure.md",
+    "docs/problem.md", "docs/step1-transport.md", "docs/step2-exposure.md",
     "docs/recoil-transport-theory.md", "docs/calculation-handoff.md",
     "formulation/inputs.json",
 }))
@@ -223,6 +224,8 @@ def verify(root=ROOT):
     require(meta["title"] == source["title"], "Build metadata and source titles differ")
     toolchain = json.loads((root / "paper/toolchain.json").read_text())
     require(meta["engine"] == f"Tectonic {toolchain['tectonic_version']}", "Incorrect build engine")
+    require(len(set(ARCHIVE_SOURCE_FILES.values())) == len(ARCHIVE_SOURCE_FILES),
+            "A source file is duplicated in the portable archive")
     expected_members = set(ARCHIVE_SOURCE_FILES) | {"manuscript.bbl", "vendor/revtex-4.2f.zip"}
     with zipfile.ZipFile(root / "output/pdf/manuscript-source.zip") as archive:
         names = archive.namelist()

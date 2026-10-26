@@ -9,7 +9,7 @@ bharadwaj.hemanth.002@gmail.com
 
 The manuscript connects merger-conditioned recoil transport and finite-time environmental exposure to an analysis of six observed cluster environments. It reports source coverage, native-to-physical conversions, joint host-posterior summaries, structural-estimate comparisons and their implications for the transport inputs. Seven tables and seven vector figures present the data audit, a fixed NGC 3201 host reconstruction, twenty local anisotropic collision states, four static boundary scenarios, and four Galactic reference orbits with time-dependent host-support diagnostics. Independent checks distinguish numerical consistency from the unresolved physical applicability of smooth diffusion to a sparse black-hole population. No new cluster fit, calibrated friction coefficient, remnant trajectory or residence result is claimed.
 
-Revision **0.8.0-manuscript.1** is an unreviewed formulation, data-analysis and local-calculation manuscript. No submission, acceptance, or DOI is claimed. The [claim-to-evidence record](CLAIMS.md) distinguishes established theory, completed data calculations, proposed physical tests and remaining calibration requirements. [working.json](working.json) records the title, abstract, data revision and scope.
+Revision **0.8.0-manuscript.2** is an unreviewed formulation, data-analysis and local-calculation manuscript. No submission, acceptance, or DOI is claimed. The [claim-to-evidence record](CLAIMS.md) distinguishes established theory, completed data calculations, proposed physical tests and remaining calibration requirements. [working.json](working.json) records the title, abstract, data revision and scope.
 
 ## Build and verify
 
@@ -39,7 +39,7 @@ Hashes bind the article, bibliography, formulation, handoff, source audit, evide
 
 Render and inspect every page after a layout change. Source hashes and successful compilation do not substitute for visual inspection or scientific validation.
 
-Use [manuscript-v0.8.0.1](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.8.0.1) for an exact citation. The data analysis is pinned to [cluster-data-v0.1.0](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/cluster-data-v0.1.0). Computational reference records have separate [immutable citations](../docs/computational-records.md).
+Use [manuscript-v0.8.0.2](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.8.0.2) for an exact citation. The data analysis is pinned to [cluster-data-v0.1.0](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/cluster-data-v0.1.0). Computational reference records have separate [immutable citations](../docs/computational-records.md).
 
 The [host and local-kernel reproduction instructions](../analysis/host_reconstruction/README.md) specify the scientific environment. `python paper/calculation_assets.py` regenerates only the presentation of recorded calculations; it never reruns the model or collision integrals.
 

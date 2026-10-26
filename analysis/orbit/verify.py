@@ -31,9 +31,13 @@ def validate():
         assert c['pericenter_mean_kpc']<c['apocenter_mean_kpc'] and c['pericenter_count']>=2 and c['apocenter_count']>=2
         assert 0<c['r_sufficient_1pct_pc_min']<c['r_sufficient_1pct_pc_max']
         for key,tol in [('refinement_max_position_kpc','refined_position_kpc'),('refinement_max_velocity_kms','refined_velocity_kms'),('reversal_position_error_kpc','time_reversal_position_kpc')]:
-            assert c.get(key,0)<lim[tol]
+            if c['case'] in ['catalog_reference', 'host_distance']:
+                assert key in c and math.isfinite(c[key]) and 0 <= c[key] < lim[tol]
     for label in ['pericenter','apocenter']:assert r['checks']['catalog_'+label+'_fractional_difference']<lim['catalog_peri_apo_fractional_difference']
     assert r['checks']['sufficient_radius_cadence_relative_difference']<lim['bound_radius_relative_refinement']
+    refined=r['checks']['refined_minimum_sufficient_radius_pc']
+    assert 0 < r['checks']['proposed_fixed_isolated_control_pc'] == math.floor(refined)
+    assert math.isclose(abs(refined/r['cases'][1]['r_sufficient_1pct_pc_min']-1), r['checks']['sufficient_radius_cadence_relative_difference'], rel_tol=1e-12)
     tracks=rows(OUTPUTS[1]);events=rows(OUTPUTS[2]);expected=round((p['integration']['time_Myr'][1]-p['integration']['time_Myr'][0])/p['integration']['output_step_Myr'])+1
     assert len(tracks)==expected*len(p['cases'])
     for c in r['cases']:

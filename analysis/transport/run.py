@@ -11,6 +11,10 @@ OUT=ROOT/'results/local-transport-kernels'
 
 def run():
     protocol_path=Path(__file__).with_name('protocol.json');p=json.loads(protocol_path.read_text())
+    if p['log_lambda'] != 1:
+        raise ValueError('This per-unit-lnLambda output requires log_lambda=1')
+    if set(p['orientations']) != {'radial', 'tangential'}:
+        raise ValueError('Expected declared radial and tangential orientations')
     base=ROOT/'results/host-reconstruction'
     host_summary=json.loads((base/'summary.json').read_text())
     if not host_summary['all_numerical_checks_passed']:raise ValueError('Host checks failed; collision evaluation blocked')
@@ -50,5 +54,7 @@ def run():
     (OUT/'tensors.json').write_text(json.dumps(tensors,indent=2,allow_nan=False)+'\n')
     (OUT/'summary.json').write_text(json.dumps(summary,indent=2,allow_nan=False)+'\n')
     print(json.dumps(summary,indent=2))
+    if not summary['all_numerical_checks_passed']:
+        raise AssertionError('Collision validation failed; outputs must not be adopted')
 
 if __name__=='__main__':run()

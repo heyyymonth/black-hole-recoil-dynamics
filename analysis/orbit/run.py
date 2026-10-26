@@ -8,7 +8,7 @@ sys.path.insert(0,str(ROOT/'analysis/host_reconstruction'));sys.path.insert(0,st
 from host import Host
 from model import EnclosedHost
 from galaxy import Galaxy
-from orbits import initial_state,integrate,conserved,host_diagnostics
+from orbits import initial_state,integrate,conserved,host_diagnostics,K
 
 def write_csv(path,records):
     with path.open('w',newline='') as f:
@@ -18,6 +18,8 @@ def main():
     protocol=json.loads((ROOT/'analysis/orbit/protocol.json').read_text());source=json.loads((ROOT/protocol['source']).read_text())
     host=EnclosedHost(Host(dict(np.load(ROOT/protocol['host'],allow_pickle=False))))
     hs=json.loads((ROOT/protocol['host_summary']).read_text());galaxy=Galaxy(protocol['galaxy']);cfg=protocol['integration']
+    if cfg['method'] != 'DOP853' or protocol['units']['km_s_to_kpc_Myr'] != K:
+        raise ValueError('Unsupported integration method or time conversion')
     distances=[source['distance_kpc'],hs['summary']['distance_kpc'],source['distance_kpc']-source['distance_error_kpc'],source['distance_kpc']+source['distance_error_kpc']]
     interval=cfg['time_Myr'];times=np.arange(interval[0],interval[1]+cfg['output_step_Myr']/2,cfg['output_step_Myr'])
     cases=[];events=[];profiles=[];checks={};out=ROOT/'results/orbit';out.mkdir(exist_ok=True)

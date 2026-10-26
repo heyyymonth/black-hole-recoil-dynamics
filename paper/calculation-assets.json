@@ -4,7 +4,7 @@
     "paper/calculation_assets.py": "78cfc723a22bc28d26ab62bc7d6f5522574f8f0f51ce05668a0c52f1e5ef3278",
     "paper/calculation_figures.py": "4a225c3347cd85ffb1af510c672292feef3428eb3cb258038a8c805fd7c3db65",
     "analysis/host_reconstruction/requirements-lock.txt": "cc5d619c82f6c83e24621724eff4a916ff0bfee5bd72795c8f20d135f18a51fc",
-    "results/calculations.json": "477a30af49e66f24befb69c86691bea3a419b53e4faa78b008da540e79498366",
+    "results/calculations.json": "f2a9e4632ea7cc0c1fa0143eca0dda98208f265677a1ede03134e0d786ceb944",
     "results/host-reconstruction/summary.json": "da353dba49eea612997b400c5c92ca280d86a3ee1721016da929a43d19984df9",
     "results/host-reconstruction/host.npz": "9c8779b3f011b91b67ecc6fff6ecfefc79b3f8ec7ff038619d0da7e2c48f1403",
     "results/host-reconstruction/species.csv": "9dc9cf9e02db179cb8bca186ea463bcbc1c8aa02ed0f9f0f97675aabd5720311",

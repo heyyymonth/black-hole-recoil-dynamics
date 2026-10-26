@@ -1,2 +1,2 @@
-# Install after the numerical requirements-lock.txt; LaTeX uses Tectonic 0.16.9.
+# Standalone manuscript verification/build dependencies; LaTeX uses Tectonic 0.16.9.
 pypdf==6.21.1

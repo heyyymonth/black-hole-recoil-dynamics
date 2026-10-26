@@ -10,6 +10,6 @@ Versioned records identify what was calculated and under which assumptions. They
 | Target-count census | [Source and results](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/80d82f85d1c84fa7ef42fc40f71a1cbc5439c172) |
 | Compiled manuscript and portable source | [manuscript-v0.3.0.5](https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.3.0.5) |
 
-The numerical modules, configurations, tests, and results in the numerical directories belong to these records. Reproduction uses the cited immutable tree and its own instructions and checksums. Their grids and outputs are not inputs or results for the active transport formulation.
+The numerical modules, configurations, tests, and results for these records are retained in their immutable revisions, outside the active branch. Reproduction uses the cited immutable tree and its own instructions and checksums. Their grids and outputs are not inputs or results for the active transport formulation.
 
 The active manuscript has its own source, bibliography, and build manifest. The immutable manuscript link above identifies the computational-records paper; it is not the active two-step formulation.

@@ -1,5 +1,7 @@
-# Tested reference environment: Python 3.11.
-numpy==1.24.2
-scipy==1.10.1
-matplotlib==3.7.1
-pytest==9.0.3
+# Active numerical checks and evidence-figure generation; Python 3.11.
+# Full host reconstruction uses analysis/host_reconstruction/requirements-lock.txt.
+numpy==1.26.4
+scipy==1.12.0
+matplotlib==3.8.4
+pytest==8.2.2
+-r paper/requirements.txt

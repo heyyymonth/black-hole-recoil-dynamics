@@ -4,6 +4,13 @@ from scipy.interpolate import CubicSpline
 from scipy.special import gammainc
 from numpy.polynomial.legendre import leggauss
 
+def checked_radius(value):
+    radius = np.asarray(value, dtype=float)
+    if not np.isfinite(radius).all() or np.any(radius < 0):
+        raise ValueError('radius must be finite and nonnegative')
+    return radius
+
+
 class PositiveProfile:
     """Interpolate positive densities/pressures in log space; enforce zero at rt.
 
@@ -16,7 +23,7 @@ class PositiveProfile:
         if np.any(y[:,:-1]<=0):raise ValueError('Positive interior profile required')
         self.log_spline=CubicSpline(r[:-1],np.log(y[:,:-1]),axis=1)
     def __call__(self,r):
-        r=np.asarray(r);base=np.exp(self.log_spline(np.minimum(r,self.last)))
+        r=checked_radius(r);base=np.exp(self.log_spline(np.minimum(r,self.last)))
         taper=np.maximum((self.rt-r)/(self.rt-self.last),0)**self.power
         return base*np.minimum(taper,1)
 
@@ -34,9 +41,14 @@ class Host:
         self.g=float(arrays['g'])
         self.physical=self.types!='TR'
     def psi(self,r):
-        return np.maximum(self.psi_spline(np.clip(r,0,self.rt)),0)
+        r = checked_radius(r)
+        return np.maximum(self.psi_spline(np.minimum(r,self.rt)),0)
     def number_df(self,r,u):
-        u=np.asarray(u);speed2=np.sum(u*u,axis=-1)
+        r = checked_radius(r)
+        u = np.asarray(u, dtype=float)
+        if r.ndim != 0 or u.ndim != 2 or u.shape[1] != 3 or not np.isfinite(u).all():
+            raise ValueError('number_df requires a scalar radius and finite N by 3 velocities')
+        speed2=np.sum(u*u,axis=-1)
         E=(self.psi(r)-speed2[None,:]/2)/self.s2j[:,None]
         positive=np.maximum(E,0)
         energy=np.exp(positive)*gammainc(self.g,positive)
@@ -44,6 +56,9 @@ class Host:
         mass_df=self.A[:,None]*energy*np.exp(-J2[None,:]/(2*self.raj[:,None]**2*self.s2j[:,None]))
         return mass_df/self.mj[:,None]
     def project(self,R,order):
+        R = checked_radius(R)
+        if R.ndim != 0 or R >= self.rt:
+            raise ValueError('projected moments require 0 <= R < rt')
         x,w=leggauss(order);scale=.1*self.rh
         end=np.arcsinh(np.sqrt(self.rt*self.rt-R*R)/scale)
         t=(x+1)*end/2;z=scale*np.sinh(t);weight=w*end/2*scale*np.cosh(t)

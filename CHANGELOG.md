@@ -1,5 +1,26 @@
 # Release record
 
+## Manuscript 0.8.0-manuscript.2 - 2026-10-26
+
+- Make the default test suite cover the active host, collision, boundary and orbit calculations; align the main dependencies and CI with that workflow.
+- Reject invalid host radii and undefined projected moments; enforce declared diagnostic normalizations and fail runners when validation fails.
+- Revalidate the fixed numerical host and rerun its dependent coefficients and boundary/orbit diagnostics; retain the existing physical assumptions.
+- Keep historical studies accessible through immutable revisions, with the active branch focused on the two-step research and its evidence.
+- Deduplicate supporting files in the paper archive and use descriptive names for the two step documents.
+
+## Manuscript 0.8.0-manuscript.1 - 2026-10-25
+
+- Integrate four Galactic reference orbits and derive a conservative spatial force bound.
+- Distinguish isolated-control accuracy, frozen-frame scales and time-dependent host-response diagnostics.
+
+## Manuscript 0.7.0-manuscript.1 - 2026-10-25
+
+- Evaluate four static boundary scenarios and separate a conditional tidal opening from an omitted-force accuracy limit.
+
+## Manuscript 0.6.0-manuscript.1 - 2026-10-25
+
+- Reconstruct one joint NGC 3201 host realization and evaluate twenty anisotropic local collision states with independent numerical checks.
+
 ## Manuscript 0.5.0-manuscript.1 - 2026-10-24
 
 - Integrate the six-cluster observational findings with the recoil-transport and environmental-exposure formulation.

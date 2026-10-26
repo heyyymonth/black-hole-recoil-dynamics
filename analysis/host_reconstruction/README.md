@@ -6,7 +6,7 @@ The [host protocol](protocol.json) and [collision protocol](../transport/protoco
 
 ## Reproduce
 
-From the repository root, use Python 3.11 in a dedicated environment. This avoids mixing the historical scientific libraries with the data-audit or archival-experiment environments.
+From the repository root, use Python 3.11 in a dedicated environment. This avoids mixing the historical scientific libraries with the data-audit or lightweight numerical-check environments.
 
 ```sh
 python3.11 -m venv .venv-host

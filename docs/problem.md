@@ -10,7 +10,7 @@ The physical question is:
 
 > How do merger-conditioned initial states and a consistent stellar environment determine the probability distribution of recoil trajectories and the environmental exposure accumulated over a finite physical interval?
 
-The study has two components. [Step 1](e001-ballistic-return.md) defines the phase-space evolution. [Step 2](e002-core-exposure.md) defines the functionals of that evolution that measure entry, residence, and species-resolved exposure. An [observational analysis of six clusters](cluster-data-assessment.md) supplies numerical comparisons of candidate host inputs, and a [fixed-host reconstruction with local collision calculations](local-transport-calculations.md) supplies the first numerical connection between those inputs and the transport operator. A [static boundary calculation](outer-boundary.md) separates a conditional tidal opening from the accuracy domain of neglecting the Galactic field. A [Galactic-orbit calculation](galactic-orbit.md) now supplies phase-dependent external forcing and tests the fixed host's force and response-timescale domains. Remnant trajectories and residence outcomes remain uncalculated.
+The study has two components. [Step 1](step1-transport.md) defines the phase-space evolution. [Step 2](step2-exposure.md) defines the functionals of that evolution that measure entry, residence, and species-resolved exposure. An [observational analysis of six clusters](cluster-data-assessment.md) supplies numerical comparisons of candidate host inputs, and a [fixed-host reconstruction with local collision calculations](local-transport-calculations.md) supplies the first numerical connection between those inputs and the transport operator. A [static boundary calculation](outer-boundary.md) separates a conditional tidal opening from the accuracy domain of neglecting the Galactic field. A [Galactic-orbit calculation](galactic-orbit.md) now supplies phase-dependent external forcing and tests the fixed host's force and response-timescale domains. Remnant trajectories and residence outcomes remain uncalculated.
 
 ## Observational findings and their role
 
@@ -52,4 +52,4 @@ A justified conclusion could identify a regime where a reduction preserves the o
 
 The trajectory record retains times and velocities because a future companion-access model would need to match the remnant's motion to an independently justified target population. Density exposure alone is not an encounter count. Companion acquisition, binary evolution, merger probabilities, and inference from gravitational-wave observations require further models and are outside steps 1 and 2.
 
-[Step 1](e001-ballistic-return.md) · [Step 2](e002-core-exposure.md) · [Calculation handoff](calculation-handoff.md) · [Scientific relevance](relevance.md)
+[Step 1](step1-transport.md) · [Step 2](step2-exposure.md) · [Calculation handoff](calculation-handoff.md) · [Scientific relevance](relevance.md)

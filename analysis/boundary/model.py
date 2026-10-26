@@ -18,8 +18,8 @@ class EnclosedHost:
 
     def enclosed(self, r):
         r = np.asarray(r)
-        if np.any(r < 0):
-            raise ValueError('Negative radius')
+        if not np.isfinite(r).all() or np.any(r < 0):
+            raise ValueError('Radius must be finite and nonnegative')
         return np.where(r >= self.rt, self.M, r**3*self.mean(np.minimum(r, self.rt)))
 
     def potential(self, r):

@@ -1,6 +1,6 @@
 # Contributing to the research formulation
 
-The active scope is [Step 1: recoil transport](docs/e001-ballistic-return.md) and [Step 2: residence and environmental exposure](docs/e002-core-exposure.md). Contributions should clarify, implement, or validate these quantities with explicit physical assumptions.
+The active scope is [Step 1: recoil transport](docs/step1-transport.md) and [Step 2: residence and environmental exposure](docs/step2-exposure.md). Contributions should clarify, implement, or validate these quantities with explicit physical assumptions.
 
 ## Equations and models
 
@@ -14,11 +14,12 @@ Use the [handoff](docs/calculation-handoff.md) and [input register](formulation/
 
 Plan source, configuration, seed, dependency, and output provenance before execution. Report outcomes only after appropriate checks. Numerical convergence is not physical calibration; correlated paths are not independent observations.
 
-Retained numerical modules have their own scopes and immutable citations in [computational reference records](docs/computational-records.md). Their existence does not implement or validate the active diffusion model. Do not modify recorded hashes or result tables to make a new calculation appear reproduced.
+Earlier numerical studies have their own scopes and immutable citations in [computational reference records](docs/computational-records.md). Their existence does not implement or validate the active diffusion model. Do not modify recorded hashes or result tables to make a new calculation appear reproduced.
 
 ## Documentation checks
 
 ```sh
+python -m pytest -q
 python scripts/verify_foundation.py
 python paper/verify.py
 ```

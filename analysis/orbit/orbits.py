@@ -12,6 +12,8 @@ K = .001022712165045695  # km/s -> kpc/Myr
 
 
 def initial_state(source, distance):
+    if not np.isfinite(distance) or distance <= 0:
+        raise ValueError('Heliocentric distance must be finite and positive')
     ra,dec=np.deg2rad([source['RA_deg'],source['DEC_deg']])
     radial=np.array([np.cos(dec)*np.cos(ra),np.cos(dec)*np.sin(ra),np.sin(dec)])
     east=np.array([-np.sin(ra),np.cos(ra),0.])
@@ -50,6 +52,10 @@ def angular_fields(x,v,acc):
 
 
 def host_diagnostics(galaxy,host,states,epsilon=.01,derivative_step=.001):
+    if epsilon != .01:
+        raise ValueError('The named 1-percent diagnostic requires epsilon=0.01')
+    if not np.isfinite(derivative_step) or derivative_step <= 0:
+        raise ValueError('Positive finite tensor derivative step required')
     x,v=states[:,:3],states[:,3:]
     tensor=galaxy.fields(x)[2]
     norm=np.max(np.abs(np.linalg.eigvalsh(tensor)),axis=1)/1e6 # pc tensor

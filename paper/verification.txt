@@ -1,5 +1,5 @@
 Formulation, host, scattering and Galactic-orbit manuscript verification
-Revision 0.8.0-manuscript.1; 25 October 2026
+Revision 0.8.0-manuscript.2; 26 October 2026
 
 Completed calculations
 One actual NGC 3201 joint posterior sample is reconstructed with pinned,
@@ -24,11 +24,12 @@ Numerical checks
 - A separate one-dimensional central integral verifies the host's diffusion
   trace. Exterior test velocities remain outside the collision API's validated
   domain rather than silently accepted by insufficient quadrature.
-- Seventeen numerical tests pass in the recorded host environment. They cover
+- Thirty-one numerical and regression tests pass in the recorded host environment. They cover
   host consistency, collision kernels, static boundary limits, Galactic
   potential gradients and force derivatives, analytic spatial force bounds,
   coordinate orientation, distance transformations, orbit conservation and
-  reversal, and the rotating-frame angular-acceleration convention.
+  reversal, the rotating-frame angular-acceleration convention, invalid input rejection,
+  all HST display conversions, and recorded tensor/event accounting.
 - Four static boundary scenarios pass independent density integration and
   radial-mesh refinement checks.
 - Galactic orbits pass energy and axial angular-momentum checks. The two
@@ -38,7 +39,12 @@ Numerical checks
   not an exact reproduction or an empirical validation of the potential.
 
 Integrity checks
-The immutable six-cluster data audit remains unchanged. Its 33 artifacts,
+The immutable six-cluster data audit remains unchanged. All 51 cached source
+files match their recorded hashes. The selected posterior row and weight match
+the original sampler exactly. Host validation was repeated on the existing
+parameter-matched solution; collisions, static boundaries and Galactic orbits
+were rerun with input safeguards. All 16 scientific output files remain
+byte-identical to manuscript-v0.8.0.1. Its 33 artifacts,
 51 captured source records and executed notebook outputs verify successfully.
 results/calculations.json binds scientific code, protocols, environment and
 calculated arrays/tables. Separate outer-boundary and Galactic-orbit manifests

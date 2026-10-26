@@ -27,7 +27,7 @@ from verify import (
 PAPER = ROOT / "paper"
 OUT = ROOT / "output/pdf"
 TMP = ROOT / "tmp/latex"
-EPOCH = datetime(2026, 10, 25, tzinfo=timezone.utc)
+EPOCH = datetime(2026, 10, 26, tzinfo=timezone.utc)
 
 
 def sha256(path):

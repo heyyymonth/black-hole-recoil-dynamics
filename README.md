@@ -7,7 +7,7 @@ Independent physics research · Stellar dynamics and gravitational-wave source e
 [![Research verification](https://github.com/heyyymonth/black-hole-recoil-dynamics/actions/workflows/tests.yml/badge.svg)](https://github.com/heyyymonth/black-hole-recoil-dynamics/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-[Problem statement](docs/problem.md) · [Step 1](docs/e001-ballistic-return.md) · [Step 2](docs/e002-core-exposure.md) · [Calculation handoff](docs/calculation-handoff.md)
+[Problem statement](docs/problem.md) · [Step 1](docs/step1-transport.md) · [Step 2](docs/step2-exposure.md) · [Calculation handoff](docs/calculation-handoff.md)
 
 ## Abstract
 
@@ -21,8 +21,8 @@ The active scope consists of two linked steps:
 
 | Step | Physical task | Output required |
 |---|---|---|
-| [1. Recoil transport](docs/e001-ballistic-return.md) | Evolve a joint merger-conditioned launch under consistent host gravity, external acceleration, collisional drift, and velocity diffusion. | Timed position–velocity histories or a transport density, with mass labels, uncertainty, survival probability, and stopping causes. |
-| [2. Residence and exposure](docs/e002-core-exposure.md) | Define finite-region entry and re-entry, residence, and species-resolved density exposure on those histories. | Event distributions, accumulated exposure, and a time-resolved occupation measure with explicit censoring. |
+| [1. Recoil transport](docs/step1-transport.md) | Evolve a joint merger-conditioned launch under consistent host gravity, external acceleration, collisional drift, and velocity diffusion. | Timed position–velocity histories or a transport density, with mass labels, uncertainty, survival probability, and stopping causes. |
+| [2. Residence and exposure](docs/step2-exposure.md) | Define finite-region entry and re-entry, residence, and species-resolved density exposure on those histories. | Event distributions, accumulated exposure, and a time-resolved occupation measure with explicit censoring. |
 
 The observational analysis constrains candidate hosts. A completed NGC 3201 reconstruction now supplies consistent species distributions, and twenty evaluated local states test its anisotropic drift and diffusion. Four Galactic reference orbits now supply time-dependent tides and a [host-support audit](docs/galactic-orbit.md). Remnant trajectory evolution and residence distributions remain unevaluated; the sparse black-hole component and the host in a Galactic tide require physical validation. A [boundary calculation](docs/outer-boundary.md) gives a conditional tidal-opening scale and a separate accuracy limit for isolated controls. No central launch, radial orbit, permanent rest after return, or universal cluster profile is imposed.
 
@@ -44,7 +44,15 @@ A [common host interface](docs/cluster-host-schema.md) preserves a separate weig
 
 The general [trajectory input register](formulation/inputs.json) leaves the launch law, physical collision cutoffs, stopping rules and trajectory controls unassigned. The completed host and local-coefficient calculations have separate versioned protocols, linked from that register. Missing inputs are not zero-valued defaults. The [handoff specification](docs/calculation-handoff.md) defines their units, dependencies, required output fields, and acceptance checks before a calculation can be interpreted.
 
-Documentation checks perform no physical calculations:
+From the repository root, create a Python 3.11 environment and install the active checks:
+
+```sh
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m pytest -q
+```
+
+The default test suite covers all active scientific stages and regression checks. Reconstructing a host uses its separate pinned [scientific environment](analysis/host_reconstruction/README.md). Integrity checks perform no physical calculations:
 
 ```sh
 python scripts/verify_foundation.py
@@ -55,15 +63,15 @@ python analysis/boundary/verify.py
 python analysis/orbit/verify.py
 ```
 
-The [research paper](output/pdf/central-residence.pdf), [LaTeX source](paper/manuscript.tex), and [portable source archive](output/pdf/manuscript-source.zip) combine the two-step formulation with the observed-cluster findings. It is an unreviewed manuscript reporting data analysis, a reconstructed host, and local collision kernels. It does not report remnant trajectories or calibrated residence predictions. [Paper status and build instructions](paper/README.md).
+The [research paper](output/pdf/central-residence.pdf), [LaTeX source](paper/manuscript.tex), and [portable source archive](output/pdf/manuscript-source.zip) combine the two-step formulation with the observed-cluster findings. It is an unreviewed manuscript reporting data analysis, a reconstructed host, and local collision kernels. It does not report remnant trajectories or calibrated residence predictions. [Paper status and build instructions](paper/README.md) · [Calculation audit](docs/repository-audit.md).
 
 ## Repository contents
 
 | Path | Purpose |
 |---|---|
 | `docs/problem.md` | Research question, scope, and mathematical objectives |
-| `docs/e001-ballistic-return.md` | Step 1: recoil transport |
-| `docs/e002-core-exposure.md` | Step 2: residence and environmental exposure |
+| `docs/step1-transport.md` | Step 1: recoil transport |
+| `docs/step2-exposure.md` | Step 2: residence and environmental exposure |
 | `docs/calculation-handoff.md` | Required inputs, outputs, and validation conditions |
 | `formulation/` | General trajectory inputs and links to defined calculation stages |
 | `data/observed-clusters/` | Public-source manifest, candidate host records and audited comparison products |
@@ -74,7 +82,8 @@ The [research paper](output/pdf/central-residence.pdf), [LaTeX source](paper/man
 | `analysis/orbit/`, `data/orbit/`, `results/orbit/` | Galactic reference orbits, original phase-point inputs and time-dependent host diagnostics |
 | `scripts/` | Structural documentation and manuscript integrity checks |
 | `paper/` | Formulation and observational findings, evidence-bound tables and figures, bibliography, and typesetting build |
-| `src/`, `experiments/`, `tests/`, other `results/` records | [Computational reference records](docs/computational-records.md); these do not implement or validate the active transport formulation |
+| `tests/` | Regression checks for input validity, configuration handling and evidence consistency |
+| [Historical records](docs/computational-records.md) | Immutable source and results for earlier studies |
 
 ## Citation and reuse
 

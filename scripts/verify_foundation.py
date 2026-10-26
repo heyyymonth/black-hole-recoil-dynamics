@@ -4,14 +4,12 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-ACTIVE_DOCS = [
-    "README.md", "CONTRIBUTING.md", "docs/problem.md",
-    "docs/e001-ballistic-return.md", "docs/e002-core-exposure.md",
-    "docs/recoil-transport-theory.md", "docs/calculation-handoff.md",
-    "docs/cluster-dynamics-context.md", "docs/relevance.md",
-    "docs/references.md", "docs/computational-records.md",
-    "paper/README.md", "paper/CLAIMS.md", "docs/local-transport-calculations.md", "docs/host-reconstruction-protocol.md", "docs/outer-boundary.md", "docs/galactic-orbit.md",
-]
+ACTIVE_DOCS = sorted({
+    str(p.relative_to(ROOT))
+    for pattern in ('*.md', 'docs/*.md', 'paper/*.md',
+                    'analysis/*/README.md', 'data/*/README.md')
+    for p in ROOT.glob(pattern)
+})
 INPUT_GROUPS = ("host", "launch", "collisions", "termination", "exposure", "numerics")
 
 
@@ -77,8 +75,8 @@ def verify():
             require((path.parent / target.split("#", 1)[0]).exists(),
                     f"Broken link in {name}: {target}")
             links += 1
-    require("Step 1:" in (ROOT / "docs/e001-ballistic-return.md").read_text(), "Missing Step 1")
-    require("Step 2:" in (ROOT / "docs/e002-core-exposure.md").read_text(), "Missing Step 2")
+    require("Step 1:" in (ROOT / "docs/step1-transport.md").read_text(), "Missing Step 1")
+    require("Step 2:" in (ROOT / "docs/step2-exposure.md").read_text(), "Missing Step 2")
     require(not re.search(r"E00[1-5]", source), "Internal experiment identifier in article")
     expected_tables = {"tables/cluster-coverage.tex", "tables/cluster-scales.tex",
                        "tables/cluster-posterior.tex", "tables/host-validation.tex", "tables/local-kernels.tex", "tables/outer-boundary.tex", "tables/galactic-orbit.tex"}

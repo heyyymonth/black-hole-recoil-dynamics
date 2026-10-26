@@ -8,15 +8,22 @@ import numpy as np
 class Galaxy:
     def __init__(self, parameters):
         self.p = parameters
-        self.cb = 100*parameters['Mb_Mgal']
-        self.cd = 100*parameters['Md_Mgal']
-        self.ch = 100*parameters['Mh_Mgal']
+        positive = ['Mb_Mgal', 'Md_Mgal', 'Mh_Mgal', 'bb_kpc', 'ad_kpc',
+                    'bd_kpc', 'ah_kpc', 'halo_cutoff_kpc', 'potential_unit_kms2']
+        if any(not np.isfinite(parameters[k]) or parameters[k] <= 0 for k in positive):
+            raise ValueError('Galactic model scales must be finite and positive')
+        unit = parameters['potential_unit_kms2']
+        self.cb = unit*parameters['Mb_Mgal']
+        self.cd = unit*parameters['Md_Mgal']
+        self.ch = unit*parameters['Mh_Mgal']
         self.bb = parameters['bb_kpc'];self.ad = parameters['ad_kpc'];self.bd = parameters['bd_kpc']
         self.ah = parameters['ah_kpc'];self.cutoff = parameters['halo_cutoff_kpc']
         if parameters['gamma'] != 2:raise ValueError('Only the published gamma=2 Model I is implemented')
 
     def fields(self, x):
         x = np.asarray(x,dtype=float)
+        if x.shape[-1:] != (3,) or not np.isfinite(x).all():
+            raise ValueError('Galactic positions must be finite Cartesian vectors')
         s = np.linalg.norm(x,axis=-1)
         if np.any(s<=0):raise ValueError('The halo cusp at the Galactic origin has no unique force direction')
         eye = np.eye(3);xx = x[..., :,None]*x[...,None,:]
@@ -53,6 +60,8 @@ class Galaxy:
         The summed bound is conservative; it is not a sampled angular maximum.
         """
         x = np.asarray(x,dtype=float);r = np.asarray(radius_kpc)
+        if x.shape[-1:] != (3,) or not np.isfinite(x).all() or not np.isfinite(r).all():
+            raise ValueError('Finite Cartesian centers and radii required')
         s = np.linalg.norm(x,axis=-1);smin = s-r
         if np.any(r<0) or np.any(smin<=0) or np.any(s+r>=self.cutoff):
             raise ValueError('Ball must avoid the origin and lie inside the halo cutoff')
