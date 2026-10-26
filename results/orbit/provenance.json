@@ -1,0 +1,24 @@
+{
+  "revision": "galactic-orbit-1",
+  "scope": "Observed-phase-point Galactic orbits, varying tidal forcing and host-support diagnostics; no remnant trajectories or tidally re-equilibrated host",
+  "input_sha256": {
+    "analysis/orbit/galaxy.py": "162c507bfcd419116a82ee3be55ca333923ee591a220294874ded62db177d939",
+    "analysis/orbit/orbits.py": "7bc87291defd33181d237af14df99d41070b581db18dee01b3e1110bb79c2f5a",
+    "analysis/orbit/run.py": "e57b2ff20c81be3f5cd2e75b197944091538c2b90239f1d7ccd4c54d36392810",
+    "analysis/orbit/test_galaxy.py": "2ab0c0b155987586ed02fd4cf9984cca89e05d7dee874d6cf57622077e5b3f66",
+    "analysis/orbit/protocol.json": "095ca8504fd70e24f84e949c0e628bc22be0a4fb350d422b75afcc73b4c71594",
+    "analysis/orbit/verify.py": "638c8d1a91a37212b3940851744303a75315ae1981f1c2c0f1cd9688cda80223",
+    "data/orbit/ngc3201-source.json": "b487e3614876f5c5a4745dd5b159803dde7b48dba4dccf698a6d8e2bfcea03f5",
+    "data/orbit/ngc3201-row.html": "8d129c2b6229a5737482d3c5f0402bef5fee9f53f0c715c966fec17df421fc3f",
+    "results/host-reconstruction/host.npz": "9c8779b3f011b91b67ecc6fff6ecfefc79b3f8ec7ff038619d0da7e2c48f1403",
+    "results/host-reconstruction/summary.json": "da353dba49eea612997b400c5c92ca280d86a3ee1721016da929a43d19984df9",
+    "results/calculations.json": "477a30af49e66f24befb69c86691bea3a419b53e4faa78b008da540e79498366",
+    "analysis/boundary/model.py": "db2f097949913edd2c6cc944e4e6d005855e730e184f64a3113854fa127abe0f",
+    "analysis/host_reconstruction/host.py": "d2df8898cf5d917953b144a1df7a3c8a11e8231e03f5ff9db63b811465c5d1ce"
+  },
+  "output_sha256": {
+    "results/orbit/summary.json": "a1b1dcae4d70903b95859b0be2f9217fc34b2219b7f3f4e2522dbd47fbd33be6",
+    "results/orbit/tracks.csv": "0cea56967d34672db848f0a2ba7e1abadad11582143cf3687863ab31c5ff3cfa",
+    "results/orbit/events.csv": "66b7baabf8b6f7bf451fb61231a9b996dfe0d3521df5d16b8e36427f8f0d15cb"
+  }
+}

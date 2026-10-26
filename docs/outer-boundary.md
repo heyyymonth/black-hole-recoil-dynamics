@@ -65,3 +65,5 @@ The calculation preserves the numerical meaning of the earlier local kernels. It
 Root residuals are below 9.5e-13. Independent integration of density agrees with enclosed mass at tested boundary radii to 1.2e-7, and thinning the host radial mesh changes radii by less than 1.5e-7 in relative terms. Tests also cover analytic point-mass and extended Plummer saddles, exact angular force bounds, the correct frame tensor, central mass scaling and force–potential consistency. These are numerical checks, not observational uncertainties.
 
 [Protocol and inputs](../analysis/boundary/protocol.json) · [Source register](../analysis/boundary/sources.json) · [Reproduction](../analysis/boundary/README.md) · [Scenario results](../results/outer-boundary/scenarios.csv) · [Numerical summary](../results/outer-boundary/summary.json)
+
+The [Galactic reference-orbit calculation](galactic-orbit.md) evaluates phase-dependent forcing and the host-support conditions. The static logarithmic values here remain results of their own declared benchmark; they are not reused as universal orbital limits.

@@ -12,17 +12,17 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.7.0-manuscript.1"
-TAG = "manuscript-v0.7.0.1"
+VERSION = "0.8.0-manuscript.1"
+TAG = "manuscript-v0.8.0.1"
 DATA_REVISION = "cluster-data-v0.1.0"
 CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
 TABLE_ASSETS = (
     "tables/cluster-coverage.tex", "tables/cluster-scales.tex",
-    "tables/cluster-posterior.tex", "tables/host-validation.tex", "tables/local-kernels.tex", "tables/outer-boundary.tex",
+    "tables/cluster-posterior.tex", "tables/host-validation.tex", "tables/local-kernels.tex", "tables/outer-boundary.tex", "tables/galactic-orbit.tex",
 )
 FIGURE_ASSETS = (
     "figures/cluster-hst.pdf", "figures/cluster-host-comparison.pdf",
-    "figures/cluster-coverage.pdf", "figures/host-projections.pdf", "figures/scattering-composition.pdf", "figures/outer-boundary.pdf",
+    "figures/cluster-coverage.pdf", "figures/host-projections.pdf", "figures/scattering-composition.pdf", "figures/outer-boundary.pdf", "figures/galactic-orbit.pdf",
 )
 DATA_EVIDENCE = (
     "README.md", "sources.json", "audit.json", "candidate-hosts.json",
@@ -38,6 +38,8 @@ CALCULATION_RECORD = json.loads((ROOT / "results/calculations.json").read_text()
 CALCULATION_FILES = tuple(sorted({"results/calculations.json", *CALCULATION_RECORD["input_sha256"], *CALCULATION_RECORD["output_sha256"]}))
 BOUNDARY_RECORD = json.loads((ROOT / "results/outer-boundary/provenance.json").read_text())
 BOUNDARY_FILES = tuple(sorted({"results/outer-boundary/provenance.json", *BOUNDARY_RECORD["input_sha256"], *BOUNDARY_RECORD["output_sha256"]}))
+ORBIT_RECORD = json.loads((ROOT / "results/orbit/provenance.json").read_text())
+ORBIT_FILES = tuple(sorted({"results/orbit/provenance.json", *ORBIT_RECORD["input_sha256"], *ORBIT_RECORD["output_sha256"]}))
 ARCHIVE_SOURCE_FILES = {
     "manuscript.tex": "paper/manuscript.tex",
     "references.bib": "paper/references.bib",
@@ -48,6 +50,8 @@ ARCHIVE_SOURCE_FILES = {
     "evidence/paper-data-assets.json": "paper/data-assets.json",
     "evidence/paper-calculation-assets.json": "paper/calculation-assets.json",
     "evidence/paper-boundary-assets.json": "paper/boundary-assets.json",
+    "evidence/paper-orbit-assets.json": "paper/orbit-assets.json",
+    **{f"evidence/orbit/{name}": name for name in ORBIT_FILES if name not in {*CALCULATION_FILES, *BOUNDARY_FILES}},
     **{f"evidence/boundary/{name}": name for name in BOUNDARY_FILES},
     **{f"evidence/calculations/{name}": name for name in CALCULATION_FILES},
     **{f"evidence/observed-clusters/{name}": f"data/observed-clusters/{name}"
@@ -60,6 +64,7 @@ INPUT_FILES = tuple(sorted({
     *DATA_AUDIT_FILES,
     "paper/data_assets.py", "paper/data_figures.py", "paper/calculation_assets.py", "paper/calculation_figures.py", "docs/local-transport-calculations.md", "docs/host-reconstruction-protocol.md",
     "paper/boundary_assets.py", "docs/outer-boundary.md", "analysis/boundary/README.md",
+    "paper/orbit_assets.py", "docs/galactic-orbit.md", "analysis/orbit/README.md", "data/orbit/README.md",
     "paper/build.py", "paper/verify.py", "paper/requirements.txt",
     "paper/toolchain.json", "paper/working.json", "paper/CLAIMS.md",
     "docs/problem.md", "docs/e001-ballistic-return.md", "docs/e002-core-exposure.md",
@@ -98,6 +103,7 @@ def source_metadata(root):
     require(state.get("host_reconstruction_performed") is True, "Missing reconstructed-host status")
     require(state.get("local_collision_coefficients_evaluated") is True, "Missing collision-evaluation status")
     require(state.get("outer_boundary_diagnostics_evaluated") is True, "Missing boundary-evaluation status")
+    require(state.get("galactic_orbits_integrated") is True and state.get("host_re_equilibrated") is False, "Incorrect orbit or host-evolution status")
     manuscript = (paper / "manuscript.tex").read_text()
     title_match = re.search(r"\\title\{([^{}]+)\}", manuscript)
     require(title_match is not None, "Expected a plain-text manuscript title")
@@ -184,7 +190,9 @@ def verify_evidence(root=ROOT):
                     [sys.executable, str(root / "analysis/host_reconstruction/verify.py")],
                     [sys.executable, str(root / "paper/calculation_assets.py"), "--verify"],
                     [sys.executable, str(root / "analysis/boundary/verify.py")],
-                    [sys.executable, str(root / "paper/boundary_assets.py"), "--verify"]):
+                    [sys.executable, str(root / "paper/boundary_assets.py"), "--verify"],
+                    [sys.executable, str(root / "analysis/orbit/verify.py")],
+                    [sys.executable, str(root / "paper/orbit_assets.py"), "--verify"]):
         subprocess.run(command, cwd=root, check=True)
 
 
@@ -195,7 +203,7 @@ def verify(root=ROOT):
     require(set(meta["input_sha256"]) == set(INPUT_FILES), "Unexpected manuscript input inventory")
     require(set(meta["output_sha256"]) == OUTPUT_FILES, "Unexpected manuscript output inventory")
     require(meta.get("transport_simulations_performed") is False, "No transport simulation is reported")
-    require(meta.get("local_calculations") == {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "boundary": "outer-boundary-1", "recomputed_during_build": False}, "Incorrect calculation provenance")
+    require(meta.get("local_calculations") == {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "boundary": "outer-boundary-1", "galactic_orbit": "galactic-orbit-1", "recomputed_during_build": False}, "Incorrect calculation provenance")
     require(meta.get("executed_during_build") == [], "Compilation must not execute research calculations")
     require(meta.get("data_analysis") == {
         "revision": DATA_REVISION, "mode": "reuse-verified-recorded-analysis",

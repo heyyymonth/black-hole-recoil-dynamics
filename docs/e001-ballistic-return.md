@@ -46,7 +46,7 @@ For external potential $\Phi_{\rm ext}$, the cluster-relative external accelerat
 
 If the reference orbit obeys $\ddot{\mathbf R}=-\nabla\Phi_{\rm ext}(\mathbf R,t)$, this equals the differential tidal acceleration. No Coriolis terms occur in nonrotating axes; a rotating frame would require its own inertial terms.
 
-The [outer-boundary calculation](outer-boundary.md) evaluates this differential force in an explicit Galactic benchmark and separates an isolated-control accuracy limit from a circular tidal-opening scale. It supplies no remnant trajectory or irreversible-escape rule.
+The [outer-boundary calculation](outer-boundary.md) evaluates this differential force in an explicit Galactic benchmark and separates an isolated-control accuracy limit from a circular tidal-opening scale. The [Galactic reference-orbit stage](galactic-orbit.md) then supplies time-dependent external forcing and a conservative force bound. Neither stage supplies a remnant trajectory, a tidally re-equilibrated host or an irreversible-escape rule.
 
 ## Joint merger-conditioned initial state
 

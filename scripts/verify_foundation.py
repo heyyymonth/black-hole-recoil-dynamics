@@ -10,7 +10,7 @@ ACTIVE_DOCS = [
     "docs/recoil-transport-theory.md", "docs/calculation-handoff.md",
     "docs/cluster-dynamics-context.md", "docs/relevance.md",
     "docs/references.md", "docs/computational-records.md",
-    "paper/README.md", "paper/CLAIMS.md", "docs/local-transport-calculations.md", "docs/host-reconstruction-protocol.md", "docs/outer-boundary.md",
+    "paper/README.md", "paper/CLAIMS.md", "docs/local-transport-calculations.md", "docs/host-reconstruction-protocol.md", "docs/outer-boundary.md", "docs/galactic-orbit.md",
 ]
 INPUT_GROUPS = ("host", "launch", "collisions", "termination", "exposure", "numerics")
 
@@ -81,14 +81,14 @@ def verify():
     require("Step 2:" in (ROOT / "docs/e002-core-exposure.md").read_text(), "Missing Step 2")
     require(not re.search(r"E00[1-5]", source), "Internal experiment identifier in article")
     expected_tables = {"tables/cluster-coverage.tex", "tables/cluster-scales.tex",
-                       "tables/cluster-posterior.tex", "tables/host-validation.tex", "tables/local-kernels.tex", "tables/outer-boundary.tex"}
+                       "tables/cluster-posterior.tex", "tables/host-validation.tex", "tables/local-kernels.tex", "tables/outer-boundary.tex", "tables/galactic-orbit.tex"}
     require(set(re.findall(r"\\input\{([^}]+)\}", source)) == expected_tables,
-            "Expected the six data and calculation evidence tables")
+            "Expected the seven data and calculation evidence tables")
     require(not any(key in source for key in ("tables/return.tex", "figures/return-time.pdf")),
             "Historical reference dynamics do not validate the active transport problem")
     print(f"Verified two-step foundation: {len(ACTIVE_DOCS)} documents, {links} local links, "
           f"{displays} display equations; inputs unassigned and title/abstract/citations consistent. "
-          "Recorded data, host and coefficient findings included; no trajectories performed.")
+          "Recorded data, host and coefficient findings included; no remnant trajectories performed.")
 
 
 if __name__ == "__main__":

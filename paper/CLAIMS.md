@@ -1,8 +1,8 @@
 # Claim-to-evidence record
 
-Manuscript revision 0.7.0-manuscript.1. Author: Venkata Hemanth Athota.
+Manuscript revision 0.8.0-manuscript.1. Author: Venkata Hemanth Athota.
 
-The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. It also reports one compatible NGC 3201 host reconstruction and twenty evaluated local collision states and four static external-field boundary scenarios. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
+The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. It also reports one compatible NGC 3201 host reconstruction and twenty evaluated local collision states and four static external-field boundary scenarios, followed by four Galactic reference orbits. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
 
 | Statement | Basis | Boundary |
 |---|---|---|
@@ -27,10 +27,17 @@ The paper defines a two-step transport and exposure problem and reports the comp
 | Expected 4.28 black holes supply 27.7% of central density but 95.8% of formal central diffusion at zero test velocity. | The same fixed host's species masses/densities and collision contributions. | Model expectations, not counted black holes or measured relaxation; sparse encounters require a physical validity test. |
 | The formal truncation radius is 981 pc. | Selected distribution-function solution. | Not an observed Galactic tidal boundary or an adopted escape rule. |
 | A circular logarithmic-field benchmark gives an extended-host saddle at 84.13 pc. | `results/outer-boundary/`, extended enclosed-mass balance and exact circular saddle checks. | Prescribed field and one host; numerical proximity to a published estimate is not independent physical validation. |
-| The proposed 1% isolated-force domain ends at 20.67 pc. | Exact maximum differential acceleration divided by the same host gravity; tolerance sensitivities. | Chosen instantaneous error budget, not a universal boundary or accumulated trajectory-error guarantee. |
+| The static logarithmic baseline has a proposed 1% isolated-force limit at 20.67 pc. | Exact maximum differential acceleration divided by the same host gravity; tolerance sensitivities. | Chosen instantaneous error budget, not a universal boundary or accumulated trajectory-error guarantee. |
 | The earlier 3rh coefficient radius has a maximum omitted Galactic force of 2.962%. | Baseline field applied to the existing local-state radius. | The integral remains defined; isolated motion there exceeds the chosen 1% force budget. |
 | The host puts 5.63% of its mass beyond its conditional saddle. | Enclosed-mass profile at the solved saddle. | Not escaped mass; no tidal re-equilibration or stripping evolution is simulated. |
 | Central circular Hill opening speed is 16.68 km/s. | Stationary conservative effective potential and cluster central potential. | Full remnant speed, not recoil alone; not conserved with noncircular tides or collisions and not an escape probability. |
+
+| The catalog-reference orbit has mean pericenter 8.333 kpc and apocenter 25.362 kpc. | Original orbital-table row, Model I potential, registered integration and detected turning events. | Apocenter differs from the catalog by 1.77%; not exact source reconstruction or a new Galactic fit. |
+| At the selected host distance, the sufficient 1% force domain varies approximately 8.2–39.8 pc. | Analytic Hessian bound applied along the same reference orbit, checked under cadence refinement. | A sufficient instantaneous bound, not a measured edge or accumulated orbit-error guarantee. The proposed fixed 8 pc control is conditional. |
+| Neglected-force bounds reach 1.73% at rh and 29.5% at 3rh. | Time-dependent field with the unchanged reconstructed enclosed mass. | Bounds rather than measured accelerations; retaining exact tides removes this omitted-force error, not other host limitations. |
+| The frozen-frame scale is 62.1–183.9 pc and the Euler/effective-eigenvalue ratio reaches 0.67. | Instantaneous tensor, radial-frame angular velocity and its derivative. | Not a stationary Jacobi surface, escape rule, or stripping calculation. |
+| The forcing/dynamical-timescale indicator reaches 1.16 at rh. | Fixed-frame tensor derivative; independent norm-only indicator reaches 1.14. | Not a heating rate or proof of disruption; identifies an approximation requiring validation. |
+| Galactic reference motion is calculated, but the host has not been tidally re-equilibrated. | Source/model scope and explicit host evolution equation. | No fitted tidal distribution, remnant trajectories, or calibrated residence predictions are supplied. |
 
 Analytical consistency differs from numerical verification and physical validation. Raw-file checks and independent recomputation support the stated data calculations. Build and documentation checks assess source integrity and presentation. New observational measurements, publication-level novelty, dynamical calibration, companion-acquisition rates and merger probabilities are not claimed. The manuscript cites primary source studies, not this project's experiment records or software-tool references.
 

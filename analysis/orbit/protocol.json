@@ -1,0 +1,83 @@
+{
+  "revision": "galactic-orbit-1",
+  "scope": "Observed-phase-point Galactic orbits, varying tidal forcing and host-support diagnostics; no remnant trajectories or tidally re-equilibrated host",
+  "execution_enabled": true,
+  "source": "data/orbit/ngc3201-source.json",
+  "host": "results/host-reconstruction/host.npz",
+  "host_summary": "results/host-reconstruction/summary.json",
+  "galaxy": {
+    "name": "Irrgang2013 Model I",
+    "Mb_Mgal": 409.0,
+    "Md_Mgal": 2856.0,
+    "Mh_Mgal": 1018.0,
+    "bb_kpc": 0.23,
+    "ad_kpc": 4.22,
+    "bd_kpc": 0.292,
+    "ah_kpc": 2.562,
+    "halo_cutoff_kpc": 200.0,
+    "gamma": 2,
+    "potential_unit_kms2": 100.0
+  },
+  "units": {
+    "Galactic_position": "kpc",
+    "host_radius": "pc",
+    "velocity": "km/s",
+    "time": "Myr",
+    "G_host": "unchanged source reconstruction",
+    "km_s_to_kpc_Myr": 0.001022712165045695
+  },
+  "cases": [
+    "catalog_reference",
+    "host_distance",
+    "catalog_distance_minus_sigma",
+    "catalog_distance_plus_sigma"
+  ],
+  "distance_policy": "Catalog Cartesian state is the anchor. Change heliocentric distance by adding the corresponding displacement and transverse velocity difference at the published sky coordinates/proper motion. The host_distance case uses the selected host distance. No solar constants are refitted and no independent posterior combination is claimed.",
+  "astrometric_basis": "ICRS unit position and RA/Dec tangent vectors, rotated into IAU Galactic coordinates and reflected in X to match the catalog; checked independently against Astropy",
+  "integration": {
+    "time_Myr": [
+      0.0,
+      1000.0
+    ],
+    "method": "DOP853",
+    "rtol": 1e-10,
+    "atol": 1e-11,
+    "max_step_Myr": 0.5,
+    "output_step_Myr": 0.25,
+    "refinement_max_step_Myr": 0.25,
+    "refinement_rtol": 1e-12,
+    "time_interpretation": "One Gyr forward reference orbit in a fixed axisymmetric Galactic potential; not a forecast of unchanged internal cluster structure."
+  },
+  "events": [
+    "spherical radial extrema via R dot V=0",
+    "Galactic midplane crossings via Z=0"
+  ],
+  "force_accuracy": {
+    "epsilon": 0.01,
+    "bound": "Exact differential acceleration bounded by radius times a componentwise analytic Hessian supremum over the spatial ball. Solve bound/cluster acceleration=epsilon.",
+    "interpretation": "Sufficient instantaneous isolated-control domain; conservative, not a measured edge or accumulated trajectory-error bound",
+    "fixed_control_rule": "Floor the refined minimum sufficient radius in pc for the host_distance case to a whole pc; conditional conservative control, not a physical edge."
+  },
+  "opening_diagnostic": "Largest eigenvalue of T+|omega|^2 I-omega omega^T, omega=R cross V/|R|^2. Solve G M(<r)/r^3=lambda. Frozen-frame scale only; Euler acceleration and time evolution preclude stationary escape interpretation.",
+  "host_response_indicator": "t_dyn(r) ||dT/dt||_2 / ||T||_2 in fixed axes, t_dyn=sqrt(r^3/[G M(<r)]). Timescale comparison, not a heating rate or calibrated adiabatic correction.",
+  "tensor_derivative_step_Myr": 0.001,
+  "acceptance": {
+    "relative_energy_drift": 1e-08,
+    "relative_Lz_drift": 1e-08,
+    "refined_position_kpc": 1e-06,
+    "refined_velocity_kms": 1e-05,
+    "time_reversal_position_kpc": 1e-06,
+    "catalog_peri_apo_fractional_difference": 0.05,
+    "bound_radius_relative_refinement": 0.005
+  },
+  "uncertainty": "Four conditional sensitivity cases; no posterior interval. Missing Galactic-model, solar-frame and cross-observable covariances remain unpropagated.",
+  "not_performed": [
+    "remnant launch sampling",
+    "collisional remnant evolution",
+    "mass stripping",
+    "new host fit",
+    "replacement of the stellar distribution function",
+    "irreversible escape classification"
+  ],
+  "coordinate_check": "Standard J2000 matrix differs from independent Astropy6.0.1 ICRS/Galactic rotation by less than 1e-7 per element, negligible compared with 0.01 kpc catalog rounding."
+}

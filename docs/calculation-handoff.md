@@ -75,3 +75,7 @@ Timed positions and velocities can later be combined with an independently justi
 ## Boundary diagnostic supplied to the handoff
 
 The [outer-boundary calculation](outer-boundary.md) uses the same reconstructed enclosed mass. Its baseline 84.13 pc circular opening is separate from the proposed 20.67 pc validity stop for a 1% isolated-force control. Record an isolated-control crossing as loss of validity and censor exposure at that time (or at time zero for an initial point already outside); do not classify it as irreversible escape. A model including the Galactic force needs its own validity conditions. The static result does not assign an eccentric reference orbit, absorbing escape surface, remnant launch or physical horizon to the general input register.
+
+## Galactic forcing supplied to the handoff
+
+The [reference-orbit stage](galactic-orbit.md) supplies position, velocity, exact Galactic acceleration and its tensor along four defined conditional cases. The selected-host-distance case supports a proposed 8 pc fixed isolated-control domain over the evaluated horizon. It does not supply a fitted tidal stellar distribution, a remnant launch, or an irreversible-escape rule. Host evolution or a justified approximation must preserve the species inventory linking gravity, scattering and exposure. No radius cut silently removes stars or changes the local collision coefficients.

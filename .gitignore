@@ -18,3 +18,6 @@ tmp/
 data/observed-clusters/raw/
 
 .venv-host/
+
+# Original orbit-source snapshots; retained locally and pinned by source hashes.
+data/orbit/raw/

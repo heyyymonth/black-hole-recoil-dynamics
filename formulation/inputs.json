@@ -67,6 +67,11 @@
       "revision": "outer-boundary-1",
       "protocol": "analysis/boundary/protocol.json",
       "result": "results/outer-boundary/summary.json"
+    },
+    {
+      "revision": "galactic-orbit-1",
+      "protocol": "analysis/orbit/protocol.json",
+      "result": "results/orbit/summary.json"
     }
   ]
 }

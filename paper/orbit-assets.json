@@ -1,0 +1,14 @@
+{
+  "scope": "recorded Galactic reference orbits and host-support diagnostics",
+  "input_sha256": {
+    "paper/orbit_assets.py": "c2299570178176c1f56cd0acdcf3822da2469a38e82948e9d4692fa16b1d5f17",
+    "results/orbit/provenance.json": "96ff53d2ded7eeef24b793813359041602f6fe898ef009d02e803e99b1b550fc",
+    "results/orbit/summary.json": "a1b1dcae4d70903b95859b0be2f9217fc34b2219b7f3f4e2522dbd47fbd33be6",
+    "results/orbit/tracks.csv": "0cea56967d34672db848f0a2ba7e1abadad11582143cf3687863ab31c5ff3cfa",
+    "results/orbit/events.csv": "66b7baabf8b6f7bf451fb61231a9b996dfe0d3521df5d16b8e36427f8f0d15cb"
+  },
+  "output_sha256": {
+    "tables/galactic-orbit.tex": "6442fe44a6426e4de5d225ff41e2f02822a461cce08692ed206d9a82762968bf",
+    "figures/galactic-orbit.pdf": "54435420cc187abf62ef005650036ab965b7819fb5c03c972a521d43698c1e16"
+  }
+}
