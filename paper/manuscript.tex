@@ -14,7 +14,7 @@
 \affiliation{Independent researcher}
 
 \begin{abstract}
-Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We formulate merger-conditioned transport and define finite-region residence and species-resolved exposure on its trajectories. Public observations and published multimass-model posteriors for six Galactic clusters supply conditional reference hosts and a joint-parameter sensitivity pilot. Independent checks connect their mass distributions, potentials, velocity moments and projected tracer profiles to local anisotropic scattering calculations. Black holes can dominate formal central diffusion in both low-count and massive-reservoir models, while the radial extent of that contribution differs strongly. Published model variation and applicability limitations prevent a selected sparse population from being treated as an observationally secure background. Galactic reference orbits and static controls separate conditional tidal scales from sufficient domains for neglecting external forces. These calculations identify environments and spatial regions for a subsequent test of the continuous scattering approximation. They do not establish its failure or provide calibrated remnant residence distributions.
+Black-hole mergers in stellar clusters leave remnants whose recoil can carry them repeatedly through regions of different stellar density and composition. Their subsequent availability for dynamical interactions depends on the time spent in those environments, as well as on whether they remain bound. We study how gravitational encounters determine finite-time residence and species-resolved exposure. Published multimass distributions for six Galactic clusters provide the adopted potentials and scattering backgrounds. Reconstructions, local anisotropic collision calculations and Galactic environmental controls connect these backgrounds to a merger-conditioned transport formulation. The calculations reveal distinct radial profiles of the black-hole contribution to velocity diffusion. We formulate the hypothesis that the accuracy of continuous transport for residence depends on the encounter increments sampled along the orbit and on how those increments change the expected remaining occupation. A matched comparison retains either the full local encounter transitions or their first two velocity-change moments. A backward occupation equation relates their difference in mean residence to a nonlocal generator residual, defining a route from local scattering physics to an observable accuracy criterion. Finite-population response and time-dependent host evolution enter as separate controlled comparisons. The reported results establish the backgrounds and local coefficients for this investigation; the matched residence predictions remain to be evaluated.
 
 \end{abstract}
 \maketitle
@@ -25,11 +25,13 @@ A black hole formed by a merger can receive a recoil from anisotropic gravitatio
 
 The distinction matters whenever the surrounding population influences subsequent evolution. Residence measures the time spent in a specified region, whereas density exposure weights the trajectory by the material encountered along it. Neither is fixed by a retention flag alone. Their calculation requires a dynamical description with enough information to distinguish repeated excursions, continued wandering, and changes in the environment during the remnant's motion.
 
-The necessary kinetic ingredients are established. Rosenbluth collision integrals relate velocity drift and diffusion to a field-particle distribution~\cite{Rosenbluth1957}; their gravitational application permits anisotropic velocity distributions~\cite{Tep2022}. Direct calculations of kicked black holes illustrate limitations of simplified dynamical-friction descriptions and show that individual encounters can increase a remnant's energy~\cite{Webb2018}. These results motivate treating mean drift and fluctuations together, while testing the regime in which a local diffusion closure is adequate. They do not supply a calibrated prescription for an arbitrary cluster.
+The kinetic description follows from the velocity-change moments of inverse-square interactions~\cite{Rosenbluth1957}. Anisotropic relaxation calculations connect such moments to direct stellar dynamics~\cite{Tep2022}, while kicked-black-hole simulations demonstrate that gravitational encounters can increase or decrease the remnant's orbital energy~\cite{Webb2018}. Full encounter distributions have also been studied for stellar energy relaxation around massive black holes~\cite{BarOr2013}. That nuclear setting differs from the cluster-remnant problem considered here; the relevant methodological connection is the distinction between an encounter transition law and its diffusion approximation.
 
-We formulate two linked problems. Step~1 defines merger-conditioned transport in position and velocity, with an explicit matter inventory, reference frame, collision closure, and termination rule. Step~2 defines finite-region entry, residence, and species-resolved environmental exposure on the resulting histories. Their common output is a timed description of the remnant's occupation of its environment. The immediate question is which launch and host information must be retained to predict these observables at a declared accuracy.
+Our primary question is when a continuous drift-and-diffusion description preserves the finite-time residence and exposure of a kicked remnant. We hypothesize that the relevant accuracy depends on the velocity increments sampled by the remnant and on their effect on its subsequent occupation of dense regions. The mean population size or a central diffusion coefficient alone does not specify that effect. We express this question through a matched encounter comparison and a backward equation for expected remaining occupation in Sec.~\ref{sec:hypothesis}. This establishes an observable-specific theoretical target for the calculations.
 
-We connect this formulation to an analysis of six observed Galactic clusters. Proper-motion profiles, structural estimates, and published multimass-model posteriors permit concrete comparisons of host scales and parameter dependence. Distribution-function families can supply candidate consistent hosts~\cite{Gieles2015}, but measured projected kinematics are not themselves local phase-space distributions. We use this observational connection to reconstruct one published joint realization for NGC 3201, verify its internal consistency, and evaluate local drift and diffusion from its mass-resolved distributions. This calculation supplies a controlled test of the host-to-collision connection, rather than a new fit or a trajectory prediction. Its species decomposition identifies where the smooth weak-scattering approximation needs particular scrutiny.
+Step~1 defines merger-conditioned transport in position and velocity, with a consistent matter inventory, reference frame and encounter prescription. Step~2 defines entry, residence and species-resolved exposure on the resulting histories. Their common output is a timed description of occupation; it retains continued motion after entry and the status of incomplete histories.
+
+We use published multimass-model posteriors for six Galactic clusters as the dynamical backgrounds~\cite{Gieles2015,Dickson2023,Dickson2024}. Each adopted realization supplies a potential and mass-resolved phase-space distributions. Reference reconstructions and a joint-parameter sensitivity pilot establish different reservoir sizes and radial scattering profiles. A detailed NGC 3201 calculation develops the host-to-collision connection, and the same calculations extend across the six hosts. Galactic reference orbits supply their external-force diagnostics. These completed results determine the environments and local coefficients used to formulate the residence comparison; they are not yet its trajectory outcomes.
 
 \section{Observational inputs and comparison method}\label{sec:data-method}
 
@@ -438,19 +440,19 @@ Increasing the angular and ray quadrature orders from 40 to 64 changes drift by 
 
 \input{tables/local-kernels.tex}
 
-\subsection{Species contributions and the limit of smooth diffusion}
+\subsection{Species contributions and the encounter regime}
 
 The selected host contains an expected $4.28$ black holes, with total mass $61.2\,M_\odot$ in a bin of individual mass $14.31\,M_\odot$. These are model expectations, not observed object counts. At the center this species supplies approximately $27.7\%$ of mass density but $95.8\%$ of the formal diffusion trace at zero test velocity. At $0.1r_h$, its diffusion fraction has fallen to $8.46\times10^{-4}$. At nonzero radial speed the decomposition remains strongly position dependent (Table~\ref{tab:local-kernels}). Figure~\ref{fig:scattering-composition} compares density and diffusion contributions within this same host; it is not a counterfactual fit obtained by removing black holes.
 
 \begin{figure*}[t]
 \includegraphics[width=\textwidth]{figures/scattering-composition.pdf}
-\caption{Mass-density fractions in the reconstructed host (left) and species contributions to the formal diffusion trace at zero test velocity (right). The radial density curves describe the continuous model; the diffusion bars are four evaluated states. The black-hole component has an expected total count of only $4.28$, so its dominant central diffusion contribution identifies a continuum-validity question rather than a measured relaxation rate.}
+\caption{Mass-density fractions in the reconstructed host (left) and species contributions to the formal diffusion trace at zero test velocity (right). The radial density curves describe the continuous model; the diffusion bars are four evaluated states. The adopted host has an expected BH count of $4.28$. The decomposition identifies spatial regions for the matched encounter comparison in Sec.~\ref{sec:hypothesis}.}
 \label{fig:scattering-composition}
 \end{figure*}
 
-The enhancement follows from the mass weighting and velocity dependence of Eq.~\eqref{eq:rosenbluth-diffusion}, not merely the total density. It also exposes a physical limitation: numerical convergence of a smooth collision integral does not establish that a few heavy objects act as numerous independent weak scatterers. Resolved encounters or an independently calibrated discrete-transition description must test that contribution before it is represented as Gaussian noise. The outer truncation is tested against an external field in Sec.~\ref{sec:outer-boundary}. We therefore report local coefficients conditional on this realization and closure, without interpreting them as calibrated damping times, remnant paths, or residence outcomes.
+The enhancement follows from the mass weighting and velocity dependence of Eq.~\eqref{eq:rosenbluth-diffusion}. In a continuous description, the encounter contributions enter through the first two velocity-change moments. We use this description as the reference approximation and the species decomposition to identify where an encounter-level comparison is most informative. Finite changes in velocity, correlations between encounters and the response of the scattering population are treated as separate physical effects in Sec.~\ref{sec:hypothesis}. The coefficients here use the adopted host and common constant Coulomb-log normalization.
 
-The reconstruction does supply the same species densities required for Step~2. It makes the next physical question specific: whether a justified treatment of sparse remnant encounters changes the occupation of dense regions relative to the smooth approximation, with host, launch, cutoff and boundary choices held fixed. Testing that question requires trajectories and their stopping records; the coefficient decomposition alone does not answer it.
+The reconstruction supplies the same species densities required for Step~2. The radial contrast therefore connects two parts of the problem: the local law changes the trajectory, and the trajectory determines which densities contribute to residence and exposure. Testing this connection requires timed histories under matched launch, encounter and boundary choices. The outer-force calculation below supplies one part of those choices.
 
 \section{Outer validity and tidal openings}\label{sec:outer-boundary}
 
@@ -656,7 +658,7 @@ A separate sensitivity pilot selects eight weighted joint rows per cluster, usin
 
 The reference calculations distinguish population size from spatial influence. The BH contribution is substantial at the center in both low-count and massive-reservoir models. In the references for 47 Tuc, NGC 1851, NGC 3201 and M4 it falls sharply by $0.1r_h$, while the $\omega$ Cen reference retains a large contribution there. In the NGC 6397 standard fit it falls even more rapidly. A central diffusion fraction cannot establish the importance of BH scattering along a recoil orbit: the trajectory, crossing duration and repeated encounters remain necessary. The fixed probe also has different ratios to the host and BH-reservoir masses, so the comparison does not isolate either ratio as a causal parameter.
 
-Numerical acceptance and physical suitability remain separate. Dickson et al.~\cite{Dickson2024} specifically caution that their NGC 3201 fit occupies a regime in which the model may struggle to describe the cluster. Its few-BH reference is therefore a model-sensitivity example, not an observationally secure anchor for a discrete-encounter hypothesis. The available NGC 6397 standard-fit chain is not interchangeable with the preferred no-BH alternative, whose chain is absent from the inspected release. The spherical nonrotating description also leaves geometry, rotation and population complexity outside the $\omega$ Cen comparison. Numerical consistency cannot resolve these model uncertainties.
+The comparison adopts the published standard-fit, spherical, nonrotating multimass distributions~\cite{Dickson2024}. NGC 3201 supplies a conditional sparse-population example, while $\omega$ Cen supplies a larger reservoir under the same model family. The NGC 6397 calculation uses its available standard-fit chain; the distinct no-BH alternative is not evaluated because its chain is absent from the inspected release. Rotation, flattening and additional population structure are outside these adopted backgrounds. Complete joint rows preserve the parameter dependence within each distribution. These choices define the physical settings of the controlled transport comparison.
 
 Environmental controls retain a distinct phase-space source row for each cluster. Four distance cases per cluster use the same Galactic potential and coordinate transformation; three static circular controls use each cluster's own catalog Galactocentric radius and common circular speeds of 198, 220 and $242\,\mathrm{km\,s^{-1}}$. Full phase-space and Galactic-model covariances remain unavailable. Integration and diagnostic-cadence refinement retain the original acceptance limits and record earlier failures. All 24 reference orbits pass their numerical checks. M4 nevertheless differs from the catalog extrema beyond the descriptive 5\% threshold: its catalog-distance mean pericenter is $0.772\,\mathrm{kpc}$ against $0.64\,\mathrm{kpc}$, a 20.6\% difference; its apocenter differs by 2.54\%. This discrepancy remains unresolved, and numerical convergence does not validate the assumed Galactic potential or reproduce the catalog averaging procedure. The resulting force domains are conditional instantaneous approximation bounds, not remnant escape surfaces or a proof that the host remains in equilibrium.
 
@@ -793,7 +795,7 @@ For a fixed observed cluster $c$, a compatible reconstructed host law $\Pi_c(d\T
 \end{equation}
 Here $A$ is a measurable set of observable values, not the drift vector $\mathbf A$, and $\lambda$ retains the declared launch, recoil, collision, boundary, and horizon choices. The integrand includes the launch and path averaging in Eq.~\eqref{eq:uncertainty}. This expression is a conditional modeling prescription, not an evaluated prediction. A merger-selected population additionally needs the host reweighting in Eq.~\eqref{eq:uncertainty}; the six clusters are not assigned universal population weights.
 
-Each host realization must supply the same $F_j$ to Eqs.~\eqref{eq:number-density}--\eqref{eq:dispersion} and \eqref{eq:rosenbluth-h}--\eqref{eq:rosenbluth-diffusion}. The density used for exposure must come from that realization as well. Section~\ref{sec:local-calculation} constructs those local functions for one fixed realization and checks its projected predictions. Section~\ref{sec:cluster-comparison} extends the calculation to six references and a joint-row pilot; converged posterior propagation and competing host prescriptions remain necessary, and compatibility with projected kinematics does not validate a collisional closure. Present-day observations also do not identify the stellar environment at a historical merger epoch.
+Each host realization must supply the same $F_j$ to Eqs.~\eqref{eq:number-density}--\eqref{eq:dispersion} and \eqref{eq:rosenbluth-h}--\eqref{eq:rosenbluth-diffusion}. The density used for exposure must come from that realization as well. Section~\ref{sec:local-calculation} constructs those local functions for one fixed realization and checks its projected predictions. Section~\ref{sec:cluster-comparison} extends the calculation to six references and a joint-row pilot; each trajectory comparison will first be conditioned on one such realization, then propagated through complete joint rows. We use present-day snapshots as specified environments; reconstructing a particular historical merger environment would require its evolution and formation history.
 
 \subsection{Information passed between the two steps}
 
@@ -813,27 +815,166 @@ Where both representations exist, path averages and the survival-weighted identi
 
 Internal agreement does not calibrate the collision model. Comparison with independently resolved dynamics appropriate to the host and encounter regime is needed before interpreting predictions as quantitatively reliable. Host and coefficient quadrature controls are specified for the completed calculation. A trajectory solver, ensemble precision, physical encounter-scale partition and calibration test have not yet been supplied.
 
-\section{Discussion}\label{sec:discussion}
+\section{Residence hypothesis and controlled encounter comparison}\label{sec:hypothesis}
 
-The central object of the formulation is a merger-conditioned, time-resolved distribution of remnant motion. Finite-region entry, residence, and exposure are functionals of that distribution. Keeping their definitions separate makes explicit why remaining bound, returning to a region, and spending time in a dense environment are different physical questions.
+\subsection{The observable and the hypothesis}
 
-The description permits off-center launches, inherited progenitor motion, anisotropic and streaming stellar populations, time-dependent gravity, and stochastic velocity changes. These dependences are available in the equations; they are not all measured or independently adjustable parameters. A physical realization must justify how they are constrained together and where the adopted closure applies.
+The theoretical target is the accuracy of a transport approximation for a specified observable. At fixed host, launch law, region, external field and horizon, we compare a local encounter process with a diffusion process constructed from the same encounter law. The hypothesis is that finite encounter increments become important for residence where they substantially change the expected remaining occupation, and where the remnant actually samples those states. This is more specific than associating accuracy with a total BH count: it depends on the encounter-rate distribution, the geometry of returning trajectories and the time available for subsequent excursions.
 
-The observational analysis makes several requirements concrete. Common units allow direct display comparisons, but source overlap and differing stellar selections prevent automatic construction of a shared likelihood. Strong mass--radius dependence in some published posteriors requires complete host realizations rather than independent marginal draws. Differences between structural estimates make the host prescription itself an uncertainty to examine. The six-cluster comparison supplies conditional local scattering distributions with markedly different reservoir sizes and radial influence. Its weighted joint-row pilot and the published derived-model variation show why a selected sparse population cannot be treated as a unique observationally established environment.
+The current six-cluster profiles locate candidate regions for this comparison. The compact central contribution in several adopted hosts and its greater radial extent in the $\omega$ Cen reference motivate different launch radii, speeds and directions. Zero-BH realizations supply a control with no BH encounter contribution. These findings select physical regimes; the hypothesis requires the matched calculation below.
 
-For a controlled comparison, define
+\subsection{A common encounter law and its diffusion limit}
+
+Let $x=(\mathbf r,\mathbf v)$, and let $\mathcal B$ denote the species whose encounter representation is varied. The initial comparison takes $\mathcal B$ to be the BH component. Other species retain the same treatment in both calculations. For local independent encounters with single objects, adopt the differential rate
+\begin{equation}
+d\Gamma_j=F_j(\mathbf r,\mathbf u,t)\,w\,d^3u\,b\,db\,d\varphi,
+\qquad w=|\mathbf v-\mathbf u|,
+\label{eq:encounter-rate}
+\end{equation}
+where $b$ is the impact parameter of the asymptotic relative orbit and $0\leq\varphi<2\pi$. A declared finite impact-parameter domain makes the rate finite and specifies the spatial scale on which the local description is used. For an elastic Newtonian two-body encounter,
+\begin{align}
+b_{90,j}(w)&=\frac{G(m_{\rm r}+m_j)}{w^2},\qquad
+\vartheta_j=2\arctan\frac{b_{90,j}}{b},\nonumber\\
+\boldsymbol\xi_j&=\frac{m_j}{m_{\rm r}+m_j}
+(\mathbf w'-\mathbf w),\qquad |\mathbf w'|=w,
+\label{eq:encounter-impulse}
+\end{align}
+where $\mathbf w=\mathbf v-\mathbf u$ and $\mathbf w'$ is rotated by the deflection angle $\vartheta_j$ and impact azimuth. This changes the remnant velocity by $\boldsymbol\xi_j$ while conserving the pair's energy and momentum in the isolated scattering problem. The allowed closest approaches must be declared; binaries, relativistic capture and merger transitions require additional interaction laws. The impulse description assumes an encounter duration short compared with the resolved orbital and background-evolution times.
+
+The velocity-jump rate measure is the image of Eq.~\eqref{eq:encounter-rate} under Eq.~\eqref{eq:encounter-impulse}:
+\begin{equation}
+\nu_{t,x}(d\boldsymbol\xi)
+=\sum_{j\in\mathcal B}\int d\Gamma_j\,
+\delta_{\boldsymbol\xi_j}(d\boldsymbol\xi).
+\label{eq:jump-measure}
+\end{equation}
+Its first two moments define
+\begin{align}
+\mathbf A_\nu&=\int\boldsymbol\xi\,\nu_{t,x}(d\boldsymbol\xi),\nonumber\\
+\mathsf D_\nu&=\int\boldsymbol\xi\boldsymbol\xi^{\mathsf T}
+\nu_{t,x}(d\boldsymbol\xi).
+\label{eq:matched-moments}
+\end{align}
+For a test function $f$, write the two backward generators as
+\begin{align}
+\mathcal L_J f&=\mathcal L_0 f+
+\int[\bar f(\mathbf r,\mathbf v+\boldsymbol\xi)-f(x)]\,
+\nu_{t,x}(d\boldsymbol\xi),\nonumber\\
+\mathcal L_D f&=\mathcal L_0 f+
+\mathbf A_\nu\cdot\nabla_{\mathbf v}f
++\tfrac12\mathsf D_\nu:\nabla_{\mathbf v}^2f.
+\label{eq:matched-generators}
+\end{align}
+The common operator $\mathcal L_0$ contains the smooth gravity, external force and unchanged species contributions. A bar denotes zero continuation into any declared killed state; both processes use the same physical stopping rules. The labels $J$ and $D$ refer to jump and diffusion dynamics and are distinct from the density-exposure symbol $J_{j,T}$.
+
+This construction holds the first two encounter moments fixed while testing the effect of finite transitions. The reported unit-Coulomb-log kernels supply the weak-deflection reference and numerical checks; they are not automatically the moments of a specified finite-angle encounter domain. Those moments must be evaluated from Eq.~\eqref{eq:matched-moments}. If a practical calculation resolves only an inner impact-parameter range, its diffusion coefficients integrate only the complementary range. A matching scale that depends on relative speed stays inside the encounter integrals. Varying that partition tests consistency without counting an encounter in both terms.
+
+\subsection{From local increments to expected residence}
+
+For a nonnegative occupation weight $q(t,x)$, define the expected remaining accumulation in the diffusion process,
+\begin{equation}
+U_D(t,x)=\mathbb E_{D,t,x}
+\left[\int_t^{T\wedge\tau_D}q(s,X_s)\,ds\right].
+\label{eq:backward-occupation}
+\end{equation}
+The residence weight is $q=\mathbf 1_{\mathcal C(t)}$; a species exposure uses $q=\rho_j$. With zero terminal and killed-state payoff, the backward equation is
+\begin{equation}
+(\partial_t+\mathcal L_D)U_D=-q.
+\label{eq:backward-residence}
+\end{equation}
+Thus local encounters affect residence through the dependence of $U_D$ on the remnant's velocity as well as its position. A velocity change can alter future crossings even when its instantaneous position is unchanged.
+
+Let $O_q=\int_0^{T_*}q(s,X_s)\,ds$. For the same initial law in both processes, stopped generator calculus gives
+\begin{align}
+\mathbb E_J O_q-\mathbb E_D O_q
+&=\mathbb E_J\int_0^{T\wedge\tau_J}
+\mathcal R_D(s,X_s)\,ds,\label{eq:occupation-residual}\\
+\mathcal R_D&=(\mathcal L_J-\mathcal L_D)U_D,\nonumber\\
+&=\int\Big[\bar U_D(\mathbf r,\mathbf v+\boldsymbol\xi)-U_D(x)
+-\boldsymbol\xi\cdot\nabla_{\mathbf v}U_D\nonumber\\
+&\hspace{13mm}-\tfrac12(\boldsymbol\xi\boldsymbol\xi^{\mathsf T}):
+\nabla_{\mathbf v}^2U_D\Big],\nu_{t,x}(d\boldsymbol\xi).
+\label{eq:nonlocal-residual}
+\end{align}
+Time arguments on $U_D$ in the last expression are suppressed. To obtain Eq.~\eqref{eq:occupation-residual}, apply the stopped Dynkin identity~\cite{Dynkin1956} to $U_D$ along the jump process, substitute Eq.~\eqref{eq:backward-residence}, and use the zero endpoint payoff. This is an application of standard generator calculus, supplying a theoretical relation rather than a numerical result.
+
+The identity requires integrability and a common generator domain, or an appropriate extended-domain formulation. It can first be applied to a smooth occupation weight; the sharp-region limit and absorbing-boundary regularity require separate justification. The full zero-continued residual must be retained for jumps that cross a killed boundary. A global Taylor bound is not assumed there. When a finite uniform residual bound exists for residence, it supplies the sufficient mean-error bound
+\begin{equation}
+\frac{|\mathbb E_J C_T-\mathbb E_D C_T|}{T}
+\leq\sup_{t,x}|\mathcal R_D(t,x)|.
+\label{eq:residence-error-bound}
+\end{equation}
+A path-weighted estimate can be sharper than this supremum. Neither expression fixes the sign of the residence difference, and cancellation in the mean does not establish agreement of the full distribution.
+
+Equations~\eqref{eq:occupation-residual}--\eqref{eq:nonlocal-residual} identify the physical mechanism to examine: finite velocity changes matter where the expected remaining occupation is not well represented by its quadratic velocity expansion. The central diffusion fraction sets a local second-moment contribution; the residual adds the encounter distribution and the future orbital response needed for an accuracy statement. No residual or residence-error bound has yet been evaluated for the adopted hosts.
+
+\subsection{A prediction that can be tested independently}
+
+The residual identity is an analytical relation. A further, falsifiable proposal is that a response estimate computed using the diffusion process predicts the sign and size of the residence change in a specified regime. Define an auxiliary family
+\begin{equation}
+\mathcal L_a=(1-a)\mathcal L_D+a\mathcal L_J,
+\qquad 0\leq a\leq1.
+\label{eq:generator-interpolation}
+\end{equation}
+This is a diagnostic interpolation of generators, not a change to the adopted cluster population. Every member retains the same first two encounter moments. Under the regularity conditions for differentiating the stopped expectation, its first response is
+\begin{align}
+\left.\frac{\partial}{\partial a}\mathbb E_a C_T\right|_{a=0}
+&=\mathbb E_D\int_0^{T\wedge\tau_D}\mathcal R_D(s,X_s)\,ds,
+\nonumber\\
+\widehat\delta_C&=\frac1T\mathbb E_D
+\int_0^{T\wedge\tau_D}\mathcal R_D(s,X_s)\,ds.
+\label{eq:diffusion-response-predictor}
+\end{align}
+The signed quantity $\widehat\delta_C$ is a proposed predictor for the finite change at $a=1$. Replacing the jump-process expectation in Eq.~\eqref{eq:occupation-residual} by a diffusion-process expectation is not exact at that endpoint. Comparing the prediction with encounter ensembles at increasing $a$ tests where the first response remains useful and where repeated finite transitions require the full process. A zero-BH realization gives a null control when only BH encounters are varied.
+
+The hypothesis can therefore fail constructively: the diffusion-based predictor may miss the sign, magnitude or prescribed accuracy class of the full residence change. Such a result identifies nonlinear trajectory response even though the first two local moments match. Conversely, a predictive response estimate or a valid residual bound can identify a regime where continuous transport has a quantified accuracy for residence. Neither outcome has been obtained in the current calculations.
+
+\subsection{Separating finite transitions from population response}
+
+The first comparison assumes that successive encounters sample a supplied local distribution. A subsequent finite-population comparison resolves individual BH positions, velocities and reciprocal forces, testing repeated encounters, correlations and exchange of energy with the reservoir. A noninteger expected BH count does not define such a realization. An explicit integer-count and mass-sampling law must reproduce the declared ensemble moments and any imposed joint constraints; pair correlations and binaries must be specified separately.
+
+In that calculation the smooth BH contribution to gravity is replaced by the resolved BH forces, and its collision term is removed from the diffusion operator. The remnant acts back on the resolved objects. Retaining the original full smooth BH field or its full diffusion term in addition would double-count their contribution. The lighter species can initially retain their common prescribed background; relaxing that choice defines a further comparison. A local jump process with independently resampled encounters and a mutually interacting finite population answer different questions, so their results remain distinguishable.
+
+The diagnostic variables include $m_{\rm r}/m_j$, the distribution of $b_{90,j}/b_{\max,j}$, the radial extent of the BH component, and the remnant mass relative to the reservoir encountered within the chosen region. These are tested alongside the encounter correlation time and the time on which the local background changes. An averaging interval must contain enough small, decorrelated increments while resolving changes in the orbit and background. The fixed $60\,M_\odot$ probe used here does not hold these ratios equal across hosts.
+
+\subsection{Matched launches, tides and measurable outcomes}
+
+Within each adopted host, both encounter descriptions use the same merger-conditioned launch distribution, remnant mass, physical horizon and region. The initial study can condition on specified launch states and then average them under a declared joint launch law. Positions, progenitor velocities and recoil directions retain their correlations. Central radial launches are one control, not the full ensemble.
+
+For comparisons across hosts, use
 \begin{equation}
 \widetilde C=\frac{C_T}{t_0},\qquad
 \widetilde J_j=\frac{J_{j,T}r_h^3}{M t_0}.
 \label{eq:dimensionless-observables}
 \end{equation}
-A testable next hypothesis is that host structure and stellar-mass composition leave differences in these dimensionless observables after fixing the dimensionless launch law, remnant-to-host mass ratio, $T/t_0$, region scaled by $r_h$, external-field treatment, collision prescription and termination conventions. The current analysis motivates this hypothesis by identifying structural variation and correlated host uncertainty; it does not test the transport consequence. A controlled trajectory comparison must extend beyond the present joint-row pilot, justify the treatment of sparse encounters, and compare the same dimensionless launch and event definitions while propagating host uncertainty. The gravitational scales alone cannot decide whether the resulting trajectory observables coincide.
+Matching $\mathbf r_{\rm m}/r_h$, velocities in units of $v_0$, $T/t_0$ and the scaled region separates host structure from the imposed geometric and temporal scales. Remnant-to-host and remnant-to-scatterer mass ratios are explicit controls; the present common-mass calculations do not match all of them. The comparison within one host isolates encounter representation before cross-host differences are interpreted.
 
-The static and orbit-dependent boundary calculations show why a single formal truncation radius is insufficient: the selected external field gives distinct approximation and tidal-opening scales, and the outer host remains to be made consistent with that field. The observed-phase-point orbit supplies explicit time dependence, while disk passages restrict the isolated-control domain and expose rapid forcing that a host-evolution calculation must address.
+The Galactic reference orbit and differential force are also held fixed between the two descriptions. An isolated control is restricted to its declared omitted-force domain; a calculation with the differential Galactic force uses a separate physical escape convention. The fixed-host response indicator already calculated identifies phases for a later frozen-versus-evolving-host comparison. That comparison changes the host treatment while preserving launch and encounter choices, thereby separating tidal response from the approximation of encounters.
 
-The formulation supplies the conditional evolution and accumulation problem needed for that comparison. Continued motion after entry, survival weighting, and termination status remain explicit. Its connection to observed clusters is supported by measured coverage, published host distributions, numerically checked conditional reconstructions and local anisotropic collision kernels. The dominant central contribution of a few modeled black holes identifies the encounter regime that must be resolved before calibrated return and residence predictions follow.
+When finite two-body encounters are resolved, the corresponding $\tau_{\rm strong}$ stop in Eq.~\eqref{eq:stopping} is removed in both matched descriptions. Otherwise the comparison would terminate before the effect under study. Interactions still outside the supplied physics use the same declared event or killing rule in both descriptions. The residence reported after such a stop is the accumulated modeled residence; a complete-horizon continuation is not inferred.
 
-Timed position--velocity histories can eventually be combined with a separately justified companion population and interaction law. Residence and density exposure alone do not supply either ingredient. Companion acquisition, binary evolution, subsequent mergers, and inference from observed gravitational-wave sources therefore require additional physical descriptions beyond the two steps defined here.
+Two complementary residence discrepancies are
+\begin{align}
+\Delta_C&=\frac{|\mathbb E_J C_T-\mathbb E_D C_T|}{T},\nonumber\\
+\Delta_F&=\sup_{0\leq c\leq1}
+\left|\Pr_J(C_T/T\leq c)-\Pr_D(C_T/T\leq c)\right|.
+\label{eq:residence-comparison}
+\end{align}
+Exposure distributions, entry-time distributions and the probabilities of each termination cause accompany these quantities. Censored paths remain in the accounting; conditioning on survivors would define a different comparison. The backward residual constrains a mean, while $\Delta_F$ tests changes in distribution shape and tails.
+
+Numerical, ensemble and smoothing errors must be reduced below predeclared tolerances for the compared observables. An uncertainty interval for a nonnegative discrepancy lying entirely below its tolerance supports adequacy in that setting; one lying entirely above establishes a material difference. An interval spanning the tolerance is inconclusive. Coverage accounts for the launch settings and observables examined. A resolved discrepancy is then attributed through separate finite-transition, finite-population and host-evolution comparisons. A result remains informative whether it identifies a required additional dynamical variable or a regime in which the simpler description preserves residence. The tolerances, encounter cutoffs, population-sampling law and trajectory ensembles are inputs to that next calculation, not values inferred from the current local grid.
+
+\section{Discussion}\label{sec:discussion}
+
+The research objective is to connect encounter physics to the accuracy of finite-time remnant residence. The adopted cluster models supply the potentials, mass spectra and local phase-space distributions for this problem. Their numerical reconstructions and scattering integrals establish a consistent starting point across six environments. The source audit supplies unit conventions, tracer definitions and complete joint parameter rows; these remain the conditioning of the transport calculation.
+
+The completed results show why the calculation needs both spatial and velocity information. A substantial central BH contribution can be concentrated in a small region or persist farther through the host. The remnant's excursions determine how those regions are sampled. Population size, local second moments and spatial concentration therefore enter different parts of the physical question. The comparison is organized around these quantities rather than assigning a single accuracy criterion from a cluster label or a global BH count.
+
+The proposed matched generators isolate the reduction of finite encounter increments to their first two moments. The backward occupation equation then relates that reduction to the expected remaining residence or exposure. This is the analytical bridge between the calculated local coefficients and the trajectory observables. Its nonlocal residual provides a concrete quantity to evaluate, together with direct comparisons of means, distributions and termination probabilities. The identity does not itself establish the size of the residual in a physical cluster.
+
+Finite-population response and host evolution are separate extensions of this comparison. Resolving reciprocal encounters tests memory and reservoir response; retaining time-dependent Galactic forcing and evolving the host tests the background through which the remnant moves. Keeping these comparisons distinct makes an observed difference interpretable and identifies which added physics is required for a specified accuracy.
+
+The current evidence consists of host reconstructions, local kernels, joint-row sensitivity and environmental diagnostics. The next theoretical result sought is a residence-accuracy criterion tested against matched encounter dynamics across these adopted environments. No such criterion is empirically established here, and no remnant residence ensemble has yet been computed. Timed trajectories from a validated calculation could subsequently support companion-access physics with an additional target population and interaction law; density exposure by itself remains distinct from an encounter count or merger probability.
 
 \appendix
 \section{Conservative Galactic-force bound}\label{app:force-bound}

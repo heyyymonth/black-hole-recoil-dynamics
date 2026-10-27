@@ -1,6 +1,6 @@
 # Suitability of the six cluster datasets
 
-The comparison uses six distinct published standard-fit host distributions. No shared stellar population is fitted, no missing input is imputed, and no cluster is accepted merely because a numerical model can be constructed. The original source audit remains pinned to its release; the following decisions govern the cross-cluster calculation.
+The comparison adopts six distinct published standard-fit host distributions as conditional dynamical backgrounds. Joint parameter records preserve each cluster's inferred structure and stellar population. Numerical acceptance and source-specific applicability are recorded separately. The original source audit remains pinned to its release; the following decisions govern the cross-cluster calculation.
 
 ## Source integrity and common inputs
 
@@ -14,12 +14,14 @@ The released derived-model products contain 4,000 realizations per cluster. Thei
 |---|---|---|
 | 47 Tuc | Conditional multimass reference and posterior sensitivity | Spherical nonrotating model; published mass-segregation/dynamical-age consistency concern. Numerical success does not validate its geometry or encounter closure. |
 | NGC 1851 | Conditional structural and scattering comparison | Four suspect compiled kinematic entries remain audit-only. They are not repaired or inserted into the historical fit. |
-| NGC 3201 | Sparse-population and model-sensitivity example | The source authors specifically caution that this fit may struggle with the cluster's dynamical regime; alternative methods infer larger BH populations. It is not a clean observational anchor for a few-BH thesis. |
+| NGC 3201 | Conditional sparse-population reference and joint-parameter sensitivity | The source authors flag this fit's mass-segregation and dynamical-age regime; alternative methods infer larger BH populations. The adopted standard fit defines the experiment's background rather than a unique measured BH population. |
 | Omega Centauri | Massive-reservoir comparison within the stated model | Spherical nonrotating treatment omits rotation and complex population structure. Competing central-mass descriptions are not tested here. |
 | M4 | Low-count comparison | Sparse original HST radial coverage and model dependence remain. One of eight pilot reconstructions fails to converge to finite extent and remains unresolved. The catalog-distance orbit passes numerical checks but differs from the catalog mean pericenter by 20.6%. Zero-BH realizations, where present, are retained. |
-| NGC 6397 | **Standard-fit sensitivity only** | Core-collapsed system. The preferred no-BH alternative has a summary and figures but no corresponding chain in the inspected pinned release. The standard-fit calculation cannot substitute for that missing alternative. |
+| NGC 6397 | Adopted standard-fit reference and sensitivity | Core-collapsed system. A distinct no-BH alternative has a summary and figures but no corresponding chain in the inspected pinned release. It remains unevaluated; the standard-fit results are conditional on their own host prescription. |
 
-The source study identifies NGC 3201 as its strongest example of a suspicious high-segregation, dynamically young fit; 47 Tuc and Omega Centauri also occupy the flagged regime, although their inferred BH contents agree better with other work. Its discussion of NGC 6397 emphasizes the role of white dwarfs and little or no BH content. These are limitations of physical interpretation, not reasons to erase conditional calculations. [Dickson et al., sections 3 and 5.3](https://arxiv.org/html/2308.13037)
+The source study identifies NGC 3201 as its strongest example of a high-segregation, dynamically young regime requiring additional model assessment; 47 Tuc and Omega Centauri also occupy that regime, although their inferred BH contents agree better with other work. Its discussion of NGC 6397 emphasizes the role of white dwarfs and little or no BH content. These source-specific statements condition the astrophysical interpretation of the adopted backgrounds. [Dickson et al., sections 3 and 5.3](https://arxiv.org/html/2308.13037)
+
+The inspected [NGC 6397 no-BH directory](https://github.com/nmdickson/GCfit-results/tree/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6397/no_BHs) contains six figures and a summary, with no sampler chain. This is an availability statement, not a ranking of the two host prescriptions. The inventory records the adopted standard-fit chain as available for every cluster and records this inspected alternative only for NGC 6397; it makes no claim about alternative-chain availability for the other clusters.
 
 ## Quality gates and missing information
 

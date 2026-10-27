@@ -12,8 +12,8 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.9.0-manuscript.1"
-TAG = "manuscript-v0.9.0.1"
+VERSION = "0.10.0-manuscript.1"
+TAG = "manuscript-v0.10.0.1"
 DATA_REVISION = "cluster-data-v0.1.0"
 CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
 TABLE_ASSETS = (
@@ -57,6 +57,7 @@ ARCHIVE_SOURCE_FILES = {
     "CITATION.bib": "paper/CITATION.bib",
     "SOURCE_README.txt": "paper/SOURCE_README.txt",
     "LICENSE": "LICENSE",
+    "evidence/transport-hypothesis.md": "docs/transport-hypothesis.md",
     **{name: f"paper/{name}" for name in (*TABLE_ASSETS, *FIGURE_ASSETS)},
     "evidence/paper-data-assets.json": "paper/data-assets.json",
     "evidence/paper-calculation-assets.json": "paper/calculation-assets.json",
@@ -114,6 +115,10 @@ def source_metadata(root):
     require(state.get("status") == "theory-data-and-local-calculations-draft", "Expected a formulation and data-analysis draft")
     require(state.get("data_analysis_performed") is True, "Completed data analysis must be recorded")
     require(state.get("transport_simulations_performed") is False, "No transport simulation is reported")
+    require(state.get("matched_encounter_comparison_performed") is False,
+            "Matched residence comparison remains a proposed calculation")
+    require(state.get("backward_occupation_formulated") is True,
+            "Missing backward-occupation formulation status")
     require(state.get("host_reconstruction_performed") is True, "Missing reconstructed-host status")
     require(state.get("local_collision_coefficients_evaluated") is True, "Missing collision-evaluation status")
     require(state.get("outer_boundary_diagnostics_evaluated") is True, "Missing boundary-evaluation status")
@@ -219,6 +224,8 @@ def verify(root=ROOT):
     require(set(meta["input_sha256"]) == set(INPUT_FILES), "Unexpected manuscript input inventory")
     require(set(meta["output_sha256"]) == OUTPUT_FILES, "Unexpected manuscript output inventory")
     require(meta.get("transport_simulations_performed") is False, "No transport simulation is reported")
+    require(meta.get("matched_encounter_comparison_performed") is False,
+            "The matched encounter comparison has not been executed")
     require(meta.get("local_calculations") == {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "boundary": "outer-boundary-1", "galactic_orbit": "galactic-orbit-1", "cross_cluster_comparison": "six-cluster-comparison-1", "recomputed_during_build": False}, "Incorrect calculation provenance")
     require(meta.get("executed_during_build") == [], "Compilation must not execute research calculations")
     require(meta.get("data_analysis") == {

@@ -1,5 +1,5 @@
 {
-  "revision": "six-cluster-published-derived-1",
+  "revision": "six-cluster-published-derived-2",
   "interpretation": "Empirical quantiles of released 4000 derived model realizations; not six new fits or direct BH detections. Historical compatible GCfit constructs these from equal-weight chains. Original draw mapping and generating random seed are not released; no alignment to raw nested rows is assumed.",
   "zero_policy": "Zero-BH rows retained; BH subsystem radius and probe/reservoir mass ratio undefined there and excluded only from explicitly conditional summaries.",
   "clusters": [
@@ -38,7 +38,7 @@
         "BH_mass": "solMass",
         "BH_rh": "pc"
       },
-      "preferred_model_chain_available": true
+      "adopted_standard_fit_chain_available": true
     },
     {
       "cluster": "NGC1851",
@@ -75,7 +75,7 @@
         "BH_mass": "solMass",
         "BH_rh": "pc"
       },
-      "preferred_model_chain_available": true
+      "adopted_standard_fit_chain_available": true
     },
     {
       "cluster": "NGC3201",
@@ -112,7 +112,7 @@
         "BH_mass": "solMass",
         "BH_rh": "pc"
       },
-      "preferred_model_chain_available": true
+      "adopted_standard_fit_chain_available": true
     },
     {
       "cluster": "NGC5139",
@@ -149,7 +149,7 @@
         "BH_mass": "solMass",
         "BH_rh": "pc"
       },
-      "preferred_model_chain_available": true
+      "adopted_standard_fit_chain_available": true
     },
     {
       "cluster": "NGC6121",
@@ -186,7 +186,7 @@
         "BH_mass": "solMass",
         "BH_rh": "pc"
       },
-      "preferred_model_chain_available": true
+      "adopted_standard_fit_chain_available": true
     },
     {
       "cluster": "NGC6397",
@@ -223,7 +223,9 @@
         "BH_mass": "solMass",
         "BH_rh": "pc"
       },
-      "preferred_model_chain_available": false
+      "adopted_standard_fit_chain_available": true,
+      "inspected_no_BH_alternative_chain_available": false,
+      "inspected_no_BH_alternative_release_url": "https://github.com/nmdickson/GCfit-results/tree/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6397/no_BHs"
     }
   ]
 }

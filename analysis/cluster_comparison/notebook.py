@@ -14,7 +14,7 @@ def main():
 
 **Readout.** Compare reservoir size, central and radial scattering importance, posterior sensitivity and numerical/data suitability. Selected reference rows are not typical hosts. Eight joint draws per cluster are a pilot, not a credible interval.
 
-Sources: the hash-pinned Dickson/GCfit standard fits and Baumgardt orbital table in this repository. NGC 6397 is the available **standard-fit sensitivity case**; its preferred no-BH chain is unavailable. NGC 3201 is a source-flagged model-applicability concern.
+Sources: the hash-pinned Dickson/GCfit standard fits and Baumgardt orbital table in this repository. The six standard-fit backgrounds define the conditional comparison. NGC 6397 uses its available standard-fit chain; a distinct no-BH alternative has no corresponding chain in the inspected release and is not evaluated. Source-specific applicability information is retained in the data-quality assessment.
 
 The cells read retained products and execute top-to-bottom. Rebuilding the expensive hosts is a separate command in the adjacent README.'''),
     code('''from pathlib import Path
@@ -73,7 +73,7 @@ display(Markdown(text))'''),
 
 Population size and local diffusion importance are distinct. The radial profiles identify where a later encounter comparison should be resolved; they do not establish whether the diffusion approximation fails or changes residence. The pilot variation cannot be treated as converged posterior uncertainty. M4 has one unresolved pilot reconstruction; its catalog-distance orbit passes numerical checks but differs by 20.6% from the published mean pericenter. Neither discrepancy is concealed by selecting another case.
 
-NGC 3201's standard fit is specifically cautioned against in the source study. NGC 6397's preferred alternative is unavailable as a chain. Rotation, binaries, discrete counts, backreaction and physical scattering cutoffs remain unvalidated. These limitations govern future experiment selection rather than being silently repaired.
+The adopted backgrounds are spherical, nonrotating standard fits. NGC 3201 provides a conditional sparse-population reference; NGC 6397 uses the available standard-fit chain, with its distinct no-BH alternative left unevaluated. Rotation, binary populations, discrete counts, backreaction and physical scattering cutoffs require separate specifications for a matched encounter experiment. The data-quality assessment records source-specific applicability information alongside these experimental assumptions.
 
 See `docs/six-cluster-comparison.md`, `docs/six-cluster-data-quality.md`, and `docs/six-cluster-environment.md`. Source URLs and exact hashes are retained in `data/observed-clusters/sources.json`, the per-cluster selection records, and the comparison provenance manifest.''')]
     nb=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'name':'python3','display_name':'Python 3','language':'python'}})

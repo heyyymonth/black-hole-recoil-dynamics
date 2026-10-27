@@ -38,11 +38,15 @@ def main():
             if samples.shape!=(len(w),13) or not np.isfinite(samples).all():raise ValueError('Invalid joint chain')
             units={k:str(group[k].attrs['unit']) for k in ['BH_num','BH_mass','BH_rh']}
             if units!={'BH_num':'','BH_mass':'solMass','BH_rh':'pc'}:raise ValueError('Unknown derived units')
-        rows.append({'cluster':c,**q,'joint_rows':len(w),'weight_ESS':float(1/(w@w)),
-                     'source_sha256':digest,'source_url':pins[path.name]['url'],'source_units':units,
-                     'preferred_model_chain_available':c!='NGC6397'})
+        row={'cluster':c,**q,'joint_rows':len(w),'weight_ESS':float(1/(w@w)),
+             'source_sha256':digest,'source_url':pins[path.name]['url'],'source_units':units,
+             'adopted_standard_fit_chain_available':True}
+        if c=='NGC6397':
+            row['inspected_no_BH_alternative_chain_available']=False
+            row['inspected_no_BH_alternative_release_url']='https://github.com/nmdickson/GCfit-results/tree/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6397/no_BHs'
+        rows.append(row)
     out=ROOT/'results/cluster-comparison';out.mkdir(exist_ok=True,parents=True)
-    report={'revision':'six-cluster-published-derived-1','interpretation':'Empirical quantiles of released 4000 derived model realizations; not six new fits or direct BH detections. Historical compatible GCfit constructs these from equal-weight chains. Original draw mapping and generating random seed are not released; no alignment to raw nested rows is assumed.',
+    report={'revision':'six-cluster-published-derived-2','interpretation':'Empirical quantiles of released 4000 derived model realizations; not six new fits or direct BH detections. Historical compatible GCfit constructs these from equal-weight chains. Original draw mapping and generating random seed are not released; no alignment to raw nested rows is assumed.',
             'zero_policy':'Zero-BH rows retained; BH subsystem radius and probe/reservoir mass ratio undefined there and excluded only from explicitly conditional summaries.',
             'clusters':rows}
     (out/'posterior-inventory.json').write_text(json.dumps(report,indent=2,allow_nan=False)+'\n')

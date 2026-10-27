@@ -1,16 +1,16 @@
 {
   "scope": "conditional six-cluster host and local scattering comparison",
   "input_sha256": {
-    "paper/comparison_assets.py": "f9a9f349f4d8f1e6d62e7daf71ee5b090f70bb9568a71e948e9d494081752c6b",
+    "paper/comparison_assets.py": "d70133903e71a4b83ee6cb6dd1e8a3eff2b61b7caf0ccc6564c916e15e8a6d18",
     "results/cluster-comparison/reference-comparison.csv": "8d2dbdd4131574048f06a0927cda57460e98b7190ffaa5e4a0beb87b0f9f4d64",
-    "results/cluster-comparison/posterior-inventory.json": "21a25231a4042250de8da53d4770a0740ea2bb3f99eb1750d6536fcbefe25da2",
+    "results/cluster-comparison/posterior-inventory.json": "9ddc2383d639e4a6ce56c9c9103b763deb4703641ef2a7e62fd1540d90ec3f87",
     "results/cluster-comparison/summary.json": "a79185ea295a0e073b8a95b4a88bd33593f2541b286e416a1ee205eec7e9eafa",
-    "results/cluster-comparison/provenance.json": "44f9a63125c082a312fd9980243484ccf38bd6e821992bacebd1bb17c24c8faa",
+    "results/cluster-comparison/provenance.json": "5faabf7511341311ffcfdd81f08b4a60d648135f231ee284dfa258f482f118bb",
     "results/cluster-comparison/diffusion-comparison.pdf": "381a26bfc3a08d39055d3b34a47b7016c31e443866fa7266f1227e0e870b407b",
     "results/cluster-comparison-environment/comparison.csv": "7c8c428c5e4bebf27ce17b8d6e12be88ec88abf60f4e6c32a9335b42fed5b450"
   },
   "output_sha256": {
-    "tables/cluster-transport-comparison.tex": "570e194f83eb79c8b2933ca05faad281599ab1b93b332ea74ecf2a78e433e710",
+    "tables/cluster-transport-comparison.tex": "6bbe14c8c1b749f159095e6e55f4d9d10597c945ea71a720ce13266b91aaa1b3",
     "figures/cluster-transport-comparison.pdf": "381a26bfc3a08d39055d3b34a47b7016c31e443866fa7266f1227e0e870b407b"
   }
 }

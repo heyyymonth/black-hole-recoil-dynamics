@@ -1,5 +1,5 @@
 Formulation and six-cluster calculation manuscript verification
-Revision 0.9.0-manuscript.1; 26 October 2026
+Revision 0.10.0-manuscript.1; 27 October 2026
 
 Completed calculations
 Six actual joint posterior rows provide conditional reference hosts. The same
@@ -34,9 +34,9 @@ Recorded code, parameters, checks and outputs are bound by source manifests.
 Presentation review
 Eight evidence tables and eight vector figures are bound to their source
 records. The executed comparison notebook contains no execution errors.
-The final PDF has 20 US Letter pages and 24 embedded vector fonts. Every page
+The final PDF has 22 US Letter pages and 24 embedded vector fonts. Every page
 was rendered and inspected; the comparison table and figure were inspected
-at higher resolution. No clipping, missing glyphs, overfull boxes, unresolved
+at higher resolution, together with the matched-generator and residence equations. No clipping, missing glyphs, overfull boxes, unresolved
 references or bibliography-entry warnings were found. The saved source also
 compiles with the desktop editor's built-in compiler. The existing editor
 remains open. The portable archive and PDF match their recorded source hashes.
@@ -58,3 +58,13 @@ cutoffs and merger-conditioned launches remain uncalibrated.
 No remnant trajectories, residence distributions or diffusion-versus-resolved
 encounter comparison have been computed. The comparison locates environments
 and radial regions where those physical tests would be informative.
+
+Theoretical framing
+The abstract, introduction, hypothesis section and discussion share the
+residence-accuracy question. Adopted host families are stated as calculation
+assumptions. The finite-encounter measure and its matched diffusion moments,
+backward occupation equation and stopped-generator residual are formulated
+analytically. The diffusion-based first response is a proposed predictor,
+not an exact full-strength result. Finite-population feedback and evolving
+hosts are separate controlled comparisons. Numerical result values are
+unchanged; no new encounter or residence calculation was performed.

@@ -27,7 +27,7 @@ from verify import (
 PAPER = ROOT / "paper"
 OUT = ROOT / "output/pdf"
 TMP = ROOT / "tmp/latex"
-EPOCH = datetime(2026, 10, 26, tzinfo=timezone.utc)
+EPOCH = datetime(2026, 10, 27, tzinfo=timezone.utc)
 
 
 def sha256(path):
@@ -123,8 +123,9 @@ def build():
         "version": VERSION,
         "title": source["title"],
         "pages": pdf_info["pages"],
-        "scope": "Two-step transport formulation, six-cluster source audit, six conditional reference hosts, joint-row sensitivity, local kernels and environmental diagnostics",
+        "scope": "Residence hypothesis with matched encounter generators and backward occupation; six-cluster conditional host, local-kernel and environmental calculations",
         "transport_simulations_performed": False,
+        "matched_encounter_comparison_performed": False,
         "local_calculations": {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "boundary": "outer-boundary-1", "galactic_orbit": "galactic-orbit-1", "cross_cluster_comparison": "six-cluster-comparison-1", "recomputed_during_build": False},
         "executed_during_build": [],
         "data_analysis": {"revision": DATA_REVISION, "mode": "reuse-verified-recorded-analysis",

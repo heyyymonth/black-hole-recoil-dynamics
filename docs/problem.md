@@ -8,7 +8,7 @@ A black-hole merger can leave a remnant moving through a stellar cluster under t
 
 The physical question is:
 
-> How do merger-conditioned initial states and a consistent stellar environment determine the probability distribution of recoil trajectories and the environmental exposure accumulated over a finite physical interval?
+> When does continuous drift and diffusion preserve a kicked remnant's finite-time residence and exposure, and which encounter or host-response effects must be retained to reach a declared accuracy?
 
 The study has two components. [Step 1](step1-transport.md) defines the phase-space evolution. [Step 2](step2-exposure.md) defines the functionals of that evolution that measure entry, residence, and species-resolved exposure. An [observational analysis of six clusters](cluster-data-assessment.md) supplies numerical comparisons of candidate host inputs, and a [fixed-host reconstruction with local collision calculations](local-transport-calculations.md) supplies the first numerical connection between those inputs and the transport operator. A [static boundary calculation](outer-boundary.md) separates a conditional tidal opening from the accuracy domain of neglecting the Galactic field. A [Galactic-orbit calculation](galactic-orbit.md) now supplies phase-dependent external forcing and tests the fixed host's force and response-timescale domains. Remnant trajectories and residence outcomes remain uncalculated.
 
@@ -18,7 +18,7 @@ The completed analysis compares original projected kinematic profiles and publis
 
 The [paper](../output/pdf/central-residence.pdf) presents the six-cluster coverage, structural scales, posterior summaries and model comparisons as findings of this study. Parameter dependence and differences between structural estimates identify assumptions that a transport calculation must preserve or test. Neither observation directly predicts how long a kicked remnant returns or resides.
 
-A testable physical hypothesis is that host structure and mass composition affect consistently normalized residence and species exposure under fixed dimensionless launch, remnant-mass, external-field, collision and event conventions. Testing it requires reconstructed, observationally checked host realizations and controlled transport calculations. The current results motivate the comparison without assuming its outcome.
+The [transport hypothesis and controlled comparisons](transport-hypothesis.md) connect local encounter increments to their effect on expected remaining residence. A matched jump process and a diffusion process retain the same first two velocity-change moments. Their mean-residence difference is related to a nonlocal generator residual; a response predictor computed from diffusion is then tested against the full encounter process. Reciprocal finite-population dynamics and host evolution are separate comparisons. The current calculations establish the adopted backgrounds and coefficients, while these residence tests remain unexecuted.
 
 ## Quantities to determine
 

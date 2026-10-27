@@ -62,7 +62,7 @@ def prepare():
           'projection_refinement':'Starting with 128/256 nodes, double to at most 2048 when refinement fails; retain original difference and unchanged 0.2-percent threshold.',
           'normalization':'Per unit identical constant ln Lambda=1 for every species; not calibrated collision rates',
           'scope':'Host validation, local scattering and sparse-reservoir diagnostics; no remnant trajectories or residence',
-          'models':'Published standard spherical nonrotating multimass fits; NGC6397 standard fit is sensitivity-only, not the preferred no-BH fit.',
+          'models':'Adopted published standard spherical nonrotating multimass fits; NGC6397 uses the available standard-fit chain. Its distinct no-BH alternative has no chain in the inspected release and is not evaluated.',
           'not_claimed':['unique observed BH population','posterior-calibrated transport','diffusion failure','subsequent merger rates']}
     save(ANALYSIS/'protocol.json',plan)
     tasks=[]

@@ -1,8 +1,8 @@
 # Claim-to-evidence record
 
-Manuscript revision 0.8.0-manuscript.2. Author: Venkata Hemanth Athota.
+Manuscript revision 0.10.0-manuscript.1. Author: Venkata Hemanth Athota.
 
-The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. It also reports one compatible NGC 3201 host reconstruction and twenty evaluated local collision states and four static external-field boundary scenarios, followed by four Galactic reference orbits. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
+The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. A detailed NGC 3201 benchmark is extended to six conditional reference hosts and 120 local states, 48 joint-row pilot attempts, 18 common static controls and 24 Galactic reference orbits. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
 
 | Statement | Basis | Boundary |
 |---|---|---|
@@ -20,7 +20,7 @@ The paper defines a two-step transport and exposure problem and reports the comp
 | Mass–radius correlations are 0.900 in NGC 3201 and 0.944 in Omega Centauri. | Direct weighted covariance of original joint posterior rows; independently recomputed during manuscript review. | Conditional on published models/data; does not calibrate friction or establish exact source-fit reproduction. |
 | Catalog and published-host summaries differ. | Three evidence tables and host-comparison figure generated from recorded values. | Overlapping observations and different assumptions prevent interpreting differences as evolution or independent model-rejection evidence. |
 | A common interface can retain distinct conditional host distributions. | Native units, tracer metadata, posterior weights, covariance and model conventions. | Standardization does not make the clusters homologous or supply missing local species phase space. |
-| Host structure and mass composition may alter normalized residence/exposure under controlled assumptions. | Proposed physical hypothesis motivated by structural differences and correlated host uncertainty. | Not tested by this data analysis; requires reconstructed host models and controlled transport calculations. |
+| A diffusion-based response predictor may quantify the residence change from finite encounters in a declared regime. | Matched encounter generators, backward occupation equation and first-response construction. | Untested at the full jump endpoint; requires matched trajectory ensembles and uncertainty intervals. |
 | One joint NGC 3201 row produces mutually consistent gravity and species velocity distributions. | Host protocol, original input hashes, numerical arrays and independent quadrature checks. | Compatible historical implementation; exact original fitting versions not established; not a posterior-marginalized host. |
 | Sixteen species bins reproduce mass, force, virial balance and DF moments within declared tolerances. | `results/host-reconstruction/summary.json`, density/velocity and projection checks, independent numerical tests. | Numerical consistency is not physical calibration; projection acceptance concerns the observed luminous tracer. |
 | Twenty local drift and diffusion states pass quadrature and tensor checks. | `results/local-transport-kernels/`, analytic uniform-ball limits, rotational covariance and trace identity. | Per unit constant Coulomb logarithm at tested radii/speeds; no impact-parameter prescription or trajectory interpolation validated. |
@@ -45,6 +45,16 @@ Analytical consistency differs from numerical verification and physical validati
 
 ## Cross-cluster calculation comparison
 
-Six maximum-quadrature-weight joint references repeat the validated host and 20-state local coefficient calculation. Eight weighted joint draws per cluster provide an exploratory sensitivity pilot. Released 4,000-draw derived model products supply a separate empirical population summary. The comparison resolves spatial differences in the formal BH diffusion contribution; it neither establishes diffusion failure nor predicts residence. Source-model suitability is separate from numerical acceptance, with NGC 3201 cautioned and NGC 6397 standard-fit results restricted to sensitivity.
+Six maximum-quadrature-weight joint references repeat the validated host and 20-state local coefficient calculation. Eight weighted joint draws per cluster provide an exploratory sensitivity pilot. Released 4,000-draw derived model products supply a separate empirical population summary. The comparison resolves spatial differences in the formal BH diffusion contribution; it neither establishes diffusion failure nor predicts residence. The adopted spherical nonrotating standard-fit families define the conditioning; NGC 6397 uses its available standard-fit chain, while its distinct no-BH alternative remains unevaluated.
 
 Evidence: `results/cluster-comparison/provenance.json`, `summary.json`, `reference-comparison.csv`, `posterior-inventory.json`; per-cluster selections and numerical checks; `results/cluster-comparison-environment/summary.json`. The source archive retains compact comparison evidence and reproduction code; full reference host meshes are in the repository, while pilot meshes are reproducible scratch.
+
+## Residence hypothesis and analytical bridge
+
+The primary question is when a continuous encounter approximation preserves finite-time residence and species exposure at a declared accuracy. The paper formulates a finite-angle transition measure and a diffusion generator with matching first two moments. The backward occupation equation and stopped-generator identity connect their difference in mean residence to a nonlocal residual, subject to the stated generator-domain and integrability conditions. These are analytical constructions, not computed residence results or claimed new theorems.
+
+A separate proposed predictor averages that residual under the diffusion process. It is the first response along an auxiliary interpolation of matched generators; its prediction at the full jump endpoint is untested and need not be accurate. The hypothesis can be tested against sign, magnitude and accuracy class of the measured residence change. Bounds for means do not establish distributional agreement.
+
+The prescribed controls separate finite transitions, integer-population correlations and reciprocal response, and evolving-host/tidal effects. Resolved BH forces replace their smooth gravitational and collision contributions. A resolved two-body channel is not also used as a strong-encounter stop. Unresolved channels retain common censoring rules. No encounter cutoffs, population sampling law, trajectory ensemble, residence residual or accuracy classification has been evaluated.
+
+Primary grounding: Rosenbluth et al. (1957), Tep et al. (2022), Webb et al. (2018), and Dynkin (1956). Bar-Or et al. (2013) supplies related encounter-distribution context in a different massive-black-hole nuclear setting; no numerical result is transferred from that setting.
