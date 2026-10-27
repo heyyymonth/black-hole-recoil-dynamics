@@ -2,20 +2,22 @@ Recoil transport and environmental exposure of black-hole merger remnants
 Venkata Hemanth Athota
 bharadwaj.hemanth.002@gmail.com
 
-Manuscript revision 0.8.0-manuscript.2.
+Manuscript revision 0.9.0-manuscript.1.
 This archive contains a two-column manuscript on recoil transport and
 environmental exposure, including the six-cluster data analysis, a fixed NGC 3201 host
 reconstruction, local anisotropic collision calculations and static
 external-field boundary diagnostics, and Galactic reference orbits with
 time-dependent host-support checks.
-It includes the article, seven table fragments, seven vector figures,
+It includes the article, eight table fragments, eight vector figures,
 bibliography, compiled bibliography, citation, license, supporting data
 evidence, and the unmodified REVTeX dependency.
 
 The numerical findings describe existing observations, unit conversions,
 published joint host posteriors, sampling coverage and model sensitivity.
-A checked host, twenty local collision states and four static boundary
-scenarios and four Galactic reference orbits are included. No new host
+A detailed single-host benchmark and six-cluster comparisons are included,
+with 120 reference local states, 48 joint-row pilot attempts, 18 static controls
+and 24 Galactic reference orbits. Compact comparison evidence and code
+are included; full reference meshes are in the repository. No new host
 fit, calibrated local scattering background, remnant trajectory, or residence
 calculation is supplied.
 
@@ -49,7 +51,7 @@ article, bibliography, tables and figures.
 
 The manuscript is unreviewed. No submission, acceptance, or calibrated
 transport prediction is claimed. CITATION.bib identifies the versioned source:
-https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.8.0.2
+https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.9.0.1
 No DOI has been assigned.
 
 Project-authored source is MIT-licensed. The included REVTeX distribution,

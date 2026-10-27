@@ -1,0 +1,29 @@
+{
+  "interpretation": "Deliberate reproduction of the original unbounded log-cubic behavior versus the shape-preserving interval replacement, on unchanged reconstructed meshes. These are regression checks, not additional cluster experiments.",
+  "rows": [
+    {
+      "cluster": "NGC3201",
+      "label": "pilot-02",
+      "host_sha256": "17225ddba64c30a1f5295701fc21b4202823e27b1d65609e2e39911a4bff1c22",
+      "original_log_cubic_max_density_over_nodal_max": 1449930761.7927544,
+      "shape_preserving_max_density_over_nodal_max": 0.9999999999999996,
+      "original_maximum_radius_pc": 169.25565103765626,
+      "original_central_projection_128_256_relative_change": 0.6100129345599963,
+      "original_central_projection_256_512_relative_change": 239357.95852787825,
+      "corrected_central_projection_128_256_relative_change": 8.546751084637094e-10,
+      "corrected_central_projection_256_512_relative_change": 5.705793615362609e-10
+    },
+    {
+      "cluster": "NGC3201",
+      "label": "pilot-05",
+      "host_sha256": "6020569df0c7e97b75b3ddbf771e5a247451850fccfb16a54ec268f8b9afbc19",
+      "original_log_cubic_max_density_over_nodal_max": 0.9999999999999999,
+      "shape_preserving_max_density_over_nodal_max": 0.9999999999999999,
+      "original_maximum_radius_pc": 0.0,
+      "original_central_projection_128_256_relative_change": 9.78477867885894e+20,
+      "original_central_projection_256_512_relative_change": 0.9999999999999988,
+      "corrected_central_projection_128_256_relative_change": 1.4479737076023014e-08,
+      "corrected_central_projection_256_512_relative_change": 4.0309766635715505e-10
+    }
+  ]
+}

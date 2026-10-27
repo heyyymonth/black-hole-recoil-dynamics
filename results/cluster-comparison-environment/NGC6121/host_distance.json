@@ -1,0 +1,126 @@
+{
+  "case": "host_distance",
+  "distance_kpc": 1.8612450245895775,
+  "initial_state_kpc_kms": [
+    6.409322985926761,
+    -0.28169624557479234,
+    0.5130943011246571,
+    -56.0732651369632,
+    44.08804252817902,
+    -3.2216024062728867
+  ],
+  "energy_relative_drift": 1.2561818049556491e-11,
+  "Lz_relative_drift": 2.7616412610555818e-11,
+  "maximum_abs_Z_kpc": 3.2203553322234195,
+  "pericenter_mean_kpc": 0.6503330724043553,
+  "pericenter_count": 14,
+  "apocenter_mean_kpc": 6.414592027833855,
+  "apocenter_count": 14,
+  "refinement_max_position_kpc": 5.640232788412636e-08,
+  "refinement_max_velocity_kms": 3.709268671458922e-06,
+  "reversal_position_error_kpc": 9.697083150774062e-09,
+  "all_orbit_numerical_checks_passed": true,
+  "integration_settings": {
+    "time_Myr": [
+      0.0,
+      1000.0
+    ],
+    "method": "DOP853",
+    "rtol": 1.0000000000000001e-11,
+    "atol": 1e-12,
+    "max_step_Myr": 0.25,
+    "output_step_Myr": 0.25,
+    "refinement_max_step_Myr": 0.125,
+    "refinement_rtol": 1e-13,
+    "time_interpretation": "One Gyr forward reference orbit in a fixed axisymmetric Galactic potential; not a forecast of unchanged internal cluster structure."
+  },
+  "refinement_level": 1,
+  "preceding_numerical_attempts": [
+    {
+      "case": "host_distance",
+      "distance_kpc": 1.8612450245895775,
+      "initial_state_kpc_kms": [
+        6.409322985926761,
+        -0.28169624557479234,
+        0.5130943011246571,
+        -56.0732651369632,
+        44.08804252817902,
+        -3.2216024062728867
+      ],
+      "energy_relative_drift": 8.172458193430526e-11,
+      "Lz_relative_drift": 2.2587438518467247e-10,
+      "maximum_abs_Z_kpc": 3.220355332212597,
+      "pericenter_mean_kpc": 0.6503330740787867,
+      "pericenter_count": 14,
+      "apocenter_mean_kpc": 6.41459201112142,
+      "apocenter_count": 14,
+      "refinement_max_position_kpc": 1.1470999465768517e-06,
+      "refinement_max_velocity_kms": 7.5869578035912e-05,
+      "reversal_position_error_kpc": 4.1367140448688646e-08,
+      "all_orbit_numerical_checks_passed": false,
+      "integration_settings": {
+        "time_Myr": [
+          0.0,
+          1000.0
+        ],
+        "method": "DOP853",
+        "rtol": 1e-10,
+        "atol": 1e-11,
+        "max_step_Myr": 0.5,
+        "output_step_Myr": 0.25,
+        "refinement_max_step_Myr": 0.25,
+        "refinement_rtol": 1e-12,
+        "time_interpretation": "One Gyr forward reference orbit in a fixed axisymmetric Galactic potential; not a forecast of unchanged internal cluster structure."
+      },
+      "refinement_level": 0
+    }
+  ],
+  "tidal_norm_kms2_pc2_min": 0.0014999992262762377,
+  "tidal_norm_kms2_pc2_max": 0.33115177567155635,
+  "tidal_variation_per_Myr_min": 0.012100928303413337,
+  "tidal_variation_per_Myr_max": 1.7917065992861325,
+  "tidal_amplitude_variation_per_Myr_min": 1.0011705403279675e-05,
+  "tidal_amplitude_variation_per_Myr_max": 1.0441174710643448,
+  "euler_over_extensive_eigenvalue_min": 0.010362809733300952,
+  "euler_over_extensive_eigenvalue_max": 1.6123859877728821,
+  "r_sufficient_1pct_pc_min": 1.0369819735446186,
+  "r_sufficient_1pct_pc_max": 12.297441877742141,
+  "frozen_frame_scale_pc_min": 5.804340478010453,
+  "frozen_frame_scale_pc_max": 64.47550244931107,
+  "mass_beyond_frozen_scale_fraction_min": 0.0,
+  "mass_beyond_frozen_scale_fraction_max": 0.3448843732101229,
+  "eta_linear_rh_min": 0.00045680276453713875,
+  "eta_linear_rh_max": 0.10084741642412788,
+  "eta_linear_3rh_min": 0.006749025560273228,
+  "eta_linear_3rh_max": 1.489968634107558,
+  "eta_bound_rh_min": 0.0005972052057395489,
+  "eta_bound_rh_max": 0.15636781958799723,
+  "eta_bound_3rh_min": 0.008851115090580012,
+  "eta_bound_3rh_max": 2.392646613179695,
+  "timescale_ratio_rh_min": 0.006529562905446501,
+  "timescale_ratio_rh_max": 0.9667903696977073,
+  "amplitude_timescale_ratio_rh_min": 5.402235149436728e-06,
+  "amplitude_timescale_ratio_rh_max": 0.5633973309359491,
+  "timescale_ratio_3rh_min": 0.02509806761007725,
+  "timescale_ratio_3rh_max": 3.7161093958073126,
+  "timescale_ratio_frozen_scale_min": 0.3056205858387769,
+  "timescale_ratio_frozen_scale_max": 11.010531823207009,
+  "host_diagnostics_status": "calculated",
+  "diagnostic_refinement_history": [
+    {
+      "output_step_Myr": 0.125,
+      "minimum_sufficient_radius_pc": 1.0309732037217758,
+      "relative_change": 0.0057944785696742995
+    },
+    {
+      "output_step_Myr": 0.0625,
+      "minimum_sufficient_radius_pc": 1.0309732037217758,
+      "relative_change": 0.0
+    }
+  ],
+  "refined_minimum_sufficient_radius_pc": 1.0309732037217758,
+  "sufficient_radius_cadence_relative_difference": 0.0,
+  "proposed_fixed_isolated_control_pc": 1.0,
+  "timescale_ratio_rh_refinement_absolute_difference": 0.001512871243742997,
+  "refined_timescale_ratio_rh_max": 0.9683032409414503
+}

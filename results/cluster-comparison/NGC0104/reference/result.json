@@ -1,0 +1,215 @@
+{
+  "kind": "reference",
+  "label": "reference",
+  "row_index": 9063,
+  "normalized_source_weight": 0.0003491763958554559,
+  "cluster": "NGC0104",
+  "theta": {
+    "W0": 6.13933844603821,
+    "M": 0.9022953122787666,
+    "rh": 6.690271801536634,
+    "ra": 1.6904717167702525,
+    "g": 1.4740323390916148,
+    "delta": 0.4645900793697353,
+    "s2": 0.0005492154047128448,
+    "F": 2.5654935425141026,
+    "a1": 0.35457195011506704,
+    "a2": 1.324384219221955,
+    "a3": 2.228577020333703,
+    "BHret": 0.2758345437490367,
+    "d": 4.404637331658224
+  },
+  "protocol_path": "analysis/cluster_comparison/protocols/NGC0104.json",
+  "host_status": "passed",
+  "transport_status": "passed",
+  "host_summary": {
+    "revision": "host-reconstruction-1",
+    "cluster": "NGC0104",
+    "protocol_sha256": "c85c8dfe1eafd3a319aa9c956894b85164bef47a7826f0e781c77b066eb20b4a",
+    "joint_row_index": 9063,
+    "normalized_posterior_weight": 0.0003491763958554559,
+    "theta": {
+      "W0": 6.13933844603821,
+      "M": 0.9022953122787666,
+      "rh": 6.690271801536634,
+      "ra": 1.6904717167702525,
+      "g": 1.4740323390916148,
+      "delta": 0.4645900793697353,
+      "s2": 0.0005492154047128448,
+      "F": 2.5654935425141026,
+      "a1": 0.35457195011506704,
+      "a2": 1.324384219221955,
+      "a3": 2.228577020333703,
+      "BHret": 0.2758345437490367,
+      "d": 4.404637331658224
+    },
+    "observations_metadata": {
+      "age": 11.75,
+      "FeH": -0.72,
+      "vesc": 107.55034,
+      "Ndot": 0.0
+    },
+    "summary": {
+      "M_Msun": 902295.3122787665,
+      "rh_pc": 6.690271801536634,
+      "rt_pc": 83.74882629129247,
+      "distance_kpc": 4.404637331658224,
+      "G_pc_kms2_per_Msun": 0.004302,
+      "central_density_Msun_pc3": 167357.27334566673,
+      "central_cutoff_kms": 54.03705921654473,
+      "central_escape_to_infinity_kms": 54.8880840508207,
+      "physical_species_bins": 18,
+      "tracer_mass_fraction": 0.0,
+      "total_BH_expected_number": 65.85514584050719,
+      "total_BH_mass_Msun": 442.26199834231033,
+      "published_tracer_masses_Msun": [
+        0.8001098130534499
+      ],
+      "selected_tracer_mass_Msun": 0.8000813193462991
+    },
+    "checks": {
+      "integrated_mass_relative_error": 1.2377894931248079e-08,
+      "half_mass_radius_relative_error": 2.1871319355604157e-06,
+      "force_max_relative_error": 3.193468445417125e-05,
+      "potential_max_error_over_central_relative_potential": 9.872561075669611e-08,
+      "virial_relative_error": 4.333664782585345e-08,
+      "DF_max_relative_error": 6.374019756449911e-09,
+      "projection_max_relative_difference": 0.0015247446042654378,
+      "projection_max_refinement_change": 1.1158702295510636e-08
+    },
+    "checks_passed": {
+      "integrated_mass_relative_error": true,
+      "half_mass_radius_relative_error": true,
+      "force_max_relative_error": true,
+      "potential_max_error_over_central_relative_potential": true,
+      "virial_relative_error": true,
+      "DF_max_relative_error": true,
+      "projection_max_relative_difference": true,
+      "projection_max_refinement_change": true
+    },
+    "all_numerical_checks_passed": true,
+    "warnings": [
+      "'scipy.integrate.simps' is deprecated in favour of 'scipy.integrate.simpson' and will be removed in SciPy 1.14.0"
+    ],
+    "interpretation": "One compatible reconstruction, not an exact historical refit or uncertainty-marginalized host. Published profile envelopes are descriptive; large truncation radius is not an empirical escape boundary."
+  },
+  "BH_metrics": {
+    "BH_expected_number": 65.85514584050719,
+    "BH_mass_Msun": 442.26199834231033,
+    "probe_to_BH_reservoir_mass_ratio": 0.1356661893287066,
+    "BH_absent": false,
+    "BH_mean_individual_mass_Msun": 6.715678671692761
+  },
+  "core_profile": [
+    {
+      "r_over_rh": 0.0,
+      "r_pc": 0.0,
+      "status": "passed",
+      "trace_D_per_lnLambda": 23.251587586425316,
+      "BH_trace_D_fraction": 0.8157882326758578,
+      "BH_density_fraction": 0.20110119406906846,
+      "refinement_relative_error": 1.2178894162333059e-12
+    },
+    {
+      "r_over_rh": 0.001,
+      "r_pc": 0.006690271801536633,
+      "status": "passed",
+      "trace_D_per_lnLambda": 23.188632585579583,
+      "BH_trace_D_fraction": 0.8153909744409105,
+      "BH_density_fraction": 0.20067283885143203,
+      "refinement_relative_error": 1.2222525972376518e-12
+    },
+    {
+      "r_over_rh": 0.003,
+      "r_pc": 0.0200708154046099,
+      "status": "passed",
+      "trace_D_per_lnLambda": 22.693356135156094,
+      "BH_trace_D_fraction": 0.8121982208291537,
+      "BH_density_fraction": 0.19728025700223734,
+      "refinement_relative_error": 1.2461535780852835e-12
+    },
+    {
+      "r_over_rh": 0.01,
+      "r_pc": 0.06690271801536633,
+      "status": "passed",
+      "trace_D_per_lnLambda": 17.965665503079833,
+      "BH_trace_D_fraction": 0.7741247129292524,
+      "BH_density_fraction": 0.1626897920350012,
+      "refinement_relative_error": 1.556380142087925e-12
+    },
+    {
+      "r_over_rh": 0.03,
+      "r_pc": 0.200708154046099,
+      "status": "passed",
+      "trace_D_per_lnLambda": 4.683637546151439,
+      "BH_trace_D_fraction": 0.3903873164018103,
+      "BH_density_fraction": 0.03450003217263375,
+      "refinement_relative_error": 5.5301539134392915e-12
+    },
+    {
+      "r_over_rh": 0.1,
+      "r_pc": 0.6690271801536634,
+      "status": "passed",
+      "trace_D_per_lnLambda": 0.5012274882318195,
+      "BH_trace_D_fraction": 0.00013280142108969997,
+      "BH_density_fraction": 6.9678741208495156e-06,
+      "refinement_relative_error": 3.354343758276973e-11
+    },
+    {
+      "r_over_rh": 0.3,
+      "r_pc": 2.00708154046099,
+      "status": "passed",
+      "trace_D_per_lnLambda": 0.034108195632649274,
+      "BH_trace_D_fraction": 1.475369262277618e-10,
+      "BH_density_fraction": 6.818547447685627e-12,
+      "refinement_relative_error": 1.8234544945867713e-10
+    },
+    {
+      "r_over_rh": 1.0,
+      "r_pc": 6.690271801536634,
+      "status": "passed",
+      "trace_D_per_lnLambda": 0.0018010797198441456,
+      "BH_trace_D_fraction": 1.3483715505786118e-16,
+      "BH_density_fraction": 6.553904870765853e-18,
+      "refinement_relative_error": 5.457210259774339e-10
+    },
+    {
+      "r_over_rh": 3.0,
+      "r_pc": 20.070815404609903,
+      "status": "passed",
+      "trace_D_per_lnLambda": 8.000928592913973e-05,
+      "BH_trace_D_fraction": 6.493596968301773e-20,
+      "BH_density_fraction": 4.028538048175954e-21,
+      "refinement_relative_error": 7.66726953139775e-10
+    }
+  ],
+  "core_profile_status": "passed",
+  "host_arrays_sha256": "5974278d2fa89b395861acf24ccc0af9456eec222a671170dac296ceba016fab",
+  "transport_summary": {
+    "revision": "local-transport-kernels-1",
+    "states": 20,
+    "remnant_mass_Msun": 60,
+    "normalization": "per unit constant ln Lambda",
+    "quadrature_orders": [
+      24,
+      40,
+      64
+    ],
+    "checks": {
+      "zero_speed_symmetry_pass": true,
+      "all_refinement_pass": true,
+      "trace_identity_pass": true,
+      "positive_semidefinite_pass": true,
+      "nonpositive_energy_drift_from_friction": true
+    },
+    "all_numerical_checks_passed": true,
+    "max_zero_speed_drift_residual_kms_Myr": 0.0,
+    "max_A_refinement_error": 5.014084960692823e-09,
+    "max_D_refinement_relative_error": 1.1042905037731352e-08,
+    "max_trace_identity_relative_error": 4.6629367034256575e-15,
+    "host_sha256": "5974278d2fa89b395861acf24ccc0af9456eec222a671170dac296ceba016fab",
+    "protocol_sha256": "439cc47f6afc423cc3204d20948be83652a87927fb06159e55d51648197c8e94",
+    "interpretation": "Local coefficients conditional on a fixed reconstructed host and weak-scattering closure, not calibrated friction times or remnant trajectories."
+  },
+  "runtime_seconds": 61.748
+}

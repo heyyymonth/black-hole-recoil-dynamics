@@ -1,0 +1,44 @@
+{
+  "revision": "six-cluster-local-comparison-1",
+  "clusters": [
+    "NGC0104",
+    "NGC1851",
+    "NGC3201",
+    "NGC5139",
+    "NGC6121",
+    "NGC6397"
+  ],
+  "reference_selection": "argmax(nested/logwt), first row on a tie; largest posterior quadrature weight, not maximum likelihood or posterior mode",
+  "pilot_draws_per_cluster": 8,
+  "seed": 20261026,
+  "pilot_selection": "iid categorical normalized nested/logwt; SeedSequence([seed, cluster list index]); retain entire joint row; repetitions retained; no replacement of failed rows",
+  "pilot_interpretation": "Eight weighted draws per cluster are a sensitivity pilot, not converged credible intervals or posterior failure probabilities.",
+  "reference_states": "Same 20 r/v/orientation states and 60-Msun probe as the original calculation",
+  "radial_zero_speed_profile": [
+    0.0,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0
+  ],
+  "zero_speed_quadrature_orders": [
+    64,
+    128
+  ],
+  "zero_speed_relative_refinement_limit": 0.005,
+  "profile_interpolation": "Log cubic on monotone intervals; analytic derivative extrema select PCHIP fallback on intervals reversing the nodal trend; positive lowering-law outer taper.",
+  "projection_refinement": "Starting with 128/256 nodes, double to at most 2048 when refinement fails; retain original difference and unchanged 0.2-percent threshold.",
+  "normalization": "Per unit identical constant ln Lambda=1 for every species; not calibrated collision rates",
+  "scope": "Host validation, local scattering and sparse-reservoir diagnostics; no remnant trajectories or residence",
+  "models": "Published standard spherical nonrotating multimass fits; NGC6397 standard fit is sensitivity-only, not the preferred no-BH fit.",
+  "not_claimed": [
+    "unique observed BH population",
+    "posterior-calibrated transport",
+    "diffusion failure",
+    "subsequent merger rates"
+  ]
+}

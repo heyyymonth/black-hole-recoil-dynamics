@@ -36,6 +36,11 @@ def rosenbluth(number_df, velocity, cutoff, masses, remnant_mass, log_lambda,
     mu, phi = np.meshgrid(mu, phi, indexing='ij')
     directions = np.stack([np.sqrt(1-mu**2)*np.cos(phi),
                            np.sqrt(1-mu**2)*np.sin(phi), mu], axis=-1).reshape(-1,3)
+    indices=np.arange(len(directions)).reshape(order,2*order)
+    opposite=np.roll(indices[::-1],order,axis=1).ravel()
+    first=np.flatnonzero(np.arange(len(directions))<opposite)
+    second=opposite[first]
+    directions[second]=-directions[first]
     solid_weights = np.repeat(wmu, 2*order)*np.pi/order
     a = directions @ v
     discr = a*a + cutoff*cutoff - v@v
@@ -58,7 +63,11 @@ def rosenbluth(number_df, velocity, cutoff, masses, remnant_mass, log_lambda,
     h = np.einsum('jas,as,as->j',f,s,weights)
     radial0 = np.einsum('jas,as->ja',f,weights)
     radial1 = np.einsum('jas,as,as->ja',f,s,weights)
-    grad_h = -radial0 @ directions
+    # Every ray intersects the support ball for the validated interior-velocity
+    # domain. Pair opposite directions before summing: an even DF then has
+    # exactly zero central drift, without imposing zero on streaming fields.
+    if not np.all(good):raise ValueError('Incomplete interior ray domain')
+    grad_h = -(radial0[:,first]-radial0[:,second]) @ directions[first]
     transverse = np.eye(3)[None,:,:]-directions[:,:,None]*directions[:,None,:]
     hess_g = np.einsum('ja,abc->jbc',radial1,transverse)
     factor = 4*np.pi*gravitational_constant**2*log_lambda/PC_PER_KMS_MYR

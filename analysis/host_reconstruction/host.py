@@ -1,6 +1,6 @@
 """Numerical host interface shared by independent validation and collisions."""
 import numpy as np
-from scipy.interpolate import CubicSpline
+from scipy.interpolate import CubicSpline, PchipInterpolator
 from scipy.special import gammainc
 from numpy.polynomial.legendre import leggauss
 
@@ -15,15 +15,37 @@ class PositiveProfile:
     """Interpolate positive densities/pressures in log space; enforce zero at rt.
 
     The final positive mesh point and asymptotic lowering exponent determine
-    only the final, density-negligible interval. This avoids negative densities
+    only the final, density-negligible interval. Intervals violating the nodal trend use a shape-preserving fallback.
+    This avoids negative densities, artificial outer shells,
     and catastrophic relative errors for segregated species with long tails.
     """
     def __init__(self,r,y,power):
         self.rt=r[-1];self.last=r[-2];self.y_last=y[:,-2];self.power=power
         if np.any(y[:,:-1]<=0):raise ValueError('Positive interior profile required')
-        self.log_spline=CubicSpline(r[:-1],np.log(y[:,:-1]),axis=1)
+        self.knots=r[:-1]
+        log_y=np.log(y[:,:-1])
+        self.log_spline=CubicSpline(self.knots,log_y,axis=1)
+        self.monotone_spline=PchipInterpolator(self.knots,log_y,axis=1)
+        # A positive log-cubic can still invent enormous outer-density spikes
+        # on irregular meshes. Inspect the derivative polynomial on EVERY
+        # interval, including its interior extremum. Use a shape-preserving
+        # interpolant throughout any interval that reverses its nodal trend.
+        # Both interpolants agree at nodes, so the joined profile is continuous.
+        a,b,c=self.log_spline.c[:3].transpose(0,2,1)
+        width=np.diff(self.knots)[None,:]
+        slope=np.diff(log_y,axis=1)/width
+        vertex=np.divide(-b,3*a,out=np.zeros_like(a),where=a!=0)
+        dv=np.where((vertex>0)&(vertex<width),3*a*vertex**2+2*b*vertex+c,c)
+        d1=3*a*width**2+2*b*width+c
+        direction=np.sign(slope)
+        tolerance=1e-10*np.maximum(np.abs(slope),1/self.rt)
+        self.shape_fallback=(np.minimum.reduce([direction*c,direction*d1,direction*dv]) < -tolerance)
+        self.shape_fallback |= (direction==0)&(np.maximum.reduce([abs(c),abs(d1),abs(dv)])>tolerance)
     def __call__(self,r):
-        r=checked_radius(r);base=np.exp(self.log_spline(np.minimum(r,self.last)))
+        r=checked_radius(r);clipped=np.minimum(r,self.last)
+        interval=np.clip(np.searchsorted(self.knots,clipped,side='right')-1,0,len(self.knots)-2)
+        logarithm=np.where(self.shape_fallback[:,interval],self.monotone_spline(clipped),self.log_spline(clipped))
+        base=np.exp(logarithm)
         taper=np.maximum((self.rt-r)/(self.rt-self.last),0)**self.power
         return base*np.minimum(taper,1)
 

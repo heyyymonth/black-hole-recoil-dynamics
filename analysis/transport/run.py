@@ -1,6 +1,6 @@
 """Evaluate the anisotropic collision kernels of a numerically checked host."""
 from pathlib import Path
-import csv,hashlib,json,sys
+import argparse,csv,hashlib,json,sys
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'analysis/host_reconstruction'))
@@ -9,13 +9,14 @@ from coefficients import rosenbluth
 
 OUT=ROOT/'results/local-transport-kernels'
 
-def run():
-    protocol_path=Path(__file__).with_name('protocol.json');p=json.loads(protocol_path.read_text())
+def run(protocol_path=None, base=None, output=None):
+    protocol_path=Path(protocol_path or Path(__file__).with_name('protocol.json'));p=json.loads(protocol_path.read_text())
+    output=Path(output or OUT)
     if p['log_lambda'] != 1:
         raise ValueError('This per-unit-lnLambda output requires log_lambda=1')
     if set(p['orientations']) != {'radial', 'tangential'}:
         raise ValueError('Expected declared radial and tangential orientations')
-    base=ROOT/'results/host-reconstruction'
+    base=Path(base or ROOT/'results/host-reconstruction')
     host_summary=json.loads((base/'summary.json').read_text())
     if not host_summary['all_numerical_checks_passed']:raise ValueError('Host checks failed; collision evaluation blocked')
     host=Host(dict(np.load(base/'host.npz',allow_pickle=False)))
@@ -47,14 +48,22 @@ def run():
                 print('state',j,'refinement',Aerror,Derror,flush=True)
     checks={'zero_speed_symmetry_pass':all(r['zero_speed_drift_residual_kms_Myr']<p['acceptance']['zero_speed_drift_absolute_kms_Myr'] for r in rows),'all_refinement_pass':all(max(r['A_refinement_error'],r['D_refinement_relative_error'])<p['acceptance']['relative_vector_and_tensor_refinement'] for r in rows),'trace_identity_pass':all(r['trace_identity_relative_error']<p['acceptance']['trace_identity_relative'] for r in rows),'positive_semidefinite_pass':all(r['minimum_D_eigenvalue']>=-p['acceptance']['negative_eigenvalue_tolerance'] for r in rows),'nonpositive_energy_drift_from_friction':all(r['drag_over_lnLambda_kms_Myr']>=-1e-12 for r in rows)}
     summary={'revision':'local-transport-kernels-1','states':len(rows),'remnant_mass_Msun':p['remnant_mass_Msun'],'normalization':'per unit constant ln Lambda','quadrature_orders':p['quadrature_orders'],'checks':checks,'all_numerical_checks_passed':all(checks.values()),'max_zero_speed_drift_residual_kms_Myr':max(r['zero_speed_drift_residual_kms_Myr'] for r in rows),'max_A_refinement_error':max(r['A_refinement_error'] for r in rows),'max_D_refinement_relative_error':max(r['D_refinement_relative_error'] for r in rows),'max_trace_identity_relative_error':max(r['trace_identity_relative_error'] for r in rows),'host_sha256':hashlib.sha256((base/'host.npz').read_bytes()).hexdigest(),'protocol_sha256':hashlib.sha256(protocol_path.read_bytes()).hexdigest(),'interpretation':'Local coefficients conditional on a fixed reconstructed host and weak-scattering closure, not calibrated friction times or remnant trajectories.'}
-    OUT.mkdir(parents=True,exist_ok=True)
+    output.mkdir(parents=True,exist_ok=True)
     for name,contents in [('states.csv',rows),('species.csv',species)]:
-        with (OUT/name).open('w',newline='') as f:
+        with (output/name).open('w',newline='') as f:
             w=csv.DictWriter(f,fieldnames=list(contents[0]),lineterminator="\n");w.writeheader();w.writerows(contents)
-    (OUT/'tensors.json').write_text(json.dumps(tensors,indent=2,allow_nan=False)+'\n')
-    (OUT/'summary.json').write_text(json.dumps(summary,indent=2,allow_nan=False)+'\n')
+    (output/'tensors.json').write_text(json.dumps(tensors,indent=2,allow_nan=False)+'\n')
+    (output/'summary.json').write_text(json.dumps(summary,indent=2,allow_nan=False)+'\n')
     print(json.dumps(summary,indent=2))
     if not summary['all_numerical_checks_passed']:
         raise AssertionError('Collision validation failed; outputs must not be adopted')
 
-if __name__=='__main__':run()
+    return summary
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--protocol',type=Path)
+    parser.add_argument('--host',type=Path)
+    parser.add_argument('--output',type=Path)
+    args=parser.parse_args()
+    run(args.protocol,args.host,args.output)

@@ -1,87 +1,60 @@
-Formulation, host, scattering and Galactic-orbit manuscript verification
-Revision 0.8.0-manuscript.2; 26 October 2026
+Formulation and six-cluster calculation manuscript verification
+Revision 0.9.0-manuscript.1; 26 October 2026
 
 Completed calculations
-One actual NGC 3201 joint posterior sample is reconstructed with pinned,
-historically compatible model implementations. Sixteen mass species supply
-one consistent potential, density and local distribution-function family.
-Twenty local states evaluate anisotropic drift and diffusion per unit constant
-Coulomb logarithm. The 60-solar-mass remnant is a diagnostic probe.
-Original fit-run software hashes are unknown; exact historical fit reproduction
-and new observational fitting are not claimed.
-Four static boundary scenarios and four Galactic reference orbits evaluate
-external-force and host-support diagnostics. The stellar host is held fixed
-for these diagnostics, not evolved or re-equilibrated over the orbital horizon.
+Six actual joint posterior rows provide conditional reference hosts. The same
+20 local states per host evaluate anisotropic drift and diffusion per unit
+constant Coulomb logarithm. The 60-solar-mass remnant is a diagnostic probe.
+Forty-eight weighted joint-row pilot attempts yield 47 accepted hosts with
+nine zero-speed radii each; one M4 finite-extent reconstruction remains
+unresolved and contributes no coefficient. No failed draw is replaced.
+The 24,000 released derived-model realizations are summarized separately.
+Twenty-four Galactic reference orbits and 18 common static controls extend
+the original detailed NGC 3201 environmental benchmark across the shortlist.
+Hosts are held fixed for diagnostics, not evolved over the orbital horizon.
 
-Numerical checks
-- Mass, half-mass radius, force, integrated potential and virial balance pass
-  the stated numerical tolerances.
-- Independent velocity quadrature recovers all-species density and raw moments.
-- Independent projection checks the luminous tracer, with the original
-  projected posterior envelopes retained as descriptive comparisons.
-- Analytic uniform-ball kernels, mass/time factors, anisotropic rotational
-  covariance, tensor trace identity, PSD and quadrature refinement pass.
-- A separate one-dimensional central integral verifies the host's diffusion
-  trace. Exterior test velocities remain outside the collision API's validated
-  domain rather than silently accepted by insufficient quadrature.
-- Thirty-one numerical and regression tests pass in the recorded host environment. They cover
-  host consistency, collision kernels, static boundary limits, Galactic
-  potential gradients and force derivatives, analytic spatial force bounds,
-  coordinate orientation, distance transformations, orbit conservation and
-  reversal, the rotating-frame angular-acceleration convention, invalid input rejection,
-  all HST display conversions, and recorded tensor/event accounting.
-- Four static boundary scenarios pass independent density integration and
-  radial-mesh refinement checks.
-- Galactic orbits pass energy and axial angular-momentum checks. The two
-  central cases pass tighter integration and time-reversal checks; the main
-  host-distance case also passes finer output sampling and tidal-derivative
-  refinement. Catalog orbital extents provide a descriptive scale comparison,
-  not an exact reproduction or an empirical validation of the potential.
-
-Integrity checks
-The immutable six-cluster data audit remains unchanged. All 51 cached source
-files match their recorded hashes. The selected posterior row and weight match
-the original sampler exactly. Host validation was repeated on the existing
-parameter-matched solution; collisions, static boundaries and Galactic orbits
-were rerun with input safeguards. All 16 scientific output files remain
-byte-identical to manuscript-v0.8.0.1. Its 33 artifacts,
-51 captured source records and executed notebook outputs verify successfully.
-results/calculations.json binds scientific code, protocols, environment and
-calculated arrays/tables. Separate outer-boundary and Galactic-orbit manifests
-bind their inputs, protocols, source records, code and recorded results.
-The Galactic source includes the original catalog row and its extraction.
-Paper asset manifests bind seven evidence tables and seven vector figures.
-The build verifies these records and typesets them; it does not run a physical
-model or regenerate scientific figures.
+Numerical and integrity checks
+All six references pass mass, force, potential, virial, distribution-function
+moment and luminous-projection checks. Their 120 coefficient states pass
+quadrature, symmetry, positivity and trace checks. The independent zero-speed
+integral is checked under refinement and against the central analytic limit.
+Thirty-nine numerical and regression tests pass, including outer-profile
+shape preservation, even versus streaming drift, weighted joint selection,
+absent-BH handling and source loading without an untracked HTML snapshot.
+All 24 orbits pass numerical conservation, integration-refinement and reversal
+checks. Diagnostic cadence is refined without relaxing acceptance limits.
+The M4 catalog-reference pericenter differs by 20.6% from the catalog value;
+this descriptive mismatch remains independent of numerical acceptance.
+All 51 cached original source products match their pinned hashes. The original
+six-cluster observational audit remains unchanged. The comparison preserves
+joint rows, source weights, failed attempts and zero-BH realizations.
+Reference meshes are retained; large pilot meshes are reproducible scratch.
+Recorded code, parameters, checks and outputs are bound by source manifests.
 
 Presentation review
-The final PDF has 18 US Letter pages and 24 embedded vector fonts. All pages
-were rendered and inspected, with the orbit findings, new table and figure,
-and force-bound appendix additionally inspected at full-page resolution.
-No clipping, overlapping text, missing glyphs, overfull boxes, unresolved
-citations or BibTeX entry warnings were found. The saved source also compiles
-successfully with the desktop editor's built-in compiler. The existing editor
-remains open. The portable archive matches the article, figures, tables and
-supporting records; source/output hashes and citation metadata verify.
+Eight evidence tables and eight vector figures are bound to their source
+records. The executed comparison notebook contains no execution errors.
+The final PDF has 20 US Letter pages and 24 embedded vector fonts. Every page
+was rendered and inspected; the comparison table and figure were inspected
+at higher resolution. No clipping, missing glyphs, overfull boxes, unresolved
+references or bibliography-entry warnings were found. The saved source also
+compiles with the desktop editor's built-in compiler. The existing editor
+remains open. The portable archive and PDF match their recorded source hashes.
+The builder typesets verified assets and performs no physical calculations.
 
 Scientific limits
-Numerical convergence does not validate smooth diffusion from a few heavy
-objects. Expected black-hole counts, density and scattering fractions are
-conditional model quantities, not observed counts or measured relaxation.
-The formal outer truncation radius is not an adopted tidal escape boundary.
-Neither the circular logarithmic-field diagnostic nor the eccentric orbit's
-frozen-frame radius is an observed outer edge or an escape rule. Exterior
-mass is not classified as stripped or escaped.
-The analytic Galactic-force bound holds throughout a spatial ball in the
-specified potential. Its time-dependent extrema are numerically sampled and
-refined. The proposed 8 pc control radius is conditional on this host, orbit,
-1 percent force tolerance and horizon; it is not a universal validity radius
-or a cumulative trajectory-error guarantee. A forcing-timescale indicator
-identifies a host-response question; it is not a heating or mass-loss rate.
-The host is not made tidally self-consistent by these calculations. Galactic,
-solar-frame and full phase-space covariance have not been propagated. The
-four orbit cases are conditional comparisons, not a posterior sample.
-No physical impact-parameter range, calibrated discrete-encounter partition,
-merger-conditioned launch law, remnant trajectory ensemble or residence
-distribution has been evaluated. The recorded results identify the physical
-questions to resolve before that evolution can be interpreted.
+No new observational fit or exact historical fit reproduction is claimed.
+The pilot is not a converged posterior interval. Counts and diffusion shares
+are conditional model quantities, not observed BH counts or residence shares.
+NGC 3201 is a source-flagged model-applicability concern. NGC 6397 uses only
+the available standard-fit chain; its preferred no-BH alternative is missing.
+Rotation and population complexity remain unmodeled for Omega Centauri.
+Numerical acceptance does not validate smooth diffusion from a few objects,
+a stationary scattering reservoir, or the adopted Galactic potential.
+The external-force bound is sufficient and instantaneous, not an escape
+surface or accumulated trajectory-error bound. Full phase-space and Galactic
+covariance, host response, strong encounters, physical impact-parameter
+cutoffs and merger-conditioned launches remain uncalibrated.
+No remnant trajectories, residence distributions or diffusion-versus-resolved
+encounter comparison have been computed. The comparison locates environments
+and radial regions where those physical tests would be informative.

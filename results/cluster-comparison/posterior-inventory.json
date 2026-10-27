@@ -1,0 +1,229 @@
+{
+  "revision": "six-cluster-published-derived-1",
+  "interpretation": "Empirical quantiles of released 4000 derived model realizations; not six new fits or direct BH detections. Historical compatible GCfit constructs these from equal-weight chains. Original draw mapping and generating random seed are not released; no alignment to raw nested rows is assumed.",
+  "zero_policy": "Zero-BH rows retained; BH subsystem radius and probe/reservoir mass ratio undefined there and excluded only from explicitly conditional summaries.",
+  "clusters": [
+    {
+      "cluster": "NGC0104",
+      "derived_rows": 4000,
+      "zero_BH_rows": 0,
+      "zero_BH_fraction": 0.0,
+      "BH_expected_number": {
+        "p16": 51.24512919671817,
+        "median": 61.8589773322325,
+        "p84": 81.0584969101418
+      },
+      "BH_mass_Msun": {
+        "p16": 338.63719970218915,
+        "median": 415.13422907769245,
+        "p84": 563.1162888766678
+      },
+      "BH_half_mass_radius_pc_given_present": {
+        "p16": 0.143386530435194,
+        "median": 0.15090848922484026,
+        "p84": 0.15590014317847775
+      },
+      "probe_to_BH_mass_ratio_given_present": {
+        "p16": 0.10654992860782132,
+        "median": 0.14453156641712012,
+        "p84": 0.17718077060868195
+      },
+      "rows_BH_mass_at_most_probe": 2,
+      "joint_rows": 9064,
+      "weight_ESS": 5495.312203799166,
+      "source_sha256": "215ed68ca2e3ba3f82c6a33eb6b9c112e09bfe16677ca14ebf72acae30f4fff4",
+      "source_url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC0104/NGC0104_sampler.hdf",
+      "source_units": {
+        "BH_num": "",
+        "BH_mass": "solMass",
+        "BH_rh": "pc"
+      },
+      "preferred_model_chain_available": true
+    },
+    {
+      "cluster": "NGC1851",
+      "derived_rows": 4000,
+      "zero_BH_rows": 0,
+      "zero_BH_fraction": 0.0,
+      "BH_expected_number": {
+        "p16": 13.124982780676783,
+        "median": 14.96750110142539,
+        "p84": 17.64355434216601
+      },
+      "BH_mass_Msun": {
+        "p16": 175.5269941296697,
+        "median": 196.51158309505166,
+        "p84": 233.36711010877792
+      },
+      "BH_half_mass_radius_pc_given_present": {
+        "p16": 0.0329653326939007,
+        "median": 0.03914346313704971,
+        "p84": 0.04738265820180594
+      },
+      "probe_to_BH_mass_ratio_given_present": {
+        "p16": 0.25710563914526163,
+        "median": 0.3053255135989939,
+        "p84": 0.3418277644273638
+      },
+      "rows_BH_mass_at_most_probe": 0,
+      "joint_rows": 11111,
+      "weight_ESS": 5171.395490297658,
+      "source_sha256": "0d4f1aeffcb9c74c5ed7a8cb82767065a1e3c83e5d85c0f8697ba445efcf6452",
+      "source_url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC1851/NGC1851_sampler.hdf",
+      "source_units": {
+        "BH_num": "",
+        "BH_mass": "solMass",
+        "BH_rh": "pc"
+      },
+      "preferred_model_chain_available": true
+    },
+    {
+      "cluster": "NGC3201",
+      "derived_rows": 4000,
+      "zero_BH_rows": 1899,
+      "zero_BH_fraction": 0.47475,
+      "BH_expected_number": {
+        "p16": 0.0,
+        "median": 0.9261238890479571,
+        "p84": 4.126145090194235
+      },
+      "BH_mass_Msun": {
+        "p16": 0.0,
+        "median": 13.181105774900493,
+        "p84": 59.04376598832111
+      },
+      "BH_half_mass_radius_pc_given_present": {
+        "p16": 0.31666538928880966,
+        "median": 0.35107439389902645,
+        "p84": 0.3927548286145004
+      },
+      "probe_to_BH_mass_ratio_given_present": {
+        "p16": 0.732413577447967,
+        "median": 1.5619533421443956,
+        "p84": 3.1980612973127345
+      },
+      "rows_BH_mass_at_most_probe": 1472,
+      "joint_rows": 11363,
+      "weight_ESS": 5782.02665387639,
+      "source_sha256": "22b887d1f1049cf75b201928fab3e0a58b2e3d1804005f8858a1973be6412377",
+      "source_url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC3201/NGC3201_sampler.hdf",
+      "source_units": {
+        "BH_num": "",
+        "BH_mass": "solMass",
+        "BH_rh": "pc"
+      },
+      "preferred_model_chain_available": true
+    },
+    {
+      "cluster": "NGC5139",
+      "derived_rows": 4000,
+      "zero_BH_rows": 0,
+      "zero_BH_fraction": 0.0,
+      "BH_expected_number": {
+        "p16": 12105.543309739907,
+        "median": 12383.32024409724,
+        "p84": 13035.22941520578
+      },
+      "BH_mass_Msun": {
+        "p16": 176954.87979436055,
+        "median": 182453.26789576677,
+        "p84": 187195.72955429542
+      },
+      "BH_half_mass_radius_pc_given_present": {
+        "p16": 1.863137289659704,
+        "median": 1.945356869436875,
+        "p84": 1.9786176414370966
+      },
+      "probe_to_BH_mass_ratio_given_present": {
+        "p16": 0.00032052013228537474,
+        "median": 0.0003288513312529963,
+        "p84": 0.0003390694852695492
+      },
+      "rows_BH_mass_at_most_probe": 0,
+      "joint_rows": 18621,
+      "weight_ESS": 6888.685155465671,
+      "source_sha256": "a2ec970040eeed6d1be21b23367f627d48cc0dd62001eed4738bb3631b18921c",
+      "source_url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC5139/NGC5139_sampler.hdf",
+      "source_units": {
+        "BH_num": "",
+        "BH_mass": "solMass",
+        "BH_rh": "pc"
+      },
+      "preferred_model_chain_available": true
+    },
+    {
+      "cluster": "NGC6121",
+      "derived_rows": 4000,
+      "zero_BH_rows": 28,
+      "zero_BH_fraction": 0.007,
+      "BH_expected_number": {
+        "p16": 3.9903356927395213,
+        "median": 6.16642741093731,
+        "p84": 9.65236308844368
+      },
+      "BH_mass_Msun": {
+        "p16": 51.037413315254085,
+        "median": 82.20338470522637,
+        "p84": 130.87375863599203
+      },
+      "BH_half_mass_radius_pc_given_present": {
+        "p16": 0.06129446750985272,
+        "median": 0.08327245559621313,
+        "p84": 0.11052717395294316
+      },
+      "probe_to_BH_mass_ratio_given_present": {
+        "p16": 0.45801201706055655,
+        "median": 0.7283236444608977,
+        "p84": 1.1476771484130308
+      },
+      "rows_BH_mass_at_most_probe": 836,
+      "joint_rows": 11330,
+      "weight_ESS": 5843.841558185198,
+      "source_sha256": "483b5752735d5c78da2d9090a37d3b52861074ca5b8e3afa8da9b32d5877bd41",
+      "source_url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6121/NGC6121_sampler.hdf",
+      "source_units": {
+        "BH_num": "",
+        "BH_mass": "solMass",
+        "BH_rh": "pc"
+      },
+      "preferred_model_chain_available": true
+    },
+    {
+      "cluster": "NGC6397",
+      "derived_rows": 4000,
+      "zero_BH_rows": 0,
+      "zero_BH_fraction": 0.0,
+      "BH_expected_number": {
+        "p16": 2.8374171247730042,
+        "median": 3.0790911125532476,
+        "p84": 3.310117639647856
+      },
+      "BH_mass_Msun": {
+        "p16": 18.9603465947912,
+        "median": 20.592326087003457,
+        "p84": 22.131281894079905
+      },
+      "BH_half_mass_radius_pc_given_present": {
+        "p16": 0.007822648045919183,
+        "median": 0.00889048047704416,
+        "p84": 0.010127873510918893
+      },
+      "probe_to_BH_mass_ratio_given_present": {
+        "p16": 2.7110947058159542,
+        "median": 2.9137067734114854,
+        "p84": 3.1644991141832093
+      },
+      "rows_BH_mass_at_most_probe": 4000,
+      "joint_rows": 12838,
+      "weight_ESS": 6617.765492543077,
+      "source_sha256": "f46e62cc52b945a686a7377b77b5610be6b36dbd7ab7bcb54a383ad22fce6df2",
+      "source_url": "https://raw.githubusercontent.com/nmdickson/GCfit-results/c45a03b1681570b6ee96be76f362894c6628e1f1/clusters/NGC6397/NGC6397_sampler.hdf",
+      "source_units": {
+        "BH_num": "",
+        "BH_mass": "solMass",
+        "BH_rh": "pc"
+      },
+      "preferred_model_chain_available": false
+    }
+  ]
+}

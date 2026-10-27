@@ -6,6 +6,7 @@ import json
 import os
 import sys
 import warnings
+import argparse
 
 ROOT=Path(__file__).resolve().parents[2]
 os.environ['GCFIT_DIR']=str(ROOT/'tmp/host-reconstruction/gcfit-cache')
@@ -30,26 +31,32 @@ from host import Host
 
 def write_csv(path,rows):
     with path.open('w',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator="\n");w.writeheader();w.writerows(rows)
+        w=csv.DictWriter(f,fieldnames=list(dict.fromkeys(k for row in rows for k in row)),lineterminator="\n");w.writeheader();w.writerows(rows)
 
-def run():
-    protocol=json.loads((Path(__file__).with_name('protocol.json')).read_text())
+def run(protocol_path=None, output=None, row_index=None, reuse_solution=False):
+    protocol_path=Path(protocol_path or Path(__file__).with_name('protocol.json'))
+    output=Path(output or OUT)
+    protocol=json.loads(protocol_path.read_text())
+    cluster=protocol['cluster']
     for path,digest in protocol['sources'].items():
         if sha(ROOT/path)!=digest:raise ValueError('Source hash mismatch: '+path)
-    obs_path=ROOT/'data/observed-clusters/raw/gcfit_NGC3201_observations.hdf'
+    obs_path=ROOT/f'data/observed-clusters/raw/gcfit_{cluster}_observations.hdf'
     observations=gcfit.Observations(str(obs_path),standardize_name=False,restrict_to='local')
-    sampler=ROOT/'data/observed-clusters/raw/gcfit_NGC3201_sampler.hdf'
+    sampler=ROOT/f'data/observed-clusters/raw/gcfit_{cluster}_sampler.hdf'
     with h5py.File(sampler) as f:
-        logw=f['nested/logwt'][:];i=int(np.argmax(logw));row=f['nested/samples'][i]
+        logw=f['nested/logwt'][:]
+        i=int(np.argmax(logw)) if row_index is None else int(row_index)
+        if not 0 <= i < len(logw):raise ValueError('Joint row index out of bounds')
+        row=f['nested/samples'][i]
         weight=np.exp(logw-logw.max());weight/=weight.sum()
         rpub=f['model_output/metadata/r'][:]
         published={key:f['model_output/profiles/'+key][0] for key in ['LOS','pm_R','pm_T','rho_tot']}
         mjpub=f['model_output/metadata/mj'][:]
     theta=dict(zip(protocol['parameter_order'],row))
-    if '--reuse-solution' in sys.argv:
-        arrays=dict(np.load(OUT/'host.npz',allow_pickle=False))
-        previous=json.loads((OUT/'summary.json').read_text())
-        if previous['theta']!=theta or previous['protocol_sha256']!=sha(Path(__file__).with_name('protocol.json')):
+    if reuse_solution:
+        arrays=dict(np.load(output/'host.npz',allow_pickle=False))
+        previous=json.loads((output/'summary.json').read_text())
+        if previous['theta']!=theta or previous['protocol_sha256']!=sha(protocol_path):
             raise ValueError('Cached solution has different parameters or protocol')
         warning_text=previous['warnings']
         star_bin=int(np.where(arrays['types']=='MS')[0][-1])
@@ -105,11 +112,18 @@ def run():
     projected=[];projection_err=[];projection_ref=[]
     for R in host.rh*np.array([0.,.1,.3,1.,3.]):
         p128=host.project(R,128);p256=host.project(R,256)
+        initial_refinement=float(np.max(np.abs(p256[:,star_bin]/p128[:,star_bin]-1)))
+        projection_order=256
+        while (float(np.max(np.abs(p256[:,star_bin]/p128[:,star_bin]-1))) >=
+               protocol['validation']['independent_projection_relative_tolerance'] and projection_order < 2048):
+            p128=p256;projection_order*=2;p256=host.project(R,projection_order)
         native=np.array([CubicSpline(host.r,arrays[key],axis=1)(R) for key in ['Sigmaj','v2pj','v2Rj','v2Tj']])
         err=float(np.max(np.abs(p256[:,star_bin]/native[:,star_bin]-1)))
         refinement=float(np.max(np.abs(p256[:,star_bin]/p128[:,star_bin]-1)))
         projection_err.append(err);projection_ref.append(refinement)
         projected.append({'R_pc':float(R),'sigma_LOS_kms':float(np.sqrt(p256[1,star_bin])),'sigma_PMR_kms':float(np.sqrt(p256[2,star_bin])),'sigma_PMT_kms':float(np.sqrt(p256[3,star_bin])),'observed_tracer_native_relative_difference':err,'all_bins_native_relative_difference':float(np.max(np.abs(p256/native-1))),'quadrature_relative_change':refinement})
+        if projection_order>256:
+            projected[-1].update(refined_order=projection_order,initial_128_256_relative_change=initial_refinement)
     comparison=[]
     for k,pub in published.items():
         selection=(rpub>=.01*host.rh)&(rpub<=3*host.rh)
@@ -126,13 +140,22 @@ def run():
     checks={'integrated_mass_relative_error':masserr,'half_mass_radius_relative_error':abs(rh_check/host.rh-1),'force_max_relative_error':float(force_relative.max()),'potential_max_error_over_central_relative_potential':potential_error,'virial_relative_error':virial_error,'DF_max_relative_error':max(d['max_density_and_raw_moment_relative_error'] for d in dfrows if d['order']==64),'projection_max_relative_difference':max(projection_err),'projection_max_refinement_change':max(projection_ref)}
     # A failed check remains in the result and blocks downstream adoption.
     tests={key:bool(value<(.002 if key.startswith('projection') else .001)) for key,value in checks.items()}
-    result={'revision':'host-reconstruction-1','cluster':'NGC3201','protocol_sha256':sha(Path(__file__).with_name('protocol.json')),'joint_row_index':i,'normalized_posterior_weight':float(weight[i]),'theta':theta,'observations_metadata':{k:float(observations.mdata[k]) for k in ['age','FeH','vesc','Ndot']},'summary':{'M_Msun':host.M,'rh_pc':host.rh,'rt_pc':host.rt,'distance_kpc':theta['d'],'G_pc_kms2_per_Msun':host.G,'central_density_Msun_pc3':float(host.rhoj[:,0].sum()),'central_cutoff_kms':float(np.sqrt(2*host.psi(0))),'central_escape_to_infinity_kms':float(np.sqrt(2*(host.psi(0)+host.G*host.M/host.rt))),'physical_species_bins':int(sum(host.physical)),'tracer_mass_fraction':float(host.Mj[~host.physical].sum()/host.M),'total_BH_expected_number':float((host.Mj/host.mj)[host.types=='BH'].sum()),'total_BH_mass_Msun':float(host.Mj[host.types=='BH'].sum()),'published_tracer_masses_Msun':mjpub.tolist(),'selected_tracer_mass_Msun':float(host.mj[star_bin])},'checks':checks,'checks_passed':tests,'all_numerical_checks_passed':all(tests.values()),'warnings':warning_text,'interpretation':'One compatible reconstruction, not an exact historical refit or uncertainty-marginalized host. Published profile envelopes are descriptive; large truncation radius is not an empirical escape boundary.'}
-    OUT.mkdir(parents=True,exist_ok=True)
-    np.savez_compressed(OUT/'host.npz',**arrays)
-    (OUT/'summary.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
-    write_csv(OUT/'species.csv',species);write_csv(OUT/'df-checks.csv',dfrows);write_csv(OUT/'projection-checks.csv',projected);write_csv(OUT/'published-profile-comparison.csv',comparison)
+    result={'revision':'host-reconstruction-1','cluster':cluster,'protocol_sha256':sha(protocol_path),'joint_row_index':i,'normalized_posterior_weight':float(weight[i]),'theta':theta,'observations_metadata':{k:float(observations.mdata[k]) for k in ['age','FeH','vesc','Ndot']},'summary':{'M_Msun':host.M,'rh_pc':host.rh,'rt_pc':host.rt,'distance_kpc':theta['d'],'G_pc_kms2_per_Msun':host.G,'central_density_Msun_pc3':float(host.rhoj[:,0].sum()),'central_cutoff_kms':float(np.sqrt(2*host.psi(0))),'central_escape_to_infinity_kms':float(np.sqrt(2*(host.psi(0)+host.G*host.M/host.rt))),'physical_species_bins':int(sum(host.physical)),'tracer_mass_fraction':float(host.Mj[~host.physical].sum()/host.M),'total_BH_expected_number':float((host.Mj/host.mj)[host.types=='BH'].sum()),'total_BH_mass_Msun':float(host.Mj[host.types=='BH'].sum()),'published_tracer_masses_Msun':mjpub.tolist(),'selected_tracer_mass_Msun':float(host.mj[star_bin])},'checks':checks,'checks_passed':tests,'all_numerical_checks_passed':all(tests.values()),'warnings':warning_text,'interpretation':'One compatible reconstruction, not an exact historical refit or uncertainty-marginalized host. Published profile envelopes are descriptive; large truncation radius is not an empirical escape boundary.'}
+    output.mkdir(parents=True,exist_ok=True)
+    np.savez_compressed(output/'host.npz',**arrays)
+    (output/'summary.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
+    write_csv(output/'species.csv',species);write_csv(output/'df-checks.csv',dfrows);write_csv(output/'projection-checks.csv',projected);write_csv(output/'published-profile-comparison.csv',comparison)
     print(json.dumps(result,indent=2),flush=True)
     if not result['all_numerical_checks_passed']:
         raise AssertionError('Host validation failed; outputs must not be adopted')
 
-if __name__=='__main__':run()
+    return result
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--protocol',type=Path)
+    parser.add_argument('--output',type=Path)
+    parser.add_argument('--row-index',type=int)
+    parser.add_argument('--reuse-solution',action='store_true')
+    args=parser.parse_args()
+    run(args.protocol,args.output,args.row_index,args.reuse_solution)

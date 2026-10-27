@@ -1,0 +1,28 @@
+{
+  "kind": "pilot",
+  "label": "pilot-06",
+  "draw_index": 6,
+  "row_index": 6903,
+  "normalized_source_weight": 0.0002152601985157106,
+  "cluster": "NGC6121",
+  "theta": {
+    "W0": 7.255740594242852,
+    "M": 0.09114499535242902,
+    "rh": 4.054755111493632,
+    "ra": 9.640606703440659,
+    "g": 0.938965044719198,
+    "delta": 0.48287605736537514,
+    "s2": 0.00010023072470485555,
+    "F": 1.2778545836524793,
+    "a1": -0.06506438110821688,
+    "a2": 0.4111144821434406,
+    "a3": 2.230561571404122,
+    "BHret": 0.3693360976351171,
+    "d": 1.841326982293608
+  },
+  "protocol_path": "analysis/cluster_comparison/protocols/NGC6121.json",
+  "host_status": "failed",
+  "transport_status": "not_run",
+  "failure_log": "WARNING:root:Cluster Catalogue gcf not recognized, leaving untouched\nConstructing fixed joint row 6903\nTraceback (most recent call last):\n  File \"<repo>/analysis/host_reconstruction/run.py\", line 161, in <module>\n    run(args.protocol,args.output,args.row_index,args.reuse_solution)\n  File \"<repo>/analysis/host_reconstruction/run.py\", line 67, in run\n    model=gcfit.FittableModel(theta,observations,ode_rtol=protocol['host']['ode_rtol'],ode_maxstep=protocol['host']['ode_maxstep'])\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/tmp/host-venv/lib/python3.11/site-packages/gcfit/core/data.py\", line 1697, in __init__\n    super().__init__(observations=observations, **theta, **kwargs)\n  File \"<repo>/tmp/host-venv/lib/python3.11/site-packages/gcfit/core/data.py\", line 1194, in __init__\n    raise ValueError(mssg)\nValueError: Model solver failed to converge to a finite extent\n",
+  "runtime_seconds": 1062.386
+}

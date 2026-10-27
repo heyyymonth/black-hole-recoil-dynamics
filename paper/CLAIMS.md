@@ -42,3 +42,9 @@ The paper defines a two-step transport and exposure problem and reports the comp
 Analytical consistency differs from numerical verification and physical validation. Raw-file checks and independent recomputation support the stated data calculations. Build and documentation checks assess source integrity and presentation. New observational measurements, publication-level novelty, dynamical calibration, companion-acquisition rates and merger probabilities are not claimed. The manuscript cites primary source studies, not this project's experiment records or software-tool references.
 
 [Problem statement](../docs/problem.md) · [Calculation handoff](../docs/calculation-handoff.md)
+
+## Cross-cluster calculation comparison
+
+Six maximum-quadrature-weight joint references repeat the validated host and 20-state local coefficient calculation. Eight weighted joint draws per cluster provide an exploratory sensitivity pilot. Released 4,000-draw derived model products supply a separate empirical population summary. The comparison resolves spatial differences in the formal BH diffusion contribution; it neither establishes diffusion failure nor predicts residence. Source-model suitability is separate from numerical acceptance, with NGC 3201 cautioned and NGC 6397 standard-fit results restricted to sensitivity.
+
+Evidence: `results/cluster-comparison/provenance.json`, `summary.json`, `reference-comparison.csv`, `posterior-inventory.json`; per-cluster selections and numerical checks; `results/cluster-comparison-environment/summary.json`. The source archive retains compact comparison evidence and reproduction code; full reference host meshes are in the repository, while pilot meshes are reproducible scratch.

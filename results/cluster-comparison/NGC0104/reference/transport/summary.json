@@ -1,0 +1,26 @@
+{
+  "revision": "local-transport-kernels-1",
+  "states": 20,
+  "remnant_mass_Msun": 60,
+  "normalization": "per unit constant ln Lambda",
+  "quadrature_orders": [
+    24,
+    40,
+    64
+  ],
+  "checks": {
+    "zero_speed_symmetry_pass": true,
+    "all_refinement_pass": true,
+    "trace_identity_pass": true,
+    "positive_semidefinite_pass": true,
+    "nonpositive_energy_drift_from_friction": true
+  },
+  "all_numerical_checks_passed": true,
+  "max_zero_speed_drift_residual_kms_Myr": 0.0,
+  "max_A_refinement_error": 5.014084960692823e-09,
+  "max_D_refinement_relative_error": 1.1042905037731352e-08,
+  "max_trace_identity_relative_error": 4.6629367034256575e-15,
+  "host_sha256": "5974278d2fa89b395861acf24ccc0af9456eec222a671170dac296ceba016fab",
+  "protocol_sha256": "439cc47f6afc423cc3204d20948be83652a87927fb06159e55d51648197c8e94",
+  "interpretation": "Local coefficients conditional on a fixed reconstructed host and weak-scattering closure, not calibrated friction times or remnant trajectories."
+}

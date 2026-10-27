@@ -1,0 +1,71 @@
+{
+  "revision": "host-reconstruction-1",
+  "cluster": "NGC5139",
+  "protocol_sha256": "8849487acc5848dde6952820c99bf94bb47a1831ec2a4abe268e2f3701aa9aa8",
+  "joint_row_index": 16277,
+  "normalized_posterior_weight": 0.00020515481563098873,
+  "theta": {
+    "W0": 0.8100159194606272,
+    "M": 3.0736306472645762,
+    "rh": 9.398341835492896,
+    "ra": 2.0218035139021353,
+    "g": 2.6025319348841522,
+    "delta": 0.47757425533411957,
+    "s2": 0.00025330114357974775,
+    "F": 5.975550286847521,
+    "a1": 0.9130906758796706,
+    "a2": 1.2172049364480537,
+    "a3": 2.314871407061556,
+    "BHret": 39.67933538832298,
+    "d": 5.28817988809311
+  },
+  "observations_metadata": {
+    "age": 11.52,
+    "FeH": -1.53,
+    "vesc": 224.03741,
+    "Ndot": 0.0
+  },
+  "summary": {
+    "M_Msun": 3073630.647264576,
+    "rh_pc": 9.398341835492896,
+    "rt_pc": 154.81154907618043,
+    "distance_kpc": 5.28817988809311,
+    "G_pc_kms2_per_Msun": 0.004302,
+    "central_density_Msun_pc3": 17836553.944152217,
+    "central_cutoff_kms": 80.30048559076376,
+    "central_escape_to_infinity_kms": 81.3571872775201,
+    "physical_species_bins": 21,
+    "tracer_mass_fraction": 0.0,
+    "total_BH_expected_number": 12109.394794007218,
+    "total_BH_mass_Msun": 182565.66262685735,
+    "published_tracer_masses_Msun": [
+      0.7786113172246893
+    ],
+    "selected_tracer_mass_Msun": 0.7786204943762522
+  },
+  "checks": {
+    "integrated_mass_relative_error": 3.973839124427059e-08,
+    "half_mass_radius_relative_error": 2.602013573271833e-06,
+    "force_max_relative_error": 0.000770937446531561,
+    "potential_max_error_over_central_relative_potential": 4.4431248986708875e-06,
+    "virial_relative_error": 1.9521997829397009e-07,
+    "DF_max_relative_error": 3.2537295080459216e-10,
+    "projection_max_relative_difference": 5.935924755728905e-06,
+    "projection_max_refinement_change": 1.3473530602325923e-07
+  },
+  "checks_passed": {
+    "integrated_mass_relative_error": true,
+    "half_mass_radius_relative_error": true,
+    "force_max_relative_error": true,
+    "potential_max_error_over_central_relative_potential": true,
+    "virial_relative_error": true,
+    "DF_max_relative_error": true,
+    "projection_max_relative_difference": true,
+    "projection_max_refinement_change": true
+  },
+  "all_numerical_checks_passed": true,
+  "warnings": [
+    "'scipy.integrate.simps' is deprecated in favour of 'scipy.integrate.simpson' and will be removed in SciPy 1.14.0"
+  ],
+  "interpretation": "One compatible reconstruction, not an exact historical refit or uncertainty-marginalized host. Published profile envelopes are descriptive; large truncation radius is not an empirical escape boundary."
+}

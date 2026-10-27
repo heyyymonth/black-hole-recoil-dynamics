@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "experiment": "host-reconstruction-1",
+  "execution_enabled": true,
+  "cluster": "NGC0104",
+  "question": "Can one published joint posterior sample supply a numerically consistent mass-resolved host for recoil transport?",
+  "interpretation": "Reproducible reconstruction using historically compatible code; exact original run versions and input hashes were not recorded in the released chain.",
+  "units": {
+    "length": "pc",
+    "velocity": "km/s",
+    "mass": "Msun",
+    "time": "Myr"
+  },
+  "sources": {
+    "data/observed-clusters/raw/gcfit_NGC0104_sampler.hdf": "215ed68ca2e3ba3f82c6a33eb6b9c112e09bfe16677ca14ebf72acae30f4fff4",
+    "data/observed-clusters/raw/gcfit_NGC0104_observations.hdf": "53e2f8ffc0f5cc01915401b113f28cb7c89df0f2c4973da35e32704e69ee0ef3"
+  },
+  "software": {
+    "GCfit": "e4154e8e3e2505d2c49248a71c1eebcea5844442",
+    "limepy": "a474dede47126db49626738cafdaeb7be0846abf",
+    "ssptools": "d5b7aa74ff8471691aa6288d27b0fc0f7cba7cac"
+  },
+  "joint_sample_selection": "argmax(nested/logwt), first row on a tie; largest posterior quadrature weight, not maximum likelihood or posterior mode",
+  "parameter_order": [
+    "W0",
+    "M",
+    "rh",
+    "ra",
+    "g",
+    "delta",
+    "s2",
+    "F",
+    "a1",
+    "a2",
+    "a3",
+    "BHret",
+    "d"
+  ],
+  "constructor": "gcfit.FittableModel(dict(zip(parameter_order, row)), observations)",
+  "host": {
+    "family": "spherical anisotropic multimass lowered isothermal",
+    "frozen": true,
+    "rotation": false,
+    "external_field": null,
+    "observations_metadata": [
+      "age",
+      "FeH",
+      "vesc",
+      "Ndot"
+    ],
+    "mass_breaks_Msun": [
+      0.1,
+      0.5,
+      1,
+      100
+    ],
+    "mass_bins": [
+      5,
+      5,
+      20
+    ],
+    "NS_ret": 0.1,
+    "BH_ret_int": 1.0,
+    "natal_kicks": true,
+    "tcc": 0.0,
+    "meanmassdef": "global",
+    "ode_rtol": 1e-09,
+    "ode_maxstep": 0.1,
+    "potential_zero": "infinity, Phi=-Psi-GM/rt",
+    "tracer_policy": "Preserve source tracer contribution to gravity, report it, exclude TR bins from encounters.",
+    "density_pressure_interpolation": "cubic interpolation of log positive profiles; lowering-law taper only after final positive mesh point"
+  },
+  "validation": {
+    "integrated_mass_relative_tolerance": 0.001,
+    "force_relative_tolerance": 0.001,
+    "relative_potential_tolerance": 0.001,
+    "DF_density_moment_relative_tolerance": 0.001,
+    "independent_projection_relative_tolerance": 0.002,
+    "virial_relative_tolerance": 0.001,
+    "DF_radius_fractions_rh": [
+      0,
+      0.1,
+      1,
+      3
+    ],
+    "velocity_quadrature_orders": [
+      32,
+      64
+    ],
+    "radial_grid_points": 4097,
+    "projected_profile_comparison": "Compare the selected reconstruction with published central 95.45 percent envelopes; this is descriptive, neither a refit nor a goodness-of-fit probability.",
+    "projected_species": "most massive main-sequence bin used in published kinematic profiles; all-bin differences also retained as diagnostics",
+    "interpolation_check": "DF integrals validate all bins; log interpolation preserves the positive, steep segregated tails"
+  },
+  "not_executed_by_this_stage": [
+    "new observational fit",
+    "host posterior resampling",
+    "merger-conditioned launch distribution",
+    "remnant trajectories",
+    "residence or exposure distribution"
+  ],
+  "seed": null,
+  "seed_reason": "deterministic joint-row selection and deterministic quadrature"
+}

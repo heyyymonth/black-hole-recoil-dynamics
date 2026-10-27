@@ -1,0 +1,90 @@
+{
+  "galaxy": {
+    "name": "Irrgang2013 Model I",
+    "Mb_Mgal": 409.0,
+    "Md_Mgal": 2856.0,
+    "Mh_Mgal": 1018.0,
+    "bb_kpc": 0.23,
+    "ad_kpc": 4.22,
+    "bd_kpc": 0.292,
+    "ah_kpc": 2.562,
+    "halo_cutoff_kpc": 200.0,
+    "gamma": 2,
+    "potential_unit_kms2": 100.0
+  },
+  "units": {
+    "Galactic_position": "kpc",
+    "host_radius": "pc",
+    "velocity": "km/s",
+    "time": "Myr",
+    "G_host": "unchanged source reconstruction",
+    "km_s_to_kpc_Myr": 0.001022712165045695
+  },
+  "integration": {
+    "time_Myr": [
+      0.0,
+      1000.0
+    ],
+    "method": "DOP853",
+    "rtol": 1e-10,
+    "atol": 1e-11,
+    "max_step_Myr": 0.5,
+    "output_step_Myr": 0.25,
+    "refinement_max_step_Myr": 0.25,
+    "refinement_rtol": 1e-12,
+    "time_interpretation": "One Gyr forward reference orbit in a fixed axisymmetric Galactic potential; not a forecast of unchanged internal cluster structure."
+  },
+  "force_accuracy": {
+    "epsilon": 0.01,
+    "bound": "Exact differential acceleration bounded by radius times a componentwise analytic Hessian supremum over the spatial ball. Solve bound/cluster acceleration=epsilon.",
+    "interpretation": "Sufficient instantaneous isolated-control domain; conservative, not a measured edge or accumulated trajectory-error bound",
+    "fixed_control_rule": "Floor the refined minimum sufficient radius in pc for the host_distance case to a whole pc; conditional conservative control, not a physical edge."
+  },
+  "acceptance": {
+    "relative_energy_drift": 1e-08,
+    "relative_Lz_drift": 1e-08,
+    "refined_position_kpc": 1e-06,
+    "refined_velocity_kms": 1e-05,
+    "time_reversal_position_kpc": 1e-06,
+    "catalog_peri_apo_fractional_difference": 0.05,
+    "bound_radius_relative_refinement": 0.005
+  },
+  "tensor_derivative_step_Myr": 0.001,
+  "revision": "six-cluster-environment-1",
+  "clusters": [
+    "NGC0104",
+    "NGC1851",
+    "NGC3201",
+    "NGC5139",
+    "NGC6121",
+    "NGC6397"
+  ],
+  "source_snapshot": "data/orbit/raw/uq_orbits.html",
+  "host_path_pattern": "results/cluster-comparison/{cluster}/reference/host.npz",
+  "cases": [
+    "catalog_reference",
+    "host_distance",
+    "catalog_distance_minus_sigma",
+    "catalog_distance_plus_sigma"
+  ],
+  "static_scenarios": {
+    "R": "each source row R_GC_kpc, not host distance",
+    "vc_kms": [
+      220.0,
+      198.0,
+      242.0
+    ],
+    "tolerances": [
+      0.01,
+      0.03,
+      0.1
+    ]
+  },
+  "interpretation": "Conditional environmental sensitivity controls; no posterior interval, remnant path, escape classification or tidally re-equilibrated host.",
+  "outer_root_policy": "Spherical host gravity continues as the point-mass field beyond its finite DF support. Root brackets may extend beyond rt, avoiding a spurious failure for compact hosts.",
+  "catalog_comparison_policy": "The 5-percent peri/apo comparison is a descriptive model-consistency flag, independent of numerical integration acceptance; a mismatch is retained, never fitted away.",
+  "host_gate": "Require an exported host with all_numerical_checks_passed=true; absent or rejected hosts retain catalog-only orbits.",
+  "diagnostic_retry": "Halve output cadence and derivative step up to four times; compare successive sufficient-radius minima against unchanged 0.5-percent tolerance; record every level.",
+  "integration_retry": "On a failed numerical check, halve integration max steps and tighten relative/absolute tolerances by ten, at most three times; preserve preceding attempts. Acceptance limits never change.",
+  "uncertainty": "Quoted distance errors define sensitivity cases only. Full phase-space, Galactic-model and host/orbit cross-covariances are unavailable."
+}

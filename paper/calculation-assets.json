@@ -4,19 +4,19 @@
     "paper/calculation_assets.py": "78cfc723a22bc28d26ab62bc7d6f5522574f8f0f51ce05668a0c52f1e5ef3278",
     "paper/calculation_figures.py": "4a225c3347cd85ffb1af510c672292feef3428eb3cb258038a8c805fd7c3db65",
     "analysis/host_reconstruction/requirements-lock.txt": "cc5d619c82f6c83e24621724eff4a916ff0bfee5bd72795c8f20d135f18a51fc",
-    "results/calculations.json": "f2a9e4632ea7cc0c1fa0143eca0dda98208f265677a1ede03134e0d786ceb944",
+    "results/calculations.json": "d34916007a05f4ff287bf56fc653471624c811e637663d906f6c056a25de5510",
     "results/host-reconstruction/summary.json": "da353dba49eea612997b400c5c92ca280d86a3ee1721016da929a43d19984df9",
     "results/host-reconstruction/host.npz": "9c8779b3f011b91b67ecc6fff6ecfefc79b3f8ec7ff038619d0da7e2c48f1403",
     "results/host-reconstruction/species.csv": "9dc9cf9e02db179cb8bca186ea463bcbc1c8aa02ed0f9f0f97675aabd5720311",
     "results/host-reconstruction/published-profile-comparison.csv": "8db8c70de0b9ee98a909b7a342c5a8c1105e7a47e7f48a4c578dd9250af7173a",
-    "results/local-transport-kernels/summary.json": "0f8642a006056ccee0e75672fd2b0c767933129f53fade6fd40b2f9a0d2954a5",
-    "results/local-transport-kernels/states.csv": "0a8b159ad8a790fdafba644e9629a6b816f121b11cc1fba48281cb2b1060a19b",
-    "results/local-transport-kernels/species.csv": "f0586504ea35705e1d85ba142c547d3aa5a27944f03ba76fc100cd5913538972"
+    "results/local-transport-kernels/summary.json": "bbb9a2fca3135b6ea9116d56fb9776509a4bfeeeb9c70c4a679dd65d7839a0c7",
+    "results/local-transport-kernels/states.csv": "23f192125785ab6b27fd7ee7bc83ff363f704be3d71ea7316b171815c80cc8be",
+    "results/local-transport-kernels/species.csv": "8ad765cdd626cc50963127926691a5cc749a19be37d9658ee2df9798f4013b90"
   },
   "output_sha256": {
     "tables/host-validation.tex": "edda407fea7f4c8d1b4ae8116fa3cadd9e4e4df39ccf834ae8495b5685afd0c5",
     "tables/local-kernels.tex": "a111631183b473eb01f04a0c905565c309db0deb2a6ba32ecd96d318f87851a7",
-    "figures/host-projections.pdf": "731f1285da09b7dcb26021724761861064330b08f3fe520480c15d858ab53d98",
-    "figures/scattering-composition.pdf": "c59eda89f80f0a4b1b63f7d86ca8b99391b48f133999423c4777b2604a88a89f"
+    "figures/host-projections.pdf": "bd587dd62104cf805523701096cdd82d11d2dc51ead99e5ee02adc57ba30ec9e",
+    "figures/scattering-composition.pdf": "62cb7b20a9f5c56c1ee2dfd2e2e29a56e14408a4d3fdb6360d383ac8dc597057"
   }
 }

@@ -2,9 +2,9 @@
   "status": "theory-data-and-local-calculations-draft",
   "compile_enabled": true,
   "title": "Recoil transport and environmental exposure of black-hole merger remnants",
-  "abstract": "Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We formulate merger-conditioned transport and define finite-region residence and species-resolved exposure on its trajectories. Public observations and published multimass-model posteriors for six Galactic clusters establish the available constraints and their shared uncertainties. For one joint realization of NGC 3201, we verify the mass distribution, potential, velocity moments, and projected tracer profiles, then evaluate anisotropic scattering from the same species distributions. A sparse black-hole component dominates the formal central diffusion, identifying a regime where the smooth closure requires a discrete-encounter test. Galactic reference orbits constructed from public phase-space coordinates supply the time-dependent external field. An analytic force bound separates a sufficient accuracy domain for isolated controls from a diagnostic tidal scale. Disk passages restrict this domain and produce rapid changes in forcing, identifying phases where the frozen-host approximation needs additional validation. These calculations establish conditional host, scattering, and environmental diagnostics; consistent host evolution and calibrated remnant residence distributions remain unresolved.",
-  "manuscript_version": "0.8.0-manuscript.2",
-  "manuscript_tag": "manuscript-v0.8.0.2",
+  "abstract": "Black-hole mergers in stellar clusters can leave remnants moving through their hosts after receiving gravitational-wave recoil. Remaining gravitationally bound does not determine how soon a remnant enters a dense region or how much time it spends there. Predicting this motion requires a stellar environment that consistently supplies gravity, collisional drift, and velocity diffusion. We formulate merger-conditioned transport and define finite-region residence and species-resolved exposure on its trajectories. Public observations and published multimass-model posteriors for six Galactic clusters supply conditional reference hosts and a joint-parameter sensitivity pilot. Independent checks connect their mass distributions, potentials, velocity moments and projected tracer profiles to local anisotropic scattering calculations. Black holes can dominate formal central diffusion in both low-count and massive-reservoir models, while the radial extent of that contribution differs strongly. Published model variation and applicability limitations prevent a selected sparse population from being treated as an observationally secure background. Galactic reference orbits and static controls separate conditional tidal scales from sufficient domains for neglecting external forces. These calculations identify environments and spatial regions for a subsequent test of the continuous scattering approximation. They do not establish its failure or provide calibrated remnant residence distributions.",
+  "manuscript_version": "0.9.0-manuscript.1",
+  "manuscript_tag": "manuscript-v0.9.0.1",
   "formulation_version": "formulation-1",
   "formulation_tag": "formulation-v1",
   "active_steps": [
@@ -20,9 +20,11 @@
     "host-reconstruction-1",
     "local-transport-kernels-1",
     "outer-boundary-1",
-    "galactic-orbit-1"
+    "galactic-orbit-1",
+    "six-cluster-comparison-1"
   ],
   "outer_boundary_diagnostics_evaluated": true,
   "galactic_orbits_integrated": true,
-  "host_re_equilibrated": false
+  "host_re_equilibrated": false,
+  "cross_cluster_comparison_performed": true
 }

@@ -25,6 +25,7 @@ jobs:
           python analysis/host_reconstruction/verify.py
           python analysis/boundary/verify.py
           python analysis/orbit/verify.py
+          python analysis/cluster_comparison/verify.py
   artifacts:
     runs-on: ubuntu-24.04
     steps:
