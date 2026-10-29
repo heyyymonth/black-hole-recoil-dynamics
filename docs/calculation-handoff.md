@@ -68,7 +68,7 @@ This general trajectory specification assigns no trajectory solver, sample count
 
 ## Interface beyond the present scope
 
-Timed positions and velocities can later be combined with an independently justified companion population and interaction law. Neither is supplied by the two-step outputs. This handoff contains no encounter-rate, capture, exchange, binary-evolution, or merger-probability calculation.
+Timed positions and velocities can later be combined with an independently justified companion population and interaction law. Neither is supplied by the two-step outputs. The [finite-angle calculation](finite-angle-encounters.md) supplies local elastic BH encounter rates and matched moments. This handoff supplies no capture, exchange, binary-evolution or merger-probability calculation.
 
 [Problem statement](problem.md) · [Step 1](step1-transport.md) · [Step 2](step2-exposure.md)
 
@@ -79,3 +79,7 @@ The [outer-boundary calculation](outer-boundary.md) uses the same reconstructed 
 ## Galactic forcing supplied to the handoff
 
 The [reference-orbit stage](galactic-orbit.md) supplies position, velocity, exact Galactic acceleration and its tensor along four defined conditional cases. The selected-host-distance case supports a proposed 8 pc fixed isolated-control domain over the evaluated horizon. It does not supply a fitted tidal stellar distribution, a remnant launch, or an irreversible-escape rule. Host evolution or a justified approximation must preserve the species inventory linking gravity, scattering and exposure. No radius cut silently removes stars or changes the local collision coefficients.
+
+## Matched local encounter input
+
+The [finite-angle protocol](../analysis/encounters/protocol.json) assigns a conditional elastic domain and computes its rates, moments and sampled increments in all six reference hosts. These local choices do not automatically assign the general trajectory inputs above. A trajectory implementation must carry the same law into both descriptions, supply the common lighter-species treatment, and account for the recorded excluded close-passage flux. The verified single-transition response estimator supplies an algorithm; its time-step convergence and cluster residence response remain to be established.

@@ -51,7 +51,7 @@
     "random_seed_policy": null,
     "independent_validation_cases": null
   },
-  "result_status": "One reconstructed joint host and local collision kernels evaluated. No new fit, remnant trajectories or residence outcomes.",
+  "result_status": "Six conditional host reconstructions, local kernels, environmental diagnostics and finite-angle BH encounter moments evaluated. No remnant trajectories or residence outcomes.",
   "handoff": "docs/calculation-handoff.md",
   "execution_scope": "general remnant trajectory ensemble; stage-specific host and coefficient calculations are defined separately",
   "completed_calculations": [
@@ -72,6 +72,16 @@
       "revision": "galactic-orbit-1",
       "protocol": "analysis/orbit/protocol.json",
       "result": "results/orbit/summary.json"
+    },
+    {
+      "revision": "six-cluster-comparison-1",
+      "protocol": "analysis/cluster_comparison/protocol.json",
+      "result": "results/cluster-comparison/summary.json"
+    },
+    {
+      "revision": "finite-angle-encounter-1",
+      "protocol": "analysis/encounters/protocol.json",
+      "result": "results/finite-angle-encounters/summary.json"
     }
   ]
 }

@@ -1,0 +1,29 @@
+{
+  "revision": "finite-angle-encounter-1",
+  "scope": "Finite-domain local moments and sampled increments, not trajectories or residence. Cutoff variations are conditional controls, not fitted physical values.",
+  "input_sha256": {
+    "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+    "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+    "analysis/encounters/response.py": "f4cd3215c6837f489089f77c4f6b160b31d5f9efa9e69bd40492f7032712840a",
+    "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5",
+    "analysis/encounters/test_physics.py": "87bcea86a9a4128f0076bd27c48efe8ebb004ef6c767246dca9ee7a8a5c598d4",
+    "analysis/encounters/test_response.py": "fd9653939e9a6a0fe38d42fb83432e2e4c995181bdcea7486dfa170939a91a60",
+    "analysis/encounters/verify.py": "866c31687b93e3d38f718e7b3515296a88d8ee36451b6c6767c938d5a5cd334c",
+    "results/cluster-comparison/NGC0104/reference/host.npz": "5974278d2fa89b395861acf24ccc0af9456eec222a671170dac296ceba016fab",
+    "results/cluster-comparison/NGC1851/reference/host.npz": "f04cc0571ee1f000e00a3c9535394decbfa7143014c1fa99147f29c745ac24da",
+    "results/cluster-comparison/NGC3201/reference/host.npz": "9c8779b3f011b91b67ecc6fff6ecfefc79b3f8ec7ff038619d0da7e2c48f1403",
+    "results/cluster-comparison/NGC5139/reference/host.npz": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+    "results/cluster-comparison/NGC6121/reference/host.npz": "b0c25256ab37c99675896175907da60485bf3c1c3de9170be59a00fce89105bd",
+    "results/cluster-comparison/NGC6397/reference/host.npz": "d77074b80896cdc7a907bf41dd40ccb9e9d448295145f315bf9c1b0e4588a193"
+  },
+  "output_sha256": {
+    "results/finite-angle-encounters/NGC0104.json": "ea5f09fd3d595059f6529b14a332531006a6e3793dc77b2cd2a07fb659020234",
+    "results/finite-angle-encounters/NGC1851.json": "90879e4dfa64f68b610157d4c52c7edb99717ff4bec5ad7786c36b1c861247db",
+    "results/finite-angle-encounters/NGC3201.json": "2a0e35194196595b6296548cebde988df991d3125c6f33cc4034d89b28a8ed66",
+    "results/finite-angle-encounters/NGC5139.json": "dbcd675f87c309315a7903215933fbc4712353afaec1585ba4e06f9eb1f5e8da",
+    "results/finite-angle-encounters/NGC6121.json": "06113baadc238f1915087c8fd1f4f26d6aad6d757066ad2c03d9a9ba01097002",
+    "results/finite-angle-encounters/NGC6397.json": "628494e3b8c0c31927d49f24e4d74f072ad6bc4dc848230aac83c019872ff6b3",
+    "results/finite-angle-encounters/states.csv": "8cf70ff3a60e4475f42f1c927c89c1d4ee1ee086e8eb9a5ab87ab15392072eaf",
+    "results/finite-angle-encounters/summary.json": "7dd85459a905c3ff4160b61a42e87d7f7fd9f7a3dff6de2a1521e71fe288ca9a"
+  }
+}

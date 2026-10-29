@@ -18,7 +18,7 @@ checked on 18 October 2026.
 | Tables, when present | Native LaTeX with captions defining quantities and units; no colored fills or vertical rules |
 | Links and markings | Black unobtrusive links; no decorative header, watermark, arXiv stamp, invented DOI, or acceptance notice |
 
-The article includes eight numerical evidence tables and eight vector figures from the observed-cluster data analysis and the conditional dynamical calculations. Their captions distinguish measured profiles, published model estimates, and conditional comparison scales.
+The article includes nine numerical evidence tables and nine vector figures from the observed-cluster data analysis and the conditional dynamical calculations. Their captions distinguish measured profiles, published model estimates, and conditional comparison scales.
 
 The `reprint` option names the compact layout. It does not assert that the work
 has been published. The class controls dimensions and typography; a document

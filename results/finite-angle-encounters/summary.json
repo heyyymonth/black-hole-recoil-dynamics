@@ -1,0 +1,12 @@
+{
+  "revision": "finite-angle-encounter-1",
+  "clusters": 6,
+  "states": 162,
+  "accepted_states": 162,
+  "all_numerical_checks_passed": true,
+  "sampled_elastic_events": 600000,
+  "max_sample_standardized_error": 2.5739768935294074,
+  "transport_simulations_performed": false,
+  "residence_response_evaluated": false,
+  "scope": "Finite-domain local moments and sampled increments, not trajectories or residence. Cutoff variations are conditional controls, not fitted physical values."
+}

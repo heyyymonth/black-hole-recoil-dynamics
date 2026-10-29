@@ -1,0 +1,33 @@
+{
+  "revision": "finite-angle-encounter-1",
+  "clusters": ["NGC0104", "NGC1851", "NGC3201", "NGC5139", "NGC6121", "NGC6397"],
+  "host_selection": "Existing verified conditional reference joint rows; no new fit or posterior selection",
+  "remnant_mass_Msun": 60.0,
+  "population": "BH species only; local independent frozen bath",
+  "density_radius": "Radius at which total BH mass density equals half its central value",
+  "local_scale": "L=min(density_radius,rho_BH/abs(d rho_BH/dr)); at zero derivative use density_radius",
+  "r_over_density_radius": [0.0, 1.0, 2.0],
+  "v_over_BH_sigma_1d": [0.0, 1.0],
+  "sigma_convention": "Number-weighted BH mean squared speed divided by three; anisotropic DF retained in integrals",
+  "orientations": ["radial", "tangential"],
+  "bmax_over_local_scale": [0.05, 0.1, 0.2],
+  "closest_approach": {
+    "speed_of_light_kms": 299792.458,
+    "weak_field_radius_GM_over_c2": 100.0,
+    "parabolic_capture_radius_multiplier": 10.0,
+    "prescription": "rp_min=max(100 GM/c^2,10 r_cap(w)); b_min^2=rp_min^2+2GM rp_min/w^2; empty annuli have zero allowed rate",
+    "scope": "Declared Newtonian elastic domain motivated by leading parabolic radiation loss; not a capture calibration",
+    "excluded_channel": "Record incoming flux below the floor separately; future common unresolved-event hazard, not applied to any trajectory here"
+  },
+  "quadrature_orders": [20, 28, 40, 56],
+  "radial_velocity_transform": "sinh grid with scale=min(sqrt(s2j)); full local DF support",
+  "acceptance": {
+    "moment_relative_refinement": 0.005,
+    "number_density_relative_error": 0.002,
+    "diagnostic_fraction_absolute_refinement": 0.025,
+    "zero_drift_relative_scale": 1e-10
+  },
+  "sampling": {"events_per_host": 100000, "seed": 2026102701, "state": "r=density_radius, radial v=sigma_1d, bmax=.1 L", "standard_error_limit": 6.0},
+  "interpretation": "Finite-domain local moments and sampled increments, not trajectories or residence. Cutoff variations are conditional controls, not fitted physical values.",
+  "residence_prediction_status": "Not evaluated; continuous-generator response requires a converged trajectory discretization."
+}

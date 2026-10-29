@@ -20,6 +20,8 @@ The physical domain specifies impact parameters, closest approaches and excluded
 
 The existing per-unit-Coulomb-log kernels provide weak-scattering calculations and numerical checks. A selected finite-angle domain requires its own matched moments; multiplying the existing outputs by an arbitrary cutoff-dependent number does not establish that match. If large deflections are resolved separately, their impact-parameter range is excluded from the diffusion contribution.
 
+The [finite-angle calculation](finite-angle-encounters.md) now specifies that local domain and evaluates the rates, moments and conditional elastic increments across the six reference hosts. It also implements and tests a single-transition replacement estimator in finite-state examples. Numerical acceptance remains recorded per local state; no remnant trajectory, residence distribution or physical response prediction has been evaluated.
+
 ## The analytical bridge
 
 Let `U_D(t, r, v)` be the expected remaining occupation under diffusion. Its backward equation has the occupation weight as a source and zero terminal and killed-state payoff. For residence, the weight is membership in the declared spatial region; for species exposure it is the species density.

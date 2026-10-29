@@ -1,70 +1,14 @@
-Formulation and six-cluster calculation manuscript verification
-Revision 0.10.0-manuscript.1; 27 October 2026
-
-Completed calculations
-Six actual joint posterior rows provide conditional reference hosts. The same
-20 local states per host evaluate anisotropic drift and diffusion per unit
-constant Coulomb logarithm. The 60-solar-mass remnant is a diagnostic probe.
-Forty-eight weighted joint-row pilot attempts yield 47 accepted hosts with
-nine zero-speed radii each; one M4 finite-extent reconstruction remains
-unresolved and contributes no coefficient. No failed draw is replaced.
-The 24,000 released derived-model realizations are summarized separately.
-Twenty-four Galactic reference orbits and 18 common static controls extend
-the original detailed NGC 3201 environmental benchmark across the shortlist.
-Hosts are held fixed for diagnostics, not evolved over the orbital horizon.
-
-Numerical and integrity checks
-All six references pass mass, force, potential, virial, distribution-function
-moment and luminous-projection checks. Their 120 coefficient states pass
-quadrature, symmetry, positivity and trace checks. The independent zero-speed
-integral is checked under refinement and against the central analytic limit.
-Thirty-nine numerical and regression tests pass, including outer-profile
-shape preservation, even versus streaming drift, weighted joint selection,
-absent-BH handling and source loading without an untracked HTML snapshot.
-All 24 orbits pass numerical conservation, integration-refinement and reversal
-checks. Diagnostic cadence is refined without relaxing acceptance limits.
-The M4 catalog-reference pericenter differs by 20.6% from the catalog value;
-this descriptive mismatch remains independent of numerical acceptance.
-All 51 cached original source products match their pinned hashes. The original
-six-cluster observational audit remains unchanged. The comparison preserves
-joint rows, source weights, failed attempts and zero-BH realizations.
-Reference meshes are retained; large pilot meshes are reproducible scratch.
-Recorded code, parameters, checks and outputs are bound by source manifests.
-
-Presentation review
-Eight evidence tables and eight vector figures are bound to their source
-records. The executed comparison notebook contains no execution errors.
-The final PDF has 22 US Letter pages and 24 embedded vector fonts. Every page
-was rendered and inspected; the comparison table and figure were inspected
-at higher resolution, together with the matched-generator and residence equations. No clipping, missing glyphs, overfull boxes, unresolved
-references or bibliography-entry warnings were found. The saved source also
-compiles with the desktop editor's built-in compiler. The existing editor
-remains open. The portable archive and PDF match their recorded source hashes.
-The builder typesets verified assets and performs no physical calculations.
-
-Scientific limits
-No new observational fit or exact historical fit reproduction is claimed.
-The pilot is not a converged posterior interval. Counts and diffusion shares
-are conditional model quantities, not observed BH counts or residence shares.
-NGC 3201 is a source-flagged model-applicability concern. NGC 6397 uses only
-the available standard-fit chain; its preferred no-BH alternative is missing.
-Rotation and population complexity remain unmodeled for Omega Centauri.
-Numerical acceptance does not validate smooth diffusion from a few objects,
-a stationary scattering reservoir, or the adopted Galactic potential.
-The external-force bound is sufficient and instantaneous, not an escape
-surface or accumulated trajectory-error bound. Full phase-space and Galactic
-covariance, host response, strong encounters, physical impact-parameter
-cutoffs and merger-conditioned launches remain uncalibrated.
-No remnant trajectories, residence distributions or diffusion-versus-resolved
-encounter comparison have been computed. The comparison locates environments
-and radial regions where those physical tests would be informative.
-
-Theoretical framing
-The abstract, introduction, hypothesis section and discussion share the
-residence-accuracy question. Adopted host families are stated as calculation
-assumptions. The finite-encounter measure and its matched diffusion moments,
-backward occupation equation and stopped-generator residual are formulated
-analytically. The diffusion-based first response is a proposed predictor,
-not an exact full-strength result. Finite-population feedback and evolving
-hosts are separate controlled comparisons. Numerical result values are
-unchanged; no new encounter or residence calculation was performed.
+Verified 33 artifacts: six clusters, 51 source records, 8 executed code cells, 3 embedded PNGs, 22 local links. No downloads or physical calculations performed.
+Verified 33 artifacts: six clusters, 51 source records, 8 executed code cells, 3 embedded PNGs, 22 local links. No downloads or physical calculations performed.
+Verified three evidence tables and three vector figures; no new dynamics.
+Verified fixed host and 20 local collision states; no trajectory execution.
+Verified two calculation tables and two vector figures.
+Verified four static boundary scenarios; no orbit or remnant trajectory execution.
+Verified boundary table and vector figure.
+Verified four Galactic reference orbits and host-support diagnostics; no remnant trajectories or host refit.
+Verified Galactic-orbit table and vector figure.
+{"reference_hosts": 6, "reference_local_states": 120, "pilot_attempts": 48, "accepted_pilot_hosts": 47, "galactic_reference_orbits": 24, "static_controls": 18, "published_derived_realizations": 24000}
+Verified six-cluster table and vector figure.
+Verified 162 conditional finite-angle states and 600000 sampled increments; no residence results.
+Verified finite-angle encounter table and vector figure; no trajectories computed.
+Verified formulation and data manuscript 0.11.0-manuscript.1: 24 US Letter pages, 24 embedded vector fonts, current source and archive hashes, and matching citation metadata. No transport simulations performed.

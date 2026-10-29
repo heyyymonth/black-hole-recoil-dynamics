@@ -1,6 +1,6 @@
 # Claim-to-evidence record
 
-Manuscript revision 0.10.0-manuscript.1. Author: Venkata Hemanth Athota.
+Manuscript revision 0.11.0-manuscript.1. Author: Venkata Hemanth Athota.
 
 The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. A detailed NGC 3201 benchmark is extended to six conditional reference hosts and 120 local states, 48 joint-row pilot attempts, 18 common static controls and 24 Galactic reference orbits. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
 
@@ -13,7 +13,7 @@ The paper defines a two-step transport and exposure problem and reports the comp
 | Entry, re-entry, residence, and density exposure are distinct. | Operational region, stopping-time, and path-functional definitions. | Their distributions have not been evaluated. |
 | Time-augmented occupation retains timing and velocity information. | A measure on time and phase space. | It is not a companion population or interaction law. |
 | Ensemble exposure retains survival probability. | Conditional probability and interchange of nonnegative integrals. | Renormalizing survivors changes the quantity; unresolved continuation cannot be inferred. |
-| The formulation supplies a calculation handoff. | Input register and acceptance requirements. | Candidate observed datasets are assessed; one host and local-kernel protocols are supplied; merger launches, physical cutoffs, trajectory solvers and calibration remain unassigned. |
+| The formulation supplies a calculation handoff. | Input register and acceptance requirements. | Six reference hosts and local-kernel protocols are supplied. Finite-domain BH cutoffs are declared for the local comparison; merger launches, trajectory controls and physical calibration remain open. |
 | The six original Gaia field catalogs contain 621,878 rows; original HST products contain 107 radial bins. | Raw archive/file inspection; coverage and catalog-quality tables. | Field rows include nonmembers; three HST component records per bin do not represent independent measurements. |
 | Twenty of 418 compiled kinematic rows require reconciliation. | Source-line flags and preserved original values. | Flagging does not establish that every value is physically impossible; no guessed corrections or approved compiled likelihood. |
 | The intersection of HST median-radius spans is approximately 0.081–0.251 in projected R/rh. | Original median radii converted using one catalog's point scales. | Not exact annular overlap or a common three-dimensional domain; most bin boundaries are unavailable. |
@@ -55,6 +55,16 @@ The primary question is when a continuous encounter approximation preserves fini
 
 A separate proposed predictor averages that residual under the diffusion process. It is the first response along an auxiliary interpolation of matched generators; its prediction at the full jump endpoint is untested and need not be accurate. The hypothesis can be tested against sign, magnitude and accuracy class of the measured residence change. Bounds for means do not establish distributional agreement.
 
-The prescribed controls separate finite transitions, integer-population correlations and reciprocal response, and evolving-host/tidal effects. Resolved BH forces replace their smooth gravitational and collision contributions. A resolved two-body channel is not also used as a strong-encounter stop. Unresolved channels retain common censoring rules. No encounter cutoffs, population sampling law, trajectory ensemble, residence residual or accuracy classification has been evaluated.
+The prescribed controls separate finite transitions, integer-population correlations and reciprocal response, and evolving-host/tidal effects. Resolved BH forces replace their smooth gravitational and collision contributions. A resolved two-body channel is not also used as a strong-encounter stop. Unresolved channels retain common censoring rules. Finite-domain encounter controls are now evaluated locally. No integer-population sampling law, trajectory ensemble, cluster residence residual or accuracy classification has been evaluated.
 
 Primary grounding: Rosenbluth et al. (1957), Tep et al. (2022), Webb et al. (2018), and Dynkin (1956). Bar-Or et al. (2013) supplies related encounter-distribution context in a different massive-black-hole nuclear setting; no numerical result is transferred from that setting.
+
+## Finite-angle local encounter law
+
+The six reference hosts supply 162 accepted finite-domain BH scattering settings and 600,000 independent conditional increments. Rates, drift and raw second moments use the same velocity distribution, impact annulus and exact Newtonian deflection law. Conditional moments agree with sampled increments below 2.58 estimated standard errors in the registered samples. Density and moment refinement checks address numerical integration; they do not calibrate physical encounter cutoffs or independence assumptions.
+
+The diagnostic fraction of diffusion trace with b90 greater than the local density scale is integrated on its relative-velocity domain. It is a scale diagnostic, not a proof of nonlocal evolution or diffusion failure. Excluded close-passage flux is recorded as a prospective common unresolved-event hazard; no such event has been applied to a remnant history.
+
+The single-transition replacement algorithm is verified against exact finite-state derivatives, numerical differentiation and independent per-path random streams. Its application to a cluster residence observable and its continuous-time convergence remain uncomputed.
+
+Evidence: `analysis/encounters/protocol.json`, `results/finite-angle-encounters/provenance.json`, per-host tensors and samples, `analysis/encounters/test_physics.py`, `analysis/encounters/test_response.py`.

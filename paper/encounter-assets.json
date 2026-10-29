@@ -1,0 +1,21 @@
+{
+  "scope": "Conditional local finite-angle BH encounter rates and scale diagnostics",
+  "input_sha256": {
+    "paper/encounter_assets.py": "5a8c74033df68e4e4504f4880e16dcd1b3e9688be477962ab92f944347a91d8a",
+    "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+    "results/finite-angle-encounters/summary.json": "7dd85459a905c3ff4160b61a42e87d7f7fd9f7a3dff6de2a1521e71fe288ca9a",
+    "results/finite-angle-encounters/states.csv": "8cf70ff3a60e4475f42f1c927c89c1d4ee1ee086e8eb9a5ab87ab15392072eaf",
+    "results/finite-angle-encounters/NGC0104.json": "ea5f09fd3d595059f6529b14a332531006a6e3793dc77b2cd2a07fb659020234",
+    "results/finite-angle-encounters/NGC1851.json": "90879e4dfa64f68b610157d4c52c7edb99717ff4bec5ad7786c36b1c861247db",
+    "results/finite-angle-encounters/NGC3201.json": "2a0e35194196595b6296548cebde988df991d3125c6f33cc4034d89b28a8ed66",
+    "results/finite-angle-encounters/NGC5139.json": "dbcd675f87c309315a7903215933fbc4712353afaec1585ba4e06f9eb1f5e8da",
+    "results/finite-angle-encounters/NGC6121.json": "06113baadc238f1915087c8fd1f4f26d6aad6d757066ad2c03d9a9ba01097002",
+    "results/finite-angle-encounters/NGC6397.json": "628494e3b8c0c31927d49f24e4d74f072ad6bc4dc848230aac83c019872ff6b3"
+  },
+  "output_sha256": {
+    "paper/tables/finite-angle-encounters.tex": "c91fa0677ed952ee99b7cad31304ddd59476df33d5197a1a34341e8e3343fb42",
+    "paper/figures/finite-angle-encounters.pdf": "34dec154c3c96cda2874d9cd1161be3bb180da9ef9993ccffb06293cef3dc0fd",
+    "results/finite-angle-encounters/diagnostics.pdf": "34dec154c3c96cda2874d9cd1161be3bb180da9ef9993ccffb06293cef3dc0fd",
+    "results/finite-angle-encounters/diagnostics.png": "5659f82dc0a8ca78a1b1edb5940d43a6ebbb6e3f40d00bb0240a69dad8a9d6b1"
+  }
+}

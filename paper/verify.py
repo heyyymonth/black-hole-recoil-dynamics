@@ -12,16 +12,16 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.10.0-manuscript.1"
-TAG = "manuscript-v0.10.0.1"
+VERSION = "0.11.0-manuscript.1"
+TAG = "manuscript-v0.11.0.1"
 DATA_REVISION = "cluster-data-v0.1.0"
 CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
 TABLE_ASSETS = (
-    "tables/cluster-coverage.tex", "tables/cluster-scales.tex",
+    "tables/finite-angle-encounters.tex", "tables/cluster-coverage.tex", "tables/cluster-scales.tex",
     "tables/cluster-posterior.tex", "tables/cluster-transport-comparison.tex", "tables/host-validation.tex", "tables/local-kernels.tex", "tables/outer-boundary.tex", "tables/galactic-orbit.tex",
 )
 FIGURE_ASSETS = (
-    "figures/cluster-hst.pdf", "figures/cluster-host-comparison.pdf",
+    "figures/finite-angle-encounters.pdf", "figures/cluster-hst.pdf", "figures/cluster-host-comparison.pdf",
     "figures/cluster-coverage.pdf", "figures/cluster-transport-comparison.pdf", "figures/host-projections.pdf", "figures/scattering-composition.pdf", "figures/outer-boundary.pdf", "figures/galactic-orbit.pdf",
 )
 DATA_EVIDENCE = (
@@ -51,6 +51,12 @@ COMPARISON_FILES = tuple(sorted({
     *(str(p.relative_to(ROOT)) for p in (ROOT / "data/cluster-comparison-environment").glob("*.json")),
     *(str(p.relative_to(ROOT)) for p in (ROOT / "results/cluster-comparison").glob("*/selection.json")),
 }))
+ENCOUNTER_FILES = tuple(sorted({
+    "docs/finite-angle-encounters.md", "analysis/encounters/README.md",
+    "analysis/encounters/protocol.json", "results/finite-angle-encounters/states.csv",
+    *(str(p.relative_to(ROOT)) for p in (ROOT / "analysis/encounters").glob("*.py")),
+    *(str(p.relative_to(ROOT)) for p in (ROOT / "results/finite-angle-encounters").glob("*.json")),
+}))
 ARCHIVE_SOURCE_FILES = {
     "manuscript.tex": "paper/manuscript.tex",
     "references.bib": "paper/references.bib",
@@ -64,6 +70,8 @@ ARCHIVE_SOURCE_FILES = {
     "evidence/paper-boundary-assets.json": "paper/boundary-assets.json",
     "evidence/paper-orbit-assets.json": "paper/orbit-assets.json",
     "evidence/paper-comparison-assets.json": "paper/comparison-assets.json",
+    "evidence/paper-encounter-assets.json": "paper/encounter-assets.json",
+    **{f"evidence/encounters/{name}": name for name in ENCOUNTER_FILES},
     **{f"evidence/comparison/{name}": name for name in COMPARISON_FILES},
     **{f"evidence/orbit/{name}": name for name in ORBIT_FILES if name not in {*CALCULATION_FILES, *BOUNDARY_FILES}},
     **{f"evidence/boundary/{name}": name for name in BOUNDARY_FILES
@@ -80,7 +88,7 @@ INPUT_FILES = tuple(sorted({
     "paper/data_assets.py", "paper/data_figures.py", "paper/calculation_assets.py", "paper/calculation_figures.py", "docs/local-transport-calculations.md", "docs/host-reconstruction-protocol.md",
     "paper/boundary_assets.py", "docs/outer-boundary.md", "analysis/boundary/README.md",
     "paper/orbit_assets.py", "docs/galactic-orbit.md", "analysis/orbit/README.md", "data/orbit/README.md",
-    "paper/comparison_assets.py", "paper/build.py", "paper/verify.py", "paper/requirements.txt",
+    "paper/encounter_assets.py", "paper/comparison_assets.py", "paper/build.py", "paper/verify.py", "paper/requirements.txt",
     "paper/toolchain.json", "paper/working.json", "paper/CLAIMS.md",
     "docs/problem.md", "docs/step1-transport.md", "docs/step2-exposure.md",
     "docs/recoil-transport-theory.md", "docs/calculation-handoff.md",
@@ -117,6 +125,8 @@ def source_metadata(root):
     require(state.get("transport_simulations_performed") is False, "No transport simulation is reported")
     require(state.get("matched_encounter_comparison_performed") is False,
             "Matched residence comparison remains a proposed calculation")
+    require(state.get("finite_angle_local_calculations_performed") is True and state.get("cluster_residence_response_evaluated") is False,
+            "Finite-angle local evidence must remain distinct from residence results")
     require(state.get("backward_occupation_formulated") is True,
             "Missing backward-occupation formulation status")
     require(state.get("host_reconstruction_performed") is True, "Missing reconstructed-host status")
@@ -213,7 +223,9 @@ def verify_evidence(root=ROOT):
                     [sys.executable, str(root / "analysis/orbit/verify.py")],
                     [sys.executable, str(root / "paper/orbit_assets.py"), "--verify"],
                     [sys.executable, str(root / "analysis/cluster_comparison/verify.py")],
-                    [sys.executable, str(root / "paper/comparison_assets.py"), "--verify"]):
+                    [sys.executable, str(root / "paper/comparison_assets.py"), "--verify"],
+                    [sys.executable, str(root / "analysis/encounters/verify.py")],
+                    [sys.executable, str(root / "paper/encounter_assets.py"), "--verify"]):
         subprocess.run(command, cwd=root, check=True)
 
 
@@ -226,7 +238,7 @@ def verify(root=ROOT):
     require(meta.get("transport_simulations_performed") is False, "No transport simulation is reported")
     require(meta.get("matched_encounter_comparison_performed") is False,
             "The matched encounter comparison has not been executed")
-    require(meta.get("local_calculations") == {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "boundary": "outer-boundary-1", "galactic_orbit": "galactic-orbit-1", "cross_cluster_comparison": "six-cluster-comparison-1", "recomputed_during_build": False}, "Incorrect calculation provenance")
+    require(meta.get("local_calculations") == {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "boundary": "outer-boundary-1", "galactic_orbit": "galactic-orbit-1", "cross_cluster_comparison": "six-cluster-comparison-1", "finite_angle_encounters": "finite-angle-encounter-1", "recomputed_during_build": False}, "Incorrect calculation provenance")
     require(meta.get("executed_during_build") == [], "Compilation must not execute research calculations")
     require(meta.get("data_analysis") == {
         "revision": DATA_REVISION, "mode": "reuse-verified-recorded-analysis",
