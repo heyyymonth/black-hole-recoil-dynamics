@@ -1,2 +1,6 @@
 # Standalone manuscript verification/build dependencies; LaTeX uses Tectonic 0.16.9.
 pypdf==6.21.1
+# Read-only tensor identities in the recorded encounter evidence.
+numpy==1.26.4
+# Complete CFF font decoding during PDF text verification.
+fonttools==4.67.0

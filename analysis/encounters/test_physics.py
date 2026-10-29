@@ -1,5 +1,7 @@
 """Independent finite-angle conservation, quadrature and sampling checks."""
 
+from math import fsum
+
 import numpy as np
 import pytest
 from numpy.polynomial.legendre import leggauss
@@ -89,7 +91,10 @@ def test_quadrature_volume_and_isotropic_bath():
     cutoff, n = 5., 7.
     u, weights = velocity_ball(cutoff, 12)
     np.testing.assert_allclose(weights.sum(), 4*np.pi*cutoff**3/3, rtol=2.e-15)
-    np.testing.assert_allclose(weights@u, 0., atol=5.e-13)
+    # Isolate cubature symmetry from platform-dependent BLAS summation order.
+    # The same tolerance applies; compensated summation resolves cancellation.
+    first_moment = [fsum(weights*u[:, axis]) for axis in range(3)]
+    np.testing.assert_allclose(first_moment, 0., atol=5.e-13)
     number_df = lambda u: np.full((1, len(u)), n/(4*np.pi*cutoff**3/3))
     r = local_moments(number_df, [0, 0, 0], cutoff, [14.], 60., .004302, .001, .1, 20)
     np.testing.assert_allclose(r["A"], 0., atol=1.e-14)

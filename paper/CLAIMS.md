@@ -1,6 +1,6 @@
 # Claim-to-evidence record
 
-Manuscript revision 0.11.0-manuscript.1. Author: Venkata Hemanth Athota.
+Manuscript revision 0.11.0-manuscript.2. Author: Venkata Hemanth Athota.
 
 The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. A detailed NGC 3201 benchmark is extended to six conditional reference hosts and 120 local states, 48 joint-row pilot attempts, 18 common static controls and 24 Galactic reference orbits. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
 

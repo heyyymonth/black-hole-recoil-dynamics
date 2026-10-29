@@ -12,8 +12,8 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.11.0-manuscript.1"
-TAG = "manuscript-v0.11.0.1"
+VERSION = "0.11.0-manuscript.2"
+TAG = "manuscript-v0.11.0.2"
 DATA_REVISION = "cluster-data-v0.1.0"
 CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
 TABLE_ASSETS = (

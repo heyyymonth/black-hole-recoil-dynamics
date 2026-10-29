@@ -1,6 +1,6 @@
 {
   "paper": "recoil-transport-and-environmental-exposure",
-  "version": "0.11.0-manuscript.1",
+  "version": "0.11.0-manuscript.2",
   "title": "Recoil transport and environmental exposure of black-hole merger remnants",
   "pages": 24,
   "scope": "Residence hypothesis with matched encounter generators and backward occupation; six-cluster backgrounds, finite-angle local moments and sampled increments",
@@ -80,7 +80,7 @@
     "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
     "analysis/encounters/response.py": "f4cd3215c6837f489089f77c4f6b160b31d5f9efa9e69bd40492f7032712840a",
     "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5",
-    "analysis/encounters/test_physics.py": "87bcea86a9a4128f0076bd27c48efe8ebb004ef6c767246dca9ee7a8a5c598d4",
+    "analysis/encounters/test_physics.py": "98a745fbe4918c5e0ab0827fb23d1f2687ef3c26890b367c032d4033ee32511d",
     "analysis/encounters/test_response.py": "fd9653939e9a6a0fe38d42fb83432e2e4c995181bdcea7486dfa170939a91a60",
     "analysis/encounters/verify.py": "866c31687b93e3d38f718e7b3515296a88d8ee36451b6c6767c938d5a5cd334c",
     "analysis/host_reconstruction/environment.json": "6025b042d7f2aabec946fb0b2837213faeb77429baee487f08f8d0ecc01b552f",
@@ -153,9 +153,9 @@
     "docs/step2-exposure.md": "fda270e36ba88f76844ffedb7a0768501dade564130f100c24bea6d0788b2c75",
     "docs/transport-hypothesis.md": "7ab7dc12c93fcdf8d39b8a3a0386123c4bcce2e3e9fea7873db49f8e033df764",
     "formulation/inputs.json": "27915582dccf9cda8a3125c85f951a31585bebf459fd8322a3b147a419ae56f0",
-    "paper/CITATION.bib": "efddfc05e9650c1374b7813577c60ea5715b406d1587ed03560f75d4022e6645",
-    "paper/CLAIMS.md": "37b59e1f1d3a10cbd301d0df0f940f644abcfb00adc2186fb65ccdb742689496",
-    "paper/SOURCE_README.txt": "c00a888e217277a42de5ccea18c40e6cb19e750d8ae8931214ec80402906bf7d",
+    "paper/CITATION.bib": "b3ff0cb950cc97fd3f00f895dac587127d7b050ed83b8ad20565a404164f73ce",
+    "paper/CLAIMS.md": "8892bc354cbf3ec493f6a30d47136b97fdcbf9b913582b03f96f2974c082bda2",
+    "paper/SOURCE_README.txt": "8a419f4c9d2b9a3a7db838e0e5ca8e6cd0b56f58e2074d63d244aefc37530b82",
     "paper/boundary-assets.json": "bfa99d868712bb8dad15cbee90de91c8c6f19d3b66a3cef93fc5811ce7010ecb",
     "paper/boundary_assets.py": "0f82c7dcb39391457f40ebc5087d3bdb796dc107beb2a029697ef612c0dfa714",
     "paper/build.py": "df1431896a5d5af96218c8faf86803fd1f27648a54ebcd314f061c705ccdcbcb",
@@ -182,7 +182,7 @@
     "paper/orbit-assets.json": "39a3e5447d4785d44324e2ceece9205c8cf233a6436cecfba0fdad66f27a5a5f",
     "paper/orbit_assets.py": "c2299570178176c1f56cd0acdcf3822da2469a38e82948e9d4692fa16b1d5f17",
     "paper/references.bib": "477b680a1be269998b8ad1a1ab5632e04ee1d522c0cc6df0db1dd1d5349046ce",
-    "paper/requirements.txt": "3b97251e4bcd54ab8b5e7ecb37f43c9654eb7a4d384641cab6935018be2ee163",
+    "paper/requirements.txt": "869196902a1d586800363bf60c8b9fa1ba431097430e3d02a0b9cad373a65cb0",
     "paper/tables/cluster-coverage.tex": "497130060c3e3b9443f8e6911122759a4f1719a48e89b71b621f76d31b2f4ba7",
     "paper/tables/cluster-posterior.tex": "b187c8f3f44bc24b0be3770025d2775017f810198d52c27fd42b2c40a9fcec33",
     "paper/tables/cluster-scales.tex": "95870ab3e677609c12e396a19c07ab9f3813503e9ecef894b634defb25191b69",
@@ -193,8 +193,8 @@
     "paper/tables/local-kernels.tex": "a111631183b473eb01f04a0c905565c309db0deb2a6ba32ecd96d318f87851a7",
     "paper/tables/outer-boundary.tex": "7590e9290f35fe23279879debfeb94f743b4d0e9ef0714648cf086c5ba54dd9c",
     "paper/toolchain.json": "23e2e59b0c21ba0e38f176c4fd55f68baa6b18e90ce274f683c19251da7a7794",
-    "paper/verify.py": "73bc598893dbf8d41f9d545ee6f2edaf9a333076ccd67dba1dc528279eb74d2e",
-    "paper/working.json": "4b0641fe237b55e25c1957d008c25fe821ba28ffdf85e32bbbe56198d5e9c9b0",
+    "paper/verify.py": "008a825b3b88656ebac73216507e347da13dfa63a560d501b784ddcba0411c72",
+    "paper/working.json": "aea59c4bdcf50d9da91d463ffb719e1bde6b1acf98e38df9e02addac4ab8e341",
     "results/calculations.json": "d34916007a05f4ff287bf56fc653471624c811e637663d906f6c056a25de5510",
     "results/cluster-comparison-environment/comparison.csv": "7c8c428c5e4bebf27ce17b8d6e12be88ec88abf60f4e6c32a9335b42fed5b450",
     "results/cluster-comparison-environment/summary.json": "8873ecd60ac2d7a432d70d5d62cd69ff0a668dbca28933851b52d8ec83de2207",
@@ -214,7 +214,7 @@
     "results/finite-angle-encounters/NGC5139.json": "dbcd675f87c309315a7903215933fbc4712353afaec1585ba4e06f9eb1f5e8da",
     "results/finite-angle-encounters/NGC6121.json": "06113baadc238f1915087c8fd1f4f26d6aad6d757066ad2c03d9a9ba01097002",
     "results/finite-angle-encounters/NGC6397.json": "628494e3b8c0c31927d49f24e4d74f072ad6bc4dc848230aac83c019872ff6b3",
-    "results/finite-angle-encounters/provenance.json": "c6cc27980b6adebcc8c7b950f3529f06aee523d98abcf33a91a68637393c05f3",
+    "results/finite-angle-encounters/provenance.json": "4a08e1d6965a51e3ac5242ac5ac851cd5f2b8c30657325c5cb671e75e24aa272",
     "results/finite-angle-encounters/states.csv": "8cf70ff3a60e4475f42f1c927c89c1d4ee1ee086e8eb9a5ab87ab15392072eaf",
     "results/finite-angle-encounters/summary.json": "7dd85459a905c3ff4160b61a42e87d7f7fd9f7a3dff6de2a1521e71fe288ca9a",
     "results/host-reconstruction/df-checks.csv": "18ae4ff33639abbc9d2f9f4b065650dad0acc39cd7bfbdf639907e83ec556566",
@@ -238,6 +238,6 @@
   },
   "output_sha256": {
     "output/pdf/central-residence.pdf": "a0e7eb918cd153f440872806c715b6877c744b2b9477453f2d19283f1b38800f",
-    "output/pdf/manuscript-source.zip": "962c4bfaf1939a3f1b947354b1bf093ec60e56d681c70f750aa0601b2c6bc273"
+    "output/pdf/manuscript-source.zip": "b472110e7671b77e2e369550d1772011ae0e1f9d4932f123b07b8db49afb835d"
   }
 }
