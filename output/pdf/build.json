@@ -1,6 +1,6 @@
 {
   "paper": "recoil-transport-and-environmental-exposure",
-  "version": "0.12.0-manuscript.1",
+  "version": "0.12.0-manuscript.2",
   "title": "Recoil transport and environmental exposure of black-hole merger remnants",
   "pages": 26,
   "scope": "Residence hypothesis with matched encounter generators; six-cluster backgrounds, finite-angle local moments and collisionless residence controls",
@@ -110,7 +110,7 @@
     "analysis/residence/run.py": "2208848dac38be3c76ce4df350a4cb8c942a2fbd930214f7fac3f3b424f549fd",
     "analysis/residence/test_orbits.py": "e93a4a4fd9a3b559b567a4bf9dbbf6f86769379442fce1524a513a068d2dc405",
     "analysis/residence/test_radial_reference.py": "043539836e93cf2c16c784d18c66b3a8ec48158bbcc5e932be118f91ee419a64",
-    "analysis/residence/verify.py": "0ef1010446552a01a079a6b7f479b126c33422e08938cb38223a90790e5117a0",
+    "analysis/residence/verify.py": "2278ca5c031b04e984e3a0b6ceb0c5c99fb881c2ffba2a19e4a3d5b924553324",
     "analysis/transport/coefficients.py": "ac2fbdda2e9485987edfb7a5b314e2ebc1cc34da82b982d4a2221a50f6db025e",
     "analysis/transport/protocol.json": "439cc47f6afc423cc3204d20948be83652a87927fb06159e55d51648197c8e94",
     "analysis/transport/run.py": "431b483e245ecd7b72230b3de13a3ae3f082006a0d5505a61a3783400b0a4a22",
@@ -168,9 +168,9 @@
     "docs/step2-exposure.md": "94d90d2564db04b10faefbfe8a80e6f0775c7c11ead86675f87f98eeed12df9c",
     "docs/transport-hypothesis.md": "14b2290a67c44456e4cfb360d1b50c05daefcdf5e622c253f4eed1cad97e4a9f",
     "formulation/inputs.json": "43c6f7b16f8392ae9de0ff63ab6f47da8faf8e83fd436b791cb027bbc538b4b7",
-    "paper/CITATION.bib": "2a90ae8b40cc1141597ee8c7d8dab3ee2d2817df142d6df33d894980ebaa48b7",
-    "paper/CLAIMS.md": "a6b4c4727f07a98167e6021e8670a39bb254c47441dc017f865cb5b551110168",
-    "paper/SOURCE_README.txt": "aa954cf1cb126e7e6159f9d37eab5ef3b2015e7a554c66f595db75b52761c470",
+    "paper/CITATION.bib": "904111cb7d33f63cc2f596feea130a6d262198d1d7a08d6843b48b157676daf9",
+    "paper/CLAIMS.md": "ba2a6d1de27b463ff51014a7912340e2ff22e55342741b0c731e6225e0d27c6a",
+    "paper/SOURCE_README.txt": "147850c8d964d212b5e94cd83d7df47f40a7bdc56fd359e85c72c3eb7b3e6249",
     "paper/boundary-assets.json": "bfa99d868712bb8dad15cbee90de91c8c6f19d3b66a3cef93fc5811ce7010ecb",
     "paper/boundary_assets.py": "0f82c7dcb39391457f40ebc5087d3bdb796dc107beb2a029697ef612c0dfa714",
     "paper/build.py": "6e77d44c6b06d494905c626b6abd5023d9a267ecdeb07b5974f1dc9d78b6e4bd",
@@ -212,8 +212,8 @@
     "paper/tables/local-kernels.tex": "a111631183b473eb01f04a0c905565c309db0deb2a6ba32ecd96d318f87851a7",
     "paper/tables/outer-boundary.tex": "7590e9290f35fe23279879debfeb94f743b4d0e9ef0714648cf086c5ba54dd9c",
     "paper/toolchain.json": "23e2e59b0c21ba0e38f176c4fd55f68baa6b18e90ce274f683c19251da7a7794",
-    "paper/verify.py": "49207bcba5b8263d2d9fbec43394a0d37320941c3968d7c6b886c3697fa27c4e",
-    "paper/working.json": "58db3aa3c83f55cedefa0cdf9353c9092702bda089970e3739a36348cae3d9af",
+    "paper/verify.py": "f53fb5eaaf6ed5f856892a71e2d0c90e644f2820052e915f1175425b0dfb13cf",
+    "paper/working.json": "605c0d77e8cab38346c8b6afb7673b89d0de33c0be1b2d174da53a7b6163a530",
     "results/calculations.json": "d34916007a05f4ff287bf56fc653471624c811e637663d906f6c056a25de5510",
     "results/cluster-comparison-environment/comparison.csv": "7c8c428c5e4bebf27ce17b8d6e12be88ec88abf60f4e6c32a9335b42fed5b450",
     "results/cluster-comparison-environment/summary.json": "8873ecd60ac2d7a432d70d5d62cd69ff0a668dbca28933851b52d8ec83de2207",
@@ -234,7 +234,7 @@
     "results/collisionless-residence/NGC6121.json": "cfc38a8bc6843b549e62204cf365cfbfc045a9e1b6437ecfdaef6ff4861d7f9d",
     "results/collisionless-residence/NGC6397.json": "1dd9c7b4c73cdf11b85a2fc7914a411421fbe1ed5c7d731e39fa2307984cb960",
     "results/collisionless-residence/comparison.csv": "2640908708fa623666b3e26c3e529d0cb047eebdc6deacdfc1991d77115b2f86",
-    "results/collisionless-residence/provenance.json": "d63d5b47b2480fa626eb5c1191e7e67dee6824e94aa170fa06e2b89a52d59abe",
+    "results/collisionless-residence/provenance.json": "0cb8df6a57c22224f5db4140ebd0f8f73f25514973baf8fffd1b0d5ed8474926",
     "results/collisionless-residence/summary.json": "99c04c1c88c250bfea1b4107ac17bcd600ebc7493b1c940a6baa37e45ddb40a5",
     "results/finite-angle-encounters/NGC0104.json": "ea5f09fd3d595059f6529b14a332531006a6e3793dc77b2cd2a07fb659020234",
     "results/finite-angle-encounters/NGC1851.json": "90879e4dfa64f68b610157d4c52c7edb99717ff4bec5ad7786c36b1c861247db",
@@ -266,6 +266,6 @@
   },
   "output_sha256": {
     "output/pdf/central-residence.pdf": "9961ec9bf56be1c7dba3b38eed744e37c56cb48122242a821285e6b190931e2b",
-    "output/pdf/manuscript-source.zip": "634031f08bafd61342b989a4e06675e32bf9ad6ebcbc83987dd7c4ee2c0ce923"
+    "output/pdf/manuscript-source.zip": "d7ace6ef973dd31d92ee291cf0ad17471809916978a2af94fcbc91557b35629c"
   }
 }

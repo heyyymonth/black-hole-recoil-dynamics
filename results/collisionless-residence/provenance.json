@@ -3,7 +3,7 @@
   "scope": "Deterministic controls. Integrated encounter budgets do not change the path and do not measure collisional residence corrections, acquisition, capture, or merger probabilities. No cluster weights or observational event rates are assigned.",
   "checked_trajectories": 12,
   "checked_time_nodes": 3264,
-  "maximum_local_or_integrated_rate_partition_error": 7.771561172376096e-16,
+  "rate_partition_relative_error_limit": 1e-12,
   "input_sha256": {
     "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
     "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
@@ -15,7 +15,7 @@
     "analysis/residence/run.py": "2208848dac38be3c76ce4df350a4cb8c942a2fbd930214f7fac3f3b424f549fd",
     "analysis/residence/test_orbits.py": "e93a4a4fd9a3b559b567a4bf9dbbf6f86769379442fce1524a513a068d2dc405",
     "analysis/residence/test_radial_reference.py": "043539836e93cf2c16c784d18c66b3a8ec48158bbcc5e932be118f91ee419a64",
-    "analysis/residence/verify.py": "0ef1010446552a01a079a6b7f479b126c33422e08938cb38223a90790e5117a0",
+    "analysis/residence/verify.py": "2278ca5c031b04e984e3a0b6ceb0c5c99fb881c2ffba2a19e4a3d5b924553324",
     "results/cluster-comparison/NGC0104/reference/host.npz": "5974278d2fa89b395861acf24ccc0af9456eec222a671170dac296ceba016fab",
     "results/cluster-comparison/NGC0104/reference/summary.json": "1bd542c400434f32b7bbd3d9f54ee4d5943bed67350e76e4a910fc75abbd0862",
     "results/cluster-comparison/NGC1851/reference/host.npz": "f04cc0571ee1f000e00a3c9535394decbfa7143014c1fa99147f29c745ac24da",

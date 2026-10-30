@@ -306,7 +306,11 @@ def verify(record=False):
     provenance = {
         'revision':protocol['revision'], 'scope':protocol['interpretation'],
         'checked_trajectories':len(all_rows), 'checked_time_nodes':total_nodes,
-        'maximum_local_or_integrated_rate_partition_error':largest_partition,
+        # Recomputed sub-ulp reductions vary with the platform's BLAS. Keep
+        # the enforced threshold in provenance, rather than requiring exact
+        # JSON equality for a floating-point diagnostic. All source/output
+        # hashes and counts remain exact; every rate identity is checked above.
+        'rate_partition_relative_error_limit':1e-12,
         'input_sha256':{str(path.relative_to(ROOT)):digest(path) for path in sorted(set(input_files))},
         'output_sha256':{str(path.relative_to(ROOT)):digest(path) for path in sorted(set(output_files))},
     }
