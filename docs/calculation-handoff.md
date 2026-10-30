@@ -83,3 +83,7 @@ The [reference-orbit stage](galactic-orbit.md) supplies position, velocity, exac
 ## Matched local encounter input
 
 The [finite-angle protocol](../analysis/encounters/protocol.json) assigns a conditional elastic domain and computes its rates, moments and sampled increments in all six reference hosts. These local choices do not automatically assign the general trajectory inputs above. A trajectory implementation must carry the same law into both descriptions, supply the common lighter-species treatment, and account for the recorded excluded close-passage flux. The verified single-transition response estimator supplies an algorithm; its time-step convergence and cluster residence response remain to be established.
+
+## Collisionless dynamical control
+
+The [collisionless protocol](../analysis/residence/protocol.json) separately assigns twelve equal-energy launch states, the finite region and horizon, conservative dynamics and common validity stops. It verifies occupation independently and integrates the BH encounter law along the paths. Every collision term is disabled in the motion. These controls establish the orbit and occupation calculation; they do not assign the general merger-conditioned launch ensemble or demonstrate collisional residence accuracy.

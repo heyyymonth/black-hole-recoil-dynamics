@@ -11,4 +11,6 @@ Verified Galactic-orbit table and vector figure.
 Verified six-cluster table and vector figure.
 Verified 162 conditional finite-angle states and 600000 sampled increments; no residence results.
 Verified finite-angle encounter table and vector figure; no trajectories computed.
-Verified formulation and data manuscript 0.11.0-manuscript.2: 24 US Letter pages, 24 embedded vector fonts, current source and archive hashes, and matching citation metadata. No transport simulations performed.
+Verified 12 collisionless trajectories and 3264 recorded time nodes; no collisional residence or response result.
+Verified collisionless residence presentation; no calculations rerun.
+Verified formulation and data manuscript 0.12.0-manuscript.1: 26 US Letter pages, 25 embedded vector fonts, current source and archive hashes, and matching citation metadata. Verification reruns no physical calculations.

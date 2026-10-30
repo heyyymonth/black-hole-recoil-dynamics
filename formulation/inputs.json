@@ -51,7 +51,7 @@
     "random_seed_policy": null,
     "independent_validation_cases": null
   },
-  "result_status": "Six conditional host reconstructions, local kernels, environmental diagnostics and finite-angle BH encounter moments evaluated. No remnant trajectories or residence outcomes.",
+  "result_status": "Six conditional reference hosts, local and finite-angle encounter calculations, environmental controls, and twelve collisionless remnant paths with residence and encounter budgets. No matched collisional residence or response outcome.",
   "handoff": "docs/calculation-handoff.md",
   "execution_scope": "general remnant trajectory ensemble; stage-specific host and coefficient calculations are defined separately",
   "completed_calculations": [
@@ -82,6 +82,11 @@
       "revision": "finite-angle-encounter-1",
       "protocol": "analysis/encounters/protocol.json",
       "result": "results/finite-angle-encounters/summary.json"
+    },
+    {
+      "revision": "collisionless-residence-1",
+      "protocol": "analysis/residence/protocol.json",
+      "result": "results/collisionless-residence/summary.json"
     }
   ]
 }

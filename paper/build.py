@@ -123,8 +123,11 @@ def build():
         "version": VERSION,
         "title": source["title"],
         "pages": pdf_info["pages"],
-        "scope": "Residence hypothesis with matched encounter generators and backward occupation; six-cluster backgrounds, finite-angle local moments and sampled increments",
-        "transport_simulations_performed": False,
+        "scope": "Residence hypothesis with matched encounter generators; six-cluster backgrounds, finite-angle local moments and collisionless residence controls",
+        "transport_simulations_performed": True,
+        "collisionless_trajectories_performed": True,
+        "collisional_trajectories_performed": False,
+        "trajectory_calculations": {"collisionless_reference":"collisionless-residence-1", "recomputed_during_build":False},
         "matched_encounter_comparison_performed": False,
         "local_calculations": {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "boundary": "outer-boundary-1", "galactic_orbit": "galactic-orbit-1", "cross_cluster_comparison": "six-cluster-comparison-1", "finite_angle_encounters": "finite-angle-encounter-1", "recomputed_during_build": False},
         "executed_during_build": [],
@@ -149,7 +152,7 @@ def build():
     }
     (OUT / "build.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print(f"Built {pdf_info['pages']}-page formulation and data manuscript {VERSION} "
-          "and portable source archive. Reused verified data assets; no transport simulations performed.")
+          "and portable source archive. Reused verified assets; no calculations executed during build.")
 
 
 if __name__ == "__main__":

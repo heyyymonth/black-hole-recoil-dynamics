@@ -12,15 +12,17 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.11.0-manuscript.2"
-TAG = "manuscript-v0.11.0.2"
+VERSION = "0.12.0-manuscript.1"
+TAG = "manuscript-v0.12.0.1"
 DATA_REVISION = "cluster-data-v0.1.0"
 CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
 TABLE_ASSETS = (
+    "tables/collisionless-residence.tex",
     "tables/finite-angle-encounters.tex", "tables/cluster-coverage.tex", "tables/cluster-scales.tex",
     "tables/cluster-posterior.tex", "tables/cluster-transport-comparison.tex", "tables/host-validation.tex", "tables/local-kernels.tex", "tables/outer-boundary.tex", "tables/galactic-orbit.tex",
 )
 FIGURE_ASSETS = (
+    "figures/collisionless-residence.pdf",
     "figures/finite-angle-encounters.pdf", "figures/cluster-hst.pdf", "figures/cluster-host-comparison.pdf",
     "figures/cluster-coverage.pdf", "figures/cluster-transport-comparison.pdf", "figures/host-projections.pdf", "figures/scattering-composition.pdf", "figures/outer-boundary.pdf", "figures/galactic-orbit.pdf",
 )
@@ -57,6 +59,12 @@ ENCOUNTER_FILES = tuple(sorted({
     *(str(p.relative_to(ROOT)) for p in (ROOT / "analysis/encounters").glob("*.py")),
     *(str(p.relative_to(ROOT)) for p in (ROOT / "results/finite-angle-encounters").glob("*.json")),
 }))
+RESIDENCE_FILES = tuple(sorted({
+    "docs/collisionless-residence.md", "analysis/residence/README.md",
+    "analysis/residence/protocol.json", "results/collisionless-residence/comparison.csv",
+    *(str(p.relative_to(ROOT)) for p in (ROOT / "analysis/residence").glob("*.py")),
+    *(str(p.relative_to(ROOT)) for p in (ROOT / "results/collisionless-residence").glob("*.json")),
+}))
 ARCHIVE_SOURCE_FILES = {
     "manuscript.tex": "paper/manuscript.tex",
     "references.bib": "paper/references.bib",
@@ -71,6 +79,8 @@ ARCHIVE_SOURCE_FILES = {
     "evidence/paper-orbit-assets.json": "paper/orbit-assets.json",
     "evidence/paper-comparison-assets.json": "paper/comparison-assets.json",
     "evidence/paper-encounter-assets.json": "paper/encounter-assets.json",
+    "evidence/paper-residence-assets.json": "paper/residence-assets.json",
+    **{f"evidence/residence/{name}": name for name in RESIDENCE_FILES},
     **{f"evidence/encounters/{name}": name for name in ENCOUNTER_FILES},
     **{f"evidence/comparison/{name}": name for name in COMPARISON_FILES},
     **{f"evidence/orbit/{name}": name for name in ORBIT_FILES if name not in {*CALCULATION_FILES, *BOUNDARY_FILES}},
@@ -88,7 +98,7 @@ INPUT_FILES = tuple(sorted({
     "paper/data_assets.py", "paper/data_figures.py", "paper/calculation_assets.py", "paper/calculation_figures.py", "docs/local-transport-calculations.md", "docs/host-reconstruction-protocol.md",
     "paper/boundary_assets.py", "docs/outer-boundary.md", "analysis/boundary/README.md",
     "paper/orbit_assets.py", "docs/galactic-orbit.md", "analysis/orbit/README.md", "data/orbit/README.md",
-    "paper/encounter_assets.py", "paper/comparison_assets.py", "paper/build.py", "paper/verify.py", "paper/requirements.txt",
+    "paper/residence_assets.py", "paper/encounter_assets.py", "paper/comparison_assets.py", "paper/build.py", "paper/verify.py", "paper/requirements.txt",
     "paper/toolchain.json", "paper/working.json", "paper/CLAIMS.md",
     "docs/problem.md", "docs/step1-transport.md", "docs/step2-exposure.md",
     "docs/recoil-transport-theory.md", "docs/calculation-handoff.md",
@@ -120,9 +130,12 @@ def source_metadata(root):
     state = json.loads((paper / "working.json").read_text())
     require(state.get("compile_enabled") is True,
             "Working manuscript source is not ready for compilation (paper/working.json)")
-    require(state.get("status") == "theory-data-and-local-calculations-draft", "Expected a formulation and data-analysis draft")
+    require(state.get("status") == "theory-data-and-controlled-dynamics-draft", "Expected a controlled-dynamics draft")
     require(state.get("data_analysis_performed") is True, "Completed data analysis must be recorded")
-    require(state.get("transport_simulations_performed") is False, "No transport simulation is reported")
+    require(state.get("transport_simulations_performed") is True
+            and state.get("collisionless_trajectories_performed") is True
+            and state.get("collisional_trajectories_performed") is False,
+            "Only collisionless reference trajectories are reported")
     require(state.get("matched_encounter_comparison_performed") is False,
             "Matched residence comparison remains a proposed calculation")
     require(state.get("finite_angle_local_calculations_performed") is True and state.get("cluster_residence_response_evaluated") is False,
@@ -225,7 +238,9 @@ def verify_evidence(root=ROOT):
                     [sys.executable, str(root / "analysis/cluster_comparison/verify.py")],
                     [sys.executable, str(root / "paper/comparison_assets.py"), "--verify"],
                     [sys.executable, str(root / "analysis/encounters/verify.py")],
-                    [sys.executable, str(root / "paper/encounter_assets.py"), "--verify"]):
+                    [sys.executable, str(root / "paper/encounter_assets.py"), "--verify"],
+                    [sys.executable, str(root / "analysis/residence/verify.py")],
+                    [sys.executable, str(root / "paper/residence_assets.py"), "--verify"]):
         subprocess.run(command, cwd=root, check=True)
 
 
@@ -235,7 +250,13 @@ def verify(root=ROOT):
     require(meta["version"] == VERSION, "Unexpected manuscript version")
     require(set(meta["input_sha256"]) == set(INPUT_FILES), "Unexpected manuscript input inventory")
     require(set(meta["output_sha256"]) == OUTPUT_FILES, "Unexpected manuscript output inventory")
-    require(meta.get("transport_simulations_performed") is False, "No transport simulation is reported")
+    require(meta.get("transport_simulations_performed") is True
+            and meta.get("collisionless_trajectories_performed") is True
+            and meta.get("collisional_trajectories_performed") is False,
+            "Only collisionless reference trajectories are reported")
+    require(meta.get("trajectory_calculations") == {
+        "collisionless_reference":"collisionless-residence-1", "recomputed_during_build":False},
+        "Incorrect collisionless calculation provenance")
     require(meta.get("matched_encounter_comparison_performed") is False,
             "The matched encounter comparison has not been executed")
     require(meta.get("local_calculations") == {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "boundary": "outer-boundary-1", "galactic_orbit": "galactic-orbit-1", "cross_cluster_comparison": "six-cluster-comparison-1", "finite_angle_encounters": "finite-angle-encounter-1", "recomputed_during_build": False}, "Incorrect calculation provenance")
@@ -279,7 +300,7 @@ def verify(root=ROOT):
             "Recorded embedded font count mismatch")
     print(f"Verified formulation and data manuscript {VERSION}: {pdf_info['pages']} US Letter pages, "
           f"{pdf_info['embedded_vector_fonts']} embedded vector fonts, current source and archive hashes, "
-          "and matching citation metadata. No transport simulations performed.")
+          "and matching citation metadata. Verification reruns no physical calculations.")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
 [tool.pytest.ini_options]
 minversion = "8.2"
-testpaths = ["analysis/host_reconstruction", "analysis/transport", "analysis/boundary", "analysis/orbit", "analysis/encounters", "tests"]
+testpaths = ["analysis/host_reconstruction", "analysis/transport", "analysis/boundary", "analysis/orbit", "analysis/encounters", "analysis/residence", "tests"]
 addopts = "--strict-config --strict-markers"

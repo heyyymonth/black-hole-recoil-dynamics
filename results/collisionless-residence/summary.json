@@ -1,0 +1,11 @@
+{
+  "revision": "collisionless-residence-1",
+  "scope": "Full-host collisionless reference trajectories and encounter budgets evaluated on them; not collisional residence or a matched-response test",
+  "trajectories": 12,
+  "accepted_trajectories": 12,
+  "all_numerical_checks_passed": true,
+  "collisionless_trajectories_performed": true,
+  "collisional_trajectories_performed": false,
+  "residence_response_evaluated": false,
+  "interpretation": "Deterministic controls. Integrated encounter budgets do not change the path and do not measure collisional residence corrections, acquisition, capture, or merger probabilities. No cluster weights or observational event rates are assigned."
+}

@@ -1,0 +1,89 @@
+{
+  "revision": "collisionless-residence-1",
+  "clusters": [
+    "NGC0104",
+    "NGC1851",
+    "NGC3201",
+    "NGC5139",
+    "NGC6121",
+    "NGC6397"
+  ],
+  "scope": "Full-host collisionless reference trajectories and encounter budgets evaluated on them; not collisional residence or a matched-response test",
+  "host_selection": "Existing verified six conditional reference realizations",
+  "units": {
+    "position": "pc",
+    "velocity": "km/s",
+    "time": "Myr"
+  },
+  "remnant_mass_Msun": 60.0,
+  "gravity": "Gradient of the existing spherical relative potential, all physical host species; no remnant self-gravity",
+  "collisions_in_dynamics": "Disabled for every species; BH finite-angle rates and moments evaluated as path diagnostics only",
+  "external_force": "Omitted within each host's previously verified 1-percent isolated-force domain; bound is instantaneous, not accumulated orbit accuracy",
+  "launch": {
+    "radius_over_density_radius": 0.5,
+    "radial_apocenter_over_density_radius": 2.0,
+    "speed": "sqrt(2*(psi(r0)-psi(2*r_rho)))",
+    "orientations": [
+      "radial_outward",
+      "tangential"
+    ],
+    "interpretation": "Equal-energy diagnostic launch states, not a merger-conditioned population or a recoil-only velocity"
+  },
+  "time_scale": "t_dyn=r_rho/sqrt(-r_rho*psi_prime(r_rho)) in physical time units",
+  "horizon_over_t_dyn": 10.0,
+  "region": "Strict sphere r<r_rho; integrate every visit; no permanent rest on return",
+  "stop": "First outward crossing of min(host support, recorded minimum 1-percent force-domain radius), or horizon; outside launches stop at zero; boundary stop is validity censoring, not escape",
+  "encounter_protocol": "analysis/encounters/protocol.json",
+  "bmax_over_local_scale": 0.1,
+  "orbital_refinement": [
+    {
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "max_step": 0.04,
+      "boundary_tolerance": 1e-09
+    },
+    {
+      "rtol": 1e-11,
+      "atol": 1e-13,
+      "max_step": 0.02,
+      "boundary_tolerance": 1e-11
+    }
+  ],
+  "time_quadrature_orders_per_phase": [
+    8,
+    16,
+    32
+  ],
+  "velocity_quadrature_orders": [
+    20,
+    28,
+    40,
+    56
+  ],
+  "independent_radial_orders": [
+    64,
+    128
+  ],
+  "track_samples": 501,
+  "acceptance": {
+    "energy_drift_over_vdyn_squared": 1e-07,
+    "angular_momentum_drift_over_rho_vdyn": 1e-07,
+    "orbit_state_refinement_dimensionless": 1e-06,
+    "residence_refinement_over_horizon": 1e-06,
+    "independent_residence_difference_over_horizon": 1e-06,
+    "budget_time_relative_refinement": 0.005,
+    "density_exposure_time_absolute_refinement": 1e-05,
+    "local_moment_relative_refinement": 0.005,
+    "local_number_density_relative_error": 0.002
+  },
+  "observables": [
+    "stopped collisionless residence divided by declared horizon",
+    "BH density exposure divided by central density and declared horizon",
+    "integrated allowed BH elastic rate on the prescribed collisionless path",
+    "integrated excluded incoming flux on that path, not capture probability",
+    "integrated drift norm divided by launch speed",
+    "integrated diffusion trace divided by squared launch speed"
+  ],
+  "interpretation": "Deterministic controls. Integrated encounter budgets do not change the path and do not measure collisional residence corrections, acquisition, capture, or merger probabilities. No cluster weights or observational event rates are assigned.",
+  "velocity_quadrature_frame": "Relative-velocity ball of radius local_escape_speed+remnant_speed; field DF evaluated at u=v-w, exactly zero outside its original support; sinh radial scale min sqrt(s2j)"
+}

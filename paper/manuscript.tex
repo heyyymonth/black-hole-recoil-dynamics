@@ -14,7 +14,7 @@
 \affiliation{Independent researcher}
 
 \begin{abstract}
-Black-hole mergers in stellar clusters leave remnants whose recoil can carry them repeatedly through regions of different stellar density and composition. Their subsequent availability for dynamical interactions depends on the time spent in those environments, as well as on whether they remain bound. We study how gravitational encounters determine finite-time residence and species-resolved exposure. Published multimass distributions for six Galactic clusters provide the adopted potentials and scattering backgrounds. Reconstructions, local anisotropic collision calculations and Galactic environmental controls connect these backgrounds to a merger-conditioned transport formulation. The calculations reveal distinct radial profiles of the black-hole contribution to velocity diffusion. Finite-angle encounter calculations specify a common collision law and separate event frequency from individual deflection strength. We formulate the hypothesis that the accuracy of continuous transport for residence depends on the encounter increments sampled along the orbit and on how those increments change the expected remaining occupation. A matched comparison retains either the full local encounter transitions or their first two velocity-change moments. A backward occupation equation relates their difference in mean residence to a nonlocal generator residual, defining a route from local scattering physics to an observable accuracy criterion. Finite-population response and time-dependent host evolution enter as separate controlled comparisons. The reported results establish the backgrounds, matched local moments and encounter samples for this investigation; the matched residence predictions remain to be evaluated.
+Black-hole mergers in stellar clusters leave remnants whose recoil can carry them repeatedly through regions of different stellar density and composition. Their subsequent availability for dynamical interactions depends on the time spent in those environments, as well as on whether they remain bound. We study how gravitational encounters determine finite-time residence and species-resolved exposure. Published multimass distributions for six Galactic clusters provide the adopted potentials and scattering backgrounds. Reconstructions, local anisotropic collision calculations and Galactic environmental controls connect these backgrounds to a merger-conditioned transport formulation. The calculations reveal distinct radial profiles of the black-hole contribution to velocity diffusion. Finite-angle encounter calculations specify a common collision law and separate event frequency from individual deflection strength. We formulate the hypothesis that the accuracy of continuous transport for residence depends on the encounter increments sampled along the orbit and on how those increments change the expected remaining occupation. A matched comparison retains either the full local encounter transitions or their first two velocity-change moments. A backward occupation equation relates their difference in mean residence to a nonlocal generator residual, defining a route from local scattering physics to an observable accuracy criterion. Finite-population response and time-dependent host evolution enter as separate controlled comparisons. Collisionless controls connect these backgrounds to finite-time residence and encounter budgets along equal-energy launches. The matched collisional residence predictions and their response estimate remain to be evaluated.
 
 \end{abstract}
 \maketitle
@@ -31,7 +31,7 @@ Our primary question is when a continuous drift-and-diffusion description preser
 
 Step~1 defines merger-conditioned transport in position and velocity, with a consistent matter inventory, reference frame and encounter prescription. Step~2 defines entry, residence and species-resolved exposure on the resulting histories. Their common output is a timed description of occupation; it retains continued motion after entry and the status of incomplete histories.
 
-We use published multimass-model posteriors for six Galactic clusters as the dynamical backgrounds~\cite{Gieles2015,Dickson2023,Dickson2024}. Each adopted realization supplies a potential and mass-resolved phase-space distributions. Reference reconstructions and a joint-parameter sensitivity pilot establish different reservoir sizes and radial scattering profiles. A detailed NGC 3201 calculation develops the host-to-collision connection, and the same calculations extend across the six hosts. Galactic reference orbits supply their external-force diagnostics. Finite-angle calculations then provide event rates, matched moments and samples from one common encounter law. These completed results determine the environments and local collision inputs used to formulate the residence comparison; they are not yet its trajectory outcomes.
+We use published multimass-model posteriors for six Galactic clusters as the dynamical backgrounds~\cite{Gieles2015,Dickson2023,Dickson2024}. Each adopted realization supplies a potential and mass-resolved phase-space distributions. Reference reconstructions and a joint-parameter sensitivity pilot establish different reservoir sizes and radial scattering profiles. A detailed NGC 3201 calculation develops the host-to-collision connection, and the same calculations extend across the six hosts. Galactic reference orbits supply their external-force diagnostics. Finite-angle calculations then provide event rates, matched moments and samples from one common encounter law. Collisionless reference paths then measure finite-time residence and path-integrated encounter budgets in each host. These calculations establish the dynamical controls; the matched comparison of collisional residence remains to be evaluated.
 
 \section{Observational inputs and comparison method}\label{sec:data-method}
 
@@ -807,13 +807,13 @@ Step~2 attaches crossing events, residence, species exposures, and a time-augmen
 
 \subsection{Acceptance criteria before physical interpretation}
 
-The host and local-coefficient checks in Sec.~\ref{sec:local-calculation} establish dimensional consistency, force--potential agreement, number-to-mass normalization, and positive-semidefinite diffusion for the stated realization and evaluation grid. The following trajectory requirements remain unexecuted. The implementation must preserve the It\^o convention and account for probability lost at each boundary or stop. Appropriate conservative and analytically justified stochastic limits provide independent checks, including the energy identity in Eq.~\eqref{eq:energy-balance}.
+The host and local-coefficient checks in Sec.~\ref{sec:local-calculation} establish dimensional consistency, force--potential agreement, number-to-mass normalization, and positive-semidefinite diffusion for the stated realization and evaluation grid. Section~\ref{sec:collisionless-residence} verifies conservative trajectories and finite-region occupation. The following stochastic requirements remain unexecuted. The implementation must preserve the It\^o convention and account for probability lost at each boundary or stop. Appropriate conservative and analytically justified stochastic limits provide independent checks, including the energy identity in Eq.~\eqref{eq:energy-balance}.
 
 Entry and residence calculations must distinguish tangencies from crossings, handle interior, exterior, and boundary launches, and account for moving regions. Brief passages must remain resolved under a declared refinement procedure. Convergence is needed for the relevant distributions and accumulated observables, not solely for a few representative trajectories. Numerical and sampling errors must be separated from uncertainty in physical inputs.
 
 Where both representations exist, path averages and the survival-weighted identities in Eqs.~\eqref{eq:mean-residence} and \eqref{eq:mean-exposure} should agree within declared numerical accuracy. Comparisons testing a physical simplification must hold the conditional population, horizon, region, and remaining inputs fixed. A useful result could identify a regime in which a reduction preserves the observables, or a discrepancy establishing which additional information is required.
 
-Internal agreement does not calibrate the collision model. Comparison with independently resolved dynamics appropriate to the host and encounter regime is needed before interpreting predictions as quantitatively reliable. Host and coefficient quadrature controls are specified for the completed calculation. A trajectory solver, ensemble precision, physical encounter-scale partition and calibration test have not yet been supplied.
+Internal agreement does not calibrate the collision model. Comparison with independently resolved dynamics appropriate to the host and encounter regime is needed before interpreting predictions as quantitatively reliable. Host and coefficient quadrature controls are specified for the completed calculation. A deterministic orbit solver and diagnostic launches are supplied in Sec.~\ref{sec:collisionless-residence}. Stochastic ensemble precision, a physically calibrated encounter partition and a resolved-dynamics calibration test remain to be supplied.
 
 \section{Residence hypothesis and controlled encounter comparison}\label{sec:hypothesis}
 
@@ -920,6 +920,51 @@ All 162 local settings meet the declared numerical criteria. Successive velocity
 
 Table~\ref{tab:finite-angle-encounters} separates event frequency from the size of an individual velocity change. These are different physical ingredients of the residence hypothesis. A substantial per-event deflection can be infrequently sampled, while a larger rate can produce many smaller changes. Their consequences require the remnant's time-dependent sampling of the host. The cutoff controls and the recorded close-passage channel specify candidate matched comparisons; the calculation does not evolve a remnant or assign a residence-accuracy class.
 
+\subsection{Collisionless residence and path-integrated encounters}\label{sec:collisionless-residence}
+
+We next connect the local encounter law to timed motion in each of the six adopted potentials. The reference calculation suppresses collisions for every species while retaining their full smooth gravitational field. It measures the zero-collision occupation and evaluates encounter budgets along the resulting paths. The budgets do not feed back on the motion. This control isolates the orbital and occupation calculations needed before comparing collisional descriptions.
+
+With the BH density radius defined above, set
+\begin{align}
+v_{\rm dyn}&=\sqrt{-r_\rho\psi'(r_\rho)},\qquad
+t_{\rm dyn}=r_\rho/v_{\rm dyn},\nonumber\\
+r_{\rm i}&=0.5r_\rho,\qquad
+v_{\rm launch}=\sqrt{2[\psi(r_{\rm i})-\psi(2r_\rho)]}.
+\label{eq:collisionless-launch}
+\end{align}
+For each host, one launch is radially outward and one is tangential, with the same speed and energy. The radial apocenter is $2r_\rho$; the tangential turning points follow from its nonzero angular momentum. These are conditional total velocities, not inferred recoil velocities or a merger-selected population. The horizon is $T=10t_{\rm dyn}$, not ten orbital periods, and the region is $r<r_\rho$.
+
+The Cartesian equations use $\ddot{\mathbf r}=\psi'(r)\mathbf r/r$ from the same potential as the launch energy. A path stops at the horizon or the first outward crossing of the smaller of the host support and its recorded minimum one-percent isolated-force domain. The latter is a validity boundary, not an escape surface or an accumulated orbit-error bound. All twelve reference paths reach the horizon inside their control domains. Every core visit contributes to the collisionless residence $C_T^{(0)}$; no remnant is brought to rest after returning.
+
+Along each path, the actual velocity is rotated into the local radial/tangential frame to evaluate the anisotropic BH distribution. The finite-angle law uses $b_{\max}=0.1L(r)$ and Eq.~\eqref{eq:elastic-domain-floor}. Define the dimensionless path budgets
+\begin{align}
+\mathcal H_{\rm el}&=\int_0^{T_*}\Gamma_{\rm el}(X_t^{(0)})\,dt,\qquad
+\mathcal H_{\rm exc}=\int_0^{T_*}\Gamma_{\rm exc}(X_t^{(0)})\,dt,\nonumber\\
+B_A&=\frac{1}{v_{\rm launch}}\int_0^{T_*}|\mathbf A_\nu(X_t^{(0)})|\,dt,\nonumber\\
+B_D&=\frac{1}{v_{\rm launch}^2}\int_0^{T_*}\operatorname{tr}\mathsf D_\nu(X_t^{(0)})\,dt.
+\label{eq:collisionless-budgets}
+\end{align}
+Here $X_t^{(0)}$ is the prescribed collisionless path. These quantities describe its accumulated encounter intensity and moment scales. They are not realized encounter counts, capture probabilities, velocity changes, or corrections to residence. In particular, $B_A$ discards vector cancellation and neither moment budget accounts for the altered path after an encounter. We also integrate $\rho_{\rm BH}(r(t))/\rho_{\rm BH}(0)$ and divide by the declared horizon to retain the same exposure convention in both launch directions.
+
+\input{tables/collisionless-residence.tex}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/collisionless-residence.pdf}
+\caption{Collisionless residence and the allowed BH encounter rate integrated along the same reference paths. Launches have equal energy within each host but different angular momenta. The horizon retains their initial phases. The lower panel measures a path diagnostic; collisions are not applied to the trajectories.}
+\label{fig:collisionless-residence}
+\end{figure*}
+
+An independent calculation uses the spherical radial equation,
+\begin{equation}
+\dot r^2=2[E+\psi(r)]-\ell^2/r^2,
+\label{eq:radial-residence-control}
+\end{equation}
+with specific energy $E$ and angular-momentum magnitude $\ell$. Integrating between its independently determined turning points gives residence at the actual launch phase and finite horizon. A sine-squared radial substitution resolves the endpoint roots. This check does not use the Cartesian crossing times. The Cartesian calculation is separately refined in step size and tolerance, and energy and angular momentum are monitored. All twelve controls pass: the independent residence discrepancy divided by the horizon is below $8\times10^{-10}$, and the maximum energy drift divided by $v_{\rm dyn}^2$ is below $8\times10^{-9}$. These are numerical agreement measures for the adopted potential, not uncertainty estimates for the physical host.
+
+The path integrals split at region crossings and radial turning points, including central passages. Their positive velocity quadrature is centered on relative velocity, with the field distribution evaluated at $\mathbf u=\mathbf v-\mathbf w$. The integration ball contains its full shifted support. This resolves the close-passage flux near $w=0$ without altering the encounter law. Separate time and velocity refinement use a 0.5\% criterion for the encounter budgets and local moments; normalized density-exposure refinement is below $10^{-5}$. Allowed and excluded rates recover the parent incoming flux.
+
+Table~\ref{tab:collisionless-residence} and Fig.~\ref{fig:collisionless-residence} show that equal energy does not fix finite-time residence. The ordering of radial and tangential occupation changes across these conditional settings; it depends on angular momentum and the phase reached at the finite horizon. This is not a universal directional preference or an encounter-induced effect. The residence fractions span 0.2625--0.3161, while $\mathcal H_{\rm el}$ spans approximately 0.0248--3.53. The common dimensionless horizon corresponds to 0.0208--1.67 Myr across hosts; the encounter budgets reflect both their local rates and these different physical durations. These controls supply verified crossing and occupation machinery, but the residence response to friction and finite deflections still requires the matched stochastic calculation.
+
 \subsection{From local increments to expected residence}
 
 For a nonnegative occupation weight $q(t,x)$, define the expected remaining accumulation in the diffusion process,
@@ -944,7 +989,7 @@ Let $O_q=\int_0^{T_*}q(s,X_s)\,ds$. For the same initial law in both processes, 
 &=\int\Big[\bar U_D(\mathbf r,\mathbf v+\boldsymbol\xi)-U_D(x)
 -\boldsymbol\xi\cdot\nabla_{\mathbf v}U_D\nonumber\\
 &\hspace{13mm}-\tfrac12(\boldsymbol\xi\boldsymbol\xi^{\mathsf T}):
-\nabla_{\mathbf v}^2U_D\Big],\nu_{t,x}(d\boldsymbol\xi).
+\nabla_{\mathbf v}^2U_D\Big]\,\nu_{t,x}(d\boldsymbol\xi).
 \label{eq:nonlocal-residual}
 \end{align}
 Time arguments on $U_D$ in the last expression are suppressed. To obtain Eq.~\eqref{eq:occupation-residual}, apply the stopped Dynkin identity~\cite{Dynkin1956} to $U_D$ along the jump process, substitute Eq.~\eqref{eq:backward-residence}, and use the zero endpoint payoff. This is an application of standard generator calculus, supplying a theoretical relation rather than a numerical result.
@@ -1033,7 +1078,7 @@ The proposed matched generators isolate the reduction of finite encounter increm
 
 Finite-population response and host evolution are separate extensions of this comparison. Resolving reciprocal encounters tests memory and reservoir response; retaining time-dependent Galactic forcing and evolving the host tests the background through which the remnant moves. Keeping these comparisons distinct makes an observed difference interpretable and identifies which added physics is required for a specified accuracy.
 
-The current evidence consists of host reconstructions, local kernels, joint-row sensitivity, environmental diagnostics and finite-angle encounter calculations. The latter establish event frequency and deflection amplitude separately, with a shared sampler and moment law. The implemented single-transition replacement provides a numerical route to an independently recorded response prediction, once trajectory and occupation convergence have been established. The next theoretical result sought is a residence-accuracy criterion tested against matched encounter dynamics across these adopted environments. No such criterion is empirically established here, and no remnant residence ensemble has yet been computed. Timed trajectories from a validated calculation could subsequently support companion-access physics with an additional target population and interaction law; density exposure by itself remains distinct from an encounter count or merger probability.
+The current evidence consists of host reconstructions, local kernels, joint-row sensitivity, environmental diagnostics, finite-angle encounter calculations and collisionless residence controls. The encounter law establishes event frequency and deflection amplitude separately, with a shared sampler and moment law. The control paths show how angular momentum and launch phase affect finite-time residence at fixed energy, and connect local encounter rates to the environments actually sampled. The implemented single-transition replacement provides a numerical route to an independently recorded response prediction, once stochastic trajectory and occupation convergence have been established. The next theoretical result sought is a residence-accuracy criterion tested against matched encounter dynamics across these adopted environments. No such criterion is empirically established here, and no matched collisional residence ensemble has yet been computed. Timed trajectories from a validated calculation could subsequently support companion-access physics with an additional target population and interaction law; density exposure by itself remains distinct from an encounter count or merger probability.
 
 \appendix
 \section{Conservative Galactic-force bound}\label{app:force-bound}

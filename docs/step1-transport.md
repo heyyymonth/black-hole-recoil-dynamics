@@ -1,6 +1,6 @@
 # Step 1: merger-conditioned recoil transport
 
-**Researcher: Venkata Hemanth Athota. Status: host and local coefficient calculations completed for one NGC 3201 realization; trajectory implementation and physical calibration pending.**
+**Researcher: Venkata Hemanth Athota. Status: six reference hosts, local encounter laws and collisionless diagnostic trajectories evaluated; matched collisional ensembles and physical calibration pending.**
 
 ## Physical question
 

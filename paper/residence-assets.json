@@ -1,0 +1,22 @@
+{
+  "scope": "Collisionless reference paths and BH encounter integrals; no collisional dynamics",
+  "input_sha256": {
+    "paper/residence_assets.py": "2a236ad396c56d8ffb4457805556a4e09ff1f8bf34f1bf7e29e0e13d0ec8a550",
+    "analysis/residence/protocol.json": "0d66c27456f00377e1b86363b7958b723078425483e88763112b0ae2ad0cc39d",
+    "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+    "results/collisionless-residence/summary.json": "99c04c1c88c250bfea1b4107ac17bcd600ebc7493b1c940a6baa37e45ddb40a5",
+    "results/collisionless-residence/comparison.csv": "2640908708fa623666b3e26c3e529d0cb047eebdc6deacdfc1991d77115b2f86",
+    "results/collisionless-residence/NGC0104.json": "3e931936f37a36ee3e9f609e31d0b1c00b219be420bec3b18ab7c8bb9e2dd497",
+    "results/collisionless-residence/NGC1851.json": "7f7395479551fd5ce10a5572b647c702ceb4ae0e22e4ed842feb339c5c9ba676",
+    "results/collisionless-residence/NGC3201.json": "9242bda3f9eb10637ac21b4bc9968c3f915e169a2ad2d4691f336bb854ad331d",
+    "results/collisionless-residence/NGC5139.json": "7edcc44f90c2dc899629642cf2781c6ea22759270165fc70d2be39fe9ac41b2a",
+    "results/collisionless-residence/NGC6121.json": "cfc38a8bc6843b549e62204cf365cfbfc045a9e1b6437ecfdaef6ff4861d7f9d",
+    "results/collisionless-residence/NGC6397.json": "1dd9c7b4c73cdf11b85a2fc7914a411421fbe1ed5c7d731e39fa2307984cb960"
+  },
+  "output_sha256": {
+    "paper/tables/collisionless-residence.tex": "6d62796344021d9eafa838a027fe13a21bd4e39aecc423a4f5b3b69f20238cec",
+    "paper/figures/collisionless-residence.pdf": "9af5ea54171c2f8ac78416214f86786677c0390d4f13838cbff2f95a08cd137a",
+    "results/collisionless-residence/diagnostics.pdf": "9af5ea54171c2f8ac78416214f86786677c0390d4f13838cbff2f95a08cd137a",
+    "results/collisionless-residence/diagnostics.png": "76956bae63feb897b0770807cbae7c90fc861b902b88f8c071c2f91cc6efa103"
+  }
+}

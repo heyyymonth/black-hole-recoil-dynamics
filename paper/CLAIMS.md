@@ -1,8 +1,8 @@
 # Claim-to-evidence record
 
-Manuscript revision 0.11.0-manuscript.2. Author: Venkata Hemanth Athota.
+Manuscript revision 0.12.0-manuscript.1. Author: Venkata Hemanth Athota.
 
-The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. A detailed NGC 3201 benchmark is extended to six conditional reference hosts and 120 local states, 48 joint-row pilot attempts, 18 common static controls and 24 Galactic reference orbits. It reports no new observational fit, remnant trajectory ensemble or calibrated residence prediction.
+The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. A detailed NGC 3201 benchmark is extended to six conditional reference hosts and 120 local states, 48 joint-row pilot attempts, 18 common static controls and 24 Galactic reference orbits. It additionally reports twelve deterministic collisionless reference paths, their residence and path-integrated encounter budgets. It reports no new observational fit or calibrated collisional residence prediction.
 
 | Statement | Basis | Boundary |
 |---|---|---|
@@ -37,7 +37,7 @@ The paper defines a two-step transport and exposure problem and reports the comp
 | Neglected-force bounds reach 1.73% at rh and 29.5% at 3rh. | Time-dependent field with the unchanged reconstructed enclosed mass. | Bounds rather than measured accelerations; retaining exact tides removes this omitted-force error, not other host limitations. |
 | The frozen-frame scale is 62.1–183.9 pc and the Euler/effective-eigenvalue ratio reaches 0.67. | Instantaneous tensor, radial-frame angular velocity and its derivative. | Not a stationary Jacobi surface, escape rule, or stripping calculation. |
 | The forcing/dynamical-timescale indicator reaches 1.16 at rh. | Fixed-frame tensor derivative; independent norm-only indicator reaches 1.14. | Not a heating rate or proof of disruption; identifies an approximation requiring validation. |
-| Galactic reference motion is calculated, but the host has not been tidally re-equilibrated. | Source/model scope and explicit host evolution equation. | No fitted tidal distribution, remnant trajectories, or calibrated residence predictions are supplied. |
+| Galactic reference motion is calculated, but the host has not been tidally re-equilibrated. | Source/model scope and explicit host evolution equation. | This Galactic-orbit stage supplies no fitted tidal distribution or calibrated collisional residence prediction. |
 
 Analytical consistency differs from numerical verification and physical validation. Raw-file checks and independent recomputation support the stated data calculations. Build and documentation checks assess source integrity and presentation. New observational measurements, publication-level novelty, dynamical calibration, companion-acquisition rates and merger probabilities are not claimed. The manuscript cites primary source studies, not this project's experiment records or software-tool references.
 
@@ -55,7 +55,7 @@ The primary question is when a continuous encounter approximation preserves fini
 
 A separate proposed predictor averages that residual under the diffusion process. It is the first response along an auxiliary interpolation of matched generators; its prediction at the full jump endpoint is untested and need not be accurate. The hypothesis can be tested against sign, magnitude and accuracy class of the measured residence change. Bounds for means do not establish distributional agreement.
 
-The prescribed controls separate finite transitions, integer-population correlations and reciprocal response, and evolving-host/tidal effects. Resolved BH forces replace their smooth gravitational and collision contributions. A resolved two-body channel is not also used as a strong-encounter stop. Unresolved channels retain common censoring rules. Finite-domain encounter controls are now evaluated locally. No integer-population sampling law, trajectory ensemble, cluster residence residual or accuracy classification has been evaluated.
+The prescribed controls separate finite transitions, integer-population correlations and reciprocal response, and evolving-host/tidal effects. Resolved BH forces replace their smooth gravitational and collision contributions. A resolved two-body channel is not also used as a strong-encounter stop. Unresolved channels retain common censoring rules. Finite-domain encounter controls are now evaluated locally. No integer-population sampling law, matched collisional trajectory ensemble, cluster residence residual or accuracy classification has been evaluated.
 
 Primary grounding: Rosenbluth et al. (1957), Tep et al. (2022), Webb et al. (2018), and Dynkin (1956). Bar-Or et al. (2013) supplies related encounter-distribution context in a different massive-black-hole nuclear setting; no numerical result is transferred from that setting.
 
@@ -68,3 +68,9 @@ The diagnostic fraction of diffusion trace with b90 greater than the local densi
 The single-transition replacement algorithm is verified against exact finite-state derivatives, numerical differentiation and independent per-path random streams. Its application to a cluster residence observable and its continuous-time convergence remain uncomputed.
 
 Evidence: `analysis/encounters/protocol.json`, `results/finite-angle-encounters/provenance.json`, per-host tensors and samples, `analysis/encounters/test_physics.py`, `analysis/encounters/test_response.py`.
+
+## Collisionless residence controls
+
+Twelve diagnostic trajectories retain all-species smooth gravity and disable all collisions. Equal-energy radial and tangential launches have different angular momenta and finite-horizon occupation. The Cartesian crossing calculation is checked against an independent spherical energy/angular-momentum integral and numerical refinement. BH finite-angle rates, excluded flux and moment scales are integrated along the prescribed paths; they do not change those paths and are not corrected residence or capture probabilities.
+
+Evidence: `analysis/residence/protocol.json`, `results/collisionless-residence/provenance.json`, the per-host records and analytical orbit tests. The full matched collisional response hypothesis remains untested.
