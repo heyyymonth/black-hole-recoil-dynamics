@@ -36,12 +36,22 @@ def test_kepler_circular_orbit_conserves_energy_and_angular_momentum():
     assert not orbit.turning_times
 
 
-def test_region_tangencies_are_not_crossings():
+@pytest.mark.parametrize('horizon', [2*np.pi-1e-8, np.nextafter(2*np.pi,0.),
+                                    2*np.pi, np.nextafter(2*np.pi,np.inf), 2*np.pi+1e-8])
+def test_region_tangencies_are_not_crossings(horizon):
     orbit = integrate_orbit(lambda x: -x, [1.,0.,0.], [0.,0.,0.],
-                            2*np.pi, stop_radius=2., max_step=.03)
+                            horizon, stop_radius=2., max_step=.03)
     assert not orbit.crossings
-    assert orbit.residence == pytest.approx(2*np.pi, abs=1e-9)
-    np.testing.assert_allclose(orbit.region_touches, [np.pi], atol=1e-9)
+    assert orbit.residence == pytest.approx(horizon, abs=1e-9)
+    assert any(abs(t-np.pi) < 1e-9 for t in orbit.region_touches)
+    assert all(abs(t/np.pi-round(t/np.pi)) < 1e-9 for t in orbit.region_touches)
+
+
+def test_outer_grazing_orbit_never_enters_region():
+    orbit = integrate_orbit(lambda x: -x, [1.,0.,0.], [0.,2.,0.],
+                            2*np.pi, stop_radius=3., max_step=.03)
+    assert not orbit.crossings
+    assert orbit.residence == 0.
 
 
 def test_stationary_and_circular_boundary_have_zero_strict_residence():

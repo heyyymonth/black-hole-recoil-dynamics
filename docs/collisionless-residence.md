@@ -73,6 +73,8 @@ The calculation refines the orbit step and tolerances, measures energy and angul
 \dot r^2=2[E+\psi(r)]-\frac{\ell^2}{r^2}.
 ```
 
+Numerically grazing contacts use the radial curvature to distinguish an inner apocenter touch from an outer pericenter touch; stationary and circular paths on the strict boundary contribute no residence. The boundary tolerance is refined with the orbit controls. Analytical checks include contacts at and just before or after the terminal time.
+
 The independent integral uses the actual initial phase and finite horizon. A sine-squared change of radial variable resolves the turning-point endpoints. It does not use the Cartesian orbit's crossing times.
 
 Encounter-budget quadrature splits at region crossings and radial turning points, including center passages of radial trajectories. The velocity quadrature is centered on relative velocity to resolve the close-passage flux near zero relative speed. Its integration ball contains the full shifted field distribution, which is evaluated at its original field velocity and vanishes outside the host support. Separate refinement checks the time quadrature, velocity quadrature, number density and diffusion tensor. The allowed plus excluded rate is checked against the incoming parent flux. The numerical thresholds are declared in [the protocol](../analysis/residence/protocol.json); unresolved records remain distinguishable from accepted calculations.

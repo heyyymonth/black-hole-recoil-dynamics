@@ -85,8 +85,9 @@ def integrate_orbit(acceleration, x0, v0, horizon, *, region_radius=1.,
     occupation is the sum of complete intervals between those roots. An
     initial point at or outside the validity boundary stops at t=0. Region
     boundary points are outside; an orbit staying on that boundary contributes
-    zero residence. ``boundary_tolerance`` resolves numerically stationary
-    contacts only; it is recorded by the calling protocol and must be refined.
+    zero residence. ``boundary_tolerance`` resolves ambiguous grazing contacts
+    using radial curvature and stationary contacts as outside; it is recorded
+    by the calling protocol and must be refined.
 
     As for all event solvers, max_step must resolve the shortest orbit segment;
     separate step/tolerance refinement is required to check missed crossings.
@@ -160,8 +161,23 @@ def integrate_orbit(acceleration, x0, v0, horizon, *, region_radius=1.,
     residence = 0.
     radius_tolerance = boundary_tolerance * max(1., region_radius)
     for left, right in zip(boundaries[:-1], boundaries[1:]):
-        radius = np.linalg.norm(result.sol((left+right)/2)[:3])
+        middle = result.sol((left+right)/2)
+        radius = np.linalg.norm(middle[:3])
         inside = bool(radius < region_radius-radius_tolerance)
+        if abs(radius-region_radius) <= radius_tolerance:
+            # Near grazing contact, a roundoff-sized overshoot can generate a
+            # pair of false roots (or one root just before the horizon). The
+            # radial curvature distinguishes an inner apocenter touch from an
+            # outer pericenter touch. A circular/stationary boundary remains
+            # outside. Resolved crossings retain their ordinary side sign.
+            x, v = middle[:3], middle[3:]
+            force = np.asarray(acceleration(x))
+            slope = float(x@v)
+            curvature = float(v@v+x@force)
+            curvature_scale = max(1.,float(v@v),abs(float(x@force)))
+            if abs(curvature) > boundary_tolerance*curvature_scale:
+                near_turn = slope*slope <= 4*radius_tolerance*max(radius,region_radius)*abs(curvature)
+                inside = bool(curvature < 0) if near_turn else bool(radius < region_radius)
         sides.append(inside)
         if inside:
             residence += right-left
