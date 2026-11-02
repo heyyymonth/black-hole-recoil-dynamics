@@ -13,4 +13,11 @@ Verified 162 conditional finite-angle states and 600000 sampled increments; no r
 Verified finite-angle encounter table and vector figure; no trajectories computed.
 Verified 12 collisionless trajectories and 3264 recorded time nodes; no collisional residence or response result.
 Verified collisionless residence presentation; no calculations rerun.
-Verified formulation and data manuscript 0.12.0-manuscript.3: 26 US Letter pages, 25 embedded vector fonts, current source and archive hashes, and matching citation metadata. Verification reruns no physical calculations.
+Verified 16 matched ensembles, 65536 retained paths and both kernel grids; no trajectories rerun.
+{
+  "accepted": true,
+  "max_force_relative_error": 0.0005457242311909195,
+  "max_mass_quadrature_relative_change": 1.4833208772380146e-08
+}
+Verified matched-pilot table and vector figure from recorded ensembles.
+Verified formulation and data manuscript 0.13.0-manuscript.1: 28 US Letter pages, 26 embedded vector fonts, current source and archive hashes, and matching citation metadata. Verification reruns no physical calculations.

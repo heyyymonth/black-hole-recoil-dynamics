@@ -1,0 +1,120 @@
+{
+  "revision": "matched-sampling-validation-1",
+  "seed": 2026110101,
+  "samples_per_state_per_grid": 40000,
+  "grids": [
+    "coarse",
+    "fine"
+  ],
+  "states": [
+    {
+      "label": "generic_outward",
+      "state": [
+        0.0,
+        0.0,
+        0.63,
+        0.5474778826848709,
+        0.0,
+        1.0340057872037713
+      ],
+      "radius": 0.63,
+      "speed": 1.17,
+      "pitch": 0.31,
+      "radial_sign": 1.0
+    },
+    {
+      "label": "generic_inward_rotated",
+      "state": [
+        1.17,
+        0.0,
+        0.0,
+        -0.4772543591959212,
+        0.6790642654627694,
+        0.0
+      ],
+      "radius": 1.17,
+      "speed": 0.83,
+      "pitch": 0.61,
+      "radial_sign": -1.0
+    },
+    {
+      "label": "near_radial_rotated",
+      "state": [
+        0.37,
+        0.0,
+        0.0,
+        1.4099999826048222,
+        0.000221482281167271,
+        0.0
+      ],
+      "radius": 0.37,
+      "speed": 1.41,
+      "pitch": 0.0001,
+      "radial_sign": 1.0
+    },
+    {
+      "label": "near_tangential",
+      "state": [
+        0.0,
+        0.0,
+        1.83,
+        0.3699999954353079,
+        0.0,
+        5.811946385243993e-05
+      ],
+      "radius": 1.83,
+      "speed": 0.37,
+      "pitch": 0.9999,
+      "radial_sign": 1.0
+    },
+    {
+      "label": "center_moving_rotated",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.83,
+        0.0,
+        0.0
+      ],
+      "radius": 0.0,
+      "speed": 0.83,
+      "pitch": 0.0,
+      "radial_sign": 1.0
+    },
+    {
+      "label": "stationary_off_center",
+      "state": [
+        0.0,
+        0.0,
+        0.93,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 0.93,
+      "speed": 0.0,
+      "pitch": 0.0,
+      "radial_sign": 1.0
+    }
+  ],
+  "units": "dimensionless kernel r_rho, v_dyn, t_dyn",
+  "random_streams": "Independent SeedSequence([seed, grid index, state index]); independent of trajectory streams",
+  "acceptance": "Every mean and raw-second component within six estimated Monte Carlo standard errors plus 1e-13 absolute roundoff floor",
+  "interpretation": "A reproducible sampler-versus-table diagnostic, not a calibrated simultaneous hypothesis test or a claim of continuous-law or trajectory convergence",
+  "source_sha256": {
+    "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+    "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+    "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5",
+    "analysis/host_reconstruction/host.py": "012a8525da438a27cc16ca3633f2eee6aa707bd8e0a70c1f88f366327b9daad0",
+    "analysis/matched/build_kernel.py": "0a983a15d3083dfb3861f5c9c87818a9adaae5a803d4481a020c5ea18eaef1a1",
+    "analysis/matched/kernel.py": "dcca9b2329904960b923e564c9c69beb307aa730e09691ec8c8da81e8d97c056",
+    "analysis/matched/protocol.json": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da",
+    "analysis/matched/validate_sampling.py": "11bc4b474df5c5b57ec805b1173b456ee72e8597a45c6c92247397e63ea5e43b",
+    "results/cluster-comparison/NGC5139/reference/host.npz": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+    "results/matched-residence/kernel-coarse.json": "b755fc38942d798753792a56c92ccb60dff61d4678fcde03ec6ec9e0d59b1efe",
+    "results/matched-residence/kernel-coarse.npz": "bcf5003f28bc2bc9247b083ecfbdbc2c0d5c16779f76af55ceb4eb692e92fce6",
+    "results/matched-residence/kernel-fine.json": "12390685f177ea06259a7755948835a022a6bf86a55a5db39a1b90b73dbbde5c",
+    "results/matched-residence/kernel-fine.npz": "8d3e5f0ca764ad59937598cd26dfc6476895f6def9631e78764e58514108af9b"
+  }
+}

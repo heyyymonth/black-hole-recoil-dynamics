@@ -2,7 +2,7 @@ Recoil transport and environmental exposure of black-hole merger remnants
 Venkata Hemanth Athota
 bharadwaj.hemanth.002@gmail.com
 
-Manuscript revision 0.12.0-manuscript.3.
+Manuscript revision 0.13.0-manuscript.1.
 This archive contains a two-column manuscript on recoil transport and
 environmental exposure, including the six-cluster data analysis, a fixed NGC 3201 host
 reconstruction, local anisotropic collision calculations and static
@@ -13,7 +13,9 @@ a backward occupation equation and a proposed residence-response predictor.
 The finite-angle local law is evaluated in 162 settings with 600,000 sampled
 increments. A discrete first-response estimator has independent numerical
 checks. Twelve collisionless control trajectories supply residence and path
-encounter budgets; matched collisional residence predictions remain unevaluated.
+encounter budgets and a conditional matched collisional residence pilot.
+The occupation-response predictor remains unevaluated; continuum convergence
+and calibrated cluster predictions are not claimed.
 It includes the article, ten table fragments, ten vector figures,
 bibliography, compiled bibliography, citation, license, supporting data
 evidence, and the unmodified REVTeX dependency.
@@ -57,7 +59,7 @@ article, bibliography, tables and figures.
 
 The manuscript is unreviewed. No submission, acceptance, or calibrated
 transport prediction is claimed. CITATION.bib identifies the versioned source:
-https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.12.0.3
+https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.13.0.1
 No DOI has been assigned.
 
 Project-authored source is MIT-licensed. The included REVTeX distribution,

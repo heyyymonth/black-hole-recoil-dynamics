@@ -2,7 +2,7 @@
 
 **Researcher:** Venkata Hemanth Athota
 
-**Status:** mathematical formulation and calculation specification. The [host calculation](local-transport-calculations.md) supplies consistent species densities for one realization. [Collisionless controls](collisionless-residence.md) evaluate path accumulation, crossings and residence for twelve diagnostic launches, with independent checks. Stochastic residence distributions, moving-host cases and their additional acceptance checks remain unexecuted.
+**Status:** mathematical formulation and calculation specification. The [host calculation](local-transport-calculations.md) supplies consistent species densities for one realization. [Collisionless controls](collisionless-residence.md) evaluate path accumulation, crossings and residence for twelve diagnostic launches, with independent checks. A [matched pilot](matched-residence.md) evaluates conditional stochastic residence and BH exposure. Moving-host cases, calibrated cluster transport and the occupation-response prediction remain unevaluated.
 
 ## Physical question
 

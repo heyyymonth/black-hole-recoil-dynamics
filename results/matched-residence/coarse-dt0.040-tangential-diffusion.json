@@ -1,0 +1,49 @@
+{
+  "protocol_sha256": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da",
+  "host_sha256": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+  "encounter_protocol_sha256": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+  "kernel_sha256": "bcf5003f28bc2bc9247b083ecfbdbc2c0d5c16779f76af55ceb4eb692e92fce6",
+  "kernel_record_sha256": "b755fc38942d798753792a56c92ccb60dff61d4678fcde03ec6ec9e0d59b1efe",
+  "implementation_sha256": {
+    "analysis/matched/run.py": "e6aada18cb53f10c9b6079c5796da2cbc0a19f3ad45a9a56fc265bb55daeb853",
+    "analysis/matched/transport.py": "c819392a6165ca2cc1332ddcd0f36cefb0a12801c5a9fb1c48a6c63bda7606da",
+    "analysis/matched/kernel.py": "dcca9b2329904960b923e564c9c69beb307aa730e09691ec8c8da81e8d97c056",
+    "analysis/host_reconstruction/host.py": "012a8525da438a27cc16ca3633f2eee6aa707bd8e0a70c1f88f366327b9daad0",
+    "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+    "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5"
+  },
+  "revision": "matched-residence-pilot-1",
+  "cluster": "NGC5139",
+  "grid": "coarse",
+  "dt": 0.04,
+  "orientation": "tangential",
+  "method": "diffusion",
+  "paths": 4096,
+  "horizon": 10.0,
+  "seed": [
+    2026103002,
+    2
+  ],
+  "seed_scheme": "NumPy SeedSequence([registered_seed, fixed_product_index])",
+  "numpy_version": "1.24.2",
+  "initial_state": [
+    0.5,
+    0.0,
+    0.0,
+    0.0,
+    1.7031426054832277,
+    0.0
+  ],
+  "scales": {
+    "r_scale_pc": 0.02478240804511103,
+    "v_scale_kms": 11.67460798714323,
+    "time_scale_Myr": 0.0020756196565841645
+  },
+  "spatial_stop": 4.0,
+  "velocity_stop": 4.0,
+  "inherited_force_domain_over_density_radius": 352.97875122826974,
+  "units": "r_rho, v_dyn, t_dyn; normalized residence/exposure divided by full horizon",
+  "samples_sha256": "482bfa7d6359e8b4231f51f8bc9e56773bb5565ed2e0a4870aed0e21cc1fa6b0",
+  "scheme": "initial-state frozen collision law, two VV half-flows, midpoint velocity update",
+  "wall_seconds": 3.3996792919933796
+}

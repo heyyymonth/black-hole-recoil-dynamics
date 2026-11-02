@@ -28,6 +28,8 @@ jobs:
           python analysis/cluster_comparison/verify.py
           python analysis/encounters/verify.py
           python analysis/residence/verify.py
+          python analysis/matched/verify.py
+          python analysis/matched/controls.py --verify
   artifacts:
     runs-on: ubuntu-24.04
     steps:

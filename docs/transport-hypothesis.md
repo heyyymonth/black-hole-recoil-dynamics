@@ -20,7 +20,7 @@ The physical domain specifies impact parameters, closest approaches and excluded
 
 The existing per-unit-Coulomb-log kernels provide weak-scattering calculations and numerical checks. A selected finite-angle domain requires its own matched moments; multiplying the existing outputs by an arbitrary cutoff-dependent number does not establish that match. If large deflections are resolved separately, their impact-parameter range is excluded from the diffusion contribution.
 
-The [finite-angle calculation](finite-angle-encounters.md) now specifies that local domain and evaluates the rates, moments and conditional elastic increments across the six reference hosts. It also implements and tests a single-transition replacement estimator in finite-state examples. Numerical acceptance remains recorded per local state; the matched collisional residence and physical response prediction have not been evaluated. The [collisionless controls](collisionless-residence.md) separately establish timed reference paths, finite-region occupation and path-integrated encounter budgets.
+The [finite-angle calculation](finite-angle-encounters.md) now specifies that local domain and evaluates the rates, moments and conditional elastic increments across the six reference hosts. It also implements and tests a single-transition replacement estimator in finite-state examples. Numerical acceptance remains recorded per local state; the [matched pilot](matched-residence.md) now compares conditional residence ensembles, while the physical response prediction remains unevaluated. The [collisionless controls](collisionless-residence.md) separately establish timed reference paths, finite-region occupation and path-integrated encounter budgets.
 
 ## The analytical bridge
 
@@ -60,7 +60,7 @@ Compare normalized mean residence, its cumulative distribution, species exposure
 
 Predeclare accuracy tolerances and reduce numerical, ensemble and smoothing errors below them. An uncertainty interval for a nonnegative discrepancy entirely below tolerance supports adequacy in that setting. An interval entirely above it establishes a material difference. An interval spanning it is inconclusive. A small mean difference alone does not establish agreement of tails or termination outcomes.
 
-The intended theoretical result is an observable-specific accuracy criterion tested across the adopted environments. The collisionless reference paths establish the zero-collision control. No matched encounter ensemble, collisional residence distribution or evaluated residual has been produced.
+The intended theoretical result is an observable-specific accuracy criterion tested across the adopted environments. The collisionless reference paths establish the zero-collision control. The [matched pilot](matched-residence.md) supplies conditional jump and diffusion residence distributions in the Omega Centauri reference. Its refinement uncertainty prevents a continuum accuracy classification, and the occupation residual and response predictor remain unevaluated.
 
 ## Primary foundations
 

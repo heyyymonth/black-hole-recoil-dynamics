@@ -1,0 +1,125 @@
+{
+  "revision": "matched-residence-pilot-1",
+  "scope": "Conditional BH finite-encounter versus matched diffusion residence pilot in the NGC5139 reference; not calibrated cluster transport or a test of the first-response predictor",
+  "cluster": "NGC5139",
+  "host_path": "results/cluster-comparison/NGC5139/reference/host.npz",
+  "host_selection": "Same verified conditional reference as collisionless-residence-1; selected for its largest baseline BH encounter integral, before computing collisional outcomes",
+  "encounter_protocol": "analysis/encounters/protocol.json",
+  "baseline_protocol": "analysis/residence/protocol.json",
+  "remnant_mass_Msun": 60.0,
+  "bmax_over_local_scale": 0.1,
+  "gravity": "Frozen spherical potential of all physical host species; no remnant self-gravity or population response",
+  "varied_collision_species": "BH",
+  "lighter_species_collisions": "Disabled identically in both arms; their smooth gravity is retained",
+  "external_force": "Omitted inside the prior 1-percent force domain; the smaller table domain is a numerical stop, not escape",
+  "launch": {
+    "radius_over_density_radius": 0.5,
+    "radial_apocenter_over_density_radius": 2.0,
+    "orientations": [
+      "radial_outward",
+      "tangential"
+    ],
+    "speed": "sqrt(2*(psi(r0)-psi(2*r_rho)))",
+    "interpretation": "Conditional diagnostic total velocities, not a merger population or recoil-only law"
+  },
+  "horizon_over_t_dyn": 10.0,
+  "region_radius_over_density_radius": 1.0,
+  "kernel": {
+    "coordinates": [
+      "r_over_density_radius",
+      "speed_over_vdyn",
+      "pitch_fraction=2*atan2(v_t,abs(v_r))/pi"
+    ],
+    "coarse_axes": {
+      "radius": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0
+      ],
+      "speed": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0
+      ],
+      "pitch": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "fine_grid": "Insert midpoint in every coarse interval on all three axes",
+    "interpolation": "Nonnegative multilinear mixture of full vertex jump rate measures; identical weights for rate,A,raw D and excluded flux; event vertex chosen proportional to weight times allowed rate",
+    "symmetry": "Enforce exact physical symmetry at zero speed, zero radius and radial velocity; apply same symmetry averaging to moments and sampled increments",
+    "velocity_quadrature_orders": [
+      20,
+      28,
+      40,
+      56
+    ],
+    "quadrature_frame": "Relative velocity w, full shifted field-DF support, sinh radial scale min sqrt(s2j)",
+    "cache_vertices": 128,
+    "local_acceptance": {
+      "moment_relative_refinement": 0.005,
+      "number_density_relative_error": 0.002
+    },
+    "holdout_points": 64,
+    "holdout_seed": 2026103001,
+    "holdout_scope": "Predeclared random interior queries and near-radial/tangential pitch controls; compare against direct refined local integration, retain all errors",
+    "validation_interpretation": "Moment checks do not establish full increment-law or residence convergence; grid sensitivity is tested through independent trajectory ensembles"
+  },
+  "transport": {
+    "grids": [
+      "coarse",
+      "fine"
+    ],
+    "dt_over_t_dyn": [
+      0.04,
+      0.02
+    ],
+    "methods": [
+      "diffusion",
+      "jump"
+    ],
+    "paths_per_setting": 4096,
+    "seed": 2026103002,
+    "scheme": "Freeze collision law at step start; exponential excluded-event clock shortens delta; two deterministic velocity-Verlet half flows surround one Gaussian or frozen-law compound-Poisson velocity increment; exact chord occupation in each drift",
+    "diffusion_increment": "Mean A*delta and covariance D*delta; D is raw second jump moment per time",
+    "jump_increment": "Sum N independent increments from same numerical mixture, N Poisson(Gamma*delta); no one-event cap",
+    "random_streams": "Independent arms and settings. Separate Gaussian, excluded-hazard, count and event streams. Fixed-shape Gaussian and hazard draws retain independent paths; no paired uncertainty claim",
+    "excluded_channel": "Common-law unresolved-event stop at its sampled time; not capture probability",
+    "spatial_stop": "Minimum of radius-table edge and inherited isolated-force domain; numerical-validity censoring, not physical escape",
+    "velocity_stop": "First resolved exit from speed-table domain; numerical-validity censoring with step refinement",
+    "boundary_ordering": "Earliest resolved spatial/velocity stop before excluded clock; record cause and remaining unmodeled duration",
+    "occupation": "All visits to r<r_rho, divided by the full declared horizon, including killed paths",
+    "exposure": "BH mass-density integral normalized by central BH mass density and full horizon"
+  },
+  "reporting": {
+    "confidence_level": 0.95,
+    "mean_residence_target": 0.01,
+    "mean_numerical_budget": 0.005,
+    "distribution_target_KS": 0.05,
+    "numerical_domain_mean_missing_budget": 0.002,
+    "inference": "Independent-ensemble standard errors for bounded mean observables; two-sample DKW bounds for residence CDF differences; binomial intervals for stopping probabilities. Pilot intervals are descriptive, not simultaneous coverage across every comparison",
+    "grid_and_time": "Report both refinement shifts with sampling uncertainty; do not label convergence from an unresolved difference",
+    "missing_residence": "For numerical domain stops, (H-stop_time)/H bounds omitted future residence pathwise; report empirical bound plus uncertainty",
+    "outcome": "Retain inconclusive or unresolved comparisons. No automatic claim of physical diffusion adequacy or hypothesis confirmation"
+  },
+  "first_response_prediction": "Not evaluated in this numerical pilot; estimator is fixed independently in analysis/encounters/response.py. A later predeclared validation sample is required for predictor accuracy."
+}

@@ -1,0 +1,374 @@
+{
+  "revision": "matched-transport-controls-1",
+  "cluster": "NGC5139",
+  "criteria": {
+    "force_relative_error": 0.001,
+    "mass_quadrature_relative_change": 1e-05,
+    "normalized_residence_absolute_error": 0.0001,
+    "normalized_exposure_absolute_error": 0.0001,
+    "fine_error_no_larger_than_coarse": true
+  },
+  "criteria_basis": "Force tolerance inherited from host validation; mass quadrature 1e-5; null normalized observable tolerance 1e-4, 2 percent of the registered 0.005 mean numerical budget; each fine-step error must not exceed its coarse error. Declared in source before evaluation.",
+  "horizon": 10.0,
+  "numpy_version": "1.24.2",
+  "force": {
+    "radii_over_density_radius": [
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.5,
+      2.0,
+      3.0,
+      4.0
+    ],
+    "positions": [
+      [
+        0.0033333333333333335,
+        0.006666666666666667,
+        0.006666666666666667
+      ],
+      [
+        0.006666666666666667,
+        0.013333333333333334,
+        0.013333333333333334
+      ],
+      [
+        0.016666666666666666,
+        0.03333333333333333,
+        0.03333333333333333
+      ],
+      [
+        0.03333333333333333,
+        0.06666666666666667,
+        0.06666666666666667
+      ],
+      [
+        0.08333333333333333,
+        0.16666666666666666,
+        0.16666666666666666
+      ],
+      [
+        0.16666666666666666,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      [
+        0.25,
+        0.5,
+        0.5
+      ],
+      [
+        0.3333333333333333,
+        0.6666666666666666,
+        0.6666666666666666
+      ],
+      [
+        0.5,
+        1.0,
+        1.0
+      ],
+      [
+        0.6666666666666666,
+        1.3333333333333333,
+        1.3333333333333333
+      ],
+      [
+        1.0,
+        2.0,
+        2.0
+      ],
+      [
+        1.3333333333333333,
+        2.6666666666666665,
+        2.6666666666666665
+      ]
+    ],
+    "quadrature_orders": [
+      64,
+      128
+    ],
+    "enclosed_mass_by_order_Msun": [
+      [
+        0.0012005115960065599,
+        0.00960260106497827,
+        0.1498776881236119,
+        1.1943876199158787,
+        18.170065728069304,
+        132.78512467067605,
+        391.1516038532297,
+        785.2935533791269,
+        1828.2685614605891,
+        2984.756682623439,
+        5176.226490264445,
+        7092.790080923876
+      ],
+      [
+        0.0012005115960065618,
+        0.00960260106497828,
+        0.14987768812361246,
+        1.1943876199158954,
+        18.170065728090353,
+        132.7851246741081,
+        391.15160385922127,
+        785.293553443568,
+        1828.2685632766152,
+        2984.756680214289,
+        5176.226567044494,
+        7092.790108651506
+      ]
+    ],
+    "numerical_vectors": [
+      [
+        -0.005096867094560632,
+        -0.010193734189121263,
+        -0.010193734189121263
+      ],
+      [
+        -0.010191591500278761,
+        -0.020383183000557522,
+        -0.020383183000557522
+      ],
+      [
+        -0.025453217732549875,
+        -0.05090643546509975,
+        -0.05090643546509975
+      ],
+      [
+        -0.0507078889491682,
+        -0.1014157778983364,
+        -0.1014157778983364
+      ],
+      [
+        -0.12341556788110636,
+        -0.24683113576221272,
+        -0.24683113576221272
+      ],
+      [
+        -0.22549189226878313,
+        -0.45098378453756627,
+        -0.45098378453756627
+      ],
+      [
+        -0.29519881536709264,
+        -0.5903976307341853,
+        -0.5903976307341853
+      ],
+      [
+        -0.3333333333333333,
+        -0.6666666666666666,
+        -0.6666666666666666
+      ],
+      [
+        -0.3448823055150366,
+        -0.6897646110300732,
+        -0.6897646110300732
+      ],
+      [
+        -0.316616035420717,
+        -0.633232070841434,
+        -0.633232070841434
+      ],
+      [
+        -0.2441578564848627,
+        -0.4883157129697254,
+        -0.4883157129697254
+      ],
+      [
+        -0.18820237681294344,
+        -0.3764047536258869,
+        -0.3764047536258869
+      ]
+    ],
+    "density_integral_vectors": [
+      [
+        -0.005096680318821497,
+        -0.010193360637642994,
+        -0.010193360637642994
+      ],
+      [
+        -0.010191777409766402,
+        -0.020383554819532804,
+        -0.020383554819532804
+      ],
+      [
+        -0.0254517712558907,
+        -0.0509035425117814,
+        -0.0509035425117814
+      ],
+      [
+        -0.050706814459092656,
+        -0.10141362891818531,
+        -0.10141362891818531
+      ],
+      [
+        -0.12342340275076516,
+        -0.24684680550153032,
+        -0.24684680550153032
+      ],
+      [
+        -0.22549164333272675,
+        -0.4509832866654535,
+        -0.4509832866654535
+      ],
+      [
+        -0.29521853667442394,
+        -0.5904370733488479,
+        -0.5904370733488479
+      ],
+      [
+        -0.333390382204301,
+        -0.666780764408602,
+        -0.666780764408602
+      ],
+      [
+        -0.34496775966987353,
+        -0.6899355193397471,
+        -0.6899355193397471
+      ],
+      [
+        -0.3167889148077002,
+        -0.6335778296154004,
+        -0.6335778296154004
+      ],
+      [
+        -0.2441697185856572,
+        -0.4883394371713144,
+        -0.4883394371713144
+      ],
+      [
+        -0.1881993678390213,
+        -0.3763987356780426,
+        -0.3763987356780426
+      ]
+    ],
+    "origin_force": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scope": "Full host density integrated independently; dimensionless acceleration"
+  },
+  "null_trajectories": [
+    {
+      "orientation": "radial_outward",
+      "dt": 0.04,
+      "normalized_residence": 0.27193035954669975,
+      "reference_normalized_residence": 0.27194105741609154,
+      "normalized_exposure": 0.386906557483463,
+      "reference_normalized_exposure": 0.3869135582270987,
+      "end_time": 10.0,
+      "stop_cause": "horizon",
+      "terminal_state": [
+        1.9916991691147878,
+        0.0,
+        0.0,
+        -0.1264851475492432,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "orientation": "radial_outward",
+      "dt": 0.02,
+      "normalized_residence": 0.27193981937601186,
+      "reference_normalized_residence": 0.27194105741609154,
+      "normalized_exposure": 0.38691178838747087,
+      "reference_normalized_exposure": 0.3869135582270987,
+      "end_time": 10.0,
+      "stop_cause": "horizon",
+      "terminal_state": [
+        1.9915870294271807,
+        0.0,
+        0.0,
+        -0.12669398046955027,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "orientation": "tangential",
+      "dt": 0.04,
+      "normalized_residence": 0.28864260863986735,
+      "reference_normalized_residence": 0.28865558282749354,
+      "normalized_exposure": 0.3889471643005732,
+      "reference_normalized_exposure": 0.38895573978146025,
+      "end_time": 10.0,
+      "stop_cause": "horizon",
+      "terminal_state": [
+        -1.1154213627544236,
+        1.5184847553124838,
+        0.0,
+        -0.4456520787271988,
+        -0.15676175915194607,
+        0.0
+      ]
+    },
+    {
+      "orientation": "tangential",
+      "dt": 0.02,
+      "normalized_residence": 0.2886523015330785,
+      "reference_normalized_residence": 0.28865558282749354,
+      "normalized_exposure": 0.38895359438712573,
+      "reference_normalized_exposure": 0.38895573978146025,
+      "end_time": 10.0,
+      "stop_cause": "horizon",
+      "terminal_state": [
+        -1.1154399090118836,
+        1.5183737752273563,
+        0.0,
+        -0.44551455568547244,
+        -0.15699069352992062,
+        0.0
+      ]
+    }
+  ],
+  "source_sha256": {
+    "analysis/matched/controls.py": "dd07ee5948a68a1a1cd1aff3eb96ff32c32192b9a2a73b1a3affc917c931b97c",
+    "analysis/matched/run.py": "e6aada18cb53f10c9b6079c5796da2cbc0a19f3ad45a9a56fc265bb55daeb853",
+    "analysis/matched/transport.py": "c819392a6165ca2cc1332ddcd0f36cefb0a12801c5a9fb1c48a6c63bda7606da",
+    "analysis/matched/kernel.py": "dcca9b2329904960b923e564c9c69beb307aa730e09691ec8c8da81e8d97c056",
+    "analysis/host_reconstruction/host.py": "012a8525da438a27cc16ca3633f2eee6aa707bd8e0a70c1f88f366327b9daad0",
+    "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+    "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5"
+  },
+  "input_sha256": {
+    "analysis/matched/protocol.json": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da",
+    "results/cluster-comparison/NGC5139/reference/host.npz": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+    "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+    "analysis/residence/protocol.json": "0d66c27456f00377e1b86363b7958b723078425483e88763112b0ae2ad0cc39d",
+    "analysis/host_reconstruction/protocol.json": "4815e7bb8a5dd516b030af9ea54167d89cdfb752121c07fd6e88a726f7c61115",
+    "results/matched-residence/kernel-coarse.npz": "bcf5003f28bc2bc9247b083ecfbdbc2c0d5c16779f76af55ceb4eb692e92fce6",
+    "results/matched-residence/kernel-coarse.json": "b755fc38942d798753792a56c92ccb60dff61d4678fcde03ec6ec9e0d59b1efe",
+    "results/collisionless-residence/NGC5139.json": "88d73d9706517949d7855e6bdd9493cce1cfb7670db29ea4741752d6ddb47b4c"
+  },
+  "interpretation": "Deterministic and force controls only; not collisional timestep or kernel-grid convergence.",
+  "max_force_relative_error": 0.0005457242311909195,
+  "max_mass_quadrature_relative_change": 1.4833208772380146e-08,
+  "checks": {
+    "origin_force_exact_zero": true,
+    "force_relative_error": true,
+    "mass_quadrature_relative_change": true,
+    "radial_outward-dt0.04-horizon": true,
+    "radial_outward-dt0.04-normalized_residence": true,
+    "radial_outward-dt0.04-normalized_exposure": true,
+    "radial_outward-dt0.02-horizon": true,
+    "radial_outward-dt0.02-normalized_residence": true,
+    "radial_outward-dt0.02-normalized_exposure": true,
+    "tangential-dt0.04-horizon": true,
+    "tangential-dt0.04-normalized_residence": true,
+    "tangential-dt0.04-normalized_exposure": true,
+    "tangential-dt0.02-horizon": true,
+    "tangential-dt0.02-normalized_residence": true,
+    "tangential-dt0.02-normalized_exposure": true,
+    "radial_outward-normalized_residence-refinement": true,
+    "radial_outward-normalized_exposure-refinement": true,
+    "tangential-normalized_residence-refinement": true,
+    "tangential-normalized_exposure-refinement": true
+  },
+  "accepted": true
+}

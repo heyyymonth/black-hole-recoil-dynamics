@@ -51,7 +51,7 @@
     "random_seed_policy": null,
     "independent_validation_cases": null
   },
-  "result_status": "Six conditional reference hosts, local and finite-angle encounter calculations, environmental controls, and twelve collisionless remnant paths with residence and encounter budgets. No matched collisional residence or response outcome.",
+  "result_status": "Six conditional reference hosts, local and finite-angle encounter calculations, environmental controls, twelve collisionless reference paths, and a conditional matched jump/diffusion residence pilot. No evaluated occupation-response predictor or calibrated cluster residence.",
   "handoff": "docs/calculation-handoff.md",
   "execution_scope": "general remnant trajectory ensemble; stage-specific host and coefficient calculations are defined separately",
   "completed_calculations": [
@@ -87,6 +87,11 @@
       "revision": "collisionless-residence-1",
       "protocol": "analysis/residence/protocol.json",
       "result": "results/collisionless-residence/summary.json"
+    },
+    {
+      "revision": "matched-residence-pilot-1",
+      "protocol": "analysis/matched/protocol.json",
+      "result": "results/matched-residence/summary.json"
     }
   ]
 }

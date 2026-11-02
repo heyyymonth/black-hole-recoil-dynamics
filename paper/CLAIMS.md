@@ -1,8 +1,8 @@
 # Claim-to-evidence record
 
-Manuscript revision 0.12.0-manuscript.3. Author: Venkata Hemanth Athota.
+Manuscript revision 0.13.0-manuscript.1. Author: Venkata Hemanth Athota.
 
-The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. A detailed NGC 3201 benchmark is extended to six conditional reference hosts and 120 local states, 48 joint-row pilot attempts, 18 common static controls and 24 Galactic reference orbits. It additionally reports twelve deterministic collisionless reference paths, their residence and path-integrated encounter budgets. It reports no new observational fit or calibrated collisional residence prediction.
+The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. A detailed NGC 3201 benchmark is extended to six conditional reference hosts and 120 local states, 48 joint-row pilot attempts, 18 common static controls and 24 Galactic reference orbits. It additionally reports twelve deterministic collisionless reference paths, their residence and path-integrated encounter budgets, followed by a conditional Omega Centauri matched jump/diffusion pilot with 16 independent ensembles. It reports no new observational fit or calibrated collisional residence prediction.
 
 | Statement | Basis | Boundary |
 |---|---|---|
@@ -10,7 +10,7 @@ The paper defines a two-step transport and exposure problem and reports the comp
 | Position, progenitor motion, recoil, and remnant mass belong in a joint launch law. | Initial-state kinematics and conditional probability. | No launch distribution or selection weights are inferred. |
 | Drift and velocity diffusion have a declared Ito convention. | Standard kinetic theory and number-normalized Rosenbluth closure. | Local weak scattering requires calibration; strong encounters and host backreaction are unresolved. |
 | The energy balance includes a diffusion contribution. | Ito's rule applied to specific kinetic plus host-potential energy. | It is not a conserved tidal escape criterion or a calibrated damping law. |
-| Entry, re-entry, residence, and density exposure are distinct. | Operational region, stopping-time, and path-functional definitions. | Their distributions have not been evaluated. |
+| Entry, re-entry, residence, and density exposure are distinct. | Operational region, stopping-time, and path-functional definitions. | Conditional residence and BH-exposure distributions are evaluated in one matched pilot; merger-conditioned population predictions remain open. |
 | Time-augmented occupation retains timing and velocity information. | A measure on time and phase space. | It is not a companion population or interaction law. |
 | Ensemble exposure retains survival probability. | Conditional probability and interchange of nonnegative integrals. | Renormalizing survivors changes the quantity; unresolved continuation cannot be inferred. |
 | The formulation supplies a calculation handoff. | Input register and acceptance requirements. | Six reference hosts and local-kernel protocols are supplied. Finite-domain BH cutoffs are declared for the local comparison; merger launches, trajectory controls and physical calibration remain open. |
@@ -74,3 +74,11 @@ Evidence: `analysis/encounters/protocol.json`, `results/finite-angle-encounters/
 Twelve diagnostic trajectories retain all-species smooth gravity and disable all collisions. Equal-energy radial and tangential launches have different angular momenta and finite-horizon occupation. The Cartesian crossing calculation is checked against an independent spherical energy/angular-momentum integral and numerical refinement. BH finite-angle rates, excluded flux and moment scales are integrated along the prescribed paths; they do not change those paths and are not corrected residence or capture probabilities.
 
 Evidence: `analysis/residence/protocol.json`, `results/collisionless-residence/provenance.json`, the per-host records and analytical orbit tests. The full matched collisional response hypothesis remains untested.
+
+## Conditional matched collisional pilot
+
+Sixteen independent ensembles compare the same numerical BH encounter law as finite jumps and matched diffusion in the Omega Centauri reference. The evidence retains 65,536 final-state and occupation records, two kernel grids, two time steps, two launch directions, local quadrature checks, independent sampler checks, null controls and termination causes. The means and CDF comparisons have separate uncertainty measures.
+
+The pilot tests conditional numerical endpoints. Several grid/time refinement intervals exceed the registered mean sensitivity budget, so no continuum accuracy class is assigned. The backward occupation residual and its first-response prediction remain unevaluated; physical cluster calibration, lighter-species collisions, finite-population response and host evolution remain separate work.
+
+Evidence: `analysis/matched/protocol.json`, `results/matched-residence/summary.json`, retained per-path arrays, `controls.json`, and the sampling-validation records.

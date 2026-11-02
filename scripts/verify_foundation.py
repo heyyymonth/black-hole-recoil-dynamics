@@ -24,8 +24,8 @@ def verify():
     require(working["compile_enabled"] is True, "Theory typesetting must be enabled")
     require(working["transport_simulations_performed"] is True
             and working["collisionless_trajectories_performed"] is True
-            and working["collisional_trajectories_performed"] is False,
-            "Only collisionless reference trajectories are supplied")
+            and working["collisional_trajectories_performed"] is True,
+            "Collisionless controls and conditional collisional pilot are supplied")
     require(working["data_analysis_performed"] is True, "Completed cluster-data analysis is included")
     require(working["active_steps"] == ["transport", "exposure"], "Unexpected paper scope")
     source = (ROOT / "paper/manuscript.tex").read_text()
@@ -81,15 +81,15 @@ def verify():
     require("Step 1:" in (ROOT / "docs/step1-transport.md").read_text(), "Missing Step 1")
     require("Step 2:" in (ROOT / "docs/step2-exposure.md").read_text(), "Missing Step 2")
     require(not re.search(r"E00[1-5]", source), "Internal experiment identifier in article")
-    expected_tables = {"tables/collisionless-residence.tex", "tables/finite-angle-encounters.tex", "tables/cluster-coverage.tex", "tables/cluster-scales.tex",
+    expected_tables = {"tables/matched-residence.tex", "tables/collisionless-residence.tex", "tables/finite-angle-encounters.tex", "tables/cluster-coverage.tex", "tables/cluster-scales.tex",
                        "tables/cluster-posterior.tex", "tables/cluster-transport-comparison.tex", "tables/host-validation.tex", "tables/local-kernels.tex", "tables/outer-boundary.tex", "tables/galactic-orbit.tex"}
     require(set(re.findall(r"\\input\{([^}]+)\}", source)) == expected_tables,
-            "Expected the ten data and calculation evidence tables")
+            "Expected the eleven data and calculation evidence tables")
     require(not any(key in source for key in ("tables/return.tex", "figures/return-time.pdf")),
             "Historical reference dynamics do not validate the active transport problem")
     print(f"Verified two-step foundation: {len(ACTIVE_DOCS)} documents, {links} local links, "
           f"{displays} display equations; inputs unassigned and title/abstract/citations consistent. "
-          "Recorded data, coefficients and collisionless controls included; collisional residence remains unevaluated.")
+          "Recorded data, coefficients, collisionless controls and matched pilot included; response predictor remains unevaluated.")
 
 
 if __name__ == "__main__":
