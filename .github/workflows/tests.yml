@@ -30,6 +30,7 @@ jobs:
           python analysis/residence/verify.py
           python analysis/matched/verify.py
           python analysis/matched/controls.py --verify
+          python analysis/response/verify.py
   artifacts:
     runs-on: ubuntu-24.04
     steps:

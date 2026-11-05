@@ -1,0 +1,174 @@
+{
+  "revision": "residence-response-test-1",
+  "identity": {
+    "protocol_sha256": "d874a20a306bf2efc7ebe4167d51873110f1282bbe0119b4dc5a701fb9b64cb6",
+    "input_sha256": {
+      "analysis/response/protocol.json": "d874a20a306bf2efc7ebe4167d51873110f1282bbe0119b4dc5a701fb9b64cb6",
+      "analysis/matched/protocol.json": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da",
+      "results/cluster-comparison/NGC5139/reference/host.npz": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+      "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+      "analysis/residence/protocol.json": "0d66c27456f00377e1b86363b7958b723078425483e88763112b0ae2ad0cc39d",
+      "results/collisionless-residence/NGC5139.json": "88d73d9706517949d7855e6bdd9493cce1cfb7670db29ea4741752d6ddb47b4c",
+      "results/matched-residence/kernel-coarse.npz": "bcf5003f28bc2bc9247b083ecfbdbc2c0d5c16779f76af55ceb4eb692e92fce6",
+      "results/matched-residence/kernel-coarse.json": "b755fc38942d798753792a56c92ccb60dff61d4678fcde03ec6ec9e0d59b1efe",
+      "results/matched-residence/kernel-fine.npz": "8d3e5f0ca764ad59937598cd26dfc6476895f6def9631e78764e58514108af9b",
+      "results/matched-residence/kernel-fine.json": "12390685f177ea06259a7755948835a022a6bf86a55a5db39a1b90b73dbbde5c"
+    },
+    "implementation_sha256": {
+      "analysis/response/run.py": "1ac2d3e0b10c5e6b28f6128458f5b8ff37231b5dc86ccf560a04a929e15d2514",
+      "analysis/response/transport.py": "5c9d0dfdf34e3ebbbb6c173afc056615fcad7a63a63d5968c2200008312925c5",
+      "analysis/response/cache.py": "bd174180395dd346d4c4eda95cadcb412e00203ad6decde528fd59730cca99c8",
+      "analysis/matched/run.py": "e6aada18cb53f10c9b6079c5796da2cbc0a19f3ad45a9a56fc265bb55daeb853",
+      "analysis/matched/transport.py": "c819392a6165ca2cc1332ddcd0f36cefb0a12801c5a9fb1c48a6c63bda7606da",
+      "analysis/matched/kernel.py": "dcca9b2329904960b923e564c9c69beb307aa730e09691ec8c8da81e8d97c056",
+      "analysis/matched/statistics.py": "9041c7cd633d7b5f7e80130ea084b618ed4a18119f6d422ffdd3bdb013902fc1",
+      "analysis/host_reconstruction/host.py": "012a8525da438a27cc16ca3633f2eee6aa707bd8e0a70c1f88f366327b9daad0",
+      "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+      "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5"
+    },
+    "numpy_version": "1.24.2",
+    "scipy_version": "1.10.1"
+  },
+  "execution_design_sha256": "3d7e3dec4113ce901de77bad1404b8c328d466298d94d3a3cd0d98aca75a7b5c",
+  "sample_count_lock_sha256": "30f7059c7a6a496b2e82f529ca3ef9bbc83a14a3328295e5d0eee735d7e6efdd",
+  "prediction_inventory": [
+    {
+      "name": "prediction-coarse-dt0.020-radial_outward-weighted",
+      "arrays": "results/response/prediction-coarse-dt0.020-radial_outward-weighted.npz",
+      "arrays_sha256": "6625ebd68d35ce02b5b7f61763017aa408f980a65ffbfaaf321de64b6dd5d693",
+      "record": "results/response/prediction-coarse-dt0.020-radial_outward-weighted.json",
+      "record_sha256": "fce3c3e9b2c8579c19a024653d6d5f7c0e84d7f0836c7b365ff2537b7150d777",
+      "summary": {
+        "count": 8192,
+        "mean": -0.10596952619629244,
+        "variance": 34.59327081162773,
+        "standard_error": 0.06498316226817932,
+        "minimum": -109.8341665792795,
+        "maximum": 88.44074190105705
+      }
+    },
+    {
+      "name": "prediction-coarse-dt0.020-tangential-weighted",
+      "arrays": "results/response/prediction-coarse-dt0.020-tangential-weighted.npz",
+      "arrays_sha256": "ead43060544d6e2dffc1935b5b1c35acb6f62b97f5d1f1ef5c1be64c8e142aa8",
+      "record": "results/response/prediction-coarse-dt0.020-tangential-weighted.json",
+      "record_sha256": "2dad560890deabc8bb00aea7604fa18cc5e3a71b0136bc6b219b09368fe2fc6a",
+      "summary": {
+        "count": 8192,
+        "mean": -0.13746300004169562,
+        "variance": 560.3672072741089,
+        "standard_error": 0.26154196624385684,
+        "minimum": -253.53867713551915,
+        "maximum": 284.9097321850873
+      }
+    },
+    {
+      "name": "prediction-coarse-dt0.020-oblique-weighted",
+      "arrays": "results/response/prediction-coarse-dt0.020-oblique-weighted.npz",
+      "arrays_sha256": "fcae8bfd47c101220233bb2c4f94d2eaaddf0bb0eef5ee9753e903d4bfca9eb8",
+      "record": "results/response/prediction-coarse-dt0.020-oblique-weighted.json",
+      "record_sha256": "402f9f6e2a282cb36e2754aba01882e1a35068238e6073d4c86265f18f842d50",
+      "summary": {
+        "count": 8192,
+        "mean": 0.29937430713814606,
+        "variance": 440.9727742693297,
+        "standard_error": 0.23201225045037824,
+        "minimum": -171.29078862147557,
+        "maximum": 214.6367891606384
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-radial_outward-weighted",
+      "arrays": "results/response/prediction-fine-dt0.020-radial_outward-weighted.npz",
+      "arrays_sha256": "16b722e87ff6a509d4ec5d9d0e8f7f69c048400ea6367b0a6226fd9bb256ce11",
+      "record": "results/response/prediction-fine-dt0.020-radial_outward-weighted.json",
+      "record_sha256": "055cf255dd75511743a9cbcdc9afa90ee371990fc4022b8ae683b519398506e5",
+      "summary": {
+        "count": 8192,
+        "mean": -0.045276069345767445,
+        "variance": 42.14714507163144,
+        "standard_error": 0.07172806403268447,
+        "minimum": -98.20525881464637,
+        "maximum": 119.66866162812035
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-tangential-weighted",
+      "arrays": "results/response/prediction-fine-dt0.020-tangential-weighted.npz",
+      "arrays_sha256": "c77cc3599b2be9981dc77ca0fd9fa34926a377a6945f925b858ca304fa35b17f",
+      "record": "results/response/prediction-fine-dt0.020-tangential-weighted.json",
+      "record_sha256": "48519e4d86eb5b74c17cd43a765c786313376e2db6ac1c92c60761ccd0278155",
+      "summary": {
+        "count": 8192,
+        "mean": 0.16778282343687895,
+        "variance": 469.11053258586827,
+        "standard_error": 0.2392999567693199,
+        "minimum": -215.51768672509024,
+        "maximum": 198.48734280477726
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-oblique-weighted",
+      "arrays": "results/response/prediction-fine-dt0.020-oblique-weighted.npz",
+      "arrays_sha256": "6794c75061b0c3e8a1d457cf1202a26f9ed8b2840d57262bc1ea8a4bf46c433c",
+      "record": "results/response/prediction-fine-dt0.020-oblique-weighted.json",
+      "record_sha256": "afdd2eb25dea1cda32faf129d6c29d6b7e940c70c83b3592375880ad6516f9c9",
+      "summary": {
+        "count": 8192,
+        "mean": -0.18363717937951693,
+        "variance": 430.9941685479555,
+        "standard_error": 0.2293721710241384,
+        "minimum": -207.8135397816758,
+        "maximum": 185.27868235271438
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-radial_outward-weighted",
+      "arrays": "results/response/prediction-fine-dt0.010-radial_outward-weighted.npz",
+      "arrays_sha256": "dcf478417c5e62559938447b3432d5d408bea155e4c8552f38be7f221c911e9a",
+      "record": "results/response/prediction-fine-dt0.010-radial_outward-weighted.json",
+      "record_sha256": "56432852db89acfe5b77fc8275c2d988bebb2bf86325b51e4cd3cea86f7fb4b1",
+      "summary": {
+        "count": 65536,
+        "mean": -0.03680412632868167,
+        "variance": 142.10176325337488,
+        "standard_error": 0.04656501724355486,
+        "minimum": -250.90587116578504,
+        "maximum": 234.82486127198564
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-tangential-weighted",
+      "arrays": "results/response/prediction-fine-dt0.010-tangential-weighted.npz",
+      "arrays_sha256": "e8bdcbcfeeedfab45707622f12e6541b4aea91f3b99f42ccd90a998efb6069fb",
+      "record": "results/response/prediction-fine-dt0.010-tangential-weighted.json",
+      "record_sha256": "ee8d0ab0b27f6b67a1a2582d17b633092807046d88e40d3a1956ab9a2038bd11",
+      "summary": {
+        "count": 65536,
+        "mean": -0.14210934270245382,
+        "variance": 1904.2156816119946,
+        "standard_error": 0.17045828057100096,
+        "minimum": -499.3538810529288,
+        "maximum": 563.705483354675
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-oblique-weighted",
+      "arrays": "results/response/prediction-fine-dt0.010-oblique-weighted.npz",
+      "arrays_sha256": "aa2ef98aebfb1268c5ed19e167468955e4b116db55062a26d349aef8fe5d4494",
+      "record": "results/response/prediction-fine-dt0.010-oblique-weighted.json",
+      "record_sha256": "06a5e2502f207c7a10c2c37162df8bd97c238f049d7c74728e3f688e7f35173a",
+      "summary": {
+        "count": 65536,
+        "mean": -0.06168987162031426,
+        "variance": 1750.5765626188174,
+        "standard_error": 0.16343707812720118,
+        "minimum": -508.0725079431072,
+        "maximum": 504.30737338778044
+      }
+    }
+  ],
+  "claims": "Frozen finite-step first-response predictions before independent validation",
+  "known_endpoints": "Prior endpoint results are development evidence, not blind validation. Fresh seeds at original launches test replication; the oblique launch tests an unused direction with the estimator fixed beforehand.",
+  "created_utc": "2026-11-04T13:57:30.246353+00:00"
+}

@@ -27,7 +27,7 @@ from verify import (
 PAPER = ROOT / "paper"
 OUT = ROOT / "output/pdf"
 TMP = ROOT / "tmp/latex"
-EPOCH = datetime(2026, 11, 2, tzinfo=timezone.utc)
+EPOCH = datetime(2026, 11, 4, tzinfo=timezone.utc)
 
 
 def sha256(path):
@@ -102,7 +102,7 @@ def build():
         archive_path = stage / "manuscript-source.zip"
         with zipfile.ZipFile(archive_path, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
             def add(name, content):
-                info = zipfile.ZipInfo(name, date_time=(2026, 11, 2, 0, 0, 0))
+                info = zipfile.ZipInfo(name, date_time=(2026, 11, 4, 0, 0, 0))
                 info.compress_type = zipfile.ZIP_DEFLATED
                 info.external_attr = 0o100644 << 16
                 bundle.writestr(info, content)
@@ -123,11 +123,11 @@ def build():
         "version": VERSION,
         "title": source["title"],
         "pages": pdf_info["pages"],
-        "scope": "Residence hypothesis with matched encounter generators; six-cluster backgrounds, finite-angle local moments, collisionless controls and a conditional matched collisional pilot",
+        "scope": "Residence hypothesis with matched encounter generators; six-cluster backgrounds, finite-angle local moments, collisionless controls, a conditional matched collisional pilot and a discrete response test",
         "transport_simulations_performed": True,
         "collisionless_trajectories_performed": True,
         "collisional_trajectories_performed": True,
-        "trajectory_calculations": {"collisionless_reference":"collisionless-residence-1", "matched_pilot":"matched-residence-pilot-1", "recomputed_during_build":False},
+        "trajectory_calculations": {"collisionless_reference":"collisionless-residence-1", "matched_pilot":"matched-residence-pilot-1", "response_test":"residence-response-test-1", "recomputed_during_build":False},
         "matched_encounter_comparison_performed": True,
         "local_calculations": {"host": "host-reconstruction-1", "coefficients": "local-transport-kernels-1", "boundary": "outer-boundary-1", "galactic_orbit": "galactic-orbit-1", "cross_cluster_comparison": "six-cluster-comparison-1", "finite_angle_encounters": "finite-angle-encounter-1", "recomputed_during_build": False},
         "executed_during_build": [],

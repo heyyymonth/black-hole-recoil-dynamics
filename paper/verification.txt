@@ -20,4 +20,8 @@ Verified 16 matched ensembles, 65536 retained paths and both kernel grids; no tr
   "max_mass_quadrature_relative_change": 1.4833208772380146e-08
 }
 Verified matched-pilot table and vector figure from recorded ensembles.
-Verified formulation and data manuscript 0.13.0-manuscript.1: 28 US Letter pages, 26 embedded vector fonts, current source and archive hashes, and matching citation metadata. Verification reruns no physical calculations.
+Verified 6 pilot, 9 prediction and 21 independent-validation records; 1345536 retained branch trajectories. No trajectories rerun.
+Verified response table and vector figure from retained samples.
+Verified formulation and data manuscript 0.14.0-manuscript.1: 31 US Letter pages, 26 embedded vector fonts, current source and archive hashes, and matching citation metadata. Verification reruns no physical calculations.
+Visual review: all 31 rendered pages inspected; response equations, table and figure inspected at higher resolution. No clipping or overlaps observed.
+Numerical implementation checks: 235 tests passed; frozen execution sources unchanged since that check.

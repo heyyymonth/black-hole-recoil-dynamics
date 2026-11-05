@@ -2,7 +2,7 @@
 
 **Researcher:** Venkata Hemanth Athota
 
-**Status:** mathematical formulation and calculation specification. The [host calculation](local-transport-calculations.md) supplies consistent species densities for one realization. [Collisionless controls](collisionless-residence.md) evaluate path accumulation, crossings and residence for twelve diagnostic launches, with independent checks. A [matched pilot](matched-residence.md) evaluates conditional stochastic residence and BH exposure. Moving-host cases, calibrated cluster transport and the occupation-response prediction remain unevaluated.
+**Status:** mathematical formulation and calculation specification. The [host calculation](local-transport-calculations.md) supplies consistent species densities for one realization. [Collisionless controls](collisionless-residence.md) evaluate path accumulation, crossings and residence for twelve diagnostic launches, with independent checks. A [matched pilot](matched-residence.md) evaluates conditional stochastic residence and BH exposure. A [discrete response test](response-test.md) evaluates the mean-residence predictor against independent mixture trajectories. Moving-host cases, calibrated cluster transport and the continuous-time backward occupation field remain unevaluated; computing a discrete predictor does not establish its accuracy.
 
 ## Physical question
 
@@ -192,7 +192,7 @@ The calculation specification passes the following information from Step 1 into 
 
 These outputs preserve the motion and environmental information needed to pose subsequent questions. They do not themselves determine a population of possible companions or an interaction law.
 
-## Planned acceptance checks — unexecuted
+## Acceptance conditions for the general exposure model
 
 - **Units and bounds:** verify the stated dimensions, nonnegative exposures, $`0\le C_T\le T_*\le T`$, and total occupation-measure mass $`T_*`$. Do not impose a unit upper bound on normalized exposure without a density bound.
 - **Crossing semantics:** distinguish sign changes from tangential contacts, handle inside/outside/boundary launches explicitly, and separate boundary growth from remnant motion. Verify that re-entry never resets position or velocity.
@@ -202,6 +202,6 @@ These outputs preserve the motion and environmental information needed to pose s
 - **Dependence and uncertainty:** preserve joint launch/host conditioning and distinguish stochastic variation from uncertain physical inputs. Report numerical sampling uncertainty separately.
 - **Region and reference conventions:** verify that changed regions or normalizations alter the declared observable consistently, and record each convention with its result.
 
-No pass status is assigned to these checks. They make the first numerical implementation reviewable before its output is interpreted as a physical prediction.
+These are requirements for the general exposure model. The linked collisionless, matched-pilot and response records verify specified numerical subsets; they do not establish all conditions for a moving host, a merger-conditioned population or physical-cluster calibration. Each implementation retains its own acceptance and uncertainty record.
 
 The [outer-boundary result](outer-boundary.md) supplies a concrete validity-stop example for an isolated-host control. Exposure accumulated before that stop is a stopped-path quantity. It cannot be interpreted as the remnant's complete future exposure or as evidence that it never returns.

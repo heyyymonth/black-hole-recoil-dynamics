@@ -55,7 +55,7 @@ A full-horizon physical conclusion requires coverage of that horizon. A stopped 
 
 These decisions belong in a versioned calculation specification. The present register keeps them open.
 
-## Acceptance conditions — unexecuted
+## Acceptance conditions for a fully specified trajectory model
 
 - Check dimensions, mass/number normalization, force–potential consistency, and diffusion symmetry and positivity.
 - Recover appropriate conservative and independently justified analytical stochastic limits, including the Ito energy balance.
@@ -82,7 +82,7 @@ The [reference-orbit stage](galactic-orbit.md) supplies position, velocity, exac
 
 ## Matched local encounter input
 
-The [finite-angle protocol](../analysis/encounters/protocol.json) assigns a conditional elastic domain and computes its rates, moments and sampled increments in all six reference hosts. These local choices do not automatically assign the general trajectory inputs above. A trajectory implementation must carry the same law into both descriptions, supply the common lighter-species treatment, and account for the recorded excluded close-passage flux. The verified single-transition response estimator supplies an algorithm; its time-step convergence and cluster residence response remain to be established.
+The [finite-angle protocol](../analysis/encounters/protocol.json) assigns a conditional elastic domain and computes its rates, moments and sampled increments in all six reference hosts. These local choices do not automatically assign the general trajectory inputs above. A trajectory implementation must carry the same law into both descriptions, supply the common lighter-species treatment, and account for the recorded excluded close-passage flux. The [discrete response test](response-test.md) applies the single-transition estimator to residence in the conditional Omega Centauri host and compares its recorded prediction with independent mixture trajectories. It retains the common numerical encounter law, reward and stopping operations. Continuous-time convergence and physical-cluster calibration remain to be established.
 
 ## Collisionless dynamical control
 

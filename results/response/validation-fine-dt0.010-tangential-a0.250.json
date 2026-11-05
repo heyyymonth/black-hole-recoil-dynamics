@@ -1,0 +1,299 @@
+{
+  "complete": true,
+  "revision": "residence-response-test-1",
+  "identity": {
+    "protocol_sha256": "d874a20a306bf2efc7ebe4167d51873110f1282bbe0119b4dc5a701fb9b64cb6",
+    "input_sha256": {
+      "analysis/response/protocol.json": "d874a20a306bf2efc7ebe4167d51873110f1282bbe0119b4dc5a701fb9b64cb6",
+      "analysis/matched/protocol.json": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da",
+      "results/cluster-comparison/NGC5139/reference/host.npz": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+      "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+      "analysis/residence/protocol.json": "0d66c27456f00377e1b86363b7958b723078425483e88763112b0ae2ad0cc39d",
+      "results/collisionless-residence/NGC5139.json": "88d73d9706517949d7855e6bdd9493cce1cfb7670db29ea4741752d6ddb47b4c",
+      "results/matched-residence/kernel-coarse.npz": "bcf5003f28bc2bc9247b083ecfbdbc2c0d5c16779f76af55ceb4eb692e92fce6",
+      "results/matched-residence/kernel-coarse.json": "b755fc38942d798753792a56c92ccb60dff61d4678fcde03ec6ec9e0d59b1efe",
+      "results/matched-residence/kernel-fine.npz": "8d3e5f0ca764ad59937598cd26dfc6476895f6def9631e78764e58514108af9b",
+      "results/matched-residence/kernel-fine.json": "12390685f177ea06259a7755948835a022a6bf86a55a5db39a1b90b73dbbde5c"
+    },
+    "implementation_sha256": {
+      "analysis/response/run.py": "1ac2d3e0b10c5e6b28f6128458f5b8ff37231b5dc86ccf560a04a929e15d2514",
+      "analysis/response/transport.py": "5c9d0dfdf34e3ebbbb6c173afc056615fcad7a63a63d5968c2200008312925c5",
+      "analysis/response/cache.py": "bd174180395dd346d4c4eda95cadcb412e00203ad6decde528fd59730cca99c8",
+      "analysis/matched/run.py": "e6aada18cb53f10c9b6079c5796da2cbc0a19f3ad45a9a56fc265bb55daeb853",
+      "analysis/matched/transport.py": "c819392a6165ca2cc1332ddcd0f36cefb0a12801c5a9fb1c48a6c63bda7606da",
+      "analysis/matched/kernel.py": "dcca9b2329904960b923e564c9c69beb307aa730e09691ec8c8da81e8d97c056",
+      "analysis/matched/statistics.py": "9041c7cd633d7b5f7e80130ea084b618ed4a18119f6d422ffdd3bdb013902fc1",
+      "analysis/host_reconstruction/host.py": "012a8525da438a27cc16ca3633f2eee6aa707bd8e0a70c1f88f366327b9daad0",
+      "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+      "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5"
+    },
+    "numpy_version": "1.24.2",
+    "scipy_version": "1.10.1"
+  },
+  "job": {
+    "name": "validation-fine-dt0.010-tangential-a0.250",
+    "stage": "validation",
+    "setting_index": 2,
+    "launch_index": 1,
+    "variant_index": 2,
+    "setting": {
+      "name": "fine-dt0.010",
+      "grid": "fine",
+      "dt": 0.01,
+      "role": "primary"
+    },
+    "launch": {
+      "name": "tangential",
+      "angle_from_radial_degrees": 90.0,
+      "role": "previously seen endpoint setting; independent replication"
+    },
+    "method": "paired_mixture",
+    "a": 0.25,
+    "paths": 8192,
+    "seed": [
+      2026110201,
+      30,
+      2,
+      1,
+      2
+    ]
+  },
+  "stage_dependencies": {
+    "execution_design_sha256": "3d7e3dec4113ce901de77bad1404b8c328d466298d94d3a3cd0d98aca75a7b5c",
+    "sample_count_lock_sha256": "30f7059c7a6a496b2e82f529ca3ef9bbc83a14a3328295e5d0eee735d7e6efdd",
+    "prediction_register_sha256": "0127cc90c4308a6702b97ebf55a1a2fc3b51da29cf6c1bcf72c0dcc314f0a389"
+  },
+  "started_utc": "2026-11-04T14:10:06.011088+00:00",
+  "completed_utc": "2026-11-04T14:11:05.717821+00:00",
+  "wall_seconds": 59.68377691716887,
+  "horizon": 10.0,
+  "dt": 0.01,
+  "n_steps": 1000,
+  "initial_state": [
+    0.5,
+    0.0,
+    0.0,
+    0.0,
+    1.7031426054832277,
+    0.0
+  ],
+  "spatial_stop": 4.0,
+  "velocity_stop": 4.0,
+  "inherited_force_domain": 352.97875122826974,
+  "region_radius": 1.0,
+  "scales": {
+    "density_radius_pc": 0.02478240804511103,
+    "velocity_kms": 11.67460798714323,
+    "time_Myr": 0.0020756196565841645
+  },
+  "units": "r_rho, v_dyn, t_dyn; normalized rewards divided by full horizon",
+  "coupling": "Shared fixed-row Gaussian and excluded-clock draws; independent Bernoulli/count/event streams",
+  "branches": [
+    "baseline",
+    "mixture"
+  ],
+  "summary": {
+    "count": 8192,
+    "mean": -0.004247168569744769,
+    "variance": 0.01758424431254103,
+    "standard_error": 0.0014650986991695239,
+    "minimum": -0.5912881348153038,
+    "maximum": 0.7293397095121257
+  },
+  "numerical_missing_bound": {
+    "count": 8192,
+    "mean": 0.0001239419226495417,
+    "variance": 2.74377463284271e-05,
+    "standard_error": 5.787343318489774e-05,
+    "minimum": 0.0,
+    "maximum": 0.2508859335993602
+  },
+  "stops": {
+    "baseline": {
+      "horizon": 8189,
+      "spatial_domain": 3
+    },
+    "mixture": {
+      "horizon": 8190,
+      "spatial_domain": 2
+    }
+  },
+  "cache": {
+    "hits": 92125,
+    "misses": 16712,
+    "evictions": 16191,
+    "build_seconds": 191.31800697837025,
+    "peak_resident_bytes": 2147483364,
+    "resident_bytes": 2147212220,
+    "resident_vertices": 521,
+    "maximum_bytes": 2147483648,
+    "maximum_vertices": 768,
+    "bytes_scope": "Retained sampler arrays; excludes Python overhead and temporary construction arrays",
+    "law": "Original float64 CDF, exact index/bound encoding, unchanged draw order"
+  },
+  "array_inventory": {
+    "baseline__states": {
+      "shape": [
+        8192,
+        6
+      ],
+      "dtype": "float64"
+    },
+    "baseline__residence": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "baseline__normalized_residence": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "baseline__exposure": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "baseline__normalized_exposure": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "baseline__end_time": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "baseline__stop_cause": {
+      "shape": [
+        8192
+      ],
+      "dtype": "<U24"
+    },
+    "baseline__alive": {
+      "shape": [
+        8192
+      ],
+      "dtype": "bool"
+    },
+    "baseline__elastic_events": {
+      "shape": [
+        8192
+      ],
+      "dtype": "int64"
+    },
+    "baseline__evaluated_steps": {
+      "shape": [
+        8192
+      ],
+      "dtype": "int64"
+    },
+    "mixture__states": {
+      "shape": [
+        8192,
+        6
+      ],
+      "dtype": "float64"
+    },
+    "mixture__residence": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "mixture__normalized_residence": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "mixture__exposure": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "mixture__normalized_exposure": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "mixture__end_time": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "mixture__stop_cause": {
+      "shape": [
+        8192
+      ],
+      "dtype": "<U24"
+    },
+    "mixture__alive": {
+      "shape": [
+        8192
+      ],
+      "dtype": "bool"
+    },
+    "mixture__elastic_events": {
+      "shape": [
+        8192
+      ],
+      "dtype": "int64"
+    },
+    "mixture__evaluated_steps": {
+      "shape": [
+        8192
+      ],
+      "dtype": "int64"
+    },
+    "paired_difference": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    },
+    "numerical_missing_bound": {
+      "shape": [
+        8192
+      ],
+      "dtype": "float64"
+    }
+  },
+  "samples_sha256": "95a06ef07d7ee66c5263707162fef8eec649f27ec07da41480f72ce9f68d630a",
+  "storage_adapter": {
+    "path": "results/response/storage-adapter.json",
+    "sha256": "47a6541acd42e7c9b98de1937a0c32e859b15dce7f9d40760740d0011f02fa42"
+  },
+  "disk_cache": {
+    "loads": 16392,
+    "builds": 320,
+    "read_seconds": 140.81460128445178,
+    "write_seconds": 2.0257625363301486,
+    "build_seconds": 47.76667855260894,
+    "read_bytes": 68352576105,
+    "written_bytes": 1351655933,
+    "cache_path": "tmp/response-sampler-cache/fine/fine-bb7a8be8110d4f07161aec9c7f5a4114754e0b573a6f4eb06f401d9a0eeff19a",
+    "bytes_in_cache_root_at_last_write": 7682428828,
+    "maximum_disk_bytes": 16106127360,
+    "identity": {
+      "format": "exact-compact-sampler-npz-1",
+      "namespace": "3d7e3dec4113ce901de77bad1404b8c328d466298d94d3a3cd0d98aca75a7b5c",
+      "grid": "fine",
+      "adapter_sha256": "85130846e332abe76cc33ec8ea7254d24b2475eb0933527452236b06f9af5afd",
+      "compact_cache_sha256": "bd174180395dd346d4c4eda95cadcb412e00203ad6decde528fd59730cca99c8",
+      "host_sha256": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+      "table_sha256": "8d3e5f0ca764ad59937598cd26dfc6476895f6def9631e78764e58514108af9b",
+      "table_record_sha256": "12390685f177ea06259a7755948835a022a6bf86a55a5db39a1b90b73dbbde5c",
+      "matched_protocol_sha256": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da"
+    },
+    "scope": "Lossless storage only; disk budget covers this single-writer cache root; in-memory policy is inherited unchanged"
+  }
+}

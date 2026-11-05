@@ -1,0 +1,81 @@
+{
+  "revision": "compact-cache-benchmark-1",
+  "design_sha256": "ec8202bfd22dd906a485af92a1653390259c3fa7e0478e92178faeda23be0015",
+  "source_sha256": {
+    "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+    "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+    "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5",
+    "analysis/host_reconstruction/host.py": "012a8525da438a27cc16ca3633f2eee6aa707bd8e0a70c1f88f366327b9daad0",
+    "analysis/matched/build_kernel.py": "0a983a15d3083dfb3861f5c9c87818a9adaae5a803d4481a020c5ea18eaef1a1",
+    "analysis/matched/kernel.py": "dcca9b2329904960b923e564c9c69beb307aa730e09691ec8c8da81e8d97c056",
+    "analysis/matched/protocol.json": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da",
+    "analysis/response/benchmark_cache.py": "692b8bab4f56ac55b18783c6d57b6ec43edfcc5274019590b82dd86014cf540c",
+    "analysis/response/cache.py": "bd174180395dd346d4c4eda95cadcb412e00203ad6decde528fd59730cca99c8",
+    "results/cluster-comparison/NGC5139/reference/host.npz": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+    "results/matched-residence/kernel-fine.json": "12390685f177ea06259a7755948835a022a6bf86a55a5db39a1b90b73dbbde5c",
+    "results/matched-residence/kernel-fine.npz": "8d3e5f0ca764ad59937598cd26dfc6476895f6def9631e78764e58514108af9b"
+  },
+  "sources_changed_during_run": [],
+  "records": [
+    {
+      "name": "ordinary",
+      "pass_seconds": [
+        20.154972499934956,
+        19.80992095801048
+      ],
+      "total_seconds": 39.964893457945436,
+      "hits": 0,
+      "misses": 320,
+      "first_sampler_bytes": 13321800,
+      "retained_sampler_bytes": 1604504640,
+      "increment_sha256": "bac4af0390e72de08fc05abd3a7a440fa55012cc9c7dfd8728c97981348da51c",
+      "rng_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 331423003968644970745486230508953753791,
+          "inc": 51814319044397337032566164594164568507
+        },
+        "has_uint32": 0,
+        "uinteger": 2111670286
+      }
+    },
+    {
+      "name": "compact",
+      "pass_seconds": [
+        21.38340958300978,
+        0.02139945817179978
+      ],
+      "total_seconds": 21.40480904118158,
+      "hits": 160,
+      "misses": 160,
+      "first_sampler_bytes": 4388432,
+      "retained_sampler_bytes": 672872848,
+      "increment_sha256": "bac4af0390e72de08fc05abd3a7a440fa55012cc9c7dfd8728c97981348da51c",
+      "rng_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 331423003968644970745486230508953753791,
+          "inc": 51814319044397337032566164594164568507
+        },
+        "has_uint32": 0,
+        "uinteger": 2111670286
+      },
+      "cache_statistics": {
+        "hits": 160,
+        "misses": 160,
+        "evictions": 0,
+        "build_seconds": 21.34817579900846,
+        "peak_resident_bytes": 672872848,
+        "resident_bytes": 672872848,
+        "resident_vertices": 160,
+        "maximum_bytes": 2147483648,
+        "maximum_vertices": 768,
+        "bytes_scope": "Retained sampler arrays; excludes Python overhead and temporary construction arrays",
+        "law": "Original float64 CDF, exact index/bound encoding, unchanged draw order"
+      }
+    }
+  ],
+  "bitwise_equal_increment_stream": true,
+  "equal_final_rng_state": true,
+  "scope": "Synthetic cyclic cache workload; not a trajectory experiment or an estimate of production speedup"
+}

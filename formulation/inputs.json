@@ -51,7 +51,7 @@
     "random_seed_policy": null,
     "independent_validation_cases": null
   },
-  "result_status": "Six conditional reference hosts, local and finite-angle encounter calculations, environmental controls, twelve collisionless reference paths, and a conditional matched jump/diffusion residence pilot. No evaluated occupation-response predictor or calibrated cluster residence.",
+  "result_status": "Six conditional reference hosts, local and finite-angle encounters, environmental controls, collisionless paths, matched jump/diffusion residence and a discrete first-response test. Response-prediction accuracy remains unresolved; no calibrated cluster residence.",
   "handoff": "docs/calculation-handoff.md",
   "execution_scope": "general remnant trajectory ensemble; stage-specific host and coefficient calculations are defined separately",
   "completed_calculations": [
@@ -92,6 +92,11 @@
       "revision": "matched-residence-pilot-1",
       "protocol": "analysis/matched/protocol.json",
       "result": "results/matched-residence/summary.json"
+    },
+    {
+      "revision": "residence-response-test-1",
+      "protocol": "analysis/response/protocol.json",
+      "result": "results/response/summary.json"
     }
   ]
 }

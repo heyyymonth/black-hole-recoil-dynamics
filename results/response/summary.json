@@ -1,0 +1,4223 @@
+{
+  "revision": "residence-response-test-1",
+  "cluster": "NGC5139",
+  "cluster_residence_response_evaluated": true,
+  "discrete_response_validation_performed": true,
+  "continuum_accuracy_classification": "unresolved",
+  "scope": "Prospectively specified test of the discrete whole-transition first response in one conditional host; continuum and physical-cluster conclusions require additional convergence and calibration",
+  "reporting": {
+    "confidence": 0.95,
+    "bonferroni_family_size": 64,
+    "family_scope": "Conservative allowance covering 9 response means, 21 validation shifts, 21 prediction residuals, 6 response-refinement contrasts, and 6 endpoint-refinement contrasts (63 statements); duplicated scaled-response intervals inherit their original response event. Normal approximations, not exact finite-sample guarantees.",
+    "prediction_absolute_error_target": 0.001,
+    "numerical_sensitivity_budget": 0.0005,
+    "numerical_missing_residence_budget": 0.0002,
+    "small_a_test": "Compare [mu(a)-mu(0)]/a with S at both 0.05 and 0.1; report the remainder/a with its interval. A finite a is not an exact derivative test and an interval containing zero is not equivalence.",
+    "endpoint_test": "For a=1 compare [mu(1)-mu(0)]-S with the predeclared absolute error tolerance; intervals wholly within support finite-resolution agreement, wholly outside establish disagreement, overlap is inconclusive.",
+    "continuum_gate": "No continuum claim unless sampling, response and endpoint grid/time sensitivity, numerical-domain continuation uncertainty, and local-kernel resolution are adequately controlled. Finite refinement shifts are not rigorous truncation bounds.",
+    "weighted_censoring": "Bound possible response continuation pathwise by N * [p0*B_zero+pplus*B_positive+(B_Dplus+B_Dminus)/2], B=(T-stop_time)/T for numerical-domain stops only. Preserve all weighted branches and do not renormalize survivors.",
+    "precision": "Normal intervals can be unreliable for rare influential contributions; retain extrema, standard errors, and contribution diagnostics. Resource-limited inconclusive results are reported without widening acceptance thresholds.",
+    "claims": "No capture, merger-rate, distributional-response, host-feedback or calibrated real-cluster claim; this tests a mean-residence predictor."
+  },
+  "inferential_comparisons": 63,
+  "bonferroni_family_size": 64,
+  "counts": {
+    "pilot_ensembles": 6,
+    "prediction_ensembles": 9,
+    "validation_ensembles": 21,
+    "independent_groups": 423936,
+    "branch_trajectories": 1345536
+  },
+  "pilot": [
+    {
+      "launch": "radial_outward",
+      "methods": {
+        "naive": {
+          "record": "pilot-fine-dt0.010-radial_outward-naive",
+          "n": 1024,
+          "mean": 0.03838979843257562,
+          "variance": 259.181534864495,
+          "wall_seconds": 7.777357832994312,
+          "variance_times_seconds_per_pair": 1.9685034573690123
+        },
+        "weighted": {
+          "record": "pilot-fine-dt0.010-radial_outward-weighted",
+          "n": 1024,
+          "mean": 0.04764142390218992,
+          "variance": 132.56586107010307,
+          "wall_seconds": 74.87821583286859,
+          "variance_times_seconds_per_pair": 9.693647614528563
+        }
+      },
+      "variance_ratio_naive_over_weighted": 1.9551152368514804,
+      "cost_adjusted_ratio_naive_over_weighted": 0.2030714892522682,
+      "count_selection": {
+        "pilot_variance": 132.56586107010307,
+        "uncapped_variance_rule_count": 8589934592,
+        "selected_count": 65536,
+        "cap_hit": true
+      },
+      "scope": "Independent exploratory variance estimates; pilot excluded from inference; cache warmup affects measured costs"
+    },
+    {
+      "launch": "tangential",
+      "methods": {
+        "naive": {
+          "record": "pilot-fine-dt0.010-tangential-naive",
+          "n": 1024,
+          "mean": 0.8966560742500482,
+          "variance": 2392.945902062389,
+          "wall_seconds": 7.8010552080813795,
+          "variance_times_seconds_per_pair": 18.229983488223432
+        },
+        "weighted": {
+          "record": "pilot-fine-dt0.010-tangential-weighted",
+          "n": 1024,
+          "mean": -0.037331268102123116,
+          "variance": 1890.9346761526072,
+          "wall_seconds": 56.009341625031084,
+          "variance_times_seconds_per_pair": 103.42774049536024
+        }
+      },
+      "variance_ratio_naive_over_weighted": 1.2654831138488611,
+      "cost_adjusted_ratio_naive_over_weighted": 0.1762581624708434,
+      "count_selection": {
+        "pilot_variance": 1890.9346761526072,
+        "uncapped_variance_rule_count": 137438953472,
+        "selected_count": 65536,
+        "cap_hit": true
+      },
+      "scope": "Independent exploratory variance estimates; pilot excluded from inference; cache warmup affects measured costs"
+    },
+    {
+      "launch": "oblique",
+      "methods": {
+        "naive": {
+          "record": "pilot-fine-dt0.010-oblique-naive",
+          "n": 1024,
+          "mean": 0.3847268860264874,
+          "variance": 2127.3107154446475,
+          "wall_seconds": 7.790051833027974,
+          "variance_times_seconds_per_pair": 16.183457752216434
+        },
+        "weighted": {
+          "record": "pilot-fine-dt0.010-oblique-weighted",
+          "n": 1024,
+          "mean": 0.38173962893806834,
+          "variance": 1762.0080716132989,
+          "wall_seconds": 46.18799104099162,
+          "variance_times_seconds_per_pair": 79.47618459553708
+        }
+      },
+      "variance_ratio_naive_over_weighted": 1.2073217766232345,
+      "cost_adjusted_ratio_naive_over_weighted": 0.2036265056579629,
+      "count_selection": {
+        "pilot_variance": 1762.0080716132989,
+        "uncapped_variance_rule_count": 137438953472,
+        "selected_count": 65536,
+        "cap_hit": true
+      },
+      "scope": "Independent exploratory variance estimates; pilot excluded from inference; cache warmup affects measured costs"
+    }
+  ],
+  "predictions": [
+    {
+      "name": "prediction-coarse-dt0.020-radial_outward-weighted",
+      "setting": "coarse-dt0.020",
+      "launch": "radial_outward",
+      "grid": "coarse",
+      "dt": 0.02,
+      "role": "grid sensitivity",
+      "response": {
+        "estimate": -0.10596952619629244,
+        "standard_error": 0.06498316226817934,
+        "variance_of_estimate": 0.004222811378372526,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.2333341838434461,
+          0.02139513145086122
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.32427095396503036,
+          0.11233190157244552
+        ],
+        "absolute_estimate": 0.10596952619629244,
+        "absolute_interval": [
+          0.0,
+          0.32427095396503036
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 34.59327081162773,
+        "minimum": -109.8341665792795,
+        "maximum": 88.44074190105705,
+        "zero_contribution_count": 870,
+        "zero_contribution_fraction": 0.106201171875,
+        "normalization": "Complete-transition response score for full-horizon normalized reward C/T; estimator weights supplied by caller",
+        "interpretation": "Derivative at a=0 of the discrete whole-transition mixture; not an endpoint identity",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "precision_target_met_by_observed_interval": false,
+      "top_one_percent_absolute_contribution_fraction": 0.18020946281157804,
+      "numerical_continuation": {
+        "sample_mean_bound": 0.14616132381015134,
+        "sample_maximum_bound": 337.84372434280664,
+        "nonzero_rows": 5,
+        "budget": 0.0002,
+        "scope": "Finite-sample pathwise bound; not a population confidence bound"
+      },
+      "time_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 2.5,
+            "count": 2081,
+            "contribution": -0.04178068059161945
+          },
+          {
+            "low": 2.5,
+            "high": 5.0,
+            "count": 2111,
+            "contribution": -0.04343201553419135
+          },
+          {
+            "low": 5.0,
+            "high": 7.5,
+            "count": 1943,
+            "contribution": -0.02781126253181453
+          },
+          {
+            "low": 7.5,
+            "high": 10.0,
+            "count": 2055,
+            "contribution": 0.007054432461332914
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 2,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "radius_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 0.5,
+            "count": 884,
+            "contribution": 0.0009965966807686795
+          },
+          {
+            "low": 0.5,
+            "high": 1.0,
+            "count": 1655,
+            "contribution": -0.09041872140790473
+          },
+          {
+            "low": 1.0,
+            "high": 2.0,
+            "count": 4716,
+            "contribution": -0.012528322363995752
+          },
+          {
+            "low": 2.0,
+            "high": 4.0,
+            "count": 935,
+            "contribution": -0.004019079105160632
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 2,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8188,
+          "spatial_domain": 4
+        },
+        "jump_positive": {
+          "horizon": 8187,
+          "spatial_domain": 5
+        },
+        "diffusion_plus": {
+          "horizon": 8188,
+          "spatial_domain": 4
+        },
+        "diffusion_minus": {
+          "horizon": 8188,
+          "spatial_domain": 4
+        }
+      }
+    },
+    {
+      "name": "prediction-coarse-dt0.020-tangential-weighted",
+      "setting": "coarse-dt0.020",
+      "launch": "tangential",
+      "grid": "coarse",
+      "dt": 0.02,
+      "role": "grid sensitivity",
+      "response": {
+        "estimate": -0.13746300004169562,
+        "standard_error": 0.26154196624385684,
+        "variance_of_estimate": 0.06840420010670274,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.6500758343254456,
+          0.3751498342420543
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -1.0160749767388504,
+          0.7411489766554592
+        ],
+        "absolute_estimate": 0.13746300004169562,
+        "absolute_interval": [
+          0.0,
+          1.0160749767388504
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 560.3672072741089,
+        "minimum": -253.53867713551915,
+        "maximum": 284.9097321850873,
+        "zero_contribution_count": 789,
+        "zero_contribution_fraction": 0.0963134765625,
+        "normalization": "Complete-transition response score for full-horizon normalized reward C/T; estimator weights supplied by caller",
+        "interpretation": "Derivative at a=0 of the discrete whole-transition mixture; not an endpoint identity",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "precision_target_met_by_observed_interval": false,
+      "top_one_percent_absolute_contribution_fraction": 0.12855782256462245,
+      "numerical_continuation": {
+        "sample_mean_bound": 0.007742806693389748,
+        "sample_maximum_bound": 62.91710292497144,
+        "nonzero_rows": 4,
+        "budget": 0.0002,
+        "scope": "Finite-sample pathwise bound; not a population confidence bound"
+      },
+      "time_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 2.5,
+            "count": 2038,
+            "contribution": -0.2502972984187777
+          },
+          {
+            "low": 2.5,
+            "high": 5.0,
+            "count": 2004,
+            "contribution": 0.1214360131911024
+          },
+          {
+            "low": 5.0,
+            "high": 7.5,
+            "count": 2103,
+            "contribution": 0.008110952246403912
+          },
+          {
+            "low": 7.5,
+            "high": 10.0,
+            "count": 2047,
+            "contribution": -0.016712667060424364
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "radius_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 0.5,
+            "count": 400,
+            "contribution": -0.027575640393664724
+          },
+          {
+            "low": 0.5,
+            "high": 1.0,
+            "count": 2293,
+            "contribution": 0.024435998456326963
+          },
+          {
+            "low": 1.0,
+            "high": 2.0,
+            "count": 4865,
+            "contribution": -0.21913094163128094
+          },
+          {
+            "low": 2.0,
+            "high": 4.0,
+            "count": 634,
+            "contribution": 0.084807583526923
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8192
+        },
+        "jump_positive": {
+          "horizon": 8189,
+          "spatial_domain": 3
+        },
+        "diffusion_plus": {
+          "horizon": 8192
+        },
+        "diffusion_minus": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "prediction-coarse-dt0.020-oblique-weighted",
+      "setting": "coarse-dt0.020",
+      "launch": "oblique",
+      "grid": "coarse",
+      "dt": 0.02,
+      "role": "grid sensitivity",
+      "response": {
+        "estimate": 0.29937430713814606,
+        "standard_error": 0.23201225045037824,
+        "variance_of_estimate": 0.053829684359049036,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.15536134771668225,
+          0.7541099619929743
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.4800369090186425,
+          1.0787855232949346
+        ],
+        "absolute_estimate": 0.29937430713814606,
+        "absolute_interval": [
+          0.0,
+          1.0787855232949346
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 440.9727742693297,
+        "minimum": -171.29078862147557,
+        "maximum": 214.6367891606384,
+        "zero_contribution_count": 814,
+        "zero_contribution_fraction": 0.099365234375,
+        "normalization": "Complete-transition response score for full-horizon normalized reward C/T; estimator weights supplied by caller",
+        "interpretation": "Derivative at a=0 of the discrete whole-transition mixture; not an endpoint identity",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "precision_target_met_by_observed_interval": false,
+      "top_one_percent_absolute_contribution_fraction": 0.11879005980288922,
+      "numerical_continuation": {
+        "sample_mean_bound": 0.019901592205052727,
+        "sample_maximum_bound": 102.77461569930458,
+        "nonzero_rows": 2,
+        "budget": 0.0002,
+        "scope": "Finite-sample pathwise bound; not a population confidence bound"
+      },
+      "time_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 2.5,
+            "count": 2028,
+            "contribution": 0.023402489555318665
+          },
+          {
+            "low": 2.5,
+            "high": 5.0,
+            "count": 1984,
+            "contribution": 0.23279858777672396
+          },
+          {
+            "low": 5.0,
+            "high": 7.5,
+            "count": 2134,
+            "contribution": 0.037072325780766455
+          },
+          {
+            "low": 7.5,
+            "high": 10.0,
+            "count": 2046,
+            "contribution": 0.006100904025336954
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "radius_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 0.5,
+            "count": 570,
+            "contribution": -0.04120538580289994
+          },
+          {
+            "low": 0.5,
+            "high": 1.0,
+            "count": 1982,
+            "contribution": 0.18037702142974413
+          },
+          {
+            "low": 1.0,
+            "high": 2.0,
+            "count": 4860,
+            "contribution": 0.15206408470052846
+          },
+          {
+            "low": 2.0,
+            "high": 4.0,
+            "count": 780,
+            "contribution": 0.008138586810773412
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8192
+        },
+        "jump_positive": {
+          "horizon": 8192
+        },
+        "diffusion_plus": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "diffusion_minus": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-radial_outward-weighted",
+      "setting": "fine-dt0.020",
+      "launch": "radial_outward",
+      "grid": "fine",
+      "dt": 0.02,
+      "role": "time sensitivity",
+      "response": {
+        "estimate": -0.045276069345767445,
+        "standard_error": 0.07172806403268447,
+        "variance_of_estimate": 0.005144915169876885,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.18586049153061185,
+          0.09530835283907696
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.28623600793419757,
+          0.19568386924266265
+        ],
+        "absolute_estimate": 0.045276069345767445,
+        "absolute_interval": [
+          0.0,
+          0.28623600793419757
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 42.14714507163144,
+        "minimum": -98.20525881464637,
+        "maximum": 119.66866162812035,
+        "zero_contribution_count": 878,
+        "zero_contribution_fraction": 0.107177734375,
+        "normalization": "Complete-transition response score for full-horizon normalized reward C/T; estimator weights supplied by caller",
+        "interpretation": "Derivative at a=0 of the discrete whole-transition mixture; not an endpoint identity",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "precision_target_met_by_observed_interval": false,
+      "top_one_percent_absolute_contribution_fraction": 0.18973091500771386,
+      "numerical_continuation": {
+        "sample_mean_bound": 0.06061693711611565,
+        "sample_maximum_bound": 269.48907834550846,
+        "nonzero_rows": 2,
+        "budget": 0.0002,
+        "scope": "Finite-sample pathwise bound; not a population confidence bound"
+      },
+      "time_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 2.5,
+            "count": 2037,
+            "contribution": -0.04418208567990197
+          },
+          {
+            "low": 2.5,
+            "high": 5.0,
+            "count": 2073,
+            "contribution": 0.01153148081631445
+          },
+          {
+            "low": 5.0,
+            "high": 7.5,
+            "count": 2045,
+            "contribution": -0.0031888496763326016
+          },
+          {
+            "low": 7.5,
+            "high": 10.0,
+            "count": 2037,
+            "contribution": -0.00943661480584734
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "radius_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 0.5,
+            "count": 850,
+            "contribution": -0.0034121083466968627
+          },
+          {
+            "low": 0.5,
+            "high": 1.0,
+            "count": 1699,
+            "contribution": 0.0010460545823297706
+          },
+          {
+            "low": 1.0,
+            "high": 2.0,
+            "count": 4732,
+            "contribution": -0.03856317860588881
+          },
+          {
+            "low": 2.0,
+            "high": 4.0,
+            "count": 911,
+            "contribution": -0.004346836975511515
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "jump_positive": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "diffusion_plus": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "diffusion_minus": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-tangential-weighted",
+      "setting": "fine-dt0.020",
+      "launch": "tangential",
+      "grid": "fine",
+      "dt": 0.02,
+      "role": "time sensitivity",
+      "response": {
+        "estimate": 0.16778282343687895,
+        "standard_error": 0.2392999567693199,
+        "variance_of_estimate": 0.05726446930979837,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.3012364733329799,
+          0.6368021202067378
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.6361103760376596,
+          0.9716760229114176
+        ],
+        "absolute_estimate": 0.16778282343687895,
+        "absolute_interval": [
+          0.0,
+          0.9716760229114176
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 469.11053258586827,
+        "minimum": -215.51768672509024,
+        "maximum": 198.48734280477726,
+        "zero_contribution_count": 850,
+        "zero_contribution_fraction": 0.103759765625,
+        "normalization": "Complete-transition response score for full-horizon normalized reward C/T; estimator weights supplied by caller",
+        "interpretation": "Derivative at a=0 of the discrete whole-transition mixture; not an endpoint identity",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "precision_target_met_by_observed_interval": false,
+      "top_one_percent_absolute_contribution_fraction": 0.130362455953818,
+      "numerical_continuation": {
+        "sample_mean_bound": 0.03975295840392739,
+        "sample_maximum_bound": 293.96661637781074,
+        "nonzero_rows": 4,
+        "budget": 0.0002,
+        "scope": "Finite-sample pathwise bound; not a population confidence bound"
+      },
+      "time_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 2.5,
+            "count": 2071,
+            "contribution": 0.1556687929740534
+          },
+          {
+            "low": 2.5,
+            "high": 5.0,
+            "count": 2102,
+            "contribution": -0.015595582995249834
+          },
+          {
+            "low": 5.0,
+            "high": 7.5,
+            "count": 1980,
+            "contribution": 0.04385838336445808
+          },
+          {
+            "low": 7.5,
+            "high": 10.0,
+            "count": 2038,
+            "contribution": -0.016148769906382674
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 1,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "radius_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 0.5,
+            "count": 393,
+            "contribution": -0.01577997254598351
+          },
+          {
+            "low": 0.5,
+            "high": 1.0,
+            "count": 2332,
+            "contribution": 0.12485716740705648
+          },
+          {
+            "low": 1.0,
+            "high": 2.0,
+            "count": 4829,
+            "contribution": -0.0077262304630713735
+          },
+          {
+            "low": 2.0,
+            "high": 4.0,
+            "count": 637,
+            "contribution": 0.06643185903887733
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 1,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "jump_positive": {
+          "horizon": 8189,
+          "spatial_domain": 3
+        },
+        "diffusion_plus": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "diffusion_minus": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-oblique-weighted",
+      "setting": "fine-dt0.020",
+      "launch": "oblique",
+      "grid": "fine",
+      "dt": 0.02,
+      "role": "time sensitivity",
+      "response": {
+        "estimate": -0.18363717937951693,
+        "standard_error": 0.2293721710241384,
+        "variance_of_estimate": 0.0526115928403266,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.6331983736425899,
+          0.2659240148835561
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.9541794349001247,
+          0.5869050761410908
+        ],
+        "absolute_estimate": 0.18363717937951693,
+        "absolute_interval": [
+          0.0,
+          0.9541794349001247
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 430.9941685479555,
+        "minimum": -207.8135397816758,
+        "maximum": 185.27868235271438,
+        "zero_contribution_count": 833,
+        "zero_contribution_fraction": 0.1016845703125,
+        "normalization": "Complete-transition response score for full-horizon normalized reward C/T; estimator weights supplied by caller",
+        "interpretation": "Derivative at a=0 of the discrete whole-transition mixture; not an endpoint identity",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "precision_target_met_by_observed_interval": false,
+      "top_one_percent_absolute_contribution_fraction": 0.12761782787665263,
+      "numerical_continuation": {
+        "sample_mean_bound": 0.024933636989090853,
+        "sample_maximum_bound": 200.34978131763333,
+        "nonzero_rows": 4,
+        "budget": 0.0002,
+        "scope": "Finite-sample pathwise bound; not a population confidence bound"
+      },
+      "time_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 2.5,
+            "count": 2055,
+            "contribution": -0.05110541342632596
+          },
+          {
+            "low": 2.5,
+            "high": 5.0,
+            "count": 2059,
+            "contribution": -0.11460930812408177
+          },
+          {
+            "low": 5.0,
+            "high": 7.5,
+            "count": 2031,
+            "contribution": -0.009013890184073475
+          },
+          {
+            "low": 7.5,
+            "high": 10.0,
+            "count": 2047,
+            "contribution": -0.008908567645035595
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "radius_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 0.5,
+            "count": 594,
+            "contribution": 0.031939651816037196
+          },
+          {
+            "low": 0.5,
+            "high": 1.0,
+            "count": 1957,
+            "contribution": 0.01234520364836475
+          },
+          {
+            "low": 1.0,
+            "high": 2.0,
+            "count": 4869,
+            "contribution": -0.2325064363342991
+          },
+          {
+            "low": 2.0,
+            "high": 4.0,
+            "count": 772,
+            "contribution": 0.004584401490380214
+          }
+        ],
+        "denominator": 8192,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "jump_positive": {
+          "horizon": 8188,
+          "spatial_domain": 4
+        },
+        "diffusion_plus": {
+          "horizon": 8192
+        },
+        "diffusion_minus": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-radial_outward-weighted",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "grid": "fine",
+      "dt": 0.01,
+      "role": "primary",
+      "response": {
+        "estimate": -0.03680412632868167,
+        "standard_error": 0.04656501724355486,
+        "variance_of_estimate": 0.002168300830892561,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.1280698830655358,
+          0.05446163040817244
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.19323249013149374,
+          0.11962423747413041
+        ],
+        "absolute_estimate": 0.03680412632868167,
+        "absolute_interval": [
+          0.0,
+          0.19323249013149374
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 65536,
+        "sample_variance": 142.10176325337488,
+        "minimum": -250.90587116578504,
+        "maximum": 234.82486127198564,
+        "zero_contribution_count": 6848,
+        "zero_contribution_fraction": 0.1044921875,
+        "normalization": "Complete-transition response score for full-horizon normalized reward C/T; estimator weights supplied by caller",
+        "interpretation": "Derivative at a=0 of the discrete whole-transition mixture; not an endpoint identity",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "precision_target_met_by_observed_interval": false,
+      "top_one_percent_absolute_contribution_fraction": 0.1733176114225751,
+      "numerical_continuation": {
+        "sample_mean_bound": 0.11344761721884067,
+        "sample_maximum_bound": 728.2668000688845,
+        "nonzero_rows": 27,
+        "budget": 0.0002,
+        "scope": "Finite-sample pathwise bound; not a population confidence bound"
+      },
+      "time_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 2.5,
+            "count": 16506,
+            "contribution": 0.010503195503552871
+          },
+          {
+            "low": 2.5,
+            "high": 5.0,
+            "count": 16461,
+            "contribution": -0.0408052183902695
+          },
+          {
+            "low": 5.0,
+            "high": 7.5,
+            "count": 16360,
+            "contribution": -0.005853785611227324
+          },
+          {
+            "low": 7.5,
+            "high": 10.0,
+            "count": 16206,
+            "contribution": -0.0006483178307376877
+          }
+        ],
+        "denominator": 65536,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 3,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "radius_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 0.5,
+            "count": 7168,
+            "contribution": -0.006092985897862526
+          },
+          {
+            "low": 0.5,
+            "high": 1.0,
+            "count": 13427,
+            "contribution": -0.008074004780874661
+          },
+          {
+            "low": 1.0,
+            "high": 2.0,
+            "count": 37616,
+            "contribution": -0.03615399550688045
+          },
+          {
+            "low": 2.0,
+            "high": 4.0,
+            "count": 7322,
+            "contribution": 0.013516859856935966
+          }
+        ],
+        "denominator": 65536,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 3,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 65523,
+          "spatial_domain": 13
+        },
+        "jump_positive": {
+          "horizon": 65516,
+          "spatial_domain": 20
+        },
+        "diffusion_plus": {
+          "horizon": 65523,
+          "spatial_domain": 13
+        },
+        "diffusion_minus": {
+          "horizon": 65524,
+          "spatial_domain": 12
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-tangential-weighted",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "grid": "fine",
+      "dt": 0.01,
+      "role": "primary",
+      "response": {
+        "estimate": -0.14210934270245382,
+        "standard_error": 0.17045828057100096,
+        "variance_of_estimate": 0.029056025415222085,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.4762014334882393,
+          0.19198274808333168
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.7147390012913386,
+          0.430520315886431
+        ],
+        "absolute_estimate": 0.14210934270245382,
+        "absolute_interval": [
+          0.0,
+          0.7147390012913386
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 65536,
+        "sample_variance": 1904.2156816119946,
+        "minimum": -499.3538810529288,
+        "maximum": 563.705483354675,
+        "zero_contribution_count": 6585,
+        "zero_contribution_fraction": 0.1004791259765625,
+        "normalization": "Complete-transition response score for full-horizon normalized reward C/T; estimator weights supplied by caller",
+        "interpretation": "Derivative at a=0 of the discrete whole-transition mixture; not an endpoint identity",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "precision_target_met_by_observed_interval": false,
+      "top_one_percent_absolute_contribution_fraction": 0.1312679867460716,
+      "numerical_continuation": {
+        "sample_mean_bound": 0.050442065599476754,
+        "sample_maximum_bound": 499.92048439955425,
+        "nonzero_rows": 26,
+        "budget": 0.0002,
+        "scope": "Finite-sample pathwise bound; not a population confidence bound"
+      },
+      "time_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 2.5,
+            "count": 16308,
+            "contribution": -0.022002882715136278
+          },
+          {
+            "low": 2.5,
+            "high": 5.0,
+            "count": 16344,
+            "contribution": 0.004506687620154826
+          },
+          {
+            "low": 5.0,
+            "high": 7.5,
+            "count": 16499,
+            "contribution": -0.12545318390152313
+          },
+          {
+            "low": 7.5,
+            "high": 10.0,
+            "count": 16384,
+            "contribution": 0.0008400362940508208
+          }
+        ],
+        "denominator": 65536,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 1,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "radius_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 0.5,
+            "count": 3001,
+            "contribution": -0.02794557346124067
+          },
+          {
+            "low": 0.5,
+            "high": 1.0,
+            "count": 18540,
+            "contribution": -0.0695290764343821
+          },
+          {
+            "low": 1.0,
+            "high": 2.0,
+            "count": 38956,
+            "contribution": -0.026471299898819606
+          },
+          {
+            "low": 2.0,
+            "high": 4.0,
+            "count": 5038,
+            "contribution": -0.018163392908011333
+          }
+        ],
+        "denominator": 65536,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 1,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "stops": {
+        "jump_zero": {
+          "excluded_channel": 1,
+          "horizon": 65527,
+          "spatial_domain": 8
+        },
+        "jump_positive": {
+          "excluded_channel": 1,
+          "horizon": 65524,
+          "spatial_domain": 11
+        },
+        "diffusion_plus": {
+          "excluded_channel": 2,
+          "horizon": 65524,
+          "spatial_domain": 10
+        },
+        "diffusion_minus": {
+          "excluded_channel": 2,
+          "horizon": 65525,
+          "spatial_domain": 9
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-oblique-weighted",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "grid": "fine",
+      "dt": 0.01,
+      "role": "primary",
+      "response": {
+        "estimate": -0.06168987162031426,
+        "standard_error": 0.16343707812720118,
+        "variance_of_estimate": 0.026711678506756858,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.3820206584880876,
+          0.2586409152474591
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.6107328276752507,
+          0.4873530844346222
+        ],
+        "absolute_estimate": 0.06168987162031426,
+        "absolute_interval": [
+          0.0,
+          0.6107328276752507
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 65536,
+        "sample_variance": 1750.5765626188174,
+        "minimum": -508.0725079431072,
+        "maximum": 504.30737338778044,
+        "zero_contribution_count": 6857,
+        "zero_contribution_fraction": 0.1046295166015625,
+        "normalization": "Complete-transition response score for full-horizon normalized reward C/T; estimator weights supplied by caller",
+        "interpretation": "Derivative at a=0 of the discrete whole-transition mixture; not an endpoint identity",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "precision_target_met_by_observed_interval": false,
+      "top_one_percent_absolute_contribution_fraction": 0.13411004419489206,
+      "numerical_continuation": {
+        "sample_mean_bound": 0.04496751109355536,
+        "sample_maximum_bound": 550.887496671944,
+        "nonzero_rows": 26,
+        "budget": 0.0002,
+        "scope": "Finite-sample pathwise bound; not a population confidence bound"
+      },
+      "time_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 2.5,
+            "count": 16636,
+            "contribution": -0.024416021861859937
+          },
+          {
+            "low": 2.5,
+            "high": 5.0,
+            "count": 16348,
+            "contribution": -0.03704294599333606
+          },
+          {
+            "low": 5.0,
+            "high": 7.5,
+            "count": 16185,
+            "contribution": 0.005020384515283256
+          },
+          {
+            "low": 7.5,
+            "high": 10.0,
+            "count": 16367,
+            "contribution": -0.00525128828040144
+          }
+        ],
+        "denominator": 65536,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "radius_contributions": {
+        "bins": [
+          {
+            "low": 0.0,
+            "high": 0.5,
+            "count": 4908,
+            "contribution": -0.055501284155934555
+          },
+          {
+            "low": 0.5,
+            "high": 1.0,
+            "count": 15564,
+            "contribution": -0.011240624392291197
+          },
+          {
+            "low": 1.0,
+            "high": 2.0,
+            "count": 39006,
+            "contribution": 0.004014992837560981
+          },
+          {
+            "low": 2.0,
+            "high": 4.0,
+            "count": 6058,
+            "contribution": 0.0010370440903506159
+          }
+        ],
+        "denominator": 65536,
+        "outside_count": 0,
+        "outside_contribution": 0.0,
+        "inactive_count": 0,
+        "inactive_contribution": 0.0,
+        "scope": "Descriptive signed decomposition, not separate confidence statements"
+      },
+      "stops": {
+        "jump_zero": {
+          "excluded_channel": 1,
+          "horizon": 65528,
+          "spatial_domain": 7
+        },
+        "jump_positive": {
+          "excluded_channel": 1,
+          "horizon": 65516,
+          "spatial_domain": 19
+        },
+        "diffusion_plus": {
+          "excluded_channel": 1,
+          "horizon": 65529,
+          "spatial_domain": 6
+        },
+        "diffusion_minus": {
+          "excluded_channel": 1,
+          "horizon": 65532,
+          "spatial_domain": 3
+        }
+      }
+    }
+  ],
+  "validations": [
+    {
+      "name": "validation-coarse-dt0.020-radial_outward-a1.000",
+      "setting": "coarse-dt0.020",
+      "launch": "radial_outward",
+      "a": 1.0,
+      "role": "grid sensitivity",
+      "observed_shift": {
+        "estimate": -0.003974865976824683,
+        "standard_error": 0.0013431470669405168,
+        "variance_of_estimate": 1.804044043430913e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.006607385853968705,
+          -0.0013423460996806612
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.008486972069883896,
+          0.0005372401162345294
+        ],
+        "absolute_estimate": 0.003974865976824683,
+        "absolute_interval": [
+          0.0,
+          0.008486972069883896
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.014778728803786039,
+        "minimum": -0.5608792034030751,
+        "maximum": 0.7205133708944242,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.10199466021946775,
+        "standard_error": 0.06499704164356987,
+        "variance_of_estimate": 0.0042246154224159565,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.025397200503579284,
+          0.22938652094251477
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.11635339328059101,
+          0.3203427137195265
+        ],
+        "absolute_estimate": 0.10199466021946775,
+        "absolute_interval": [
+          0.0,
+          0.3203427137195265
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 1.0,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.003974865976824683,
+        "predicted_shift": -0.10596952619629244,
+        "observed_shift_standard_error": 0.0013431470669405168,
+        "predicted_shift_standard_error": 0.06498316226817934,
+        "variance_components": {
+          "validation_shift": 1.804044043430913e-06,
+          "response_prediction": 0.004222811378372526
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.30535783423959845,
+          "baseline_mean": 0.3093327002164231,
+          "mixture_sample_variance": 0.007848377585224308,
+          "baseline_sample_variance": 0.007101504195624436,
+          "paired": true,
+          "paired_difference_sample_variance": 0.014778728803786039,
+          "paired_sample_covariance": 8.557648853135322e-05
+        },
+        "response": {
+          "n_pairs": 8192,
+          "slope": -0.10596952619629244,
+          "sample_variance": 34.59327081162773,
+          "variance_of_slope_estimate": 0.004222811378372526
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.10199466021946775,
+        "interval": [
+          -0.11635339328059101,
+          0.3203427137195265
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": "inconclusive",
+      "numerical_continuation_sample_mean_bound": 7.454803161936268e-05,
+      "stops": {
+        "baseline": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-coarse-dt0.020-tangential-a1.000",
+      "setting": "coarse-dt0.020",
+      "launch": "tangential",
+      "a": 1.0,
+      "role": "grid sensitivity",
+      "observed_shift": {
+        "estimate": -0.007107621085408829,
+        "standard_error": 0.0016701263256359386,
+        "variance_of_estimate": 2.7893219435822015e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.010381008533287484,
+          -0.0038342336375301747
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.012718166166853917,
+          -0.0014970760039637408
+        ],
+        "absolute_estimate": 0.007107621085408829,
+        "absolute_interval": [
+          0.0014970760039637408,
+          0.012718166166853917
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.022850125361825395,
+        "minimum": -0.7107988542108243,
+        "maximum": 0.8456178091703266,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.1303553789562868,
+        "standard_error": 0.2615472986452858,
+        "variance_of_estimate": 0.06840698942864633,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.3822679066422151,
+          0.6429786645547887
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.748274511163434,
+          1.0089852690760077
+        ],
+        "absolute_estimate": 0.1303553789562868,
+        "absolute_interval": [
+          0.0,
+          1.0089852690760077
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 1.0,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.007107621085408829,
+        "predicted_shift": -0.13746300004169562,
+        "observed_shift_standard_error": 0.0016701263256359386,
+        "predicted_shift_standard_error": 0.26154196624385684,
+        "variance_components": {
+          "validation_shift": 2.7893219435822015e-06,
+          "response_prediction": 0.06840420010670274
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3230331150580237,
+          "baseline_mean": 0.33014073614343253,
+          "mixture_sample_variance": 0.011430991772268043,
+          "baseline_sample_variance": 0.011040155291173087,
+          "paired": true,
+          "paired_difference_sample_variance": 0.022850125361825395,
+          "paired_sample_covariance": -0.0001894891491921329
+        },
+        "response": {
+          "n_pairs": 8192,
+          "slope": -0.13746300004169562,
+          "sample_variance": 560.3672072741089,
+          "variance_of_slope_estimate": 0.06840420010670274
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.1303553789562868,
+        "interval": [
+          -0.748274511163434,
+          1.0089852690760077
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": "inconclusive",
+      "numerical_continuation_sample_mean_bound": 0.0,
+      "stops": {
+        "baseline": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        },
+        "mixture": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        }
+      }
+    },
+    {
+      "name": "validation-coarse-dt0.020-oblique-a1.000",
+      "setting": "coarse-dt0.020",
+      "launch": "oblique",
+      "a": 1.0,
+      "role": "grid sensitivity",
+      "observed_shift": {
+        "estimate": -0.007631312882444018,
+        "standard_error": 0.001442481979579323,
+        "variance_of_estimate": 2.0807542614110825e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.010458525610767534,
+          -0.004804100154120503
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.012477120083597085,
+          -0.0027855056812909505
+        ],
+        "absolute_estimate": 0.007631312882444018,
+        "absolute_interval": [
+          0.0027855056812909505,
+          0.012477120083597085
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.017045538909479588,
+        "minimum": -0.5596332423963897,
+        "maximum": 0.8642250681488781,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": -0.30700562002059006,
+        "standard_error": 0.2320167345544507,
+        "variance_of_estimate": 0.05383176511331045,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.7617500635579033,
+          0.14773882351672318
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -1.086431899869066,
+          0.47242065982788595
+        ],
+        "absolute_estimate": 0.30700562002059006,
+        "absolute_interval": [
+          0.0,
+          1.086431899869066
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 1.0,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.007631312882444018,
+        "predicted_shift": 0.29937430713814606,
+        "observed_shift_standard_error": 0.001442481979579323,
+        "predicted_shift_standard_error": 0.23201225045037824,
+        "variance_components": {
+          "validation_shift": 2.0807542614110825e-06,
+          "response_prediction": 0.053829684359049036
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3059915578341977,
+          "baseline_mean": 0.3136228707166417,
+          "mixture_sample_variance": 0.008486619054009955,
+          "baseline_sample_variance": 0.008344426010660499,
+          "paired": true,
+          "paired_difference_sample_variance": 0.017045538909479588,
+          "paired_sample_covariance": -0.00010724692240456649
+        },
+        "response": {
+          "n_pairs": 8192,
+          "slope": 0.29937430713814606,
+          "sample_variance": 440.9727742693297,
+          "variance_of_slope_estimate": 0.053829684359049036
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": -0.30700562002059006,
+        "interval": [
+          -1.086431899869066,
+          0.47242065982788595
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": "inconclusive",
+      "numerical_continuation_sample_mean_bound": 3.9547680032934795e-05,
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.020-radial_outward-a1.000",
+      "setting": "fine-dt0.020",
+      "launch": "radial_outward",
+      "a": 1.0,
+      "role": "time sensitivity",
+      "observed_shift": {
+        "estimate": -0.0063396734036397055,
+        "standard_error": 0.0013291153420353968,
+        "variance_of_estimate": 1.76654759243387e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.008944691605328719,
+          -0.003734655201950692
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.010804641969469871,
+          -0.00187470483780954
+        ],
+        "absolute_estimate": 0.0063396734036397055,
+        "absolute_interval": [
+          0.00187470483780954,
+          0.010804641969469871
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.014471557877218263,
+        "minimum": -0.5471784696521507,
+        "maximum": 0.6868640368494137,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.038936395942127736,
+        "standard_error": 0.07174037717679856,
+        "variance_of_estimate": 0.0051466817174693185,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.10167215956171673,
+          0.1795449514459722
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.20206490685276146,
+          0.27993769873701696
+        ],
+        "absolute_estimate": 0.038936395942127736,
+        "absolute_interval": [
+          0.0,
+          0.27993769873701696
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 1.0,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.0063396734036397055,
+        "predicted_shift": -0.045276069345767445,
+        "observed_shift_standard_error": 0.0013291153420353968,
+        "predicted_shift_standard_error": 0.07172806403268447,
+        "variance_components": {
+          "validation_shift": 1.76654759243387e-06,
+          "response_prediction": 0.005144915169876885
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3047870727593459,
+          "baseline_mean": 0.31112674616298563,
+          "mixture_sample_variance": 0.007357808904977514,
+          "baseline_sample_variance": 0.007001840408025978,
+          "paired": true,
+          "paired_difference_sample_variance": 0.014471557877218263,
+          "paired_sample_covariance": -5.595428210738471e-05
+        },
+        "response": {
+          "n_pairs": 8192,
+          "slope": -0.045276069345767445,
+          "sample_variance": 42.14714507163144,
+          "variance_of_slope_estimate": 0.005144915169876885
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.038936395942127736,
+        "interval": [
+          -0.20206490685276146,
+          0.27993769873701696
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": "inconclusive",
+      "numerical_continuation_sample_mean_bound": 3.807680087938987e-05,
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.020-tangential-a1.000",
+      "setting": "fine-dt0.020",
+      "launch": "tangential",
+      "a": 1.0,
+      "role": "time sensitivity",
+      "observed_shift": {
+        "estimate": -0.004791175825120673,
+        "standard_error": 0.0016329917902532145,
+        "variance_of_estimate": 2.6666621870343984e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.00799178092106656,
+          -0.0015905707291747864
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.010276972867064043,
+          0.0006946212168226964
+        ],
+        "absolute_estimate": 0.004791175825120673,
+        "absolute_interval": [
+          0.0,
+          0.010276972867064043
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.02184529663618579,
+        "minimum": -0.6668411443966225,
+        "maximum": 0.77134976086115,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": -0.17257399926199962,
+        "standard_error": 0.23930552850276027,
+        "variance_of_estimate": 0.057267135971985406,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.6416042164287331,
+          0.29645621790473387
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.9764859161599866,
+          0.6313379176359872
+        ],
+        "absolute_estimate": 0.17257399926199962,
+        "absolute_interval": [
+          0.0,
+          0.9764859161599866
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 1.0,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.004791175825120673,
+        "predicted_shift": 0.16778282343687895,
+        "observed_shift_standard_error": 0.0016329917902532145,
+        "predicted_shift_standard_error": 0.2392999567693199,
+        "variance_components": {
+          "validation_shift": 2.6666621870343984e-06,
+          "response_prediction": 0.05726446930979837
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.32408356684074363,
+          "baseline_mean": 0.32887474266586436,
+          "mixture_sample_variance": 0.011195742269248913,
+          "baseline_sample_variance": 0.01082739006869488,
+          "paired": true,
+          "paired_difference_sample_variance": 0.02184529663618579,
+          "paired_sample_covariance": 8.891785087899952e-05
+        },
+        "response": {
+          "n_pairs": 8192,
+          "slope": 0.16778282343687895,
+          "sample_variance": 469.11053258586827,
+          "variance_of_slope_estimate": 0.05726446930979837
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": -0.17257399926199962,
+        "interval": [
+          -0.9764859161599866,
+          0.6313379176359872
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": "inconclusive",
+      "numerical_continuation_sample_mean_bound": 2.9314186918671592e-05,
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.020-oblique-a1.000",
+      "setting": "fine-dt0.020",
+      "launch": "oblique",
+      "a": 1.0,
+      "role": "time sensitivity",
+      "observed_shift": {
+        "estimate": -0.005861419270403127,
+        "standard_error": 0.0014700781245920174,
+        "variance_of_estimate": 2.161129692403983e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.008742719449063668,
+          -0.0029801190917425864
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.010799931683905244,
+          -0.0009229068569010096
+        ],
+        "absolute_estimate": 0.005861419270403127,
+        "absolute_interval": [
+          0.0009229068569010096,
+          0.010799931683905244
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.01770397444017343,
+        "minimum": -0.6810986933097694,
+        "maximum": 0.7217668364408879,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.1777757601091138,
+        "standard_error": 0.22937688194327474,
+        "variance_of_estimate": 0.052613753970019,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.2717946673858005,
+          0.6273461876040282
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.5927823210552096,
+          0.9483338412734371
+        ],
+        "absolute_estimate": 0.1777757601091138,
+        "absolute_interval": [
+          0.0,
+          0.9483338412734371
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 1.0,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.005861419270403127,
+        "predicted_shift": -0.18363717937951693,
+        "observed_shift_standard_error": 0.0014700781245920174,
+        "predicted_shift_standard_error": 0.2293721710241384,
+        "variance_components": {
+          "validation_shift": 2.161129692403983e-06,
+          "response_prediction": 0.0526115928403266
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.30879878013237444,
+          "baseline_mean": 0.31466019940277756,
+          "mixture_sample_variance": 0.00910868023737364,
+          "baseline_sample_variance": 0.008453600675337325,
+          "paired": true,
+          "paired_difference_sample_variance": 0.01770397444017343,
+          "paired_sample_covariance": -7.084676373123088e-05
+        },
+        "response": {
+          "n_pairs": 8192,
+          "slope": -0.18363717937951693,
+          "sample_variance": 430.9941685479555,
+          "variance_of_slope_estimate": 0.0526115928403266
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.1777757601091138,
+        "interval": [
+          -0.5927823210552096,
+          0.9483338412734371
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": "inconclusive",
+      "numerical_continuation_sample_mean_bound": 8.505210279930945e-05,
+      "stops": {
+        "baseline": {
+          "horizon": 8192
+        },
+        "mixture": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a0.050",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "a": 0.05,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.0002052383810009495,
+        "standard_error": 0.0005206806407892175,
+        "variance_of_estimate": 2.711083296926702e-07,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.0012257536843950528,
+          0.0008152769223931538
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.0019543888274926357,
+          0.0015439120654907365
+        ],
+        "absolute_estimate": 0.0002052383810009495,
+        "absolute_interval": [
+          0.0,
+          0.0019543888274926357
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.0022209194368423544,
+        "minimum": -0.43026272824315315,
+        "maximum": 0.6274277260837678,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.0016349679354331341,
+        "standard_error": 0.0023857620180822887,
+        "variance_of_estimate": 5.691860406924074e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.0030410396956917496,
+          0.006310975566558017
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.006379650570118107,
+          0.009649586440984376
+        ],
+        "absolute_estimate": 0.0016349679354331341,
+        "absolute_interval": [
+          0.0,
+          0.009649586440984376
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.05,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.0002052383810009495,
+        "predicted_shift": -0.0018402063164340836,
+        "observed_shift_standard_error": 0.0005206806407892175,
+        "predicted_shift_standard_error": 0.002328250862177743,
+        "variance_components": {
+          "validation_shift": 2.711083296926702e-07,
+          "response_prediction": 5.420752077231404e-06
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.31180179138577524,
+          "baseline_mean": 0.3120070297667762,
+          "mixture_sample_variance": 0.007557135354201003,
+          "baseline_sample_variance": 0.00760338292695321,
+          "paired": true,
+          "paired_difference_sample_variance": 0.0022209194368423544,
+          "paired_sample_covariance": 0.006469799422155928
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.03680412632868167,
+          "sample_variance": 142.10176325337488,
+          "variance_of_slope_estimate": 0.002168300830892561
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.03269935870866268,
+        "interval": [
+          -0.12759301140236212,
+          0.1929917288196875
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 0.00015106266934699058,
+      "stops": {
+        "baseline": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "mixture": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a0.100",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "a": 0.1,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.0013117338075259435,
+        "standard_error": 0.0006233553094742439,
+        "variance_of_estimate": 3.885718418497303e-07,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.0025334877636672814,
+          -8.997985138460584e-05
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.003405804784002348,
+          0.000782337168950461
+        ],
+        "absolute_estimate": 0.0013117338075259435,
+        "absolute_interval": [
+          0.0,
+          0.003405804784002348
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.003183180528432991,
+        "minimum": -0.3551899087810254,
+        "maximum": 0.6084203301633669,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.0023686788253422237,
+        "standard_error": 0.004698040032904716,
+        "variance_of_estimate": 2.2071580150775347e-05,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.00683931043707839,
+          0.011576668087762839
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.013413699426200545,
+          0.018151057076884993
+        ],
+        "absolute_estimate": 0.0023686788253422237,
+        "absolute_interval": [
+          0.0,
+          0.018151057076884993
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.1,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.0013117338075259435,
+        "predicted_shift": -0.0036804126328681673,
+        "observed_shift_standard_error": 0.0006233553094742439,
+        "predicted_shift_standard_error": 0.004656501724355486,
+        "variance_components": {
+          "validation_shift": 3.885718418497303e-07,
+          "response_prediction": 2.1683008308925615e-05
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.31043342388688944,
+          "baseline_mean": 0.31174515769441535,
+          "mixture_sample_variance": 0.0070319053937782875,
+          "baseline_sample_variance": 0.007274594145078647,
+          "paired": true,
+          "paired_difference_sample_variance": 0.003183180528432991,
+          "paired_sample_covariance": 0.005561659505211973
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.03680412632868167,
+          "sample_variance": 142.10176325337488,
+          "variance_of_slope_estimate": 0.002168300830892561
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.023686788253422235,
+        "interval": [
+          -0.13413699426200543,
+          0.1815105707688499
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 0.00012569919966717454,
+      "stops": {
+        "baseline": {
+          "horizon": 8192
+        },
+        "mixture": {
+          "horizon": 8188,
+          "spatial_domain": 4
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a0.250",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "a": 0.25,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.0010467304569718623,
+        "standard_error": 0.0008780603611839491,
+        "variance_of_estimate": 7.709899978824871e-07,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.0027676971411446346,
+          0.0006742362272009097
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.003996445795885921,
+          0.0019029848819421958
+        ],
+        "absolute_estimate": 0.0010467304569718623,
+        "absolute_interval": [
+          0.0,
+          0.003996445795885921
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.006315950062653335,
+        "minimum": -0.47373915448790316,
+        "maximum": 0.5957018378380052,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.008154301125198556,
+        "standard_error": 0.011674321904447707,
+        "variance_of_estimate": 0.00013628979192866755,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.014726949351446004,
+          0.031035551601843115
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.03106387556887001,
+          0.04737247781926712
+        ],
+        "absolute_estimate": 0.008154301125198556,
+        "absolute_interval": [
+          0.0,
+          0.04737247781926712
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.25,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.0010467304569718623,
+        "predicted_shift": -0.009201031582170418,
+        "observed_shift_standard_error": 0.0008780603611839491,
+        "predicted_shift_standard_error": 0.011641254310888714,
+        "variance_components": {
+          "validation_shift": 7.709899978824871e-07,
+          "response_prediction": 0.00013551880193078507
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3117849161355301,
+          "baseline_mean": 0.31283164659250196,
+          "mixture_sample_variance": 0.007830040937616821,
+          "baseline_sample_variance": 0.0075172346919474674,
+          "paired": true,
+          "paired_difference_sample_variance": 0.006315950062653335,
+          "paired_sample_covariance": 0.004515662783455475
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.03680412632868167,
+          "sample_variance": 142.10176325337488,
+          "variance_of_slope_estimate": 0.002168300830892561
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.03261720450079422,
+        "interval": [
+          -0.12425550227548005,
+          0.1894899112770685
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 3.711306978096415e-05,
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a0.500",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "a": 0.5,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.004339190763537072,
+        "standard_error": 0.0011099795186430735,
+        "variance_of_estimate": 1.2320545318071088e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.006514710643654602,
+          -0.0021636708834195423
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.008068004586321635,
+          -0.0006103769407525077
+        ],
+        "absolute_estimate": 0.004339190763537072,
+        "absolute_interval": [
+          0.0006103769407525077,
+          0.008068004586321635
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.010092990724563836,
+        "minimum": -0.494385571424577,
+        "maximum": 0.7476771873236413,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.014062872400803764,
+        "standard_error": 0.023308952405780646,
+        "variance_of_estimate": 0.0005433072622549474,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.03162183483188455,
+          0.05974757963349207
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.06424014352470973,
+          0.09236588832631727
+        ],
+        "absolute_estimate": 0.014062872400803764,
+        "absolute_interval": [
+          0.0,
+          0.09236588832631727
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.5,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.004339190763537072,
+        "predicted_shift": -0.018402063164340836,
+        "observed_shift_standard_error": 0.0011099795186430735,
+        "predicted_shift_standard_error": 0.02328250862177743,
+        "variance_components": {
+          "validation_shift": 1.2320545318071088e-06,
+          "response_prediction": 0.0005420752077231403
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3076034700741306,
+          "baseline_mean": 0.3119426608376677,
+          "mixture_sample_variance": 0.007216722326422405,
+          "baseline_sample_variance": 0.007371169497708484,
+          "paired": true,
+          "paired_difference_sample_variance": 0.010092990724563836,
+          "paired_sample_covariance": 0.0022474505497835254
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.03680412632868167,
+          "sample_variance": 142.10176325337488,
+          "variance_of_slope_estimate": 0.002168300830892561
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.028125744801607528,
+        "interval": [
+          -0.12848028704941947,
+          0.18473177665263454
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 0.0001921385746367729,
+      "stops": {
+        "baseline": {
+          "horizon": 8188,
+          "spatial_domain": 4
+        },
+        "mixture": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a1.000",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "a": 1.0,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.007818339997085741,
+        "standard_error": 0.0013657456074260194,
+        "variance_of_estimate": 1.865261064203467e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.010495152199684518,
+          -0.005141527794486964
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.012406362581144817,
+          -0.0032303174130266657
+        ],
+        "absolute_estimate": 0.007818339997085741,
+        "absolute_interval": [
+          0.0032303174130266657,
+          0.012406362581144817
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.015280218637954802,
+        "minimum": -0.5242689562707721,
+        "maximum": 0.7277582788932685,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.02898578633159593,
+        "standard_error": 0.04658504150429368,
+        "variance_of_estimate": 0.0021701660919567645,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.06231921723512329,
+          0.12029078989831515
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.12750984604597798,
+          0.18548141870916984
+        ],
+        "absolute_estimate": 0.02898578633159593,
+        "absolute_interval": [
+          0.0,
+          0.18548141870916984
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 1.0,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.007818339997085741,
+        "predicted_shift": -0.03680412632868167,
+        "observed_shift_standard_error": 0.0013657456074260194,
+        "predicted_shift_standard_error": 0.04656501724355486,
+        "variance_components": {
+          "validation_shift": 1.865261064203467e-06,
+          "response_prediction": 0.002168300830892561
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.30560945049390564,
+          "baseline_mean": 0.31342779049099145,
+          "mixture_sample_variance": 0.0076511289471938955,
+          "baseline_sample_variance": 0.007450371129469535,
+          "paired": true,
+          "paired_difference_sample_variance": 0.015280218637954802,
+          "paired_sample_covariance": -8.935928064568579e-05
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.03680412632868167,
+          "sample_variance": 142.10176325337488,
+          "variance_of_slope_estimate": 0.002168300830892561
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.02898578633159593,
+        "interval": [
+          -0.12750984604597798,
+          0.18548141870916984
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": "inconclusive",
+      "numerical_continuation_sample_mean_bound": 0.00011563318770026585,
+      "stops": {
+        "baseline": {
+          "horizon": 8189,
+          "spatial_domain": 3
+        },
+        "mixture": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a0.050",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "a": 0.05,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": 0.00020542851679629403,
+        "standard_error": 0.0012700043152058923,
+        "variance_of_estimate": 1.6129109606415874e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.002283734201217709,
+          0.0026945912348102976
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.004060965201283261,
+          0.004471822234875848
+        ],
+        "absolute_estimate": 0.00020542851679629403,
+        "absolute_interval": [
+          0.0,
+          0.004471822234875848
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.013212966589575884,
+        "minimum": -0.6086481154980543,
+        "maximum": 0.6948789254398713,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.007310895651918985,
+        "standard_error": 0.008617016565998746,
+        "variance_of_estimate": 7.425297449869682e-05,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.00957814647162357,
+          0.02419993777546154
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.021636710986570593,
+          0.03625850229040856
+        ],
+        "absolute_estimate": 0.007310895651918985,
+        "absolute_interval": [
+          0.0,
+          0.03625850229040856
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.05,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": 0.00020542851679629403,
+        "predicted_shift": -0.0071054671351226915,
+        "observed_shift_standard_error": 0.0012700043152058923,
+        "predicted_shift_standard_error": 0.008522914028550049,
+        "variance_components": {
+          "validation_shift": 1.6129109606415874e-06,
+          "response_prediction": 7.264006353805522e-05
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3283257943346459,
+          "baseline_mean": 0.3281203658178497,
+          "mixture_sample_variance": 0.010844193304499343,
+          "baseline_sample_variance": 0.010760458169052342,
+          "paired": true,
+          "paired_difference_sample_variance": 0.013212966589575884,
+          "paired_sample_covariance": 0.0041958424419879
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.14210934270245382,
+          "sample_variance": 1904.2156816119946,
+          "variance_of_slope_estimate": 0.029056025415222085
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.1462179130383797,
+        "interval": [
+          -0.43273421973141185,
+          0.7251700458081712
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 5.4984825653360596e-05,
+      "stops": {
+        "baseline": {
+          "excluded_channel": 1,
+          "horizon": 8190,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "excluded_channel": 1,
+          "horizon": 8189,
+          "spatial_domain": 2
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a0.100",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "a": 0.1,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.0014329880951423494,
+        "standard_error": 0.0013648112084717356,
+        "variance_of_estimate": 1.8627096347700793e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.004107968909443539,
+          0.00124199271915884
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.006017871702600317,
+          0.003151895512315618
+        ],
+        "absolute_estimate": 0.0014329880951423494,
+        "absolute_interval": [
+          0.0,
+          0.006017871702600317
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.01525931732803649,
+        "minimum": -0.6142803247723285,
+        "maximum": 0.6959183376805083,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.012777946175103035,
+        "standard_error": 0.017100379053897927,
+        "variance_of_estimate": 0.000292422963786991,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.020738180892520025,
+          0.046294073242726094
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.04466827577769526,
+          0.07022416812790133
+        ],
+        "absolute_estimate": 0.012777946175103035,
+        "absolute_interval": [
+          0.0,
+          0.07022416812790133
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.1,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.0014329880951423494,
+        "predicted_shift": -0.014210934270245383,
+        "observed_shift_standard_error": 0.0013648112084717356,
+        "predicted_shift_standard_error": 0.017045828057100098,
+        "variance_components": {
+          "validation_shift": 1.8627096347700793e-06,
+          "response_prediction": 0.0002905602541522209
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3289293662296403,
+          "baseline_mean": 0.33036235432478267,
+          "mixture_sample_variance": 0.01065955331325928,
+          "baseline_sample_variance": 0.01114171858673569,
+          "paired": true,
+          "paired_difference_sample_variance": 0.01525931732803649,
+          "paired_sample_covariance": 0.003270977285979239
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.14210934270245382,
+          "sample_variance": 1904.2156816119946,
+          "variance_of_slope_estimate": 0.029056025415222085
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.12777946175103033,
+        "interval": [
+          -0.4466827577769526,
+          0.7022416812790133
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 0.0,
+      "stops": {
+        "baseline": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        },
+        "mixture": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a0.250",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "a": 0.25,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.004247168569744769,
+        "standard_error": 0.0014650986991695239,
+        "variance_of_estimate": 2.1465141983082312e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.007118709253913519,
+          -0.0013756278855760187
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.009168953331940656,
+          0.0006746161924511187
+        ],
+        "absolute_estimate": 0.004247168569744769,
+        "absolute_interval": [
+          0.0,
+          0.009168953331940656
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.01758424431254103,
+        "minimum": -0.5912881348153038,
+        "maximum": 0.7293397095121257,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.031280167105868686,
+        "standard_error": 0.04263974791963115,
+        "variance_of_estimate": 0.0018181481026496886,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.05229220312647506,
+          0.11485253733821243
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.11196182859972671,
+          0.1745221628114641
+        ],
+        "absolute_estimate": 0.031280167105868686,
+        "absolute_interval": [
+          0.0,
+          0.1745221628114641
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.25,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.004247168569744769,
+        "predicted_shift": -0.035527335675613454,
+        "observed_shift_standard_error": 0.0014650986991695239,
+        "predicted_shift_standard_error": 0.04261457014275024,
+        "variance_components": {
+          "validation_shift": 2.1465141983082312e-06,
+          "response_prediction": 0.0018160015884513803
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.32552730205750235,
+          "baseline_mean": 0.32977447062724713,
+          "mixture_sample_variance": 0.010090592076713195,
+          "baseline_sample_variance": 0.010991917499833847,
+          "paired": true,
+          "paired_difference_sample_variance": 0.01758424431254103,
+          "paired_sample_covariance": 0.0017491326320030068
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.14210934270245382,
+          "sample_variance": 1904.2156816119946,
+          "variance_of_slope_estimate": 0.029056025415222085
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.12512066842347475,
+        "interval": [
+          -0.44784731439890685,
+          0.6980886512458564
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 0.0001239419226495417,
+      "stops": {
+        "baseline": {
+          "horizon": 8189,
+          "spatial_domain": 3
+        },
+        "mixture": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a0.500",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "a": 0.5,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.0022678283415503066,
+        "standard_error": 0.0015378714660176855,
+        "variance_of_estimate": 2.365048645991385e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.005282001027796784,
+          0.0007463443446961704
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.007434082568621933,
+          0.00289842588552132
+        ],
+        "absolute_estimate": 0.0022678283415503066,
+        "absolute_interval": [
+          0.0,
+          0.007434082568621933
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.019374478507961427,
+        "minimum": -0.6139807861819065,
+        "maximum": 0.7442363541244617,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.06878684300967661,
+        "standard_error": 0.08524301380436705,
+        "variance_of_estimate": 0.007266371402451513,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.09828639398053346,
+          0.23586007999988667
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.21757459234195106,
+          0.35514827836130425
+        ],
+        "absolute_estimate": 0.06878684300967661,
+        "absolute_interval": [
+          0.0,
+          0.35514827836130425
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.5,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.0022678283415503066,
+        "predicted_shift": -0.07105467135122691,
+        "observed_shift_standard_error": 0.0015378714660176855,
+        "predicted_shift_standard_error": 0.08522914028550048,
+        "variance_components": {
+          "validation_shift": 2.365048645991385e-06,
+          "response_prediction": 0.007264006353805521
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.32602302515137366,
+          "baseline_mean": 0.3282908534929239,
+          "mixture_sample_variance": 0.010699447624502988,
+          "baseline_sample_variance": 0.010893325169045941,
+          "paired": true,
+          "paired_difference_sample_variance": 0.019374478507961427,
+          "paired_sample_covariance": 0.0011091471427937497
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.14210934270245382,
+          "sample_variance": 1904.2156816119946,
+          "variance_of_slope_estimate": 0.029056025415222085
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.13757368601935321,
+        "interval": [
+          -0.4351491846839021,
+          0.7102965567226085
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 0.0,
+      "stops": {
+        "baseline": {
+          "horizon": 8192
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a1.000",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "a": 1.0,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.006705158060692967,
+        "standard_error": 0.0016329573410614915,
+        "variance_of_estimate": 2.666549677726616e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.00990569563746378,
+          -0.0035046204839221545
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.012190839375616044,
+          -0.0012194767457698917
+        ],
+        "absolute_estimate": 0.006705158060692967,
+        "absolute_interval": [
+          0.0012194767457698917,
+          0.012190839375616044
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.02184437495993644,
+        "minimum": -0.6562366959395156,
+        "maximum": 0.773579109984506,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.13540418464176085,
+        "standard_error": 0.17046610209921448,
+        "variance_of_estimate": 0.02905869196489981,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.19870323605762724,
+          0.46951160534114894
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.43725174922700794,
+          0.7080601185105296
+        ],
+        "absolute_estimate": 0.13540418464176085,
+        "absolute_interval": [
+          0.0,
+          0.7080601185105296
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 1.0,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.006705158060692967,
+        "predicted_shift": -0.14210934270245382,
+        "observed_shift_standard_error": 0.0016329573410614915,
+        "predicted_shift_standard_error": 0.17045828057100096,
+        "variance_components": {
+          "validation_shift": 2.666549677726616e-06,
+          "response_prediction": 0.029056025415222085
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3228630456230478,
+          "baseline_mean": 0.32956820368374073,
+          "mixture_sample_variance": 0.010814258984345546,
+          "baseline_sample_variance": 0.010903003719186934,
+          "paired": true,
+          "paired_difference_sample_variance": 0.02184437495993644,
+          "paired_sample_covariance": -6.355612820198019e-05
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.14210934270245382,
+          "sample_variance": 1904.2156816119946,
+          "variance_of_slope_estimate": 0.029056025415222085
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.13540418464176085,
+        "interval": [
+          -0.43725174922700794,
+          0.7080601185105296
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": "inconclusive",
+      "numerical_continuation_sample_mean_bound": 0.0001224246704426088,
+      "stops": {
+        "baseline": {
+          "horizon": 8188,
+          "spatial_domain": 4
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a0.050",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "a": 0.05,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.0029648528836454476,
+        "standard_error": 0.0010564602870651815,
+        "variance_of_estimate": 1.1161083381458455e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.0050354769973900496,
+          -0.0008942287699008453
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.006513876676847832,
+          0.0005841709095569369
+        ],
+        "absolute_estimate": 0.0029648528836454476,
+        "absolute_interval": [
+          0.0,
+          0.006513876676847832
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.009143159506090766,
+        "minimum": -0.5016054845404108,
+        "maximum": 0.5064123245516963,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.00011964069737026555,
+        "standard_error": 0.008239860715147922,
+        "variance_of_estimate": 6.789530460503801e-05,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.016030189541946113,
+          0.016269470936686646
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.027560966031322912,
+          0.027800247426063445
+        ],
+        "absolute_estimate": 0.00011964069737026555,
+        "absolute_interval": [
+          0.0,
+          0.027800247426063445
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.05,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.0029648528836454476,
+        "predicted_shift": -0.003084493581015713,
+        "observed_shift_standard_error": 0.0010564602870651815,
+        "predicted_shift_standard_error": 0.00817185390636006,
+        "variance_components": {
+          "validation_shift": 1.1161083381458455e-06,
+          "response_prediction": 6.677919626689216e-05
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3122306860406327,
+          "baseline_mean": 0.3151955389242781,
+          "mixture_sample_variance": 0.007901577296685135,
+          "baseline_sample_variance": 0.008271691566590824,
+          "paired": true,
+          "paired_difference_sample_variance": 0.009143159506090766,
+          "paired_sample_covariance": 0.0035150546785925967
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.06168987162031426,
+          "sample_variance": 1750.5765626188174,
+          "variance_of_slope_estimate": 0.026711678506756858
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.002392813947405311,
+        "interval": [
+          -0.5512193206264582,
+          0.5560049485212689
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 3.439565253864829e-05,
+      "stops": {
+        "baseline": {
+          "horizon": 8192
+        },
+        "mixture": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a0.100",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "a": 0.1,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.001144797982749203,
+        "standard_error": 0.00115408130759834,
+        "variance_of_estimate": 1.3319036645478944e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.0034067557808728412,
+          0.0011171598153744352
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.0050217653142281965,
+          0.002732169348729791
+        ],
+        "absolute_estimate": 0.001144797982749203,
+        "absolute_interval": [
+          0.0,
+          0.0050217653142281965
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.010910954819976351,
+        "minimum": -0.5215197147706964,
+        "maximum": 0.6394463744822251,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.005024189179282224,
+        "standard_error": 0.016384403825959508,
+        "variance_of_estimate": 0.00026844868873211655,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.02708865222775868,
+          0.03713703058632313
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.050016818729592266,
+          0.06006519708815672
+        ],
+        "absolute_estimate": 0.005024189179282224,
+        "absolute_interval": [
+          0.0,
+          0.06006519708815672
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.1,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.001144797982749203,
+        "predicted_shift": -0.006168987162031426,
+        "observed_shift_standard_error": 0.00115408130759834,
+        "predicted_shift_standard_error": 0.01634370781272012,
+        "variance_components": {
+          "validation_shift": 1.3319036645478944e-06,
+          "response_prediction": 0.00026711678506756865
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3135166319227167,
+          "baseline_mean": 0.3146614299054659,
+          "mixture_sample_variance": 0.008338831674639278,
+          "baseline_sample_variance": 0.008354160200731405,
+          "paired": true,
+          "paired_difference_sample_variance": 0.010910954819976351,
+          "paired_sample_covariance": 0.0028910185276971668
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.06168987162031426,
+          "sample_variance": 1750.5765626188174,
+          "variance_of_slope_estimate": 0.026711678506756858
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.050241891792822235,
+        "interval": [
+          -0.5001681872959226,
+          0.6006519708815672
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 0.00025193952360207746,
+      "stops": {
+        "baseline": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "mixture": {
+          "horizon": 8187,
+          "spatial_domain": 5
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a0.250",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "a": 0.25,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": 0.00030508612214879866,
+        "standard_error": 0.0012603816261026687,
+        "variance_of_estimate": 1.5885618434172074e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.002165216471788461,
+          0.002775388716086058
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.003928981579515315,
+          0.004539153823812912
+        ],
+        "absolute_estimate": 0.00030508612214879866,
+        "absolute_interval": [
+          0.0,
+          0.004539153823812912
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.013013498621273763,
+        "minimum": -0.5369402255079865,
+        "maximum": 0.7959492301504064,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.015727554027227364,
+        "standard_error": 0.040878704339982704,
+        "variance_of_estimate": 0.0016710684685157207,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.06439323421379993,
+          0.09584834226825466
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.12159847338163166,
+          0.15305358143608638
+        ],
+        "absolute_estimate": 0.015727554027227364,
+        "absolute_interval": [
+          0.0,
+          0.15305358143608638
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.25,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": 0.00030508612214879866,
+        "predicted_shift": -0.015422467905078565,
+        "observed_shift_standard_error": 0.0012603816261026687,
+        "predicted_shift_standard_error": 0.040859269531800295,
+        "variance_components": {
+          "validation_shift": 1.5885618434172074e-06,
+          "response_prediction": 0.0016694799066723036
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.31316303870764356,
+          "baseline_mean": 0.31285795258549476,
+          "mixture_sample_variance": 0.008585918145813503,
+          "baseline_sample_variance": 0.007926309660665242,
+          "paired": true,
+          "paired_difference_sample_variance": 0.013013498621273763,
+          "paired_sample_covariance": 0.0017493645926024914
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.06168987162031426,
+          "sample_variance": 1750.5765626188174,
+          "variance_of_slope_estimate": 0.026711678506756858
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.06291021610890946,
+        "interval": [
+          -0.4863938935265266,
+          0.6122143257443455
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 0.00010129659061182824,
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8189,
+          "spatial_domain": 3
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a0.500",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "a": 0.5,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.0023930338692262133,
+        "standard_error": 0.0013381657940480297,
+        "variance_of_estimate": 1.7906876923601937e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.005015790630903795,
+          0.00022972289245136836
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.0068884061046740035,
+          0.0021023383662215765
+        ],
+        "absolute_estimate": 0.0023930338692262133,
+        "absolute_interval": [
+          0.0,
+          0.0068884061046740035
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.014669313575814706,
+        "minimum": -0.6139420006679347,
+        "maximum": 0.7243719116154641,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.028451901940930915,
+        "standard_error": 0.08172949476401757,
+        "variance_of_estimate": 0.006679710314381575,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.13173496427119843,
+          0.18863876815306027
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.24610638015946565,
+          0.30301018404132746
+        ],
+        "absolute_estimate": 0.028451901940930915,
+        "absolute_interval": [
+          0.0,
+          0.30301018404132746
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 0.5,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.0023930338692262133,
+        "predicted_shift": -0.03084493581015713,
+        "observed_shift_standard_error": 0.0013381657940480297,
+        "predicted_shift_standard_error": 0.08171853906360059,
+        "variance_components": {
+          "validation_shift": 1.7906876923601937e-06,
+          "response_prediction": 0.0066779196266892145
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3118124613229444,
+          "baseline_mean": 0.3142054951921706,
+          "mixture_sample_variance": 0.008528266552995425,
+          "baseline_sample_variance": 0.008304657881410354,
+          "paired": true,
+          "paired_difference_sample_variance": 0.014669313575814706,
+          "paired_sample_covariance": 0.001081805429295535
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.06168987162031426,
+          "sample_variance": 1750.5765626188174,
+          "variance_of_slope_estimate": 0.026711678506756858
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.05690380388186183,
+        "interval": [
+          -0.4922127603189313,
+          0.6060203680826549
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": null,
+      "numerical_continuation_sample_mean_bound": 0.0,
+      "stops": {
+        "baseline": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        },
+        "mixture": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a1.000",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "a": 1.0,
+      "role": "primary",
+      "observed_shift": {
+        "estimate": -0.004315069543449528,
+        "standard_error": 0.001450073482485804,
+        "variance_of_estimate": 2.102713104608507e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.007157161344058277,
+          -0.0014729777428407792
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.009186379288116192,
+          0.0005562402012171353
+        ],
+        "absolute_estimate": 0.004315069543449528,
+        "absolute_interval": [
+          0.0,
+          0.009186379288116192
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "n_pairs": 8192,
+        "sample_variance": 0.01722542575295289,
+        "minimum": -0.5406800764267672,
+        "maximum": 0.8061455103080577,
+        "zero_contribution_count": 0,
+        "zero_contribution_fraction": 0.0,
+        "normalization": "(C_mixture-C_diffusion)/T",
+        "interpretation": "Paired mixture-minus-diffusion mean at declared a",
+        "rare_contribution_caveat": "Normal intervals use observed variance; rare unseen contributions and zero observed variance require separate diagnostics"
+      },
+      "prediction_error": {
+        "estimate": 0.05737480207686473,
+        "standard_error": 0.16344351079153147,
+        "variance_of_estimate": 0.026713781219861465,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.2629685925813206,
+          0.3777181967350501
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.49168976357290584,
+          0.6064393677266353
+        ],
+        "absolute_estimate": 0.05737480207686473,
+        "absolute_interval": [
+          0.0,
+          0.6064393677266353
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family",
+        "a": 1.0,
+        "direction": "[mixture mean minus diffusion mean] minus a times response slope",
+        "observed_shift": -0.004315069543449528,
+        "predicted_shift": -0.06168987162031426,
+        "observed_shift_standard_error": 0.001450073482485804,
+        "predicted_shift_standard_error": 0.16343707812720118,
+        "variance_components": {
+          "validation_shift": 2.102713104608507e-06,
+          "response_prediction": 0.026711678506756858
+        },
+        "validation": {
+          "n_mixture": 8192,
+          "n_baseline": 8192,
+          "mixture_mean": 0.3087390494240801,
+          "baseline_mean": 0.3130541189675296,
+          "mixture_sample_variance": 0.009061451279736609,
+          "baseline_sample_variance": 0.00834401734980167,
+          "paired": true,
+          "paired_difference_sample_variance": 0.01722542575295289,
+          "paired_sample_covariance": 9.002143829269246e-05
+        },
+        "response": {
+          "n_pairs": 65536,
+          "slope": -0.06168987162031426,
+          "sample_variance": 1750.5765626188174,
+          "variance_of_slope_estimate": 0.026711678506756858
+        },
+        "assumptions": "Response batch independent of validation batch; independent rows within each batch; shared validation baseline across a allowed",
+        "numerical_scope": "Sampling error for the fixed numerical process; no time/grid/censoring allowance or physical-accuracy verdict"
+      },
+      "scaled_remainder": {
+        "estimate": 0.05737480207686473,
+        "interval": [
+          -0.49168976357290584,
+          0.6064393677266353
+        ],
+        "scope": "Same residual event rescaled by a; finite-a remainder is not the exact derivative"
+      },
+      "endpoint_classification": "inconclusive",
+      "numerical_continuation_sample_mean_bound": 9.939102973068174e-05,
+      "stops": {
+        "baseline": {
+          "horizon": 8189,
+          "spatial_domain": 3
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    }
+  ],
+  "refinements": [
+    {
+      "kind": "grid",
+      "launch": "radial_outward",
+      "observable": "response",
+      "first": "prediction-fine-dt0.020-radial_outward-weighted",
+      "second": "prediction-coarse-dt0.020-radial_outward-weighted",
+      "difference": {
+        "estimate": 0.06069345685052499,
+        "standard_error": 0.09678701642394713,
+        "variance_of_estimate": 0.009367726548249411,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.1290056095114981,
+          0.25039252321254807
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.26444836662103266,
+          0.3858352803220826
+        ],
+        "absolute_estimate": 0.06069345685052499,
+        "absolute_interval": [
+          0.0,
+          0.3858352803220826
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "grid",
+      "launch": "radial_outward",
+      "observable": "endpoint_shift",
+      "first": "validation-fine-dt0.020-radial_outward-a1.000",
+      "second": "validation-coarse-dt0.020-radial_outward-a1.000",
+      "difference": {
+        "estimate": -0.0023648074268150226,
+        "standard_error": 0.001889600919735377,
+        "variance_of_estimate": 3.570591635864783e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.006068357174650122,
+          0.0013387423210200777
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.008712645301940186,
+          0.003983030448310141
+        ],
+        "absolute_estimate": 0.0023648074268150226,
+        "absolute_interval": [
+          0.0,
+          0.008712645301940186
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "time",
+      "launch": "radial_outward",
+      "observable": "response",
+      "first": "prediction-fine-dt0.010-radial_outward-weighted",
+      "second": "prediction-fine-dt0.020-radial_outward-weighted",
+      "difference": {
+        "estimate": 0.008471943017085773,
+        "standard_error": 0.08551734327473841,
+        "variance_of_estimate": 0.007313216000769446,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.15913896985495013,
+          0.17608285588912165
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.2788110620607729,
+          0.2957549480949444
+        ],
+        "absolute_estimate": 0.008471943017085773,
+        "absolute_interval": [
+          0.0,
+          0.2957549480949444
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "time",
+      "launch": "radial_outward",
+      "observable": "endpoint_shift",
+      "first": "validation-fine-dt0.010-radial_outward-a1.000",
+      "second": "validation-fine-dt0.020-radial_outward-a1.000",
+      "difference": {
+        "estimate": -0.0014786665934460354,
+        "standard_error": 0.0019057304784877995,
+        "variance_of_estimate": 3.631808656637337e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.005213829695522407,
+          0.002256496508630336
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.00788068936173479,
+          0.004923356174842719
+        ],
+        "absolute_estimate": 0.0014786665934460354,
+        "absolute_interval": [
+          0.0,
+          0.00788068936173479
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "grid",
+      "launch": "tangential",
+      "observable": "response",
+      "first": "prediction-fine-dt0.020-tangential-weighted",
+      "second": "prediction-coarse-dt0.020-tangential-weighted",
+      "difference": {
+        "estimate": 0.30524582347857454,
+        "standard_error": 0.3544977706791696,
+        "variance_of_estimate": 0.12566866941650112,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.389557039652337,
+          1.0000486866094862
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.8856375804519244,
+          1.4961292274090736
+        ],
+        "absolute_estimate": 0.30524582347857454,
+        "absolute_interval": [
+          0.0,
+          1.4961292274090736
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "grid",
+      "launch": "tangential",
+      "observable": "endpoint_shift",
+      "first": "validation-fine-dt0.020-tangential-a1.000",
+      "second": "validation-coarse-dt0.020-tangential-a1.000",
+      "difference": {
+        "estimate": 0.002316445260288156,
+        "standard_error": 0.0023358048143234484,
+        "variance_of_estimate": 5.4559841306166e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.0022616480507010716,
+          0.0068945385712773834
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.0055303493270782225,
+          0.010163239847654534
+        ],
+        "absolute_estimate": 0.002316445260288156,
+        "absolute_interval": [
+          0.0,
+          0.010163239847654534
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "time",
+      "launch": "tangential",
+      "observable": "response",
+      "first": "prediction-fine-dt0.010-tangential-weighted",
+      "second": "prediction-fine-dt0.020-tangential-weighted",
+      "difference": {
+        "estimate": -0.3098921661393328,
+        "standard_error": 0.29380349678827933,
+        "variance_of_estimate": 0.08632049472502046,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.8857364383762897,
+          0.2659521060976241
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -1.2968820354171453,
+          0.6770977031384796
+        ],
+        "absolute_estimate": 0.3098921661393328,
+        "absolute_interval": [
+          0.0,
+          1.2968820354171453
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "time",
+      "launch": "tangential",
+      "observable": "endpoint_shift",
+      "first": "validation-fine-dt0.010-tangential-a1.000",
+      "second": "validation-fine-dt0.020-tangential-a1.000",
+      "difference": {
+        "estimate": -0.0019139822355722941,
+        "standard_error": 0.0023093747778914135,
+        "variance_of_estimate": 5.333211864761015e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.006440273627044651,
+          0.002612309155900063
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.009671988981785576,
+          0.005844024510640988
+        ],
+        "absolute_estimate": 0.0019139822355722941,
+        "absolute_interval": [
+          0.0,
+          0.009671988981785576
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "grid",
+      "launch": "oblique",
+      "observable": "response",
+      "first": "prediction-fine-dt0.020-oblique-weighted",
+      "second": "prediction-coarse-dt0.020-oblique-weighted",
+      "difference": {
+        "estimate": -0.483011486517663,
+        "standard_error": 0.32625339415763266,
+        "variance_of_estimate": 0.10644127719937563,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -1.1224563889005736,
+          0.1564334158652475
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -1.5790120391698,
+          0.6129890661344738
+        ],
+        "absolute_estimate": 0.483011486517663,
+        "absolute_interval": [
+          0.0,
+          1.5790120391698
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "grid",
+      "launch": "oblique",
+      "observable": "endpoint_shift",
+      "first": "validation-fine-dt0.020-oblique-a1.000",
+      "second": "validation-coarse-dt0.020-oblique-a1.000",
+      "difference": {
+        "estimate": 0.0017698936120408917,
+        "standard_error": 0.0020595834418190165,
+        "variance_of_estimate": 4.241883953815066e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.002266815757079426,
+          0.00580660298116121
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.0051489756806298,
+          0.008688762904711583
+        ],
+        "absolute_estimate": 0.0017698936120408917,
+        "absolute_interval": [
+          0.0,
+          0.008688762904711583
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "time",
+      "launch": "oblique",
+      "observable": "response",
+      "first": "prediction-fine-dt0.010-oblique-weighted",
+      "second": "prediction-fine-dt0.020-oblique-weighted",
+      "difference": {
+        "estimate": 0.12194730775920268,
+        "standard_error": 0.28164387326388524,
+        "variance_of_estimate": 0.07932327134708346,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.4300645403043758,
+          0.6739591558227812
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.8241940850232548,
+          1.0680887005416602
+        ],
+        "absolute_estimate": 0.12194730775920268,
+        "absolute_interval": [
+          0.0,
+          1.0680887005416602
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    },
+    {
+      "kind": "time",
+      "launch": "oblique",
+      "observable": "endpoint_shift",
+      "first": "validation-fine-dt0.010-oblique-a1.000",
+      "second": "validation-fine-dt0.020-oblique-a1.000",
+      "difference": {
+        "estimate": 0.0015463497269535987,
+        "standard_error": 0.0020649074548299957,
+        "variance_of_estimate": 4.26384279701249e-06,
+        "marginal_confidence": 0.95,
+        "marginal_interval": [
+          -0.0025007945159214616,
+          0.005593493969828659
+        ],
+        "family_confidence": 0.95,
+        "family_size": 64,
+        "component_confidence": 0.99921875,
+        "interval": [
+          -0.0053904048086198565,
+          0.008483104262527054
+        ],
+        "absolute_estimate": 0.0015463497269535987,
+        "absolute_interval": [
+          0.0,
+          0.008483104262527054
+        ],
+        "interval_method": "Normal approximation with Bonferroni component level",
+        "coverage_scope": "Approximate family coverage only if every selected inferential comparison is counted in the predeclared family"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity contrast; not a truncation bound"
+    }
+  ],
+  "coupling_diagnostic": {
+    "revision": "gaussian-coupling-local-diagnostic-1",
+    "scope": "Post-pilot exploratory deterministic local-factor check; no stochastic trajectories; probe choices followed preliminary local inspection and are not blind validation",
+    "interpretation": "Eigenvector signs and bases can change abruptly while D changes little. This can weaken common-random-number coupling without changing either marginal Gaussian transition law. Local continuity diagnostics do not attribute the measured residence-score variance to this mechanism or prove an improved estimator meets precision targets.",
+    "counts": {
+      "synthetic": 3,
+      "local_pairs": 18
+    }
+  },
+  "input_sha256": {
+    "analysis/response/protocol.json": "d874a20a306bf2efc7ebe4167d51873110f1282bbe0119b4dc5a701fb9b64cb6",
+    "results/response/execution-design.json": "3d7e3dec4113ce901de77bad1404b8c328d466298d94d3a3cd0d98aca75a7b5c",
+    "results/response/sample-count-lock.json": "30f7059c7a6a496b2e82f529ca3ef9bbc83a14a3328295e5d0eee735d7e6efdd",
+    "results/response/prediction-register.json": "0127cc90c4308a6702b97ebf55a1a2fc3b51da29cf6c1bcf72c0dcc314f0a389",
+    "results/response/storage-adapter.json": "47a6541acd42e7c9b98de1937a0c32e859b15dce7f9d40760740d0011f02fa42",
+    "analysis/response/execute_cached.py": "4e7684e9b2c9ce86cc61562c6d67ad83f1610788f58b251b0c51edd1c2e44475",
+    "analysis/response/disk_cache.py": "85130846e332abe76cc33ec8ea7254d24b2475eb0933527452236b06f9af5afd",
+    "analysis/response/test_disk_cache.py": "e37a281d84b4c552967aa6cfe6c66786023995b1d4c265a7df3ac4ca66455450",
+    "results/response/storage-adapter-validation.txt": "6fad712c7a0aa45f2fb7bc3f09fcac0d7090e9b084aebcd2e132864e42cc4afb",
+    "results/response/pilot-fine-dt0.010-radial_outward-naive.npz": "dd555956e3f343f18014e520473aa83ab6a21f23291ff12f84f7f4bb7342e41e",
+    "results/response/pilot-fine-dt0.010-radial_outward-naive.json": "1fcbdd71944ae6695b4cedf5c6f9df3165511f0e871357d179b884277b15591b",
+    "results/response/pilot-fine-dt0.010-radial_outward-weighted.npz": "8415c8ebeedfbbe826505ad76138fcf305ffb51ee7838d6a2f2fed886d524259",
+    "results/response/pilot-fine-dt0.010-radial_outward-weighted.json": "bf788e56339b8f2ca7be0e5cec64222b897948eb75a81f945ae30a1c1904bee7",
+    "results/response/pilot-fine-dt0.010-tangential-naive.npz": "ad1f54db61a54b336730064910afe3b280c031c19f86e57eae4214cd306342e4",
+    "results/response/pilot-fine-dt0.010-tangential-naive.json": "a0199f0444a2b63893df32eab2fce3c7a7b095f994c7b2f5206c073a499c98f2",
+    "results/response/pilot-fine-dt0.010-tangential-weighted.npz": "d23f8ffe0e6946d6e8c0ef2b54d772c9736e815d0c0b37131aeaee1809e65d5a",
+    "results/response/pilot-fine-dt0.010-tangential-weighted.json": "bdc436c146771a9078f8398ecd7ddbb14af74aeac1457c46474d0bfa6b94ad44",
+    "results/response/pilot-fine-dt0.010-oblique-naive.npz": "62edbe99fa16fc913805cae81c9a57cbc3d86f9e90b02441785bad76c01a39c7",
+    "results/response/pilot-fine-dt0.010-oblique-naive.json": "421ee4296145d347956f40648c51b6db00b191889d15df1a4a0565cd9345345b",
+    "results/response/pilot-fine-dt0.010-oblique-weighted.npz": "5002de038e5e6e0bba2815d9f29a9f3617cad7e415c3ff20486cc1fc8a9d50cf",
+    "results/response/pilot-fine-dt0.010-oblique-weighted.json": "13612850a3516307965c6738f560af7d60d9c0ce3fa058d71a2c8174d4567601",
+    "results/response/prediction-coarse-dt0.020-radial_outward-weighted.npz": "6625ebd68d35ce02b5b7f61763017aa408f980a65ffbfaaf321de64b6dd5d693",
+    "results/response/prediction-coarse-dt0.020-radial_outward-weighted.json": "fce3c3e9b2c8579c19a024653d6d5f7c0e84d7f0836c7b365ff2537b7150d777",
+    "results/response/prediction-coarse-dt0.020-tangential-weighted.npz": "ead43060544d6e2dffc1935b5b1c35acb6f62b97f5d1f1ef5c1be64c8e142aa8",
+    "results/response/prediction-coarse-dt0.020-tangential-weighted.json": "2dad560890deabc8bb00aea7604fa18cc5e3a71b0136bc6b219b09368fe2fc6a",
+    "results/response/prediction-coarse-dt0.020-oblique-weighted.npz": "fcae8bfd47c101220233bb2c4f94d2eaaddf0bb0eef5ee9753e903d4bfca9eb8",
+    "results/response/prediction-coarse-dt0.020-oblique-weighted.json": "402f9f6e2a282cb36e2754aba01882e1a35068238e6073d4c86265f18f842d50",
+    "results/response/prediction-fine-dt0.020-radial_outward-weighted.npz": "16b722e87ff6a509d4ec5d9d0e8f7f69c048400ea6367b0a6226fd9bb256ce11",
+    "results/response/prediction-fine-dt0.020-radial_outward-weighted.json": "055cf255dd75511743a9cbcdc9afa90ee371990fc4022b8ae683b519398506e5",
+    "results/response/prediction-fine-dt0.020-tangential-weighted.npz": "c77cc3599b2be9981dc77ca0fd9fa34926a377a6945f925b858ca304fa35b17f",
+    "results/response/prediction-fine-dt0.020-tangential-weighted.json": "48519e4d86eb5b74c17cd43a765c786313376e2db6ac1c92c60761ccd0278155",
+    "results/response/prediction-fine-dt0.020-oblique-weighted.npz": "6794c75061b0c3e8a1d457cf1202a26f9ed8b2840d57262bc1ea8a4bf46c433c",
+    "results/response/prediction-fine-dt0.020-oblique-weighted.json": "afdd2eb25dea1cda32faf129d6c29d6b7e940c70c83b3592375880ad6516f9c9",
+    "results/response/prediction-fine-dt0.010-radial_outward-weighted.npz": "dcf478417c5e62559938447b3432d5d408bea155e4c8552f38be7f221c911e9a",
+    "results/response/prediction-fine-dt0.010-radial_outward-weighted.json": "56432852db89acfe5b77fc8275c2d988bebb2bf86325b51e4cd3cea86f7fb4b1",
+    "results/response/prediction-fine-dt0.010-tangential-weighted.npz": "e8bdcbcfeeedfab45707622f12e6541b4aea91f3b99f42ccd90a998efb6069fb",
+    "results/response/prediction-fine-dt0.010-tangential-weighted.json": "ee8d0ab0b27f6b67a1a2582d17b633092807046d88e40d3a1956ab9a2038bd11",
+    "results/response/prediction-fine-dt0.010-oblique-weighted.npz": "aa2ef98aebfb1268c5ed19e167468955e4b116db55062a26d349aef8fe5d4494",
+    "results/response/prediction-fine-dt0.010-oblique-weighted.json": "06a5e2502f207c7a10c2c37162df8bd97c238f049d7c74728e3f688e7f35173a",
+    "results/response/validation-coarse-dt0.020-radial_outward-a1.000.npz": "905da3a9147141617002ed2b749cd2ae34ae381b64b49b82a8a99374920efbb9",
+    "results/response/validation-coarse-dt0.020-radial_outward-a1.000.json": "37c4500dee41ebb91fb759085e77ad56da687723c254c90598d0f98294f00db9",
+    "results/response/validation-coarse-dt0.020-tangential-a1.000.npz": "b5740ad86f04016f8c038bcf18a020d229cb799643ae966f77602158b3691d3f",
+    "results/response/validation-coarse-dt0.020-tangential-a1.000.json": "18fc7a2de469d7a9bf7afd6f8684f88149c4f3f73b8335ecf1a57180d41057bf",
+    "results/response/validation-coarse-dt0.020-oblique-a1.000.npz": "dd196ad26d75cf64e0ca0d7c4ecd8b289f32ed8f17575fd4fac492de2ed97ea8",
+    "results/response/validation-coarse-dt0.020-oblique-a1.000.json": "7d3477596f0431b28d98365d5fb4627a6f65eff668d47fb682076cda1df3e16c",
+    "results/response/validation-fine-dt0.020-radial_outward-a1.000.npz": "f8b9ba68d71c05d4df787bdfc744b74ea57936c1168fa7c7192e95162f98047d",
+    "results/response/validation-fine-dt0.020-radial_outward-a1.000.json": "57257ff7e362c350761f718b251f9a60de20b3320d940a793f7dd4ef024ae476",
+    "results/response/validation-fine-dt0.020-tangential-a1.000.npz": "b63b3728c24a6e6f178f3d371896fb1073d9c04703f26e20545573fefc77dc85",
+    "results/response/validation-fine-dt0.020-tangential-a1.000.json": "10d956c5865c26d108b421a7fab42db5fcad0e19f4e49589bdffca645a79be1a",
+    "results/response/validation-fine-dt0.020-oblique-a1.000.npz": "80a13ebe4b6e9dcb5b73064cc1d44641cb2befef38b4bd05b30099ef02f2173f",
+    "results/response/validation-fine-dt0.020-oblique-a1.000.json": "11598a8b765576972e8cbd9ed3bbff2df021b538503cdcd10227578f3a3bc771",
+    "results/response/validation-fine-dt0.010-radial_outward-a0.050.npz": "a82af692783d5ff02e7b3d0dae170538e6d4c9f78d45b9fc5e44f0b896592ec5",
+    "results/response/validation-fine-dt0.010-radial_outward-a0.050.json": "c611a6cedd4d0999a4912edbf9dcfffd4a9e070f3bc9553da69539170d0e82e9",
+    "results/response/validation-fine-dt0.010-radial_outward-a0.100.npz": "d2fc71d4f799736bd0d538708db9558783d54bf7ab593d29c369a717edd51496",
+    "results/response/validation-fine-dt0.010-radial_outward-a0.100.json": "c241476200843f8bcafe958e9c9cfab093aa1629f7cabbca6d2690c6c209bf85",
+    "results/response/validation-fine-dt0.010-radial_outward-a0.250.npz": "e403d5d4de56886e3d0833b3e605b69605a95666e8f70a03015d15d429d19684",
+    "results/response/validation-fine-dt0.010-radial_outward-a0.250.json": "67ae548980dfbd6af2630b2923d5d3409f1edb95df67b8b4876139ef00d4fb58",
+    "results/response/validation-fine-dt0.010-radial_outward-a0.500.npz": "adbfa7065908cfa8ba5a369c642c16e4f4dbd272a0fef3c125c34e9aa80ec1cf",
+    "results/response/validation-fine-dt0.010-radial_outward-a0.500.json": "bb13a256499dc1744699218f25343610a3c13f487bc354312a0a27bf0bdfead1",
+    "results/response/validation-fine-dt0.010-radial_outward-a1.000.npz": "5b02b2d88757366a7853778f62b5bc875816cc2c8250a9901e0cf899b8308154",
+    "results/response/validation-fine-dt0.010-radial_outward-a1.000.json": "11f9c5b2643da0838981329a83832ecb2672348f9d681b87a7d62b9a3a7e8a93",
+    "results/response/validation-fine-dt0.010-tangential-a0.050.npz": "76c9a4d58e9d487c36862f4d6a446e6a20328e5f7aee112616beb4de09fca6d4",
+    "results/response/validation-fine-dt0.010-tangential-a0.050.json": "2b113954c3a1cc105b25f207259078047d1b6e96c4bb8a38ca975f445ed4ca79",
+    "results/response/validation-fine-dt0.010-tangential-a0.100.npz": "4e6bba71a0d3fa992be82084fd02198d42243431545fcb8fdb4c7df4fb20f729",
+    "results/response/validation-fine-dt0.010-tangential-a0.100.json": "77b8930364ad4b3d5390f1d67c261f563b24a73c7d20c26fd68a8b32b5d1a01c",
+    "results/response/validation-fine-dt0.010-tangential-a0.250.npz": "95a06ef07d7ee66c5263707162fef8eec649f27ec07da41480f72ce9f68d630a",
+    "results/response/validation-fine-dt0.010-tangential-a0.250.json": "628d8655a5eb6b20b4d6e997cd86a80fa735c6aeb365dceb9eb468c37a2331bf",
+    "results/response/validation-fine-dt0.010-tangential-a0.500.npz": "796ab3ec530414778c2360960de548a69400c2c8e6db5c4d0f5db925eeac1a6a",
+    "results/response/validation-fine-dt0.010-tangential-a0.500.json": "569e187be9711df2de864aa241e23f2ccd0c069d05289bfc88eeee2904756422",
+    "results/response/validation-fine-dt0.010-tangential-a1.000.npz": "677f1cb41695a7e16722c6f0dc3d04f4d16bcd17a7222af4a04263205bf7f28c",
+    "results/response/validation-fine-dt0.010-tangential-a1.000.json": "e6c5ba88b67ee5f4082c34d96d48a4d05d6945356901f1170f5f835a5e7197f8",
+    "results/response/validation-fine-dt0.010-oblique-a0.050.npz": "2bda4fb1dca42e8080735257fde505fde309ff72c758df78cbf895bed48d7149",
+    "results/response/validation-fine-dt0.010-oblique-a0.050.json": "e9224f302519b9250fbca0a558cd3705796f50d73ec74f54b7e1215c1c245795",
+    "results/response/validation-fine-dt0.010-oblique-a0.100.npz": "98657cf13d9c1c0c2ea71b82b51c4c8960496ef96626646e11e3ec7de9083257",
+    "results/response/validation-fine-dt0.010-oblique-a0.100.json": "66ab5599833c2441ad129b36a349c146861f623ecbee034116bfbdce36a5deff",
+    "results/response/validation-fine-dt0.010-oblique-a0.250.npz": "fa7e63aa0ec3d37a06a6e353aafa1f453a943fe7d74061145a3a6a7d1c0b7560",
+    "results/response/validation-fine-dt0.010-oblique-a0.250.json": "607b335595e1c835b1903a2f7c5a4a1eae98519fada8e0fd4ca61ae1c6072e9b",
+    "results/response/validation-fine-dt0.010-oblique-a0.500.npz": "c098471706738215543047aec5bdd25c753b69f6e1adaf454fea55314bba4e45",
+    "results/response/validation-fine-dt0.010-oblique-a0.500.json": "2f1452f6d4d62c5eac6acc0ccda25604beaefa761f6a410507db5cbd055d8eca",
+    "results/response/validation-fine-dt0.010-oblique-a1.000.npz": "f4259bb7b4103f1b11043a89b2901e93832ac2e540330c46367786ffbabc916b",
+    "results/response/validation-fine-dt0.010-oblique-a1.000.json": "781a6689b5b9daefdeecabff4cf4c6869ffc3b565a1b9f27ee370f652fc1fc2b",
+    "analysis/response/analyze.py": "3633dee74814bb63a100833ce29c734eb98b438482d7f2ac9a9bb4397053d2ca",
+    "analysis/response/statistics.py": "6c677e30dfac9f124add59c0193f7a3fd7d9d31a4174402b35e1a06142ca1c87",
+    "analysis/matched/statistics.py": "9041c7cd633d7b5f7e80130ea084b618ed4a18119f6d422ffdd3bdb013902fc1",
+    "results/response/coupling-diagnostic.json": "2124bfcf523186d8f69e65d77161a01777145b7d2b175af20e4c85f3d7c45ca1",
+    "analysis/matched/protocol.json": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da",
+    "results/cluster-comparison/NGC5139/reference/host.npz": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+    "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+    "results/matched-residence/kernel-fine.npz": "8d3e5f0ca764ad59937598cd26dfc6476895f6def9631e78764e58514108af9b",
+    "results/matched-residence/kernel-fine.json": "12390685f177ea06259a7755948835a022a6bf86a55a5db39a1b90b73dbbde5c",
+    "analysis/response/coupling_diagnostic.py": "4cdea01a8292f03a325084c0c9b54c9374564380eacbd03bac106145d6fd124b",
+    "analysis/matched/kernel.py": "dcca9b2329904960b923e564c9c69beb307aa730e09691ec8c8da81e8d97c056",
+    "analysis/matched/transport.py": "c819392a6165ca2cc1332ddcd0f36cefb0a12801c5a9fb1c48a6c63bda7606da",
+    "analysis/host_reconstruction/host.py": "012a8525da438a27cc16ca3633f2eee6aa707bd8e0a70c1f88f366327b9daad0",
+    "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+    "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5"
+  },
+  "interpretation": "Fixed numerical-process test of a mean-response extrapolation. Normal intervals are approximate; rare influential scores, sampling, grid/time sensitivity and numerical continuation remain separate. No physical-cluster or merger-rate calibration."
+}

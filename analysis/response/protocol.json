@@ -1,0 +1,68 @@
+{
+  "revision": "residence-response-test-1",
+  "scope": "Prospectively specified test of the discrete whole-transition first response in one conditional host; continuum and physical-cluster conclusions require additional convergence and calibration",
+  "host": "NGC5139",
+  "host_path": "results/cluster-comparison/NGC5139/reference/host.npz",
+  "matched_protocol": "analysis/matched/protocol.json",
+  "kernel_tables": {"coarse": "results/matched-residence/kernel-coarse.npz", "fine": "results/matched-residence/kernel-fine.npz"},
+  "physical_inputs": "Exactly the host, 60 Msun remnant, BH-only collisions, all-species smooth gravity, allowed/excluded encounter domain, region, horizon and table stopping rules of matched-residence-pilot-1",
+  "horizon": 10.0,
+  "launches": [
+    {"name": "radial_outward", "angle_from_radial_degrees": 0.0, "role": "previously seen endpoint setting; independent replication"},
+    {"name": "tangential", "angle_from_radial_degrees": 90.0, "role": "previously seen endpoint setting; independent replication"},
+    {"name": "oblique", "angle_from_radial_degrees": 45.0, "role": "launch direction not used in the earlier endpoint pilot; prediction before independent endpoint validation"}
+  ],
+  "numerical_settings": [
+    {"name": "coarse-dt0.020", "grid": "coarse", "dt": 0.02, "role": "grid sensitivity"},
+    {"name": "fine-dt0.020", "grid": "fine", "dt": 0.02, "role": "time sensitivity"},
+    {"name": "fine-dt0.010", "grid": "fine", "dt": 0.01, "role": "primary"}
+  ],
+  "cache": {"retained_array_bytes": 2147483648, "vertex_cap": 768, "scope": "Lossless numerical storage only; bitwise sampler/RNG equivalence checked against original kernel; working arrays outside this budget"},
+  "seed": 2026110201,
+  "seed_scheme": "SeedSequence([seed, stage_code, setting_index, launch_index, method_or_a_index]); codes 10 pilot, 20 prediction, 30 validation; no seed shared across stages",
+  "pilot": {
+    "setting": "fine-dt0.010",
+    "pairs_per_method_per_launch": 1024,
+    "methods": ["naive", "weighted"],
+    "purpose": "Compare estimator variance and computational cost; only weighted sample variance selects primary prediction sample count, never its mean/sign or validation outcomes",
+    "included_in_primary_estimate": false
+  },
+  "prediction": {
+    "estimator": "Uniform complete-transition replacement with zero/positive Poisson conditioning and antithetic Gaussian increments at K; four diffusion continuations with shared fixed-row noise",
+    "score": "N * [p0*Y_zero + pplus*Y_positive - (Y_Dplus+Y_Dminus)/2], Y=C/T, p0=exp(-Gamma*delta), pplus=-expm1(-Gamma*delta)",
+    "positive_branch": "Poisson(Gamma*delta) conditioned N_events>0, including multiple encounters; at zero rate its weight is zero",
+    "gaussian_branches": "A*delta plus or minus sqrt(D*delta)*Z; drift sign unchanged",
+    "selection": "K uniform over all N scheduled steps, independent per quartet; dead-before-K rows retained with zero response",
+    "primary_pairs_min": 8192,
+    "primary_pairs_max": 65536,
+    "primary_halfwidth_target": 0.0005,
+    "primary_count_rule": "Smallest power of two >= max(minimum, z_Bonferroni^2 * pilot_weighted_variance / target_halfwidth^2), capped at maximum. Lock all selected counts before production. A cap hit is retained, not a precision claim.",
+    "control_pairs": 8192,
+    "state_diagnostics": "Retain insertion step, active flag and pre-transition state; report signed contributions by predeclared time and radius bins with all rows in denominator",
+    "time_bin_edges": [0.0, 2.5, 5.0, 7.5, 10.0],
+    "radius_bin_edges": [0.0, 0.5, 1.0, 2.0, 4.0]
+  },
+  "validation": {
+    "paired_paths_per_setting": 8192,
+    "primary_a_values": [0.05, 0.1, 0.25, 0.5, 1.0],
+    "control_a_values": [1.0],
+    "transition_family": "P_a=(1-a)P_D+a*P_J including full transition reward and stopping outcomes; independent Bernoulli choice each scheduled step",
+    "coupling": "Each mixture path paired with its own diffusion control through fixed-shape Gaussian and exponential variates; each branch uses its own state-dependent hazard. Different validation settings and all prediction batches independent.",
+    "execution_gate": "All prediction arrays and a digest-locked prediction register must exist before any validation trajectories are generated",
+    "known_endpoints": "Prior endpoint results are development evidence, not blind validation. Fresh seeds at original launches test replication; the oblique launch tests an unused direction with the estimator fixed beforehand."
+  },
+  "reporting": {
+    "confidence": 0.95,
+    "bonferroni_family_size": 64,
+    "family_scope": "Conservative allowance covering 9 response means, 21 validation shifts, 21 prediction residuals, 6 response-refinement contrasts, and 6 endpoint-refinement contrasts (63 statements); duplicated scaled-response intervals inherit their original response event. Normal approximations, not exact finite-sample guarantees.",
+    "prediction_absolute_error_target": 0.001,
+    "numerical_sensitivity_budget": 0.0005,
+    "numerical_missing_residence_budget": 0.0002,
+    "small_a_test": "Compare [mu(a)-mu(0)]/a with S at both 0.05 and 0.1; report the remainder/a with its interval. A finite a is not an exact derivative test and an interval containing zero is not equivalence.",
+    "endpoint_test": "For a=1 compare [mu(1)-mu(0)]-S with the predeclared absolute error tolerance; intervals wholly within support finite-resolution agreement, wholly outside establish disagreement, overlap is inconclusive.",
+    "continuum_gate": "No continuum claim unless sampling, response and endpoint grid/time sensitivity, numerical-domain continuation uncertainty, and local-kernel resolution are adequately controlled. Finite refinement shifts are not rigorous truncation bounds.",
+    "weighted_censoring": "Bound possible response continuation pathwise by N * [p0*B_zero+pplus*B_positive+(B_Dplus+B_Dminus)/2], B=(T-stop_time)/T for numerical-domain stops only. Preserve all weighted branches and do not renormalize survivors.",
+    "precision": "Normal intervals can be unreliable for rare influential contributions; retain extrema, standard errors, and contribution diagnostics. Resource-limited inconclusive results are reported without widening acceptance thresholds.",
+    "claims": "No capture, merger-rate, distributional-response, host-feedback or calibrated real-cluster claim; this tests a mean-residence predictor."
+  }
+}

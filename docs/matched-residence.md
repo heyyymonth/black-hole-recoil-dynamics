@@ -61,7 +61,7 @@ The supported finding is that the two **matched numerical laws** give different 
 
 ## Connection to the hypothesis
 
-The theoretical hypothesis concerns an **observable-specific response**, not a universal threshold in cluster BH count. This pilot evaluates the full finite-encounter endpoint and its matched diffusion endpoint. The diffusion-based first-response predictor has not been evaluated, so these results cannot confirm its accuracy.
+The theoretical hypothesis concerns an **observable-specific response**, not a universal threshold in cluster BH count. This pilot evaluates the full finite-encounter endpoint and its matched diffusion endpoint. This pilot does not evaluate the diffusion-based first-response predictor, so its endpoint results cannot confirm that predictor's accuracy. The separate [completed discrete response test](response-test.md) records the prediction before generating independent validation trajectories and reports its sampling, refinement and continuation uncertainty.
 
 A difference in the residence distribution can coexist with a smaller mean difference. The occupation residual in the paper predicts a mean; validating it would not certify the entire distribution. Distributional comparisons and stopping probabilities therefore remain separate observables. Grid/time precision must be resolved before assigning continuum accuracy, and independently resolved dynamics are needed for physical calibration.
 
