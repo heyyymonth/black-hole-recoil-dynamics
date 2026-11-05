@@ -1,0 +1,81 @@
+{
+  "revision": "residence-precision-pilot-1",
+  "scope": "Fixed-budget comparison of estimators of the same complete-transition residence response; not independent validation of endpoint prediction accuracy or physical-cluster calibration",
+  "response_protocol": "analysis/response/protocol.json",
+  "reference_design": "results/response/execution-design.json",
+  "setting": "fine-dt0.010",
+  "horizon": 10.0,
+  "dt": 0.01,
+  "launches": [
+    "radial_outward",
+    "tangential",
+    "oblique"
+  ],
+  "methods": [
+    {
+      "name": "eigen_uniform",
+      "factor": "eigen",
+      "selection": "uniform"
+    },
+    {
+      "name": "symmetric_uniform",
+      "factor": "symmetric",
+      "selection": "uniform"
+    },
+    {
+      "name": "symmetric_stratified",
+      "factor": "symmetric",
+      "selection": "stratified"
+    }
+  ],
+  "blocks": 4,
+  "quartets_per_block": 1024,
+  "step_strata": [
+    0,
+    250,
+    500,
+    750,
+    1000
+  ],
+  "stratum_weights": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "seed": 2026110501,
+  "seed_scheme": "SeedSequence([seed, 40, launch_index, method_index, block_index]); explicit stratified insertion uses independent stream [seed, 41, launch_index, method_index, block_index]",
+  "execution_order": "For each block, rotate launch order by block index; within each launch rotate method order by (block_index+launch_index) modulo 3. All arms use independent streams.",
+  "stratification": "256 independent uniform integer insertions per step stratum in each block; weights fixed by step counts. Dead-before-insertion contributions remain zero. No adaptive allocation or deletion of tails.",
+  "unchanged": "Conditional NGC5139 host, fine encounter table, 60 Msun remnant, BH collision law, all-species gravity, reward, horizon, numerical boundaries and excluded-channel killing from the completed response experiment",
+  "cache": {
+    "reuse_namespace": "results/response/execution-design.json",
+    "directory": "tmp/response-sampler-cache/fine",
+    "retained_array_bytes": 2147483648,
+    "vertex_cap": 768,
+    "disk_max_bytes": 16106127360
+  },
+  "reporting": {
+    "efficiency_pairs": [
+      [
+        "eigen_uniform",
+        "symmetric_uniform"
+      ],
+      [
+        "symmetric_uniform",
+        "symmetric_stratified"
+      ]
+    ],
+    "efficiency_family_size": 6,
+    "bootstrap_replicates": 8192,
+    "bootstrap_seed": 2026110502,
+    "bootstrap_scope": "Empirical percentile intervals with Bonferroni component levels across six ratios; resample independently within each insertion stratum. Approximate descriptive uncertainty, not finite-sample coverage or protection against unseen rare scores.",
+    "variance_metric": "Equivalent score variance n*Var(estimated mean). Stratified mean variance is sum_s w_s^2 sample_variance_s/n_s; ordinary pooled sample variance is not used for stratified uncertainty.",
+    "cost_metric": "Var(estimated mean) multiplied by total process CPU seconds; lower is better. CPU includes trajectory calculation and cache access, excludes setup/postprocessing; measured timing is conditional on machine/cache/load and is not itself assigned a confidence interval.",
+    "diagnostics": "Per-block and pooled means, score extrema and tails, signed stratum contributions, branch-reward covariance, numerical continuation allowances, stops, wall/CPU times and cache loads/builds. No score clipping.",
+    "decision": "Recommend an estimator for a new independently sampled response test only if the fixed pilot shows reproducible variance/cost improvement with intact marginal-law controls. This pilot does not reuse earlier endpoint validation to declare response accuracy.",
+    "adaptation": "No sample-size or threshold changes after outcomes; all 36 jobs retained even if differences are inconclusive. Methods not selected from observed mean/sign.",
+    "mean_reporting": "Nine response means and six independent-arm differences with descriptive standard errors only; no confidence-based equivalence claim. Algebra and controls establish the identical expectation target.",
+    "budget": "Equal quartet counts, not equal CPU budgets; variance is primary and observed CPU-adjusted efficiency is descriptive."
+  }
+}
