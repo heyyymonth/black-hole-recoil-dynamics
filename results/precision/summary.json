@@ -1,0 +1,2944 @@
+{
+  "revision": "residence-precision-pilot-1",
+  "scope": "Fixed-budget comparison of estimators of the same complete-transition residence response; not independent validation of endpoint prediction accuracy or physical-cluster calibration",
+  "complete": true,
+  "counts": {
+    "ensembles": 36,
+    "quartets": 36864,
+    "branch_trajectories": 147456
+  },
+  "reporting": {
+    "efficiency_pairs": [
+      [
+        "eigen_uniform",
+        "symmetric_uniform"
+      ],
+      [
+        "symmetric_uniform",
+        "symmetric_stratified"
+      ]
+    ],
+    "efficiency_family_size": 6,
+    "bootstrap_replicates": 8192,
+    "bootstrap_seed": 2026110502,
+    "bootstrap_scope": "Empirical percentile intervals with Bonferroni component levels across six ratios; resample independently within each insertion stratum. Approximate descriptive uncertainty, not finite-sample coverage or protection against unseen rare scores.",
+    "variance_metric": "Equivalent score variance n*Var(estimated mean). Stratified mean variance is sum_s w_s^2 sample_variance_s/n_s; ordinary pooled sample variance is not used for stratified uncertainty.",
+    "cost_metric": "Var(estimated mean) multiplied by total process CPU seconds; lower is better. CPU includes trajectory calculation and cache access, excludes setup/postprocessing; measured timing is conditional on machine/cache/load and is not itself assigned a confidence interval.",
+    "diagnostics": "Per-block and pooled means, score extrema and tails, signed stratum contributions, branch-reward covariance, numerical continuation allowances, stops, wall/CPU times and cache loads/builds. No score clipping.",
+    "decision": "Recommend an estimator for a new independently sampled response test only if the fixed pilot shows reproducible variance/cost improvement with intact marginal-law controls. This pilot does not reuse earlier endpoint validation to declare response accuracy.",
+    "adaptation": "No sample-size or threshold changes after outcomes; all 36 jobs retained even if differences are inconclusive. Methods not selected from observed mean/sign.",
+    "mean_reporting": "Nine response means and six independent-arm differences with descriptive standard errors only; no confidence-based equivalence claim. Algebra and controls establish the identical expectation target.",
+    "budget": "Equal quartet counts, not equal CPU budgets; variance is primary and observed CPU-adjusted efficiency is descriptive."
+  },
+  "rows": [
+    {
+      "launch": "radial_outward",
+      "method": "eigen_uniform",
+      "estimate": {
+        "n": 4096,
+        "mean": -0.00042496030250288586,
+        "variance_of_mean": 0.03850340992607405,
+        "standard_error": 0.19622285780732593,
+        "equivalent_score_variance": 157.70996705719932,
+        "minimum": -168.75012288472817,
+        "maximum": 165.54809539283033,
+        "zero_count": 463,
+        "absolute_score_quantiles": {
+          "0.5": 1.0638736822645434,
+          "0.9": 12.532572263176611,
+          "0.99": 59.99086702816611,
+          "0.999": 112.78370161637235
+        },
+        "largest_one_percent_absolute_score_share": 0.1685236613276793,
+        "design": "uniform",
+        "strata": [
+          {
+            "stratum": null,
+            "weight": 1.0,
+            "n": 4096,
+            "mean": -0.00042496030250288586,
+            "sample_variance": 157.70996705719932
+          }
+        ],
+        "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+      },
+      "blocks": [
+        {
+          "name": "radial_outward-eigen_uniform-block0",
+          "estimate": {
+            "n": 1024,
+            "mean": 0.28362753337152713,
+            "variance_of_mean": 0.1410496344670151,
+            "standard_error": 0.37556575252146607,
+            "equivalent_score_variance": 144.43482569422346,
+            "minimum": -72.51568599010955,
+            "maximum": 96.46016594528223,
+            "zero_count": 117,
+            "absolute_score_quantiles": {
+              "0.5": 0.9964450022425242,
+              "0.9": 13.234303153447618,
+              "0.99": 60.6366974064369,
+              "0.999": 86.4304811448767
+            },
+            "largest_one_percent_absolute_score_share": 0.15593109369960154,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": 0.28362753337152713,
+                "sample_variance": 144.43482569422346
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 18.872344000000002,
+          "wall_seconds": 21.26840512501076
+        },
+        {
+          "name": "radial_outward-eigen_uniform-block1",
+          "estimate": {
+            "n": 1024,
+            "mean": 0.1532645307352788,
+            "variance_of_mean": 0.1780250154268602,
+            "standard_error": 0.4219301072770942,
+            "equivalent_score_variance": 182.29761579710484,
+            "minimum": -168.75012288472817,
+            "maximum": 165.54809539283033,
+            "zero_count": 107,
+            "absolute_score_quantiles": {
+              "0.5": 1.023949926041573,
+              "0.9": 11.350414742991473,
+              "0.99": 59.785854497018406,
+              "0.999": 164.20748827886513
+            },
+            "largest_one_percent_absolute_score_share": 0.20061937763952387,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": 0.1532645307352788,
+                "sample_variance": 182.29761579710484
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.02016599999996,
+          "wall_seconds": 19.846615417161956
+        },
+        {
+          "name": "radial_outward-eigen_uniform-block2",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.36620651755138833,
+            "variance_of_mean": 0.1520074743279051,
+            "standard_error": 0.38988135929780626,
+            "equivalent_score_variance": 155.65565371177482,
+            "minimum": -113.36345061589049,
+            "maximum": 134.86296662641084,
+            "zero_count": 126,
+            "absolute_score_quantiles": {
+              "0.5": 1.1471183654974682,
+              "0.9": 12.270538026407209,
+              "0.99": 55.98825047078551,
+              "0.999": 113.21580998448371
+            },
+            "largest_one_percent_absolute_score_share": 0.18383632978344755,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.36620651755138833,
+                "sample_variance": 155.65565371177482
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.232339000000024,
+          "wall_seconds": 19.9060012078844
+        },
+        {
+          "name": "radial_outward-eigen_uniform-block3",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.0723853877654291,
+            "variance_of_mean": 0.14518627642292237,
+            "standard_error": 0.38103316971481943,
+            "equivalent_score_variance": 148.6707470570725,
+            "minimum": -88.25064153825585,
+            "maximum": 122.20198082157174,
+            "zero_count": 113,
+            "absolute_score_quantiles": {
+              "0.5": 1.2122568807268752,
+              "0.9": 12.845408569767939,
+              "0.99": 56.36893639044777,
+              "0.999": 106.29347732202129
+            },
+            "largest_one_percent_absolute_score_share": 0.1679411478427795,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.0723853877654291,
+                "sample_variance": 148.6707470570725
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 20.565400000000068,
+          "wall_seconds": 21.64030049997382
+        }
+      ],
+      "cpu_seconds": 77.69024900000005,
+      "wall_seconds": 82.66132225003093,
+      "variance_times_cpu": 2.991339504505767,
+      "branch_covariance": [
+        [
+          0.007977831083422794,
+          0.007620335151314779,
+          0.00781352546615625,
+          0.007854389641769006
+        ],
+        [
+          0.007620335151314779,
+          0.010256629583266638,
+          0.007537827366948527,
+          0.00758857642810252
+        ],
+        [
+          0.00781352546615625,
+          0.007537827366948527,
+          0.007897322697276192,
+          0.007758469708108551
+        ],
+        [
+          0.007854389641769006,
+          0.00758857642810252,
+          0.007758469708108551,
+          0.007978497455520577
+        ]
+      ],
+      "branch_order": [
+        "jump_zero",
+        "jump_positive",
+        "diffusion_plus",
+        "diffusion_minus"
+      ],
+      "weighted_jump_diffusion_covariance": 0.007834035716442471,
+      "weighted_jump_diffusion_correlation": 0.9900677145691407,
+      "numerical_continuation_sample_mean_bound": 0.0007645131095926154,
+      "numerical_continuation_nonzero_rows": 1,
+      "stops": {
+        "jump_zero": {
+          "horizon": 4096
+        },
+        "jump_positive": {
+          "horizon": 4095,
+          "spatial_domain": 1
+        },
+        "diffusion_plus": {
+          "horizon": 4096
+        },
+        "diffusion_minus": {
+          "horizon": 4096
+        }
+      },
+      "time_contributions": [
+        {
+          "steps": [
+            0,
+            250
+          ],
+          "count": 963,
+          "signed_contribution": 0.16932795183882576
+        },
+        {
+          "steps": [
+            250,
+            500
+          ],
+          "count": 1013,
+          "signed_contribution": -0.12373737696646436
+        },
+        {
+          "steps": [
+            500,
+            750
+          ],
+          "count": 1027,
+          "signed_contribution": -0.031581840534419106
+        },
+        {
+          "steps": [
+            750,
+            1000
+          ],
+          "count": 1093,
+          "signed_contribution": -0.014433694640445222
+        }
+      ],
+      "covariance_scope": "Descriptive pooled branch statistics; no additional confidence claims"
+    },
+    {
+      "launch": "radial_outward",
+      "method": "symmetric_uniform",
+      "estimate": {
+        "n": 4096,
+        "mean": -0.021603557155916882,
+        "variance_of_mean": 0.0003422546652063075,
+        "standard_error": 0.01850012608622729,
+        "equivalent_score_variance": 1.4018751086850356,
+        "minimum": -59.25436587658711,
+        "maximum": 15.64489406549885,
+        "zero_count": 400,
+        "absolute_score_quantiles": {
+          "0.5": 0.02757534685329799,
+          "0.9": 0.3365384432254537,
+          "0.99": 2.4865717927260165,
+          "0.999": 10.858538959141184
+        },
+        "largest_one_percent_absolute_score_share": 0.3653008359087709,
+        "design": "uniform",
+        "strata": [
+          {
+            "stratum": null,
+            "weight": 1.0,
+            "n": 4096,
+            "mean": -0.021603557155916882,
+            "sample_variance": 1.4018751086850356
+          }
+        ],
+        "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+      },
+      "blocks": [
+        {
+          "name": "radial_outward-symmetric_uniform-block0",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.008717966377902335,
+            "variance_of_mean": 0.0006821337376540305,
+            "standard_error": 0.02611769012860882,
+            "equivalent_score_variance": 0.6985049473577273,
+            "minimum": -6.611565542910425,
+            "maximum": 15.64489406549885,
+            "zero_count": 97,
+            "absolute_score_quantiles": {
+              "0.5": 0.02790001438741918,
+              "0.9": 0.3042350512169894,
+              "0.99": 2.484045028222698,
+              "0.999": 14.894375277874637
+            },
+            "largest_one_percent_absolute_score_share": 0.3844678861076568,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.008717966377902335,
+                "sample_variance": 0.6985049473577273
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.555743,
+          "wall_seconds": 22.695605540880933
+        },
+        {
+          "name": "radial_outward-symmetric_uniform-block1",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.06903012470347415,
+            "variance_of_mean": 0.003919114444853526,
+            "standard_error": 0.06260283096516903,
+            "equivalent_score_variance": 4.013173191530011,
+            "minimum": -59.25436587658711,
+            "maximum": 15.157434825725902,
+            "zero_count": 99,
+            "absolute_score_quantiles": {
+              "0.5": 0.029660954315086085,
+              "0.9": 0.3528726815742347,
+              "0.99": 2.8189673364255246,
+              "0.999": 15.011802558625282
+            },
+            "largest_one_percent_absolute_score_share": 0.49516901772990024,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.06903012470347415,
+                "sample_variance": 4.013173191530011
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 20.057024999999953,
+          "wall_seconds": 21.486093249870464
+        },
+        {
+          "name": "radial_outward-symmetric_uniform-block2",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.011250922164999531,
+            "variance_of_mean": 0.000515630959308587,
+            "standard_error": 0.02270750887500844,
+            "equivalent_score_variance": 0.5280061023319931,
+            "minimum": -9.571123973514894,
+            "maximum": 10.99368196868175,
+            "zero_count": 107,
+            "absolute_score_quantiles": {
+              "0.5": 0.02665444333035949,
+              "0.9": 0.3609505533435588,
+              "0.99": 2.788013741213281,
+              "0.999": 9.550243026225331
+            },
+            "largest_one_percent_absolute_score_share": 0.3002382557581592,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.011250922164999531,
+                "sample_variance": 0.5280061023319931
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 20.050943000000075,
+          "wall_seconds": 20.609628167003393
+        },
+        {
+          "name": "radial_outward-symmetric_uniform-block3",
+          "estimate": {
+            "n": 1024,
+            "mean": 0.0025847846227084782,
+            "variance_of_mean": 0.00036017251545758256,
+            "standard_error": 0.018978211597976836,
+            "equivalent_score_variance": 0.36881665582856454,
+            "minimum": -9.137075608211697,
+            "maximum": 7.669185300666959,
+            "zero_count": 97,
+            "absolute_score_quantiles": {
+              "0.5": 0.026257878183486016,
+              "0.9": 0.3320565405223186,
+              "0.99": 2.2161543914859325,
+              "0.999": 7.665435636219872
+            },
+            "largest_one_percent_absolute_score_share": 0.2727072356453316,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": 0.0025847846227084782,
+                "sample_variance": 0.36881665582856454
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.764751000000047,
+          "wall_seconds": 20.311838458990678
+        }
+      ],
+      "cpu_seconds": 79.42846200000008,
+      "wall_seconds": 85.10316541674547,
+      "variance_times_cpu": 0.027184761669661946,
+      "branch_covariance": [
+        [
+          0.007629900215094835,
+          0.007597494639427625,
+          0.007637872252685385,
+          0.0076300392819464
+        ],
+        [
+          0.007597494639427625,
+          0.010103044190862678,
+          0.0076137397807224385,
+          0.007599239297244422
+        ],
+        [
+          0.007637872252685385,
+          0.0076137397807224385,
+          0.00765958325970603,
+          0.00762511850234956
+        ],
+        [
+          0.0076300392819464,
+          0.007599239297244422,
+          0.00762511850234956,
+          0.007647784701871136
+        ]
+      ],
+      "branch_order": [
+        "jump_zero",
+        "jump_positive",
+        "diffusion_plus",
+        "diffusion_minus"
+      ],
+      "weighted_jump_diffusion_covariance": 0.007634609484296491,
+      "weighted_jump_diffusion_correlation": 0.9999083414119978,
+      "numerical_continuation_sample_mean_bound": 0.0,
+      "numerical_continuation_nonzero_rows": 0,
+      "stops": {
+        "jump_zero": {
+          "horizon": 4096
+        },
+        "jump_positive": {
+          "horizon": 4096
+        },
+        "diffusion_plus": {
+          "horizon": 4096
+        },
+        "diffusion_minus": {
+          "horizon": 4096
+        }
+      },
+      "time_contributions": [
+        {
+          "steps": [
+            0,
+            250
+          ],
+          "count": 1054,
+          "signed_contribution": -0.017839643600367702
+        },
+        {
+          "steps": [
+            250,
+            500
+          ],
+          "count": 1044,
+          "signed_contribution": -0.000322291329318743
+        },
+        {
+          "steps": [
+            500,
+            750
+          ],
+          "count": 1014,
+          "signed_contribution": -0.005783609021143994
+        },
+        {
+          "steps": [
+            750,
+            1000
+          ],
+          "count": 984,
+          "signed_contribution": 0.002341986794913561
+        }
+      ],
+      "covariance_scope": "Descriptive pooled branch statistics; no additional confidence claims"
+    },
+    {
+      "launch": "radial_outward",
+      "method": "symmetric_stratified",
+      "estimate": {
+        "n": 4096,
+        "mean": 0.0014535690473506046,
+        "variance_of_mean": 0.0003905364252655771,
+        "standard_error": 0.019761994465781463,
+        "equivalent_score_variance": 1.599637197887804,
+        "minimum": -17.851454043926296,
+        "maximum": 51.35380026525604,
+        "zero_count": 407,
+        "absolute_score_quantiles": {
+          "0.5": 0.025729167977134315,
+          "0.9": 0.3121496885199193,
+          "0.99": 2.492697140775302,
+          "0.999": 17.323247423886023
+        },
+        "largest_one_percent_absolute_score_share": 0.40987338915944854,
+        "design": "four_equal_probability_time_strata",
+        "strata": [
+          {
+            "stratum": 0,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": -0.002341330161442185,
+            "sample_variance": 3.0167129794311185
+          },
+          {
+            "stratum": 1,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": 0.02984254487607482,
+            "sample_variance": 1.942805880293649
+          },
+          {
+            "stratum": 2,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": -0.026958859451471362,
+            "sample_variance": 1.3867658464284933
+          },
+          {
+            "stratum": 3,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": 0.0052719209262411465,
+            "sample_variance": 0.05226408539795572
+          }
+        ],
+        "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+      },
+      "blocks": [
+        {
+          "name": "radial_outward-symmetric_stratified-block0",
+          "estimate": {
+            "n": 1024,
+            "mean": 0.04664467586583669,
+            "variance_of_mean": 0.0032315461305929883,
+            "standard_error": 0.05684668970655185,
+            "equivalent_score_variance": 3.30910323772722,
+            "minimum": -9.022546493208328,
+            "maximum": 51.35380026525604,
+            "zero_count": 97,
+            "absolute_score_quantiles": {
+              "0.5": 0.02741104036260711,
+              "0.9": 0.3370461502000266,
+              "0.99": 3.2868481949493673,
+              "0.999": 18.343945421699413
+            },
+            "largest_one_percent_absolute_score_share": 0.4660024906971444,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.16267168794724535,
+                "sample_variance": 10.685384714680263
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.0905245892712207,
+                "sample_variance": 2.1029851790883836
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.07702171139138528,
+                "sample_variance": 0.35216039676713123
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.010404137636265978,
+                "sample_variance": 0.09588266037310376
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 23.657840999999998,
+          "wall_seconds": 28.309750834014267
+        },
+        {
+          "name": "radial_outward-symmetric_stratified-block1",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.06208811463771764,
+            "variance_of_mean": 0.00041835181440486025,
+            "standard_error": 0.020453650393141568,
+            "equivalent_score_variance": 0.4283922579505769,
+            "minimum": -12.291384359280123,
+            "maximum": 7.1444675786972445,
+            "zero_count": 99,
+            "absolute_score_quantiles": {
+              "0.5": 0.024690868853399772,
+              "0.9": 0.33318923696067376,
+              "0.99": 2.5301551722273135,
+              "0.999": 7.128365364533709
+            },
+            "largest_one_percent_absolute_score_share": 0.30593767349106676,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.12172970516311302,
+                "sample_variance": 0.9072975398043116
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.07772510069429348,
+                "sample_variance": 0.7022980185813915
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.04655844202039732,
+                "sample_variance": 0.09693893845552162
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.002339210673066739,
+                "sample_variance": 0.007034534961082784
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.914377,
+          "wall_seconds": 20.96367833390832
+        },
+        {
+          "name": "radial_outward-symmetric_stratified-block2",
+          "estimate": {
+            "n": 1024,
+            "mean": 0.07715725929120518,
+            "variance_of_mean": 0.0020616018602538444,
+            "standard_error": 0.04540486604158022,
+            "equivalent_score_variance": 2.1110803048999367,
+            "minimum": -3.0295483327026362,
+            "maximum": 32.76946835048267,
+            "zero_count": 111,
+            "absolute_score_quantiles": {
+              "0.5": 0.02692956386446399,
+              "0.9": 0.32249291089507826,
+              "0.99": 1.787936487481735,
+              "0.999": 28.277518741278012
+            },
+            "largest_one_percent_absolute_score_share": 0.47065916241297484,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.015906988769786634,
+                "sample_variance": 0.06603073934734525
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.17470213015926936,
+                "sample_variance": 4.811833293771808
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.12924165275107008,
+                "sample_variance": 3.4834927051243314
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.02059224302426786,
+                "sample_variance": 0.0829644813562614
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 20.381159999999966,
+          "wall_seconds": 21.330552249914035
+        },
+        {
+          "name": "radial_outward-symmetric_stratified-block3",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.055899544329921794,
+            "variance_of_mean": 0.0005251198233304469,
+            "standard_error": 0.022915493085038492,
+            "equivalent_score_variance": 0.5377226990903776,
+            "minimum": -17.851454043926296,
+            "maximum": 1.8930559235658673,
+            "zero_count": 100,
+            "absolute_score_quantiles": {
+              "0.5": 0.02518401885853727,
+              "0.9": 0.2593703074980137,
+              "0.99": 1.6910506918806512,
+              "0.999": 8.229382226422597
+            },
+            "largest_one_percent_absolute_score_share": 0.35013114685582997,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.03440031466011444,
+                "sample_variance": 0.400767548875156
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.06813143923189731,
+                "sample_variance": 0.13094750937035385
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.11349693714517292,
+                "sample_variance": 1.5958719821828944
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.007569486282502515,
+                "sample_variance": 0.023303755933106227
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 17.079723999999942,
+          "wall_seconds": 17.659159292001277
+        }
+      ],
+      "cpu_seconds": 81.0331019999999,
+      "wall_seconds": 88.2631407098379,
+      "variance_times_cpu": 0.03164637798326085,
+      "branch_covariance": [
+        [
+          0.0072003141822713935,
+          0.007061194529853225,
+          0.007200206323931534,
+          0.007184761342169478
+        ],
+        [
+          0.007061194529853225,
+          0.009030914489738206,
+          0.007062165200919869,
+          0.007047944380523317
+        ],
+        [
+          0.007200206323931534,
+          0.007062165200919869,
+          0.007215016606973158,
+          0.007171807209994392
+        ],
+        [
+          0.007184761342169478,
+          0.007047944380523317,
+          0.007171807209994392,
+          0.007186152129799198
+        ]
+      ],
+      "branch_order": [
+        "jump_zero",
+        "jump_positive",
+        "diffusion_plus",
+        "diffusion_minus"
+      ],
+      "weighted_jump_diffusion_covariance": 0.007192657895594486,
+      "weighted_jump_diffusion_correlation": 0.9998893754138378,
+      "numerical_continuation_sample_mean_bound": 0.0,
+      "numerical_continuation_nonzero_rows": 0,
+      "stops": {
+        "jump_zero": {
+          "horizon": 4096
+        },
+        "jump_positive": {
+          "horizon": 4096
+        },
+        "diffusion_plus": {
+          "horizon": 4096
+        },
+        "diffusion_minus": {
+          "horizon": 4096
+        }
+      },
+      "time_contributions": [
+        {
+          "steps": [
+            0,
+            250
+          ],
+          "count": 1024,
+          "signed_contribution": -0.0005853325403605463
+        },
+        {
+          "steps": [
+            250,
+            500
+          ],
+          "count": 1024,
+          "signed_contribution": 0.007460636219018705
+        },
+        {
+          "steps": [
+            500,
+            750
+          ],
+          "count": 1024,
+          "signed_contribution": -0.0067397148628678405
+        },
+        {
+          "steps": [
+            750,
+            1000
+          ],
+          "count": 1024,
+          "signed_contribution": 0.0013179802315602866
+        }
+      ],
+      "covariance_scope": "Descriptive pooled branch statistics; no additional confidence claims"
+    },
+    {
+      "launch": "tangential",
+      "method": "eigen_uniform",
+      "estimate": {
+        "n": 4096,
+        "mean": -0.31036461301256124,
+        "variance_of_mean": 0.41537036544031936,
+        "standard_error": 0.6444923315605232,
+        "equivalent_score_variance": 1701.357016843548,
+        "minimum": -334.3464529154108,
+        "maximum": 298.6782476949221,
+        "zero_count": 411,
+        "absolute_score_quantiles": {
+          "0.5": 4.436323823964555,
+          "0.9": 55.32321695783571,
+          "0.99": 181.68033595983832,
+          "0.999": 285.6375570389385
+        },
+        "largest_one_percent_absolute_score_share": 0.12527408135028792,
+        "design": "uniform",
+        "strata": [
+          {
+            "stratum": null,
+            "weight": 1.0,
+            "n": 4096,
+            "mean": -0.31036461301256124,
+            "sample_variance": 1701.357016843548
+          }
+        ],
+        "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+      },
+      "blocks": [
+        {
+          "name": "tangential-eigen_uniform-block0",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.8119477485058604,
+            "variance_of_mean": 1.7640985961179805,
+            "standard_error": 1.328193734406988,
+            "equivalent_score_variance": 1806.436962424812,
+            "minimum": -324.3484494059197,
+            "maximum": 298.6782476949221,
+            "zero_count": 100,
+            "absolute_score_quantiles": {
+              "0.5": 3.76259338709517,
+              "0.9": 52.96815069847406,
+              "0.99": 192.6067620315213,
+              "0.999": 298.46461640417704
+            },
+            "largest_one_percent_absolute_score_share": 0.14316940290737973,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.8119477485058604,
+                "sample_variance": 1806.436962424812
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 31.49469099999999,
+          "wall_seconds": 47.5748944170773
+        },
+        {
+          "name": "tangential-eigen_uniform-block1",
+          "estimate": {
+            "n": 1024,
+            "mean": 0.22499215642301185,
+            "variance_of_mean": 1.6425426807211154,
+            "standard_error": 1.2816172130246672,
+            "equivalent_score_variance": 1681.9637050584222,
+            "minimum": -284.20169298038286,
+            "maximum": 271.92648403366036,
+            "zero_count": 114,
+            "absolute_score_quantiles": {
+              "0.5": 4.367692819698565,
+              "0.9": 55.9950757308292,
+              "0.99": 179.92033260307755,
+              "0.999": 271.6513893125506
+            },
+            "largest_one_percent_absolute_score_share": 0.1265848126576775,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": 0.22499215642301185,
+                "sample_variance": 1681.9637050584222
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 22.950193000000013,
+          "wall_seconds": 26.401219999883324
+        },
+        {
+          "name": "tangential-eigen_uniform-block2",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.35477207211928635,
+            "variance_of_mean": 1.7753981790152795,
+            "standard_error": 1.3324406849894967,
+            "equivalent_score_variance": 1818.0077353116462,
+            "minimum": -334.3464529154108,
+            "maximum": 278.2829542504592,
+            "zero_count": 99,
+            "absolute_score_quantiles": {
+              "0.5": 4.630650085257565,
+              "0.9": 56.937657603072644,
+              "0.99": 201.96844285933375,
+              "0.999": 278.24498286633974
+            },
+            "largest_one_percent_absolute_score_share": 0.1387358714425642,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.35477207211928635,
+                "sample_variance": 1818.0077353116462
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.84328800000003,
+          "wall_seconds": 20.642714791931212
+        },
+        {
+          "name": "tangential-eigen_uniform-block3",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.29973078784811025,
+            "variance_of_mean": 1.4682306402349476,
+            "standard_error": 1.211705673930327,
+            "equivalent_score_variance": 1503.4681756005864,
+            "minimum": -239.52873378681338,
+            "maximum": 285.7882831003335,
+            "zero_count": 98,
+            "absolute_score_quantiles": {
+              "0.5": 5.253881630918944,
+              "0.9": 55.76063392357686,
+              "0.99": 172.53416699161687,
+              "0.999": 238.870526630803
+            },
+            "largest_one_percent_absolute_score_share": 0.11752155599855117,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.29973078784811025,
+                "sample_variance": 1503.4681756005864
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 16.06217099999992,
+          "wall_seconds": 16.499880874995142
+        }
+      ],
+      "cpu_seconds": 90.35034299999995,
+      "wall_seconds": 111.11871008388698,
+      "variance_times_cpu": 37.52885498956818,
+      "branch_covariance": [
+        [
+          0.011082249937669457,
+          0.008645688751649453,
+          0.009827945962780284,
+          0.010027797036667611
+        ],
+        [
+          0.008645688751649453,
+          0.014810883871115704,
+          0.008692376636303295,
+          0.008786842926978898
+        ],
+        [
+          0.009827945962780284,
+          0.008692376636303295,
+          0.010945754254353719,
+          0.009770492388505655
+        ],
+        [
+          0.010027797036667611,
+          0.008786842926978898,
+          0.009770492388505655,
+          0.011457639132296716
+        ]
+      ],
+      "branch_order": [
+        "jump_zero",
+        "jump_positive",
+        "diffusion_plus",
+        "diffusion_minus"
+      ],
+      "weighted_jump_diffusion_covariance": 0.009924571273127673,
+      "weighted_jump_diffusion_correlation": 0.9213843639680379,
+      "numerical_continuation_sample_mean_bound": 0.0003707441508200556,
+      "numerical_continuation_nonzero_rows": 2,
+      "stops": {
+        "jump_zero": {
+          "horizon": 4096
+        },
+        "jump_positive": {
+          "horizon": 4094,
+          "spatial_domain": 2
+        },
+        "diffusion_plus": {
+          "horizon": 4096
+        },
+        "diffusion_minus": {
+          "horizon": 4096
+        }
+      },
+      "time_contributions": [
+        {
+          "steps": [
+            0,
+            250
+          ],
+          "count": 1059,
+          "signed_contribution": -0.2904537129541139
+        },
+        {
+          "steps": [
+            250,
+            500
+          ],
+          "count": 1006,
+          "signed_contribution": -0.039375625759325794
+        },
+        {
+          "steps": [
+            500,
+            750
+          ],
+          "count": 1011,
+          "signed_contribution": -0.0883904854969022
+        },
+        {
+          "steps": [
+            750,
+            1000
+          ],
+          "count": 1020,
+          "signed_contribution": 0.10785521119778071
+        }
+      ],
+      "covariance_scope": "Descriptive pooled branch statistics; no additional confidence claims"
+    },
+    {
+      "launch": "tangential",
+      "method": "symmetric_uniform",
+      "estimate": {
+        "n": 4096,
+        "mean": 0.005397369449841783,
+        "variance_of_mean": 0.0003664237061668751,
+        "standard_error": 0.01914219700470338,
+        "equivalent_score_variance": 1.5008715004595203,
+        "minimum": -20.577093213464515,
+        "maximum": 29.200745802829665,
+        "zero_count": 404,
+        "absolute_score_quantiles": {
+          "0.5": 0.047615968769287864,
+          "0.9": 0.44284214974660285,
+          "0.99": 3.5470498864014575,
+          "0.999": 16.451575644820974
+        },
+        "largest_one_percent_absolute_score_share": 0.3758012017964793,
+        "design": "uniform",
+        "strata": [
+          {
+            "stratum": null,
+            "weight": 1.0,
+            "n": 4096,
+            "mean": 0.005397369449841783,
+            "sample_variance": 1.5008715004595203
+          }
+        ],
+        "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+      },
+      "blocks": [
+        {
+          "name": "tangential-symmetric_uniform-block0",
+          "estimate": {
+            "n": 1024,
+            "mean": 0.0555509723416923,
+            "variance_of_mean": 0.002803610359742349,
+            "standard_error": 0.05294912992431839,
+            "equivalent_score_variance": 2.8708970083761653,
+            "minimum": -16.144251358297833,
+            "maximum": 29.200745802829665,
+            "zero_count": 94,
+            "absolute_score_quantiles": {
+              "0.5": 0.04781789737415276,
+              "0.9": 0.4035306849956234,
+              "0.99": 5.3531161013605395,
+              "0.999": 27.913701053634465
+            },
+            "largest_one_percent_absolute_score_share": 0.4550502460044671,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": 0.0555509723416923,
+                "sample_variance": 2.8708970083761653
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 25.193624999999997,
+          "wall_seconds": 28.271249708952382
+        },
+        {
+          "name": "tangential-symmetric_uniform-block1",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.02169680607076199,
+            "variance_of_mean": 0.0012184614895802122,
+            "standard_error": 0.034906467732788604,
+            "equivalent_score_variance": 1.2477045653301373,
+            "minimum": -20.577093213464515,
+            "maximum": 15.902362207638966,
+            "zero_count": 88,
+            "absolute_score_quantiles": {
+              "0.5": 0.05176990454061614,
+              "0.9": 0.44789430644826267,
+              "0.99": 3.5304496648998445,
+              "0.999": 15.75243495041854
+            },
+            "largest_one_percent_absolute_score_share": 0.3646630245830884,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.02169680607076199,
+                "sample_variance": 1.2477045653301373
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 24.23651000000001,
+          "wall_seconds": 28.489487332990393
+        },
+        {
+          "name": "tangential-symmetric_uniform-block2",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.007152408944578284,
+            "variance_of_mean": 0.0011132285488296655,
+            "standard_error": 0.033365079781557026,
+            "equivalent_score_variance": 1.1399460340015775,
+            "minimum": -16.004113643526942,
+            "maximum": 16.483836205284653,
+            "zero_count": 119,
+            "absolute_score_quantiles": {
+              "0.5": 0.04135267257504571,
+              "0.9": 0.43787947449360215,
+              "0.99": 3.354523476767642,
+              "0.999": 15.972756407804667
+            },
+            "largest_one_percent_absolute_score_share": 0.38030749130058644,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.007152408944578284,
+                "sample_variance": 1.1399460340015775
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.52734799999996,
+          "wall_seconds": 20.135184249840677
+        },
+        {
+          "name": "tangential-symmetric_uniform-block3",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.0051122795269848975,
+            "variance_of_mean": 0.0007283387798769767,
+            "standard_error": 0.02698775240506287,
+            "equivalent_score_variance": 0.7458189105940242,
+            "minimum": -9.053096084258083,
+            "maximum": 13.697315652787644,
+            "zero_count": 103,
+            "absolute_score_quantiles": {
+              "0.5": 0.052246257364635396,
+              "0.9": 0.45932732641255086,
+              "0.99": 2.663260516920037,
+              "0.999": 13.31709422783412
+            },
+            "largest_one_percent_absolute_score_share": 0.3042352284363705,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.0051122795269848975,
+                "sample_variance": 0.7458189105940242
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 17.57770199999993,
+          "wall_seconds": 18.366596749983728
+        }
+      ],
+      "cpu_seconds": 86.5351849999999,
+      "wall_seconds": 95.26251804176718,
+      "variance_times_cpu": 0.03170854320153614,
+      "branch_covariance": [
+        [
+          0.010968756442895106,
+          0.010660239376949116,
+          0.010968082262783575,
+          0.010963003633561228
+        ],
+        [
+          0.010660239376949116,
+          0.014478779047656628,
+          0.010657807749974438,
+          0.010663507147852564
+        ],
+        [
+          0.010968082262783575,
+          0.010657807749974438,
+          0.010984905010804276,
+          0.010947286430487799
+        ],
+        [
+          0.010963003633561228,
+          0.010663507147852564,
+          0.010947286430487799,
+          0.010975552571461974
+        ]
+      ],
+      "branch_order": [
+        "jump_zero",
+        "jump_positive",
+        "diffusion_plus",
+        "diffusion_minus"
+      ],
+      "weighted_jump_diffusion_covariance": 0.01096489452885851,
+      "weighted_jump_diffusion_correlation": 0.9999315796432716,
+      "numerical_continuation_sample_mean_bound": 3.8489184335996964e-05,
+      "numerical_continuation_nonzero_rows": 1,
+      "stops": {
+        "jump_zero": {
+          "horizon": 4096
+        },
+        "jump_positive": {
+          "horizon": 4095,
+          "spatial_domain": 1
+        },
+        "diffusion_plus": {
+          "horizon": 4096
+        },
+        "diffusion_minus": {
+          "horizon": 4096
+        }
+      },
+      "time_contributions": [
+        {
+          "steps": [
+            0,
+            250
+          ],
+          "count": 1028,
+          "signed_contribution": 0.01616404693903812
+        },
+        {
+          "steps": [
+            250,
+            500
+          ],
+          "count": 1048,
+          "signed_contribution": -0.0006711487123874566
+        },
+        {
+          "steps": [
+            500,
+            750
+          ],
+          "count": 1026,
+          "signed_contribution": -0.017037671522575334
+        },
+        {
+          "steps": [
+            750,
+            1000
+          ],
+          "count": 994,
+          "signed_contribution": 0.006942142745766456
+        }
+      ],
+      "covariance_scope": "Descriptive pooled branch statistics; no additional confidence claims"
+    },
+    {
+      "launch": "tangential",
+      "method": "symmetric_stratified",
+      "estimate": {
+        "n": 4096,
+        "mean": -0.016968832633214838,
+        "variance_of_mean": 0.00033330043244802777,
+        "standard_error": 0.01825651753341879,
+        "equivalent_score_variance": 1.3651985713071217,
+        "minimum": -32.61460817938189,
+        "maximum": 30.1290946733479,
+        "zero_count": 413,
+        "absolute_score_quantiles": {
+          "0.5": 0.047315384048896014,
+          "0.9": 0.44060197117123945,
+          "0.99": 3.7505467362496643,
+          "0.999": 15.594363703109206
+        },
+        "largest_one_percent_absolute_score_share": 0.35224328965079915,
+        "design": "four_equal_probability_time_strata",
+        "strata": [
+          {
+            "stratum": 0,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": -0.030740508645073154,
+            "sample_variance": 1.0981510795370921
+          },
+          {
+            "stratum": 1,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": -0.008113411587671086,
+            "sample_variance": 3.278959222961343
+          },
+          {
+            "stratum": 2,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": -0.030257212838145135,
+            "sample_variance": 0.4364453362502526
+          },
+          {
+            "stratum": 3,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": 0.0012358025380300227,
+            "sample_variance": 0.6472386464797991
+          }
+        ],
+        "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+      },
+      "blocks": [
+        {
+          "name": "tangential-symmetric_stratified-block0",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.0076139148519269746,
+            "variance_of_mean": 0.0007998757777559586,
+            "standard_error": 0.02828207520243093,
+            "equivalent_score_variance": 0.8190727964221016,
+            "minimum": -11.243475617587206,
+            "maximum": 18.847245994097705,
+            "zero_count": 98,
+            "absolute_score_quantiles": {
+              "0.5": 0.04412341514986595,
+              "0.9": 0.43817164638867995,
+              "0.99": 3.0369263830263757,
+              "0.999": 11.147392373964626
+            },
+            "largest_one_percent_absolute_score_share": 0.32486390103578894,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.001353492735546552,
+                "sample_variance": 1.3424733025568627
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.06044683145453458,
+                "sample_variance": 0.20318183754169322
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.029525502042894752,
+                "sample_variance": 0.26611204639588787
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.06087016682526799,
+                "sample_variance": 1.4645239991939625
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 26.366172000000006,
+          "wall_seconds": 33.52194833289832
+        },
+        {
+          "name": "tangential-symmetric_stratified-block1",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.03838761073540581,
+            "variance_of_mean": 0.0013681026585736673,
+            "standard_error": 0.03698787177675498,
+            "equivalent_score_variance": 1.4009371223794354,
+            "minimum": -12.505871493037834,
+            "maximum": 15.780290349348359,
+            "zero_count": 114,
+            "absolute_score_quantiles": {
+              "0.5": 0.048135996198822584,
+              "0.9": 0.38792772985954416,
+              "0.99": 5.600325164570683,
+              "0.999": 13.792869943273866
+            },
+            "largest_one_percent_absolute_score_share": 0.3862113953817249,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.1425925045595876,
+                "sample_variance": 1.8279597121241742
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.047065741985028095,
+                "sample_variance": 2.2215752025996154
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.06112935181081989,
+                "sample_variance": 0.526759133401674
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.003105671443756168,
+                "sample_variance": 1.0274544413922775
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 23.733408999999995,
+          "wall_seconds": 28.52332333405502
+        },
+        {
+          "name": "tangential-symmetric_stratified-block2",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.014494554060333929,
+            "variance_of_mean": 0.0028723161847455823,
+            "standard_error": 0.053593993924185034,
+            "equivalent_score_variance": 2.9412517731794763,
+            "minimum": -32.61460817938189,
+            "maximum": 30.1290946733479,
+            "zero_count": 111,
+            "absolute_score_quantiles": {
+              "0.5": 0.04565146074594906,
+              "0.9": 0.49401375314309687,
+              "0.99": 3.2440456151626527,
+              "0.999": 29.936638711567596
+            },
+            "largest_one_percent_absolute_score_share": 0.4364047134810399,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.002291016555440978,
+                "sample_variance": 0.703262068891151
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.012198701175327367,
+                "sample_variance": 10.175174491835387
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.024993117717697397,
+                "sample_variance": 0.8085982611633825
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.04747481625440666,
+                "sample_variance": 0.07797227082798497
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.203407000000084,
+          "wall_seconds": 19.870510458946228
+        },
+        {
+          "name": "tangential-symmetric_stratified-block3",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.007379250885192647,
+            "variance_of_mean": 0.0003005161593303713,
+            "standard_error": 0.017335401908533048,
+            "equivalent_score_variance": 0.3077285471543002,
+            "minimum": -7.23480766348128,
+            "maximum": 4.517532959421922,
+            "zero_count": 90,
+            "absolute_score_quantiles": {
+              "0.5": 0.05298097376835176,
+              "0.9": 0.4615721208522995,
+              "0.99": 2.6090809754650777,
+              "0.999": 5.378646852411459
+            },
+            "largest_one_percent_absolute_score_share": 0.22126265021700278,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.018692946159400564,
+                "sample_variance": 0.5148531345938446
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.03127125805650523,
+                "sample_variance": 0.5477225555815775
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.005380879781168519,
+                "sample_variance": 0.1478401128807984
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.011557811862497408,
+                "sample_variance": 0.020498385560980298
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 17.169588999999974,
+          "wall_seconds": 17.86683874996379
+        }
+      ],
+      "cpu_seconds": 86.47257700000006,
+      "wall_seconds": 99.78262087586336,
+      "variance_times_cpu": 0.0288213473089954,
+      "branch_covariance": [
+        [
+          0.010900536050052556,
+          0.010659096035443393,
+          0.010904235039173833,
+          0.010903768642758233
+        ],
+        [
+          0.010659096035443393,
+          0.014378967894870573,
+          0.01067189430538067,
+          0.010665915117996631
+        ],
+        [
+          0.010904235039173833,
+          0.01067189430538067,
+          0.010926170509672494,
+          0.010891040140174724
+        ],
+        [
+          0.010903768642758233,
+          0.010665915117996631,
+          0.010891040140174724,
+          0.010926979159269426
+        ]
+      ],
+      "branch_order": [
+        "jump_zero",
+        "jump_positive",
+        "diffusion_plus",
+        "diffusion_minus"
+      ],
+      "weighted_jump_diffusion_covariance": 0.010903402846704706,
+      "weighted_jump_diffusion_correlation": 0.9999375304130775,
+      "numerical_continuation_sample_mean_bound": 0.0002161983739460563,
+      "numerical_continuation_nonzero_rows": 2,
+      "stops": {
+        "jump_zero": {
+          "horizon": 4096
+        },
+        "jump_positive": {
+          "horizon": 4094,
+          "spatial_domain": 2
+        },
+        "diffusion_plus": {
+          "horizon": 4096
+        },
+        "diffusion_minus": {
+          "horizon": 4096
+        }
+      },
+      "time_contributions": [
+        {
+          "steps": [
+            0,
+            250
+          ],
+          "count": 1024,
+          "signed_contribution": -0.007685127161268289
+        },
+        {
+          "steps": [
+            250,
+            500
+          ],
+          "count": 1024,
+          "signed_contribution": -0.0020283528969177716
+        },
+        {
+          "steps": [
+            500,
+            750
+          ],
+          "count": 1024,
+          "signed_contribution": -0.007564303209536284
+        },
+        {
+          "steps": [
+            750,
+            1000
+          ],
+          "count": 1024,
+          "signed_contribution": 0.0003089506345075057
+        }
+      ],
+      "covariance_scope": "Descriptive pooled branch statistics; no additional confidence claims"
+    },
+    {
+      "launch": "oblique",
+      "method": "eigen_uniform",
+      "estimate": {
+        "n": 4096,
+        "mean": 0.00683939823610652,
+        "variance_of_mean": 0.32032758545893675,
+        "standard_error": 0.565974898258692,
+        "equivalent_score_variance": 1312.061790039805,
+        "minimum": -343.06411538209744,
+        "maximum": 430.23633599833244,
+        "zero_count": 446,
+        "absolute_score_quantiles": {
+          "0.5": 3.8410467000205006,
+          "0.9": 47.34126660600302,
+          "0.99": 164.14176963514825,
+          "0.999": 300.35729890742596
+        },
+        "largest_one_percent_absolute_score_share": 0.12829527163171292,
+        "design": "uniform",
+        "strata": [
+          {
+            "stratum": null,
+            "weight": 1.0,
+            "n": 4096,
+            "mean": 0.00683939823610652,
+            "sample_variance": 1312.061790039805
+          }
+        ],
+        "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+      },
+      "blocks": [
+        {
+          "name": "oblique-eigen_uniform-block0",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.26112072387387286,
+            "variance_of_mean": 1.264347019973758,
+            "standard_error": 1.1244318654208258,
+            "equivalent_score_variance": 1294.6913484531283,
+            "minimum": -191.31396667485245,
+            "maximum": 430.23633599833244,
+            "zero_count": 109,
+            "absolute_score_quantiles": {
+              "0.5": 4.328387795537513,
+              "0.9": 45.70298208318385,
+              "0.99": 148.21025224130017,
+              "0.999": 340.7663006752161
+            },
+            "largest_one_percent_absolute_score_share": 0.1386229305803698,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.26112072387387286,
+                "sample_variance": 1294.6913484531283
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 23.402646000000004,
+          "wall_seconds": 35.52835754188709
+        },
+        {
+          "name": "oblique-eigen_uniform-block1",
+          "estimate": {
+            "n": 1024,
+            "mean": 1.202960785062968,
+            "variance_of_mean": 1.1238044212203953,
+            "standard_error": 1.0600964207186039,
+            "equivalent_score_variance": 1150.7757273296847,
+            "minimum": -167.84419895331754,
+            "maximum": 304.3163210534894,
+            "zero_count": 124,
+            "absolute_score_quantiles": {
+              "0.5": 3.568244546889199,
+              "0.9": 44.300839360433756,
+              "0.99": 149.67115596186724,
+              "0.999": 209.11753211274035
+            },
+            "largest_one_percent_absolute_score_share": 0.1326726187687443,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": 1.202960785062968,
+                "sample_variance": 1150.7757273296847
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 27.873115999999982,
+          "wall_seconds": 31.1805173328612
+        },
+        {
+          "name": "oblique-eigen_uniform-block2",
+          "estimate": {
+            "n": 1024,
+            "mean": 1.08704623078651,
+            "variance_of_mean": 1.3566146421421652,
+            "standard_error": 1.164738014380129,
+            "equivalent_score_variance": 1389.1733935535772,
+            "minimum": -192.2779999924391,
+            "maximum": 309.83739364651916,
+            "zero_count": 104,
+            "absolute_score_quantiles": {
+              "0.5": 3.8120318103921913,
+              "0.9": 47.4342449378039,
+              "0.99": 172.44346272278156,
+              "0.999": 262.10358768145375
+            },
+            "largest_one_percent_absolute_score_share": 0.13353673266207328,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": 1.08704623078651,
+                "sample_variance": 1389.1733935535772
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.221356000000014,
+          "wall_seconds": 19.90231554210186
+        },
+        {
+          "name": "oblique-eigen_uniform-block3",
+          "estimate": {
+            "n": 1024,
+            "mean": -2.001528699031179,
+            "variance_of_mean": 1.377680594672585,
+            "standard_error": 1.1737463928262293,
+            "equivalent_score_variance": 1410.744928944727,
+            "minimum": -343.06411538209744,
+            "maximum": 197.8700280574662,
+            "zero_count": 109,
+            "absolute_score_quantiles": {
+              "0.5": 3.7573468273503496,
+              "0.9": 48.93229128245702,
+              "0.99": 175.02324193129832,
+              "0.999": 246.45536802096146
+            },
+            "largest_one_percent_absolute_score_share": 0.13225396024320038,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -2.001528699031179,
+                "sample_variance": 1410.744928944727
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 16.793453,
+          "wall_seconds": 17.423357791034505
+        }
+      ],
+      "cpu_seconds": 87.290571,
+      "wall_seconds": 104.03454820788465,
+      "variance_times_cpu": 27.961577841761887,
+      "branch_covariance": [
+        [
+          0.007505409172048992,
+          0.005955973042783796,
+          0.0067404976416784185,
+          0.006616197510438116
+        ],
+        [
+          0.005955973042783796,
+          0.010753548410108357,
+          0.005999357061104255,
+          0.005907336598282668
+        ],
+        [
+          0.0067404976416784185,
+          0.005999357061104255,
+          0.007901024957504556,
+          0.006572373395224335
+        ],
+        [
+          0.006616197510438116,
+          0.005907336598282668,
+          0.006572373395224335,
+          0.007633393979546898
+        ]
+      ],
+      "branch_order": [
+        "jump_zero",
+        "jump_positive",
+        "diffusion_plus",
+        "diffusion_minus"
+      ],
+      "weighted_jump_diffusion_covariance": 0.00667636852706797,
+      "weighted_jump_diffusion_correlation": 0.9107538308890026,
+      "numerical_continuation_sample_mean_bound": 0.00027831309934453735,
+      "numerical_continuation_nonzero_rows": 1,
+      "stops": {
+        "jump_zero": {
+          "horizon": 4096
+        },
+        "jump_positive": {
+          "horizon": 4095,
+          "spatial_domain": 1
+        },
+        "diffusion_plus": {
+          "horizon": 4096
+        },
+        "diffusion_minus": {
+          "horizon": 4096
+        }
+      },
+      "time_contributions": [
+        {
+          "steps": [
+            0,
+            250
+          ],
+          "count": 995,
+          "signed_contribution": -0.06361310520987506
+        },
+        {
+          "steps": [
+            250,
+            500
+          ],
+          "count": 1035,
+          "signed_contribution": 0.25644012906231234
+        },
+        {
+          "steps": [
+            500,
+            750
+          ],
+          "count": 1014,
+          "signed_contribution": -0.19925894979186975
+        },
+        {
+          "steps": [
+            750,
+            1000
+          ],
+          "count": 1052,
+          "signed_contribution": 0.01327132417553885
+        }
+      ],
+      "covariance_scope": "Descriptive pooled branch statistics; no additional confidence claims"
+    },
+    {
+      "launch": "oblique",
+      "method": "symmetric_uniform",
+      "estimate": {
+        "n": 4096,
+        "mean": -0.01163447917863389,
+        "variance_of_mean": 0.0001699121527600229,
+        "standard_error": 0.013035035587217355,
+        "equivalent_score_variance": 0.6959601777050538,
+        "minimum": -18.74276450133902,
+        "maximum": 20.72129630107533,
+        "zero_count": 432,
+        "absolute_score_quantiles": {
+          "0.5": 0.03232097664856992,
+          "0.9": 0.3702463577110182,
+          "0.99": 2.7852722538297936,
+          "0.999": 9.555471618637032
+        },
+        "largest_one_percent_absolute_score_share": 0.3300578121116459,
+        "design": "uniform",
+        "strata": [
+          {
+            "stratum": null,
+            "weight": 1.0,
+            "n": 4096,
+            "mean": -0.01163447917863389,
+            "sample_variance": 0.6959601777050538
+          }
+        ],
+        "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+      },
+      "blocks": [
+        {
+          "name": "oblique-symmetric_uniform-block0",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.03126855007324828,
+            "variance_of_mean": 0.00038821354641468026,
+            "standard_error": 0.019703135446285706,
+            "equivalent_score_variance": 0.3975306715286326,
+            "minimum": -6.590983687790319,
+            "maximum": 8.46253083604076,
+            "zero_count": 96,
+            "absolute_score_quantiles": {
+              "0.5": 0.0318628439079649,
+              "0.9": 0.4023577640136806,
+              "0.99": 2.797410062701653,
+              "0.999": 6.573603781915633
+            },
+            "largest_one_percent_absolute_score_share": 0.26811041315982853,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.03126855007324828,
+                "sample_variance": 0.3975306715286326
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 25.514106999999996,
+          "wall_seconds": 32.39628704218194
+        },
+        {
+          "name": "oblique-symmetric_uniform-block1",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.016929336136302445,
+            "variance_of_mean": 0.0010606005834257895,
+            "standard_error": 0.03256686327274688,
+            "equivalent_score_variance": 1.0860549974280085,
+            "minimum": -18.74276450133902,
+            "maximum": 14.760411484865177,
+            "zero_count": 110,
+            "absolute_score_quantiles": {
+              "0.5": 0.03272223822534115,
+              "0.9": 0.38149159823164847,
+              "0.99": 4.10306041068946,
+              "0.999": 14.640448077863462
+            },
+            "largest_one_percent_absolute_score_share": 0.3929660246306594,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.016929336136302445,
+                "sample_variance": 1.0860549974280085
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 22.47143600000004,
+          "wall_seconds": 24.035193624906242
+        },
+        {
+          "name": "oblique-symmetric_uniform-block2",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.01803932442805755,
+            "variance_of_mean": 0.0007549904112710829,
+            "standard_error": 0.027477088842726462,
+            "equivalent_score_variance": 0.7731101811415889,
+            "minimum": -9.55661166463473,
+            "maximum": 20.72129630107533,
+            "zero_count": 115,
+            "absolute_score_quantiles": {
+              "0.5": 0.030937382061696495,
+              "0.9": 0.3335174514941005,
+              "0.99": 1.8574204381154433,
+              "0.999": 9.552047505073942
+            },
+            "largest_one_percent_absolute_score_share": 0.3724468359309507,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": -0.01803932442805755,
+                "sample_variance": 0.7731101811415889
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.91085300000003,
+          "wall_seconds": 20.72648704214953
+        },
+        {
+          "name": "oblique-symmetric_uniform-block3",
+          "estimate": {
+            "n": 1024,
+            "mean": 0.019699293923072715,
+            "variance_of_mean": 0.0005153789413709683,
+            "standard_error": 0.02270195897650615,
+            "equivalent_score_variance": 0.5277480359638715,
+            "minimum": -8.312721606928308,
+            "maximum": 11.999368163164048,
+            "zero_count": 111,
+            "absolute_score_quantiles": {
+              "0.5": 0.0340838599026394,
+              "0.9": 0.37586385168710307,
+              "0.99": 2.8097730782829333,
+              "0.999": 8.304794292130998
+            },
+            "largest_one_percent_absolute_score_share": 0.3057175800293355,
+            "design": "uniform",
+            "strata": [
+              {
+                "stratum": null,
+                "weight": 1.0,
+                "n": 1024,
+                "mean": 0.019699293923072715,
+                "sample_variance": 0.5277480359638715
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 17.42174799999998,
+          "wall_seconds": 18.057498625013977
+        }
+      ],
+      "cpu_seconds": 85.31814400000005,
+      "wall_seconds": 95.21546633425169,
+      "variance_times_cpu": 0.01449658951652964,
+      "branch_covariance": [
+        [
+          0.007548976033925192,
+          0.007619052177186148,
+          0.00755574373328958,
+          0.007548415652723438
+        ],
+        [
+          0.007619052177186148,
+          0.010677170865659636,
+          0.00763125843512383,
+          0.007618036653586475
+        ],
+        [
+          0.00755574373328958,
+          0.00763125843512383,
+          0.007578029083073533,
+          0.007541331008344778
+        ],
+        [
+          0.007548415652723438,
+          0.007618036653586475,
+          0.007541331008344778,
+          0.00756254925387434
+        ]
+      ],
+      "branch_order": [
+        "jump_zero",
+        "jump_positive",
+        "diffusion_plus",
+        "diffusion_minus"
+      ],
+      "weighted_jump_diffusion_covariance": 0.007553108064547105,
+      "weighted_jump_diffusion_correlation": 0.9999539795712893,
+      "numerical_continuation_sample_mean_bound": 0.0,
+      "numerical_continuation_nonzero_rows": 0,
+      "stops": {
+        "jump_zero": {
+          "horizon": 4096
+        },
+        "jump_positive": {
+          "horizon": 4096
+        },
+        "diffusion_plus": {
+          "horizon": 4096
+        },
+        "diffusion_minus": {
+          "horizon": 4096
+        }
+      },
+      "time_contributions": [
+        {
+          "steps": [
+            0,
+            250
+          ],
+          "count": 1068,
+          "signed_contribution": -0.00728620334246702
+        },
+        {
+          "steps": [
+            250,
+            500
+          ],
+          "count": 996,
+          "signed_contribution": -0.008931609582281362
+        },
+        {
+          "steps": [
+            500,
+            750
+          ],
+          "count": 1011,
+          "signed_contribution": 0.003984096887702423
+        },
+        {
+          "steps": [
+            750,
+            1000
+          ],
+          "count": 1021,
+          "signed_contribution": 0.0005992368584120723
+        }
+      ],
+      "covariance_scope": "Descriptive pooled branch statistics; no additional confidence claims"
+    },
+    {
+      "launch": "oblique",
+      "method": "symmetric_stratified",
+      "estimate": {
+        "n": 4096,
+        "mean": -0.010251092187301702,
+        "variance_of_mean": 0.00017369211442003814,
+        "standard_error": 0.013179230418352892,
+        "equivalent_score_variance": 0.7114429006644762,
+        "minimum": -14.596177284180333,
+        "maximum": 20.624309825307385,
+        "zero_count": 451,
+        "absolute_score_quantiles": {
+          "0.5": 0.03227361396468398,
+          "0.9": 0.3409235376494735,
+          "0.99": 2.525532766376009,
+          "0.999": 14.281181264038837
+        },
+        "largest_one_percent_absolute_score_share": 0.3472632775535864,
+        "design": "four_equal_probability_time_strata",
+        "strata": [
+          {
+            "stratum": 0,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": -0.0032838318213650962,
+            "sample_variance": 0.24034763896784636
+          },
+          {
+            "stratum": 1,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": -0.03494548296304422,
+            "sample_variance": 1.780771161856195
+          },
+          {
+            "stratum": 2,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": 0.00974064213422441,
+            "sample_variance": 0.7655588108922451
+          },
+          {
+            "stratum": 3,
+            "weight": 0.25,
+            "n": 1024,
+            "mean": -0.0125156960990219,
+            "sample_variance": 0.05909399094161859
+          }
+        ],
+        "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+      },
+      "blocks": [
+        {
+          "name": "oblique-symmetric_stratified-block0",
+          "estimate": {
+            "n": 1024,
+            "mean": 0.024438821433821607,
+            "variance_of_mean": 0.0007959516721691572,
+            "standard_error": 0.02821261547905754,
+            "equivalent_score_variance": 0.815054512301217,
+            "minimum": -5.143145489274414,
+            "maximum": 20.624309825307385,
+            "zero_count": 96,
+            "absolute_score_quantiles": {
+              "0.5": 0.030191612621965902,
+              "0.9": 0.2915411690317228,
+              "0.99": 1.7305172604927528,
+              "0.999": 15.145139493489925
+            },
+            "largest_one_percent_absolute_score_share": 0.382559045788495,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.008856665817156094,
+                "sample_variance": 0.25068570632318493
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.03931221553719727,
+                "sample_variance": 1.2015400185116625
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.054932566484803574,
+                "sample_variance": 1.7942335400370992
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.005346162103870514,
+                "sample_variance": 0.013758784332921268
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 26.563337999999987,
+          "wall_seconds": 32.824618000071496
+        },
+        {
+          "name": "oblique-symmetric_stratified-block1",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.005815695365175068,
+            "variance_of_mean": 0.0010956874671945692,
+            "standard_error": 0.03310117017862917,
+            "equivalent_score_variance": 1.1219839664072389,
+            "minimum": -14.596177284180333,
+            "maximum": 18.342814338311975,
+            "zero_count": 122,
+            "absolute_score_quantiles": {
+              "0.5": 0.032946863259553094,
+              "0.9": 0.35835838410401283,
+              "0.99": 2.7601275264092524,
+              "0.999": 15.240359829522385
+            },
+            "largest_one_percent_absolute_score_share": 0.40620582431018865,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.01453923003218171,
+                "sample_variance": 0.34807458586711454
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.0004757218374408234,
+                "sample_variance": 3.3822038697659913
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": 0.008493311048791384,
+                "sample_variance": 0.6580582984751353
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.016741140639869125,
+                "sample_variance": 0.09959911152071425
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 20.596488000000022,
+          "wall_seconds": 21.570508833043277
+        },
+        {
+          "name": "oblique-symmetric_stratified-block2",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.028001619043560425,
+            "variance_of_mean": 0.00039550903824298256,
+            "standard_error": 0.019887409037956216,
+            "equivalent_score_variance": 0.40500125516081414,
+            "minimum": -10.591151862906933,
+            "maximum": 11.28042970373655,
+            "zero_count": 119,
+            "absolute_score_quantiles": {
+              "0.5": 0.03507695178568693,
+              "0.9": 0.2970452365758159,
+              "0.99": 1.734043181253131,
+              "0.999": 10.529907032796817
+            },
+            "largest_one_percent_absolute_score_share": 0.2987255391492769,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.005141513709280907,
+                "sample_variance": 0.09740798794974821
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.08347118044798321,
+                "sample_variance": 1.4625937895979748
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.01084487374933751,
+                "sample_variance": 0.03957032880412484
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.012548908267640057,
+                "sample_variance": 0.020432914291408654
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 19.587642000000017,
+          "wall_seconds": 20.255355417029932
+        },
+        {
+          "name": "oblique-symmetric_stratified-block3",
+          "estimate": {
+            "n": 1024,
+            "mean": -0.03162587577429292,
+            "variance_of_mean": 0.0004961653690373776,
+            "standard_error": 0.022274769786405822,
+            "equivalent_score_variance": 0.5080733378942747,
+            "minimum": -8.212382762354531,
+            "maximum": 10.16197966048904,
+            "zero_count": 114,
+            "absolute_score_quantiles": {
+              "0.5": 0.031582177939221134,
+              "0.9": 0.37707381712462357,
+              "0.99": 3.4440082255562947,
+              "0.999": 8.210327161043184
+            },
+            "largest_one_percent_absolute_score_share": 0.3038055772686935,
+            "design": "four_equal_probability_time_strata",
+            "strata": [
+              {
+                "stratum": 0,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.0023112493611538616,
+                "sample_variance": 0.2677703303935829
+              },
+              {
+                "stratum": 1,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.09514724510395012,
+                "sample_variance": 1.0849661219664044
+              },
+              {
+                "stratum": 2,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.013618435247359815,
+                "sample_variance": 0.5763545579088282
+              },
+              {
+                "stratum": 3,
+                "weight": 0.25,
+                "n": 256,
+                "mean": -0.015426573384707903,
+                "sample_variance": 0.10320234130828307
+              }
+            ],
+            "scope": "Sampling variance for independent rows under the declared fixed design; no numerical or physical error allowance"
+          },
+          "cpu_seconds": 17.261977,
+          "wall_seconds": 18.0303807919845
+        }
+      ],
+      "cpu_seconds": 84.00944500000003,
+      "wall_seconds": 92.6808630421292,
+      "variance_times_cpu": 0.014591778133303906,
+      "branch_covariance": [
+        [
+          0.008163283835673073,
+          0.008121250845233059,
+          0.008162372038916392,
+          0.008163616865871526
+        ],
+        [
+          0.008121250845233059,
+          0.011077977280601089,
+          0.008121165335172155,
+          0.0081298110025522
+        ],
+        [
+          0.008162372038916392,
+          0.008121165335172155,
+          0.008176524866935181,
+          0.008148546625862995
+        ],
+        [
+          0.008163616865871526,
+          0.0081298110025522,
+          0.008148546625862995,
+          0.008179957814764816
+        ]
+      ],
+      "branch_order": [
+        "jump_zero",
+        "jump_positive",
+        "diffusion_plus",
+        "diffusion_minus"
+      ],
+      "weighted_jump_diffusion_covariance": 0.00816358118984393,
+      "weighted_jump_diffusion_correlation": 0.9999564455555378,
+      "numerical_continuation_sample_mean_bound": 0.0,
+      "numerical_continuation_nonzero_rows": 0,
+      "stops": {
+        "jump_zero": {
+          "horizon": 4096
+        },
+        "jump_positive": {
+          "horizon": 4096
+        },
+        "diffusion_plus": {
+          "horizon": 4096
+        },
+        "diffusion_minus": {
+          "horizon": 4096
+        }
+      },
+      "time_contributions": [
+        {
+          "steps": [
+            0,
+            250
+          ],
+          "count": 1024,
+          "signed_contribution": -0.0008209579553412741
+        },
+        {
+          "steps": [
+            250,
+            500
+          ],
+          "count": 1024,
+          "signed_contribution": -0.008736370740761055
+        },
+        {
+          "steps": [
+            500,
+            750
+          ],
+          "count": 1024,
+          "signed_contribution": 0.0024351605335561025
+        },
+        {
+          "steps": [
+            750,
+            1000
+          ],
+          "count": 1024,
+          "signed_contribution": -0.003128924024755475
+        }
+      ],
+      "covariance_scope": "Descriptive pooled branch statistics; no additional confidence claims"
+    }
+  ],
+  "comparisons": [
+    {
+      "launch": "radial_outward",
+      "first": "eigen_uniform",
+      "second": "symmetric_uniform",
+      "efficiency": {
+        "n_per_arm": 4096,
+        "bootstrap_replicates": 8192,
+        "confidence": 0.95,
+        "family_size": 6,
+        "component_confidence": 0.9916666666666667,
+        "interval_method": "Independent within-design percentile bootstrap with nominal Bonferroni component level",
+        "ratio_direction": "A variance divided by B variance; values above one favor B",
+        "scope": "Exploratory approximate intervals; unseen rare scores and timing uncertainty are not covered",
+        "variance_ratio": {
+          "estimate": 112.49929903180312,
+          "interval": [
+            33.34957972426101,
+            517.4550010275287
+          ]
+        },
+        "cost_adjusted": {
+          "estimate": 110.03736361036728,
+          "interval": [
+            32.61975729585685,
+            506.13101228277526
+          ],
+          "total_cpu_seconds_a": 77.69024900000005,
+          "total_cpu_seconds_b": 79.42846200000008,
+          "timing_scope": "Conditional on recorded total CPU costs; timing variability excluded"
+        },
+        "invalid_bootstrap_denominators": 0,
+        "unavailable_reason": null
+      },
+      "mean_difference": 0.021178596853413997,
+      "mean_difference_standard_error": 0.19709303536979778,
+      "mean_comparison_scope": "Descriptive independent-arm difference, not an equivalence test"
+    },
+    {
+      "launch": "radial_outward",
+      "first": "symmetric_uniform",
+      "second": "symmetric_stratified",
+      "efficiency": {
+        "n_per_arm": 4096,
+        "bootstrap_replicates": 8192,
+        "confidence": 0.95,
+        "family_size": 6,
+        "component_confidence": 0.9916666666666667,
+        "interval_method": "Independent within-design percentile bootstrap with nominal Bonferroni component level",
+        "ratio_direction": "A variance divided by B variance; values above one favor B",
+        "scope": "Exploratory approximate intervals; unseen rare scores and timing uncertainty are not covered",
+        "variance_ratio": {
+          "estimate": 0.8763706611324757,
+          "interval": [
+            0.12885867572239046,
+            6.378510313051962
+          ]
+        },
+        "cost_adjusted": {
+          "estimate": 0.859016525810352,
+          "interval": [
+            0.1263069804237068,
+            6.252201279630848
+          ],
+          "total_cpu_seconds_a": 79.42846200000008,
+          "total_cpu_seconds_b": 81.0331019999999,
+          "timing_scope": "Conditional on recorded total CPU costs; timing variability excluded"
+        },
+        "invalid_bootstrap_denominators": 0,
+        "unavailable_reason": null
+      },
+      "mean_difference": -0.023057126203267487,
+      "mean_difference_standard_error": 0.027070114341684718,
+      "mean_comparison_scope": "Descriptive independent-arm difference, not an equivalence test"
+    },
+    {
+      "launch": "tangential",
+      "first": "eigen_uniform",
+      "second": "symmetric_uniform",
+      "efficiency": {
+        "n_per_arm": 4096,
+        "bootstrap_replicates": 8192,
+        "confidence": 0.95,
+        "family_size": 6,
+        "component_confidence": 0.9916666666666667,
+        "interval_method": "Independent within-design percentile bootstrap with nominal Bonferroni component level",
+        "ratio_direction": "A variance divided by B variance; values above one favor B",
+        "scope": "Exploratory approximate intervals; unseen rare scores and timing uncertainty are not covered",
+        "variance_ratio": {
+          "estimate": 1133.5794012496374,
+          "interval": [
+            639.7147683058926,
+            2366.9966599819854
+          ]
+        },
+        "cost_adjusted": {
+          "estimate": 1183.5565812985717,
+          "interval": [
+            667.9184743015568,
+            2471.3526654993216
+          ],
+          "total_cpu_seconds_a": 90.35034299999995,
+          "total_cpu_seconds_b": 86.5351849999999,
+          "timing_scope": "Conditional on recorded total CPU costs; timing variability excluded"
+        },
+        "invalid_bootstrap_denominators": 0,
+        "unavailable_reason": null
+      },
+      "mean_difference": -0.315761982462403,
+      "mean_difference_standard_error": 0.6447765420255968,
+      "mean_comparison_scope": "Descriptive independent-arm difference, not an equivalence test"
+    },
+    {
+      "launch": "tangential",
+      "first": "symmetric_uniform",
+      "second": "symmetric_stratified",
+      "efficiency": {
+        "n_per_arm": 4096,
+        "bootstrap_replicates": 8192,
+        "confidence": 0.95,
+        "family_size": 6,
+        "component_confidence": 0.9916666666666667,
+        "interval_method": "Independent within-design percentile bootstrap with nominal Bonferroni component level",
+        "ratio_direction": "A variance divided by B variance; values above one favor B",
+        "scope": "Exploratory approximate intervals; unseen rare scores and timing uncertainty are not covered",
+        "variance_ratio": {
+          "estimate": 1.0993796301899856,
+          "interval": [
+            0.4104656548047287,
+            3.0165919763274993
+          ]
+        },
+        "cost_adjusted": {
+          "estimate": 1.1001756046164997,
+          "interval": [
+            0.41076284074051905,
+            3.018776053603853
+          ],
+          "total_cpu_seconds_a": 86.5351849999999,
+          "total_cpu_seconds_b": 86.47257700000006,
+          "timing_scope": "Conditional on recorded total CPU costs; timing variability excluded"
+        },
+        "invalid_bootstrap_denominators": 0,
+        "unavailable_reason": null
+      },
+      "mean_difference": 0.02236620208305662,
+      "mean_difference_standard_error": 0.02645229930676921,
+      "mean_comparison_scope": "Descriptive independent-arm difference, not an equivalence test"
+    },
+    {
+      "launch": "oblique",
+      "first": "eigen_uniform",
+      "second": "symmetric_uniform",
+      "efficiency": {
+        "n_per_arm": 4096,
+        "bootstrap_replicates": 8192,
+        "confidence": 0.95,
+        "family_size": 6,
+        "component_confidence": 0.9916666666666667,
+        "interval_method": "Independent within-design percentile bootstrap with nominal Bonferroni component level",
+        "ratio_direction": "A variance divided by B variance; values above one favor B",
+        "scope": "Exploratory approximate intervals; unseen rare scores and timing uncertainty are not covered",
+        "variance_ratio": {
+          "estimate": 1885.2541166455267,
+          "interval": [
+            1073.738258251463,
+            3855.735996806463
+          ]
+        },
+        "cost_adjusted": {
+          "estimate": 1928.8383526262428,
+          "interval": [
+            1098.561469730467,
+            3944.8748063072044
+          ],
+          "total_cpu_seconds_a": 87.290571,
+          "total_cpu_seconds_b": 85.31814400000005,
+          "timing_scope": "Conditional on recorded total CPU costs; timing variability excluded"
+        },
+        "invalid_bootstrap_denominators": 0,
+        "unavailable_reason": null
+      },
+      "mean_difference": 0.01847387741474041,
+      "mean_difference_standard_error": 0.5661249840907012,
+      "mean_comparison_scope": "Descriptive independent-arm difference, not an equivalence test"
+    },
+    {
+      "launch": "oblique",
+      "first": "symmetric_uniform",
+      "second": "symmetric_stratified",
+      "efficiency": {
+        "n_per_arm": 4096,
+        "bootstrap_replicates": 8192,
+        "confidence": 0.95,
+        "family_size": 6,
+        "component_confidence": 0.9916666666666667,
+        "interval_method": "Independent within-design percentile bootstrap with nominal Bonferroni component level",
+        "ratio_direction": "A variance divided by B variance; values above one favor B",
+        "scope": "Exploratory approximate intervals; unseen rare scores and timing uncertainty are not covered",
+        "variance_ratio": {
+          "estimate": 0.9782375747302252,
+          "interval": [
+            0.40858699264641274,
+            2.5172326071324225
+          ]
+        },
+        "cost_adjusted": {
+          "estimate": 0.9934765581065812,
+          "interval": [
+            0.41495196016511704,
+            2.5564460526649055
+          ],
+          "total_cpu_seconds_a": 85.31814400000005,
+          "total_cpu_seconds_b": 84.00944500000003,
+          "timing_scope": "Conditional on recorded total CPU costs; timing variability excluded"
+        },
+        "invalid_bootstrap_denominators": 0,
+        "unavailable_reason": null
+      },
+      "mean_difference": -0.0013833869913321886,
+      "mean_difference_standard_error": 0.018536565679220653,
+      "mean_comparison_scope": "Descriptive independent-arm difference, not an equivalence test"
+    }
+  ],
+  "input_sha256": {
+    "analysis/precision/protocol.json": "41add5f47c714f849953526b73fab2393fd6e69b7e6702d653348dbf33094bd1",
+    "results/precision/execution-design.json": "faff1ecf12f06a2a939a200e532796ff9f21ee6bf6170f8823dbc3f4636eb6b2",
+    "analysis/precision/analyze.py": "a3cf080c4a406bf94b3d91e6b70fad9cfcaffa8e47f8bebf52564d6b37f078ce",
+    "analysis/precision/statistics.py": "41ab558631c8d209031eb725cc9e78ac1cd9d286d5e62a597ed908898c97daf8",
+    "results/precision/radial_outward-eigen_uniform-block0.npz": "bd05a14a73ed88a0bdbc6911b8061b693703f0e2b9a1346d17d8ecd2369b1ecb",
+    "results/precision/radial_outward-eigen_uniform-block0.json": "d03680e755c442985dc38bad84d90acf7185e0d24a470955de769d49d6fbf7ce",
+    "results/precision/radial_outward-eigen_uniform-block1.npz": "bf7c5df0480f2e51a6fff0ec919c2c34c293c38dbabef37e91db886955410744",
+    "results/precision/radial_outward-eigen_uniform-block1.json": "d17e9c2fe308561a9266b472e6dd82b9a414ffcca49780dedea998d9ed4211ad",
+    "results/precision/radial_outward-eigen_uniform-block2.npz": "234222febfb1bc4b7c62832f77b0824d9ed267895e171f3d6a55dd739d4c60df",
+    "results/precision/radial_outward-eigen_uniform-block2.json": "6896499a80a8d546ece0856468fc9053b6aad4163871866f56fdcfce65a85f6b",
+    "results/precision/radial_outward-eigen_uniform-block3.npz": "c3e7acce13e9ae630dc74aceb5d2153e8f63db7f5f5dfe2ead990a4101e524c0",
+    "results/precision/radial_outward-eigen_uniform-block3.json": "2658ebee1b187fa74adb6a715973b9fe6674dfa3e7dbd2fb0b25e4e25cc60833",
+    "results/precision/radial_outward-symmetric_uniform-block0.npz": "7aedd52c7fb728d6499825a37ad293adae87bee286ea708e419cd305a3cca316",
+    "results/precision/radial_outward-symmetric_uniform-block0.json": "c7cf200da7a6d0854429fa6d742589090bf1f652d8e478df19ffe4ac5df59bb7",
+    "results/precision/radial_outward-symmetric_uniform-block1.npz": "5f202df301f31ea8f2117a95dc5fe0b31e07e183ef1613ef1fe76c1cde831189",
+    "results/precision/radial_outward-symmetric_uniform-block1.json": "ed6ff2958f947725cc10ada457c84cbc601bb10816bed63a7d178113055ceb6e",
+    "results/precision/radial_outward-symmetric_uniform-block2.npz": "0c4f9731cbc195825b47a1b28b9363072a1e2acbc2a7bcf16c51fb3a156b1183",
+    "results/precision/radial_outward-symmetric_uniform-block2.json": "ba8e73dc9b0fc7e11cd68961e2b9cd1cc6d9fdf5525702308e71f6518741c8b5",
+    "results/precision/radial_outward-symmetric_uniform-block3.npz": "fdbfca8a0269220f7fa1b23a37404648579e829a8a1a45c78ee53950416dfa38",
+    "results/precision/radial_outward-symmetric_uniform-block3.json": "1af28ca6f252524550d2aaabc6f30d844121d6cb6df5477604b0f8a913b3feb7",
+    "results/precision/radial_outward-symmetric_stratified-block0.npz": "f5d0a1cbbbc8ec703c289a9ab45499fde0589c9d389036e60d73b9c20eb6cc67",
+    "results/precision/radial_outward-symmetric_stratified-block0.json": "20eadf37485d8a89ea71a5a0589304a0c60c5520deca0d69b7ce3e35ed75404b",
+    "results/precision/radial_outward-symmetric_stratified-block1.npz": "79109c43aead8021f3f0cd1c983e2bd2080216332dc273ba48a469738ceb6c2c",
+    "results/precision/radial_outward-symmetric_stratified-block1.json": "98223d35ced997e4a62ff628707644ec12ed01a5bced284913b232c060c8973d",
+    "results/precision/radial_outward-symmetric_stratified-block2.npz": "bc7bb610e4fdbcc816d2fcbe244a1d775fcca378b923c693b8e0b028ac48ec8a",
+    "results/precision/radial_outward-symmetric_stratified-block2.json": "74591654a5487afb41755a912a055af6278565aa86400ac56510b59bb81ad44b",
+    "results/precision/radial_outward-symmetric_stratified-block3.npz": "616920465b54bf7f7873257c45a53378a3e6f53e77a365468e61771e6f15b6e0",
+    "results/precision/radial_outward-symmetric_stratified-block3.json": "4d02e7d67ada7471d3c82329e786aea0e3e14b0271e6eaae605f7d4c3cbed941",
+    "results/precision/tangential-eigen_uniform-block0.npz": "5dfbdbae1250e61ac724c90d2f7fad2eb49e4f9f7c7224dbbf9468b804421e9b",
+    "results/precision/tangential-eigen_uniform-block0.json": "d1663b53505e4c70ffd19a67edf231ccae8013375035a0b5754bcc260da099b5",
+    "results/precision/tangential-eigen_uniform-block1.npz": "5fc5fa4b9215307b47febceae7688365c4cea0834b700a0dd9fcc777ffa824a6",
+    "results/precision/tangential-eigen_uniform-block1.json": "72e79b8dfa8cb48bb7242b3227aaa7b8b9235f7d4a149139a8c3abcf09c3b568",
+    "results/precision/tangential-eigen_uniform-block2.npz": "fba2800a343b30b6a1eb97f9622518e89dd005cfb104a02c6611205d336ab145",
+    "results/precision/tangential-eigen_uniform-block2.json": "03fc082ea283ac9bb5a0bb61a91bfd43b1919734e4936db313ae0f61a78c3546",
+    "results/precision/tangential-eigen_uniform-block3.npz": "3178e683a190e384ac8b9a01167e540167f24c04c8bc136d36daea64f0cf36e1",
+    "results/precision/tangential-eigen_uniform-block3.json": "003c2d8e51fafdf3bcb57eddbebe79bafd479a842d58afde02fcf9a47eefa2e5",
+    "results/precision/tangential-symmetric_uniform-block0.npz": "04d055923ad94f2096d72eb5fbebe6df778a169901fe7b1932a9a0f9aa1efe24",
+    "results/precision/tangential-symmetric_uniform-block0.json": "38525562e8c4e609e69bfea374d72eb8af7ec634152e029d66dd052137a3186c",
+    "results/precision/tangential-symmetric_uniform-block1.npz": "76feaf1434a6b2a9849c38ef1478dcf337d7a65d7fb5ee62953625fab6a68c69",
+    "results/precision/tangential-symmetric_uniform-block1.json": "0c781a3980b35dd181c9ef1a13b666f0de5c2cbc30e4dc1994dd519d652ebe0b",
+    "results/precision/tangential-symmetric_uniform-block2.npz": "7b8fab1746d7f394edc135b74641a326388feb75556d3e06d26dee8cb075ff43",
+    "results/precision/tangential-symmetric_uniform-block2.json": "e5d9348bd8e2a0773c22f663af1b594d247250d6bef524c7ad511a7b85cfcd65",
+    "results/precision/tangential-symmetric_uniform-block3.npz": "c718dd2baced46f611ee8a2ad953e0e8b4ecf3bba1da625fcd5069c707101b60",
+    "results/precision/tangential-symmetric_uniform-block3.json": "930d69f99b085c0c158f6f6ee9a28b7b9f17bbfc6a48b94519cfaca700132132",
+    "results/precision/tangential-symmetric_stratified-block0.npz": "c5236e55c535b2e206cf71939e32e725ca39d2483cd329b48ec434f3d0a32b3d",
+    "results/precision/tangential-symmetric_stratified-block0.json": "7ea9a3348937b36328d68b3107fb2ae64f0a11d532f9affb4fb0cd39f0c4feab",
+    "results/precision/tangential-symmetric_stratified-block1.npz": "0c8b472972b01c5f7e80bea57a7af365796b1976a798aac7580718971192bd0c",
+    "results/precision/tangential-symmetric_stratified-block1.json": "59f563cf742fbfeb3842358726636b15907575bedfcc997b4183bb71c8da751d",
+    "results/precision/tangential-symmetric_stratified-block2.npz": "26f67816b83aebc2b77848c89a3f5d5e345edb5e1cf10774c97f94c6539d5d63",
+    "results/precision/tangential-symmetric_stratified-block2.json": "60ebeaaa8f26cf5a4c817f44372edbc4dca35629bedd6872e819737b1b0dd4da",
+    "results/precision/tangential-symmetric_stratified-block3.npz": "f673a95813be180d53bc78ed6a2959b5b095de178d9c7ac0b6359cf9ed6be5f0",
+    "results/precision/tangential-symmetric_stratified-block3.json": "450db58be8e1fce9b2fa5b2783a70d692ed96526c4ee95e6c66f32471266432d",
+    "results/precision/oblique-eigen_uniform-block0.npz": "ba20753bd87f3d22f21f2e80e12c151ae964809b81d8f9a325f3a036bc2a385f",
+    "results/precision/oblique-eigen_uniform-block0.json": "42315dc0748cc259185b34339c2d9b321c708ca54669c3e690edc7cebd5d47bf",
+    "results/precision/oblique-eigen_uniform-block1.npz": "c87424daef053019d9767b2c0b37d75504eaf7a39ae38c3a811274206b42a5e0",
+    "results/precision/oblique-eigen_uniform-block1.json": "eddfb07eecd72ee964929a7aa7b5debc6500474ef2aa23c93818acff34e7cf4d",
+    "results/precision/oblique-eigen_uniform-block2.npz": "520b67bfb7436b377810513d90a4f02bdf7cb56b278bf0f8d45ff71b36f71cd9",
+    "results/precision/oblique-eigen_uniform-block2.json": "ee05c9dfa5a973b6dc77d408336509901c9bf5d4dc6e3428e42fca43b56fabcc",
+    "results/precision/oblique-eigen_uniform-block3.npz": "a4f01cdc723e2b342404fcb2afd1c7edef90cd3a362199b8c6f767ca9f731bdf",
+    "results/precision/oblique-eigen_uniform-block3.json": "46413aa1bb83fa502a91d96584c75f918f543be9a9adf4dff08dd4cd8aa26d7e",
+    "results/precision/oblique-symmetric_uniform-block0.npz": "d052608afff03ec623d2f284b9a65c1473ef0eba2a814f37bee2dc4fbd0d0d1e",
+    "results/precision/oblique-symmetric_uniform-block0.json": "a2a8fe4425976e9aeedd3bdd4f422dc99d5047aad0d5eff8b4d6bc8fa65be169",
+    "results/precision/oblique-symmetric_uniform-block1.npz": "726a02194d57df20b743b434c3a0852964ce0aadc9c0553bcada0973f9e50fd9",
+    "results/precision/oblique-symmetric_uniform-block1.json": "d28a3a037df776d6ba62766a669d09ca36f99b6b455d9b59cd89181f7bcd22a3",
+    "results/precision/oblique-symmetric_uniform-block2.npz": "18b9cf20532d758b3e8d798c7df1136184ae176eebc51d349787e2d71fe4d2e3",
+    "results/precision/oblique-symmetric_uniform-block2.json": "5b30cc72aa5eef41c9f124dd5e475279cb6fbd0ee1bdcbfb33e3517c46a26dee",
+    "results/precision/oblique-symmetric_uniform-block3.npz": "2f793f90a72281f6a33080d9cb03d540345acdd88c3334cdb65d1edd9a8d2472",
+    "results/precision/oblique-symmetric_uniform-block3.json": "2d94f791e25bcfdc5c66a4bb29e81c0fd999c3a7dbedeaa3cd6a627a3d4fe678",
+    "results/precision/oblique-symmetric_stratified-block0.npz": "660a72823e8a91367607d2713df6fdbeea2c525ccdedaf30c0e171f932b1ef75",
+    "results/precision/oblique-symmetric_stratified-block0.json": "35f95e4d0654e929aef3b29a310412611fe73783ba84a3fceb3619f514d63620",
+    "results/precision/oblique-symmetric_stratified-block1.npz": "3377b36811ddfd9aa57f53ef1caa3f62c3bf30830426a57a02f8debb3faf124a",
+    "results/precision/oblique-symmetric_stratified-block1.json": "bca64ce1e2f40322a882f8caa31106da16e4bf6e6781c6080bb0e79ac1c98ca3",
+    "results/precision/oblique-symmetric_stratified-block2.npz": "3469507d8a1b967f9607c4470089eb5d90f9fcb91cd236366cc0e85f06740bb7",
+    "results/precision/oblique-symmetric_stratified-block2.json": "09cbddd0c891f914005c6fb15e76d16d20ca6d9ac1141f55ca26f09647d587da",
+    "results/precision/oblique-symmetric_stratified-block3.npz": "79c73fe9538a8dfb9ea0eabf025c201bc67023ce91075535f662fffbc5905d35",
+    "results/precision/oblique-symmetric_stratified-block3.json": "d454de2e5d7b1627e92a22a63f934a55027c1d27707fe560de239538a7bf6534"
+  },
+  "interpretation": "Precision for the same finite-step response only. Earlier endpoint validation is not reused to certify prediction accuracy. Numerical continuation, refinement and physical calibration remain separate."
+}

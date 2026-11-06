@@ -1,0 +1,128 @@
+{
+  "scope": "Post-pilot descriptive quadratic contributions to estimated mean variance; no population-tail or confidence claim and no trimming",
+  "formula": "For stratum s, c_i = w_s^2 (Z_i - mean_s)^2 / [n_s (n_s-1)]; sum_i c_i estimates Var(mean). Uniform samples have one stratum with weight 1.",
+  "rows": [
+    {
+      "launch": "radial_outward",
+      "method": "eigen_uniform",
+      "n": 4096,
+      "variance_of_mean": 0.038503409926074046,
+      "largest_one_percent_count": 41,
+      "largest_single_share": 0.0440933363307669,
+      "largest_one_percent_share": 0.4823643175740161
+    },
+    {
+      "launch": "radial_outward",
+      "method": "symmetric_uniform",
+      "n": 4096,
+      "variance_of_mean": 0.0003422546652063076,
+      "largest_one_percent_count": 41,
+      "largest_single_share": 0.6111681901657778,
+      "largest_one_percent_share": 0.929197215312315
+    },
+    {
+      "launch": "radial_outward",
+      "method": "symmetric_stratified",
+      "n": 4096,
+      "variance_of_mean": 0.00039053642526557723,
+      "largest_one_percent_count": 41,
+      "largest_single_share": 0.402928192390633,
+      "largest_one_percent_share": 0.9497358791065738
+    },
+    {
+      "launch": "tangential",
+      "method": "eigen_uniform",
+      "n": 4096,
+      "variance_of_mean": 0.4153703654403193,
+      "largest_one_percent_count": 41,
+      "largest_single_share": 0.016015386201810165,
+      "largest_one_percent_share": 0.33342164000946467
+    },
+    {
+      "launch": "tangential",
+      "method": "symmetric_uniform",
+      "n": 4096,
+      "variance_of_mean": 0.00036642370616687514,
+      "largest_one_percent_count": 41,
+      "largest_single_share": 0.13868513332060703,
+      "largest_one_percent_share": 0.8957675161863483
+    },
+    {
+      "launch": "tangential",
+      "method": "symmetric_stratified",
+      "n": 4096,
+      "variance_of_mean": 0.0003333004324480278,
+      "largest_one_percent_count": 41,
+      "largest_single_share": 0.19031664724691266,
+      "largest_one_percent_share": 0.8872303050227692
+    },
+    {
+      "launch": "oblique",
+      "method": "eigen_uniform",
+      "n": 4096,
+      "variance_of_mean": 0.32032758545893675,
+      "largest_one_percent_count": 41,
+      "largest_single_share": 0.03445023355274846,
+      "largest_one_percent_share": 0.3589120767788597
+    },
+    {
+      "launch": "oblique",
+      "method": "symmetric_uniform",
+      "n": 4096,
+      "variance_of_mean": 0.00016991215276002287,
+      "largest_one_percent_count": 41,
+      "largest_single_share": 0.1508283913207687,
+      "largest_one_percent_share": 0.8402579430552847
+    },
+    {
+      "launch": "oblique",
+      "method": "symmetric_stratified",
+      "n": 4096,
+      "variance_of_mean": 0.00017369211442003814,
+      "largest_one_percent_count": 41,
+      "largest_single_share": 0.1459731067026972,
+      "largest_one_percent_share": 0.8830743451590811
+    }
+  ],
+  "input_sha256": {
+    "analysis/precision/protocol.json": "41add5f47c714f849953526b73fab2393fd6e69b7e6702d653348dbf33094bd1",
+    "analysis/precision/tails.py": "371699ff1e397c808c1e735f3b60e083ebda06d5541b3804710653df30b99a15",
+    "analysis/precision/statistics.py": "41ab558631c8d209031eb725cc9e78ac1cd9d286d5e62a597ed908898c97daf8",
+    "results/precision/radial_outward-eigen_uniform-block0.npz": "bd05a14a73ed88a0bdbc6911b8061b693703f0e2b9a1346d17d8ecd2369b1ecb",
+    "results/precision/radial_outward-eigen_uniform-block1.npz": "bf7c5df0480f2e51a6fff0ec919c2c34c293c38dbabef37e91db886955410744",
+    "results/precision/radial_outward-eigen_uniform-block2.npz": "234222febfb1bc4b7c62832f77b0824d9ed267895e171f3d6a55dd739d4c60df",
+    "results/precision/radial_outward-eigen_uniform-block3.npz": "c3e7acce13e9ae630dc74aceb5d2153e8f63db7f5f5dfe2ead990a4101e524c0",
+    "results/precision/radial_outward-symmetric_uniform-block0.npz": "7aedd52c7fb728d6499825a37ad293adae87bee286ea708e419cd305a3cca316",
+    "results/precision/radial_outward-symmetric_uniform-block1.npz": "5f202df301f31ea8f2117a95dc5fe0b31e07e183ef1613ef1fe76c1cde831189",
+    "results/precision/radial_outward-symmetric_uniform-block2.npz": "0c4f9731cbc195825b47a1b28b9363072a1e2acbc2a7bcf16c51fb3a156b1183",
+    "results/precision/radial_outward-symmetric_uniform-block3.npz": "fdbfca8a0269220f7fa1b23a37404648579e829a8a1a45c78ee53950416dfa38",
+    "results/precision/radial_outward-symmetric_stratified-block0.npz": "f5d0a1cbbbc8ec703c289a9ab45499fde0589c9d389036e60d73b9c20eb6cc67",
+    "results/precision/radial_outward-symmetric_stratified-block1.npz": "79109c43aead8021f3f0cd1c983e2bd2080216332dc273ba48a469738ceb6c2c",
+    "results/precision/radial_outward-symmetric_stratified-block2.npz": "bc7bb610e4fdbcc816d2fcbe244a1d775fcca378b923c693b8e0b028ac48ec8a",
+    "results/precision/radial_outward-symmetric_stratified-block3.npz": "616920465b54bf7f7873257c45a53378a3e6f53e77a365468e61771e6f15b6e0",
+    "results/precision/tangential-eigen_uniform-block0.npz": "5dfbdbae1250e61ac724c90d2f7fad2eb49e4f9f7c7224dbbf9468b804421e9b",
+    "results/precision/tangential-eigen_uniform-block1.npz": "5fc5fa4b9215307b47febceae7688365c4cea0834b700a0dd9fcc777ffa824a6",
+    "results/precision/tangential-eigen_uniform-block2.npz": "fba2800a343b30b6a1eb97f9622518e89dd005cfb104a02c6611205d336ab145",
+    "results/precision/tangential-eigen_uniform-block3.npz": "3178e683a190e384ac8b9a01167e540167f24c04c8bc136d36daea64f0cf36e1",
+    "results/precision/tangential-symmetric_uniform-block0.npz": "04d055923ad94f2096d72eb5fbebe6df778a169901fe7b1932a9a0f9aa1efe24",
+    "results/precision/tangential-symmetric_uniform-block1.npz": "76feaf1434a6b2a9849c38ef1478dcf337d7a65d7fb5ee62953625fab6a68c69",
+    "results/precision/tangential-symmetric_uniform-block2.npz": "7b8fab1746d7f394edc135b74641a326388feb75556d3e06d26dee8cb075ff43",
+    "results/precision/tangential-symmetric_uniform-block3.npz": "c718dd2baced46f611ee8a2ad953e0e8b4ecf3bba1da625fcd5069c707101b60",
+    "results/precision/tangential-symmetric_stratified-block0.npz": "c5236e55c535b2e206cf71939e32e725ca39d2483cd329b48ec434f3d0a32b3d",
+    "results/precision/tangential-symmetric_stratified-block1.npz": "0c8b472972b01c5f7e80bea57a7af365796b1976a798aac7580718971192bd0c",
+    "results/precision/tangential-symmetric_stratified-block2.npz": "26f67816b83aebc2b77848c89a3f5d5e345edb5e1cf10774c97f94c6539d5d63",
+    "results/precision/tangential-symmetric_stratified-block3.npz": "f673a95813be180d53bc78ed6a2959b5b095de178d9c7ac0b6359cf9ed6be5f0",
+    "results/precision/oblique-eigen_uniform-block0.npz": "ba20753bd87f3d22f21f2e80e12c151ae964809b81d8f9a325f3a036bc2a385f",
+    "results/precision/oblique-eigen_uniform-block1.npz": "c87424daef053019d9767b2c0b37d75504eaf7a39ae38c3a811274206b42a5e0",
+    "results/precision/oblique-eigen_uniform-block2.npz": "520b67bfb7436b377810513d90a4f02bdf7cb56b278bf0f8d45ff71b36f71cd9",
+    "results/precision/oblique-eigen_uniform-block3.npz": "a4f01cdc723e2b342404fcb2afd1c7edef90cd3a362199b8c6f767ca9f731bdf",
+    "results/precision/oblique-symmetric_uniform-block0.npz": "d052608afff03ec623d2f284b9a65c1473ef0eba2a814f37bee2dc4fbd0d0d1e",
+    "results/precision/oblique-symmetric_uniform-block1.npz": "726a02194d57df20b743b434c3a0852964ce0aadc9c0553bcada0973f9e50fd9",
+    "results/precision/oblique-symmetric_uniform-block2.npz": "18b9cf20532d758b3e8d798c7df1136184ae176eebc51d349787e2d71fe4d2e3",
+    "results/precision/oblique-symmetric_uniform-block3.npz": "2f793f90a72281f6a33080d9cb03d540345acdd88c3334cdb65d1edd9a8d2472",
+    "results/precision/oblique-symmetric_stratified-block0.npz": "660a72823e8a91367607d2713df6fdbeea2c525ccdedaf30c0e171f932b1ef75",
+    "results/precision/oblique-symmetric_stratified-block1.npz": "3377b36811ddfd9aa57f53ef1caa3f62c3bf30830426a57a02f8debb3faf124a",
+    "results/precision/oblique-symmetric_stratified-block2.npz": "3469507d8a1b967f9607c4470089eb5d90f9fcb91cd236366cc0e85f06740bb7",
+    "results/precision/oblique-symmetric_stratified-block3.npz": "79c73fe9538a8dfb9ea0eabf025c201bc67023ce91075535f662fffbc5905d35"
+  }
+}

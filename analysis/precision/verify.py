@@ -54,7 +54,7 @@ def verify():
     for group in ('input_sha256','implementation_sha256'):
         for path,sha in ref[group].items():require(digest(ROOT/path)==sha,'changed frozen source '+path)
     expected=[];seeds=[];start_time=timestamp(design['created_utc'])
-    reference=read(ROOT/'results/response/prediction-fine-dt0.010-radial_outward-weighted.json')
+    reference_hashes=read(ROOT/'results/response/summary.json')['input_sha256']
     for block in range(p['blocks']):
         for offset in range(len(p['launches'])):
             li=(offset+block)%len(p['launches'])
@@ -78,7 +78,10 @@ def verify():
                 require(r['n_steps']==int(np.ceil(p['horizon']/p['dt'])),'wrong step count')
                 require(r['n_steps']==p['step_strata'][-1] and p['step_strata'][0]==0,'incomplete strata')
                 np.testing.assert_allclose(np.diff(p['step_strata'])/r['n_steps'],p['stratum_weights'],rtol=0,atol=0)
-                prior=read(ROOT/f'results/response/prediction-fine-dt0.010-{launch}-weighted.json')
+                prior_path=f'results/response/prediction-fine-dt0.010-{launch}-weighted.json'
+                require(digest(ROOT/prior_path)==reference_hashes[prior_path],
+                        'changed reference launch '+prior_path)
+                prior=read(ROOT/prior_path)
                 for key in ('initial_state','spatial_stop','velocity_stop','region_radius'):
                     compare_tree(r[key],prior[key])
                 with np.load(path,allow_pickle=False) as data:a=dict(data)

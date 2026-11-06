@@ -1,0 +1,13 @@
+\begin{table*}[t]
+\caption{Precision comparison at the same fine-table setting and $\Delta t=0.01t_{\rm dyn}$. Each method uses 4096 independent response quartets per launch, divided into four execution batches. E denotes eigenbasis coupling with uniform insertion, S symmetric-root coupling with uniform insertion, and T symmetric-root coupling with proportional time stratification. Standard errors concern the estimated response slope. Variance ratios above one favor the denominator method. Bracketed intervals are exploratory percentile bootstrap intervals adjusted over six ratios; they do not cover unseen rare scores, numerical bias or physical-model uncertainty.}\label{tab:precision-pilot}
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+Launch & SE(E) & SE(S) & SE(T) & Variance E/S [interval] & Variance S/T [interval] \\
+\midrule
+Radial & $0.19622$ & $0.01850$ & $0.01976$ & \shortstack[r]{$112.50$\\$[33.35, 517.46]$} & \shortstack[r]{$0.88$\\$[0.13, 6.38]$} \\[3pt]
+Tangential & $0.64449$ & $0.01914$ & $0.01826$ & \shortstack[r]{$1.13\times10^{3}$\\$[639.71, 2.37\times10^{3}]$} & \shortstack[r]{$1.10$\\$[0.41, 3.02]$} \\[3pt]
+Oblique & $0.56597$ & $0.01304$ & $0.01318$ & \shortstack[r]{$1.89\times10^{3}$\\$[1.07\times10^{3}, 3.86\times10^{3}]$} & \shortstack[r]{$0.98$\\$[0.41, 2.52]$} \\[3pt]
+\bottomrule
+\end{tabular}
+\end{table*}

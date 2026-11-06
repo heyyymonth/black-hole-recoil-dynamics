@@ -31,6 +31,8 @@ jobs:
           python analysis/matched/verify.py
           python analysis/matched/controls.py --verify
           python analysis/response/verify.py
+          python analysis/precision/verify.py
+          python analysis/precision/tails.py --verify
   artifacts:
     runs-on: ubuntu-24.04
     steps:

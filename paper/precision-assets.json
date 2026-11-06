@@ -1,0 +1,14 @@
+{
+  "input_sha256": {
+    "results/precision/summary.json": "d6c526bfd49be086077518a4a92f0891b83df281df719aaa0ff24dd38689007a",
+    "analysis/precision/protocol.json": "41add5f47c714f849953526b73fab2393fd6e69b7e6702d653348dbf33094bd1",
+    "paper/precision_assets.py": "b39a247e3998f01d98c08af1f5b156b6373c11e98ad90f8aaec2afb4bceb65d7"
+  },
+  "output_sha256": {
+    "paper/tables/precision-pilot.tex": "6ab864ad2f17147c2a67b8dc392197fc05bced6af9518b1717e0eeb525bd6fdb",
+    "paper/figures/precision-pilot.pdf": "dd557f740791e3be4cda36edd862ef5504bef7b998e3b50d86edbbf83bc69738",
+    "results/precision/comparison.pdf": "dd557f740791e3be4cda36edd862ef5504bef7b998e3b50d86edbbf83bc69738",
+    "results/precision/comparison.png": "68cd04bedd63732451796382d3a29d1a4b1af913e923c0bf1c4b183e447a074a"
+  },
+  "scope": "Fixed-budget comparison of estimators of the same complete-transition residence response; not independent validation of endpoint prediction accuracy or physical-cluster calibration"
+}
