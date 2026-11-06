@@ -1,0 +1,66 @@
+{
+  "revision": "symmetric-residence-response-1",
+  "scope": "Independent fixed-budget response prediction and mixture validation for the declared numerically stopped process; no guaranteed precision, continuum or calibrated cluster claim",
+  "reference_protocol": "analysis/response/protocol.json",
+  "reference_design": "results/response/execution-design.json",
+  "precision_design": "results/precision/execution-design.json",
+  "development_evidence": "results/precision/summary.json",
+  "host": "NGC5139",
+  "horizon": 10.0,
+  "launches": [
+    {"name": "radial_outward", "angle_from_radial_degrees": 0.0},
+    {"name": "tangential", "angle_from_radial_degrees": 90.0},
+    {"name": "oblique", "angle_from_radial_degrees": 45.0}
+  ],
+  "numerical_settings": [
+    {"name": "coarse-dt0.020", "grid": "coarse", "dt": 0.02, "role": "grid sensitivity"},
+    {"name": "fine-dt0.020", "grid": "fine", "dt": 0.02, "role": "time sensitivity"},
+    {"name": "fine-dt0.010", "grid": "fine", "dt": 0.01, "role": "primary"}
+  ],
+  "prediction": {
+    "factor": "symmetric",
+    "estimator": "Uniform whole-transition insertion with Poisson conditioning and antithetic diffusion quartet; symmetric covariance root in all diffusion updates",
+    "primary_quartets": 65536,
+    "control_quartets": 8192,
+    "halfwidth_target": 0.0005,
+    "allocation": "Fixed from development evidence and resource limit before execution; no new pilot, no pooling earlier samples, no adaptive extension, no precision guarantee"
+  },
+  "validation": {
+    "pairs_per_setting": 8192,
+    "primary_a_values": [0.05, 0.1, 1.0],
+    "control_a_values": [1.0],
+    "factor": "symmetric",
+    "gate": "Every prediction array and metadata record must be complete and registered before any validation begins",
+    "independence": "Disjoint seeds for every stage, setting, launch and a value; all old outcomes are development evidence only"
+  },
+  "seed": 2026110601,
+  "seed_scheme": "SeedSequence([seed, stage_code, setting_index, launch_index, variant_index]); stage codes 50 prediction, 60 validation",
+  "workers": 2,
+  "execution": "Canonical jobs assigned by stage-local index modulo workers. Independent jobs may overlap; all predictions precede the register, all validations follow it. One writer per private cache directory.",
+  "cache": {
+    "source_root": "tmp/response-sampler-cache",
+    "private_root": "tmp/retest-sampler-cache",
+    "namespace_record": "results/response/execution-design.json",
+    "retained_array_bytes": 805306368,
+    "vertex_cap": 384,
+    "disk_max_bytes_per_grid": 16106127360,
+    "scope": "Hard-link snapshot of immutable existing sampler entries into private per-worker directories; independently created entries thereafter. Same numeric arrays and namespace; cache setup is not a physical approximation."
+  },
+  "reporting": {
+    "normal_confidence": 0.975,
+    "normal_family_size": 64,
+    "inferential_statements": 51,
+    "family_inventory": "9 response intervals, 15 validation shifts, 15 prediction residuals, 6 response refinement contrasts and 6 endpoint refinement contrasts. Scaled small-a remainders reuse the residual event.",
+    "boundary_family_alpha": 0.025,
+    "boundary_family_size": 24,
+    "boundary_method": "One-sided Clopper-Pearson upper bound on P(B>0), multiplied by known support maximum 2N for a response quartet or 2 for a validation pair. Finite-sample mean allowance also retained; a zero observed allowance is not zero population uncertainty.",
+    "joint_scope": "Normal family has approximate coverage, continuation family exact binomial coverage up to numerical evaluation. Split alpha reserves total nominal 0.05; no exact joint finite-sample guarantee for normal comparisons.",
+    "prediction_absolute_error_target": 0.001,
+    "numerical_sensitivity_budget": 0.0005,
+    "numerical_missing_residence_budget": 0.0002,
+    "classification": "Intervals wholly within tolerance: within_tolerance; wholly outside: outside_tolerance; otherwise inconclusive. Classification concerns only the declared numerically stopped finite-step process.",
+    "continuum_gate": "Requires sampling, grid/time sensitivity and population continuation bounds to meet their respective budgets, plus independent convergence/calibration evidence. A finite refinement contrast is not a continuum-error proof.",
+    "tails": "Retain extrema, top absolute-score shares and centered-square variance concentration; all scores included. Normal intervals remain approximate with rare influential contributions.",
+    "adaptation": "No counts, thresholds, cutoffs, launch conditions or confidence families changed in response to outcomes"
+  }
+}
