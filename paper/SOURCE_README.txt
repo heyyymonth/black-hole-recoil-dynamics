@@ -2,7 +2,7 @@ Recoil transport and environmental exposure of black-hole merger remnants
 Venkata Hemanth Athota
 bharadwaj.hemanth.002@gmail.com
 
-Manuscript revision 0.15.0-manuscript.1.
+Manuscript revision 0.16.0-manuscript.1.
 This archive contains a two-column manuscript on recoil transport and
 environmental exposure, including the six-cluster data analysis, a fixed NGC 3201 host
 reconstruction, local anisotropic collision calculations and static
@@ -17,9 +17,11 @@ encounter budgets and a conditional matched collisional residence pilot.
 A discrete response test records predictions before independent validation.
 Its achieved sampling precision does not resolve prediction accuracy.
 A separate fixed precision comparison tests covariance coupling and proportional
-time stratification while retaining the same response target. Continuum
+time stratification while retaining the same response target. An independent
+symmetric-root response test adds registered predictions, fresh validation
+and explicit population continuation bounds. Continuum
 convergence and calibrated cluster predictions are not claimed.
-It includes the article, thirteen table fragments, thirteen vector figures,
+It includes the article, fifteen table fragments, fourteen vector figures,
 bibliography, compiled bibliography, citation, license, supporting data
 evidence, and the unmodified REVTeX dependency.
 
@@ -58,14 +60,15 @@ not every audited repository file is duplicated here. Original large
 third-party source files are not bundled. Source URLs, exact source hashes,
 attribution, and instructions for the full data audit are retained in
 evidence/observed-clusters/. The standalone TeX build uses only the supplied
-article, bibliography, tables and figures. Response-test and precision-pilot
+article, bibliography, tables and figures. Response-test, precision-pilot and independent-retest
 per-path NPZ files are retained in the versioned repository under
-results/response/ and results/precision/ rather than duplicated in this TeX archive. Their hashes and recorded summaries
+results/response/, results/precision/ and results/retest/ rather than duplicated
+in this TeX archive. Their hashes and recorded summaries
 are included here; numerical reanalysis uses the full repository checkout.
 
 The manuscript is unreviewed. No submission, acceptance, or calibrated
 transport prediction is claimed. CITATION.bib identifies the versioned source:
-https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.15.0.1
+https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/manuscript-v0.16.0.1
 No DOI has been assigned.
 
 Project-authored source is MIT-licensed. The included REVTeX distribution,

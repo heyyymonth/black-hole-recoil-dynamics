@@ -64,3 +64,33 @@ Even with no exits, this allocation gives primary prediction upper allowance abo
 For the response residual, a conservative continuation allowance is the validation upper bound plus `a` times the prediction upper bound. This bounds possible changes under bounded-reward continuations agreeing with the numerical process up to termination. It does not specify or validate dynamics outside the table domain. Physical calibration and continuous-time convergence remain separate requirements.
 
 [Fixed protocol](../analysis/retest/protocol.json) · [Implementation and verification](../analysis/retest/README.md)
+
+## Recorded findings
+
+The fixed protocol and implementation were published in commit `487ac443` before production trajectories. All nine predictions were then saved and hash-registered before the fifteen independently sampled validations. The completed design contains **368,640 independent groups and 1,228,800 correlated branch trajectories**. No earlier samples are pooled with this test.
+
+| Primary launch | Response estimate | Standard error | Response interval half-width | Endpoint residual interval | Accuracy |
+|---|---:|---:|---:|---|---|
+| Radial outward | -0.011685 | 0.003543 | 0.012565 | [-0.010392, 0.016622] | Inconclusive |
+| Tangential | -0.002609 | 0.005037 | 0.017861 | [-0.019211, 0.018409] | Inconclusive |
+| Oblique | -0.011350 | 0.003984 | 0.014128 | [-0.010782, 0.019199] | Inconclusive |
+
+The response half-width target remains 0.0005 and the endpoint error tolerance remains 0.001. Every primary residual interval includes both acceptable and unacceptable errors. None establishes agreement or failure of the prediction. All six small-mixture scaled-residual intervals contain zero; that does not establish the derivative limit.
+
+At equal primary sample count, the observed standard errors are smaller than those of the earlier eigenbasis test by descriptive factors 13.1, 33.8 and 41.0. These ratios have no additional confidence interval, and earlier validation is not used to certify current accuracy. The independently measured endpoint shifts are −0.008569, −0.003010 and −0.007141. Radial and oblique shift intervals exclude zero under the approximate family adjustment; the tangential interval includes zero. An encounter effect and successful prediction of that effect are different claims.
+
+The largest one percent of centered-square score contributions accounts for 89.9%, 90.6% and 91.2% of the three primary sample variances. The largest individual shares are 2.84%, 2.49% and 8.76%. All scores are retained. These observed concentration diagnostics do not establish normal coverage or account for unseen tails.
+
+**All twelve refinement classifications remain inconclusive. None of the 24 population continuation bounds meets the 0.0002 budget.**
+
+| Primary launch | Positive-allowance prediction rows | Empirical response allowance | Population response upper bound | Empirical endpoint allowance | Population endpoint upper bound |
+|---|---:|---:|---:|---:|---:|
+| Radial outward | 27 | 0.125621 | 1.438373 | 0.00007609 | 0.002728 |
+| Tangential | 21 | 0.035061 | 1.198915 | 0.00000000 | 0.001676 |
+| Oblique | 25 | 0.121685 | 1.359293 | 0.00011472 | 0.003174 |
+
+Response bounds can exceed one because they concern a step-weighted derivative score, not a probability. A large bound is not a measured physical continuation error. All continuation-expanded endpoint residual intervals remain inconclusive. Their sampling component is still a normal approximation; the exact binomial construction does not turn the combined envelope into an exact joint confidence interval.
+
+This test makes the statistical comparison more precise and identifies the remaining uncertainty separately. Further work needs a more precise response estimate, resolved transition refinement, and a sharper justified continuation bound or an extended verified dynamical domain. Additional histories alone cannot supply missing physical dynamics. The present calculation does not establish continuum response accuracy, physical-cluster calibration, or a merger rate.
+
+[Recorded summary](../results/retest/summary.json) · [Comparison figure](../results/retest/comparison.png) · [Prediction register](../results/retest/prediction-register.json)

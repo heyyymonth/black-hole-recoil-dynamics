@@ -103,3 +103,5 @@ The prespecified diagnostic shows that the largest one percent of absolute score
 The experimental conclusion is a large, reproducible improvement in estimation for the same finite-step model. It is not confirmation of the response hypothesis, continuous-time convergence, or calibrated cluster dynamics. Independent response predictions and validation with explicit refinement and continuation controls remain necessary.
 
 [Recorded summary](../results/precision/summary.json) · [Comparison figure](../results/precision/comparison.png) · [Post-pilot variance diagnostic](../results/precision/tail-diagnostic.json)
+
+The subsequent [independent response test](independent-response-test.md) uses this selected estimator with fresh predictions and validation; it keeps the pilot samples separate.

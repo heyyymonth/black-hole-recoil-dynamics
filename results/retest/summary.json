@@ -1,0 +1,3605 @@
+{
+  "revision": "symmetric-residence-response-1",
+  "scope": "Independent fixed-budget response prediction and mixture validation for the declared numerically stopped process; no guaranteed precision, continuum or calibrated cluster claim",
+  "complete": true,
+  "reporting": {
+    "normal_confidence": 0.975,
+    "normal_family_size": 64,
+    "inferential_statements": 51,
+    "family_inventory": "9 response intervals, 15 validation shifts, 15 prediction residuals, 6 response refinement contrasts and 6 endpoint refinement contrasts. Scaled small-a remainders reuse the residual event.",
+    "boundary_family_alpha": 0.025,
+    "boundary_family_size": 24,
+    "boundary_method": "One-sided Clopper-Pearson upper bound on P(B>0), multiplied by known support maximum 2N for a response quartet or 2 for a validation pair. Finite-sample mean allowance also retained; a zero observed allowance is not zero population uncertainty.",
+    "joint_scope": "Normal family has approximate coverage, continuation family exact binomial coverage up to numerical evaluation. Split alpha reserves total nominal 0.05; no exact joint finite-sample guarantee for normal comparisons.",
+    "prediction_absolute_error_target": 0.001,
+    "numerical_sensitivity_budget": 0.0005,
+    "numerical_missing_residence_budget": 0.0002,
+    "classification": "Intervals wholly within tolerance: within_tolerance; wholly outside: outside_tolerance; otherwise inconclusive. Classification concerns only the declared numerically stopped finite-step process.",
+    "continuum_gate": "Requires sampling, grid/time sensitivity and population continuation bounds to meet their respective budgets, plus independent convergence/calibration evidence. A finite refinement contrast is not a continuum-error proof.",
+    "tails": "Retain extrema, top absolute-score shares and centered-square variance concentration; all scores included. Normal intervals remain approximate with rare influential contributions.",
+    "adaptation": "No counts, thresholds, cutoffs, launch conditions or confidence families changed in response to outcomes"
+  },
+  "counts": {
+    "prediction_ensembles": 9,
+    "validation_ensembles": 15,
+    "prediction_quartets": 245760,
+    "validation_pairs": 122880,
+    "independent_groups": 368640,
+    "branch_trajectories": 1228800,
+    "normal_statements": 51,
+    "continuation_bounds": 24
+  },
+  "predictions": [
+    {
+      "name": "prediction-coarse-dt0.020-radial_outward-weighted",
+      "setting": "coarse-dt0.020",
+      "launch": "radial_outward",
+      "role": "grid sensitivity",
+      "grid": "coarse",
+      "dt": 0.02,
+      "response": {
+        "estimate": 0.000613426581978411,
+        "standard_error": 0.008573176486127923,
+        "variance_of_estimate": 7.349935506229671e-05,
+        "interval": [
+          -0.029789954005831884,
+          0.031016807169788704
+        ],
+        "half_width": 0.030403380587810294,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": 0.000613426581978411,
+        "sample_variance": 0.6021067166703347,
+        "minimum": -18.973533261615273,
+        "maximum": 20.53546054578875,
+        "zero_count": 861
+      },
+      "precision_target_met": false,
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.3346219829861918,
+        "largest_single_variance_share": 0.08550126692059817,
+        "largest_one_percent_variance_share": 0.8490825278624363,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.0,
+        "nonzero_rows": 0,
+        "maximum": 1000.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.8378974596629918,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0008378974596629918,
+          "root_bracket": [
+            0.0008378974596629917,
+            0.0008378974596629918
+          ],
+          "numerical_guard": 1.0842021724855044e-19,
+          "count": 0,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "prediction-coarse-dt0.020-radial_outward-weighted",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8192
+        },
+        "jump_positive": {
+          "horizon": 8192
+        },
+        "diffusion_plus": {
+          "horizon": 8192
+        },
+        "diffusion_minus": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "prediction-coarse-dt0.020-tangential-weighted",
+      "setting": "coarse-dt0.020",
+      "launch": "tangential",
+      "role": "grid sensitivity",
+      "grid": "coarse",
+      "dt": 0.02,
+      "response": {
+        "estimate": 0.004197727176636282,
+        "standard_error": 0.010595743487920065,
+        "variance_of_estimate": 0.00011226978006180045,
+        "interval": [
+          -0.033378359399360916,
+          0.041773813752633476
+        ],
+        "half_width": 0.037576086575997196,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": 0.004197727176636282,
+        "sample_variance": 0.9197140382662693,
+        "minimum": -11.1863347317189,
+        "maximum": 28.177702834742913,
+        "zero_count": 842
+      },
+      "precision_target_met": false,
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.31461569967162645,
+        "largest_single_variance_share": 0.10536394469768036,
+        "largest_one_percent_variance_share": 0.8124687824680092,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.023444439106568273,
+        "nonzero_rows": 4,
+        "maximum": 1000.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 1.798100523774225,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.001798100523774225,
+          "root_bracket": [
+            0.0017981005227742245,
+            0.0017981005227742247
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 4,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "prediction-coarse-dt0.020-tangential-weighted",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "jump_positive": {
+          "horizon": 8189,
+          "spatial_domain": 3
+        },
+        "diffusion_plus": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "diffusion_minus": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "prediction-coarse-dt0.020-oblique-weighted",
+      "setting": "coarse-dt0.020",
+      "launch": "oblique",
+      "role": "grid sensitivity",
+      "grid": "coarse",
+      "dt": 0.02,
+      "response": {
+        "estimate": -0.0016246796848453015,
+        "standard_error": 0.008691890543791818,
+        "variance_of_estimate": 7.554896122525762e-05,
+        "interval": [
+          -0.032449060433111736,
+          0.02919970106342113
+        ],
+        "half_width": 0.030824380748266433,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.0016246796848453015,
+        "sample_variance": 0.6188970903573104,
+        "minimum": -23.266828329023078,
+        "maximum": 25.388149864494615,
+        "zero_count": 836
+      },
+      "precision_target_met": false,
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.3187035882589053,
+        "largest_single_variance_share": 0.12716345586417527,
+        "largest_one_percent_variance_share": 0.8634978443158281,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.0004516905259155202,
+        "nonzero_rows": 2,
+        "maximum": 1000.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 1.3639954645603978,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "prediction-coarse-dt0.020-oblique-weighted",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "stops": {
+        "jump_zero": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        },
+        "jump_positive": {
+          "excluded_channel": 1,
+          "horizon": 8189,
+          "spatial_domain": 2
+        },
+        "diffusion_plus": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        },
+        "diffusion_minus": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-radial_outward-weighted",
+      "setting": "fine-dt0.020",
+      "launch": "radial_outward",
+      "role": "time sensitivity",
+      "grid": "fine",
+      "dt": 0.02,
+      "response": {
+        "estimate": -0.019050905090086525,
+        "standard_error": 0.006629588496867601,
+        "variance_of_estimate": 4.3951443637799226e-05,
+        "interval": [
+          -0.042561665954158084,
+          0.004459855773985031
+        ],
+        "half_width": 0.023510760864071556,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.019050905090086525,
+        "sample_variance": 0.36005022628085126,
+        "minimum": -13.252211675894438,
+        "maximum": 11.061108218515582,
+        "zero_count": 830
+      },
+      "precision_target_met": false,
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.28796912605215796,
+        "largest_single_variance_share": 0.05937821849897345,
+        "largest_one_percent_variance_share": 0.7627722434484137,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.00023074767463715718,
+        "nonzero_rows": 4,
+        "maximum": 1000.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 1.798100523774225,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.001798100523774225,
+          "root_bracket": [
+            0.0017981005227742245,
+            0.0017981005227742247
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 4,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "prediction-fine-dt0.020-radial_outward-weighted",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8192
+        },
+        "jump_positive": {
+          "excluded_channel": 1,
+          "horizon": 8187,
+          "spatial_domain": 4
+        },
+        "diffusion_plus": {
+          "horizon": 8192
+        },
+        "diffusion_minus": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-tangential-weighted",
+      "setting": "fine-dt0.020",
+      "launch": "tangential",
+      "role": "time sensitivity",
+      "grid": "fine",
+      "dt": 0.02,
+      "response": {
+        "estimate": -0.007310360543222472,
+        "standard_error": 0.009188039740280644,
+        "variance_of_estimate": 8.442007426897641e-05,
+        "interval": [
+          -0.039894253984782246,
+          0.025273532898337298
+        ],
+        "half_width": 0.03258389344155977,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.007310360543222472,
+        "sample_variance": 0.6915692484114547,
+        "minimum": -19.934180094744015,
+        "maximum": 19.20476770104318,
+        "zero_count": 856
+      },
+      "precision_target_met": false,
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.30065059838163943,
+        "largest_single_variance_share": 0.07009798982428243,
+        "largest_one_percent_variance_share": 0.8196495415975202,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.0,
+        "nonzero_rows": 0,
+        "maximum": 1000.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.8378974596629918,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0008378974596629918,
+          "root_bracket": [
+            0.0008378974596629917,
+            0.0008378974596629918
+          ],
+          "numerical_guard": 1.0842021724855044e-19,
+          "count": 0,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "prediction-fine-dt0.020-tangential-weighted",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "stops": {
+        "jump_zero": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        },
+        "jump_positive": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        },
+        "diffusion_plus": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        },
+        "diffusion_minus": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-oblique-weighted",
+      "setting": "fine-dt0.020",
+      "launch": "oblique",
+      "role": "time sensitivity",
+      "grid": "fine",
+      "dt": 0.02,
+      "response": {
+        "estimate": -0.009823954333298216,
+        "standard_error": 0.006762858426949683,
+        "variance_of_estimate": 4.573625410296435e-05,
+        "interval": [
+          -0.033807335399666155,
+          0.014159426733069724
+        ],
+        "half_width": 0.02398338106636794,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.009823954333298216,
+        "sample_variance": 0.37467139361148394,
+        "minimum": -8.471125425951964,
+        "maximum": 13.65061788243599,
+        "zero_count": 833
+      },
+      "precision_target_met": false,
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.28123514180680315,
+        "largest_single_variance_share": 0.06080538342196667,
+        "largest_one_percent_variance_share": 0.7762320726837889,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.00035976326568082107,
+        "nonzero_rows": 2,
+        "maximum": 1000.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 1.3639954645603978,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "prediction-fine-dt0.020-oblique-weighted",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 8192
+        },
+        "jump_positive": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "diffusion_plus": {
+          "horizon": 8192
+        },
+        "diffusion_minus": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-radial_outward-weighted",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "role": "primary",
+      "grid": "fine",
+      "dt": 0.01,
+      "response": {
+        "estimate": -0.011684563917507291,
+        "standard_error": 0.0035431893323258114,
+        "variance_of_estimate": 1.2554190644707429e-05,
+        "interval": [
+          -0.024249910488836894,
+          0.0008807826538223141
+        ],
+        "half_width": 0.012565346571329605,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 65536,
+        "mean": -0.011684563917507291,
+        "sample_variance": 0.822751438091546,
+        "minimum": -19.900597047422973,
+        "maximum": 39.12374638253513,
+        "zero_count": 6970
+      },
+      "precision_target_met": false,
+      "tails": {
+        "n": 65536,
+        "largest_one_percent_count": 656,
+        "largest_one_percent_absolute_score_share": 0.3739299697464256,
+        "largest_single_variance_share": 0.028405228494893978,
+        "largest_one_percent_variance_share": 0.8991463829417711,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "continuation": {
+        "n": 65536,
+        "sample_mean_bound": 0.12562085037194418,
+        "nonzero_rows": 27,
+        "maximum": 2000.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 1.4383732587161866,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0007191866293580933,
+          "root_bracket": [
+            0.0007191866283580931,
+            0.0007191866283580932
+          ],
+          "numerical_guard": 1.0000001044244144e-12,
+          "count": 27,
+          "n": 65536,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "prediction-fine-dt0.010-radial_outward-weighted",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 65522,
+          "spatial_domain": 14
+        },
+        "jump_positive": {
+          "horizon": 65515,
+          "spatial_domain": 21
+        },
+        "diffusion_plus": {
+          "horizon": 65522,
+          "spatial_domain": 14
+        },
+        "diffusion_minus": {
+          "horizon": 65522,
+          "spatial_domain": 14
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-tangential-weighted",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "role": "primary",
+      "grid": "fine",
+      "dt": 0.01,
+      "response": {
+        "estimate": -0.002609377121533466,
+        "standard_error": 0.005036587492232329,
+        "variance_of_estimate": 2.5367213566911144e-05,
+        "interval": [
+          -0.02047081816825866,
+          0.015252063925191725
+        ],
+        "half_width": 0.017861441046725192,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 65536,
+        "mean": -0.002609377121533466,
+        "sample_variance": 1.6624657083210888,
+        "minimum": -34.43504514396606,
+        "maximum": 52.12611339128909,
+        "zero_count": 6785
+      },
+      "precision_target_met": false,
+      "tails": {
+        "n": 65536,
+        "largest_one_percent_count": 656,
+        "largest_one_percent_absolute_score_share": 0.3877004794941376,
+        "largest_single_variance_share": 0.024941821611484914,
+        "largest_one_percent_variance_share": 0.9062171811374138,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "continuation": {
+        "n": 65536,
+        "sample_mean_bound": 0.03506112990994785,
+        "nonzero_rows": 21,
+        "maximum": 2000.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 1.1989147062957777,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0005994573531478888,
+          "root_bracket": [
+            0.0005994573521478886,
+            0.0005994573521478887
+          ],
+          "numerical_guard": 1.0000001044244144e-12,
+          "count": 21,
+          "n": 65536,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "prediction-fine-dt0.010-tangential-weighted",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "stops": {
+        "jump_zero": {
+          "excluded_channel": 1,
+          "horizon": 65530,
+          "spatial_domain": 5
+        },
+        "jump_positive": {
+          "excluded_channel": 1,
+          "horizon": 65515,
+          "spatial_domain": 20
+        },
+        "diffusion_plus": {
+          "excluded_channel": 1,
+          "horizon": 65530,
+          "spatial_domain": 5
+        },
+        "diffusion_minus": {
+          "excluded_channel": 1,
+          "horizon": 65530,
+          "spatial_domain": 5
+        }
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-oblique-weighted",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "role": "primary",
+      "grid": "fine",
+      "dt": 0.01,
+      "response": {
+        "estimate": -0.011350077440622617,
+        "standard_error": 0.003983816218647081,
+        "variance_of_estimate": 1.5870791663955527e-05,
+        "interval": [
+          -0.0254780358331044,
+          0.002777880951859166
+        ],
+        "half_width": 0.014127958392481783,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 65536,
+        "mean": -0.011350077440622617,
+        "sample_variance": 1.0401082024889894,
+        "minimum": -36.42077223354673,
+        "maximum": 77.2752603984666,
+        "zero_count": 6812
+      },
+      "precision_target_met": false,
+      "tails": {
+        "n": 65536,
+        "largest_one_percent_count": 656,
+        "largest_one_percent_absolute_score_share": 0.3691892669760452,
+        "largest_single_variance_share": 0.08763078397001285,
+        "largest_one_percent_variance_share": 0.91208006120779,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "continuation": {
+        "n": 65536,
+        "sample_mean_bound": 0.1216847358618707,
+        "nonzero_rows": 25,
+        "maximum": 2000.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 1.3592931214904078,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.000679646560745204,
+          "root_bracket": [
+            0.0006796465597452038,
+            0.0006796465597452039
+          ],
+          "numerical_guard": 1.0000001044244144e-12,
+          "count": 25,
+          "n": 65536,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "prediction-fine-dt0.010-oblique-weighted",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "stops": {
+        "jump_zero": {
+          "horizon": 65522,
+          "spatial_domain": 14
+        },
+        "jump_positive": {
+          "horizon": 65514,
+          "spatial_domain": 22
+        },
+        "diffusion_plus": {
+          "horizon": 65522,
+          "spatial_domain": 14
+        },
+        "diffusion_minus": {
+          "horizon": 65522,
+          "spatial_domain": 14
+        }
+      }
+    }
+  ],
+  "validations": [
+    {
+      "name": "validation-coarse-dt0.020-radial_outward-a1.000",
+      "setting": "coarse-dt0.020",
+      "launch": "radial_outward",
+      "role": "grid sensitivity",
+      "a": 1.0,
+      "observed_shift": {
+        "estimate": -0.005259207865130923,
+        "standard_error": 0.0013471734936735171,
+        "variance_of_estimate": 1.8148764220565096e-06,
+        "interval": [
+          -0.01003674026659732,
+          -0.00048167546366452516
+        ],
+        "half_width": 0.004777532401466398,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.005259207865130923,
+        "sample_variance": 0.014867467649486927,
+        "minimum": -0.5619791181332158,
+        "maximum": 0.7634615929345294,
+        "zero_count": 1
+      },
+      "prediction_error": {
+        "estimate": -0.005872634447109334,
+        "standard_error": 0.008678377237960633,
+        "variance_of_estimate": 7.531423148435322e-05,
+        "interval": [
+          -0.036649092446923104,
+          0.024903823552704436
+        ],
+        "half_width": 0.03077645799981377,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 1.0,
+        "observed_shift": -0.005259207865130923,
+        "predicted_shift": 0.000613426581978411,
+        "response_mean": 0.000613426581978411,
+        "n_validation": 8192,
+        "n_prediction": 8192,
+        "variance_components": {
+          "validation_shift": 1.8148764220565096e-06,
+          "response_prediction": 7.349935506229671e-05
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": -0.005872634447109334,
+        "interval": [
+          -0.036649092446923104,
+          0.024903823552704436
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": "inconclusive",
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 7.162355359834622e-05,
+        "nonzero_rows": 2,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0027279909291207955,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-coarse-dt0.020-radial_outward-a1.000",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 0.8406254505921126,
+      "continuation_adjusted_residual_interval": [
+        -0.8772745430390356,
+        0.8655292741448171
+      ],
+      "continuation_adjusted_classification": "inconclusive",
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.06441983782743047,
+        "largest_single_variance_share": 0.004852475345228848,
+        "largest_one_percent_variance_share": 0.17161479655809903,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "excluded_channel": 2,
+          "horizon": 8188,
+          "spatial_domain": 2
+        },
+        "mixture": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        }
+      }
+    },
+    {
+      "name": "validation-coarse-dt0.020-tangential-a1.000",
+      "setting": "coarse-dt0.020",
+      "launch": "tangential",
+      "role": "grid sensitivity",
+      "a": 1.0,
+      "observed_shift": {
+        "estimate": -0.00046473759131144415,
+        "standard_error": 0.0016635679486576701,
+        "variance_of_estimate": 2.7674583198010885e-06,
+        "interval": [
+          -0.006364311635839904,
+          0.005434836453217016
+        ],
+        "half_width": 0.00589957404452846,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.00046473759131144415,
+        "sample_variance": 0.022671018555810517,
+        "minimum": -0.7238163861139523,
+        "maximum": 0.8618442204723338,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": -0.004662464767947726,
+        "standard_error": 0.010725541402726557,
+        "variance_of_estimate": 0.00011503723838160154,
+        "interval": [
+          -0.042698858606923976,
+          0.03337392907102853
+        ],
+        "half_width": 0.03803639383897625,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 1.0,
+        "observed_shift": -0.00046473759131144415,
+        "predicted_shift": 0.004197727176636282,
+        "response_mean": 0.004197727176636282,
+        "n_validation": 8192,
+        "n_prediction": 8192,
+        "variance_components": {
+          "validation_shift": 2.7674583198010885e-06,
+          "response_prediction": 0.00011226978006180045
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": -0.004662464767947726,
+        "interval": [
+          -0.042698858606923976,
+          0.03337392907102853
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": "inconclusive",
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 3.398630156378239e-05,
+        "nonzero_rows": 2,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0027279909291207955,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-coarse-dt0.020-tangential-a1.000",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 1.8008285147033458,
+      "continuation_adjusted_residual_interval": [
+        -1.8435273733102697,
+        1.8342024437743742
+      ],
+      "continuation_adjusted_classification": "inconclusive",
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.06271347811257075,
+        "largest_single_variance_share": 0.004004219140075188,
+        "largest_one_percent_variance_share": 0.17209311947825318,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "validation-coarse-dt0.020-oblique-a1.000",
+      "setting": "coarse-dt0.020",
+      "launch": "oblique",
+      "role": "grid sensitivity",
+      "a": 1.0,
+      "observed_shift": {
+        "estimate": -0.004773311664831079,
+        "standard_error": 0.001412337837439197,
+        "variance_of_estimate": 1.9946981670624276e-06,
+        "interval": [
+          -0.009781938847498894,
+          0.000235315517836736
+        ],
+        "half_width": 0.005008627182667815,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.004773311664831079,
+        "sample_variance": 0.016340567384575407,
+        "minimum": -0.5357735073155805,
+        "maximum": 0.724950050004285,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": -0.0031486319799857772,
+        "standard_error": 0.008805887768551224,
+        "variance_of_estimate": 7.754365939232006e-05,
+        "interval": [
+          -0.0343772854054708,
+          0.028080021445499245
+        ],
+        "half_width": 0.031228653425485024,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 1.0,
+        "observed_shift": -0.004773311664831079,
+        "predicted_shift": -0.0016246796848453015,
+        "response_mean": -0.0016246796848453015,
+        "n_validation": 8192,
+        "n_prediction": 8192,
+        "variance_components": {
+          "validation_shift": 1.9946981670624276e-06,
+          "response_prediction": 7.554896122525762e-05
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": -0.0031486319799857772,
+        "interval": [
+          -0.0343772854054708,
+          0.028080021445499245
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": "inconclusive",
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 8.836089296348751e-05,
+        "nonzero_rows": 2,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0027279909291207955,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-coarse-dt0.020-oblique-a1.000",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 1.3667234554895187,
+      "continuation_adjusted_residual_interval": [
+        -1.4011007408949894,
+        1.394803476935018
+      ],
+      "continuation_adjusted_classification": "inconclusive",
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.06265545493602377,
+        "largest_single_variance_share": 0.003978436605362918,
+        "largest_one_percent_variance_share": 0.17067626855879167,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.020-radial_outward-a1.000",
+      "setting": "fine-dt0.020",
+      "launch": "radial_outward",
+      "role": "time sensitivity",
+      "a": 1.0,
+      "observed_shift": {
+        "estimate": -0.006668212020487601,
+        "standard_error": 0.001339018895879696,
+        "variance_of_estimate": 1.79297160352288e-06,
+        "interval": [
+          -0.011416825462841559,
+          -0.0019195985781336432
+        ],
+        "half_width": 0.004748613442353958,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.006668212020487601,
+        "sample_variance": 0.014688023376059433,
+        "minimum": -0.5414157794573485,
+        "maximum": 0.7260264062106578,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": 0.012382693069598924,
+        "standard_error": 0.0067634617793939,
+        "variance_of_estimate": 4.574441524132211e-05,
+        "interval": [
+          -0.011602827688401377,
+          0.03636821382759922
+        ],
+        "half_width": 0.0239855207580003,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 1.0,
+        "observed_shift": -0.006668212020487601,
+        "predicted_shift": -0.019050905090086525,
+        "response_mean": -0.019050905090086525,
+        "n_validation": 8192,
+        "n_prediction": 8192,
+        "variance_components": {
+          "validation_shift": 1.79297160352288e-06,
+          "response_prediction": 4.3951443637799226e-05
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": 0.012382693069598924,
+        "interval": [
+          -0.011602827688401377,
+          0.03636821382759922
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": "inconclusive",
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 5.076202663086186e-05,
+        "nonzero_rows": 1,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0022420822704857226,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0011210411352428613,
+          "root_bracket": [
+            0.0011210411342428609,
+            0.001121041134242861
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 1,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.020-radial_outward-a1.000",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 1.8003426060447105,
+      "continuation_adjusted_residual_interval": [
+        -1.811945433733112,
+        1.8367108198723097
+      ],
+      "continuation_adjusted_classification": "inconclusive",
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.06405814183323735,
+        "largest_single_variance_share": 0.004462165994526573,
+        "largest_one_percent_variance_share": 0.17072287636389635,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8192
+        },
+        "mixture": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.020-tangential-a1.000",
+      "setting": "fine-dt0.020",
+      "launch": "tangential",
+      "role": "time sensitivity",
+      "a": 1.0,
+      "observed_shift": {
+        "estimate": -0.007301844379992371,
+        "standard_error": 0.00162058742908399,
+        "variance_of_estimate": 2.626303615305056e-06,
+        "interval": [
+          -0.013048994979538115,
+          -0.001554693780446626
+        ],
+        "half_width": 0.005747150599545745,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.007301844379992371,
+        "sample_variance": 0.02151467921657902,
+        "minimum": -0.6095626809322121,
+        "maximum": 0.7349315647368245,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": 8.51616323010139e-06,
+        "standard_error": 0.009329864837406889,
+        "variance_of_estimate": 8.704637788428146e-05,
+        "interval": [
+          -0.0330783369936475,
+          0.033095369320107704
+        ],
+        "half_width": 0.0330868531568776,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 1.0,
+        "observed_shift": -0.007301844379992371,
+        "predicted_shift": -0.007310360543222472,
+        "response_mean": -0.007310360543222472,
+        "n_validation": 8192,
+        "n_prediction": 8192,
+        "variance_components": {
+          "validation_shift": 2.626303615305056e-06,
+          "response_prediction": 8.442007426897641e-05
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": 8.51616323010139e-06,
+        "interval": [
+          -0.0330783369936475,
+          0.033095369320107704
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": "inconclusive",
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 3.471543970541628e-05,
+        "nonzero_rows": 1,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0022420822704857226,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0011210411352428613,
+          "root_bracket": [
+            0.0011210411342428609,
+            0.001121041134242861
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 1,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.020-tangential-a1.000",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 0.8401395419334775,
+      "continuation_adjusted_residual_interval": [
+        -0.873217878927125,
+        0.8732349112535852
+      ],
+      "continuation_adjusted_classification": "inconclusive",
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.05916736569021984,
+        "largest_single_variance_share": 0.003126145564176057,
+        "largest_one_percent_variance_share": 0.15581263776621562,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.020-oblique-a1.000",
+      "setting": "fine-dt0.020",
+      "launch": "oblique",
+      "role": "time sensitivity",
+      "a": 1.0,
+      "observed_shift": {
+        "estimate": -0.006019643116510857,
+        "standard_error": 0.0014115462453119128,
+        "variance_of_estimate": 1.9924628026541584e-06,
+        "interval": [
+          -0.011025463046026345,
+          -0.0010138231869953693
+        ],
+        "half_width": 0.005005819929515488,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.006019643116510857,
+        "sample_variance": 0.016322255279342866,
+        "minimum": -0.5580745117785895,
+        "maximum": 0.7650842532995882,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": 0.0038043112167873592,
+        "standard_error": 0.006908597318241852,
+        "variance_of_estimate": 4.772871690561851e-05,
+        "interval": [
+          -0.020695909201432366,
+          0.028304531635007086
+        ],
+        "half_width": 0.024500220418219726,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 1.0,
+        "observed_shift": -0.006019643116510857,
+        "predicted_shift": -0.009823954333298216,
+        "response_mean": -0.009823954333298216,
+        "n_validation": 8192,
+        "n_prediction": 8192,
+        "variance_components": {
+          "validation_shift": 1.9924628026541584e-06,
+          "response_prediction": 4.573625410296435e-05
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": 0.0038043112167873592,
+        "interval": [
+          -0.020695909201432366,
+          0.028304531635007086
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": "inconclusive",
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 5.956628179160767e-05,
+        "nonzero_rows": 2,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0027279909291207955,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.020-oblique-a1.000",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 1.3667234554895187,
+      "continuation_adjusted_residual_interval": [
+        -1.387419364690951,
+        1.3950279871245257
+      ],
+      "continuation_adjusted_classification": "inconclusive",
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.06405914373937882,
+        "largest_single_variance_share": 0.004447425721046681,
+        "largest_one_percent_variance_share": 0.17499729920138393,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a0.050",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "role": "primary",
+      "a": 0.05,
+      "observed_shift": {
+        "estimate": -0.00047795014610092887,
+        "standard_error": 0.0003831943612803191,
+        "variance_of_estimate": 1.4683791851703172e-07,
+        "interval": [
+          -0.0018368868277334244,
+          0.0008809865355315666
+        ],
+        "half_width": 0.0013589366816324955,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.00047795014610092887,
+        "sample_variance": 0.0012028962284915238,
+        "minimum": -0.290741337412666,
+        "maximum": 0.48532659309529225,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": 0.00010627804977443567,
+        "standard_error": 0.0004221651277981168,
+        "variance_of_estimate": 1.782233951288003e-07,
+        "interval": [
+          -0.0013908621376597272,
+          0.0016034182372085986
+        ],
+        "half_width": 0.001497140187434163,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 0.05,
+        "observed_shift": -0.00047795014610092887,
+        "predicted_shift": -0.0005842281958753645,
+        "response_mean": -0.011684563917507291,
+        "n_validation": 8192,
+        "n_prediction": 65536,
+        "variance_components": {
+          "validation_shift": 1.4683791851703172e-07,
+          "response_prediction": 3.138547661176858e-08
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": 0.0021255609954887135,
+        "interval": [
+          -0.027817242753194544,
+          0.03206836474417197
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": null,
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.0,
+        "nonzero_rows": 0,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0016757949193259836,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0008378974596629918,
+          "root_bracket": [
+            0.0008378974596629917,
+            0.0008378974596629918
+          ],
+          "numerical_guard": 1.0842021724855044e-19,
+          "count": 0,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.010-radial_outward-a0.050",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 0.07359445785513531,
+      "continuation_adjusted_residual_interval": [
+        -0.07498531999279504,
+        0.07519787609234391
+      ],
+      "continuation_adjusted_classification": null,
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.12253216765282768,
+        "largest_single_variance_share": 0.023952897434858435,
+        "largest_one_percent_variance_share": 0.4277624724960931,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8192
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a0.100",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "role": "primary",
+      "a": 0.1,
+      "observed_shift": {
+        "estimate": -0.00018886545889993663,
+        "standard_error": 0.0005406248392312428,
+        "variance_of_estimate": 2.9227521679380723e-07,
+        "interval": [
+          -0.0021061038091155547,
+          0.0017283728913156816
+        ],
+        "half_width": 0.0019172383502156182,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.00018886545889993663,
+        "sample_variance": 0.002394318575974869,
+        "minimum": -0.2854344484053032,
+        "maximum": 0.5087350133737134,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": 0.0009795909328507925,
+        "standard_error": 0.0006463877499155454,
+        "variance_of_estimate": 4.1781712324088157e-07,
+        "interval": [
+          -0.0013127184346024214,
+          0.0032719003003040064
+        ],
+        "half_width": 0.002292309367453214,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 0.1,
+        "observed_shift": -0.00018886545889993663,
+        "predicted_shift": -0.001168456391750729,
+        "response_mean": -0.011684563917507291,
+        "n_validation": 8192,
+        "n_prediction": 65536,
+        "variance_components": {
+          "validation_shift": 2.9227521679380723e-07,
+          "response_prediction": 1.2554190644707432e-07
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": 0.009795909328507924,
+        "interval": [
+          -0.013127184346024213,
+          0.032719003003040065
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": null,
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 3.123377180478198e-05,
+        "nonzero_rows": 1,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0022420822704857226,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0011210411352428613,
+          "root_bracket": [
+            0.0011210411342428609,
+            0.001121041134242861
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 1,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.010-radial_outward-a0.100",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 0.14607940814210438,
+      "continuation_adjusted_residual_interval": [
+        -0.1473921265767068,
+        0.14935130844240838
+      ],
+      "continuation_adjusted_classification": null,
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.11099500267625168,
+        "largest_single_variance_share": 0.013206471431418258,
+        "largest_one_percent_variance_share": 0.3695145740922955,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8192
+        },
+        "mixture": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a1.000",
+      "setting": "fine-dt0.010",
+      "launch": "radial_outward",
+      "role": "primary",
+      "a": 1.0,
+      "observed_shift": {
+        "estimate": -0.008569437247848005,
+        "standard_error": 0.0013970992198159826,
+        "variance_of_estimate": 1.951886230010427e-06,
+        "interval": [
+          -0.013524023143487569,
+          -0.0036148513522084426
+        ],
+        "half_width": 0.004954585895639563,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.008569437247848005,
+        "sample_variance": 0.01598985199624542,
+        "minimum": -0.6566173857270022,
+        "maximum": 0.740548191029141,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": 0.0031151266696592857,
+        "standard_error": 0.003808684402089238,
+        "variance_of_estimate": 1.4506076874717856e-05,
+        "interval": [
+          -0.010391755126480605,
+          0.016622008465799178
+        ],
+        "half_width": 0.01350688179613989,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 1.0,
+        "observed_shift": -0.008569437247848005,
+        "predicted_shift": -0.011684563917507291,
+        "response_mean": -0.011684563917507291,
+        "n_validation": 8192,
+        "n_prediction": 65536,
+        "variance_components": {
+          "validation_shift": 1.951886230010427e-06,
+          "response_prediction": 1.2554190644707429e-05
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": 0.0031151266696592857,
+        "interval": [
+          -0.010391755126480605,
+          0.016622008465799178
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": "inconclusive",
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 7.608780044305992e-05,
+        "nonzero_rows": 2,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0027279909291207955,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.010-radial_outward-a1.000",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 1.4411012496453075,
+      "continuation_adjusted_residual_interval": [
+        -1.451493004771788,
+        1.4577232581111066
+      ],
+      "continuation_adjusted_classification": "inconclusive",
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.06421296371761658,
+        "largest_single_variance_share": 0.004284682682741431,
+        "largest_one_percent_variance_share": 0.1693963840376375,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a0.050",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "role": "primary",
+      "a": 0.05,
+      "observed_shift": {
+        "estimate": -9.837518257440586e-05,
+        "standard_error": 0.0004495347355698368,
+        "variance_of_estimate": 2.020814784838431e-07,
+        "interval": [
+          -0.0016925772470117008,
+          0.0014958268818628891
+        ],
+        "half_width": 0.001594202064437295,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -9.837518257440586e-05,
+        "sample_variance": 0.0016554514717396426,
+        "minimum": -0.3375365495041878,
+        "maximum": 0.5244768785276464,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": 3.209367350226743e-05,
+        "standard_error": 0.0005152664479675743,
+        "variance_of_estimate": 2.65499512401121e-07,
+        "interval": [
+          -0.0017952152530124126,
+          0.0018594026000169474
+        ],
+        "half_width": 0.00182730892651468,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 0.05,
+        "observed_shift": -9.837518257440586e-05,
+        "predicted_shift": -0.0001304688560766733,
+        "response_mean": -0.002609377121533466,
+        "n_validation": 8192,
+        "n_prediction": 65536,
+        "variance_components": {
+          "validation_shift": 2.020814784838431e-07,
+          "response_prediction": 6.341803391727787e-08
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": 0.0006418734700453486,
+        "interval": [
+          -0.03590430506024825,
+          0.03718805200033894
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": null,
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.0,
+        "nonzero_rows": 0,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0016757949193259836,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0008378974596629918,
+          "root_bracket": [
+            0.0008378974596629917,
+            0.0008378974596629918
+          ],
+          "numerical_guard": 1.0842021724855044e-19,
+          "count": 0,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.010-tangential-a0.050",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 0.061621530234114874,
+      "continuation_adjusted_residual_interval": [
+        -0.0634167454871273,
+        0.06348093283413182
+      ],
+      "continuation_adjusted_classification": null,
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.11106871888528795,
+        "largest_single_variance_share": 0.02029374591233219,
+        "largest_one_percent_variance_share": 0.39573466275106667,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8192
+        },
+        "mixture": {
+          "horizon": 8192
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a0.100",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "role": "primary",
+      "a": 0.1,
+      "observed_shift": {
+        "estimate": -0.0013375096992097042,
+        "standard_error": 0.0006357246730300198,
+        "variance_of_estimate": 4.041458598991256e-07,
+        "interval": [
+          -0.003592004193107908,
+          0.0009169847946884995
+        ],
+        "half_width": 0.0022544944938982037,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.0013375096992097042,
+        "sample_variance": 0.003310762884293637,
+        "minimum": -0.40021539422728875,
+        "maximum": 0.6293603397794982,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": -0.0010765719870563576,
+        "standard_error": 0.0008110597977758712,
+        "variance_of_estimate": 6.578179955682372e-07,
+        "interval": [
+          -0.003952864076826399,
+          0.001799720102713684
+        ],
+        "half_width": 0.0028762920897700416,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 0.1,
+        "observed_shift": -0.0013375096992097042,
+        "predicted_shift": -0.0002609377121533466,
+        "response_mean": -0.002609377121533466,
+        "n_validation": 8192,
+        "n_prediction": 65536,
+        "variance_components": {
+          "validation_shift": 4.041458598991256e-07,
+          "response_prediction": 2.536721356691115e-07
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": -0.010765719870563574,
+        "interval": [
+          -0.039528640768263984,
+          0.01799720102713684
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": null,
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 5.95626399884267e-05,
+        "nonzero_rows": 2,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0027279909291207955,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.010-tangential-a0.100",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 0.12261946155869857,
+      "continuation_adjusted_residual_interval": [
+        -0.12657232563552498,
+        0.12441918166141226
+      ],
+      "continuation_adjusted_classification": null,
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.0976204832671347,
+        "largest_single_variance_share": 0.01466822950695986,
+        "largest_one_percent_variance_share": 0.3273134818302445,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "mixture": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a1.000",
+      "setting": "fine-dt0.010",
+      "launch": "tangential",
+      "role": "primary",
+      "a": 1.0,
+      "observed_shift": {
+        "estimate": -0.0030101693215655026,
+        "standard_error": 0.0016632902930842565,
+        "variance_of_estimate": 2.766534599068312e-06,
+        "interval": [
+          -0.008908758705614328,
+          0.0028884200624833233
+        ],
+        "half_width": 0.005898589384048826,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.0030101693215655026,
+        "sample_variance": 0.02266345143556761,
+        "minimum": -0.6903211178030062,
+        "maximum": 0.8486872524972595,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": -0.0004007922000320366,
+        "standard_error": 0.00530412557977085,
+        "variance_of_estimate": 2.8133748165979456e-05,
+        "interval": [
+          -0.019211013702907887,
+          0.018409429302843814
+        ],
+        "half_width": 0.01881022150287585,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 1.0,
+        "observed_shift": -0.0030101693215655026,
+        "predicted_shift": -0.002609377121533466,
+        "response_mean": -0.002609377121533466,
+        "n_validation": 8192,
+        "n_prediction": 65536,
+        "variance_components": {
+          "validation_shift": 2.766534599068312e-06,
+          "response_prediction": 2.5367213566911144e-05
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": -0.0004007922000320366,
+        "interval": [
+          -0.019211013702907887,
+          0.018409429302843814
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": "inconclusive",
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.0,
+        "nonzero_rows": 0,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0016757949193259836,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0008378974596629918,
+          "root_bracket": [
+            0.0008378974596629917,
+            0.0008378974596629918
+          ],
+          "numerical_guard": 1.0842021724855044e-19,
+          "count": 0,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.010-tangential-a1.000",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 1.2005905012151037,
+      "continuation_adjusted_residual_interval": [
+        -1.2198015149180115,
+        1.2189999305179475
+      ],
+      "continuation_adjusted_classification": "inconclusive",
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.061792046449076724,
+        "largest_single_variance_share": 0.00390757830411428,
+        "largest_one_percent_variance_share": 0.16659156528649646,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        },
+        "mixture": {
+          "excluded_channel": 1,
+          "horizon": 8191
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a0.050",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "role": "primary",
+      "a": 0.05,
+      "observed_shift": {
+        "estimate": -0.0007520372520644716,
+        "standard_error": 0.00039794373874889907,
+        "variance_of_estimate": 1.5835921920945203e-07,
+        "interval": [
+          -0.0021632802098288193,
+          0.0006592057056998763
+        ],
+        "half_width": 0.001411242957764348,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.0007520372520644716,
+        "sample_variance": 0.001297278723763831,
+        "minimum": -0.3382719106678155,
+        "maximum": 0.542878615604069,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": -0.0001845333800333408,
+        "standard_error": 0.0004450125822595816,
+        "variance_of_estimate": 1.9803619836934085e-07,
+        "interval": [
+          -0.0017626983608540112,
+          0.0013936316007873294
+        ],
+        "half_width": 0.0015781649808206703,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 0.05,
+        "observed_shift": -0.0007520372520644716,
+        "predicted_shift": -0.0005675038720311308,
+        "response_mean": -0.011350077440622617,
+        "n_validation": 8192,
+        "n_prediction": 65536,
+        "variance_components": {
+          "validation_shift": 1.5835921920945203e-07,
+          "response_prediction": 3.9676979159888826e-08
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": -0.003690667600666816,
+        "interval": [
+          -0.03525396721708022,
+          0.027872632015746586
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": null,
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 9.7777828807426e-05,
+        "nonzero_rows": 2,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0027279909291207955,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.010-oblique-a0.050",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 0.07069264700364118,
+      "continuation_adjusted_residual_interval": [
+        -0.07245534536449519,
+        0.07208627860442851
+      ],
+      "continuation_adjusted_classification": null,
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.11875400055685492,
+        "largest_single_variance_share": 0.027812347813708383,
+        "largest_one_percent_variance_share": 0.4170973930245522,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a0.100",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "role": "primary",
+      "a": 0.1,
+      "observed_shift": {
+        "estimate": -0.0005862732449206508,
+        "standard_error": 0.0005547987754207954,
+        "variance_of_estimate": 3.078016812084142e-07,
+        "interval": [
+          -0.002553777162058354,
+          0.001381230672217052
+        ],
+        "half_width": 0.001967503917137703,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.0005862732449206508,
+        "sample_variance": 0.002521511372459329,
+        "minimum": -0.3372142505092898,
+        "maximum": 0.6889248505040243,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": 0.0005487344991416108,
+        "standard_error": 0.0006830150787852121,
+        "variance_of_estimate": 4.6650959784796953e-07,
+        "interval": [
+          -0.0018734677523950293,
+          0.002970936750678251
+        ],
+        "half_width": 0.00242220225153664,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 0.1,
+        "observed_shift": -0.0005862732449206508,
+        "predicted_shift": -0.0011350077440622616,
+        "response_mean": -0.011350077440622617,
+        "n_validation": 8192,
+        "n_prediction": 65536,
+        "variance_components": {
+          "validation_shift": 3.078016812084142e-07,
+          "response_prediction": 1.587079166395553e-07
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": 0.005487344991416108,
+        "interval": [
+          -0.01873467752395029,
+          0.02970936750678251
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": null,
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.0001230954460337118,
+        "nonzero_rows": 2,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.0027279909291207955,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.0013639954645603978,
+          "root_bracket": [
+            0.0013639954635603973,
+            0.0013639954635603975
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 2,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.010-oblique-a0.100",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 0.13865730307816157,
+      "continuation_adjusted_residual_interval": [
+        -0.1405307708305566,
+        0.14162823982883982
+      ],
+      "continuation_adjusted_classification": null,
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.10299995166868385,
+        "largest_single_variance_share": 0.023018906916842292,
+        "largest_one_percent_variance_share": 0.3496258744578694,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        },
+        "mixture": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        }
+      }
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a1.000",
+      "setting": "fine-dt0.010",
+      "launch": "oblique",
+      "role": "primary",
+      "a": 1.0,
+      "observed_shift": {
+        "estimate": -0.007141347264598346,
+        "standard_error": 0.0014133424078220486,
+        "variance_of_estimate": 1.997536761748226e-06,
+        "interval": [
+          -0.012153536993275392,
+          -0.002129157535921301
+        ],
+        "half_width": 0.005012189728677045,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n": 8192,
+        "mean": -0.007141347264598346,
+        "sample_variance": 0.016363821152241467,
+        "minimum": -0.5682512756648888,
+        "maximum": 0.7984533433727524,
+        "zero_count": 0
+      },
+      "prediction_error": {
+        "estimate": 0.004208730176024271,
+        "standard_error": 0.004227094560771471,
+        "variance_of_estimate": 1.7868328425703753e-05,
+        "interval": [
+          -0.010781975418308243,
+          0.019199435770356786
+        ],
+        "half_width": 0.014990705594332514,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "a": 1.0,
+        "observed_shift": -0.007141347264598346,
+        "predicted_shift": -0.011350077440622617,
+        "response_mean": -0.011350077440622617,
+        "n_validation": 8192,
+        "n_prediction": 65536,
+        "variance_components": {
+          "validation_shift": 1.997536761748226e-06,
+          "response_prediction": 1.5870791663955527e-05
+        },
+        "assumptions": "Validation and prediction batches independent; iid rows within each batch; paired validation covariance already included"
+      },
+      "scaled_remainder": {
+        "estimate": 0.004208730176024271,
+        "interval": [
+          -0.010781975418308243,
+          0.019199435770356786
+        ],
+        "scope": "Same residual event rescaled; finite-a comparison is not the exact derivative"
+      },
+      "finite_model_classification": "inconclusive",
+      "continuation": {
+        "n": 8192,
+        "sample_mean_bound": 0.00011471613105721975,
+        "nonzero_rows": 3,
+        "maximum": 2.0,
+        "delta": 0.0010416666666666667,
+        "confidence": 0.9989583333333333,
+        "upper_bound": 0.003174444845187392,
+        "occurrence_probability_limit": {
+          "upper_probability": 0.001587222422593696,
+          "root_bracket": [
+            0.0015872224215936956,
+            0.0015872224215936958
+          ],
+          "numerical_guard": 1.0000002128446317e-12,
+          "count": 3,
+          "n": 8192,
+          "delta": 0.0010416666666666667
+        },
+        "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+        "reference": "https://doi.org/10.1093/biomet/26.4.404",
+        "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+        "name": "validation-fine-dt0.010-oblique-a1.000",
+        "budget": 0.0002,
+        "population_budget_met": false
+      },
+      "residual_continuation_allowance": 1.3624675663355952,
+      "continuation_adjusted_residual_interval": [
+        -1.3732495417539035,
+        1.381667002105952
+      ],
+      "continuation_adjusted_classification": "inconclusive",
+      "continuation_scope": "Enlarged normal interval using simultaneous population allowances for bounded-reward continuations of the same stopped prefixes; no model specified beyond the numerical domain",
+      "tails": {
+        "n": 8192,
+        "largest_one_percent_count": 82,
+        "largest_one_percent_absolute_score_share": 0.06583378565565387,
+        "largest_single_variance_share": 0.004841852335439181,
+        "largest_one_percent_variance_share": 0.18218488553273557,
+        "scope": "Observed-sample concentration only; no trimming and no inference about unseen tails"
+      },
+      "stops": {
+        "baseline": {
+          "horizon": 8190,
+          "spatial_domain": 2
+        },
+        "mixture": {
+          "horizon": 8191,
+          "spatial_domain": 1
+        }
+      }
+    }
+  ],
+  "refinements": [
+    {
+      "kind": "grid",
+      "launch": "radial_outward",
+      "observable": "response",
+      "first": "fine-dt0.020",
+      "second": "coarse-dt0.020",
+      "difference": {
+        "estimate": -0.019664331672064935,
+        "standard_error": 0.010837471969979712,
+        "variance_of_estimate": 0.00011745079870009594,
+        "interval": [
+          -0.058097669122445156,
+          0.018769005778315282
+        ],
+        "half_width": 0.03843333745038022,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 8192,
+        "n_second": 8192,
+        "first_mean": -0.019050905090086525,
+        "second_mean": 0.000613426581978411,
+        "variance_components": {
+          "first": 4.3951443637799226e-05,
+          "second": 7.349935506229671e-05
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "grid",
+      "launch": "radial_outward",
+      "observable": "endpoint_shift",
+      "first": "fine-dt0.020",
+      "second": "coarse-dt0.020",
+      "difference": {
+        "estimate": -0.0014090041553566782,
+        "standard_error": 0.0018994336065204778,
+        "variance_of_estimate": 3.6078480255793896e-06,
+        "interval": [
+          -0.008145037518691957,
+          0.0053270292079786
+        ],
+        "half_width": 0.006736033363335278,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 8192,
+        "n_second": 8192,
+        "first_mean": -0.006668212020487601,
+        "second_mean": -0.005259207865130923,
+        "variance_components": {
+          "first": 1.79297160352288e-06,
+          "second": 1.8148764220565096e-06
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "time",
+      "launch": "radial_outward",
+      "observable": "response",
+      "first": "fine-dt0.010",
+      "second": "fine-dt0.020",
+      "difference": {
+        "estimate": 0.007366341172579234,
+        "standard_error": 0.007517022966740667,
+        "variance_of_estimate": 5.650563428250665e-05,
+        "interval": [
+          -0.019291562174555615,
+          0.034024244519714086
+        ],
+        "half_width": 0.02665790334713485,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 65536,
+        "n_second": 8192,
+        "first_mean": -0.011684563917507291,
+        "second_mean": -0.019050905090086525,
+        "variance_components": {
+          "first": 1.2554190644707429e-05,
+          "second": 4.3951443637799226e-05
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "time",
+      "launch": "radial_outward",
+      "observable": "endpoint_shift",
+      "first": "fine-dt0.010",
+      "second": "fine-dt0.020",
+      "difference": {
+        "estimate": -0.0019012252273604043,
+        "standard_error": 0.0019351635159679161,
+        "variance_of_estimate": 3.7448578335333074e-06,
+        "interval": [
+          -0.008763968922281203,
+          0.004961518467560396
+        ],
+        "half_width": 0.0068627436949208,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 8192,
+        "n_second": 8192,
+        "first_mean": -0.008569437247848005,
+        "second_mean": -0.006668212020487601,
+        "variance_components": {
+          "first": 1.951886230010427e-06,
+          "second": 1.79297160352288e-06
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "grid",
+      "launch": "tangential",
+      "observable": "response",
+      "first": "fine-dt0.020",
+      "second": "coarse-dt0.020",
+      "difference": {
+        "estimate": -0.011508087719858754,
+        "standard_error": 0.014024616013666003,
+        "variance_of_estimate": 0.00019668985433077686,
+        "interval": [
+          -0.06124411484484893,
+          0.03822793940513142
+        ],
+        "half_width": 0.04973602712499017,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 8192,
+        "n_second": 8192,
+        "first_mean": -0.007310360543222472,
+        "second_mean": 0.004197727176636282,
+        "variance_components": {
+          "first": 8.442007426897641e-05,
+          "second": 0.00011226978006180045
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "grid",
+      "launch": "tangential",
+      "observable": "endpoint_shift",
+      "first": "fine-dt0.020",
+      "second": "coarse-dt0.020",
+      "difference": {
+        "estimate": -0.006837106788680927,
+        "standard_error": 0.0023224474020106774,
+        "variance_of_estimate": 5.393761935106145e-06,
+        "interval": [
+          -0.015073290001840583,
+          0.001399076424478729
+        ],
+        "half_width": 0.008236183213159656,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 8192,
+        "n_second": 8192,
+        "first_mean": -0.007301844379992371,
+        "second_mean": -0.00046473759131144415,
+        "variance_components": {
+          "first": 2.626303615305056e-06,
+          "second": 2.7674583198010885e-06
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "time",
+      "launch": "tangential",
+      "observable": "response",
+      "first": "fine-dt0.010",
+      "second": "fine-dt0.020",
+      "difference": {
+        "estimate": 0.004700983421689006,
+        "standard_error": 0.01047794292005294,
+        "variance_of_estimate": 0.00010978728783588756,
+        "interval": [
+          -0.03245734253732806,
+          0.041859309380706075
+        ],
+        "half_width": 0.037158325959017066,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 65536,
+        "n_second": 8192,
+        "first_mean": -0.002609377121533466,
+        "second_mean": -0.007310360543222472,
+        "variance_components": {
+          "first": 2.5367213566911144e-05,
+          "second": 8.442007426897641e-05
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "time",
+      "launch": "tangential",
+      "observable": "endpoint_shift",
+      "first": "fine-dt0.010",
+      "second": "fine-dt0.020",
+      "difference": {
+        "estimate": 0.004291675058426868,
+        "standard_error": 0.002322248525540143,
+        "variance_of_estimate": 5.392838214373368e-06,
+        "interval": [
+          -0.003943802871570426,
+          0.012527152988424162
+        ],
+        "half_width": 0.008235477929997294,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 8192,
+        "n_second": 8192,
+        "first_mean": -0.0030101693215655026,
+        "second_mean": -0.007301844379992371,
+        "variance_components": {
+          "first": 2.766534599068312e-06,
+          "second": 2.626303615305056e-06
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "grid",
+      "launch": "oblique",
+      "observable": "response",
+      "first": "fine-dt0.020",
+      "second": "coarse-dt0.020",
+      "difference": {
+        "estimate": -0.008199274648452916,
+        "standard_error": 0.011012956702367533,
+        "variance_of_estimate": 0.00012128521532822197,
+        "interval": [
+          -0.04725494025395393,
+          0.030856390957048098
+        ],
+        "half_width": 0.039055665605501014,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 8192,
+        "n_second": 8192,
+        "first_mean": -0.009823954333298216,
+        "second_mean": -0.0016246796848453015,
+        "variance_components": {
+          "first": 4.573625410296435e-05,
+          "second": 7.554896122525762e-05
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "grid",
+      "launch": "oblique",
+      "observable": "endpoint_shift",
+      "first": "fine-dt0.020",
+      "second": "coarse-dt0.020",
+      "difference": {
+        "estimate": -0.0012463314516797785,
+        "standard_error": 0.001996787662651336,
+        "variance_of_estimate": 3.987160969716586e-06,
+        "interval": [
+          -0.008327615192760443,
+          0.005834952289400886
+        ],
+        "half_width": 0.0070812837410806646,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 8192,
+        "n_second": 8192,
+        "first_mean": -0.006019643116510857,
+        "second_mean": -0.004773311664831079,
+        "variance_components": {
+          "first": 1.9924628026541584e-06,
+          "second": 1.9946981670624276e-06
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "time",
+      "launch": "oblique",
+      "observable": "response",
+      "first": "fine-dt0.010",
+      "second": "fine-dt0.020",
+      "difference": {
+        "estimate": -0.0015261231073244001,
+        "standard_error": 0.007849015592220458,
+        "variance_of_estimate": 6.160704576691987e-05,
+        "interval": [
+          -0.02936138448052355,
+          0.02630913826587475
+        ],
+        "half_width": 0.02783526137319915,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 65536,
+        "n_second": 8192,
+        "first_mean": -0.011350077440622617,
+        "second_mean": -0.009823954333298216,
+        "variance_components": {
+          "first": 1.5870791663955527e-05,
+          "second": 4.573625410296435e-05
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    },
+    {
+      "kind": "time",
+      "launch": "oblique",
+      "observable": "endpoint_shift",
+      "first": "fine-dt0.010",
+      "second": "fine-dt0.020",
+      "difference": {
+        "estimate": -0.0011217041480874887,
+        "standard_error": 0.001997498326508031,
+        "variance_of_estimate": 3.989999564402384e-06,
+        "interval": [
+          -0.00820550814332833,
+          0.005962099847153353
+        ],
+        "half_width": 0.007083803995240842,
+        "normal_critical": 3.546337887363612,
+        "family_confidence": 0.975,
+        "family_size": 64,
+        "component_confidence": 0.999609375,
+        "method": "Normal approximation with Bonferroni component level",
+        "scope": "Sampling uncertainty for fixed numerical laws; approximate coverage, no protection against unseen rare contributions",
+        "n_first": 8192,
+        "n_second": 8192,
+        "first_mean": -0.007141347264598346,
+        "second_mean": -0.006019643116510857,
+        "variance_components": {
+          "first": 1.997536761748226e-06,
+          "second": 1.9924628026541584e-06
+        },
+        "assumptions": "Independent batches and independent identically distributed rows within each batch"
+      },
+      "classification": "inconclusive",
+      "scope": "Independent finite-resolution sensitivity, not a truncation-error proof"
+    }
+  ],
+  "continuation_bounds": [
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.0,
+      "nonzero_rows": 0,
+      "maximum": 1000.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.8378974596629918,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0008378974596629918,
+        "root_bracket": [
+          0.0008378974596629917,
+          0.0008378974596629918
+        ],
+        "numerical_guard": 1.0842021724855044e-19,
+        "count": 0,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "prediction-coarse-dt0.020-radial_outward-weighted",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.023444439106568273,
+      "nonzero_rows": 4,
+      "maximum": 1000.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 1.798100523774225,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.001798100523774225,
+        "root_bracket": [
+          0.0017981005227742245,
+          0.0017981005227742247
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 4,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "prediction-coarse-dt0.020-tangential-weighted",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.0004516905259155202,
+      "nonzero_rows": 2,
+      "maximum": 1000.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 1.3639954645603978,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "prediction-coarse-dt0.020-oblique-weighted",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.00023074767463715718,
+      "nonzero_rows": 4,
+      "maximum": 1000.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 1.798100523774225,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.001798100523774225,
+        "root_bracket": [
+          0.0017981005227742245,
+          0.0017981005227742247
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 4,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "prediction-fine-dt0.020-radial_outward-weighted",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.0,
+      "nonzero_rows": 0,
+      "maximum": 1000.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.8378974596629918,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0008378974596629918,
+        "root_bracket": [
+          0.0008378974596629917,
+          0.0008378974596629918
+        ],
+        "numerical_guard": 1.0842021724855044e-19,
+        "count": 0,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "prediction-fine-dt0.020-tangential-weighted",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.00035976326568082107,
+      "nonzero_rows": 2,
+      "maximum": 1000.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 1.3639954645603978,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "prediction-fine-dt0.020-oblique-weighted",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 65536,
+      "sample_mean_bound": 0.12562085037194418,
+      "nonzero_rows": 27,
+      "maximum": 2000.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 1.4383732587161866,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0007191866293580933,
+        "root_bracket": [
+          0.0007191866283580931,
+          0.0007191866283580932
+        ],
+        "numerical_guard": 1.0000001044244144e-12,
+        "count": 27,
+        "n": 65536,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "prediction-fine-dt0.010-radial_outward-weighted",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 65536,
+      "sample_mean_bound": 0.03506112990994785,
+      "nonzero_rows": 21,
+      "maximum": 2000.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 1.1989147062957777,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0005994573531478888,
+        "root_bracket": [
+          0.0005994573521478886,
+          0.0005994573521478887
+        ],
+        "numerical_guard": 1.0000001044244144e-12,
+        "count": 21,
+        "n": 65536,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "prediction-fine-dt0.010-tangential-weighted",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 65536,
+      "sample_mean_bound": 0.1216847358618707,
+      "nonzero_rows": 25,
+      "maximum": 2000.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 1.3592931214904078,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.000679646560745204,
+        "root_bracket": [
+          0.0006796465597452038,
+          0.0006796465597452039
+        ],
+        "numerical_guard": 1.0000001044244144e-12,
+        "count": 25,
+        "n": 65536,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "prediction-fine-dt0.010-oblique-weighted",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 7.162355359834622e-05,
+      "nonzero_rows": 2,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0027279909291207955,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-coarse-dt0.020-radial_outward-a1.000",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 3.398630156378239e-05,
+      "nonzero_rows": 2,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0027279909291207955,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-coarse-dt0.020-tangential-a1.000",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 8.836089296348751e-05,
+      "nonzero_rows": 2,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0027279909291207955,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-coarse-dt0.020-oblique-a1.000",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 5.076202663086186e-05,
+      "nonzero_rows": 1,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0022420822704857226,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0011210411352428613,
+        "root_bracket": [
+          0.0011210411342428609,
+          0.001121041134242861
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 1,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.020-radial_outward-a1.000",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 3.471543970541628e-05,
+      "nonzero_rows": 1,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0022420822704857226,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0011210411352428613,
+        "root_bracket": [
+          0.0011210411342428609,
+          0.001121041134242861
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 1,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.020-tangential-a1.000",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 5.956628179160767e-05,
+      "nonzero_rows": 2,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0027279909291207955,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.020-oblique-a1.000",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.0,
+      "nonzero_rows": 0,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0016757949193259836,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0008378974596629918,
+        "root_bracket": [
+          0.0008378974596629917,
+          0.0008378974596629918
+        ],
+        "numerical_guard": 1.0842021724855044e-19,
+        "count": 0,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.010-radial_outward-a0.050",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 3.123377180478198e-05,
+      "nonzero_rows": 1,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0022420822704857226,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0011210411352428613,
+        "root_bracket": [
+          0.0011210411342428609,
+          0.001121041134242861
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 1,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.010-radial_outward-a0.100",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 7.608780044305992e-05,
+      "nonzero_rows": 2,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0027279909291207955,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.010-radial_outward-a1.000",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.0,
+      "nonzero_rows": 0,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0016757949193259836,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0008378974596629918,
+        "root_bracket": [
+          0.0008378974596629917,
+          0.0008378974596629918
+        ],
+        "numerical_guard": 1.0842021724855044e-19,
+        "count": 0,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.010-tangential-a0.050",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 5.95626399884267e-05,
+      "nonzero_rows": 2,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0027279909291207955,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.010-tangential-a0.100",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.0,
+      "nonzero_rows": 0,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0016757949193259836,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0008378974596629918,
+        "root_bracket": [
+          0.0008378974596629917,
+          0.0008378974596629918
+        ],
+        "numerical_guard": 1.0842021724855044e-19,
+        "count": 0,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.010-tangential-a1.000",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 9.7777828807426e-05,
+      "nonzero_rows": 2,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0027279909291207955,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.010-oblique-a0.050",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.0001230954460337118,
+      "nonzero_rows": 2,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.0027279909291207955,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.0013639954645603978,
+        "root_bracket": [
+          0.0013639954635603973,
+          0.0013639954635603975
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 2,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.010-oblique-a0.100",
+      "budget": 0.0002,
+      "population_budget_met": false
+    },
+    {
+      "n": 8192,
+      "sample_mean_bound": 0.00011471613105721975,
+      "nonzero_rows": 3,
+      "maximum": 2.0,
+      "delta": 0.0010416666666666667,
+      "confidence": 0.9989583333333333,
+      "upper_bound": 0.003174444845187392,
+      "occurrence_probability_limit": {
+        "upper_probability": 0.001587222422593696,
+        "root_bracket": [
+          0.0015872224215936956,
+          0.0015872224215936958
+        ],
+        "numerical_guard": 1.0000002128446317e-12,
+        "count": 3,
+        "n": 8192,
+        "delta": 0.0010416666666666667
+      },
+      "method": "Clopper-Pearson one-sided occurrence bound times deterministic maximum",
+      "reference": "https://doi.org/10.1093/biomet/26.4.404",
+      "scope": "Fixed-n iid bounded-score population-mean upper bound; branch dependence retained within rows; no continuum or physical-calibration claim",
+      "name": "validation-fine-dt0.010-oblique-a1.000",
+      "budget": 0.0002,
+      "population_budget_met": false
+    }
+  ],
+  "continuum_accuracy_classification": "unresolved",
+  "interpretation": "Independent test of the numerically stopped finite-step response only. Sampling tails, resolution sensitivity, numerical continuation and physical calibration remain distinct.",
+  "input_sha256": {
+    "analysis/retest/protocol.json": "6fa009714541cd033c490a9b39b2a2af5b30ae5cb409037caa02d18fdeec6a1e",
+    "analysis/retest/analyze.py": "1f02997d1bba46b85d3b264bbaaa002a37f9adba1bb705a57535d776d9ae8c68",
+    "analysis/retest/statistics.py": "f4ade28e1e4540b79e961a718b09e450fb1897f32116bea9c580d2bf578fa652",
+    "results/retest/execution-design.json": "47948307ab79834830919af6feca50e2c73ca4b4d1e0d0e55f6889c32fba84a6",
+    "results/retest/prediction-register.json": "ea4ba09b81723b165937bb8cdfbb592c0c807f9025e3d602b7ecf75b6161ec6d",
+    "results/retest/prediction-coarse-dt0.020-radial_outward-weighted.npz": "92464edf5edc0226417022bfbcb2a0040874f492d9ab806bba267fdcd652ee72",
+    "results/retest/prediction-coarse-dt0.020-radial_outward-weighted.json": "f084f6eb888c3ce35a800a58782cf3dff195bebcd7d58565a4e90389f2b578c4",
+    "results/retest/prediction-coarse-dt0.020-tangential-weighted.npz": "b7df1cbe7cddf87b3ff2973573c2341803af65152630461bb8582670d25f23cb",
+    "results/retest/prediction-coarse-dt0.020-tangential-weighted.json": "5e3aa034ac4dfd96a521fac68a10aabffc1a51eb850ae0b3e599488d9ff8de55",
+    "results/retest/prediction-coarse-dt0.020-oblique-weighted.npz": "6936805cb30e93ae74ffc94a7483a30cc48a52c6bf331246785e2ff0561b4f31",
+    "results/retest/prediction-coarse-dt0.020-oblique-weighted.json": "37b7982bd74821a06a3105547d38c084f25581ea1a4c859100885d30c1c52768",
+    "results/retest/prediction-fine-dt0.020-radial_outward-weighted.npz": "dc82d06af0db56bf519d512842e7ff456795638b9ea6c58f968b5b8ce0ec8cd0",
+    "results/retest/prediction-fine-dt0.020-radial_outward-weighted.json": "4d575f0eb4813e6c5bcc12bb4a6f262d8e5c58991512524d6dfbfd1ff5f1e353",
+    "results/retest/prediction-fine-dt0.020-tangential-weighted.npz": "ec527ff885b9d4577de5fdb1769252205007f38d2b451b9d9c7bee37de784e14",
+    "results/retest/prediction-fine-dt0.020-tangential-weighted.json": "4d04067adbd1deee01c5d82e23d244655481afeb12f74135cd979cee67606660",
+    "results/retest/prediction-fine-dt0.020-oblique-weighted.npz": "867dc38aafd8b0f28f9a1a32558cfd5d5d1121276b2d4ef7cbe3d12c381af7d3",
+    "results/retest/prediction-fine-dt0.020-oblique-weighted.json": "9f934ef72d17c3e22eb506a6fece3efad9f1a5449a93a4e759160afb2576ecb0",
+    "results/retest/prediction-fine-dt0.010-radial_outward-weighted.npz": "53f3f6d99cb433fc6ddf2ce1d15e218b692739fc610856cff79545f7f13325f1",
+    "results/retest/prediction-fine-dt0.010-radial_outward-weighted.json": "0d7cff0187e59ec05bf93b41459f6f74a585a2c038c82e80e5343aabf8affce9",
+    "results/retest/prediction-fine-dt0.010-tangential-weighted.npz": "678940aff03b08db7fbdd04da2fb28825845a50839ca9d22b24a32bdaaa1fdfa",
+    "results/retest/prediction-fine-dt0.010-tangential-weighted.json": "cd3cdb6c063529948725cbe4baf0e4a675b8128d15166be263396415de1d3535",
+    "results/retest/prediction-fine-dt0.010-oblique-weighted.npz": "ecd7b04bc24e8baa77f2464e27b97bb3267c4e99021949ca71ccbeea1ebde473",
+    "results/retest/prediction-fine-dt0.010-oblique-weighted.json": "cb08e5948c0a9bb643878a2a9b9d84337afbd977cb34ab7f012dfc28aad0f4de",
+    "results/retest/validation-coarse-dt0.020-radial_outward-a1.000.npz": "b930ec75c27f6ee81fe74075fb65b89f7694eab3adaa7c978c7625a7d93d027a",
+    "results/retest/validation-coarse-dt0.020-radial_outward-a1.000.json": "d045b2f442976af90833e515cbcf0ed5bc4cac2048be33eff635aece6c27168a",
+    "results/retest/validation-coarse-dt0.020-tangential-a1.000.npz": "f7e4c7d30c82a6c4cd61e4a6df570239fa4c3c2d1cbe69066daf0b8cd207e3db",
+    "results/retest/validation-coarse-dt0.020-tangential-a1.000.json": "ae9a34cfccc300f4fc03ae2f4154febfc9bc8184be923e7846a2849e0ead6cc9",
+    "results/retest/validation-coarse-dt0.020-oblique-a1.000.npz": "a6fd92f91ba15734f45577ddd6550def960bb3ab8b3345c5781506638a04c2c1",
+    "results/retest/validation-coarse-dt0.020-oblique-a1.000.json": "8e366848f322bc9d6fc09cff1ea79145b3e2e547a444aff9f9c09650337900d8",
+    "results/retest/validation-fine-dt0.020-radial_outward-a1.000.npz": "8ab5cf6a2c1c7389221ecd91426edf008315f47daa69cf8182130bf3e2671255",
+    "results/retest/validation-fine-dt0.020-radial_outward-a1.000.json": "7851f65c46b40de7a18ef5ea0e2f147f9f77592b0c5b4b9e24cd3358f4545b3f",
+    "results/retest/validation-fine-dt0.020-tangential-a1.000.npz": "7fd6728c4419fd1879dafe60224f497eddf3041c8bc9ca921021295f0ff31f3d",
+    "results/retest/validation-fine-dt0.020-tangential-a1.000.json": "9d171121acd05ee30c61e2a983de5202808ffb10244c8154159393af00b5adec",
+    "results/retest/validation-fine-dt0.020-oblique-a1.000.npz": "d4680baa089976b81b27412831352e25abae5335641aa85d8a81edd79c55bde6",
+    "results/retest/validation-fine-dt0.020-oblique-a1.000.json": "75f53a37c91595d9bec4e838f256033a78220aa985d9cc0d2dbb077c8e26d6ea",
+    "results/retest/validation-fine-dt0.010-radial_outward-a0.050.npz": "38b95c20ac264027101aeed53054c7fddfa7a8dce2ff7b9483b35a71275b504b",
+    "results/retest/validation-fine-dt0.010-radial_outward-a0.050.json": "eaf469fad3be2ebbd2d5933c23ce845b4ce2ad17630f7cb66f2707f0a3e553e2",
+    "results/retest/validation-fine-dt0.010-radial_outward-a0.100.npz": "705ddee11f45ba671041799d94ad42e31111a49ea68c49d97d6de4bdb8ca768b",
+    "results/retest/validation-fine-dt0.010-radial_outward-a0.100.json": "6ab692dfd6b26f773b9878317de2a7e35990cca017e4208942e7733546295571",
+    "results/retest/validation-fine-dt0.010-radial_outward-a1.000.npz": "43c21d29d98af2568bdbca93b579c02026c4789f8bfcc978353ff67a95a602ac",
+    "results/retest/validation-fine-dt0.010-radial_outward-a1.000.json": "ea578a40f390dfe57d013a6abea78c64fe47101ff2d173b9336150dff32e0746",
+    "results/retest/validation-fine-dt0.010-tangential-a0.050.npz": "6e1d6f1dd4ebaa2b054cab3b768bff7920780047003ffa5de9761b2544c302bf",
+    "results/retest/validation-fine-dt0.010-tangential-a0.050.json": "2886118d3b6bdfa4b658326c47e0cb5ccac3884fed498903190749044c78a953",
+    "results/retest/validation-fine-dt0.010-tangential-a0.100.npz": "b474f7c78560c519b42ac4738490a17ee19e156632a1ced1254caa05100fdfa8",
+    "results/retest/validation-fine-dt0.010-tangential-a0.100.json": "9b21c35749867adf1e92f437dca9a47da1ac06af7fc4984c329a99b78c180a21",
+    "results/retest/validation-fine-dt0.010-tangential-a1.000.npz": "fb36f5960eee7add428ba778512c5f48bcfd8feb4577ec0756bd7c2b69a603c0",
+    "results/retest/validation-fine-dt0.010-tangential-a1.000.json": "a3b6d22dbe83592b12aa148a97782c47508c3acd3269c804eeac27413cae32e3",
+    "results/retest/validation-fine-dt0.010-oblique-a0.050.npz": "4d1221f9cff3556ab265c75d154b6049ffb9fc6c35f02a758db8b0d1aae6cb67",
+    "results/retest/validation-fine-dt0.010-oblique-a0.050.json": "be9d83d8088f91f13ab24d25a55c9e42d30837f2b9f2448d9f3ef75fe9550e5b",
+    "results/retest/validation-fine-dt0.010-oblique-a0.100.npz": "637d29d5222d9a93b7a6a291485f85592e38063cf5639b0bb7286019fe255d15",
+    "results/retest/validation-fine-dt0.010-oblique-a0.100.json": "d611aae4a2353b5b830a34b568a843e0f1a715d42fd5c1962a1e1b77556ffdfa",
+    "results/retest/validation-fine-dt0.010-oblique-a1.000.npz": "d182d602624590bcfb65d9a1d64ac6c9530e7a50be31be425fc7ca063527ec0b",
+    "results/retest/validation-fine-dt0.010-oblique-a1.000.json": "2cdb5e7a8891a8adfa2598ceb29e5cca0a98fca0854f403c17388f59879e58f4"
+  }
+}

@@ -12,18 +12,18 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.15.0-manuscript.1"
-TAG = "manuscript-v0.15.0.1"
+VERSION = "0.16.0-manuscript.1"
+TAG = "manuscript-v0.16.0.1"
 DATA_REVISION = "cluster-data-v0.1.0"
 CITATION_URL = f"https://github.com/heyyymonth/black-hole-recoil-dynamics/tree/{TAG}"
 TABLE_ASSETS = (
-    "tables/precision-pilot.tex", "tables/residence-response.tex",
+    "tables/independent-response.tex", "tables/response-continuation.tex", "tables/precision-pilot.tex", "tables/residence-response.tex",
     "tables/matched-residence.tex", "tables/collisionless-residence.tex",
     "tables/finite-angle-encounters.tex", "tables/cluster-coverage.tex", "tables/cluster-scales.tex",
     "tables/cluster-posterior.tex", "tables/cluster-transport-comparison.tex", "tables/host-validation.tex", "tables/local-kernels.tex", "tables/outer-boundary.tex", "tables/galactic-orbit.tex",
 )
 FIGURE_ASSETS = (
-    "figures/precision-pilot.pdf", "figures/residence-response.pdf",
+    "figures/independent-response.pdf", "figures/precision-pilot.pdf", "figures/residence-response.pdf",
     "figures/matched-residence.pdf", "figures/collisionless-residence.pdf",
     "figures/finite-angle-encounters.pdf", "figures/cluster-hst.pdf", "figures/cluster-host-comparison.pdf",
     "figures/cluster-coverage.pdf", "figures/cluster-transport-comparison.pdf", "figures/host-projections.pdf", "figures/scattering-composition.pdf", "figures/outer-boundary.pdf", "figures/galactic-orbit.pdf",
@@ -91,6 +91,14 @@ PRECISION_FILES = tuple(sorted({
 }))
 PRECISION_SAMPLE_FILES = tuple(sorted(str(p.relative_to(ROOT))
     for p in (ROOT / "results/precision").glob("*.npz")))
+RETEST_FILES = tuple(sorted({
+    "docs/independent-response-test.md", "analysis/retest/README.md", "results/retest/preflight.txt",
+    *(str(p.relative_to(ROOT)) for p in (ROOT / "analysis/retest").glob("*.py")),
+    *(str(p.relative_to(ROOT)) for p in (ROOT / "analysis/retest").glob("*.json")),
+    *(str(p.relative_to(ROOT)) for p in (ROOT / "results/retest").glob("*.json")),
+}))
+RETEST_SAMPLE_FILES = tuple(sorted(str(p.relative_to(ROOT))
+    for p in (ROOT / "results/retest").glob("*.npz")))
 ARCHIVE_SOURCE_FILES = {
     "manuscript.tex": "paper/manuscript.tex",
     "references.bib": "paper/references.bib",
@@ -107,6 +115,8 @@ ARCHIVE_SOURCE_FILES = {
     "evidence/paper-encounter-assets.json": "paper/encounter-assets.json",
     "evidence/paper-residence-assets.json": "paper/residence-assets.json",
     "evidence/paper-matched-assets.json": "paper/matched-assets.json",
+    "evidence/paper-retest-assets.json": "paper/retest-assets.json",
+    **{f"evidence/retest/{name}": name for name in RETEST_FILES},
     "evidence/paper-precision-assets.json": "paper/precision-assets.json",
     **{f"evidence/precision/{name}": name for name in PRECISION_FILES},
     "evidence/paper-response-assets.json": "paper/response-assets.json",
@@ -126,12 +136,12 @@ DATA_AUDIT_FILES = tuple(item["path"] for item in json.loads(
     (ROOT / "data/observed-clusters/audit.json").read_text())["files"])
 INPUT_FILES = tuple(sorted({
     *ARCHIVE_SOURCE_FILES.values(),
-    *RESPONSE_SAMPLE_FILES, *PRECISION_SAMPLE_FILES,
+    *RESPONSE_SAMPLE_FILES, *PRECISION_SAMPLE_FILES, *RETEST_SAMPLE_FILES,
     *DATA_AUDIT_FILES,
     "paper/data_assets.py", "paper/data_figures.py", "paper/calculation_assets.py", "paper/calculation_figures.py", "docs/local-transport-calculations.md", "docs/host-reconstruction-protocol.md",
     "paper/boundary_assets.py", "docs/outer-boundary.md", "analysis/boundary/README.md",
     "paper/orbit_assets.py", "docs/galactic-orbit.md", "analysis/orbit/README.md", "data/orbit/README.md",
-    "paper/precision_assets.py", "paper/response_assets.py", "paper/matched_assets.py", "paper/residence_assets.py", "paper/encounter_assets.py", "paper/comparison_assets.py", "paper/build.py", "paper/verify.py", "paper/requirements.txt",
+    "paper/retest_assets.py", "paper/precision_assets.py", "paper/response_assets.py", "paper/matched_assets.py", "paper/residence_assets.py", "paper/encounter_assets.py", "paper/comparison_assets.py", "paper/build.py", "paper/verify.py", "paper/requirements.txt",
     "paper/toolchain.json", "paper/working.json", "paper/CLAIMS.md",
     "docs/problem.md", "docs/step1-transport.md", "docs/step2-exposure.md",
     "docs/recoil-transport-theory.md", "docs/calculation-handoff.md",
@@ -180,6 +190,7 @@ def source_metadata(root):
     require(state.get("outer_boundary_diagnostics_evaluated") is True, "Missing boundary-evaluation status")
     require(state.get("galactic_orbits_integrated") is True and state.get("host_re_equilibrated") is False, "Incorrect orbit or host-evolution status")
     require(state.get("precision_pilot_performed") is True, "Missing precision-pilot status")
+    require(state.get("independent_response_test_performed") is True, "Missing independent response test")
     manuscript = (paper / "manuscript.tex").read_text()
     title_match = re.search(r"\\title\{([^{}]+)\}", manuscript)
     require(title_match is not None, "Expected a plain-text manuscript title")
@@ -282,7 +293,9 @@ def verify_evidence(root=ROOT):
                     [sys.executable, str(root / "paper/response_assets.py"), "--verify"],
                     [sys.executable, str(root / "analysis/precision/verify.py")],
                     [sys.executable, str(root / "analysis/precision/tails.py"), "--verify"],
-                    [sys.executable, str(root / "paper/precision_assets.py"), "--verify"]):
+                    [sys.executable, str(root / "paper/precision_assets.py"), "--verify"],
+                    [sys.executable, str(root / "analysis/retest/verify.py")],
+                    [sys.executable, str(root / "paper/retest_assets.py"), "--verify"]):
         subprocess.run(command, cwd=root, check=True)
 
 
@@ -297,7 +310,7 @@ def verify(root=ROOT):
             and meta.get("collisional_trajectories_performed") is True,
             "Collisionless controls and conditional collisional pilot must be recorded")
     require(meta.get("trajectory_calculations") == {
-        "collisionless_reference":"collisionless-residence-1", "matched_pilot":"matched-residence-pilot-1", "response_test":"residence-response-test-1", "precision_pilot":"residence-precision-pilot-1", "recomputed_during_build":False},
+        "collisionless_reference":"collisionless-residence-1", "matched_pilot":"matched-residence-pilot-1", "response_test":"residence-response-test-1", "precision_pilot":"residence-precision-pilot-1", "independent_response":"symmetric-residence-response-1", "recomputed_during_build":False},
         "Incorrect collisionless calculation provenance")
     require(meta.get("matched_encounter_comparison_performed") is True,
             "The conditional matched comparison must be recorded")

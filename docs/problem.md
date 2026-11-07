@@ -48,6 +48,8 @@ The objective is to determine which launch and environmental information must be
 
 A justified conclusion could identify a regime where a reduction preserves the observables, or a reproducible discrepancy showing why additional information is required. Neither outcome is assumed. Analytical identities establish internal consistency; numerical convergence establishes implementation accuracy; comparison with independently resolved dynamics is needed for physical calibration.
 
+The [independent response test](independent-response-test.md) measures the endpoint prediction using the selected symmetric-root estimator. Sampling errors are smaller, but prediction accuracy, numerical refinement and continuation beyond the verified domain remain unresolved. These are separate requirements for the transport criterion; a finite-model comparison does not alone calibrate a physical cluster.
+
 ## Connection to subsequent physics
 
 The trajectory record retains times and velocities because a future companion-access model would need to match the remnant's motion to an independently justified target population. Density exposure alone is not an encounter count. Companion acquisition, binary evolution, merger probabilities, and inference from gravitational-wave observations require further models and are outside steps 1 and 2.

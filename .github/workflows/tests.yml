@@ -33,6 +33,7 @@ jobs:
           python analysis/response/verify.py
           python analysis/precision/verify.py
           python analysis/precision/tails.py --verify
+          python analysis/retest/verify.py
   artifacts:
     runs-on: ubuntu-24.04
     steps:

@@ -1,0 +1,728 @@
+{
+  "revision": "symmetric-residence-response-1",
+  "scope": "Independent fixed-budget response prediction and mixture validation for the declared numerically stopped process; no guaranteed precision, continuum or calibrated cluster claim",
+  "identity": {
+    "reference_identity": {
+      "protocol_sha256": "d874a20a306bf2efc7ebe4167d51873110f1282bbe0119b4dc5a701fb9b64cb6",
+      "input_sha256": {
+        "analysis/response/protocol.json": "d874a20a306bf2efc7ebe4167d51873110f1282bbe0119b4dc5a701fb9b64cb6",
+        "analysis/matched/protocol.json": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da",
+        "results/cluster-comparison/NGC5139/reference/host.npz": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+        "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+        "analysis/residence/protocol.json": "0d66c27456f00377e1b86363b7958b723078425483e88763112b0ae2ad0cc39d",
+        "results/collisionless-residence/NGC5139.json": "88d73d9706517949d7855e6bdd9493cce1cfb7670db29ea4741752d6ddb47b4c",
+        "results/matched-residence/kernel-coarse.npz": "bcf5003f28bc2bc9247b083ecfbdbc2c0d5c16779f76af55ceb4eb692e92fce6",
+        "results/matched-residence/kernel-coarse.json": "b755fc38942d798753792a56c92ccb60dff61d4678fcde03ec6ec9e0d59b1efe",
+        "results/matched-residence/kernel-fine.npz": "8d3e5f0ca764ad59937598cd26dfc6476895f6def9631e78764e58514108af9b",
+        "results/matched-residence/kernel-fine.json": "12390685f177ea06259a7755948835a022a6bf86a55a5db39a1b90b73dbbde5c"
+      },
+      "implementation_sha256": {
+        "analysis/response/run.py": "1ac2d3e0b10c5e6b28f6128458f5b8ff37231b5dc86ccf560a04a929e15d2514",
+        "analysis/response/transport.py": "5c9d0dfdf34e3ebbbb6c173afc056615fcad7a63a63d5968c2200008312925c5",
+        "analysis/response/cache.py": "bd174180395dd346d4c4eda95cadcb412e00203ad6decde528fd59730cca99c8",
+        "analysis/matched/run.py": "e6aada18cb53f10c9b6079c5796da2cbc0a19f3ad45a9a56fc265bb55daeb853",
+        "analysis/matched/transport.py": "c819392a6165ca2cc1332ddcd0f36cefb0a12801c5a9fb1c48a6c63bda7606da",
+        "analysis/matched/kernel.py": "dcca9b2329904960b923e564c9c69beb307aa730e09691ec8c8da81e8d97c056",
+        "analysis/matched/statistics.py": "9041c7cd633d7b5f7e80130ea084b618ed4a18119f6d422ffdd3bdb013902fc1",
+        "analysis/host_reconstruction/host.py": "012a8525da438a27cc16ca3633f2eee6aa707bd8e0a70c1f88f366327b9daad0",
+        "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+        "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5"
+      },
+      "numpy_version": "1.24.2",
+      "scipy_version": "1.10.1"
+    },
+    "source_sha256": {
+      "analysis/retest/protocol.json": "6fa009714541cd033c490a9b39b2a2af5b30ae5cb409037caa02d18fdeec6a1e",
+      "results/response/execution-design.json": "3d7e3dec4113ce901de77bad1404b8c328d466298d94d3a3cd0d98aca75a7b5c",
+      "results/precision/execution-design.json": "faff1ecf12f06a2a939a200e532796ff9f21ee6bf6170f8823dbc3f4636eb6b2",
+      "results/precision/summary.json": "d6c526bfd49be086077518a4a92f0891b83df281df719aaa0ff24dd38689007a",
+      "results/response/summary.json": "305212d681e36f65b6ca9d96d306ca4ea89038e6896669fb9172cbf5bfe53d7a",
+      "results/retest/preflight.txt": "956f98ad91e452d25f141562db69383054afa7ae04889d89e9f6ed14fc674c2d",
+      "analysis/retest/run.py": "c46d708ef5bb86a307ee787ca0b16595ee687dd6fdd6b35784f10d3c2d28a7dc",
+      "analysis/retest/analyze.py": "1f02997d1bba46b85d3b264bbaaa002a37f9adba1bb705a57535d776d9ae8c68",
+      "analysis/retest/statistics.py": "f4ade28e1e4540b79e961a718b09e450fb1897f32116bea9c580d2bf578fa652",
+      "analysis/precision/coupling.py": "2b0c44a8fa2099b4b43a8c7b0f2d43cd49561d524917fbce391b22efb726bb96",
+      "analysis/response/disk_cache.py": "85130846e332abe76cc33ec8ea7254d24b2475eb0933527452236b06f9af5afd"
+    }
+  },
+  "jobs": [
+    {
+      "name": "prediction-coarse-dt0.020-radial_outward-weighted",
+      "stage": "prediction",
+      "setting_index": 0,
+      "launch_index": 0,
+      "variant_index": 0,
+      "setting": {
+        "name": "coarse-dt0.020",
+        "grid": "coarse",
+        "dt": 0.02,
+        "role": "grid sensitivity"
+      },
+      "launch": {
+        "name": "radial_outward",
+        "angle_from_radial_degrees": 0.0
+      },
+      "method": "weighted",
+      "a": null,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        50,
+        0,
+        0,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "prediction-coarse-dt0.020-tangential-weighted",
+      "stage": "prediction",
+      "setting_index": 0,
+      "launch_index": 1,
+      "variant_index": 0,
+      "setting": {
+        "name": "coarse-dt0.020",
+        "grid": "coarse",
+        "dt": 0.02,
+        "role": "grid sensitivity"
+      },
+      "launch": {
+        "name": "tangential",
+        "angle_from_radial_degrees": 90.0
+      },
+      "method": "weighted",
+      "a": null,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        50,
+        0,
+        1,
+        0
+      ],
+      "worker": 1
+    },
+    {
+      "name": "prediction-coarse-dt0.020-oblique-weighted",
+      "stage": "prediction",
+      "setting_index": 0,
+      "launch_index": 2,
+      "variant_index": 0,
+      "setting": {
+        "name": "coarse-dt0.020",
+        "grid": "coarse",
+        "dt": 0.02,
+        "role": "grid sensitivity"
+      },
+      "launch": {
+        "name": "oblique",
+        "angle_from_radial_degrees": 45.0
+      },
+      "method": "weighted",
+      "a": null,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        50,
+        0,
+        2,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "prediction-fine-dt0.020-radial_outward-weighted",
+      "stage": "prediction",
+      "setting_index": 1,
+      "launch_index": 0,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.020",
+        "grid": "fine",
+        "dt": 0.02,
+        "role": "time sensitivity"
+      },
+      "launch": {
+        "name": "radial_outward",
+        "angle_from_radial_degrees": 0.0
+      },
+      "method": "weighted",
+      "a": null,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        50,
+        1,
+        0,
+        0
+      ],
+      "worker": 1
+    },
+    {
+      "name": "prediction-fine-dt0.020-tangential-weighted",
+      "stage": "prediction",
+      "setting_index": 1,
+      "launch_index": 1,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.020",
+        "grid": "fine",
+        "dt": 0.02,
+        "role": "time sensitivity"
+      },
+      "launch": {
+        "name": "tangential",
+        "angle_from_radial_degrees": 90.0
+      },
+      "method": "weighted",
+      "a": null,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        50,
+        1,
+        1,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "prediction-fine-dt0.020-oblique-weighted",
+      "stage": "prediction",
+      "setting_index": 1,
+      "launch_index": 2,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.020",
+        "grid": "fine",
+        "dt": 0.02,
+        "role": "time sensitivity"
+      },
+      "launch": {
+        "name": "oblique",
+        "angle_from_radial_degrees": 45.0
+      },
+      "method": "weighted",
+      "a": null,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        50,
+        1,
+        2,
+        0
+      ],
+      "worker": 1
+    },
+    {
+      "name": "prediction-fine-dt0.010-radial_outward-weighted",
+      "stage": "prediction",
+      "setting_index": 2,
+      "launch_index": 0,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "radial_outward",
+        "angle_from_radial_degrees": 0.0
+      },
+      "method": "weighted",
+      "a": null,
+      "paths": 65536,
+      "seed": [
+        2026110601,
+        50,
+        2,
+        0,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "prediction-fine-dt0.010-tangential-weighted",
+      "stage": "prediction",
+      "setting_index": 2,
+      "launch_index": 1,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "tangential",
+        "angle_from_radial_degrees": 90.0
+      },
+      "method": "weighted",
+      "a": null,
+      "paths": 65536,
+      "seed": [
+        2026110601,
+        50,
+        2,
+        1,
+        0
+      ],
+      "worker": 1
+    },
+    {
+      "name": "prediction-fine-dt0.010-oblique-weighted",
+      "stage": "prediction",
+      "setting_index": 2,
+      "launch_index": 2,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "oblique",
+        "angle_from_radial_degrees": 45.0
+      },
+      "method": "weighted",
+      "a": null,
+      "paths": 65536,
+      "seed": [
+        2026110601,
+        50,
+        2,
+        2,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "validation-coarse-dt0.020-radial_outward-a1.000",
+      "stage": "validation",
+      "setting_index": 0,
+      "launch_index": 0,
+      "variant_index": 0,
+      "setting": {
+        "name": "coarse-dt0.020",
+        "grid": "coarse",
+        "dt": 0.02,
+        "role": "grid sensitivity"
+      },
+      "launch": {
+        "name": "radial_outward",
+        "angle_from_radial_degrees": 0.0
+      },
+      "method": "paired_mixture",
+      "a": 1.0,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        0,
+        0,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "validation-coarse-dt0.020-tangential-a1.000",
+      "stage": "validation",
+      "setting_index": 0,
+      "launch_index": 1,
+      "variant_index": 0,
+      "setting": {
+        "name": "coarse-dt0.020",
+        "grid": "coarse",
+        "dt": 0.02,
+        "role": "grid sensitivity"
+      },
+      "launch": {
+        "name": "tangential",
+        "angle_from_radial_degrees": 90.0
+      },
+      "method": "paired_mixture",
+      "a": 1.0,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        0,
+        1,
+        0
+      ],
+      "worker": 1
+    },
+    {
+      "name": "validation-coarse-dt0.020-oblique-a1.000",
+      "stage": "validation",
+      "setting_index": 0,
+      "launch_index": 2,
+      "variant_index": 0,
+      "setting": {
+        "name": "coarse-dt0.020",
+        "grid": "coarse",
+        "dt": 0.02,
+        "role": "grid sensitivity"
+      },
+      "launch": {
+        "name": "oblique",
+        "angle_from_radial_degrees": 45.0
+      },
+      "method": "paired_mixture",
+      "a": 1.0,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        0,
+        2,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "validation-fine-dt0.020-radial_outward-a1.000",
+      "stage": "validation",
+      "setting_index": 1,
+      "launch_index": 0,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.020",
+        "grid": "fine",
+        "dt": 0.02,
+        "role": "time sensitivity"
+      },
+      "launch": {
+        "name": "radial_outward",
+        "angle_from_radial_degrees": 0.0
+      },
+      "method": "paired_mixture",
+      "a": 1.0,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        1,
+        0,
+        0
+      ],
+      "worker": 1
+    },
+    {
+      "name": "validation-fine-dt0.020-tangential-a1.000",
+      "stage": "validation",
+      "setting_index": 1,
+      "launch_index": 1,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.020",
+        "grid": "fine",
+        "dt": 0.02,
+        "role": "time sensitivity"
+      },
+      "launch": {
+        "name": "tangential",
+        "angle_from_radial_degrees": 90.0
+      },
+      "method": "paired_mixture",
+      "a": 1.0,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        1,
+        1,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "validation-fine-dt0.020-oblique-a1.000",
+      "stage": "validation",
+      "setting_index": 1,
+      "launch_index": 2,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.020",
+        "grid": "fine",
+        "dt": 0.02,
+        "role": "time sensitivity"
+      },
+      "launch": {
+        "name": "oblique",
+        "angle_from_radial_degrees": 45.0
+      },
+      "method": "paired_mixture",
+      "a": 1.0,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        1,
+        2,
+        0
+      ],
+      "worker": 1
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a0.050",
+      "stage": "validation",
+      "setting_index": 2,
+      "launch_index": 0,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "radial_outward",
+        "angle_from_radial_degrees": 0.0
+      },
+      "method": "paired_mixture",
+      "a": 0.05,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        2,
+        0,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a0.100",
+      "stage": "validation",
+      "setting_index": 2,
+      "launch_index": 0,
+      "variant_index": 1,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "radial_outward",
+        "angle_from_radial_degrees": 0.0
+      },
+      "method": "paired_mixture",
+      "a": 0.1,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        2,
+        0,
+        1
+      ],
+      "worker": 1
+    },
+    {
+      "name": "validation-fine-dt0.010-radial_outward-a1.000",
+      "stage": "validation",
+      "setting_index": 2,
+      "launch_index": 0,
+      "variant_index": 2,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "radial_outward",
+        "angle_from_radial_degrees": 0.0
+      },
+      "method": "paired_mixture",
+      "a": 1.0,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        2,
+        0,
+        2
+      ],
+      "worker": 0
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a0.050",
+      "stage": "validation",
+      "setting_index": 2,
+      "launch_index": 1,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "tangential",
+        "angle_from_radial_degrees": 90.0
+      },
+      "method": "paired_mixture",
+      "a": 0.05,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        2,
+        1,
+        0
+      ],
+      "worker": 1
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a0.100",
+      "stage": "validation",
+      "setting_index": 2,
+      "launch_index": 1,
+      "variant_index": 1,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "tangential",
+        "angle_from_radial_degrees": 90.0
+      },
+      "method": "paired_mixture",
+      "a": 0.1,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        2,
+        1,
+        1
+      ],
+      "worker": 0
+    },
+    {
+      "name": "validation-fine-dt0.010-tangential-a1.000",
+      "stage": "validation",
+      "setting_index": 2,
+      "launch_index": 1,
+      "variant_index": 2,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "tangential",
+        "angle_from_radial_degrees": 90.0
+      },
+      "method": "paired_mixture",
+      "a": 1.0,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        2,
+        1,
+        2
+      ],
+      "worker": 1
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a0.050",
+      "stage": "validation",
+      "setting_index": 2,
+      "launch_index": 2,
+      "variant_index": 0,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "oblique",
+        "angle_from_radial_degrees": 45.0
+      },
+      "method": "paired_mixture",
+      "a": 0.05,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        2,
+        2,
+        0
+      ],
+      "worker": 0
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a0.100",
+      "stage": "validation",
+      "setting_index": 2,
+      "launch_index": 2,
+      "variant_index": 1,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "oblique",
+        "angle_from_radial_degrees": 45.0
+      },
+      "method": "paired_mixture",
+      "a": 0.1,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        2,
+        2,
+        1
+      ],
+      "worker": 1
+    },
+    {
+      "name": "validation-fine-dt0.010-oblique-a1.000",
+      "stage": "validation",
+      "setting_index": 2,
+      "launch_index": 2,
+      "variant_index": 2,
+      "setting": {
+        "name": "fine-dt0.010",
+        "grid": "fine",
+        "dt": 0.01,
+        "role": "primary"
+      },
+      "launch": {
+        "name": "oblique",
+        "angle_from_radial_degrees": 45.0
+      },
+      "method": "paired_mixture",
+      "a": 1.0,
+      "paths": 8192,
+      "seed": [
+        2026110601,
+        60,
+        2,
+        2,
+        2
+      ],
+      "worker": 0
+    }
+  ],
+  "stage_order": [
+    "prediction",
+    "prediction-register",
+    "validation"
+  ],
+  "created_utc": "2026-11-06T20:43:22.134684+00:00"
+}

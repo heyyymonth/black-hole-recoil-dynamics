@@ -51,7 +51,7 @@
     "random_seed_policy": null,
     "independent_validation_cases": null
   },
-  "result_status": "Six conditional reference hosts, local and finite-angle encounters, environmental controls, collisionless paths, matched jump/diffusion residence, a discrete response test and a fixed estimator-precision comparison. Symmetric-root coupling reduces sampling variance; response-prediction accuracy remains unresolved, with no calibrated cluster residence.",
+  "result_status": "Six conditional reference hosts, local and finite-angle encounters, environmental controls, collisionless paths, matched jump/diffusion residence, discrete response tests and a fixed estimator-precision comparison. Independent symmetric-root sampling lowers observed response errors; endpoint accuracy, refinement and population continuation remain unresolved, with no calibrated cluster residence.",
   "handoff": "docs/calculation-handoff.md",
   "execution_scope": "general remnant trajectory ensemble; stage-specific host and coefficient calculations are defined separately",
   "completed_calculations": [
@@ -102,6 +102,11 @@
       "revision": "residence-precision-pilot-1",
       "protocol": "analysis/precision/protocol.json",
       "result": "results/precision/summary.json"
+    },
+    {
+      "revision": "symmetric-residence-response-1",
+      "protocol": "analysis/retest/protocol.json",
+      "result": "results/retest/summary.json"
     }
   ]
 }

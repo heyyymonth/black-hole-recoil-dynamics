@@ -1,0 +1,187 @@
+{
+  "revision": "symmetric-residence-response-1",
+  "identity": {
+    "reference_identity": {
+      "protocol_sha256": "d874a20a306bf2efc7ebe4167d51873110f1282bbe0119b4dc5a701fb9b64cb6",
+      "input_sha256": {
+        "analysis/response/protocol.json": "d874a20a306bf2efc7ebe4167d51873110f1282bbe0119b4dc5a701fb9b64cb6",
+        "analysis/matched/protocol.json": "ec4908815061b454685a027bee3af374d24749d90810a17f59e4cd20a22985da",
+        "results/cluster-comparison/NGC5139/reference/host.npz": "611a6a0dcef75dbd3e2175496763bd8f1d2289f22172ffc0fb8da866fa44ddce",
+        "analysis/encounters/protocol.json": "c909e7fe06075e09924790cec529b568d3b872e65d0dacabb80349873ff39810",
+        "analysis/residence/protocol.json": "0d66c27456f00377e1b86363b7958b723078425483e88763112b0ae2ad0cc39d",
+        "results/collisionless-residence/NGC5139.json": "88d73d9706517949d7855e6bdd9493cce1cfb7670db29ea4741752d6ddb47b4c",
+        "results/matched-residence/kernel-coarse.npz": "bcf5003f28bc2bc9247b083ecfbdbc2c0d5c16779f76af55ceb4eb692e92fce6",
+        "results/matched-residence/kernel-coarse.json": "b755fc38942d798753792a56c92ccb60dff61d4678fcde03ec6ec9e0d59b1efe",
+        "results/matched-residence/kernel-fine.npz": "8d3e5f0ca764ad59937598cd26dfc6476895f6def9631e78764e58514108af9b",
+        "results/matched-residence/kernel-fine.json": "12390685f177ea06259a7755948835a022a6bf86a55a5db39a1b90b73dbbde5c"
+      },
+      "implementation_sha256": {
+        "analysis/response/run.py": "1ac2d3e0b10c5e6b28f6128458f5b8ff37231b5dc86ccf560a04a929e15d2514",
+        "analysis/response/transport.py": "5c9d0dfdf34e3ebbbb6c173afc056615fcad7a63a63d5968c2200008312925c5",
+        "analysis/response/cache.py": "bd174180395dd346d4c4eda95cadcb412e00203ad6decde528fd59730cca99c8",
+        "analysis/matched/run.py": "e6aada18cb53f10c9b6079c5796da2cbc0a19f3ad45a9a56fc265bb55daeb853",
+        "analysis/matched/transport.py": "c819392a6165ca2cc1332ddcd0f36cefb0a12801c5a9fb1c48a6c63bda7606da",
+        "analysis/matched/kernel.py": "dcca9b2329904960b923e564c9c69beb307aa730e09691ec8c8da81e8d97c056",
+        "analysis/matched/statistics.py": "9041c7cd633d7b5f7e80130ea084b618ed4a18119f6d422ffdd3bdb013902fc1",
+        "analysis/host_reconstruction/host.py": "012a8525da438a27cc16ca3633f2eee6aa707bd8e0a70c1f88f366327b9daad0",
+        "analysis/encounters/physics.py": "c0c97b46bd765420f353a16bcba0b20a28b530aa7c2d18ea26deff647a6d4324",
+        "analysis/encounters/run.py": "2bfdf2fd1b2d71e497b2212f06dc0baab04651af55429a8cd8c7c431604120f5"
+      },
+      "numpy_version": "1.24.2",
+      "scipy_version": "1.10.1"
+    },
+    "source_sha256": {
+      "analysis/retest/protocol.json": "6fa009714541cd033c490a9b39b2a2af5b30ae5cb409037caa02d18fdeec6a1e",
+      "results/response/execution-design.json": "3d7e3dec4113ce901de77bad1404b8c328d466298d94d3a3cd0d98aca75a7b5c",
+      "results/precision/execution-design.json": "faff1ecf12f06a2a939a200e532796ff9f21ee6bf6170f8823dbc3f4636eb6b2",
+      "results/precision/summary.json": "d6c526bfd49be086077518a4a92f0891b83df281df719aaa0ff24dd38689007a",
+      "results/response/summary.json": "305212d681e36f65b6ca9d96d306ca4ea89038e6896669fb9172cbf5bfe53d7a",
+      "results/retest/preflight.txt": "956f98ad91e452d25f141562db69383054afa7ae04889d89e9f6ed14fc674c2d",
+      "analysis/retest/run.py": "c46d708ef5bb86a307ee787ca0b16595ee687dd6fdd6b35784f10d3c2d28a7dc",
+      "analysis/retest/analyze.py": "1f02997d1bba46b85d3b264bbaaa002a37f9adba1bb705a57535d776d9ae8c68",
+      "analysis/retest/statistics.py": "f4ade28e1e4540b79e961a718b09e450fb1897f32116bea9c580d2bf578fa652",
+      "analysis/precision/coupling.py": "2b0c44a8fa2099b4b43a8c7b0f2d43cd49561d524917fbce391b22efb726bb96",
+      "analysis/response/disk_cache.py": "85130846e332abe76cc33ec8ea7254d24b2475eb0933527452236b06f9af5afd"
+    }
+  },
+  "execution_design_sha256": "47948307ab79834830919af6feca50e2c73ca4b4d1e0d0e55f6889c32fba84a6",
+  "prediction_inventory": [
+    {
+      "name": "prediction-coarse-dt0.020-radial_outward-weighted",
+      "arrays": "results/retest/prediction-coarse-dt0.020-radial_outward-weighted.npz",
+      "arrays_sha256": "92464edf5edc0226417022bfbcb2a0040874f492d9ab806bba267fdcd652ee72",
+      "record": "results/retest/prediction-coarse-dt0.020-radial_outward-weighted.json",
+      "record_sha256": "f084f6eb888c3ce35a800a58782cf3dff195bebcd7d58565a4e90389f2b578c4",
+      "summary": {
+        "count": 8192,
+        "mean": 0.000613426581978411,
+        "variance": 0.6021067166703347,
+        "standard_error": 0.008573176486127923,
+        "minimum": -18.973533261615273,
+        "maximum": 20.53546054578875
+      }
+    },
+    {
+      "name": "prediction-coarse-dt0.020-tangential-weighted",
+      "arrays": "results/retest/prediction-coarse-dt0.020-tangential-weighted.npz",
+      "arrays_sha256": "b7df1cbe7cddf87b3ff2973573c2341803af65152630461bb8582670d25f23cb",
+      "record": "results/retest/prediction-coarse-dt0.020-tangential-weighted.json",
+      "record_sha256": "5e3aa034ac4dfd96a521fac68a10aabffc1a51eb850ae0b3e599488d9ff8de55",
+      "summary": {
+        "count": 8192,
+        "mean": 0.004197727176636282,
+        "variance": 0.9197140382662693,
+        "standard_error": 0.010595743487920063,
+        "minimum": -11.1863347317189,
+        "maximum": 28.177702834742913
+      }
+    },
+    {
+      "name": "prediction-coarse-dt0.020-oblique-weighted",
+      "arrays": "results/retest/prediction-coarse-dt0.020-oblique-weighted.npz",
+      "arrays_sha256": "6936805cb30e93ae74ffc94a7483a30cc48a52c6bf331246785e2ff0561b4f31",
+      "record": "results/retest/prediction-coarse-dt0.020-oblique-weighted.json",
+      "record_sha256": "37b7982bd74821a06a3105547d38c084f25581ea1a4c859100885d30c1c52768",
+      "summary": {
+        "count": 8192,
+        "mean": -0.0016246796848453015,
+        "variance": 0.6188970903573104,
+        "standard_error": 0.008691890543791818,
+        "minimum": -23.266828329023078,
+        "maximum": 25.388149864494615
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-radial_outward-weighted",
+      "arrays": "results/retest/prediction-fine-dt0.020-radial_outward-weighted.npz",
+      "arrays_sha256": "dc82d06af0db56bf519d512842e7ff456795638b9ea6c58f968b5b8ce0ec8cd0",
+      "record": "results/retest/prediction-fine-dt0.020-radial_outward-weighted.json",
+      "record_sha256": "4d575f0eb4813e6c5bcc12bb4a6f262d8e5c58991512524d6dfbfd1ff5f1e353",
+      "summary": {
+        "count": 8192,
+        "mean": -0.019050905090086525,
+        "variance": 0.36005022628085126,
+        "standard_error": 0.0066295884968676005,
+        "minimum": -13.252211675894438,
+        "maximum": 11.061108218515582
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-tangential-weighted",
+      "arrays": "results/retest/prediction-fine-dt0.020-tangential-weighted.npz",
+      "arrays_sha256": "ec527ff885b9d4577de5fdb1769252205007f38d2b451b9d9c7bee37de784e14",
+      "record": "results/retest/prediction-fine-dt0.020-tangential-weighted.json",
+      "record_sha256": "4d04067adbd1deee01c5d82e23d244655481afeb12f74135cd979cee67606660",
+      "summary": {
+        "count": 8192,
+        "mean": -0.007310360543222472,
+        "variance": 0.6915692484114547,
+        "standard_error": 0.009188039740280644,
+        "minimum": -19.934180094744015,
+        "maximum": 19.20476770104318
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.020-oblique-weighted",
+      "arrays": "results/retest/prediction-fine-dt0.020-oblique-weighted.npz",
+      "arrays_sha256": "867dc38aafd8b0f28f9a1a32558cfd5d5d1121276b2d4ef7cbe3d12c381af7d3",
+      "record": "results/retest/prediction-fine-dt0.020-oblique-weighted.json",
+      "record_sha256": "9f934ef72d17c3e22eb506a6fece3efad9f1a5449a93a4e759160afb2576ecb0",
+      "summary": {
+        "count": 8192,
+        "mean": -0.009823954333298216,
+        "variance": 0.37467139361148394,
+        "standard_error": 0.006762858426949683,
+        "minimum": -8.471125425951964,
+        "maximum": 13.65061788243599
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-radial_outward-weighted",
+      "arrays": "results/retest/prediction-fine-dt0.010-radial_outward-weighted.npz",
+      "arrays_sha256": "53f3f6d99cb433fc6ddf2ce1d15e218b692739fc610856cff79545f7f13325f1",
+      "record": "results/retest/prediction-fine-dt0.010-radial_outward-weighted.json",
+      "record_sha256": "0d7cff0187e59ec05bf93b41459f6f74a585a2c038c82e80e5343aabf8affce9",
+      "summary": {
+        "count": 65536,
+        "mean": -0.011684563917507291,
+        "variance": 0.822751438091546,
+        "standard_error": 0.0035431893323258114,
+        "minimum": -19.900597047422973,
+        "maximum": 39.12374638253513
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-tangential-weighted",
+      "arrays": "results/retest/prediction-fine-dt0.010-tangential-weighted.npz",
+      "arrays_sha256": "678940aff03b08db7fbdd04da2fb28825845a50839ca9d22b24a32bdaaa1fdfa",
+      "record": "results/retest/prediction-fine-dt0.010-tangential-weighted.json",
+      "record_sha256": "cd3cdb6c063529948725cbe4baf0e4a675b8128d15166be263396415de1d3535",
+      "summary": {
+        "count": 65536,
+        "mean": -0.002609377121533466,
+        "variance": 1.6624657083210888,
+        "standard_error": 0.005036587492232329,
+        "minimum": -34.43504514396606,
+        "maximum": 52.12611339128909
+      }
+    },
+    {
+      "name": "prediction-fine-dt0.010-oblique-weighted",
+      "arrays": "results/retest/prediction-fine-dt0.010-oblique-weighted.npz",
+      "arrays_sha256": "ecd7b04bc24e8baa77f2464e27b97bb3267c4e99021949ca71ccbeea1ebde473",
+      "record": "results/retest/prediction-fine-dt0.010-oblique-weighted.json",
+      "record_sha256": "cb08e5948c0a9bb643878a2a9b9d84337afbd977cb34ab7f012dfc28aad0f4de",
+      "summary": {
+        "count": 65536,
+        "mean": -0.011350077440622617,
+        "variance": 1.0401082024889894,
+        "standard_error": 0.003983816218647081,
+        "minimum": -36.42077223354673,
+        "maximum": 77.2752603984666
+      }
+    }
+  ],
+  "scope": "All predictions frozen before independent validation; earlier outcomes excluded",
+  "created_utc": "2026-11-06T21:23:47.416988+00:00"
+}

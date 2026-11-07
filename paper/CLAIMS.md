@@ -1,6 +1,6 @@
 # Claim-to-evidence record
 
-Manuscript revision 0.15.0-manuscript.1. Author: Venkata Hemanth Athota.
+Manuscript revision 0.16.0-manuscript.1. Author: Venkata Hemanth Athota.
 
 The paper defines a two-step transport and exposure problem and reports the completed six-cluster observation and published-posterior analysis. Data revision: `cluster-data-v0.1.0`. A detailed NGC 3201 benchmark is extended to six conditional reference hosts and 120 local states, 48 joint-row pilot attempts, 18 common static controls and 24 Galactic reference orbits. It additionally reports twelve deterministic collisionless reference paths, their residence and path-integrated encounter budgets, followed by a conditional Omega Centauri matched jump/diffusion pilot with 16 independent ensembles. A separate complete-transition response test retains 36 ensembles, with predictions recorded before independent validation. It reports no new observational fit or calibrated collisional residence prediction.
 
@@ -106,3 +106,15 @@ The symmetric/uniform means have standard errors 0.01850, 0.01914 and 0.01304, s
 The selected reference estimator is symmetric/uniform for a subsequent independently sampled response test. The choice reflects strong coupling gains and no resolved incremental stratification benefit; it does not assert that uniform insertion has smaller population variance. Earlier endpoint validation is not reused to certify this choice's prediction accuracy. Numerical refinement, continuation, host uncertainties and physical calibration remain separate.
 
 Evidence: `analysis/precision/protocol.json`, the pre-execution implementation commit `7e3b32d`, `results/precision/execution-design.json`, all 36 metadata/NPZ pairs, `summary.json`, and the separate `tail-diagnostic.json`. The precision verifier reconstructs insertion draws, rewards, scores, seeds, source identities, chronology and design-aware statistics. Empirical bootstrap intervals are approximate and CPU intervals condition on recorded timing.
+
+## Independent symmetric-root response and population continuation
+
+The protocol and implementation were published before production in commit `487ac443`. Nine predictions were completed and hash-registered before fifteen fresh validation ensembles. The fixed design retains 245,760 independent quartets and 122,880 independent pairs, comprising 1,228,800 correlated branch trajectories. No pilot or earlier production samples enter these estimates.
+
+The primary response standard errors are 0.003543, 0.005037 and 0.003984. Their family-adjusted half-widths are 0.012565, 0.017861 and 0.014128, above the unchanged 0.0005 target. Relative to the earlier equal-count eigenbasis test, observed standard errors decrease by descriptive factors 13.1, 33.8 and 41.0. These are not independently certified efficiency ratios. All three primary endpoint accuracy classifications remain inconclusive at tolerance 0.001; all six finite-a scaled-residual intervals contain zero without establishing a derivative limit. The radial and oblique endpoint shifts exclude zero under the approximate family adjustment; the tangential shift does not. Prediction accuracy and encounter effects remain separate claims.
+
+All twelve numerical-refinement classifications remain inconclusive. All 24 population continuation upper bounds exceed the 0.0002 budget. These one-sided occurrence bounds use independent rows, deterministic allowance maxima and a Bonferroni split of 0.025. The primary response upper bounds are 1.43837, 1.19891 and 1.35929; their empirical allowances are 0.12562, 0.03506 and 0.12168. Neither is a measured continuation effect. Bounds on a derivative score can exceed one. The expanded residual intervals combine these population allowances with approximate normal intervals, without an exact overall coverage claim.
+
+The largest one percent of centered-square scores supplies 89.9%, 90.6% and 91.2% of primary estimated variance; the largest single shares are 2.84%, 2.49% and 8.76%. No observations are trimmed. Tail concentration, refinement and continuation remain distinct obstacles to a continuum or calibrated physical-cluster conclusion. The test improves the estimator's observed precision without confirming or rejecting the response hypothesis at the declared accuracy.
+
+Evidence: `analysis/retest/protocol.json`, `results/retest/preflight.txt`, `execution-design.json`, `prediction-register.json`, `summary.json` and all 24 retained record/NPZ pairs. Independent verification checks arrays, rewards, stops, insertion draws, source identities, disjoint seeds, chronological registration and the complete inferential inventory. The paper's two tables and vector figure are generated only from these retained results.
